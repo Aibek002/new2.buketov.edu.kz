@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: new2-buketov-web
     volumes:
-      - ./site:/var/www/html
+      - ./:/var/www/html
     networks:
       - new2-buketov-network
   nginx:
