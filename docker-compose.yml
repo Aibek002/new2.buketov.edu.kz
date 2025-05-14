@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: new2-buketov-web
+    volumes:
+      - ./site:/var/www/html
+    networks:
+      - new2-buketov-network
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./:/var/www/html
+    depends_on:
+      - web
+    networks:
+      - new2-buketov-network
+
+  db:
+    image: mysql:8.0
+    container_name: new2-buketov-db
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: new2_buketov_edu_kz
+       MYSQL_DATABASE: new2_buketov_edu_kz
+       MYSQL_USER: aibek
+       MYSQL_PASSWORD: Seitzhan767402072002
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    networks:
+      - new2-buketov-network
+networks:
+  new2-buketov-network:
+    driver: bridge

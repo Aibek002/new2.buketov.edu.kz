@@ -1,0 +1,131 @@
+.faculty-info{
+    margin-block: 100px;
+}
+.faculty-contact{
+    border-right: 10px var(--indigoblue) solid;
+}
+.faculty-title{
+    background: var(--indigoblue);
+    color: var(--white);
+    font-size: var(--font-28);
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+
+}
+.dean-photo{
+    position: relative;
+    background: var(--indigoblue);
+    height: 200px;
+    width: 103%;
+    border-radius: 500px 0 0 500px;
+    margin-top: 130px;
+}
+.dean-photo img{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 60%;
+    filter: drop-shadow(10px 0 20px black);
+}
+.dean-name{
+    color: var(--indigoblue);
+    font-size: var(--font-28);
+}
+.dean-name,
+.dean-position, 
+.dean-phone , 
+.dean-email , 
+.faculty-address,
+.faculty-social{
+    width: 100%;
+    text-align: end;
+}
+.faculty-communication-block-header{
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: end;
+    color: var(--indigoblue);
+}
+.faculty-social{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: end;
+}
+.faculty-contact-info{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: end;
+}
+.buttons{
+    width: 100%;
+}
+.buttons button:nth-child(1){
+    width: 33%;
+    background: var(--indigoblue);
+    border: 1px var(--indigoblue) solid;
+    border-radius: 50px 0 0 50px;
+    padding: 20px;
+    font-size: var(--font-22);
+    font-weight: var(--font-700);
+    color: var(--white);
+}
+.buttons button:nth-child(2){
+    width: 33%;
+    background: transparent;
+    border: 1px var(--indigoblue) solid;
+    border-radius:  0;
+    padding: 20px;
+    font-size: var(--font-22);
+    font-weight: var(--font-700);
+    color: var(--indigoblue);
+}
+.buttons button:nth-child(3){
+    width: 33%;
+    background: transparent;
+    border: 1px var(--indigoblue) solid;
+    border-radius:  0 50px 50px 0;
+    padding: 20px;
+    font-size: var(--font-22);
+    font-weight: var(--font-700);
+    color: var(--indigoblue);
+}
+.content-faculties{
+    overflow: hidden;
+    width: 100%;
+}
+.move-content-faculties{
+    width: 300%;
+    padding-block: 20px;
+}
+.content-faculties{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.move-content-faculties{
+    width: 300%;
+    padding-block: 20px;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.move-content-faculties.part-infAboutFaculties {
+    transform: translateX(0%);
+}
+
+.move-content-faculties.part-dateAndFacts {
+    transform: translateX(-33.3333%);
+}
+
+.move-content-faculties.part-departament {
+    transform: translateX(-66.6666%);
+}
+.information-faculties,
+.date-and-facts-faculties,
+.departments-faculties {
+    width: 33.3333%;
+    flex-shrink: 0;
+}

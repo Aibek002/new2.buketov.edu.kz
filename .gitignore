@@ -1,0 +1,22 @@
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+protected
+vendor
+runtime
+.env
+env.php
+
+# NOTE(annad): Workflow
+ARCHITECTURE
+phpcnfs
+web/playground
+web/phpmyadmin
+web/adminer.php
+adminer.php
+nca_rsa.crl
+web/.htaccess
+storage
+data
