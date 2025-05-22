@@ -5,14 +5,20 @@ RUN apt-get update
 RUN docker-php-ext-install mysqli pdo pdo_mysql \
     && docker-php-ext-enable pdo_mysql 
 
-# RUN apt-get install -y ffmpeg 
+RUN apt-get install -y ffmpeg 
 
-# RUN apt install -y curl unzip 
+RUN apt install -y curl unzip 
 
-# RUN curl -sS https://getcomposer.org/installer | php 
+RUN curl -sS https://getcomposer.org/installer | php 
 
-# RUN mv composer.phar /usr/local/bin/composer \
-#     && composer require guzzlehttp/guzzle
+RUN mv composer.phar /usr/local/bin/composer \
+    && composer require guzzlehttp/guzzle
+
+RUN apt update && \
+    apt install -y curl unzip gnupg2 ca-certificates lsb-release && \
+    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
+    curl -fsSL https://packages.sury.org/php/apt.gpg | gpg --dearmor -o /etc/apt/trusted
+
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug

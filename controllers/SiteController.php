@@ -63,9 +63,9 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-    public function actionFacultiesBgf()
+    public function actionFaculty()
     {
-        return $this->render('faculties_bgf');
+        return $this->render('faculty');
     }
     public function actionDissertationWorkOfLaw()
     {

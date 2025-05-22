@@ -20,7 +20,20 @@ services:
       - web
     networks:
       - new2-buketov-network
-
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: new2-buketov-phpmyadmin
+    restart: always
+    ports:
+      - "8082:80" # Теперь доступно по http://localhost:8082
+    environment:
+      PMA_HOST: db
+      PMA_USER: aibek
+      PMA_PASSWORD: Seitzhan767402072002
+    depends_on:
+      - db
+    networks:
+      - new2-buketov-network
   db:
     image: mysql:8.0
     container_name: new2-buketov-db
