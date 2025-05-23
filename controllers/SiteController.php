@@ -8,7 +8,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\Faculty;
 
 class SiteController extends Controller
 {
@@ -63,9 +63,12 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-    public function actionFaculty()
+    public function actionFaculty($name)
     {
-        return $this->render('faculty');
+        $faculty=Faculty::findOne(['name' => $name]);
+
+        
+        return $this->render('faculty' , ['faculty'=>$faculty]);
     }
     public function actionDissertationWorkOfLaw()
     {

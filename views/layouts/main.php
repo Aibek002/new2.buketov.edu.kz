@@ -34,7 +34,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <?php $this->beginBody() ?>
 
 <header id="header">
-    <div class="navbar navbar-expand-md navbar-dark fixed-top header p-3">
+    <div class="navbar navbar-expand-md fixed-top  p-3 header">
     <a class="navbar-brand" href="<?= Yii::$app->homeUrl ?>">
         <?= Html::img('https://dist.buketov.edu.kz/img/logo_buketov.png', [
             'alt' => 'Buketov Logo',

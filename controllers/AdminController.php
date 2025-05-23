@@ -9,14 +9,25 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Faculty;
+
 
 class AdminController extends Controller
 {
+
     public function actionIndex(){
         return $this->render('index');
     }
+
     public function actionFacultyAdminPanel(){
-        return $this->render('faculty-admin-panel');
+        $faculty = new Faculty();
+        if($faculty->load(Yii::$app->request->post()) && $faculty->save()){
+            return $this->redirect(['admin/index']);
+        }
+        return $this->render('faculty-admin-panel',
+        ['model'=>$faculty]
+        );
     }
+
 }
 

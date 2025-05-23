@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }else if(window.scrollY<500){
         header.classList.remove('scrolled');
         logo.style.display='none';
+       
         menuIcon.style.backgroundColor="var(--indigoblue)"
         menuIcon.style.border="none";
     }

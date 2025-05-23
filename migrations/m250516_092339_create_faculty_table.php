@@ -16,7 +16,7 @@ class m250516_092339_create_faculty_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->text()->notNull(),
             'information' => $this->text(),
-            'dates_and_facts' => $this->text(),
+            'welcome' => $this->text(),
         ]);
     }
 
