@@ -1,0 +1,12 @@
+.lang-link {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    margin-inline: 10px;
+    position: relative;
+    z-index: 10001;
+}

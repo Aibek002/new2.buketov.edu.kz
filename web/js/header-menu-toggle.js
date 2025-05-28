@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
 const header = document.querySelector('.header');
 const logo = document.querySelector('.logoBuketov');
 
-if(window.location.pathname !== '/'  &&  header){
-  logo.style.display='block';
-  header.style.backgroundColor = 'var(--indigoblue)';
-}
+// if(window.location.pathname !== '/'  &&  header){
+//   logo.style.display='block';
+//   header.style.backgroundColor = 'var(--indigoblue)';
+// }
 /* Script Dropdown Header*/
 let dropDownHeader =document.querySelector('.dropdown-toggle-header');
 let dropDownMenuHeader = document.querySelector('.dropdown-menu-header');

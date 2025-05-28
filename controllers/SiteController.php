@@ -8,7 +8,8 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\Faculty;
+use app\models\Staff;
 
 class SiteController extends Controller
 {
@@ -34,6 +35,9 @@ class SiteController extends Controller
                 'actions' => [
                     'logout' => ['post'],
                 ],
+            ],
+            'language' => [
+                'class' => \app\components\LanguageBehavior::class,
             ],
         ];
     }
@@ -63,9 +67,18 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-    public function actionFacultiesBgf()
+    public function actionFaculty($name)
     {
-        return $this->render('faculties_bgf');
+        $faculty = Faculty::findOne(['name_ru' => $name]);
+        $dean = Staff::find()
+            ->joinWith(['faculty', 'refStaff']) // связи между таблицами
+            ->where([
+                'faculty.name_ru' => $name,
+                'ref_staff.type' => 'dean',
+            ])
+            ->one();
+
+        return $this->render('faculty', ['faculty' => $faculty , 'dean'=> $dean]);
     }
     public function actionDissertationWorkOfLaw()
     {
@@ -79,11 +92,11 @@ class SiteController extends Controller
     {
         return $this->render('dissertation_work_of_mathematics');
     }
-     public function actionDissertationWorkOfPhysics()
+    public function actionDissertationWorkOfPhysics()
     {
         return $this->render('dissertation_work_of_physics');
     }
-     public function actionDissertationWorkOfPedagogy()
+    public function actionDissertationWorkOfPedagogy()
     {
         return $this->render('dissertation_work_of_pedagogy');
     }

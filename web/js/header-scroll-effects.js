@@ -4,17 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const logo = document.querySelector('.logoBuketov');
     const header = document.querySelector('.header');
     window.addEventListener('scroll',function(){
-    if(window.scrollY>500){
+    if(window.scrollY>400){
         header.classList.add('scrolled');
         logo.style.display='block';
         menuIcon.style.backgroundColor="transparent"
         menuIcon.style.border="1px #fff solid";
 
-    }else if(window.scrollY<500){
+    }else if(window.scrollY<400){
         header.classList.remove('scrolled');
         logo.style.display='none';
-        menuIcon.style.backgroundColor="var(--indigoblue)"
-        menuIcon.style.border="none";
+       
+        menuIcon.style.backgroundColor="transparent"
+        menuIcon.style.border="1px solid var(--white)";
     }
     });
 });
