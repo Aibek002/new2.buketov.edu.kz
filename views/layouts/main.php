@@ -66,7 +66,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         <div class="d-flex g-2 my-5 dropdown-main-flex">
                             <div class="dropdown-main-menu">
                                 <!-- <p class="type-person">Пожалуйста, выберите, кем вы являетесь:</p>-->
-                                <button id="menu-for-home">Buketov University</button>
+                                <?= Html::a('Buketov University ', ['site/index'], ['class' => 'menu-item']) ?>
                                 <button id="menu-for-about-us">О нас <span>+</span></button>
                                 <button id="menu-for-incoming">Поступающим <span>+</span></button>
                                 <button id="menu-for-student"> Студентам <span>+</span></button>
@@ -108,8 +108,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 </div>
 
                                 <div class="dropdown-submenu faculties">
-                                    <?= Html::a('Биолого-географический <span>></span>', ['site/faculty', 'name' => 'биолого-географический факультет'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Исторический <span>></span>', ['site/faculty', 'name' => 'исторический факультет'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Биолого-географический <span>></span>', ['site/faculty', 'name' => 'биолого-географический'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Исторический <span>></span>', ['site/faculty', 'name' => 'исторический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Иностранных языков <span>></span>', ['site/faculty', 'name' => 'Иностранных языков'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Математика и ИТ'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Педагогический <span>></span>', ['site/faculty', 'name' => 'Педагогический'], ['class' => 'menu-item']) ?>
@@ -367,7 +367,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     ]); ?>
                     <div class="col-md-6 d-flex flex-column justify-content-end" style="min-height: 100px;">
                         <p>Казахстан, Караганда,<br> ул. Университетская, 28</p>
-                        <p>&copy; This website was designed by Aibek Seitzhan <?= date('Y') ?></p>
+                        <p>&copy; <?= Yii::t('app', 'This website was designed by Aibek Seitzhan') ?> <?= date('Y') ?></p>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end d-flex flex-column justify-content-end"

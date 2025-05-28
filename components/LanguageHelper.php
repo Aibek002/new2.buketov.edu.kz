@@ -27,5 +27,8 @@ class LanguageHelper
      public static function patronymic() {
         return self::field('patronymic');
     }
+     public static function job_title() {
+        return self::field('job_title');
+    }
    
 }

@@ -503,7 +503,10 @@ main > .container {
   overflow-x: hidden;
   border-right: 1px #fff solid;
 }
-.dropdown-menu-header.active .dropdown-main-menu button{
+.dropdown-menu-header.active .dropdown-main-menu button ,
+.dropdown-menu-header.active .dropdown-main-menu a
+
+{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -517,6 +520,7 @@ main > .container {
   font-weight: bold;
   padding: 0 20px;
   font-size: var(--font-28);
+  text-decoration: none;
 }
 .dropdown-menu-header.active .dropdown-main-menu button:hover{
   color: rgb(255, 255, 255);
@@ -894,13 +898,13 @@ padding-inline-start: 20px;
 .university-motto {
   font-size: 1.2rem;
     font-family: sans-serif, sans-serif; ;
-  margin: 0.5rem 0;
+  margin: 0 0.8rem ;
 }
 
 .university-year {
   font-size: 1rem;
   color: #ccc;
-  margin-top: 0.5rem;
+  margin: 0 0.8rem;
     font-family: sans-serif, sans-serif; ;
 
 }

@@ -6,16 +6,16 @@ $this->title = 'Buketov University';
 ?>
 <div class="main-wrapper d-flex flex-column justify-content-center align-items-center w-100">
     <div class="first-block d-flex justify-content-center align-items-cente w-100 h-100">
-    <div class="first-block-half p-5">
-    <img src="/bg-images/bg-first-block-half1.png" width="90%">
-    <div class="university-branding text-start">
-    <p class="university-name">BUKETOV UNIVERSITY</p>
-    <p class="university-motto">inspiring intellectuals</p>
-    <p class="university-year">since 1934</p>
-    </div>
+        <div class="first-block-half p-5">
+            <img src="/bg-images/bg-first-block-half1.png" width="90%">
+            <div class="university-branding text-start">
+                <p class="university-name">BUKETOV UNIVERSITY</p>
+                <p class="university-motto"><?php echo Yii::t('app', 'inspiring intellectuals') ?></p>
+                <p class="university-year"><?php echo Yii::t('app', 'since 1994') ?></p>
+            </div>
 
 
-    </div>
+        </div>
         <div class="col-md-12 w-100" style="overflow:hidden">
             <video width="100%" autoplay="autoplay" playsinline="" muted="muted" loop="loop" class="video">
                 <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
@@ -86,101 +86,107 @@ $this->title = 'Buketov University';
             </div>
         </div>-->
         <div class="carousel-flex">
-    <div class="carousel">
-        <div class="list">
-            <div class="item">
-                <img src="/bg-images/carousel/1.carousel.jpg">
-                <div class="content">
-                    <div class="title">Народный знак качества «БЕЗУПРЕЧНО»</div>
-                    <div class="description">это общественное признание товаров и услуг, отличающихся высоким качеством, надёжностью и доверием потребителей.</div>
-                    <div class="button">Просмотреть</div>
-                
+            <div class="carousel">
+                <div class="list">
+                    <div class="item">
+                        <img src="/bg-images/carousel/1.carousel.jpg">
+                        <div class="content">
+                            <div class="title"><?= Yii::t('app', 'National Quality Mark "PERFECT"') ?></div>
+                            <div class="description">
+                                <?= Yii::t('app', 'This is public recognition of goods and services distinguished by high quality, reliability and consumer trust.') ?>
+                            </div>
+                            <div class="button"><?= Yii::t('app', 'View') ?></div>
+
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/bg-images/carousel/2.carousel.jpg">
+                        <div class="content">
+                            <div class="title"><?= Yii::t('app', 'Corporate culture of a modern university') ?></div>
+                            <div class="description">
+                                <?= Yii::t('app', 'This is public recognition of goods and services distinguished by high quality, reliability and consumer trust.') ?>
+                            </div>
+                            <div class="button"><?= Yii::t('app', 'View') ?></div>
+
+
+                        </div>
+                    </div>
+                    <div class="item">
+
+                        <img src="/bg-images/carousel/3.carousel.jpg">
+                        <div class="content">
+                            <div class="title"><?= Yii::t('app', 'Hotline') ?></div>
+                            <div class="description">
+                                <?= Yii::t('app', 'This is the public recognition of goods and services that are distinguished by high quality, reliability, and consumer trust.') ?>
+                            </div>
+                            <div class="tel">
+                                <div class="svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z" />
+                                    </svg>
+                                </div>
+                                <span>+7 777 000 77 77</span>
+                            </div>
+                            <div class="button"><?= Yii::t('app', 'View') ?></div>
+
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="/bg-images/carousel/2.carousel.jpg">
-                <div class="content">
-                    <div class="title">Корпоративная культура современного университета </div>
-                    <div class="description">это общественное признание товаров и услуг, отличающихся высоким качеством, надёжностью и доверием потребителей.</div>
-                    <div class="button">Просмотреть</div>
+                <div class="thumbnail">
+                    <div class="item">
+                        <div class="overly"></div>
+                        <img src="/bg-images/carousel/1.thumbnail.jpg">
+                        <div class="content">
+                            <div class="title"><?= Yii::t('app', 'National Quality Mark "PERFECT"') ?></div>
+
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <div class="overly"></div>
+                        <img src="/bg-images/carousel/2.thumbnail.jpg">
+                        <div class="content">
+                            <div class="title"><?= Yii::t('app', 'Corporate culture of a modern university') ?></div>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="overly"></div>
+                        <img src="/bg-images/carousel/3.thumbnail.jpg">
+                        <div class="content">
+                            <div class="title"><?= Yii::t('app', 'Hotline') ?></div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="arrows">
+                    <button id="prev">
+                        < </button>
+                            <button id="next">></button>
 
                 </div>
             </div>
-            <div class="item">
- 
-                <img src="/bg-images/carousel/3.carousel.jpg">
-                <div class="content">
-                     <div class="title">«Горячая» линия</div>
-                    <div class="description">это общественное признание товаров и услуг, отличающихся высоким качеством, надёжностью и доверием потребителей.</div>
-                    <div class="tel"><div class="svg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/></div></svg> <span>+7 777 000 77 77</span></div>
-                    <div class="button">Просмотреть</div>
-                
-                </div>
-            </div>
         </div>
-        <div class="thumbnail">
-            <div class="item">
-                <div class="overly"></div>
-                <img src="/bg-images/carousel/1.thumbnail.jpg">
-                <div class="content">
-                    <div class="title">
-                        Народный знак качества 
-                    </div>
-                    <div class="description">
-                        «БЕЗУПРЕЧНО»
-                    </div>
-                </div>
-
-            </div>
-            <div class="item">
-                <div class="overly"></div>
-                <img src="/bg-images/carousel/2.thumbnail.jpg">
-                <div class="content">
-                    <div class="title">
-                        Корпоративная культура
-                    
-                    </div>
-                    <div class="description">
-                        современного университета 
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="overly"></div>
-                <img src="/bg-images/carousel/3.thumbnail.jpg">
-                <div class="content">
-                    <div class="title">
-                        «Горячая» 
-                    </div>
-                    <div class="description">
-                        линия
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="arrows">
-            <button id="prev"><
-                </button>
-                    <button id="next">></button>
-
-        </div>
-    </div>
-</div>
     </div>
     <div class="third-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
-    
+
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-            <p>Приёмная комиссия</p>
+            <p><?= Yii::t('app', 'Admissions Committee') ?></p>
         </div>
         <div class="col-md-10 d-flex flex-column align-items:center my-3 px-0">
             <div class="col-md-10 d-flex justify-content-between admission-slider-buttons g-1 ">
-                <button type="button" class="admissionBtnLeft col-md-6 active position-relative ">
-                    <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg "></span>
-                    Инструкции по поступлению
+                <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
+                    <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
+                    <?= Yii::t('app', 'Admission Instructions') ?>
                 </button>
                 <button type="button" class="admissionBtnRight col-md-6">
-                    Международное сотрудничество
+                    <?= Yii::t('app', 'International Cooperation') ?>
                 </button>
+
             </div>
             <div class="admission-slider col-md-12 overflow-hidden w-100">
                 <div class="admission-move w-200 d-flex">
@@ -193,7 +199,7 @@ $this->title = 'Buketov University';
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">Бакалавриат</p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0">Инструкция по поступлению.</p>
+                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Admission instructions') ?></p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center col-md-3 w-30 my-3">
@@ -204,7 +210,7 @@ $this->title = 'Buketov University';
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">Магистратура</p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0">Инструкция по поступлению.</p>
+                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Admission instructions') ?></p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center col-md-3 w-30 my-3">
@@ -216,7 +222,7 @@ $this->title = 'Buketov University';
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">Доктарантура</p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0">Инструкция по поступлению.</p>
+                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Admission instructions') ?></p>
                             </div>
                         </div>
                     </div>
@@ -232,9 +238,9 @@ $this->title = 'Buketov University';
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2 ">
                                 <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Программы мобильности</p>
+                                    <p class="edu-title edu-title--bachelor m-0"><?= Yii::t('app', 'Mobility programs') ?></p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0">Узнайте о инструкции поступления на программы академической мобильности.</p>
+                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?></p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center col-md-3 w-50 my-3">
@@ -259,12 +265,10 @@ $this->title = 'Buketov University';
                             <div class="d-flex flex-column justify-content-center px-2">
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">
-                                        Программы стажировок
+                                        <?= Yii::t('app', 'Internship programs') ?>
                                     </p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0">Узнайте подробности подачи заявки на
-                                    стажировку и прохождение
-                                    практики.</p>
+                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?></p>
                             </div>
                         </div>
                     </div>
@@ -274,7 +278,7 @@ $this->title = 'Buketov University';
     </div>
     <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-            <p>Новости</p>
+            <p><?= Yii::t('app', 'News') ?></p>
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
@@ -319,7 +323,7 @@ $this->title = 'Buketov University';
     </div>
     <div class="fifth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-            <p>Предстоящие события</p>
+            <p><?= Yii::t('app', 'Upcoming Events') ?></p>
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch upcoming-event">
@@ -366,12 +370,13 @@ $this->title = 'Buketov University';
 
 <div class="sixth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
     <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-        <p>Блог Ректора</p>
+        <p><?= Yii::t('app', 'Rector\'s Blog') ?>
+</p>
     </div>
 
     <div class="col-md-10 d-flex justify-content-center align-items-center block-rector">
-       <div class="col-md-5  d-flex flex-column justify-content-center align-items-center box-img-rector">
-       <div class="skewX"></div>
+        <div class="col-md-5  d-flex flex-column justify-content-center align-items-center box-img-rector">
+            <div class="skewX"></div>
             <img src="/bg-images/rector.png">
         </div>
         <div class="col-md-7 w-70 d-flex flex-column justify-content-center align-items-start">
@@ -385,24 +390,26 @@ $this->title = 'Buketov University';
                 Спасибо.
             </p>
 
-        </div>   
-      
+        </div>
+
     </div>
 </div>
 
 <div class="seventh-block row col-md-12 w-100 d-flex flex-column align-items-center my-5">
-<!--<div class="col-md-10 d-flex justify-content-center align-items-center block-header">
+    <!--<div class="col-md-10 d-flex justify-content-center align-items-center block-header">
         <p>Форма обратной связи</p>
     </div>-->
-   <div class="d-flex justify-content-center my-5 g-0">
-    <div style="border-radius: 50px 0 0 50px;" class="col-md-5 d-flex justify-content-center align-items-center block-header">
-        <p>Форма обратной связи</p>
+    <div class="d-flex justify-content-center my-5 g-0">
+        <div style="border-radius: 50px 0 0 50px;"
+            class="col-md-5 d-flex justify-content-center align-items-center block-header">
+            <p><?= Yii::t('app', 'Feedback Form') ?></p>
+        </div>
+        <div style="border-radius: 0 50px 50px 0; background: transparent; border: 1px var(--indigoblue) solid;"
+            class="col-md-5 d-flex justify-content-center align-items-center block-header">
+            <p style=" color: var(--indigoblue);"><?= Yii::t('app', 'Citizens Reception Schedule') ?></p>
+        </div>
+
     </div>
-    <div style="border-radius: 0 50px 50px 0; background: transparent; border: 1px var(--indigoblue) solid;" class="col-md-5 d-flex justify-content-center align-items-center block-header">
-        <p style=" color: var(--indigoblue);">График приема граждан</p>
-    </div>
-   
-   </div>
     <div class="col-md-10 d-flex justify-content-center align-items-center my-5">
         <img width="80%" src="/bg-images/form.png">
 
@@ -411,19 +418,20 @@ $this->title = 'Buketov University';
 <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
 
     <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-        <p>СМИ о нас</p>
+        <p><?= Yii::t('app', 'Media About Us') ?></p>
     </div>
     <div class="col-md-10 d-flex justify-content-center align-items-center block-smi my-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch smi-about-us">
+        <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch smi-about-us">
             <div class="col">
                 <div class="card shadow-sm h-100 w-100 position-relative p-3">
                     <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
                     <div class="card-body d-flex flex-column justify-content-between position-relative">
-                        <p class="card-text text-gray">Сотрудничество в сфере образования и науки</p>
+                        <p class="card-text text-gray"><?= Yii::t('app', 'Cooperation in the field of education and science') ?></p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-gray border-gray">Просмотр</button>
+                                    class="btn btn-sm btn-outline-secondary text-gray border-gray"> <?= Yii::t('app', 'View') ?></button>
                             </div>
                         </div>
                     </div>
@@ -437,7 +445,7 @@ $this->title = 'Buketov University';
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-gray border-gray">Просмотр</button>
+                                    class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
                             </div>
                         </div>
                     </div>
@@ -451,7 +459,7 @@ $this->title = 'Buketov University';
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-gray border-gray">Просмотр</button>
+                                    class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
                             </div>
                         </div>
                     </div>

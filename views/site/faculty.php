@@ -8,7 +8,7 @@ use app\components\LanguageHelper;
         <h1>
             <br>
             <?= !empty($faculty) && !empty($faculty->{LanguageHelper::name()}) ? htmlspecialchars($faculty->{LanguageHelper::name()}) : '( Здесь ничего не задано )' ?>
-            
+            <?php echo Yii::t('app', 'faculty'); ?>
         </h1>
     </div>
 </div>
@@ -25,10 +25,10 @@ use app\components\LanguageHelper;
                 <h2>( Здесь ничего не задано )</h2>
                 <p>( Здесь ничего не задано )</p>
             <?php endif; ?>
-                <b><?= !empty($dean->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::surname()} . " " . $dean->{LanguageHelper::name()} . " " . $dean->{LanguageHelper::patronymic()})) : '( Здесь ничего не задано )' ?> </b>,
+                <b><?= !empty($dean->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::surname()} . " " . $dean->{LanguageHelper::name()} . " " . $dean->{LanguageHelper::patronymic()})) : '( Здесь ничего не задано )' ?> </b> -
 
-                декан факультета
-                <?= !empty($faculty->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($faculty->{LanguageHelper::name()})) : '( Здесь ничего не задано )' ?>,
+                <?= !empty($dean->{LanguageHelper::job_title()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()})) : '( Здесь ничего не задано )' ?>
+
             </p>
             <p>Email: <a href="">
                 <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
