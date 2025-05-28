@@ -5,14 +5,12 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "ref_photos".
+ * This is the model class for table "ref_photo".
  *
  * @property int $id
  * @property string|null $type
- *
- * @property Photos[] $photos
  */
-class RefPhotos extends \yii\db\ActiveRecord
+class RefPhoto extends \yii\db\ActiveRecord
 {
 
 
@@ -21,7 +19,7 @@ class RefPhotos extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'ref_photos';
+        return 'ref_photo';
     }
 
     /**
@@ -31,7 +29,7 @@ class RefPhotos extends \yii\db\ActiveRecord
     {
         return [
             [['type'], 'default', 'value' => null],
-            [['type'], 'string'],
+            [['type'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,16 +42,6 @@ class RefPhotos extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type' => 'Type',
         ];
-    }
-
-    /**
-     * Gets query for [[Photos]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPhotos()
-    {
-        return $this->hasMany(Photos::class, ['ref_photos_id' => 'id']);
     }
 
 }

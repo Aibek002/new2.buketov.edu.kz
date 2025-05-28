@@ -9,8 +9,10 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
+  
+    'language' => 'kz',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -50,7 +52,20 @@ $config = [
             ],
         ],
         */
+          'i18n' => [
+        'translations' => [
+            'app*' => [
+                'class' => 'yii\i18n\PhpMessageSource',
+                'basePath' => '@app/messages',
+                'sourceLanguage' => 'en-US',
+                'fileMap' => [
+                    'app' => 'app.php',
+                ],
+            ],
+        ],
     ],
+    ],
+    
     'params' => $params,
 ];
 
@@ -67,7 +82,7 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['127.0.0.1', '::1', '::ffff:127.0.0.1', 'localhost', '*'],
     ];
 }
 

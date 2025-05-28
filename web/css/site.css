@@ -433,18 +433,17 @@ main > .container {
   display: none;
 }
 .dropdown-toggle-header{
-  border: none;
-  background: var(--indigoblue);
-  color: white;
-  border-radius: 20px;
-  padding: 5px 10px;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  border-radius: 10px;
   position: relative;
   z-index: 10001;
 }
 .dropdown-toggle-header img{
   transform: rotate(0);
   transition: all 1s;
-
+  width: 45px;
   animation: CloseRotateIcon 1s linear 1 forwards;
 
 }
@@ -878,7 +877,7 @@ padding-inline-start: 20px;
 }
 .university-branding {
   padding: 2rem;
-  color: white; /* Индиго стиль */
+  color: var(--white); /* Индиго стиль */
   border-radius: 20px;
   max-width: 100%;
   margin: 2rem auto;

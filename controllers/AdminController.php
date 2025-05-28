@@ -10,23 +10,36 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Faculty;
+use app\models\Staff;
 
 
 class AdminController extends Controller
 {
 
-    public function actionIndex(){
+    public function actionIndex()
+    {
         return $this->render('index');
     }
 
-    public function actionFacultyAdminPanel(){
+    public function actionFacultyAdminPanel()
+    {
         $faculty = new Faculty();
-        if($faculty->load(Yii::$app->request->post()) && $faculty->save()){
+        if ($faculty->load(Yii::$app->request->post()) && $faculty->save()) {
             return $this->redirect(['admin/index']);
         }
-        return $this->render('faculty-admin-panel',
-        ['model'=>$faculty]
+        return $this->render(
+            'faculty-admin-panel',
+            ['model' => $faculty]
         );
+    }
+    public function actionStaffAdminPanel()
+    {
+        $staff = new Staff();
+        if ($staff->load(Yii::$app->request->post()) && $staff->save()) {
+            return $this->redirect(['admin/index']);
+        }
+        return $this->render('staff-admin-panel', ['model' => $staff]);
+
     }
 
 }

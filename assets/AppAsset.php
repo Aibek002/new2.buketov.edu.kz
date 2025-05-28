@@ -40,6 +40,7 @@ class AppAsset extends AssetBundle
         'css/site.css?v=' . filemtime(Yii::getAlias('@webroot/css/site.css')),
         'css/faculties.css?v=' . filemtime(Yii::getAlias('@webroot/css/faculties.css')),
         'css/admin-panel.css?v=' . filemtime(Yii::getAlias('@webroot/css/admin-panel.css')),
+        'css/nav-bar.css?v=' . filemtime(Yii::getAlias('@webroot/css/nav-bar.css')),
 
 
     ];

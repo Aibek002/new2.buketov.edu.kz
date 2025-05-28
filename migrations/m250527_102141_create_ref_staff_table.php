@@ -3,18 +3,18 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%ref_photos}}`.
+ * Handles the creation of table `{{%ref_staff}}`.
  */
-class m250516_103619_create_ref_photos_table extends Migration
+class m250527_102141_create_ref_staff_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%ref_photos}}', [
+        $this->createTable('{{%ref_staff}}', [
             'id' => $this->primaryKey(),
-            'type' => $this->text(),
+            'type' => $this->string(255),
         ]);
     }
 
@@ -23,6 +23,6 @@ class m250516_103619_create_ref_photos_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%ref_photos}}');
+        $this->dropTable('{{%ref_staff}}');
     }
 }

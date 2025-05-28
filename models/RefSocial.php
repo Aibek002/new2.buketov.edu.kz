@@ -9,8 +9,6 @@ use Yii;
  *
  * @property int $id
  * @property string|null $type
- *
- * @property Social[] $socials
  */
 class RefSocial extends \yii\db\ActiveRecord
 {
@@ -31,7 +29,7 @@ class RefSocial extends \yii\db\ActiveRecord
     {
         return [
             [['type'], 'default', 'value' => null],
-            [['type'], 'string'],
+            [['type'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,16 +42,6 @@ class RefSocial extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type' => 'Type',
         ];
-    }
-
-    /**
-     * Gets query for [[Socials]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSocials()
-    {
-        return $this->hasMany(Social::class, ['ref_social_id' => 'id']);
     }
 
 }

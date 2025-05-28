@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "ref_staff".
  *
  * @property int $id
- * @property string $type
+ * @property string|null $type
  *
  * @property Staff[] $staff
  */
@@ -30,8 +30,8 @@ class RefStaff extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type'], 'required'],
-            [['type'], 'string'],
+            [['type'], 'default', 'value' => null],
+            [['type'], 'string', 'max' => 255],
         ];
     }
 

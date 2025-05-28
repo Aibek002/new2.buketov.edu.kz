@@ -5,14 +5,12 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "type_social".
+ * This is the model class for table "ref_article".
  *
  * @property int $id
  * @property string|null $type
- *
- * @property Social[] $socials
  */
-class TypeSocial extends \yii\db\ActiveRecord
+class RefArticle extends \yii\db\ActiveRecord
 {
 
 
@@ -21,7 +19,7 @@ class TypeSocial extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'type_social';
+        return 'ref_article';
     }
 
     /**
@@ -31,7 +29,7 @@ class TypeSocial extends \yii\db\ActiveRecord
     {
         return [
             [['type'], 'default', 'value' => null],
-            [['type'], 'string'],
+            [['type'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,16 +42,6 @@ class TypeSocial extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type' => 'Type',
         ];
-    }
-
-    /**
-     * Gets query for [[Socials]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSocials()
-    {
-        return $this->hasMany(Social::class, ['type_social_id' => 'id']);
     }
 
 }

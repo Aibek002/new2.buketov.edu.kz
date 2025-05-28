@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "faculty".
+ * This is the model class for table "departament".
  *
  * @property int $id
  * @property string|null $name_kz
@@ -17,11 +17,12 @@ use Yii;
  * @property string|null $welcome_kz
  * @property string|null $welcome_ru
  * @property string|null $welcome_en
+ * @property int|null $faculty_id
  *
- * @property Departament[] $departaments
+ * @property Faculty $faculty
  * @property Staff[] $staff
  */
-class Faculty extends \yii\db\ActiveRecord
+class Departament extends \yii\db\ActiveRecord
 {
 
 
@@ -30,7 +31,7 @@ class Faculty extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'faculty';
+        return 'departament';
     }
 
     /**
@@ -39,9 +40,11 @@ class Faculty extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name_kz', 'name_ru', 'name_en', 'information_kz', 'information_ru', 'information_en', 'welcome_kz', 'welcome_ru', 'welcome_en'], 'default', 'value' => null],
+            [['name_kz', 'name_ru', 'name_en', 'information_kz', 'information_ru', 'information_en', 'welcome_kz', 'welcome_ru', 'welcome_en', 'faculty_id'], 'default', 'value' => null],
             [['information_kz', 'information_ru', 'information_en', 'welcome_kz', 'welcome_ru', 'welcome_en'], 'string'],
+            [['faculty_id'], 'integer'],
             [['name_kz', 'name_ru', 'name_en'], 'string', 'max' => 255],
+            [['faculty_id'], 'exist', 'skipOnError' => true, 'targetClass' => Faculty::class, 'targetAttribute' => ['faculty_id' => 'id']],
         ];
     }
 
@@ -61,17 +64,18 @@ class Faculty extends \yii\db\ActiveRecord
             'welcome_kz' => 'Welcome Kz',
             'welcome_ru' => 'Welcome Ru',
             'welcome_en' => 'Welcome En',
+            'faculty_id' => 'Faculty ID',
         ];
     }
 
     /**
-     * Gets query for [[Departaments]].
+     * Gets query for [[Faculty]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getDepartaments()
+    public function getFaculty()
     {
-        return $this->hasMany(Departament::class, ['faculty_id' => 'id']);
+        return $this->hasOne(Faculty::class, ['id' => 'faculty_id']);
     }
 
     /**
@@ -81,7 +85,7 @@ class Faculty extends \yii\db\ActiveRecord
      */
     public function getStaff()
     {
-        return $this->hasMany(Staff::class, ['faculty_id' => 'id']);
+        return $this->hasMany(Staff::class, ['departament_id' => 'id']);
     }
 
 }

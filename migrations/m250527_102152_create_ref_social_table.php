@@ -3,18 +3,18 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%type_social}}`.
+ * Handles the creation of table `{{%ref_social}}`.
  */
-class m250516_104617_create_type_social_table extends Migration
+class m250527_102152_create_ref_social_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%type_social}}', [
+        $this->createTable('{{%ref_social}}', [
             'id' => $this->primaryKey(),
-            'type' => $this->text(),
+            'type' => $this->string(255),
         ]);
     }
 
@@ -23,6 +23,6 @@ class m250516_104617_create_type_social_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%type_social}}');
+        $this->dropTable('{{%ref_social}}');
     }
 }

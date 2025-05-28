@@ -8,14 +8,26 @@ use Yii;
  * This is the model class for table "staff".
  *
  * @property int $id
- * @property string $name
- * @property string $surname
- * @property string $patronymic
  * @property int $ref_staff_id
- * @property string|null $short_information
+ * @property string|null $surname_kz
+ * @property string|null $surname_ru
+ * @property string|null $surname_en
+ * @property string|null $name_kz
+ * @property string|null $name_ru
+ * @property string|null $name_en
+ * @property string|null $patronymic_kz
+ * @property string|null $patronymic_ru
+ * @property string|null $patronymic_en
+ * @property string|null $information_kz
+ * @property string|null $information_ru
+ * @property string|null $information_en
+ * @property string|null $email
+ * @property string|null $phone
+ * @property int|null $faculty_id
  * @property int|null $departament_id
  *
- * @property Departaments $departament
+ * @property Departament $departament
+ * @property Faculty $faculty
  * @property RefStaff $refStaff
  */
 class Staff extends \yii\db\ActiveRecord
@@ -36,11 +48,13 @@ class Staff extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['short_information', 'departament_id'], 'default', 'value' => null],
-            [['name', 'surname', 'patronymic', 'ref_staff_id'], 'required'],
-            [['name', 'surname', 'patronymic', 'short_information'], 'string'],
-            [['ref_staff_id', 'departament_id'], 'integer'],
-            [['departament_id'], 'exist', 'skipOnError' => true, 'targetClass' => Departaments::class, 'targetAttribute' => ['departament_id' => 'id']],
+            [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en', 'information_kz', 'information_ru', 'information_en', 'email', 'phone', 'faculty_id', 'departament_id'], 'default', 'value' => null],
+            [['ref_staff_id'], 'required'],
+            [['ref_staff_id', 'faculty_id', 'departament_id'], 'integer'],
+            [['information_kz', 'information_ru', 'information_en', 'email', 'phone'], 'string'],
+            [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en'], 'string', 'max' => 255],
+            [['departament_id'], 'exist', 'skipOnError' => true, 'targetClass' => Departament::class, 'targetAttribute' => ['departament_id' => 'id']],
+            [['faculty_id'], 'exist', 'skipOnError' => true, 'targetClass' => Faculty::class, 'targetAttribute' => ['faculty_id' => 'id']],
             [['ref_staff_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefStaff::class, 'targetAttribute' => ['ref_staff_id' => 'id']],
         ];
     }
@@ -52,11 +66,22 @@ class Staff extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'surname' => 'Surname',
-            'patronymic' => 'Patronymic',
             'ref_staff_id' => 'Ref Staff ID',
-            'short_information' => 'Short Information',
+            'surname_kz' => 'Surname Kz',
+            'surname_ru' => 'Surname Ru',
+            'surname_en' => 'Surname En',
+            'name_kz' => 'Name Kz',
+            'name_ru' => 'Name Ru',
+            'name_en' => 'Name En',
+            'patronymic_kz' => 'Patronymic Kz',
+            'patronymic_ru' => 'Patronymic Ru',
+            'patronymic_en' => 'Patronymic En',
+            'information_kz' => 'Information Kz',
+            'information_ru' => 'Information Ru',
+            'information_en' => 'Information En',
+            'email' => 'Email',
+            'phone' => 'Phone',
+            'faculty_id' => 'Faculty ID',
             'departament_id' => 'Departament ID',
         ];
     }
@@ -68,7 +93,17 @@ class Staff extends \yii\db\ActiveRecord
      */
     public function getDepartament()
     {
-        return $this->hasOne(Departaments::class, ['id' => 'departament_id']);
+        return $this->hasOne(Departament::class, ['id' => 'departament_id']);
+    }
+
+    /**
+     * Gets query for [[Faculty]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFaculty()
+    {
+        return $this->hasOne(Faculty::class, ['id' => 'faculty_id']);
     }
 
     /**
