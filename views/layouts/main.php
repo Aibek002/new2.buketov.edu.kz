@@ -31,6 +31,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+<!-- Bootstrap 5 CSS -->
 
 </head>
 
@@ -40,14 +41,14 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <header id="header">
         <div class="navbar navbar-expand-md fixed-top  p-3 header">
             <a class="navbar-brand" href="<?= Yii::$app->homeUrl ?>">
-                <?= Html::img('https://dist.buketov.edu.kz/img/logo_buketov.png', [
+                <?= Html::img('/bg-images/logo-buketov.png', [
                     'alt' => 'Buketov Logo',
                     'class' => 'navbar-logo logoBuketov',
-                    'style' => 'height: 40px;' // Установите нужную высоту
+                    'style' => 'height: 6s0px;' // Установите нужную высоту
                 ]) ?>
             </a>
             <ul class="navbar-nav ms-auto text-white px-5">
-                <li class="nav-item d-flex align-items-center">
+                <li class="nav-item d-flex align-items-center lang-switcher">
                     <?= Html::a('kz', Url::current(['lang' => 'kz']), ['class' => 'lang-link']) ?>
                     <?= Html::a('ru', Url::current(['lang' => 'ru']), ['class' => 'lang-link']) ?>
                     <?= Html::a('en', Url::current(['lang' => 'en']), ['class' => 'lang-link']) ?>
@@ -62,7 +63,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         <img src="/bg-images/svg/toOpen.svg" alt="Menu Icon">
                     </button>
                     <div class="dropdown-menu-header">
-                        <img width="200px" src="https://dist.buketov.edu.kz/img/logo_buketov.png">
+                        <img width="200px" src="/bg-images/bg-first-block-half1.png">
                         <div class="d-flex g-2 my-5 dropdown-main-flex">
                             <div class="dropdown-main-menu">
                                 <!-- <p class="type-person">Пожалуйста, выберите, кем вы являетесь:</p>-->
@@ -80,13 +81,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             </div>
                             <div class="dropdown-submenus">
                                 <div class="dropdown-submenu university-info">
-                                    <a href="#" class="menu-item">История университета <span>></span></a>
-                                    <a href="#" class="menu-item">Миссия университета <span>></span></a>
-                                    <a href="#" class="menu-item">Программа развития <span>></span></a>
-                                    <a href="#" class="menu-item">Мы в рейтингах <span>></span></a>
-                                    <a href="#" class="menu-item">Корпоративное управление <span>></span></a>
+                                    <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-university'], ['class' => 'menu-item']) ?>
+                                   <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'ratings'], ['class' => 'menu-item']) ?>
+
+                                    <?= Html::a('Корпоративное управление <span>></span>', ['site/index'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Административные службы <span>></span>', ['site/management-structure' , 'type'=>'administrative-services'], ['class' => 'menu-item']) ?>
+                                   
                                     <a href="#" class="menu-item">Советы <span>></span></a>
-                                    <a href="#" class="menu-item">Административные службы <span>></span></a>
                                     <a href="#" class="menu-item">Свидетельство об аккредитации <span>></span></a>
                                 </div>
                                 <div class="dropdown-submenu incoming">

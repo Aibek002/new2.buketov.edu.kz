@@ -1,4 +1,4 @@
-<?php 
+<?php
 use app\components\LanguageHelper;
 
 ?>
@@ -15,6 +15,7 @@ use app\components\LanguageHelper;
 
 <div class="first-flex-faculty p-5 my-5">
     <div class="faculty-container">
+
         <div class="faculty-text">
             <?php if (!empty($faculty)): ?>
                 <h2><?= !empty($faculty->{LanguageHelper::welcome()}) ? nl2br(htmlspecialchars($faculty->{LanguageHelper::welcome()})) : '( Здесь ничего не задано )' ?>
@@ -25,37 +26,33 @@ use app\components\LanguageHelper;
                 <h2>( Здесь ничего не задано )</h2>
                 <p>( Здесь ничего не задано )</p>
             <?php endif; ?>
-                <b><?= !empty($dean->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::surname()} . " " . $dean->{LanguageHelper::name()} . " " . $dean->{LanguageHelper::patronymic()})) : '( Здесь ничего не задано )' ?> </b> -
+            <b><?= !empty($dean->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::surname()} . " " . $dean->{LanguageHelper::name()} . " " . $dean->{LanguageHelper::patronymic()})) : '( Здесь ничего не задано )' ?>
+            </b> -
 
-                <?= !empty($dean->{LanguageHelper::job_title()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()})) : '( Здесь ничего не задано )' ?>
+            <?= !empty($dean->{LanguageHelper::job_title()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()})) : '( Здесь ничего не задано )' ?>
 
-            </p>
+                </p>
             <p>Email: <a href="">
-                <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
-            </a></p>
+                    <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
+                </a></p>
             <p>Для просмотра истории факультета перейдите по ссылке</p>
         </div>
 
         <div class="faculty-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png"
-                alt="Декан факультета" />
+            <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Декан факультета" />
         </div>
+
     </div>
     <h1 class="department-title">Кафедры</h1>
 
     <div class="departments-container">
-        <div class="department-box">
-            <h3>Кафедра 1</h3>
-        </div>
-        <div class="department-box">
-            <h3>Кафедра 2</h3>
-        </div>
-        <div class="department-box">
-            <h3>Кафедра 3</h3>
-        </div>
-        <div class="department-box">
-            <h3>Кафедра 4</h3>
-        </div>
+        <?php foreach ($departament as $departament_item): ?>
+            <div class="department-box">
+                <h3><?= $departament_item->{LanguageHelper::name()} ?></h3>
+            </div>
+        <?php endforeach; ?>
     </div>
+
+    <!-- <?= !empty($departament->name_ru) ? nl2br(htmlspecialchars($departament->{LanguageHelper::name()})) : '( Здесь ничего не задано )' ?> -->
 
 </div>

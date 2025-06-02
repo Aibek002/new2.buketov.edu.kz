@@ -28,5 +28,6 @@ return [
     'Internship programs'=> 'Тағылымдама бағдарламалары',
     'Mobility programs'=> 'Ұтқырлық бағдарламалары',
     'This website was designed by Aibek Seitzhan'=> 'Бұл веб-сайтты Айбек Сейтжан жасаған',
+    'administrative-services'=> 'Әкімшілік Қызметтер',
 
 ];

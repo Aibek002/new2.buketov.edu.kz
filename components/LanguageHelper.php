@@ -30,5 +30,12 @@ class LanguageHelper
      public static function job_title() {
         return self::field('job_title');
     }
+     public static function title() {
+        return self::field('title');
+    }
+    public static function content() {
+        return self::field('content');
+    }
+
    
 }

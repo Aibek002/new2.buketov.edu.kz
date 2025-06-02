@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   /* Определение переменной шрифта */
 
-  --second-family: 'IBM Plex Mono', monospace;  
+  --second-family: 'IBM Plex Mono', monospace;
 
   /* Цвета */
   --darkblue: var(--darkblue);
-  --indigoblue:#405e89;
-  --sand:#c0a282;
+  --indigoblue: #405e89;
+  --indigoblue-50: #405e8998;
+
+  --sand: #c0a282;
   --white: #fff;
   --transparent-white-50: rgba(255, 255, 255, 0.466);
   --gray: #999;
@@ -49,12 +52,13 @@
     --font-700: 600;
   }
    */
- @media (max-width: 1200px) {
+@media (max-width: 1200px) {
   :root {
-  --font-96: 86px;
+    --font-96: 86px;
 
   }
 }
+
 @media (max-width: 768px) {
   :root {
     --font-14: 10px;
@@ -69,48 +73,54 @@
 
     --font-700: 600;
   }
-  @media (max-width: 568px) {
-  :root {
-    --font-14: 8px;
-    --font-16: 10px;
-    --font-18: 11px;
-    --font-22: 13px;
-    --font-28: 16px;
-    --font-36: 20px;
-    --font-96: 56px;
 
-    --font-700: 600;
+  @media (max-width: 568px) {
+    :root {
+      --font-14: 8px;
+      --font-16: 10px;
+      --font-18: 11px;
+      --font-22: 13px;
+      --font-28: 16px;
+      --font-36: 20px;
+      --font-96: 56px;
+
+      --font-700: 600;
+    }
   }
 }
-}
+
 /* ========== CAROUSEL CONTAINERS ========== */
-.carousel-flex{
+.carousel-flex {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-block:10%;
+  margin-block: 10%;
   position: relative;
   z-index: 9999;
   width: 100vw;
 
 }
-.carousel{
+
+.carousel {
   position: relative;
   height: 500px;
   width: 80%;
 }
-.carousel .list .item{
+
+.carousel .list .item {
   position: absolute;
   inset: 0 0 0 0;
 }
-.carousel .list .item img{
+
+.carousel .list .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 
 }
-.carousel .list .item .content{
+
+.carousel .list .item .content {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -126,35 +136,48 @@
   gap: 20px;
 
 }
-.carousel .list .item .content .title{
-font-weight: 600; /* bold иногда слишком жирный, 600 — оптимально выразительно */
-font-size: 2em;  /* немного крупнее для акцента */
-letter-spacing: 2px; /* 10px слишком разрежено, 2px добавит стиль, но сохранит читаемость */
-  font-family: sans-serif, sans-serif; /* с fallback для стабильности */
-text-transform: uppercase; /* придаёт силу и стиль (по желанию) */
-line-height: 1.3; /* добавляет немного воздуха вокруг строки */
+
+.carousel .list .item .content .title {
+  font-weight: 600;
+  /* bold иногда слишком жирный, 600 — оптимально выразительно */
+  font-size: 2em;
+  /* немного крупнее для акцента */
+  letter-spacing: 2px;
+  /* 10px слишком разрежено, 2px добавит стиль, но сохранит читаемость */
+  font-family: sans-serif, sans-serif;
+  /* с fallback для стабильности */
+  text-transform: uppercase;
+  /* придаёт силу и стиль (по желанию) */
+  line-height: 1.3;
+  /* добавляет немного воздуха вокруг строки */
 
 }
-.carousel .list .item .content .description{
-  font-weight: 300; /* чуть толще, для лучшей читаемости */
-  font-size: 1em; /* немного больше — выразительнее, но не громоздко */
-  letter-spacing: 2px; /* 10px слишком большое расстояние, делает текст разреженным */
-    font-family: sans-serif, sans-serif; /* добавлен fallback для кроссбраузерности */
-  line-height: 1.6; 
+
+.carousel .list .item .content .description {
+  font-weight: 300;
+  /* чуть толще, для лучшей читаемости */
+  font-size: 1em;
+  /* немного больше — выразительнее, но не громоздко */
+  letter-spacing: 2px;
+  /* 10px слишком большое расстояние, делает текст разреженным */
+  font-family: sans-serif, sans-serif;
+  /* добавлен fallback для кроссбраузерности */
+  line-height: 1.6;
 }
 
 /* ========== THUMBNAIL CONTAINERS ========== */
-.carousel .thumbnail{
+.carousel .thumbnail {
   position: absolute;
   max-width: max-content;
-  bottom:-20%;
-  left:30%;
-  filter:blur(0px);
-  display:flex;
-  gap:20px;
+  bottom: -20%;
+  left: 30%;
+  filter: blur(0px);
+  display: flex;
+  gap: 20px;
   z-index: 100;
   /* animation: showThumbnail 0.5s linear 1 forwards; */
 }
+
 /* @keyframes showThumbnail{
   to{
     left:50%;
@@ -162,60 +185,66 @@ line-height: 1.3; /* добавляет немного воздуха вокру
     }
 } */
 
-.carousel .thumbnail .item{
+.carousel .thumbnail .item {
   width: 200px;
   height: 300px;
   position: relative;
   flex-shrink: 0;
 }
-.carousel .thumbnail .item img{
+
+.carousel .thumbnail .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
-.carousel .thumbnail .item .content{
+
+.carousel .thumbnail .item .content {
   position: absolute;
   bottom: 20px;
   left: 20px;
   z-index: 2;
 }
-.arrows{
+
+.arrows {
   position: absolute;
-  bottom:50px;
+  bottom: 50px;
   left: 50%;
   width: 1140px;
   max-width: 60%;
   transform: translateX(-70%);
   padding-right: 50%;
   display: flex;
-  gap:20px;
-  z-index:3;
-  }
-.arrows button{
+  gap: 20px;
+  z-index: 3;
+}
+
+.arrows button {
   border: 1px #fff solid;
-  background: transparent; 
-  color:var(--white);
+  background: transparent;
+  color: var(--white);
   width: 50px;
   height: 50px;
-  border-radius:100%;
+  border-radius: 100%;
   font-weight: bold;
   font-size: large;
   font-family: monospace;
 
 }
-.carousel .thumbnail .item .content .title ,
-.carousel .thumbnail .item .content .description
-{
+
+.carousel .thumbnail .item .content .title,
+.carousel .thumbnail .item .content .description {
   color: #fff;
 }
+
 .carousel .list .item .content .tel {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.carousel .list .item .content .tel .svg{
- background: transparent;
+
+.carousel .list .item .content .tel .svg {
+  background: transparent;
   border-radius: 50px;
   width: 50px;
   height: 50px;
@@ -224,33 +253,37 @@ line-height: 1.3; /* добавляет немного воздуха вокру
   align-items: center;
   border: 1px #fff solid;
 }
-.carousel .list .item .content .tel  span{
+
+.carousel .list .item .content .tel span {
   background: transparent;
   padding: 10px;
   border-radius: 50px;
   padding-inline: 20px;
   border: 1px #fff solid;
 }
-.carousel .list .item .content .button{
+
+.carousel .list .item .content .button {
   width: 150px;
   border: 1px #fff solid;
   padding: 10px;
   border-radius: 50px;
   text-align: center;
 }
-.carousel .thumbnail .item .overly{
+
+.carousel .thumbnail .item .overly {
   height: 100%;
   width: 100%;
   position: absolute;
-  bottom:0;
-  background: linear-gradient(to top , rgba(15, 33, 71, 0.73) 0%, rgba(7, 35, 72, 0.73) 40%, rgba(0, 0, 0, 0) 100%);
-  border-radius:  20px;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(15, 33, 71, 0.73) 0%, rgba(7, 35, 72, 0.73) 40%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 20px;
   z-index: 1;
 }
 
-.carousel .list .item:nth-last-child(1){
-  z-index:1;
+.carousel .list .item:nth-last-child(1) {
+  z-index: 1;
 }
+
 /* .dropdown-menu {
     position: fixed;
     top: 0;
@@ -308,27 +341,31 @@ line-height: 1.3; /* добавляет немного воздуха вокру
 
 .carousel .list .item .content .title,
 .carousel .list .item .content .description,
-.carousel .list .item .content .tel .svg ,
+.carousel .list .item .content .tel .svg,
 .carousel .list .item .content .tel span,
-.carousel .list .item .content .button{
+.carousel .list .item .content .button {
   transform: translateY(150px);
-  filter:blur(20px);
+  filter: blur(20px);
   opacity: 0;
   animation: showContent 0.5s ease-out 1 forwards;
 }
-@keyframes showContent{
-  to{
+
+@keyframes showContent {
+  to {
     transform: translateY(0px);
-    filter:blur(0);
+    filter: blur(0);
     opacity: 1;
   }
 }
-.carousel .list .item .content .title{
-    animation-delay: .3s;
+
+.carousel .list .item .content .title {
+  animation-delay: .3s;
 }
-.carousel .list .item .content .description{
-    animation-delay: .4s;
+
+.carousel .list .item .content .description {
+  animation-delay: .4s;
 }
+
 .carousel.next .list .item:nth-child(3) img {
   width: 200px;
   height: 300px;
@@ -339,77 +376,83 @@ line-height: 1.3; /* добавляет немного воздуха вокру
   animation: outPicture 0.5s linear 1 forwards;
 }
 
-@keyframes outPicture{
-  to{
+@keyframes outPicture {
+  to {
     width: 100%;
     height: 100%;
-    left:0;
+    left: 0;
     bottom: 0%;
     object-fit: cover;
     border-radius: 20px;
   }
 }
 
-.carousel.next .thumbnail{
-  transform: translateX(200px); 
+.carousel.next .thumbnail {
+  transform: translateX(200px);
   animation: moveThumbnail .5s linear 1 forwards;
 }
-@keyframes moveThumbnail{
-  to{
+
+@keyframes moveThumbnail {
+  to {
     transform: translateX(0);
   }
 }
 
-.carousel.next .thumbnail .item:nth-last-child(1){
-width: 0px;
-overflow: hidden;
-height: 300px;
-opacity: 0;
-animation: moveThumbnailitems .5s linear 1 forwards;
+.carousel.next .thumbnail .item:nth-last-child(1) {
+  width: 0px;
+  overflow: hidden;
+  height: 300px;
+  opacity: 0;
+  animation: moveThumbnailitems .5s linear 1 forwards;
 }
 
-.carousel.prev .list .item:nth-child(2) img{
+.carousel.prev .list .item:nth-child(2) img {
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
-  bottom:0;
+  bottom: 0;
   z-index: 3;
   animation: leavePicture 0.5s linear 1 forwards;
 }
-.carousel.prev .thumbnail .item:nth-child(1){
+
+.carousel.prev .thumbnail .item:nth-child(1) {
   width: 0;
   overflow: hidden;
   animation: moveThumbnailitems .5s linear 1 forwards;
-} 
-.carousel.prev .thumbnail{
-  transform: translateX(-200px); 
+}
+
+.carousel.prev .thumbnail {
+  transform: translateX(-200px);
   animation: moveThumbnail .5s linear 1 forwards;
 }
 
-@keyframes moveThumbnailitems{
-  to{
+@keyframes moveThumbnailitems {
+  to {
     width: 200px;
     height: 300px;
     opacity: 1;
   }
 }
-@keyframes moveThumbnail{
-  to{
+
+@keyframes moveThumbnail {
+  to {
     transform: translateX(0);
   }
 }
-@keyframes leavePicture{
-  to{
-  width: 200px;
-  height: 300px;
-  position: absolute;
-  left: 30%;
-  bottom:-20%;
+
+@keyframes leavePicture {
+  to {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    left: 30%;
+    bottom: -20%;
   }
 }
+
 /* ========== GLOBAL CONTAINERS ========== */
-main > .container {
+main>.container {
   padding: 0;
 }
 
@@ -424,15 +467,19 @@ main > .container {
 
 /* ========== HEADER ========== */
 .header {
-  background-color:transparent;
+  background-color: transparent;
+
 }
-.header.scrolled{
-  background-color:var(--indigoblue);
+
+.header.scrolled {
+  background-color: var(--indigoblue-50);
 }
-.logoBuketov{
+
+.logoBuketov {
   display: none;
 }
-.dropdown-toggle-header{
+
+.dropdown-toggle-header {
   border: 1px solid var(--white);
   background: transparent;
   color: var(--white);
@@ -440,18 +487,21 @@ main > .container {
   position: relative;
   z-index: 10001;
 }
-.dropdown-toggle-header img{
+
+.dropdown-toggle-header img {
   transform: rotate(0);
   transition: all 1s;
   width: 45px;
   animation: CloseRotateIcon 1s linear 1 forwards;
 
 }
-@keyframes CloseRotateIcon{
-  to{
+
+@keyframes CloseRotateIcon {
+  to {
     transform: rotate(180deg);
   }
 }
+
 .dropdown-toggle-header img.rotate {
   animation: rotateIcon 1s linear 1 forwards;
 }
@@ -460,38 +510,44 @@ main > .container {
   from {
     transform: rotate(180deg);
   }
+
   to {
     transform: rotate(0deg);
   }
 }
 
 
-.dropdown-menu-header.active{
+.dropdown-menu-header.active {
   display: flex;
   flex-direction: column;
-  justify-content:start;
-  gap:10px;
+  justify-content: start;
+  gap: 10px;
 }
-.dropdown-menu-header{
+
+.dropdown-menu-header {
   position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    padding: 20px;
-    background-color: var(--indigoblue);
-    display: none; /* Скрыто по умолчанию */
-    justify-content: center;
-    z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--indigoblue);
+  display: none;
+  /* Скрыто по умолчанию */
+  justify-content: center;
+  z-index: 1000;
 }
-.dropdown-menu-header img{
+
+.dropdown-menu-header img {
   margin-inline-start: 30px;
 }
-.dropdown-main-flex{
+
+.dropdown-main-flex {
   height: 80%;
 }
+
 /*Dropdown-main-menu Role*/
-.dropdown-menu-header.active .dropdown-main-menu{
+.dropdown-menu-header.active .dropdown-main-menu {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -503,10 +559,9 @@ main > .container {
   overflow-x: hidden;
   border-right: 1px #fff solid;
 }
-.dropdown-menu-header.active .dropdown-main-menu button ,
-.dropdown-menu-header.active .dropdown-main-menu a
 
-{
+.dropdown-menu-header.active .dropdown-main-menu button,
+.dropdown-menu-header.active .dropdown-main-menu a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -516,24 +571,26 @@ main > .container {
   border: none;
   color: var(--white);
   width: 100%;
-    font-family: sans-serif ;
+  font-family: sans-serif;
   font-weight: bold;
   padding: 0 20px;
   font-size: var(--font-28);
   text-decoration: none;
 }
-.dropdown-menu-header.active .dropdown-main-menu button:hover{
+
+.dropdown-menu-header.active .dropdown-main-menu button:hover {
   color: rgb(255, 255, 255);
   transition: 0.3s;
   transform: scale(1.01);
   text-shadow:
-  1px 1px 0 grey,
-  1px 2px 0 grey,
-  2px 4px 10px rgba(0, 0, 0, 0.5),
-  2px 4px 15px rgba(128, 128, 128, 0.7);
+    1px 1px 0 grey,
+    1px 2px 0 grey,
+    2px 4px 10px rgba(0, 0, 0, 0.5),
+    2px 4px 15px rgba(128, 128, 128, 0.7);
 
 }
-.dropdown-menu-header.active .dropdown-submenus{
+
+.dropdown-menu-header.active .dropdown-submenus {
   width: 30%;
   border-right: 1px #fff solid;
   height: 100%;
@@ -541,13 +598,14 @@ main > .container {
   overflow-x: hidden;
 
 }
+
 .dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.university-info,
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation  {
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation {
   display: none;
   justify-content: start;
   flex-direction: column;
@@ -555,31 +613,31 @@ main > .container {
   padding: 20px;
   width: 100%;
 }
+
 .dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.university-info.active,
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming.active  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student.active  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties.active  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate.active  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science.active  , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation.active  {
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming.active,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student.active,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties.active,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate.active,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science.active,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation.active {
   display: flex;
 }
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.university-info a ,
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming a , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student a , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties a , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate a , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science a ,
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science button, 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation a 
 
-{
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.university-info a,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming a,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student a,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties a,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate a,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science a,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science button,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation a {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--white);
   width: 100%;
-  font-family: sans-serif ;
+  font-family: sans-serif;
   font-weight: bold;
   padding: 0 20px;
   font-size: var(--font-18);
@@ -587,82 +645,86 @@ main > .container {
   font-family: sans-serif;
   letter-spacing: 0.1em;
   transition: 0.3s;
-  border:none;
+  border: none;
   background-color: transparent;
   text-decoration: none;
   text-align: left;
 }
-.dropdown-menu-header.active .dropdown-submenus  .dropdown-submenu.university-info a:hover ,
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming a:hover , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student a:hover , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties a:hover , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate a:hover , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science a:hover , 
-.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science button:hover, 
+
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.university-info a:hover,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.incoming a:hover,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.student a:hover,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.faculties a:hover,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.graduate a:hover,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science a:hover,
+.dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.science button:hover,
 
 .dropdown-menu-header.active .dropdown-submenus .dropdown-submenu.international-cooperation a:hover {
   transition: 0.3s;
   transform: scale(1.01);
   text-shadow:
-  1px 1px 0 grey,
-  1px 2px 0 grey,
-  2px 4px 10px rgba(0, 0, 0, 0.5),
-  2px 4px 15px rgba(128, 128, 128, 0.7);
+    1px 1px 0 grey,
+    1px 2px 0 grey,
+    2px 4px 10px rgba(0, 0, 0, 0.5),
+    2px 4px 15px rgba(128, 128, 128, 0.7);
 
 
 }
-.dropdown-menu-header.active  .dropdown-menu-social {
-display: flex;
-flex-direction: column;
-width: 30%;
-gap: 10%;
-height: 100%;
-padding-inline-start: 20px;
+
+.dropdown-menu-header.active .dropdown-menu-social {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 1%;
+  height: 100%;
+  padding-inline-start: 20px;
 }
-.dropdown-menu-header.active  .dropdown-menu-social p{
-  font-family: sans-serif ;
+
+.dropdown-menu-header.active .dropdown-menu-social p {
+  font-family: sans-serif;
   font-weight: bold;
   padding: 0 0px;
   font-size: var(--font-22);
 }
-.dropdown-menu-header.active  .dropdown-menu-social .researchCenter,
-.dropdown-menu-header.active  .dropdown-menu-social .DissertationCouncil ,
-.dropdown-menu-header.active  .dropdown-menu-social .CompetitionsAndGrands,
-.dropdown-menu-header.active  .dropdown-menu-social .Conferences,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent
 
-
- {
+.dropdown-menu-header.active .dropdown-menu-social .researchCenter,
+.dropdown-menu-header.active .dropdown-menu-social .DissertationCouncil,
+.dropdown-menu-header.active .dropdown-menu-social .CompetitionsAndGrands,
+.dropdown-menu-header.active .dropdown-menu-social .Conferences,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent {
   display: none;
 }
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021{
+
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021 {
   display: none;
 }
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022.active,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021.active{
 
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    color: var(--white);
-    width: 100%;
-    padding: 20px;
-    transition: 0.3s;
-    gap: 20px;
-    background-color: var(--indigoblue);
-    border:1px var(--white) solid;
-    border-radius: 20px;
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022.active,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021.active {
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: var(--white);
+  width: 100%;
+  padding: 20px;
+  transition: 0.3s;
+  gap: 20px;
+  background-color: var(--indigoblue);
+  border: 1px var(--white) solid;
+  border-radius: 20px;
 
 }
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active a,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active a,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022.active a,
-.dropdown-menu-header.active  .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021.active a{
+
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active a,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active a,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022.active a,
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021.active a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -673,28 +735,25 @@ padding-inline-start: 20px;
   color: var(--white);
   font-weight: var(--font-700);
 }
-.dropdown-menu-header.active  .dropdown-menu-social.researchCenter p , 
-.dropdown-menu-header.active  .dropdown-menu-social.researchCenter .social,
-.dropdown-menu-header.active  .dropdown-menu-social.DissertationCouncil p , 
-.dropdown-menu-header.active  .dropdown-menu-social.DissertationCouncil .social ,
-.dropdown-menu-header.active  .dropdown-menu-social.CompetitionsAndGrands p ,
-.dropdown-menu-header.active  .dropdown-menu-social.CompetitionsAndGrands .social,
-.dropdown-menu-header.active  .dropdown-menu-social.Conferences p,
-.dropdown-menu-header.active  .dropdown-menu-social.Conferences .social,
-.dropdown-menu-header.active  .dropdown-menu-social.ResearchJobStudent p,
-.dropdown-menu-header.active  .dropdown-menu-social.ResearchJobStudent .social
 
-
-{
- display: none;
+.dropdown-menu-header.active .dropdown-menu-social.researchCenter p,
+.dropdown-menu-header.active .dropdown-menu-social.researchCenter .social,
+.dropdown-menu-header.active .dropdown-menu-social.DissertationCouncil p,
+.dropdown-menu-header.active .dropdown-menu-social.DissertationCouncil .social,
+.dropdown-menu-header.active .dropdown-menu-social.CompetitionsAndGrands p,
+.dropdown-menu-header.active .dropdown-menu-social.CompetitionsAndGrands .social,
+.dropdown-menu-header.active .dropdown-menu-social.Conferences p,
+.dropdown-menu-header.active .dropdown-menu-social.Conferences .social,
+.dropdown-menu-header.active .dropdown-menu-social.ResearchJobStudent p,
+.dropdown-menu-header.active .dropdown-menu-social.ResearchJobStudent .social {
+  display: none;
 }
-.dropdown-menu-header.active  .dropdown-menu-social.researchCenter .researchCenter,
-.dropdown-menu-header.active  .dropdown-menu-social.DissertationCouncil .DissertationCouncil ,
-.dropdown-menu-header.active  .dropdown-menu-social.CompetitionsAndGrands .CompetitionsAndGrands ,
-.dropdown-menu-header.active  .dropdown-menu-social.Conferences .Conferences ,
-.dropdown-menu-header.active  .dropdown-menu-social.ResearchJobStudent .ResearchJobStudent
 
-{
+.dropdown-menu-header.active .dropdown-menu-social.researchCenter .researchCenter,
+.dropdown-menu-header.active .dropdown-menu-social.DissertationCouncil .DissertationCouncil,
+.dropdown-menu-header.active .dropdown-menu-social.CompetitionsAndGrands .CompetitionsAndGrands,
+.dropdown-menu-header.active .dropdown-menu-social.Conferences .Conferences,
+.dropdown-menu-header.active .dropdown-menu-social.ResearchJobStudent .ResearchJobStudent {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -703,13 +762,12 @@ padding-inline-start: 20px;
   padding: 20px;
 
 }
-.dropdown-menu-header.active  .dropdown-menu-social.researchCenter .researchCenter a,
-.dropdown-menu-header.active  .dropdown-menu-social.DissertationCouncil .DissertationCouncil a,
-.dropdown-menu-header.active  .dropdown-menu-social.CompetitionsAndGrands .CompetitionsAndGrands a,
-.dropdown-menu-header.active  .dropdown-menu-social.Conferences .Conferences a,
-.dropdown-menu-header.active  .dropdown-menu-social.ResearchJobStudent .ResearchJobStudent button 
 
-{
+.dropdown-menu-header.active .dropdown-menu-social.researchCenter .researchCenter a,
+.dropdown-menu-header.active .dropdown-menu-social.DissertationCouncil .DissertationCouncil a,
+.dropdown-menu-header.active .dropdown-menu-social.CompetitionsAndGrands .CompetitionsAndGrands a,
+.dropdown-menu-header.active .dropdown-menu-social.Conferences .Conferences a,
+.dropdown-menu-header.active .dropdown-menu-social.ResearchJobStudent .ResearchJobStudent button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -719,52 +777,55 @@ padding-inline-start: 20px;
   padding: 0 20px;
   font-size: var(--font-16);
   font-family: sans-serif;
-  transition:0.3s;
-  text-decoration:none;
+  transition: 0.3s;
+  text-decoration: none;
   border: none;
   background-color: transparent;
 }
 
 
-.dropdown-menu-header.active  .dropdown-menu-social.researchCenter .researchCenter a:hover,
-.dropdown-menu-header.active  .dropdown-menu-social.DissertationCouncil .DissertationCouncil a:hover ,
-.dropdown-menu-header.active  .dropdown-menu-social.CompetitionsAndGrands .CompetitionsAndGrands a:hover,
-.dropdown-menu-header.active  .dropdown-menu-social.Conferences .Conferences a:hover,
-.dropdown-menu-header.active  .dropdown-menu-social.ResearchJobStudent .ResearchJobStudent button:hover
-
-{
+.dropdown-menu-header.active .dropdown-menu-social.researchCenter .researchCenter a:hover,
+.dropdown-menu-header.active .dropdown-menu-social.DissertationCouncil .DissertationCouncil a:hover,
+.dropdown-menu-header.active .dropdown-menu-social.CompetitionsAndGrands .CompetitionsAndGrands a:hover,
+.dropdown-menu-header.active .dropdown-menu-social.Conferences .Conferences a:hover,
+.dropdown-menu-header.active .dropdown-menu-social.ResearchJobStudent .ResearchJobStudent button:hover {
   transition: 0.3s;
   transform: scale(1.01);
   text-shadow:
-  1px 1px 0 grey,
-  1px 2px 0 grey,
-  2px 4px 10px rgba(0, 0, 0, 0.5),
-  2px 4px 15px rgba(128, 128, 128, 0.7);
+    1px 1px 0 grey,
+    1px 2px 0 grey,
+    2px 4px 10px rgba(0, 0, 0, 0.5),
+    2px 4px 15px rgba(128, 128, 128, 0.7);
 }
 
 
-.dropdown-menu-header.active  .dropdown-menu-social .social{
+.dropdown-menu-header.active .dropdown-menu-social .social {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10%;
 }
+
 .nav-link {
   font-weight: 400;
   font-size: 16px;
   text-align: center;
   color: #fff;
   font-family: var(--second-family), sans-serif;
-  padding-block: 0 ;
+  padding-block: 0;
 }
- body {
-        font-family: var(--second-family), sans-serif; /* Используем переменную шрифта */
-    }
+
+body {
+  font-family: var(--second-family), sans-serif;
+  /* Используем переменную шрифта */
+}
 
 
 .nav-link:hover {
-  color: #ffff00; /* цвет при наведении */
+  color: #ffff00;
+  /* цвет при наведении */
 }
+
 /* ========== FIRST BLOCK ========== */
 .first-block {
   /* background:  
@@ -778,8 +839,10 @@ padding-inline-start: 20px;
   top: 0;
   z-index: 0;
 }
-.first-block-half{
-  background: linear-gradient(to right,#405e89 50%,#405e896c 100%);
+
+.first-block-half {
+  /* background: linear-gradient(to right,#405e89 50%,#405e896c 100%); */
+  background: var(--indigoblue-50);
   position: absolute;
   z-index: 1;
   height: 100vh;
@@ -790,9 +853,10 @@ padding-inline-start: 20px;
   justify-content: center;
   flex-direction: column;
 }
-.first-block.overly{
+
+.first-block.overly {
   position: absolute;
-  top:0;
+  top: 0;
   width: 100%;
   /* -height: 600px; */
   min-height: 100vh;
@@ -809,21 +873,23 @@ padding-inline-start: 20px;
   transition: transform 1s;
   filter: blur(0px);
 }
-.additional-links{
-  gap:1%;
+
+.additional-links {
+  gap: 1%;
   min-height: 300px;
   position: relative;
   top: -150px;
 }
 
-.additional-links-text{
+.additional-links-text {
   font-weight: 700;
   font-size: 18px;
   text-align: center;
   color: #fff;
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  
+
 }
+
 /* .additional-links-item{
   width: 100%;
 } */
@@ -877,11 +943,13 @@ padding-inline-start: 20px;
   padding-block: 5px;
   font-weight: var(--font-700);
   font-size: var(--font-36);
-  color:var(--white);
+  color: var(--white);
 }
+
 .university-branding {
   padding: 2rem;
-  color: var(--white); /* Индиго стиль */
+  color: var(--white);
+  /* Индиго стиль */
   border-radius: 20px;
   max-width: 100%;
   margin: 2rem auto;
@@ -897,15 +965,17 @@ padding-inline-start: 20px;
 
 .university-motto {
   font-size: 1.2rem;
-    font-family: sans-serif, sans-serif; ;
-  margin: 0 0.8rem ;
+  color: #ccc;
+  font-family: sans-serif, sans-serif;
+  margin: 0 0.8rem;
 }
 
 .university-year {
   font-size: 1rem;
   color: #ccc;
   margin: 0 0.8rem;
-    font-family: sans-serif, sans-serif; ;
+  font-family: sans-serif, sans-serif;
+  ;
 
 }
 
@@ -972,10 +1042,11 @@ padding-inline-start: 20px;
   padding: 15px;
 }
 
-.box-icon img{
-width: 51px;
-height: 51px;
+.box-icon img {
+  width: 51px;
+  height: 51px;
 }
+
 /* ========== EDUCATION TEXT ========== */
 .edu-title {
   font-size: var(--font-22);
@@ -992,32 +1063,43 @@ height: 51px;
   width: 90%;
 }
 
-.second-block,.third-block,.fourth-block , .fifth-block,.sixth-block,.seventh-block{
-    position: relative;
-    z-index: 999;
-    background: var(--white);
-    overflow: hidden;
+.second-block,
+.third-block,
+.fourth-block,
+.fifth-block,
+.sixth-block,
+.seventh-block {
+  position: relative;
+  z-index: 999;
+  background: var(--white);
+  overflow: hidden;
 
 }
-.news-item{
-    overflow: hidden;
-    height: 200px;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
+
+.news-item {
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
-.news-item .card.shadow-sm, .card.shadow-sm video{
+
+.news-item .card.shadow-sm,
+.card.shadow-sm video {
   border-radius: 20px;
   height: 100%;
   width: 100%;
   background: #090827;
 }
-.news-item:hover .news-text{
-display:none;
+
+.news-item:hover .news-text {
+  display: none;
 }
-.news-text{
-  display:none;
+
+.news-text {
+  display: none;
 }
+
 .upcoming-event-item {
   /* При необходимости можно добавить отступы или другие стили */
 }
@@ -1026,7 +1108,8 @@ display:none;
   position: relative;
   width: 100%;
   height: 300px;
-  transition: transform 0.3s ease; /* плавная анимация */
+  transition: transform 0.3s ease;
+  /* плавная анимация */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1069,46 +1152,53 @@ display:none;
   color: var(--darkblue);
   line-height: 100px;
 }
-.upcoming-event-month{
+
+.upcoming-event-month {
   font-weight: 700;
   font-size: var(--font-24);
   line-height: 87%;
   text-align: center;
   color: var(--darkblue);
 }
-.upcoming-event-time{
+
+.upcoming-event-time {
   font-weight: 300;
   font-size: var(--font-16);
   text-align: center;
   color: var(--gray);
 }
-.upcoming-event-title{
+
+.upcoming-event-title {
   font-style: italic;
   font-weight: 300;
   font-size: var(--font-16);
   text-align: center;
   color: var(--gray);
 }
-.upcoming-event-text{
+
+.upcoming-event-text {
   display: none;
 }
 
 
 /* ========== SIXTH BLOCK - BLOCK RECTOR ========== */
-.block-rector{
+.block-rector {
   margin-top: 200px;
 }
-.box-img-rector{
+
+.box-img-rector {
   position: relative;
-   margin-right: 5%;
-  
+  margin-right: 5%;
+
 }
-.box-img-rector img{
- position: absolute;
+
+.box-img-rector img {
+  position: absolute;
   bottom: -20px;
   transition: 0.5s all;
 
 }
+
 /* .box-img-rector:hover{
   position: relative;
   background: var(--indigoblue);
@@ -1124,40 +1214,44 @@ display:none;
   transform: skewX(0deg);
 
 } */
-.skewX{
- background: var(--indigoblue);
+.skewX {
+  background: var(--indigoblue);
   border-radius: 50px;
   width: 90%;
   height: 300px;
   transition: 0.5s all;
 }
-.box-img-rector:hover .skewX{
+
+.box-img-rector:hover .skewX {
   transform: skewX(20deg);
-  
+
 
 }
-.box-img-rector:hover img{
+
+.box-img-rector:hover img {
   transform: scale(1.1);
   bottom: 0px;
   left: 120px;
   filter: drop-shadow(-7px 1px 17px);
 }
 
-.name-rector{
+.name-rector {
   font-weight: var(--font-700);
   font-size: 4em;
   line-height: 100%;
   color: var(--indigoblue);
-    font-family: sans-serif, sans-serif;
+  font-family: sans-serif, sans-serif;
 }
-.rector-position{
+
+.rector-position {
   font-style: italic;
   font-weight: 400;
   font-size: var(--font-20);
   line-height: 67%;
   color: var(--gray);
 }
-.rector-text{
+
+.rector-text {
   font-style: italic;
   font-weight: 400;
   font-size: var(--font-16);
@@ -1166,10 +1260,11 @@ display:none;
 }
 
 /* ========== EIGHTH BLOCK - BLOCK SMI ========== */
-.block-smi{
-  gap:30px;
+.block-smi {
+  gap: 30px;
 }
-.smi-logo-buketov{
+
+.smi-logo-buketov {
   width: 63px;
   height: 63px;
   position: absolute;
@@ -1177,6 +1272,7 @@ display:none;
   left: 40%;
   z-index: 999;
 }
+
 /* ========== FOOTER ========== */
 .footer {
   background-color: var(--indigoblue);
@@ -1186,7 +1282,7 @@ display:none;
   margin-top: 100px;
 }
 
-.footer > .container {
+.footer>.container {
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -1215,18 +1311,18 @@ display:none;
   margin: 0 0 15px 0;
 }
 
-.nav li > form > button.logout {
+.nav li>form>button.logout {
   padding-top: 7px;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
+.nav>li>form>button.logout:focus,
+.nav>li>form>button.logout:hover {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.75);
 }
 
-.nav > li > form > button.logout:focus {
+.nav>li>form>button.logout:focus {
   outline: none;
 }
 
@@ -1236,96 +1332,139 @@ display:none;
 
 /* ========== MEDIA QUERIES ========== */
 @media (max-width: 576px) {
-   main,.footer {
+
+  main,
+  .footer {
     display: none !important;
   }
-  .container-sm, .container {
+
+  .container-sm,
+  .container {
     max-width: 576px;
   }
+
   .first-block {
-     display: none !important;
+    display: none !important;
 
   }
+
   .block-header {
     border-radius: 0;
   }
+
   .box-icon {
     display: none !important;
   }
-  .block-rector{
-  flex-direction: column;
 
-}
-.name-rector{
-  line-height: 100%;
-  text-align: center;
-}
+  .block-rector {
+    flex-direction: column;
+
+  }
+
+  .name-rector {
+    line-height: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
-    main,.footer {
-       display: none !important;
+
+  main,
+  .footer {
+    display: none !important;
 
   }
-  .container-md, .container-sm, .container {
+
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 768px;
   }
+
   .first-block {
     height: 100%;
     padding: 150px 20px;
   }
+
   .first-block .col-md-10 img {
     width: 90%;
   }
+
   .align-items-stretch {
     padding-inline: 10%;
   }
+
   .block-header {
     border-radius: 0;
   }
+
   .box-icon {
     display: none !important;
   }
-  .block-rector {
-flex-direction: column;
 
-}
-.name-rector,.rector-text,.rector-position{
-  line-height: 100%;
-  text-align: center;
-}
+  .block-rector {
+    flex-direction: column;
+
+  }
+
+  .name-rector,
+  .rector-text,
+  .rector-position {
+    line-height: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 992px) {
-    main,.footer {
+
+  main,
+  .footer {
     display: none;
   }
-  .container-lg, .container-md, .container-sm, .container {
+
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 992px;
   }
+
   .box-icon {
     display: none !important;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1200px){
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
+@media (min-width: 992px) and (max-width: 1200px) {
+
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1200px;
   }
-  .calendar-bg{
-    top:15px;
+
+  .calendar-bg {
+    top: 15px;
   }
- 
+
   /* .box-icon {
     display: none !important;
   } */
 }
 
 @media(min-width:1200px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 100%;
   }
-  .additional-links-item{
-  width: 32.333%;
-}
+
+  .additional-links-item {
+    width: 32.333%;
+  }
 }

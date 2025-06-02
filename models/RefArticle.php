@@ -9,6 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string|null $type
+ *
+ * @property Article[] $articles
  */
 class RefArticle extends \yii\db\ActiveRecord
 {
@@ -42,6 +44,16 @@ class RefArticle extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type' => 'Type',
         ];
+    }
+
+    /**
+     * Gets query for [[Articles]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getArticles()
+    {
+        return $this->hasMany(Article::class, ['ref_article_id' => 'id']);
     }
 
 }

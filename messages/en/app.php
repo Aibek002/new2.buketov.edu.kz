@@ -9,5 +9,5 @@ return [
     'это общественное признание товаров и услуг, отличающихся высоким качеством, надёжностью и доверием потребителей.' => 'It is public recognition of products and services known for their high quality, reliability, and consumer trust.',
     'Просмотреть' => 'View',
     'This website was designed by Aibek Seitzhan'=> 'This website was designed by Aibek Seitzhan',
-
+    'administrative-services'=> 'Administrative Services',
 ];

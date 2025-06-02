@@ -1,0 +1,12 @@
+.title-block{
+    margin-top: 150px;
+    margin-inline: 50px;
+    font-family: 'Arial', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--indigoblue);
+    padding: 10px 15px;
+    border-left: 5px solid var(--indigoblue); /* синяя полоса слева */
+    background-color: #f9f9f9;
+    border-radius: 3px;
+}

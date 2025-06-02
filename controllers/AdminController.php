@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Departament;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -11,6 +12,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Faculty;
 use app\models\Staff;
+use app\models\Article;
 
 
 class AdminController extends Controller
@@ -24,7 +26,9 @@ class AdminController extends Controller
     public function actionFacultyAdminPanel()
     {
         $faculty = new Faculty();
-        if ($faculty->load(Yii::$app->request->post()) && $faculty->save()) {
+        if ($faculty->load(Yii::$app->request->post()) 
+        && 
+        $faculty->save()) {
             return $this->redirect(['admin/index']);
         }
         return $this->render(
@@ -42,5 +46,24 @@ class AdminController extends Controller
 
     }
 
+    public function actionDepartamentAdminPanel()
+    {
+        $departament = new Departament();
+        if (Yii::$app->request->isPost) {
+            if ($departament->load(Yii::$app->request->post()) && $departament->save()) {
+                return $this->redirect(['admin/index']);
+            }
+        }
+        return $this->render('departament-admin-panel' , ['model'=> $departament]);
+
+    }
+
+    public function actionArticleAdminPanel(){
+        $article = new Article();
+        if ($article->load(Yii::$app->request->post()) && $article->save()) {
+            return $this->redirect(['admin/index']);
+        }
+        return $this->render('article-admin-panel', ['model'=> $article]);
+    }
 }
 

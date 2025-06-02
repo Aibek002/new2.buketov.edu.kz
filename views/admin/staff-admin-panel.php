@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\RefStaff;
 use app\models\Faculty;
+use dosamigos\tinymce\TinyMce;
 
 
 /** @var yii\web\View $this */
@@ -13,7 +14,7 @@ use app\models\Faculty;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="admin-panel p-5 my-5">
+<div class=" p-5 my-5">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -32,9 +33,115 @@ use app\models\Faculty;
 
  
 
-    <?= $form->field($model, 'information_kz')->textarea(['rows' => 4]) ?>
-    <?= $form->field($model, 'information_ru')->textarea(['rows' => 4]) ?>
-    <?= $form->field($model, 'information_en')->textarea(['rows' => 4]) ?>
+    <?= $form->field($model, 'information_kz')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'information_ru')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'information_en')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'welcome_kz')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'welcome_ru')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'welcome_en')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'job_title_kz')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'job_title_ru')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'job_title_en')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+    
     <?= $form->field($model, 'email')->textInput(['maxlength' => true])  ?>
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true])  ?>
 

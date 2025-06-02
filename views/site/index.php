@@ -23,7 +23,7 @@ $this->title = 'Buketov University';
             <!--<img width="60%" src="https://dist.buketov.edu.kz/img/logo_buketov.png">https://backend.narxozedu.kz/uploads/December2024/06626793-0eb5-4ef0-8ff5-e4d29b7d579c.mp4-->
         </div>
     </div>
-    <div class="first-block overly"></div>
+    <!-- <div class="first-block overly"></div> -->
     <div class="second-block col-md-12 d-flex justify-content-center">
         <!--<div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 card-row col-md-10 d-flex justify-content-between align-items-stretch additional-links">

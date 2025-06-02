@@ -25,6 +25,12 @@ use Yii;
  * @property string|null $phone
  * @property int|null $faculty_id
  * @property int|null $departament_id
+ * @property string|null $welcome_kz
+ * @property string|null $welcome_ru
+ * @property string|null $welcome_en
+ * @property string|null $job_title_kz
+ * @property string|null $job_title_ru
+ * @property string|null $job_title_en
  *
  * @property Departament $departament
  * @property Faculty $faculty
@@ -48,10 +54,10 @@ class Staff extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en', 'information_kz', 'information_ru', 'information_en', 'email', 'phone', 'faculty_id', 'departament_id'], 'default', 'value' => null],
+            [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en', 'information_kz', 'information_ru', 'information_en', 'email', 'phone', 'faculty_id', 'departament_id', 'welcome_kz', 'welcome_ru', 'welcome_en', 'job_title_kz', 'job_title_ru', 'job_title_en'], 'default', 'value' => null],
             [['ref_staff_id'], 'required'],
             [['ref_staff_id', 'faculty_id', 'departament_id'], 'integer'],
-            [['information_kz', 'information_ru', 'information_en', 'email', 'phone'], 'string'],
+            [['information_kz', 'information_ru', 'information_en', 'email', 'phone', 'welcome_kz', 'welcome_ru', 'welcome_en', 'job_title_kz', 'job_title_ru', 'job_title_en'], 'string'],
             [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en'], 'string', 'max' => 255],
             [['departament_id'], 'exist', 'skipOnError' => true, 'targetClass' => Departament::class, 'targetAttribute' => ['departament_id' => 'id']],
             [['faculty_id'], 'exist', 'skipOnError' => true, 'targetClass' => Faculty::class, 'targetAttribute' => ['faculty_id' => 'id']],
@@ -83,6 +89,12 @@ class Staff extends \yii\db\ActiveRecord
             'phone' => 'Phone',
             'faculty_id' => 'Faculty ID',
             'departament_id' => 'Departament ID',
+            'welcome_kz' => 'Welcome Kz',
+            'welcome_ru' => 'Welcome Ru',
+            'welcome_en' => 'Welcome En',
+            'job_title_kz' => 'Job Title Kz',
+            'job_title_ru' => 'Job Title Ru',
+            'job_title_en' => 'Job Title En',
         ];
     }
 

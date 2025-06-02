@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Departament;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -10,6 +11,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\Faculty;
 use app\models\Staff;
+use app\models\Article;
 
 class SiteController extends Controller
 {
@@ -69,124 +71,43 @@ class SiteController extends Controller
     }
     public function actionFaculty($name)
     {
+        $lang = Yii::$app->language;
+        // 'select name_ . $lang , '
+
         $faculty = Faculty::findOne(['name_ru' => $name]);
+        $faculty_id = $faculty->id;
         $dean = Staff::find()
-            ->joinWith(['faculty', 'refStaff']) // связи между таблицами
+            ->joinWith(['refStaff']) // связи между таблицами
             ->where([
-                'faculty.name_ru' => $name,
+                'staff.faculty_id' => $faculty_id,
                 'ref_staff.type' => 'dean',
             ])
             ->one();
 
-        return $this->render('faculty', ['faculty' => $faculty , 'dean'=> $dean]);
+        $departament = Departament::findAll(['faculty_id' => $faculty_id]);
+        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament]);
     }
-    public function actionDissertationWorkOfLaw()
+    public function actionArticle($type)
     {
-        return $this->render('dissertation_work_of_law');
-    }
-    public function actionDissertationWorkOfHistory()
-    {
-        return $this->render('dissertation_work_of_history');
-    }
-    public function actionDissertationWorkOfMathematics()
-    {
-        return $this->render('dissertation_work_of_mathematics');
-    }
-    public function actionDissertationWorkOfPhysics()
-    {
-        return $this->render('dissertation_work_of_physics');
-    }
-    public function actionDissertationWorkOfPedagogy()
-    {
-        return $this->render('dissertation_work_of_pedagogy');
-    }
-    public function actionDissertationWorkOfKazakhLanguage()
-    {
-        return $this->render('dissertation_work_of_kaz_language');
-    }
-    public function actionDissertationWorkOfBiolagy()
-    {
-        return $this->render('dissertation_work_of_biolagy');
-    }
-    public function actionDissertationWorkOfChemistry()
-    {
-        return $this->render('dissertation_work_of_chemistry');
-    }
-    public function actionDissertationWorkOfForeignLanguage()
-    {
-        return $this->render('dissertation_work_of_foreign_language');
-    }
-    public function actionDissertationWorkOfEconomics()
-    {
-        return $this->render('dissertation_work_of_economics');
-    }
-    public function actionDissertationWorkOfPhilology()
-    {
-        return $this->render('dissertation_work_of_philology');
-    }
-    public function actionDissertationWorkOfThermophysics()
-    {
-        return $this->render('dissertation_work_of_thermophysics');
-    }
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+        $lang = Yii::$app->language;
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
 
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        $article = Article::find(['type' => $type])
+            ->joinWith(['refArticle']) // связи между таблицами
+            ->where([
+                'ref_article.type' => $type,
+
+            ])->one();
+        ;
+        return $this->render('article', ['model' => $article]);
+    }
+    public function actionManagementStructure($type)
+    {
+        $lang = Yii::$app->language;
+        $staff = Staff::find()->joinWith(['refStaff'])->where(['ref_staff.type' => $type])->all();
+        return $this->render('management-structure', ['model' => $staff, 'type' => $type]);
+
     }
 
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
 
-        return $this->goHome();
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }
