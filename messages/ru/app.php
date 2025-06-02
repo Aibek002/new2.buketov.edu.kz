@@ -29,5 +29,6 @@ return [
     'Mobility programs'=> 'Программы мобильности',
     'This website was designed by Aibek Seitzhan'=> 'Этот веб-сайт был разработан Айбеком Сейтжаном',
     'administrative-services'=> 'Административные Службы',
+    'Corporate governance'=> 'Корпоративный управление',
 
 ];

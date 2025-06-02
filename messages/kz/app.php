@@ -29,5 +29,6 @@ return [
     'Mobility programs'=> 'Ұтқырлық бағдарламалары',
     'This website was designed by Aibek Seitzhan'=> 'Бұл веб-сайтты Айбек Сейтжан жасаған',
     'administrative-services'=> 'Әкімшілік Қызметтер',
+    'Corporate governance'=> 'Корпоративтік басқару',
 
 ];

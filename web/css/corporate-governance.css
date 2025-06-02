@@ -1,0 +1,70 @@
+.corporate-container {
+    margin-inline: 50px;
+}
+
+.select-content-corporate-governance {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+}
+
+.select-content-corporate-governance button {
+    padding: 20px 10px;
+    background: var(--white);
+    border: 1px solid var(--indigoblue);
+    background-color: var(--light-gray);
+    color: var(--indigoblue);
+    font-size: var(--font-18);
+    font-weight: var(--font-700);
+    transition: transform 0.3s ease;
+
+}
+
+.select-content-corporate-governance button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px var(--indigoblue);
+}
+
+.select-content-corporate-governance button:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.select-content-corporate-governance button:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.title-content {
+    padding: 20px;
+    margin-block: 50px;
+    font-family: 'Arial', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--indigoblue);
+    padding: 10px 15px;
+    border-left: 5px solid var(--indigoblue);
+    background-color: var(--light-gray);
+    border-radius: 10px;
+}
+
+.content-corporate-governance {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+}
+.content-corporate-governance button {
+   border: 1px solid var(--indigoblue);
+   border-radius: 10px;
+   background-color: var(--light-gray);
+   padding: 20px 0px;
+   color: var(--indigoblue);
+   font-size: var(--font-18);
+   font-weight: var(--font-700);
+   transition: transform 0.3s ease;
+}
+.content-corporate-governance button:hover {
+    transform: scale(1.1);
+}
+#pdfViewer{
+    margin-inline: 25%;
+    margin-block: 100px ;
+}

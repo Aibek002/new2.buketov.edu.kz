@@ -10,4 +10,5 @@ return [
     'Просмотреть' => 'View',
     'This website was designed by Aibek Seitzhan'=> 'This website was designed by Aibek Seitzhan',
     'administrative-services'=> 'Administrative Services',
+    'Corporate governance'=> 'Corporate governance',
 ];

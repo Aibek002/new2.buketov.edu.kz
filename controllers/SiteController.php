@@ -110,4 +110,10 @@ class SiteController extends Controller
     }
 
 
+    public function actionCorparate()
+    {
+
+        return $this->render('corparate');
+    }
+
 }
