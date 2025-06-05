@@ -108,7 +108,7 @@ class SiteController extends Controller
         return $this->render('management-structure', ['model' => $staff, 'type' => $type]);
 
     }
-
+    
 
     public function actionCorparate()
     {
