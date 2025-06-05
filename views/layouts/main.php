@@ -86,7 +86,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'ratings'], ['class' => 'menu-item']) ?>
 
-                                    <?= Html::a('Корпоративное управление <span>></span>', ['site/index'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Корпоративное управление <span>></span>', ['site/corparate'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Административные службы <span>></span>', ['site/management-structure' , 'type'=>'administrative-services'], ['class' => 'menu-item']) ?>
                                    
                                     <a href="#" class="menu-item">Советы <span>></span></a>
