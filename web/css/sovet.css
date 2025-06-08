@@ -1,0 +1,14 @@
+
+
+.uchenie-sovet,
+.academ-sovet,
+.nauchno-sovet,
+.sovet-etica{
+    display: none;
+}
+.uchenie-sovet.active,
+.academ-sovet.active,
+.nauchno-sovet.active,
+.sovet-etica.active{
+    display: block;
+}

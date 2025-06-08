@@ -13,7 +13,7 @@ $this->title = Yii::t("app", "Corporate governance");
     <div class="title-page">
         <?= $this->title ?>
     </div>
-    <div class="select-content-corporate-governance">
+    <div class="select-section">
         <button id="loadSoleShareHolderBtn"
             data-lang="<?= $lang ?>"><?= Yii::t("app", "Decisions of the Sole Shareholder") ?>
         </button>
@@ -35,7 +35,7 @@ $this->title = Yii::t("app", "Corporate governance");
         <div class="title-content">
             <?= Yii::t("app", "Decisions of the Sole Shareholder") ?>
         </div>
-        <div class="content-corporate-governance">
+        <div class="button-section">
             <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
             <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
             <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
@@ -66,7 +66,7 @@ $this->title = Yii::t("app", "Corporate governance");
         <div class="title-content">
             <?= Yii::t("app", "Meeting of the board of directors") ?>
         </div>
-        <div class="content-corporate-governance">
+        <div class="button-section">
             <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
             <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
             <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
@@ -91,7 +91,7 @@ $this->title = Yii::t("app", "Corporate governance");
         <div class="title-content">
             <?= Yii::t("app", "Documents Anti-corruption Compliance Service") ?>
         </div>
-        <div class="content-corporate-governance">
+        <div class="button-section">
             <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Regulation on ACS') ?></button>
             <button onclick="loadPDF('/pdf/file2.pdf')"><?= Yii::t('app', 'Reports') ?></button>
             <button onclick="loadPDF('/pdf/file3.pdf')"><?= Yii::t('app', 'ACS Documents') ?></button>
@@ -101,7 +101,7 @@ $this->title = Yii::t("app", "Corporate governance");
         <div class="title-content">
             <?= Yii::t("app", "Corporate events") ?>
         </div>
-        <div class="content-corporate-governance">
+        <div class="button-section">
             <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
             <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
             <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
@@ -128,7 +128,7 @@ $this->title = Yii::t("app", "Corporate governance");
         <div class="title-content">
             <?= Yii::t("app", "Board meeting") ?>
         </div>
-        <div class="content-corporate-governance">
+        <div class="button-section">
             <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
             <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
             <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>

@@ -108,7 +108,7 @@ class SiteController extends Controller
         return $this->render('management-structure', ['model' => $staff, 'type' => $type]);
 
     }
-    
+
 
     public function actionCorparate()
     {
@@ -116,4 +116,16 @@ class SiteController extends Controller
         return $this->render('corparate');
     }
 
+    public function actionSovet()
+    {
+        return $this->render('sovet');
+    }
+    public function actionAdmission()
+    {
+        return $this->render('admission');
+    }
+      public function actionInternationalStudents()
+    {
+        return $this->render('international-students');
+    }
 }

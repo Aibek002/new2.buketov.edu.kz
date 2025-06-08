@@ -1,0 +1,8 @@
+.bakalavriat,.magistrant,.doctorant{
+    display: none;
+}
+.bakalavriat.active,
+.magistrant.active,
+.doctorant.active{
+    display: block;
+}
