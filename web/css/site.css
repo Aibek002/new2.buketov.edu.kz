@@ -181,7 +181,7 @@
 }
 
 .person-section .person-info {
-  font-size: var(--font-16);
+  font-size: var(--font-14);
   font-family: 'Courier New', Courier, monospace;
   color: var(--gray);
 

@@ -87,18 +87,16 @@ class SiteController extends Controller
         $departament = Departament::findAll(['faculty_id' => $faculty_id]);
         return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament]);
     }
-    public function actionArticle($type)
+    public function actionArticle($type , $title)
     {
         $lang = Yii::$app->language;
 
-
-        $article = Article::find(['type' => $type])
+        $article = Article::find(['type' => $type , 'title_en' => $title ])
             ->joinWith(['refArticle']) // связи между таблицами
             ->where([
                 'ref_article.type' => $type,
 
             ])->one();
-        ;
         return $this->render('article', ['model' => $article]);
     }
     public function actionManagementStructure($type)

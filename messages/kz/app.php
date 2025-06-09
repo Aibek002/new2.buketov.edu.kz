@@ -52,4 +52,6 @@ return [
     'Reports'=> 'Есептер',
     'ACS Documents'=> 'АКА құжаттары',
     'Comprehensive Work Plans'=> 'Жұмыстың кешенді жоспарлары',
+    'Admission Committee' => 'Қабылдау Комиссиясы',
+
 ];

@@ -1,0 +1,111 @@
+<?= $form->field($model, 'information_kz')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'information_ru')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+<?= $form->field($model, 'information_en')->widget(TinyMce::class, [
+    'options' => ['rows' => 10],
+    'language' => 'ru',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount"
+        ],
+        'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+    ]
+]); ?>
+
+
+    <?= $form->field($model, 'welcome_kz')->widget(TinyMce::class, [
+        'options' => ['rows' => 10],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste code help wordcount"
+            ],
+            'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+        ]
+    ]); ?>
+    <?= $form->field($model, 'welcome_ru')->widget(TinyMce::class, [
+        'options' => ['rows' => 10],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste code help wordcount"
+            ],
+            'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+        ]
+    ]); ?>
+    <?= $form->field($model, 'welcome_en')->widget(TinyMce::class, [
+        'options' => ['rows' => 10],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste code help wordcount"
+            ],
+            'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+        ]
+    ]); ?>
+    
+    <?= $form->field($model, 'job_title_kz')->widget(TinyMce::class, [
+        'options' => ['rows' => 10],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste code help wordcount"
+            ],
+            'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+        ]
+    ]); ?>
+    <?= $form->field($model, 'job_title_ru')->widget(TinyMce::class, [
+        'options' => ['rows' => 10],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste code help wordcount"
+            ],
+            'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+        ]
+    ]); ?>
+    <?= $form->field($model, 'job_title_en')->widget(TinyMce::class, [
+        'options' => ['rows' => 10],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste code help wordcount"
+            ],
+            'toolbar' => "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat | code"
+        ]
+    ]); ?>
