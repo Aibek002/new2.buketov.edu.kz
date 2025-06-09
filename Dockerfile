@@ -1,29 +1,27 @@
-FROM php:8.3-fpm
+FROM ubuntu:22.04
 
-RUN apt-get update 
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql \
-    && docker-php-ext-enable pdo_mysql 
+RUN apt-get update && apt-get install -y \
+    nginx \
+    php8.1-fpm \
+    php8.1-mysql \
+    php8.1-mbstring \
+    php8.1-gd \
+    php8.1-intl \
+    php8.1-xml \
+    php8.1-curl \
+    php8.1-zip \
+    mysql-server \
+    curl wget vim nano git unzip ca-certificates \
+    && apt-get clean
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer require dosamigos/yii2-tinymce-lib "~1.0"
 
-RUN apt-get install -y ffmpeg 
 
-RUN apt install -y curl unzip 
+# Копирование Composer
+COPY composer /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
 
-RUN curl -sS https://getcomposer.org/installer | php 
-
-RUN mv composer.phar /usr/local/bin/composer \
-    && composer require guzzlehttp/guzzle
-
-RUN apt update && \
-    apt install -y curl unzip gnupg2 ca-certificates lsb-release && \
-    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
-    curl -fsSL https://packages.sury.org/php/apt.gpg | gpg --dearmor -o /etc/apt/trusted
-
-
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
-
-RUN echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.client_port=9003" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
+# Установка phpMyAdmin
+RUN echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections \

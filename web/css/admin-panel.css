@@ -28,3 +28,6 @@
     color: #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+form{
+    width: 80%;
+}

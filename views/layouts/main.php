@@ -31,7 +31,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-<!-- Bootstrap 5 CSS -->
+    <!-- Bootstrap 5 CSS -->
 
 </head>
 
@@ -57,7 +57,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <a href="<?= \yii\helpers\Url::current(['lang' => 'ru']) ?>">Русский</a> |
                     <a href="<?= \yii\helpers\Url::current(['lang' => 'en']) ?>">English</a> -->
 
-                    <!-- <?= Html::a('ru', ['site/ru', 'name' => 'биолого-географический '], ['class' => 'menu-item']) ?> -->
 
                     <button class="dropdown-toggle-header">
                         <img src="/bg-images/svg/toOpen.svg" alt="Menu Icon">
@@ -81,15 +80,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             </div>
                             <div class="dropdown-submenus">
                                 <div class="dropdown-submenu university-info">
-                                    <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-university'], ['class' => 'menu-item']) ?>
-                                   <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-of-the-university'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'ratings'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'university-in-the-ranking'], ['class' => 'menu-item']) ?>
 
                                     <?= Html::a('Корпоративное управление <span>></span>', ['site/corparate'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Административные службы <span>></span>', ['site/management-structure' , 'type'=>'administrative-services'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Административные службы <span>></span>', ['site/management-structure', 'type' => 'administrative-services'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Советы <span>></span>', ['site/sovet'], ['class' => 'menu-item']) ?>
-                                   
+
                                     <a href="#" class="menu-item">Свидетельство об аккредитации <span>></span></a>
                                 </div>
                                 <div class="dropdown-submenu incoming">
@@ -97,9 +96,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Магистратура <span>></span>', ['site/admission'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Докторантура <span>></span>', ['site/admission'], ['class' => 'menu-item']) ?>
 
-                                    <a href="#" class="menu-item">Квота "Серпін", квота для густонаселённых регионов<span>></span></a>
+                                    <a href="#" class="menu-item">Квота "Серпін", квота для густонаселённых
+                                        регионов<span>></span></a>
                                     <?= Html::a('Иностранным студентам <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
-                                   <?= Html::a('Информация об общежитии  <span>></span>', ['site/article', 'type' => 'student-houses'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Информация об общежитии  <span>></span>', ['site/article', 'type' => 'information-about-the-student-house'], ['class' => 'menu-item']) ?>
 
                                     <a href="#" class="menu-item">Контакты <span>></span></a>
                                 </div>
@@ -174,35 +174,26 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             <div class="dropdown-menu-social">
                                 <p>Мы в социальных сетях</p>
                                 <div class="researchCenter">
-                                    <a href="#" class="menu-item">Институт молекулярной нанофотоники <span>></span></a>
-                                    <a href="#" class="menu-item">Центр нанотехнологий и наноматериалов
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">НИИ химических проблем <span>></span></a>
-                                    <a href="#" class="menu-item">НИЦ прикладной химии <span>></span></a>
-                                    <a href="#" class="menu-item">Лаборатория физико-химических исследований
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Исследовательский парк биотехнологий
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Лаборатория прикладной механики и робототехники
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Институт цифровой экономики <span>></span></a>
-                                    <a href="#" class="menu-item">НИИ правоведения и государствоведения
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Институт духовного наследия <span>></span></a>
-                                    <a href="#" class="menu-item">Институт прикладной математики <span>></span></a>
-                                    <a href="#" class="menu-item">Лаборатория религиозной ситуации в Казахстане
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Сарыаркинский археологический институт
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">НИЦ «Тұлғатану» <span>></span></a>
-                                    <a href="#" class="menu-item">Центр этно- и антропологических исследований
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Лаборатория языкового образования <span>></span></a>
-                                    <a href="#" class="menu-item">Центр инклюзивного образования <span>></span></a>
-                                    <a href="#" class="menu-item">Социально-психологическая лаборатория
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Лаборатория органических полупроводников
-                                        <span>></span></a>
+                                    <?= Html::a('Институт молекулярной нанофотоники <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Molecular Nanophotonics'],['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Центр нанотехнологий и наноматериалов <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Nanotechnology and Nanomaterials Center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('НИИ химических проблем <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Institute of Chemical Problems'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('НИЦ прикладной химии <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Applied Chemistry Research Center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Лаборатория физико-химических исследований <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Physicochemical Research Laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Исследовательский парк биотехнологий <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Biotechnology Research Park'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Лаборатория прикладной механики и робототехники <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Applied Mechanics and Robotics Laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Институт цифровой экономики <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Digital Economy'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('НИИ правоведения и государствоведения <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Institute of Law and State'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Институт духовного наследия <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Spiritual Heritage'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Институт прикладной математики <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Лаборатория религиозной ситуации в Казахстане <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Laboratory for the Study of Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Сарыаркинский археологический институт <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('НИЦ «Тұлғатану» <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Tulgatanu Research Center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Центр этно- и антропологических исследований <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Center for Ethno- and Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Лаборатория языкового образования <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Language Education Laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Центр инклюзивного образования <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Inclusive Education Center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Социально-психологическая лаборатория <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Socio-Psychological Laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Лаборатория органических полупроводников <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Organic Semiconductors Laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+
 
                                 </div>
                                 <div class="DissertationCouncil">
@@ -371,7 +362,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     ]); ?>
                     <div class="col-md-6 d-flex flex-column justify-content-end" style="min-height: 100px;">
                         <p>Казахстан, Караганда,<br> ул. Университетская, 28</p>
-                        <p>&copy; <?= Yii::t('app', 'This website was designed by Aibek Seitzhan') ?> <?= date('Y') ?></p>
+                        <p>&copy; <?= Yii::t('app', 'This website was designed by Aibek Seitzhan') ?> <?= date('Y') ?>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end d-flex flex-column justify-content-end"

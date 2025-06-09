@@ -39,8 +39,8 @@ services:
     container_name: new2-buketov-db
     restart: always
     environment:
-       MYSQL_ROOT_PASSWORD: new2_buketov_edu_kz
-       MYSQL_DATABASE: new2_buketov_edu_kz
+       MYSQL_ROOT_PASSWORD: new_buketov_edu_kz
+       MYSQL_DATABASE: new_buketov_edu_kz
        MYSQL_USER: aibek
        MYSQL_PASSWORD: Seitzhan767402072002
     volumes:

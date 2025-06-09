@@ -52,5 +52,6 @@ return [
     'Reports'=> 'Отчеты',
     'ACS Documents'=> 'Документы АКС',
     'Comprehensive Work Plans'=> 'Комплексные планы работы',
+    'Admission Committee' => 'Приемная комиссия',
 
 ];
