@@ -6,3 +6,9 @@
 .doctorant.active{
     display: block;
 }
+.general-rules-pdf{
+    display: none;
+}
+.general-rules-pdf.active{
+    display: block;
+}
