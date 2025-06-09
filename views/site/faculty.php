@@ -46,11 +46,16 @@ use app\components\LanguageHelper;
     <h1 class="department-title">Кафедры</h1>
 
     <div class="departments-container">
+        <?php if(!empty($departament)): ?>
         <?php foreach ($departament as $departament_item): ?>
             <div class="department-box">
                 <h3><?= $departament_item->{LanguageHelper::name()} ?></h3>
             </div>
         <?php endforeach; ?>
+        <?php else: ?>
+            <p>Departament нету</p>
+
+        <?php endif; ?>
     </div>
 
     <!-- <?= !empty($departament->name_ru) ? nl2br(htmlspecialchars($departament->{LanguageHelper::name()})) : '( Здесь ничего не задано )' ?> -->

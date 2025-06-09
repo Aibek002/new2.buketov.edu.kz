@@ -13,7 +13,7 @@ $this->title = Yii::t("app", "Management Structure");
                 <div class="card h-100 shadow-sm text-center cursor-pointer" data-bs-toggle="modal" data-bs-target="#staffModal"
                     data-title="<?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?>"
                     data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"
-                    data-info="<?= htmlspecialchars($model_item->{LanguageHelper::information()}) ?>"
+                    
                     data-img="<?= $model_item->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>">
 
                     <img src="<?= $model_item->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
