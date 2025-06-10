@@ -106,7 +106,7 @@ if (
     const lang = this.dataset.lang;
     toggleSection(".board-of-directors");
     getBoardMembers(
-      "http://localhost:8081/index.php?r=ajax/get-board-of-directors",
+      "https://new.buketov.edu.kz/yii2/web/index.php?r=ajax/get-board-of-directors",
       lang
     );
   });
@@ -115,7 +115,7 @@ if (
     const lang = this.dataset.lang;
     toggleSection(".governance");
     getGovernance(
-      "http://localhost:8081/index.php?r=ajax/get-governance",
+      "https://new.buketov.edu.kz/yii2/web/index.php?r=ajax/get-governance",
       lang,
       ".container-governance"
     );
