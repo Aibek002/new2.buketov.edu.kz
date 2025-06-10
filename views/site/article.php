@@ -9,7 +9,7 @@ use yii\helpers\HtmlPurifier;
         $title = $model->{LanguageHelper::title()};
         $content = HtmlPurifier::process($model->{LanguageHelper::content()})
             ?>
-        <div class="title-content">
+        <div class="title-page">
             <?= !empty($title) ? $title : "не задано" ?>
         </div>
         <div class="text-content">
