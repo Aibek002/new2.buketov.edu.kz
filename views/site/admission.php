@@ -80,7 +80,7 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Общие правила и сроки поступления") ?>
         </div>
         <div class="button-section">
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+            <button onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
                 Типовые правила
             </button>
             <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">

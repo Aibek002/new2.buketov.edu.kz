@@ -95,6 +95,7 @@ class SiteController extends Controller
             ->joinWith(['refArticle']) // связи между таблицами
             ->where([
                 'ref_article.type' => $type,
+                'article.title_en' => $title,
 
             ])->one();
         return $this->render('article', ['model' => $article]);

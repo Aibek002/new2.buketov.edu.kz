@@ -9,10 +9,13 @@ use yii\helpers\HtmlPurifier;
         $title = $model->{LanguageHelper::title()};
         $content = HtmlPurifier::process($model->{LanguageHelper::content()})
             ?>
-        <div class="title-block-article">
+        <div class="title-content">
             <?= !empty($title) ? $title : "не задано" ?>
         </div>
+        <div class="text-content">
+
         <?= !empty($content) ? $content : "не задано" ?>
+        </div>
     </div>
 <?php else: ?>
     <div class="m-5 p-5">
