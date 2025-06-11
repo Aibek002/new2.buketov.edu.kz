@@ -82,7 +82,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 <div class="dropdown-submenu university-info">
                                     <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-of-the-university' , 'title'=>'Important events in the history of the university'] , ['class' => 'menu-item']) ?>
                                     <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university','title'=>'Mission of university'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program', 'title' => 'Karaganda University named after Academician E.A. Buketov and approval of its Development Program for 2024-2028'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'university-in-the-ranking'], ['class' => 'menu-item']) ?>
 
                                     <?= Html::a('Корпоративное управление <span>></span>', ['site/corparate'], ['class' => 'menu-item']) ?>
@@ -115,7 +115,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Биолого-географический <span>></span>', ['site/faculty', 'name' => 'биолого-географический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Исторический <span>></span>', ['site/faculty', 'name' => 'исторический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Иностранных языков <span>></span>', ['site/faculty', 'name' => 'Иностранных языков'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Физической культуры и спорта'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Математики и информационных технологий'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Педагогический <span>></span>', ['site/faculty', 'name' => 'Педагогический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Физико-технический <span>></span>', ['site/faculty', 'name' => 'Физико-технический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Физкультура и спорт <span>></span>', ['site/faculty', 'name' => 'Физкультура и спорт'], ['class' => 'menu-item']) ?>
@@ -124,7 +124,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Химический <span>></span>', ['site/faculty', 'name' => 'Химический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Экономический <span>></span>', ['site/faculty', 'name' => 'Экономический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Юридический <span>></span>', ['site/faculty', 'name' => 'Юридический'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Доп. образование <span>></span>', ['site/faculty', 'name' => 'Доп. образование'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Доп. образование <span>></span>', ['site/faculty', 'name' => 'Факультет дополнительного образования'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Военная кафедра <span>></span>', ['site/faculty', 'name' => 'Военная кафедра'], ['class' => 'menu-item']) ?>
 
 
