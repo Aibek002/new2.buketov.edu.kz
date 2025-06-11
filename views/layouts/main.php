@@ -115,7 +115,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Биолого-географический <span>></span>', ['site/faculty', 'name' => 'биолого-географический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Исторический <span>></span>', ['site/faculty', 'name' => 'исторический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Иностранных языков <span>></span>', ['site/faculty', 'name' => 'Иностранных языков'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Математика и ИТ'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Физической культуры и спорта'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Педагогический <span>></span>', ['site/faculty', 'name' => 'Педагогический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Физико-технический <span>></span>', ['site/faculty', 'name' => 'Физико-технический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Физкультура и спорт <span>></span>', ['site/faculty', 'name' => 'Физкультура и спорт'], ['class' => 'menu-item']) ?>
