@@ -118,9 +118,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Математики и информационных технологий'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Педагогический <span>></span>', ['site/faculty', 'name' => 'Педагогический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Физико-технический <span>></span>', ['site/faculty', 'name' => 'Физико-технический'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Физкультура и спорт <span>></span>', ['site/faculty', 'name' => 'Физкультура и спорт'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Физкультура и спорт <span>></span>', ['site/faculty', 'name' => 'Физической культуры и спорта'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Филологический <span>></span>', ['site/faculty', 'name' => 'Филологический'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Философия и психологии <span>></span>', ['site/faculty', 'name' => 'Философия и психологии'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Философия и психологии <span>></span>', ['site/faculty', 'name' => 'Философии и психологии'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Химический <span>></span>', ['site/faculty', 'name' => 'Химический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Экономический <span>></span>', ['site/faculty', 'name' => 'Экономический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Юридический <span>></span>', ['site/faculty', 'name' => 'Юридический'], ['class' => 'menu-item']) ?>
