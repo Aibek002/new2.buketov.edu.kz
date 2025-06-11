@@ -98,36 +98,45 @@
   margin: 20px 0 0 0;
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
-  font-weight: 100;
   padding-inline-end: 10%;
 }
-.select-section{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    margin-block: 50px;
-    
-}
-.select-section button{
-    border: 1px solid var(--indigoblue);
-    background-color: var(--light-gray);
-    color: var(--indigoblue);
-    font-size: var(--font-16);
-    font-weight: var(--font-700);
-    transition: all .3s ease;
-    padding-block: 20px ;
+
+.select-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-block: 50px;
 
 }
-.select-section button:first-child{
-    border-radius: 20px 0 0 20px;
-}
-.select-section button:last-child{
-    border-radius: 0 20px 20px 0;
-}
-.select-section button:hover{
-    box-shadow: 0 9px 20px var(--indigoblue);
-    transform: scale(1.1);
+
+.select-section button {
+  border: 1px solid var(--indigoblue);
+  background-color: var(--light-gray);
+  color: var(--indigoblue);
+  font-size: var(--font-16);
+  font-weight: var(--font-700);
+  transition: all .3s ease;
+  padding-block: 20px;
+
 }
 
+.select-section button:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.select-section button:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+.select-section button:hover {
+  box-shadow: 0 9px 20px var(--indigoblue);
+  transform: scale(1.1);
+}
+
+b,
+strong {
+  font-weight: bolder;
+  color: var(--indigoblue);
+}
 
 .button-section {
   display: grid;
@@ -168,10 +177,12 @@
   font-family: 'Courier New', Courier, monospace;
   color: var(--indigoblue);
 }
-.person-info{
+
+.person-info {
   font-size: var(--font-18);
   padding-inline-end: 5%;
 }
+
 .person-section .person-position {
   font-size: var(--font-16);
   font-weight: var(--font-300);

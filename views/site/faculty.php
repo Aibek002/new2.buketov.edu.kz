@@ -35,7 +35,7 @@ use app\components\LanguageHelper;
             <p>Email: <a href="">
                     <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
                 </a></p>
-            <p>Для просмотра истории факультета перейдите по ссылке</p>
+            <p><?= Html::a(Yii::t('app','Для просмотра истории факультета перейдите по ссылке')[''],[''])?></p>
         </div>
 
         <div class="faculty-image">
