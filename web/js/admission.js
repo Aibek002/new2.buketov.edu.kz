@@ -29,18 +29,36 @@ function openGeneralRulesPdf(filePath) {
 }
 
 let selectedSubjects = [];
-
 document.getElementById('view').addEventListener('click', function () {
   const s1 = document.getElementById('subject_id1').value;
   const s2 = document.getElementById('subject_id2').value;
-  const lang = this.dataset.lang;
+  const lang = this.dataset.lang; // например: 'kz', 'ru', 'en'
 
-  selectedSubjects = [s1, s2];
-  fetch(`https://new.buketov.edu.kz/yii2/web/index.php?r=ajax%2Fadmission-bakalavr&subject1=${s1}&subject2=${s2}`).then((response) => response.json()).then((data) => {
-    console.log(data);
-    result = document.querySelector('.result-profession-bakalavr');
-    result.innerHTML = data.map(p => `<p><strong>${p['name_' + lang]}</strong> </p><p> <strong>${p['grant']}</strong></p><p> <strong>${p['grant']}</strong></p>`).join('');;
-  })
+  const selectedSubjects = [s1, s2];
 
-  console.log('Выбранные предметы:', selectedSubjects);
+  fetch(`https://new.buketov.edu.kz/yii2/web/index.php?r=ajax%2Fadmission-bakalavr&subject1=${s1}&subject2=${s2}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log('Ответ от сервера:', data);
+
+      const result = document.querySelector('.result-profession-bakalavr');
+
+      // Проверяем, является ли data массивом
+      if (Array.isArray(data)) {
+        result.innerHTML = data.map(p => `
+          <p><strong>${p['name_' + lang]}</strong></p>
+          <p><strong>Грант: ${p['grant']}</strong></p>
+          <p><strong>Полупроходной: ${p['semi_passing_points']}</strong></p>
+          <hr>
+        `).join('');
+      } else {
+        result.innerHTML = '<p>Нет данных для отображения</p>';
+      }
+
+      console.log('Выбранные предметы:', selectedSubjects);
+    })
+    .catch(error => {
+      console.error('Ошибка при получении данных:', error);
+      document.querySelector('.result-profession-bakalavr').innerHTML = '<p>Произошла ошибка при загрузке данных</p>';
+    });
 });

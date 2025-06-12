@@ -18,6 +18,8 @@ class m250612_094924_create_profession_table extends Migration
     {
         $this->createTable('{{%profession}}', [
             'id' => $this->primaryKey(),
+            'special_code' => $this->text(),
+
             'name_kz' => $this->text(),
             'name_ru' => $this->text(),
             'name_en' => $this->text(),

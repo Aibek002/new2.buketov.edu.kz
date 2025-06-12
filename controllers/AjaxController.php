@@ -67,7 +67,7 @@ class AjaxController extends Controller
                     'id',
                     (new \yii\db\Query())
                         ->select('profession_id')
-                        ->from('subject_to_profesion')
+                        ->from('subject_to_profession')
                         ->where(['subject_id' => [$subject1, $subject2]])
                         ->groupBy('profession_id')
                         ->having(new \yii\db\Expression('COUNT(DISTINCT subject_id) = 2'))

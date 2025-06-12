@@ -107,15 +107,15 @@ class SiteController extends Controller
         return $this->render('article', ['model' => $article]);
 
     }
-        public function actionHistoryFaculty($faculty_id)
+    public function actionHistoryFaculty($faculty_id)
     {
         $lang = Yii::$app->language;
 
         $article = HistoryFaculty::find()
-            
+
             ->where([
                 'faculty_id' => $faculty_id,
-               
+
             ])
             ->one();
 
@@ -143,23 +143,10 @@ class SiteController extends Controller
     }
     public function actionAdmission()
     {
-        if (Yii::$app->request->isPost) {
-            $subject1 = Yii::$app->request->post('subject_id1');
-            $subject2 = Yii::$app->request->post('subject_id2');
 
-            // Используй их как хочешь:
-            var_dump($subject1, $subject2);
-            Yii::$app->end();
-        }
-
-        $subjects = \yii\helpers\ArrayHelper::map(
-            \app\models\Subject::find()->all(),
-            'id',
-            LanguageHelper::name('name')
-        );
 
         return $this->render('admission', [
-            'subjects' => $subjects,
+
         ]);
     }
 
