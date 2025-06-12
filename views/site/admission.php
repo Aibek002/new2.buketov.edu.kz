@@ -1,4 +1,13 @@
 <?php $this->title = Yii::t("app", "Admission Committee");
+
+
+
+use app\components\LanguageHelper;
+
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+
+use yii\widgets\ActiveForm;
 use app\assets\AdmissionAsset;
 AdmissionAsset::register($this);
 
@@ -80,7 +89,127 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Общие правила и сроки поступления") ?>
         </div>
         <div class="button-section">
-            <button onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
+            <button
+                onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
+                Типовые правила
+            </button>
+            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                Правила поступления
+            </button>
+            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                Сроки приема документов
+            </button>
+            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                Программа собеседования
+            </button>
+        </div>
+        <div class="d-flex justify-content-center">
+            <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
+        </div>
+        <div class="title-content">
+            <?= Yii::t("app", "Образавательные программы") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Образовательные программы бакалавриата
+            </button>
+            <button>
+                Приём бакалавриата (очные программы)
+            </button>
+            <button>
+                Сокращённый бакалавриат
+            </button>
+            <button>
+                Программы бакалавриата (сокращ., дистанц., очно)
+            </button>
+        </div>
+
+        <div class="title-content">
+            <?= Yii::t("app", "Форма для выбора профильных предметов и доступных профессий") ?>
+        </div>
+        <div class="p-5"
+            style="width: 94vw; height: 500px; background-color: var(--indigoblue-50); border-radius:20px; border:1px solid var(--indigoblue);">
+
+            <select name="subject_id1" id="subject_id1" class="form-control mb-3">
+                <option value="">Выберите предмет 1</option>
+                <?php foreach ($subjects as $id => $name): ?>
+                    <option value="<?= $id ?>"><?= Html::encode($name) ?></option>
+                <?php endforeach; ?>
+            </select>
+
+            <select name="subject_id2"  id="subject_id2" class="form-control mb-3">
+                <option value="">Выберите предмет 2</option>
+                <?php foreach ($subjects as $id => $name): ?>
+                    <option value="<?= $id ?>"><?= Html::encode($name) ?></option>
+                <?php endforeach; ?>
+            </select>
+
+            <button id="view" data-lang="<?= $lang =Yii::$app->language ?>"><?=Yii::t('app','View')?></button>
+            <div class="title"><p><?=Yii::t('app','Profession')?></p><p><?=Yii::t('app','Semi-passing points')?></p><p><?=Yii::t('app','Passing points')?></p></div>
+            <div class="result-profession-bakalavr"></div>
+        </div>
+        <div class="title-content">
+            <?= Yii::t("app", "Стоимость обучение") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Стоимость обучения
+            </button>
+            <button>
+                Льготы
+            </button>
+            <button>
+                Банковские реквизиты Karaganda Buketov University
+            </button>
+            <button>
+                Положение о порядке присуждения именной стипендии
+            </button>
+        </div>
+        <div class="title-content">
+            <?= Yii::t("app", "Для поступающих на творческие и педагогические направления ") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Поступающим на творческие ОП
+            </button>
+            <button>
+                Поступающим на пед. ОП
+            </button>
+            <button>
+                Расписание творческих/спецэкзаменов
+            </button>
+
+        </div>
+
+        <div class="title-content">
+            <?= Yii::t("app", "Полезные информации ") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Госзаказ 2025–2026
+            </button>
+            <button>
+                Квоты Букетова
+            </button>
+            <button>
+                Баллы и предметы (НЦТ)
+            </button>
+            <button>
+                Контакты приёмной
+            </button>
+        </div>
+    </div>
+    <div class="magistrant">
+        <div class="title-content">
+            <?= Yii::t("app", "Magistrant") ?>
+
+        </div>
+        <div class="title-content">
+            <?= Yii::t("app", "Общие правила и сроки поступления") ?>
+        </div>
+        <div class="button-section">
+            <button
+                onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
                 Типовые правила
             </button>
             <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
@@ -170,46 +299,6 @@ AdmissionAsset::register($this);
                 Контакты приёмной
             </button>
         </div>
-    </div>
-    <div class="magistrant">
-        <div class="title-content">
-            <?= Yii::t("app", "Magistrant") ?>
-
-        </div>
-        <div class="text-content">
-            Это первый уровень университетского образования.
-            Продолжительность обучения в бакалавриате может быть разной. Если абитуриент поступает в бакалавриат
-            после
-            средней школы, срок его обучения составит 4 года.
-            Абитуриенты, окончившие колледж, могут обучаться 3 года.
-            Для абитуриентов с высшим образованием срок обучения составит всего 2 года.
-            Обязательное условие получения диплома - необходимо освоить не менее 240 кредитов.
-            Большинство программ бакалавриата преподаётся на казахском и русском языках. Имеются полиязычные
-            программы,
-            где обучение ведется сразу на трех языках: казахском, русском и английском.
-            Программы бакалавриата можно осваивать в очном или смешанном форматах с применением дистанционных
-            образовательных технологий.
-            В первом случае студент посещает университет ежедневно, во втором –  от 20 до 50% дисциплин изучается
-            дистанционно.
-            Учебный год в бакалавриате делится на 2 семестра. Каждый семестр состоит из 15 недель. Завершается
-            семестр
-            экзаменами. Между семестрами устанавливаются каникулы: в зимний период – 3 недели, в летний период – 2
-            месяца.
-            Для студентов, желающих дополнительно изучить дисциплины, которые не входят в индивидуальный учебный
-            план,
-            предусмотрен летний семестр продолжительностью 6 недель.
-            Для перехода на следующий курс обучения студенту необходимо полностью выполнить годовой индивидуальный
-            учебный план и получить положительные оценки по всем экзаменационным дисциплинам и практикам.
-            В процессе обучения студент проходит теоретическую и практическую подготовку. Он имеет возможность
-            самостоятельно формировать траекторию своего обучения, выбирать учебные дисциплины и исследовательское
-            направление выпускной работы.
-            Успешным студентам предоставляется возможность принять участие в программе академической мобильности и
-            обучаться в течение семестра в казахстанском или зарубежном вузе.
-            На последнем курсе обучения студент проходит выпускные испытания.  При успешном освоении программы
-            выпускник
-            получает академическую степень бакалавра. Она даёт ему право занимать должности, требующие высшего
-            образования, а также поступать в магистратуру.
-        </div>
 
     </div>
     <div class="doctorant">
@@ -217,8 +306,94 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Doctorant") ?>
 
         </div>
-        <div class="text-content">
+        <div class="title-content">
+            <?= Yii::t("app", "Общие правила и сроки поступления") ?>
+        </div>
+        <div class="button-section">
+            <button
+                onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
+                Типовые правила
+            </button>
+            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                Правила поступления
+            </button>
+            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                Сроки приема документов
+            </button>
+            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                Программа собеседования
+            </button>
+        </div>
+        <div class="d-flex justify-content-center">
+            <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
+        </div>
+        <div class="title-content">
+            <?= Yii::t("app", "Образавательные программы") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Образовательные программы бакалавриата
+            </button>
+            <button>
+                Приём бакалавриата (очные программы)
+            </button>
+            <button>
+                Сокращённый бакалавриат
+            </button>
+            <button>
+                Программы бакалавриата (сокращ., дистанц., очно)
+            </button>
+        </div>
+
+
+        <div class="title-content">
+            <?= Yii::t("app", "Стоимость обучение") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Стоимость обучения
+            </button>
+            <button>
+                Льготы
+            </button>
+            <button>
+                Банковские реквизиты Karaganda Buketov University
+            </button>
+            <button>
+                Положение о порядке присуждения именной стипендии
+            </button>
+        </div>
+        <div class="title-content">
+            <?= Yii::t("app", "Для поступающих на творческие и педагогические направления ") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Поступающим на творческие ОП
+            </button>
+            <button>
+                Поступающим на пед. ОП
+            </button>
+            <button>
+                Расписание творческих/спецэкзаменов
+            </button>
 
         </div>
 
+        <div class="title-content">
+            <?= Yii::t("app", "Полезные информации ") ?>
+        </div>
+        <div class="button-section">
+            <button>
+                Госзаказ 2025–2026
+            </button>
+            <button>
+                Квоты Букетова
+            </button>
+            <button>
+                Баллы и предметы (НЦТ)
+            </button>
+            <button>
+                Контакты приёмной
+            </button>
+        </div>
     </div>

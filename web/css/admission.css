@@ -1,14 +1,59 @@
-.bakalavriat,.magistrant,.doctorant{
+.bakalavriat,
+.magistrant,
+.doctorant {
     display: none;
 }
+
 .bakalavriat.active,
 .magistrant.active,
-.doctorant.active{
+.doctorant.active {
     display: block;
 }
-.general-rules-pdf{
+
+.general-rules-pdf {
     display: none;
 }
-.general-rules-pdf.active{
+
+.general-rules-pdf.active {
     display: block;
+}
+
+.result-profession-bakalavr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.result-profession-bakalavr,
+.result-profession-bakalavr strong {
+    color: white;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 50px;
+}
+
+.title p {
+    font-size: var(--font-18);
+    font-weight: var(--font-700);
+}
+
+.title p,
+.result-profession-bakalavr p {
+    text-align: center;
+    text-align: center;
+    border-top: 1px solid white;
+    margin: 0;
+    color: white;
+    padding: 20px;
+}
+
+#view {
+    background: var(--indigoblue);
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
 }

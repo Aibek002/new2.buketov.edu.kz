@@ -30,7 +30,7 @@ class AjaxController extends Controller
                         'Board-Committee',
 
                     ],
-                
+
 
 
             ])
@@ -54,5 +54,44 @@ class AjaxController extends Controller
             ->all();
 
     }
+    public function actionAdmissionBakalavr($subject1, $subject2)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
+        if (!empty($subject1) && !empty($subject2)) {
+            $professions = (new \yii\db\Query())
+                ->select('*')
+                ->from('profession')
+                ->where([
+                    'in',
+                    'id',
+                    (new \yii\db\Query())
+                        ->select('profession_id')
+                        ->from('subject_to_profesion')
+                        ->where(['subject_id' => [$subject1, $subject2]])
+                        ->groupBy('profession_id')
+                        ->having(new \yii\db\Expression('COUNT(DISTINCT subject_id) = 2'))
+                ])
+                ->all();
+        } else {
+
+            $professions = (new \yii\db\Query())
+                ->select('*')
+                ->from('profession')
+                ->where([
+                    'in',
+                    'id',
+                    (new \yii\db\Query())
+                        ->select('profession_id')
+                        ->from('subject_to_profesion')
+                        ->where(['subject_id' => [$subject1, $subject2]])
+                        ->groupBy('profession_id')
+
+                ])
+                ->all();
+        }
+
+
+        return $professions;
+    }
 }

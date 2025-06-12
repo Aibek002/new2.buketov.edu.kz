@@ -12,6 +12,8 @@ use app\models\LoginForm;
 use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
+use yii\helpers\Html;
+use \app\components\LanguageHelper;
 
 class SiteController extends Controller
 {
@@ -85,7 +87,7 @@ class SiteController extends Controller
             ->one();
 
         $departament = Departament::findAll(['faculty_id' => $faculty_id]);
-        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament]);
+        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id]);
     }
     public function actionArticle($type, $title)
     {
@@ -123,8 +125,26 @@ class SiteController extends Controller
     }
     public function actionAdmission()
     {
-        return $this->render('admission');
+        if (Yii::$app->request->isPost) {
+            $subject1 = Yii::$app->request->post('subject_id1');
+            $subject2 = Yii::$app->request->post('subject_id2');
+
+            // Используй их как хочешь:
+            var_dump($subject1, $subject2);
+            Yii::$app->end();
+        }
+
+        $subjects = \yii\helpers\ArrayHelper::map(
+            \app\models\Subject::find()->all(),
+            'id',
+            LanguageHelper::name('name')
+        );
+
+        return $this->render('admission', [
+            'subjects' => $subjects,
+        ]);
     }
+
     public function actionInternationalStudents()
     {
         return $this->render('international-students');
