@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Departament;
+use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -12,6 +13,8 @@ use app\models\LoginForm;
 use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
+use app\models\HistoryFaculty;
+
 use yii\helpers\Html;
 use \app\components\LanguageHelper;
 
@@ -98,6 +101,21 @@ class SiteController extends Controller
             ->where([
                 'ref_article.type' => $type,
                 'article.title_en' => $title,
+            ])
+            ->one();
+
+        return $this->render('article', ['model' => $article]);
+
+    }
+        public function actionHistoryFaculty($faculty_id)
+    {
+        $lang = Yii::$app->language;
+
+        $article = HistoryFaculty::find()
+            
+            ->where([
+                'faculty_id' => $faculty_id,
+               
             ])
             ->one();
 

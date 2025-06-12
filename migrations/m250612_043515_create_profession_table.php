@@ -18,7 +18,9 @@ class m250612_043515_create_profession_table extends Migration
             'name_kz' => $this->string(255),
             'name_ru' => $this->string(255),
             'name_en' => $this->string(255),
-            'grant' => $this->integer(),
+            'semi-passing points' => $this->integer(),
+            'passing points' => $this->integer(),
+
         ]);
     }
 
