@@ -36,7 +36,8 @@ use yii\helpers\Html;
             <p>Email: <a href="">
                     <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
                 </a></p>
-            <p><?= Html::a(Yii::t('app', 'Для просмотра истории факультета перейдите по ссылке')[''], ['']) ?></p>
+            <p><?= Html::a(Yii::t('app', 'Для просмотра истории факультета перейдите по ссылке'), ['site/history-faculty', 'faculty_id' => $faculty_id]) ?>
+            </p>
         </div>
 
         <div class="faculty-image">
@@ -49,11 +50,11 @@ use yii\helpers\Html;
     <div class="departments-container">
         <?php if (!empty($departament)): ?>
             <?php foreach ($departament as $departament_item): ?>
-                <?= Html::a('
-                                <div class="department-box">
-                                <h3><?= $departament_item->{LanguageHelper::name()} ?></h3>
-                                </div>
-                ',['site/departament','departament_id' => $departament->id]) ?>
+                <div class="department-box">
+                    <h3> <?= Html::a(
+                                $departament_item->{LanguageHelper::name()} 
+                , ['site/departament', 'departament_id' => $departament_item->id]) ?></h3>
+                </div>
             <?php endforeach; ?>
         <?php else: ?>
             <p>Departament нету</p>

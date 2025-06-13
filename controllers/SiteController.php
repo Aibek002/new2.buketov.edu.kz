@@ -13,8 +13,11 @@ use app\models\LoginForm;
 use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
-use app\models\HistoryFaculty;
+use app\models\Subject;
 
+
+use app\models\HistoryFaculty;
+use app\models\HistoryDepartament;
 use yii\helpers\Html;
 use \app\components\LanguageHelper;
 
@@ -116,7 +119,17 @@ class SiteController extends Controller
         $departament = Departament::findOne(['id' => $departament_id]);
 
         ;
-        return $this->render('faculty', ['departament' => $departament]);
+        return $this->render('departament', ['departament' => $departament,'departament_id'=>$departament_id]);
+    }
+      public function actionHistoryDepartament($departament_id)
+    {
+        $lang = Yii::$app->language;
+        // 'select name_ . $lang , '
+
+        $departament = HistoryDepartament::findOne(['departament_id' => $departament_id]);
+
+        ;
+        return $this->render('history-departament', ['model' => $departament]);
     }
     public function actionArticle($type, $title)
     {
@@ -154,10 +167,9 @@ class SiteController extends Controller
     }
     public function actionAdmission()
     {
-
-
+        $subjects = Subject::find()->all();
         return $this->render('admission', [
-
+'subjects'=>$subjects
         ]);
     }
 

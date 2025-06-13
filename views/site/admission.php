@@ -127,25 +127,38 @@ AdmissionAsset::register($this);
         <div class="title-content">
             <?= Yii::t("app", "Форма для выбора профильных предметов и доступных профессий") ?>
         </div>
+
         <div class="p-5"
             style="width: 94vw; min-height: 100%; background-color: var(--indigoblue-50); border-radius:20px; border:1px solid var(--indigoblue); margin-block:50px">
-
+            <div class="select-section">
+                <button onclick="">
+                    <?= Yii::t("app", "Очная") ?>
+                </button>
+                <button onclick="">
+                    <?= Yii::t("app", "Очная Сокращенная") ?>
+                </button>
+           
+            </div>
             <select name="subject_id1" id="subject_id1" class="form-control mb-3">
                 <option value="">Выберите предмет 1</option>
-                <?php foreach ($subjects as $id => $name): ?>
-                    <option value="<?= $id ?>"><?= Html::encode($name) ?></option>
+                <?php foreach ($subjects as $subject): ?>
+                    <option value="<?= $subject->id ?>"><?= Html::encode($subject->{LanguageHelper::name()}) ?> </option>
                 <?php endforeach; ?>
             </select>
 
-            <select name="subject_id2"  id="subject_id2" class="form-control mb-3">
+            <select name="subject_id2" id="subject_id2" class="form-control mb-3">
                 <option value="">Выберите предмет 2</option>
-                <?php foreach ($subjects as $id => $name): ?>
-                    <option value="<?= $id ?>"><?= Html::encode($name) ?></option>
+                <?php foreach ($subjects as $subject): ?>
+                    <option value="<?= $subject->id ?>"><?= Html::encode($subject->{LanguageHelper::name()}) ?></option>
                 <?php endforeach; ?>
             </select>
 
-            <button id="view" data-lang="<?= $lang =Yii::$app->language ?>"><?=Yii::t('app','View')?></button>
-            <div class="title"><p><?=Yii::t('app','Profession')?></p><p><?=Yii::t('app','Semi-passing points')?></p><p><?=Yii::t('app','Passing points')?></p></div>
+            <button id="view" data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
+            <div class="title">
+                <p><?= Yii::t('app', 'Profession') ?></p>
+                <p><?= Yii::t('app', 'Semi-passing points') ?></p>
+                <p><?= Yii::t('app', 'Passing points') ?></p>
+            </div>
             <div class="result-profession-bakalavr"></div>
         </div>
         <div class="title-content">

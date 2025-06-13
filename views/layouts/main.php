@@ -81,7 +81,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             <div class="dropdown-submenus">
                                 <div class="dropdown-submenu university-info">
                                     <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-of-the-university' , 'title'=>'Important events in the history of the university'] , ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university','title'=>'Mission of university'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university','title'=>'Mission of the university'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program', 'title' => 'Karaganda University named after Academician E.A. Buketov and approval of its Development Program for 2024-2028'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'university-in-the-ranking'], ['class' => 'menu-item']) ?>
 

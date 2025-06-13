@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Departament;
+use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -13,6 +14,8 @@ use app\models\ContactForm;
 use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
+use app\models\HistoryFaculty;
+use app\models\HistoryDepartament;
 
 
 class AdminController extends Controller
@@ -57,7 +60,28 @@ class AdminController extends Controller
         return $this->render('departament-admin-panel' , ['model'=> $departament]);
 
     }
+ public function actionHistoryFacultyAdminPanel()
+    {
+        $history = new HistoryFaculty();
+        if (Yii::$app->request->isPost) {
+            if ($history->load(Yii::$app->request->post()) && $history->save()) {
+                return $this->redirect(['admin/index']);
+            }
+        }
+        return $this->render('history-faculty-admin-panel' , ['model'=> $history]);
 
+    }
+ public function actionHistoryDepartamentAdminPanel()
+    {
+        $history = new HistoryDepartament();
+        if (Yii::$app->request->isPost) {
+            if ($history->load(Yii::$app->request->post()) && $history->save()) {
+                return $this->redirect(['admin/index']);
+            }
+        }
+        return $this->render('history-departament-admin-panel' , ['model'=> $history]);
+
+    }
     public function actionArticleAdminPanel(){
         $article = new Article();
         if ($article->load(Yii::$app->request->post()) && $article->save()) {

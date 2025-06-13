@@ -9,6 +9,7 @@ $this->title = 'Admin Page';
 <div class="admin-panel p-5 my-5">
     <?= Html::a('Факультеты', ['admin/faculty-admin-panel'], ['class' => 'fas fa-university']) ?>
     <?= Html::a('История факультетов', ['admin/history-faculty-admin-panel'], ['class' => 'fas st-university']) ?>
+    <?= Html::a('История кафедры', ['admin/history-departament-admin-panel'], ['class' => 'fas st-university']) ?>
 
     <?= Html::a('Кафедры', ['admin/departament-admin-panel'], ['class' => 'fas dp-university']) ?>
 
