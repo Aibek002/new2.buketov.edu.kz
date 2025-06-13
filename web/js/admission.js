@@ -46,10 +46,9 @@ document.getElementById('view').addEventListener('click', function () {
       // Проверяем, является ли data массивом
       if (Array.isArray(data)) {
         result.innerHTML = data.map(p => `
-          <p><strong>${p['name_' + lang]}</strong></p>
-          <p><strong>Грант: ${p['grant']}</strong></p>
-          <p><strong>Полупроходной: ${p['semi_passing_points']}</strong></p>
-          <hr>
+          <div style='display: grid;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));'><p><strong>${p['name_' + lang]}</strong></p>
+          <p><strong> ${p['semi_passing_points']}</strong></p>
+          <p><strong> ${p['passing_points']}</strong></p> </div>
         `).join('');
       } else {
         result.innerHTML = '<p>Нет данных для отображения</p>';

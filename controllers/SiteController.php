@@ -92,21 +92,7 @@ class SiteController extends Controller
         $departament = Departament::findAll(['faculty_id' => $faculty_id]);
         return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id]);
     }
-    public function actionArticle($type, $title)
-    {
-        $lang = Yii::$app->language;
 
-        $article = Article::find()
-            ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
-            ->where([
-                'ref_article.type' => $type,
-                'article.title_en' => $title,
-            ])
-            ->one();
-
-        return $this->render('article', ['model' => $article]);
-
-    }
     public function actionHistoryFaculty($faculty_id)
     {
         $lang = Yii::$app->language;
@@ -116,6 +102,31 @@ class SiteController extends Controller
             ->where([
                 'faculty_id' => $faculty_id,
 
+            ])
+            ->one();
+
+        return $this->render('article', ['model' => $article]);
+
+    }
+    public function actionDepartament($departament_id)
+    {
+        $lang = Yii::$app->language;
+        // 'select name_ . $lang , '
+
+        $departament = Departament::findOne(['id' => $departament_id]);
+
+        ;
+        return $this->render('faculty', ['departament' => $departament]);
+    }
+    public function actionArticle($type, $title)
+    {
+        $lang = Yii::$app->language;
+
+        $article = Article::find()
+            ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
+            ->where([
+                'ref_article.type' => $type,
+                'article.title_en' => $title,
             ])
             ->one();
 

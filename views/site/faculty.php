@@ -1,5 +1,6 @@
 <?php
 use app\components\LanguageHelper;
+use yii\helpers\Html;
 
 ?>
 
@@ -31,11 +32,11 @@ use app\components\LanguageHelper;
 
             <?= !empty($dean->{LanguageHelper::job_title()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()})) : '( Здесь ничего не задано )' ?>
 
-                </p>
+            </p>
             <p>Email: <a href="">
                     <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
                 </a></p>
-            <p><?= Html::a(Yii::t('app','Для просмотра истории факультета перейдите по ссылке')[''],[''])?></p>
+            <p><?= Html::a(Yii::t('app', 'Для просмотра истории факультета перейдите по ссылке')[''], ['']) ?></p>
         </div>
 
         <div class="faculty-image">
@@ -46,12 +47,14 @@ use app\components\LanguageHelper;
     <h1 class="department-title">Кафедры</h1>
 
     <div class="departments-container">
-        <?php if(!empty($departament)): ?>
-        <?php foreach ($departament as $departament_item): ?>
-            <div class="department-box">
-                <h3><?= $departament_item->{LanguageHelper::name()} ?></h3>
-            </div>
-        <?php endforeach; ?>
+        <?php if (!empty($departament)): ?>
+            <?php foreach ($departament as $departament_item): ?>
+                <?= Html::a('
+                                <div class="department-box">
+                                <h3><?= $departament_item->{LanguageHelper::name()} ?></h3>
+                                </div>
+                ',['site/departament','departament_id' => $departament->id]) ?>
+            <?php endforeach; ?>
         <?php else: ?>
             <p>Departament нету</p>
 
