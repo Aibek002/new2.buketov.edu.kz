@@ -141,6 +141,7 @@ AdmissionAsset::register($this);
             </div>
             <div class="form-full-time active">
 
+
             <select name="subject_id1" id="subject_id1" class="form-control mb-3">
                 <option value="">Выберите предмет 1</option>
                 <?php foreach ($subjects as $subject): ?>
@@ -159,6 +160,7 @@ AdmissionAsset::register($this);
             </div>
 
             <div class="form-short-time">
+                <input type="text" placeholder="Searching">
                 hello this is form for student who collage graduate
             </div>
             <div class="title">
