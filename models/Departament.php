@@ -20,6 +20,7 @@ use Yii;
  * @property int|null $faculty_id
  *
  * @property Faculty $faculty
+ * @property HistoryDepartament[] $historyDepartaments
  * @property Staff[] $staff
  */
 class Departament extends \yii\db\ActiveRecord
@@ -76,6 +77,16 @@ class Departament extends \yii\db\ActiveRecord
     public function getFaculty()
     {
         return $this->hasOne(Faculty::class, ['id' => 'faculty_id']);
+    }
+
+    /**
+     * Gets query for [[HistoryDepartaments]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getHistoryDepartaments()
+    {
+        return $this->hasMany(HistoryDepartament::class, ['departament_id' => 'id']);
     }
 
     /**

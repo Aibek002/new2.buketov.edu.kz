@@ -19,6 +19,7 @@ use Yii;
  * @property string|null $welcome_en
  *
  * @property Departament[] $departaments
+ * @property HistoryFaculty[] $historyFaculties
  * @property Staff[] $staff
  */
 class Faculty extends \yii\db\ActiveRecord
@@ -72,6 +73,16 @@ class Faculty extends \yii\db\ActiveRecord
     public function getDepartaments()
     {
         return $this->hasMany(Departament::class, ['faculty_id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[HistoryFaculties]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getHistoryFaculties()
+    {
+        return $this->hasMany(HistoryFaculty::class, ['faculty_id' => 'id']);
     }
 
     /**

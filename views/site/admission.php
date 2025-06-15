@@ -131,14 +131,16 @@ AdmissionAsset::register($this);
         <div class="p-5"
             style="width: 94vw; min-height: 100%; background-color: var(--indigoblue-50); border-radius:20px; border:1px solid var(--indigoblue); margin-block:50px">
             <div class="select-section">
-                <button onclick="">
+                <button onclick="openForm('full')">
                     <?= Yii::t("app", "Очная") ?>
                 </button>
-                <button onclick="">
+                <button onclick="openForm('short')">
                     <?= Yii::t("app", "Очная Сокращенная") ?>
                 </button>
            
             </div>
+            <div class="form-full-time active">
+
             <select name="subject_id1" id="subject_id1" class="form-control mb-3">
                 <option value="">Выберите предмет 1</option>
                 <?php foreach ($subjects as $subject): ?>
@@ -154,6 +156,11 @@ AdmissionAsset::register($this);
             </select>
 
             <button id="view" data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
+            </div>
+
+            <div class="form-short-time">
+                hello this is form for student who collage graduate
+            </div>
             <div class="title">
                 <p><?= Yii::t('app', 'Profession') ?></p>
                 <p><?= Yii::t('app', 'Semi-passing points') ?></p>
