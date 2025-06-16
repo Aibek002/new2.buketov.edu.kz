@@ -1,5 +1,6 @@
 <?php
 namespace app\controllers;
+use app\components\LanguageHelper;
 use Yii;
 use yii\web\Controller;
 use app\models\Staff;
@@ -93,5 +94,18 @@ class AjaxController extends Controller
 
 
         return $professions;
+    }
+    public function actionBakalavrCollege($prof_college)
+    {
+        $lang = LanguageHelper::name(); // вернёт 'ru', 'kz', 'en'
+        $column =  $lang;      // name_ru, name_kz, name_en
+
+        $profession_college = (new \yii\db\Query())
+            ->select('*')
+            ->from('profession_college')
+            ->where(['like', $column, $prof_college])
+            ->all();
+
+        return $this->asJson($profession_college);
     }
 }

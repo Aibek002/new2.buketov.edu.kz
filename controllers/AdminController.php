@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Departament;
+use app\models\Profession;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
@@ -16,6 +17,7 @@ use app\models\Staff;
 use app\models\Article;
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
+use app\models\ProfessionCollege;
 
 
 class AdminController extends Controller
@@ -88,6 +90,17 @@ class AdminController extends Controller
             return $this->redirect(['admin/index']);
         }
         return $this->render('article-admin-panel', ['model'=> $article]);
+    }
+     public function actionProfessionCollege()
+    {
+        $profession_college = new ProfessionCollege();
+        if (Yii::$app->request->isPost) {
+            if ($profession_college->load(Yii::$app->request->post()) && $profession_college->save()) {
+                return $this->redirect(['admin/index']);
+            }
+        }
+        return $this->render('profession_college' , ['model'=> $profession_college]);
+
     }
 }
 

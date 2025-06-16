@@ -157,18 +157,20 @@ AdmissionAsset::register($this);
             </select>
 
             <button id="view" data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
-            </div>
-
-            <div class="form-short-time">
-                <input type="text" placeholder="Searching">
-                hello this is form for student who collage graduate
-            </div>
-            <div class="title">
+              <div class="title">
                 <p><?= Yii::t('app', 'Profession') ?></p>
                 <p><?= Yii::t('app', 'Semi-passing points') ?></p>
                 <p><?= Yii::t('app', 'Passing points') ?></p>
             </div>
             <div class="result-profession-bakalavr"></div>
+            </div>
+
+            <div class="form-short-time">
+                <input type="text"  id="search-profession-college"placeholder="Searching">
+                hello this is form for student who collage graduate
+            </div>
+            <div class="result-profession-college"></div>
+          
         </div>
         <div class="title-content">
             <?= Yii::t("app", "Стоимость обучение") ?>

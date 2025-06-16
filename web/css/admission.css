@@ -18,13 +18,17 @@
     display: block;
 }
 
-.result-profession-bakalavr {
+.result-profession-bakalavr,
+.result-profession-college {
     display: flex;
    flex-direction: column;
 }
 
 .result-profession-bakalavr,
-.result-profession-bakalavr strong {
+.result-profession-bakalavr strong,
+.result-profession-college,
+.result-profession-college strong
+ {
     color: white;
 }
 
@@ -40,7 +44,8 @@
 }
 
 .title p,
-.result-profession-bakalavr p {
+.result-profession-bakalavr p,
+.result-profession-college p {
     text-align: center;
     text-align: center;
     border-top: 1px solid white;
