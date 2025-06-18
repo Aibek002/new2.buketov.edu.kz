@@ -59,5 +59,10 @@ return [
     'Bakalavriat' => 'Бакалавриат',
     'Magistrant' => 'Магистратура',
     'Doctorant' => 'Докторантура',
+    'Search for a college specislization' => 'Пишите специялизацию колледже',
+    'Write strictly in the language of the page.' => 'Пишите строго на том языке, на котором написана страница.',
+    'Profession College'=>'Профессия Колледжа',
+    'Profession University'=>'Профессия Университета',
+    'Select specialization' => 'Выбрать специальность'
 
 ];

@@ -130,47 +130,60 @@ AdmissionAsset::register($this);
 
         <div class="p-5"
             style="width: 94vw; min-height: 100%; background-color: var(--indigoblue-50); border-radius:20px; border:1px solid var(--indigoblue); margin-block:50px">
-            <div class="select-section">
-                <button onclick="openForm('full')">
-                    <?= Yii::t("app", "Очная") ?>
+            <h1 class="title-content">
+                10 популярных профессий прошлого года (2024) в Казахстане (ориентируясь на данные по приёму в вузы)
+            </h1>
+            <ul type="1" class="popular-list">
+                <li>
+                    6B01705 – Иностранный язык: два иностранных языка (английский) — 572
+                </li>
+                <li>
+
+                    6B01403 – Физическая культура и спорт — 262
+                </li>
+                <li>
+
+                    6B01701 – Казахский язык и литература — 209
+                </li>
+                <li>
+
+                    6B07201 – Технология фармацевтического производства — 192
+                </li>
+                <li>
+
+                    6B04201 – Юриспруденция — 164
+                </li>
+                <li>
+
+                    6B01601 – История — 140
+                </li>
+                <li>
+
+                    6B06103 – Информационные системы — 133
+                </li>
+
+                <li>
+
+                    6B03106 – Психология — 110
+                </li>
+
+                <li>
+
+                    6B05201 – Экология — 90
+                </li>
+
+                <li>
+
+
+                    6B04204 – Судебная и прокурорская деятельность — 89
+                </li>
+            </ul>
+
+            <div class="button-section">
+                <button>
+                    <?=Yii::t('app','Select specialization')?>
                 </button>
-                <button onclick="openForm('short')">
-                    <?= Yii::t("app", "Очная Сокращенная") ?>
-                </button>
-           
             </div>
-            <div class="form-full-time active">
-
-
-            <select name="subject_id1" id="subject_id1" class="form-control mb-3">
-                <option value="">Выберите предмет 1</option>
-                <?php foreach ($subjects as $subject): ?>
-                    <option value="<?= $subject->id ?>"><?= Html::encode($subject->{LanguageHelper::name()}) ?> </option>
-                <?php endforeach; ?>
-            </select>
-
-            <select name="subject_id2" id="subject_id2" class="form-control mb-3">
-                <option value="">Выберите предмет 2</option>
-                <?php foreach ($subjects as $subject): ?>
-                    <option value="<?= $subject->id ?>"><?= Html::encode($subject->{LanguageHelper::name()}) ?></option>
-                <?php endforeach; ?>
-            </select>
-
-            <button id="view" data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
-              <div class="title">
-                <p><?= Yii::t('app', 'Profession') ?></p>
-                <p><?= Yii::t('app', 'Semi-passing points') ?></p>
-                <p><?= Yii::t('app', 'Passing points') ?></p>
-            </div>
-            <div class="result-profession-bakalavr"></div>
-            </div>
-
-            <div class="form-short-time">
-                <input type="text"  id="search-profession-college"placeholder="Searching">
-                hello this is form for student who collage graduate
-            </div>
-            <div class="result-profession-college"></div>
-          
         </div>
         <div class="title-content">
             <?= Yii::t("app", "Стоимость обучение") ?>

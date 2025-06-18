@@ -21,14 +21,13 @@
 .result-profession-bakalavr,
 .result-profession-college {
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
 }
 
 .result-profession-bakalavr,
 .result-profession-bakalavr strong,
 .result-profession-college,
-.result-profession-college strong
- {
+.result-profession-college strong {
     color: white;
 }
 
@@ -62,11 +61,33 @@
     color: white;
     width: 100%;
 }
+
 .form-full-time,
-.form-short-time{
+.form-short-time {
     display: none;
 }
+
 .form-full-time.active,
-.form-short-time.active{
+.form-short-time.active {
     display: block;
+}
+
+#search-profession-college {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-short-time p {
+    color: white;
+    padding-block: 20px;
+}
+
+.popular-list {
+    color: white;
+    list-style-type: decimal;
+    /* Отображает числа */
+    margin-left: 20px;
+    padding-left: 20px;
 }

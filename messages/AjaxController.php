@@ -1,6 +1,5 @@
 <?php
 namespace app\controllers;
-
 use app\components\LanguageHelper;
 use Yii;
 use yii\web\Controller;
@@ -96,28 +95,17 @@ class AjaxController extends Controller
 
         return $professions;
     }
-    public function actionBakalavrCollege($prof_college , $lang)
+    public function actionBakalavrCollege($prof_college)
     {
-       // name_ru, name_kz, name_en
-        
+        $lang = LanguageHelper::name(); // вернёт 'ru', 'kz', 'en'
+        $column =  $lang;      // name_ru, name_kz, name_en
+
         $profession_college = (new \yii\db\Query())
-            ->select(
-                [
-                "pc.id as pc_id",
-                "pc.name_$lang as pc_name",
-                "p.name_$lang as p_name",
-                'p.semi_passing_points as p_s_passing_points',
-                'p.passing_points as p_passing_points',
-                "s.name_$lang as s_name"]
-                )
-            ->from('profession_college as pc')
-            ->innerJoin('profession as p', 'pc.profession_id = p.id')
-            ->innerJoin('subject_to_profession as stp', 'stp.profession_id = p.id')
-            ->innerJoin('subject as s', 's.id = stp.subject_id')
-            ->where(['like', "pc.name_$lang", $prof_college])
-            ->orderBy('pc_name,p_name,s_name')
+            ->select('*')
+            ->from('profession_college')
+            ->where(['like', $column, $prof_college])
             ->all();
- 
+
         return $this->asJson($profession_college);
     }
 }

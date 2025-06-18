@@ -77,25 +77,67 @@ document.getElementById('view').addEventListener('click', function () {
 
 });
 const inputSearchCollegeProf = document.querySelector('#search-profession-college');
+let searchTimer;
 inputSearchCollegeProf.addEventListener('input', () => {
-  if (inputSearchCollegeProf.value.length >= 2) {
-    const prof_college = inputSearchCollegeProf.value
-    fetch(`/yii2/web/index.php?r=ajax%2Fbakalavr-college&prof_college=${prof_college}`).then((response)=>response.json()).then((data)=>{
-      console.log('Ответ от сервера:', data);
-      const result = document.querySelector('.result-profession-college');
-      result.innerHTML="";
-      if (Array.isArray(data)) {
-        result.innerHTML = data.map(p => `
-          <div style='display: grid;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));'><p><strong>${p['name_kz']}</strong></p>
-          <p><strong> ${p['semi_passing_points']}</strong></p>
-          <p><strong> ${p['passing_points']}</strong></p> </div>
+
+  clearTimeout(searchTimer);
+  const funcSearch = () => {
+    const value = inputSearchCollegeProf.value.trim();
+    lang = inputSearchCollegeProf.dataset.lang
+    console.log(lang)
+    if (value.length < 2) {
+      document.querySelector('.result-profession-college').innerHTML = '';
+      return;
+    }
+
+    if (inputSearchCollegeProf.value.length >= 2) {
+      fetch(`/yii2/web/index.php?r=ajax%2Fbakalavr-college&prof_college=${encodeURIComponent(value)}&lang=${lang}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Ответ от сервера:', data);
+          const grouped = {};
+
+          data.forEach(item => {
+            const key = `${item.pc_name}_${item.p_name}`;
+
+            if (!grouped[key]) {
+              grouped[key] = {
+                pc_name: item.pc_name,
+                p_name: item.p_name,
+                s_names: [],
+                semi_passing: item.p_s_passing_points,
+                passing: item.p_passing_points
+              };
+            }
+            if (!grouped[key].s_names.includes(item.s_name)) {
+              grouped[key].s_names.push(item.s_name);
+            }
+          });
+          const results = Object.values(grouped);
+
+          // Выводим результат
+          console.log(results);
+          const result = document.querySelector('.result-profession-college');
+     
+          result.innerHTML = "";
+
+          if ( results.length > 0) {
+            result.innerHTML = results.map(p => `
+            <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); '>
+              <p> ${p.pc_name}</p>
+              <p> ${p.p_name}</p>
+              <p> ${p.s_names.join(', ')}</p>
+              <p> ${p.semi_passing}</p>
+              <p> ${p.passing}</p>
+            </div>
           `).join('');
-      } else {
-        result.innerHTML = '<p>Нет данных для отображения</p>';
-      }
-      console.log('Выбранные предметы:', selectedSubjects);
-    })
-    console.log(inputSearchCollegeProf.value);
+          } else {
+            result.innerHTML = '<p>Нет данных для отображения</p>';
+          }
+        })
+    }
   }
+  searchTimer = setTimeout(funcSearch, 500);
+
 
 })

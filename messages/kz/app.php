@@ -59,5 +59,11 @@ return [
     'Bakalavriat' => 'Бакалавриат',
     'Magistrant' => 'Магистратура',
     'Doctorant' => 'Докторантура',
+    'Search for a college specislization' => 'Колледж мамандығын жазыңыз',
+    'Write strictly in the language of the page.' => 'Сайттың тілінде қатаң түрде жазыңыз.',
+    'Profession College'=>'Колледж Мамандығы',
+    'Profession University'=>'Университет Мамандығы',
+    'Select specialization' => 'Мамандық таңдау'
+
 
 ];
