@@ -31,18 +31,29 @@
     color: white;
 }
 
-.title {
+.result-title-ent,
+.result-title-specialization,
+.result-title-college {
+    display: none;
+  
+}
+.result-title-ent.active,
+.result-title-specialization.active,
+.result-title-college.active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: 50px;
 }
-
-.title p {
+.result-title-ent p,
+.result-title-specialization p,
+.result-title-college p {
     font-size: var(--font-18);
     font-weight: var(--font-700);
 }
 
-.title p,
+.result-title-ent p,
+.result-title-specialization p,
+.result-title-college p,
 .result-profession-bakalavr p,
 .result-profession-college p {
     text-align: center;
@@ -53,7 +64,8 @@
     padding: 20px;
 }
 
-#view {
+#view ,
+#viewSpecialization{
     background: var(--indigoblue);
     border: 1px solid white;
     padding: 5px;

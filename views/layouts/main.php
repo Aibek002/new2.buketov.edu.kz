@@ -80,33 +80,31 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             </div>
                             <div class="dropdown-submenus">
                                 <div class="dropdown-submenu university-info">
-                                    <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-of-the-university' , 'title'=>'Important events in the history of the university'] , ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university','title'=>'Mission of the university'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-of-the-university', 'title' => 'Important events in the history of the university'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university', 'title' => 'Mission of the university'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program', 'title' => 'Karaganda University named after Academician E.A. Buketov and approval of its Development Program for 2024-2028'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'university-in-the-ranking'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'university-in-the-ranking', 'title' => 'WE ARE IN THE RATINGS'], ['class' => 'menu-item']) ?>
 
                                     <?= Html::a('Корпоративное управление <span>></span>', ['site/corparate'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Административные службы <span>></span>', ['site/management-structure', 'type' => 'administrative-services'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Советы <span>></span>', ['site/sovet'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Свидетельство об аккредитации <span>></span>', ['site/img'], ['class' => 'menu-item']) ?>
 
-                                    <a href="#" class="menu-item">Свидетельство об аккредитации <span>></span></a>
                                 </div>
                                 <div class="dropdown-submenu incoming">
-                                    <?= Html::a('Бакалавриат <span>></span>', ['site/admission'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Магистратура <span>></span>', ['site/admission'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Докторантура <span>></span>', ['site/admission'], ['class' => 'menu-item']) ?>
-
-                                    <a href="#" class="menu-item">Квота "Серпін", квота для густонаселённых
-                                        регионов<span>></span></a>
+                                    <?= Html::a('Бакалавриат <span>></span>', ['site/admission', 'type' => 'bachelor'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Магистратура <span>></span>', ['site/admission', 'type' => 'magistracy'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Докторантура <span>></span>', ['site/admission', 'type' => 'doctoral'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Иностранным студентам <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Информация об общежитии  <span>></span>', ['site/article', 'type' => 'information-about-the-student-house'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Информация об общежитии  <span>></span>', ['site/article', 'type' => 'information-about-the-student-house', 'title' => '"House of Students" complex'], ['class' => 'menu-item']) ?>
 
                                     <a href="#" class="menu-item">Контакты <span>></span></a>
                                 </div>
                                 <div class="dropdown-submenu student">
                                     <a href="#" class="menu-item">Жизнь в кампусе <span>></span></a>
                                     <a href="#" class="menu-item">Библиотека <span>></span></a>
-                                    <a href="#" class="menu-item">Военная кафедра <span>></span></a>
+                                    <?= Html::a('Военная кафедра <span>></span>', ['site/faculty', 'name' => 'Военная кафедра'], ['class' => 'menu-item']) ?>
+
                                     <a href="#" class="menu-item">Отдел карьеры <span>></span></a>
                                     <a href="#" class="menu-item">Контакты <span>></span></a>
                                 </div>
@@ -125,7 +123,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <?= Html::a('Экономический <span>></span>', ['site/faculty', 'name' => 'Экономический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Юридический <span>></span>', ['site/faculty', 'name' => 'Юридический'], ['class' => 'menu-item']) ?>
                                     <?= Html::a('Доп. образование <span>></span>', ['site/faculty', 'name' => 'Факультет дополнительного образования'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Военная кафедра <span>></span>', ['site/faculty', 'name' => 'Военная кафедра'], ['class' => 'menu-item']) ?>
 
 
                                 </div>
@@ -174,7 +171,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             <div class="dropdown-menu-social">
                                 <p>Мы в социальных сетях</p>
                                 <div class="researchCenter">
-                                    <?= Html::a('Институт молекулярной нанофотоники <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Molecular Nanophotonics'],['class' => 'menu-item', 'encode' => false]) ?>
+                                    <?= Html::a('Институт молекулярной нанофотоники <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Molecular Nanophotonics'], ['class' => 'menu-item', 'encode' => false]) ?>
                                     <?= Html::a('Центр нанотехнологий и наноматериалов <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific Center "Nanotechnology and functional nanomaterials"'], ['class' => 'menu-item', 'encode' => false]) ?>
                                     <?= Html::a('НИИ химических проблем <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-Research Institute of Chemical Issues'], ['class' => 'menu-item', 'encode' => false]) ?>
                                     <?= Html::a('НИЦ прикладной химии <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Applied Chemistry" scientific-research center'], ['class' => 'menu-item', 'encode' => false]) ?>

@@ -96,20 +96,19 @@ class AjaxController extends Controller
 
         return $professions;
     }
-    public function actionBakalavrCollege($prof_college , $lang)
+    public function actionBakalavrCollege($prof_college, $lang)
     {
-       // name_ru, name_kz, name_en
-        
+        // name_ru, name_kz, name_en
+
         $profession_college = (new \yii\db\Query())
             ->select(
                 [
-                "pc.id as pc_id",
-                "pc.name_$lang as pc_name",
-                "p.name_$lang as p_name",
-                'p.semi_passing_points as p_s_passing_points',
-                'p.passing_points as p_passing_points',
-                "s.name_$lang as s_name"]
-                )
+                    "pc.id as pc_id",
+                    "pc.name_$lang as pc_name",
+                    "p.name_$lang as p_name",
+                    "s.name_$lang as s_name"
+                ]
+            )
             ->from('profession_college as pc')
             ->innerJoin('profession as p', 'pc.profession_id = p.id')
             ->innerJoin('subject_to_profession as stp', 'stp.profession_id = p.id')
@@ -117,7 +116,26 @@ class AjaxController extends Controller
             ->where(['like', "pc.name_$lang", $prof_college])
             ->orderBy('pc_name,p_name,s_name')
             ->all();
- 
+
         return $this->asJson($profession_college);
+    }
+    public function actionAdmissionFormSpecialization($prof_type)
+    {
+        $profession = (new \yii\db\Query())
+            ->select(
+                [
+                    'p_name' => 'p.' . LanguageHelper::name(),
+                    'ent' => 's.' . LanguageHelper::name(),
+                    's_passing_points'=>'p.semi_passing_points',
+                    'p.passing_points'
+
+                ]
+            )->from(['p' => 'profession'])
+            ->innerJoin(['stp' => 'subject_to_profession'], 'p.id=stp.profession_id')
+            ->innerJoin(['s' => 'subject'], 's.id=stp.subject_id')
+            ->where(['p.id'=> $prof_type])
+            ->orderBy('p.' . LanguageHelper::name())
+            ->all();
+        return  $this->asJson($profession);
     }
 }

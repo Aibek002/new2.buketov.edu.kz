@@ -118,9 +118,21 @@ class SiteController extends Controller
         // 'select name_ . $lang , '
 
         $departament = Departament::findOne(['id' => $departament_id]);
+        $teachers = (new \yii\db\Query())
+            ->select([
+                'name' => LanguageHelper::name(),
+                'surname' => LanguageHelper::surname(),
+                'patronymic' => LanguageHelper::patronymic(),
+                'patronymic' => LanguageHelper::patronymic(),
+                'information' => LanguageHelper::information(),
+                'job_title' => LanguageHelper::job_title()
 
-        ;
-        return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id]);
+            ])->from('staff')
+            ->innerJoin('ref_staff', ' ref_staff.id = staff.ref_staff_id ')
+            ->where(['departament_id' => $departament_id])
+            ->orderBy(LanguageHelper::name())
+            ->all();
+        return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id, 'teachers' => $teachers]);
     }
     public function actionHistoryDepartament($departament_id)
     {
@@ -166,18 +178,23 @@ class SiteController extends Controller
     {
         return $this->render('sovet');
     }
-    public function actionAdmission()
+    public function actionAdmission($type)
     {
         $subjects = Subject::find()->orderBy(LanguageHelper::name())->all();
-        $profession_university= Profession::find()->orderBy(LanguageHelper::name())->all();
+        $profession_university = Profession::find()->orderBy(LanguageHelper::name())->all();
         return $this->render('admission', [
             'subjects' => $subjects,
-            'profession_university'=> $profession_university
+            'profession_university' => $profession_university,
+            'type' => $type
         ]);
     }
 
     public function actionInternationalStudents()
     {
         return $this->render('international-students');
+    }
+    public function actionImg()
+    {
+        return $this->render('img');
     }
 }

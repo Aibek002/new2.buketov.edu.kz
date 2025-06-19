@@ -64,7 +64,7 @@ AdmissionAsset::register($this);
         </button>
     </div>
 
-    <div class="bakalavriat active">
+    <div class="bakalavriat <?php echo ($type == 'bachelor')? 'active' : '';?>">
         <div class="title-content">
             <?= Yii::t("app", "Bakalavriat") ?>
         </div>
@@ -90,16 +90,19 @@ AdmissionAsset::register($this);
         </div>
         <div class="button-section">
             <button
-                onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
-                Типовые правила
-            </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/Правила приема.pdf')">
                 Правила поступления
             </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+            <button
+                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/типовые правила приема в вузы.pdf')">
+                Типовые правила
+            </button>
+            <button
+                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/бакалавриат_сроки_приема.pdf')">
                 Сроки приема документов
             </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+            <button
+                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/Программа собеседования.pdf')">
                 Программа собеседования
             </button>
         </div>
@@ -192,27 +195,45 @@ AdmissionAsset::register($this);
                         Выбрать специальность в вузе
 
                     </h1>
-                    <select name="subject_id1" id="subject_id1" class="form-control mb-3">
+                    <select name="profession" id="profession" class="form-control mb-3">
                         <option value="">Выберите спецальность вуза</option>
                         <?php foreach ($profession_university as $profession_university_item): ?>
-                            <option value="<?= $profession_university_item->id ?>"><?= Html::encode($profession_university_item->{LanguageHelper::name()}) ?>
+                            <option value="<?= $profession_university_item->id ?>">
+                                <?= Html::encode($profession_university_item->{LanguageHelper::name()}) ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
 
-                    <button onclick="changeTitle('specialization')" id="view"
+                    <button onclick="changeTitle('specialization')" id="viewSpecialization"
                         data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
                 </div>
                 <div class="form-search-by-college">
                     <h1 class="title-form">
                         Выбрать специальность по спецальностьи колледжа
                     </h1>
-                    <input type="text" placeholder="<?= Yii::t('app', 'Search for a college specislization') ?>"
+                    <input data-lang="<?= Yii::$app->language ?>" type="text" id="search-profession-college"
+                        placeholder="<?= Yii::t('app', 'Search for a college specislization') ?>"
                         id="search-profession-college">
-                    <button onclick="changeTitle('college')" id="view"
-                        data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
+
                 </div>
-                <div class="title-result"></div>
+                <div class="result-title-ent">
+                    <p><?= Yii::t('app', 'Profession') ?></p>
+                    <p><?= Yii::t('app', 'Semi-passing points') ?></p>
+                    <p><?= Yii::t('app', 'Passing points') ?></p>
+                </div>
+                <div class="result-title-specialization">
+                    <p><?= Yii::t('app', 'Profession') ?></p>
+                    <p><?= Yii::t('app', 'ENT') ?></p>
+                    <p><?= Yii::t('app', 'Semi-passing points') ?></p>
+                    <p><?= Yii::t('app', 'Passing points') ?></p>
+                </div>
+                <div class="result-title-college">
+                    <p><?= Yii::t('app', 'College Profession') ?></p>
+                    <p><?= Yii::t('app', 'Profession') ?></p>
+                    <p><?= Yii::t('app', 'ENT') ?></p>
+                    <p><?= Yii::t('app', 'Passing points') ?></p>
+                </div>
+
                 <div class="result-profession-bakalavr"></div>
             </div>
         </div>
@@ -267,7 +288,7 @@ AdmissionAsset::register($this);
             </button>
         </div>
     </div>
-    <div class="magistrant">
+    <div class="magistrant <?php echo ($type == 'magistracy')? 'active' : '';?>">
         <div class="title-content">
             <?= Yii::t("app", "Magistrant") ?>
 
@@ -277,10 +298,11 @@ AdmissionAsset::register($this);
         </div>
         <div class="button-section">
             <button
-                onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
+                onclick="openGeneralRulesPdf('https://drive.google.com/file/d/1gMgFMC7-kIJFYOaITzYorZ13uF9iaCm8/view?usp=sharing')">
                 Типовые правила
             </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
+            <button
+                onclick="openGeneralRulesPdf('https://drive.google.com/file/d/1gMgFMC7-kIJFYOaITzYorZ13uF9iaCm8/view?usp=sharing')">
                 Правила поступления
             </button>
             <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
@@ -369,7 +391,7 @@ AdmissionAsset::register($this);
         </div>
 
     </div>
-    <div class="doctorant">
+    <div class="doctorant <?php echo ($type == 'doctoral')? 'active' : '';?>">
         <div class="title-content">
             <?= Yii::t("app", "Doctorant") ?>
 

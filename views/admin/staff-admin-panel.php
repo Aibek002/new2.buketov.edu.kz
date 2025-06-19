@@ -60,12 +60,12 @@ $this->title = 'Управлять Персоналам';
         ['prompt' => 'Выберите должность']
     ) ?>
     <?= $form->field($model, 'faculty_id')->dropDownList(
-        ArrayHelper::map(Faculty::find()->all(), 'id', 'name_ru'),
+        ArrayHelper::map(Faculty::find()->orderBy('name_ru')->all(), 'id', 'name_ru'),
         ['prompt' => 'Выберите факультет']
     ) ?>
 
     <?= $form->field($model, 'departament_id')->dropDownList(
-        ArrayHelper::map(Departament::find()->all(), 'id', 'name'),
+        ArrayHelper::map(Departament::find()->orderBy('name_ru')->all(), 'id', 'name_ru'),
         ['prompt' => 'Без кафедры']
     ) ?>
 

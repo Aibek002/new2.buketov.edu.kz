@@ -43,6 +43,16 @@ use yii\helpers\Html;
         </div>
 
     </div>
+ <div class="teachers-container">
+    <?php foreach($teachers as $teacher):?>
+        <div class="teachers-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
+            <p class="fio"><?= $teacher['surname'] . " " . $teacher['name'] . " " . $teacher['patronymic'] ?></p>
+            <p class="job_title"><?= $teacher['job_title'] ?></p>
+            <p class="info"><?= $teacher['information'] ?></p>
+        </div>
+    <?php endforeach;?>
+</div>
 
     <!-- <?= !empty($departament->name_ru) ? nl2br(htmlspecialchars($departament->{LanguageHelper::name()})) : '( Здесь ничего не задано )' ?> -->
 
