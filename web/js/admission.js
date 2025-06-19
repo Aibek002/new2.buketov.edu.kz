@@ -33,28 +33,33 @@ function openForm(type) {
   const entForm = document.querySelector('.form-search-by-ent');
   const specializationForm = document.querySelector('.form-search-by-specialization');
   const collegeForm = document.querySelector('.form-search-by-college');
-  const all = document.querySelectorAll('.select-form-by-specialization,.form-search-by-ent,.form-search-by-specialization,.form-search-by-college');
+  const all = document.querySelectorAll('.form-search-by-ent,.form-search-by-specialization,.form-search-by-college');
   all.forEach(all=>{
     if(type != 'view-form'){
-      all.classList.remove('.active');
+      all.classList.remove('active');
     }
   });
+  console.log(type);
   if (type == 'view-form') {
-    form.classList.toggle('active');
-
+    form.classList.add('active');
   } else if(type == 'search-by-ent') {
-
-    entForm.classList.toggle('active');
+    entForm.classList.add('active');
   } else if(type == 'search-by-specialization') {
-
-    specializationForm.classList.toggle('active');
+    specializationForm.classList.add('active');
   } else if(type == 'search-by-college') {
-
-    collegeForm.classList.toggle('active');
+    collegeForm.classList.add('active');
   }
 }
 
+function changeTitle(type){
+  const resultTitle= document.querySelector('.result-title');
 
+  if(type == 'ent'){
+    resultTitle.innerHTML = "
+    
+    "
+    }
+}
 let selectedSubjects = [];
 
 
@@ -72,6 +77,7 @@ document.getElementById('view').addEventListener('click', function () {
       const result = document.querySelector('.result-profession-bakalavr');
       if (Array.isArray(data)) {
         result.innerHTML = data.map(p => `
+          
           <div style='display: grid;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));'><p><strong>${p['name_' + lang]}</strong></p>
           <p><strong> ${p['semi_passing_points']}</strong></p>
           <p><strong> ${p['passing_points']}</strong></p> </div>

@@ -77,6 +77,7 @@
     padding: 10px;
     border-radius: 10px;
     border: none;
+    margin-block-end: 20px;
 }
 
 .form-short-time p {
@@ -99,10 +100,16 @@
 {
     display: none;
 }
-.select-form-by-specialization.doctorant.active,
+.select-form-by-specialization.active,
 .form-search-by-ent.active,
 .form-search-by-specialization.active,
 .form-search-by-college.active
 {
     display: block;
+}
+.title-form{
+    color: white;
+  font-weight: var(--font-700);
+  text-align: center;
+  font-size: var(--font-22);
 }

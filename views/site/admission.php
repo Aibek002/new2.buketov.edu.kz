@@ -147,31 +147,73 @@ AdmissionAsset::register($this);
             </ul>
 
             <div class="button-section">
-                <button onclick="openForm('view-form'">
-                    <?=Yii::t('app','Select specialization')?>
+                <button onclick="openForm('view-form')">
+                    <?= Yii::t('app', 'Select specialization') ?>
                 </button>
             </div>
             <div class="select-form-by-specialization">
                 <div class="select-section">
-                    <button onclick="'search-by-ent'">
-                        <?=Yii::t('app', 'Search by ENT')?>
+                    <button onclick="openForm('search-by-ent')">
+                        <?= Yii::t('app', 'Search by ENT') ?>
                     </button>
-                     <button onclick="'search-by-specialization'">
-                        <?=Yii::t('app', 'Search by Specialization')?>
+                    <button onclick="openForm('search-by-specialization')">
+                        <?= Yii::t('app', 'Search by Specialization') ?>
                     </button>
-                     <button onclick="'search-by-college'">
-                        <?=Yii::t('app', 'Search by College')?>
+                    <button onclick="openForm('search-by-college')">
+                        <?= Yii::t('app', 'Search by College') ?>
                     </button>
                 </div>
-                <div class="form-search-by-ent">
+                <div class="form-search-by-ent active">
+                    <h1 class="title-form">
+                        Выбрать специальность по профильному предмету ЕНТ
+                    </h1>
+                    <select name="subject_id1" id="subject_id1" class="form-control mb-3">
+                        <option value="">Выберите предмет 1</option>
+                        <?php foreach ($subjects as $subject): ?>
+                            <option value="<?= $subject->id ?>"><?= Html::encode($subject->{LanguageHelper::name()}) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+
+                    <select name="subject_id2" id="subject_id2" class="form-control mb-3">
+                        <option value="">Выберите предмет 2</option>
+                        <?php foreach ($subjects as $subject): ?>
+                            <option value="<?= $subject->id ?>"><?= Html::encode($subject->{LanguageHelper::name()}) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+
+                    <button onclick="changeTitle('ent')" id="view"
+                        data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
 
                 </div>
                 <div class="form-search-by-specialization">
-                    
+                    <h1 class="title-form">
+                        Выбрать специальность в вузе
+
+                    </h1>
+                    <select name="subject_id1" id="subject_id1" class="form-control mb-3">
+                        <option value="">Выберите спецальность вуза</option>
+                        <?php foreach ($profession_university as $profession_university_item): ?>
+                            <option value="<?= $profession_university_item->id ?>"><?= Html::encode($profession_university_item->{LanguageHelper::name()}) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+
+                    <button onclick="changeTitle('specialization')" id="view"
+                        data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
                 </div>
                 <div class="form-search-by-college">
-                    
+                    <h1 class="title-form">
+                        Выбрать специальность по спецальностьи колледжа
+                    </h1>
+                    <input type="text" placeholder="<?= Yii::t('app', 'Search for a college specislization') ?>"
+                        id="search-profession-college">
+                    <button onclick="changeTitle('college')" id="view"
+                        data-lang="<?= $lang = Yii::$app->language ?>"><?= Yii::t('app', 'View') ?></button>
                 </div>
+                <div class="title-result"></div>
+                <div class="result-profession-bakalavr"></div>
             </div>
         </div>
         <div class="title-content">

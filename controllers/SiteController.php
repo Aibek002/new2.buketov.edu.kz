@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Departament;
+use app\models\Profession;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
@@ -119,9 +120,9 @@ class SiteController extends Controller
         $departament = Departament::findOne(['id' => $departament_id]);
 
         ;
-        return $this->render('departament', ['departament' => $departament,'departament_id'=>$departament_id]);
+        return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id]);
     }
-      public function actionHistoryDepartament($departament_id)
+    public function actionHistoryDepartament($departament_id)
     {
         $lang = Yii::$app->language;
         // 'select name_ . $lang , '
@@ -167,9 +168,11 @@ class SiteController extends Controller
     }
     public function actionAdmission()
     {
-        $subjects = Subject::find()->all();
+        $subjects = Subject::find()->orderBy(LanguageHelper::name())->all();
+        $profession_university= Profession::find()->orderBy(LanguageHelper::name())->all();
         return $this->render('admission', [
-'subjects'=>$subjects
+            'subjects' => $subjects,
+            'profession_university'=> $profession_university
         ]);
     }
 
