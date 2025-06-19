@@ -29,16 +29,28 @@ function openGeneralRulesPdf(filePath) {
 }
 
 function openForm(type) {
-  formFull = document.querySelector('.form-full-time');
-  formShort = document.querySelector('.form-short-time');
+  const form = document.querySelector('.select-form-by-specialization');
+  const entForm = document.querySelector('.form-search-by-ent');
+  const specializationForm = document.querySelector('.form-search-by-specialization');
+  const collegeForm = document.querySelector('.form-search-by-college');
+  const all = document.querySelectorAll('.select-form-by-specialization,.form-search-by-ent,.form-search-by-specialization,.form-search-by-college');
+  all.forEach(all=>{
+    if(type != 'view-form'){
+      all.classList.remove('.active');
+    }
+  });
+  if (type == 'view-form') {
+    form.classList.toggle('active');
 
-  if (type == 'full') {
-    formFull.classList.toggle('active');
-    formShort.classList.remove('active');
+  } else if(type == 'search-by-ent') {
 
-  } else {
-    formFull.classList.remove('active');
-    formShort.classList.toggle('active');
+    entForm.classList.toggle('active');
+  } else if(type == 'search-by-specialization') {
+
+    specializationForm.classList.toggle('active');
+  } else if(type == 'search-by-college') {
+
+    collegeForm.classList.toggle('active');
   }
 }
 

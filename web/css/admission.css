@@ -91,3 +91,18 @@
     margin-left: 20px;
     padding-left: 20px;
 }
+
+.select-form-by-specialization ,
+.form-search-by-ent,
+.form-search-by-specialization,
+.form-search-by-college
+{
+    display: none;
+}
+.select-form-by-specialization.doctorant.active,
+.form-search-by-ent.active,
+.form-search-by-specialization.active,
+.form-search-by-college.active
+{
+    display: block;
+}

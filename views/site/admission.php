@@ -134,55 +134,44 @@ AdmissionAsset::register($this);
                 10 популярных профессий прошлого года (2024) в Казахстане (ориентируясь на данные по приёму в вузы)
             </h1>
             <ul type="1" class="popular-list">
-                <li>
-                    6B01705 – Иностранный язык: два иностранных языка (английский) — 572
-                </li>
-                <li>
-
-                    6B01403 – Физическая культура и спорт — 262
-                </li>
-                <li>
-
-                    6B01701 – Казахский язык и литература — 209
-                </li>
-                <li>
-
-                    6B07201 – Технология фармацевтического производства — 192
-                </li>
-                <li>
-
-                    6B04201 – Юриспруденция — 164
-                </li>
-                <li>
-
-                    6B01601 – История — 140
-                </li>
-                <li>
-
-                    6B06103 – Информационные системы — 133
-                </li>
-
-                <li>
-
-                    6B03106 – Психология — 110
-                </li>
-
-                <li>
-
-                    6B05201 – Экология — 90
-                </li>
-
-                <li>
-
-
-                    6B04204 – Судебная и прокурорская деятельность — 89
-                </li>
+                <li>6B01705 – Иностранный язык: два иностранных языка (английский) — 572</li>
+                <li> 6B01403 – Физическая культура и спорт — 262</li>
+                <li> 6B01701 – Казахский язык и литература — 209</li>
+                <li>6B07201 – Технология фармацевтического производства — 192</li>
+                <li>6B04201 – Юриспруденция — 164</li>
+                <li> 6B01601 – История — 140</li>
+                <li>6B06103 – Информационные системы — 133</li>
+                <li>6B03106 – Психология — 110</li>
+                <li> 6B05201 – Экология — 90 </li>
+                <li>6B04204 – Судебная и прокурорская деятельность — 89</li>
             </ul>
 
             <div class="button-section">
-                <button>
+                <button onclick="openForm('view-form'">
                     <?=Yii::t('app','Select specialization')?>
                 </button>
+            </div>
+            <div class="select-form-by-specialization">
+                <div class="select-section">
+                    <button onclick="'search-by-ent'">
+                        <?=Yii::t('app', 'Search by ENT')?>
+                    </button>
+                     <button onclick="'search-by-specialization'">
+                        <?=Yii::t('app', 'Search by Specialization')?>
+                    </button>
+                     <button onclick="'search-by-college'">
+                        <?=Yii::t('app', 'Search by College')?>
+                    </button>
+                </div>
+                <div class="form-search-by-ent">
+
+                </div>
+                <div class="form-search-by-specialization">
+                    
+                </div>
+                <div class="form-search-by-college">
+                    
+                </div>
             </div>
         </div>
         <div class="title-content">
