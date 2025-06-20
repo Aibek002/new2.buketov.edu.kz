@@ -6,11 +6,10 @@
 use app\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap5\Breadcrumbs;
-use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 use yii\helpers\Url;
-
+use \yii\helpers\Html;
 
 AppAsset::register($this);
 
@@ -102,7 +101,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 </div>
                                 <div class="dropdown-submenu student">
                                     <a href="#" class="menu-item">Жизнь в кампусе <span>></span></a>
-                                    <a href="#" class="menu-item">Библиотека <span>></span></a>
+                                    <?= Html::a('Библиотека <span>></span>', 'https://library.buketov.edu.kz/', [
+                                        'class' => 'menu-item',
+                                        'encode' => false,
+                                        'target' => '_blank', // если хочешь открыть в новой вкладке
+                                    ]) ?>
+
+
                                     <?= Html::a('Военная кафедра <span>></span>', ['site/faculty', 'name' => 'Военная кафедра'], ['class' => 'menu-item']) ?>
 
                                     <a href="#" class="menu-item">Отдел карьеры <span>></span></a>
@@ -132,38 +137,34 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <a href="#" class="menu-item">Контакты <span>></span></a>
                                 </div>
                                 <div class="dropdown-submenu science">
-                                    <button class="menu-item researchCenterBtn">Научно-исследовательские центры
-                                        <span>+</span></button>
-                                    <button class="menu-item DissertationCouncilBtn">Диссертационные советы
-                                        <span>+</span></button>
-                                    <button class="menu-item CompetitionsAndGrandsBtn">Научные конкурсы и гранты
-                                        <span>+</span></button>
-                                    <button class="menu-item СonferencesBtn">Научные конференции и мероприятия
-                                        <span>+</span></button>
-                                    <button class="menu-item ResearchJobStudentBtn">Отдел научно-исследовательской
-                                        работы студентов <span>+</span></button>
-                                    <a href="#" class="menu-item">Научные журналы и публикации <span>></span></a>
-                                    <a href="#" class="menu-item">Направления исследования <span>></span></a>
-                                    <a href="#" class="menu-item">Совет молодых ученых <span>></span></a>
-                                    <a href="#" class="menu-item">Претенденты на ученые звания <span>></span></a>
-                                    <a href="#" class="menu-item">Научные центры и лаборатории <span>></span></a>
-                                    <a href="#" class="menu-item">Студенческая научная деятельность <span>></span></a>
-                                    <a href="#" class="menu-item">Этика и академическая честность <span>></span></a>
-                                    <a href="#" class="menu-item">Контакты научного отдела <span>></span></a>
+                                    <button class="menu-item researchCenterBtn">Научно-исследовательские
+                                        центры<span>+</span></button>
+                                    <button class="menu-item DissertationCouncilBtn">Диссертационные
+                                        советы<span>+</span></button>
+                                    <button class="menu-item CompetitionsAndGrandsBtn">Научные конкурсы и
+                                        гранты<span>+</span></button>
+                                    <button class="menu-item СonferencesBtn">Научные конференции и
+                                        мероприятия<span>+</span></button>
+                                    <button class="menu-item ResearchJobStudentBtn">Отдел научно-исследовательскойработы
+                                        студентов <span>+</span></button>
+                                    <?= Html::a('Научные журналы и публикации <span>></span>', ['https://vestnik.buketov.edu.kz/'], ['class' => 'menu-item']) ?>
+
+                                    <!--a href="#" class="menu-item">Направления исследования <span>></span></a-->
+                                    <!--a href="#" class="menu-item">Совет молодых ученых <span>></span></a-->
+                                    <!--a href="#" class="menu-item">Претенденты на ученые звания <span>></span></a-->
+                                    <!--a href="#" class="menu-item">Студенческая научная деятельность <span>></span></a-->
+
 
                                 </div>
                                 <div class="dropdown-submenu international-cooperation">
                                     <a href="#" class="menu-item">Академическая мобильность <span>></span></a>
-                                    <a href="#" class="menu-item">Международные проекты и научные исследования
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Международные конференции и семинары
-                                        <span>></span></a>
+                                    <a href="#" class="menu-item">Международные проекты и научные исследования<span>></span></a>
+                                    <a href="#" class="menu-item">Международные конференции и семинары<span>></span></a>
                                     <a href="#" class="menu-item">Университеты-партнеры <span>></span></a>
-                                    <a href="#" class="menu-item">Программа приглашения зарубежных ученых
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Обучение иностранных студентов <span>></span></a>
-                                    <a href="#" class="menu-item">Членство в международных организациях
-                                        <span>></span></a>
+                                    <a href="#" class="menu-item">Программа приглашения зарубежных ученых<span>></span></a>
+                                    <?= Html::a('Обучение иностранных студентов <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
+
+                                    <a href="#" class="menu-item">Членство в международных организациях<span>></span></a>
 
 
                                 </div>
@@ -194,85 +195,77 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                 </div>
                                 <div class="DissertationCouncil">
-                                    <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-work-of-law'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('История <span>></span>', ['site/dissertation-work-of-history'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Математика <span>></span>', ['site/dissertation-work-of-mathematics'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Физика <span>></span>', ['site/dissertation-work-of-physics'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Педагогика <span>></span>', ['site/dissertation-work-of-pedagogy'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Казахский язык и литература <span>></span>', ['site/dissertation-work-of-kazakh-language'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Биология <span>></span>', ['site/dissertation-work-of-biolagy'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Химия <span>></span>', ['site/dissertation-work-of-chemistry'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Иностранные языки <span>></span>', ['site/dissertation-work-of-foreign-language'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Экономика <span>></span>', ['site/dissertation-work-of-economics'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Филология <span>></span>', ['site/dissertation-work-of-philology'], ['class' => 'menu-item']) ?>
-                                    <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-work-of-thermophysics'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('История <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Математика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Физика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Педагогика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Казахский язык и литература <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Биология <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Химия <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Иностранные языки <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Экономика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Филология <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
 
                                 </div>
                                 <div class="CompetitionsAndGrands">
-                                    <a href="#" class="menu-item">Конкурс научных работ: «Право и гражданское общество»
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Положение о проведении конкурса <span>></span></a>
+                                    <?= Html::a('Конкурс научных работ - Право и гражданское общество <span>></span>', ['site/open-general-pdf', 'path' => 'Scientific competitions and grants', 'url' => 'Конкурс научных работ - Право и гражданское общество'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Положение о проведении конкурса <span>></span>', ['site/open-general-pdf', 'path' => 'Scientific competitions and grants', 'url' => 'Положение о проведении конкурса'], ['class' => 'menu-item']) ?>
+
+
                                 </div>
                                 <div class="Conferences">
-                                    <a href="#" class="menu-item">План <span>></span></a>
-                                    <a href="#" class="menu-item">Букетовские чтения – 2025 <span>></span></a>
-                                    <a href="#" class="menu-item">Букетовские чтения – 2024 <span>></span></a>
-                                    <a href="#" class="menu-item">125 лет К. Сатпаеву: Международная конференция
-                                        <span>></span></a>
-                                    <a href="#" class="menu-item">Современные проблемы правовой науки <span>></span></a>
+                                    <?= Html::a('План <span>></span>', ['site/open-general-pdf', 'path' => 'conference', 'url' => 'Календарь конференций'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Букетовские чтения – 2025 <span>></span>', ['site/open-general-pdf', 'path' => 'conference', 'url' => 'Букетовские чтения-2025'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Букетовские чтения – 2024 <span>></span>', ['site/open-general-pdf', 'path' => 'conference', 'url' => 'Букетовские чтения-2024'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('125 лет К. Сатпаеву - Международная конференция <span>></span>', ['site/open-general-pdf', 'path' => 'conference', 'url' => '125 лет К. Сатпаеву - Международная конференция'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a('Современные проблемы правовой науки  <span>></span>', ['site/open-general-pdf', 'path' => 'conference', 'url' => 'Современные проблемы правовой науки'], ['class' => 'menu-item']) ?>
 
                                 </div>
                                 <div class="ResearchJobStudent">
                                     <button class="menu-item year-toggle-btn--2024">2023–2024 <span>+</span></button>
                                     <div class="ResearchJobStudent-2024">
-                                        <a href="#" class="menu-item">Протокол – 6В01402 НВП <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В01406 Визуальное искусство
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В01410 Мировая экономика
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В02203 Археология <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В05301 Химия <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В05302 Фундаментальная химия
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В06205 РЭТ <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 6В07201 Теплофизика <span>></span></a>
+                                        <?= Html::a('6B03202 Связь с общественностью <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по ОП 6B03202 Связь с общественностью'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В02201 Философия <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по ОП 6В02201 Философия'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В02310 (6В02303) Иностранная филология <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по ОП 6В02310 (6В02303) Иностранная филология'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В05302 Фундаментальная химия <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по ОП 6В05302 Фундаментальная  химия'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В11405 (6В11401) Социальная работа <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по ОП 6В11405 (6В11401) Социальная работа'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В01402 НВП <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01402 НВП'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В01406 Виз.искусство <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01406 Виз.искусство'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В01410 Мировая экономика <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01410 Мировая экономика'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В02203 Археология <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В02203Археология'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В05301 Химия <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В05301 Химия'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В05302 Фунд Химия <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В05302 Фунд Химия'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В06205 РЭТ <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В06205 РЭТ'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('6В07201 ТФП <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В07201 ТФП'], ['class' => 'menu-item']) ?>
+
+
                                     </div>
 
                                     <button class="menu-item year-toggle-btn--2023">2022–2023 <span>+</span></button>
                                     <div class="ResearchJobStudent-2023">
-                                        <a href="#" class="menu-item">План <span>></span></a>
-                                        <a href="#" class="menu-item">Букетовские чтения – 2025 <span>></span></a>
-                                        <a href="#" class="menu-item">Букетовские чтения – 2024 <span>></span></a>
-                                        <a href="#" class="menu-item">125 лет К. Сатпаеву: Международная конференция
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Современные проблемы правовой науки
-                                            <span>></span></a>
+
                                     </div>
 
                                     <button class="menu-item year-toggle-btn--2022">2021–2022 <span>+</span></button>
                                     <div class="ResearchJobStudent-2022">
-                                        <a href="#" class="menu-item">Протокол – 5В011500 Основы права и экономики
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В050100 Социология <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В050800 Учет и аудит
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В060600 Химия <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В050200 Политология <span>></span></a>
+                                        <?= Html::a('5В011500 основы права и экономики <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2021-2022', 'url' => '5В011500 основы права и экономики'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В050100 социология <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2021-2022', 'url' => '5В050100 социология'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В050800 учет и аудит <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2021-2022', 'url' => '5В050800 учет и аудит'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В060600 химия <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2021-2022', 'url' => '5В060600 химия'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В0502000 политология <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2021-2022', 'url' => '5В0502000 политология'], ['class' => 'menu-item']) ?>
                                     </div>
 
                                     <button class="menu-item year-toggle-btn--2021">2020–2021 <span>+</span></button>
                                     <div class="ResearchJobStudent-2021">
-                                        <a href="#" class="menu-item">Протокол – 5В011900 Иностр. язык (два иностранных)
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В012000 Проф. обучение
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В020700 Переводческое дело
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В052100 Гос. аудит <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В090500 Социальная работа
-                                            <span>></span></a>
-                                        <a href="#" class="menu-item">Протокол – 5В071600 Приборостроение
-                                            <span>></span></a>
+                                        <?= Html::a('5В011900 Иностранный язык два иностранных языка <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2020-2021', 'url' => '5В011900 Иностранный язык два иностранных языка'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В012000 Профессиональное обучение <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2020-2021', 'url' => '5В012000 Профессиональное обучение'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В020700 Переводческое дело <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2020-2021', 'url' => '5В020700 Переводческое дело'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В052100 Государственный аудит <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2020-2021', 'url' => '5В052100 Государственный аудит'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В071600 Приборостроение1 <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2020-2021', 'url' => '5В071600 Приборостроение1'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('5В090500 Социальная работа <span>></span>', ['site/open-general-pdf', 'path' => 'Department of Research work of students', 'year' => '2020-2021', 'url' => '5В090500 Социальная работа'], ['class' => 'menu-item']) ?>
+
                                     </div>
 
 

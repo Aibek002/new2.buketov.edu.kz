@@ -17,18 +17,6 @@ function openSection(type) {
     doctorant.classList.toggle("active");
   }
 }
-function openGeneralRulesPdf(filePath) {
-  const general_rules_pdf = document.querySelector(".general-rules-pdf");
-  general_rules_pdf.src = "";
-  general_rules_pdf.classList.remove("active");
-
-  console.log(filePath);
-  setTimeout(() => {
-    general_rules_pdf.classList.add("active");
-    console.log(filePath);
-    general_rules_pdf.src = filePath;
-  }, 50);
-}
 
 function openForm(type) {
   const form = document.querySelector('.select-form-by-specialization');

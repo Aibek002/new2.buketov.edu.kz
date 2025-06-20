@@ -94,7 +94,7 @@ class SiteController extends Controller
             ->one();
 
         $departament = Departament::findAll(['faculty_id' => $faculty_id]);
-        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id]);
+        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id , 'name'=>$name]);
     }
 
     public function actionHistoryFaculty($faculty_id)
@@ -196,5 +196,22 @@ class SiteController extends Controller
     public function actionImg()
     {
         return $this->render('img');
+    }
+    public function actionOpenGeneralPdf($path, $url, $year = null)
+    {
+        $params = [
+            'url'=>$url,
+            'path'=>$path
+
+        ];
+        if($year !== null){
+            $params['year'] = $year;
+        }
+
+        return $this->render('open-general-pdf', ['params'=>$params]);
+    }
+    public function actionDissertationJob()
+    {
+        return $this->render('dissertation-job');
     }
 }

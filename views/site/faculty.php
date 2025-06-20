@@ -9,7 +9,8 @@ use yii\helpers\Html;
         <h1>
             <br>
             <?= !empty($faculty) && !empty($faculty->{LanguageHelper::name()}) ? htmlspecialchars($faculty->{LanguageHelper::name()}) : '( Здесь ничего не задано )' ?>
-            <?php echo Yii::t('app', 'faculty'); ?>
+            <?= strcasecmp($name, 'Военная кафедра') === 0 ? '' : Yii::t('app', 'faculty')  ?>
+
         </h1>
     </div>
 </div>
@@ -45,22 +46,27 @@ use yii\helpers\Html;
         </div>
 
     </div>
-    <h1 class="department-title">Кафедры</h1>
+    <?php if ($name != 'Военная кафедра'): ?>
 
-    <div class="departments-container">
-        <?php if (!empty($departament)): ?>
-            <?php foreach ($departament as $departament_item): ?>
-                <div class="department-box">
-                    <h3> <?= Html::a(
-                                $departament_item->{LanguageHelper::name()} 
-                , ['site/departament', 'departament_id' => $departament_item->id]) ?></h3>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>Departament нету</p>
+        <h1 class="department-title">Кафедры</h1>
 
-        <?php endif; ?>
-    </div>
+        <div class="departments-container">
+            <?php if (!empty($departament)): ?>
+                <?php foreach ($departament as $departament_item): ?>
+                    <div class="department-box">
+                        <h3> <?= Html::a(
+                            $departament_item->{LanguageHelper::name()}
+                            ,
+                            ['site/departament', 'departament_id' => $departament_item->id]
+                        ) ?></h3>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Departament нету</p>
+
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 
     <!-- <?= !empty($departament->name_ru) ? nl2br(htmlspecialchars($departament->{LanguageHelper::name()})) : '( Здесь ничего не задано )' ?> -->
 

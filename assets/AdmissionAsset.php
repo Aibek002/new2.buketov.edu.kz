@@ -12,7 +12,9 @@ class AdmissionAsset extends AssetBundle{
         "css/admission.css"
         ];
     public $js = [
-        "js/admission.js"
+        "js/admission.js",
+        'js/open-general-pdf.js'
+
     ];
    
 }

@@ -1,0 +1,13 @@
+.document.active{
+    display: flex;
+    flex-direction: column;
+}
+.document{
+    display: none ;
+}
+.general-rules-pdf{
+    display: none;
+}
+.general-rules-pdf.active{
+    display: block;
+}
