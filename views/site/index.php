@@ -1,6 +1,9 @@
 <?php
 
 /** @var yii\web\View $this */
+use app\assets\HomeAsset;
+
+HomeAsset::register($this);
 
 $this->title = 'Buketov University';
 ?>
@@ -20,71 +23,9 @@ $this->title = 'Buketov University';
             <video width="100%" autoplay="autoplay" playsinline="" muted="muted" loop="loop" class="video">
                 <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
             </video>
-            <!--<img width="60%" src="https://dist.buketov.edu.kz/img/logo_buketov.png">https://backend.narxozedu.kz/uploads/December2024/06626793-0eb5-4ef0-8ff5-e4d29b7d579c.mp4-->
         </div>
     </div>
-    <!-- <div class="first-block overly"></div> -->
     <div class="second-block col-md-12 d-flex justify-content-center">
-        <!--<div
-            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 card-row col-md-10 d-flex justify-content-between align-items-stretch additional-links">
-            <div class="col additional-links-item">
-                <div class="card shadow-sm card-additional-links h-100 w-100">
-                    <div class="card-blur-bg"></div>
-                    <div class="card-body d-flex flex-column">
-                      
-                        <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-                            <p class="card-text text-white additional-links-text">Народный знак качества «БЕЗУПРЕЧНО»
-                            </p>
-                        </div>
-                       
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="btn-group">
-                                <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-white border-white">Просмотр</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col additional-links-item">
-                <div class="card shadow-sm card-additional-links h-100 w-100">
-                    <div class="card-blur-bg"></div>
-                    <div class="card-body d-flex flex-column">
-                      
-                        <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-                            <p class="card-text text-white additional-links-text">Народный знак качества «БЕЗУПРЕЧНО»
-                            </p>
-                        </div>
-                        
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="btn-group">
-                                <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-white border-white">Просмотр</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col additional-links-item">
-                <div class="card shadow-sm card-additional-links h-100 w-100">
-                    <div class="card-blur-bg"></div>
-                    <div class="card-body d-flex flex-column">
-                     
-                        <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-                            <p class="card-text text-white additional-links-text">Народный знак качества «БЕЗУПРЕЧНО»
-                            </p>
-                        </div>
-                       
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="btn-group">
-                                <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-white border-white">Просмотр</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
         <div class="carousel-flex">
             <div class="carousel">
                 <div class="list">
@@ -282,45 +223,26 @@ $this->title = 'Buketov University';
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
-            <div class="col news-item">
+            <?php foreach($news as $news_item):?>
+
+            <div onclick="openBox(this, 'open')"  data-title="<?=$news_item['title']?>"  data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>" data-date="<?= Yii::$app->formatter->asDate($news_item['date'],'php:d.m.Y')?>" class="col news-item">
                 <div class="card shadow-sm">
-                    <!--<img src="/bg-images/news-bg.png" height="100%">-->
-                    <video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video>
+                    <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
 
                     <div class="card-body news-text">
-                        <p class="card-text">news title</p>
+                        <p class="card-text"><?= $news_item['title']?></p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-body-secondary">9 mins</small>
+                            <small class="text-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'],'php:d.m.Y')?></small>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col news-item">
-                <div class="card shadow-sm">
-                    <video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video>
-
-                    <div class="card-body news-text">
-                        <p class="card-text">news title</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-body-secondary">9 mins</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col news-item">
-                <div class="card shadow-sm">
-                    <video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video>
-                    <div class="card-body news-text">
-                        <p class="card-text">news title</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-body-secondary">9 mins</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+          <?php endforeach;?>
         </div>
     </div>
+    <div class="blur"></div>
+        <div class="box-overlay"></div>
+
     <div class="fifth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
             <p><?= Yii::t('app', 'Upcoming Events') ?></p>

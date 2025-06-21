@@ -14,7 +14,8 @@ $this->title = 'Admin Page';
     <?= Html::a('Профессий колледжа', ['admin/profession-college'], ['class' => 'fas st-university']) ?>
     <?= Html::a('Сотрудники', ['admin/staff-admin-panel'], ['class' => 'fas st-university']) ?>
     <?= Html::a('Факультеты', ['admin/faculty-admin-panel'], ['class' => 'fas fa-university']) ?>
-    <a href="#"><i class="fas fa-file-pdf"></i> ПДФ</a>
-    <a href="#"><i class="fas fa-newspaper"></i> Новости</a>
+    <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
+    <?= Html::a('ПДФ', ['admin/pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
+
 
 </div>

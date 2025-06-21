@@ -17,6 +17,7 @@ use Yii;
  * @property int|null $skill_level_id
  * @property int|null $ref_type_profession_id
  *
+ * @property ProfessionCollege[] $professionColleges
  * @property RefTypeProfession $refTypeProfession
  * @property SkillLevel $skillLevel
  * @property SubjectToProfession[] $subjectToProfessions
@@ -63,6 +64,16 @@ class Profession extends \yii\db\ActiveRecord
             'skill_level_id' => 'Skill Level ID',
             'ref_type_profession_id' => 'Ref Type Profession ID',
         ];
+    }
+
+    /**
+     * Gets query for [[ProfessionColleges]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProfessionColleges()
+    {
+        return $this->hasMany(ProfessionCollege::class, ['profession_id' => 'id']);
     }
 
     /**

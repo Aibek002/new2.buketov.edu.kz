@@ -15,6 +15,7 @@ use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
 use app\models\Subject;
+use app\models\News;
 
 
 use app\models\HistoryFaculty;
@@ -76,7 +77,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $news_for_home = News::find()
+            ->select([
+                LanguageHelper::title() . ' AS title',
+                LanguageHelper::content() . ' AS content',
+                'date',
+            ])->orderBy(['id' => SORT_DESC])
+            ->limit(3)
+            ->asArray()
+            ->all();
+        
+        return $this->render('index' , ['news'=>$news_for_home]);
     }
     public function actionFaculty($name)
     {
@@ -94,7 +105,7 @@ class SiteController extends Controller
             ->one();
 
         $departament = Departament::findAll(['faculty_id' => $faculty_id]);
-        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id , 'name'=>$name]);
+        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id, 'name' => $name]);
     }
 
     public function actionHistoryFaculty($faculty_id)
@@ -200,15 +211,15 @@ class SiteController extends Controller
     public function actionOpenGeneralPdf($path, $url, $year = null)
     {
         $params = [
-            'url'=>$url,
-            'path'=>$path
+            'url' => $url,
+            'path' => $path
 
         ];
-        if($year !== null){
+        if ($year !== null) {
             $params['year'] = $year;
         }
 
-        return $this->render('open-general-pdf', ['params'=>$params]);
+        return $this->render('open-general-pdf', ['params' => $params]);
     }
     public function actionDissertationJob()
     {
