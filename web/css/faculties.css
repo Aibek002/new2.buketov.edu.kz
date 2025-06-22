@@ -7,9 +7,12 @@
     align-items: center;
     justify-content: flex-start;
 }
-
+.link-button{
+    color: var(--indigoblue-font);
+    text-decoration: none;
+}
 .faculty-overlay {
-    background: linear-gradient(to right, rgba(64, 94, 137, 0.9) 50%, rgba(64, 94, 137, 0.4) 100%);
+    background:var(--indigoblue-50);
     width: 60%;
     height: 100%;
     display: flex;
@@ -65,7 +68,7 @@
 }
 
 .faculty-text a {
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
     text-decoration: underline;
 }
 
@@ -86,7 +89,7 @@
     /* более современный шрифт */
     font-weight: 700;
     font-size: 36px;
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
     margin-bottom: 30px;
     text-align: startS;
     text-transform: uppercase;
@@ -112,7 +115,7 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    border: 1px solid var(--indigoblue);
+    border: 1px solid var(--indigoblue-font);
 }
 
 .department-box:hover {
@@ -124,7 +127,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     font-size: var(--font-16);
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
     /* приятный синий цвет */
     margin: 0;
 }
@@ -179,7 +182,7 @@
     filter: drop-shadow(10px 0 20px black);
 }
 .dean-name{
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
     font-size: var(--font-28);
 }
 .dean-name,
@@ -196,7 +199,7 @@
     font-weight: 700;
     font-size: 20px;
     text-align: end;
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
 }
 .faculty-social{
     display: flex;
@@ -231,7 +234,7 @@
     padding: 20px;
     font-size: var(--font-22);
     font-weight: var(--font-700);
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
 }
 .buttons button:nth-child(3){
     width: 33%;
@@ -241,7 +244,7 @@
     padding: 20px;
     font-size: var(--font-22);
     font-weight: var(--font-700);
-    color: var(--indigoblue);
+    color: var(--indigoblue-font);
 }
 .content-faculties{
     overflow: hidden;

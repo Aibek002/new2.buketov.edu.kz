@@ -20,7 +20,7 @@ $this->title = 'Buketov University';
 
         </div>
         <div class="col-md-12 w-100" style="overflow:hidden">
-            <video width="100%" autoplay="autoplay" playsinline="" muted="muted" loop="loop" class="video">
+            <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted" loop="loop" class="video">
                 <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
             </video>
         </div>
@@ -140,7 +140,9 @@ $this->title = 'Buketov University';
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">Бакалавриат</p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Admission instructions') ?></p>
+                                <p class="edu-text edu-text--bachelor m-0">
+                                    <?= Yii::t('app', 'Admission instructions') ?>
+                                </p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center col-md-3 w-30 my-3">
@@ -151,7 +153,9 @@ $this->title = 'Buketov University';
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">Магистратура</p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Admission instructions') ?></p>
+                                <p class="edu-text edu-text--bachelor m-0">
+                                    <?= Yii::t('app', 'Admission instructions') ?>
+                                </p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center col-md-3 w-30 my-3">
@@ -163,7 +167,9 @@ $this->title = 'Buketov University';
                                 <a href="#" style="">
                                     <p class="edu-title edu-title--bachelor m-0">Доктарантура</p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Admission instructions') ?></p>
+                                <p class="edu-text edu-text--bachelor m-0">
+                                    <?= Yii::t('app', 'Admission instructions') ?>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -179,9 +185,13 @@ $this->title = 'Buketov University';
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2 ">
                                 <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0"><?= Yii::t('app', 'Mobility programs') ?></p>
+                                    <p class="edu-title edu-title--bachelor m-0">
+                                        <?= Yii::t('app', 'Mobility programs') ?>
+                                    </p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?></p>
+                                <p class="edu-text edu-text--bachelor m-0">
+                                    <?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?>
+                                </p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center col-md-3 w-50 my-3">
@@ -209,7 +219,9 @@ $this->title = 'Buketov University';
                                         <?= Yii::t('app', 'Internship programs') ?>
                                     </p>
                                 </a>
-                                <p class="edu-text edu-text--bachelor m-0"><?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?></p>
+                                <p class="edu-text edu-text--bachelor m-0">
+                                    <?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -223,25 +235,28 @@ $this->title = 'Buketov University';
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
-            <?php foreach($news as $news_item):?>
+            <?php foreach ($news as $news_item): ?>
 
-            <div onclick="openBox(this, 'open')"  data-title="<?=$news_item['title']?>"  data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>" data-date="<?= Yii::$app->formatter->asDate($news_item['date'],'php:d.m.Y')?>" class="col news-item">
-                <div class="card shadow-sm">
-                    <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
+                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?>"
+                    data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>"
+                    data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>" class="col news-item">
+                    <div class="card shadow-sm">
+                        <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
 
-                    <div class="card-body news-text">
-                        <p class="card-text"><?= $news_item['title']?></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'],'php:d.m.Y')?></small>
+                        <div class="card-body news-text">
+                            <p class="card-text"><?= $news_item['title'] ?></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small
+                                    class="text-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?></small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-          <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
     </div>
     <div class="blur"></div>
-        <div class="box-overlay"></div>
+    <div class="box-overlay"></div>
 
     <div class="fifth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
@@ -249,51 +264,52 @@ $this->title = 'Buketov University';
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch upcoming-event">
-            <div class="col upcoming-event-item">
-                <div class="calendar-card">
-                    <div class="calendar-bg"></div>
-                    <div class="calendar-content">
-                        <p class="upcoming-event-month">Февраль</p>
-                        <p class="upcoming-event-day">14</p>
-                        <p class="upcoming-event-time">7 pm - 8 pm</p>
-                        <p class="upcoming-event-title">Открытие библиотеки</p>
-                        <p class="upcoming-event-text">текст</p>
+            <?php foreach ($events as $event_item): ?>
+                <?php
+                // Массив для сопоставления числового значения месяца и его текстового представления
+                $months = [
+                    1 => "January",
+                    2 => "February",
+                    3 => "March",
+                    4 => "April",
+                    5 => "May",
+                    6 => "June",
+                    7 => "July",
+                    8 => "August",
+                    9 => "September",
+                    10 => "October",
+                    11 => "November",
+                    12 => "December",
+                ];
+
+                // Получаем месяц по числовому значению
+                $month = isset($months[$event_item['month']]) ? $months[$event_item['month']] : "Unknown";
+                ?>
+                <div class="col upcoming-event-item ">
+                    <div class="calendar-card">
+                        <div class="calendar-bg"></div>
+                        <div onclick="openBoxEvents(this, 'open')" data-day="<?= $event_item['day'] ?>"
+                            data-month="<?= $event_item['month'] ?>" data-year="<?= $event_item['year'] ?>" data-title="<?= $event_item['title'] ?>"
+                            data-content="<?= $event_item['content'] ?>" class="calendar-content">
+                            <p class="upcoming-event-month"><?= Yii::t('app', $month) ?></p>
+                            <p class="upcoming-event-day"><?= $event_item['day'] ?></p>
+                            <p class="upcoming-event-time"><?= $event_item['year'] ?></p>
+                            <p class="upcoming-event-title"><?= $event_item['title'] ?></p>
+                            <p class="upcoming-event-text"><?= $event_item['content'] ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col upcoming-event-item">
-                <div class="calendar-card">
-                    <div class="calendar-bg"></div>
-                    <div class="calendar-content">
-                        <p class="upcoming-event-month">Февраль</p>
-                        <p class="upcoming-event-day">14</p>
-                        <p class="upcoming-event-time">7 pm - 8 pm</p>
-                        <p class="upcoming-event-title">Открытие библиотеки</p>
-                        <p class="upcoming-event-text">текст</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col upcoming-event-item ">
-                <div class="calendar-card">
-                    <div class="calendar-bg"></div>
-                    <div class="calendar-content">
-                        <p class="upcoming-event-month">Февраль</p>
-                        <p class="upcoming-event-day">14</p>
-                        <p class="upcoming-event-time">7 pm - 8 pm</p>
-                        <p class="upcoming-event-title">Открытие библиотеки</p>
-                        <p class="upcoming-event-text">текст</p>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
 
         </div>
     </div>
 </div>
+<div class="more-events-overlay"></div>
 
 <div class="sixth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
     <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
         <p><?= Yii::t('app', 'Rector\'s Blog') ?>
-</p>
+        </p>
     </div>
 
     <div class="col-md-10 d-flex justify-content-center align-items-center block-rector">
@@ -326,9 +342,9 @@ $this->title = 'Buketov University';
             class="col-md-5 d-flex justify-content-center align-items-center block-header">
             <p><?= Yii::t('app', 'Feedback Form') ?></p>
         </div>
-        <div style="border-radius: 0 50px 50px 0; background: transparent; border: 1px var(--indigoblue) solid;"
+        <div style="border-radius: 0 50px 50px 0; background: transparent; border: 1px var(--indigoblue-font) solid;"
             class="col-md-5 d-flex justify-content-center align-items-center block-header">
-            <p style=" color: var(--indigoblue);"><?= Yii::t('app', 'Citizens Reception Schedule') ?></p>
+            <p style=" color: var(--indigoblue-font);"><?= Yii::t('app', 'Citizens Reception Schedule') ?></p>
         </div>
 
     </div>
@@ -349,11 +365,13 @@ $this->title = 'Buketov University';
                 <div class="card shadow-sm h-100 w-100 position-relative p-3">
                     <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
                     <div class="card-body d-flex flex-column justify-content-between position-relative">
-                        <p class="card-text text-gray"><?= Yii::t('app', 'Cooperation in the field of education and science') ?></p>
+                        <p class="card-text text-gray">
+                            <?= Yii::t('app', 'Cooperation in the field of education and science') ?>
+                        </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-gray border-gray"> <?= Yii::t('app', 'View') ?></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary text-gray border-gray">
+                                    <?= Yii::t('app', 'View') ?></button>
                             </div>
                         </div>
                     </div>

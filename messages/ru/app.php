@@ -63,6 +63,18 @@ return [
     'Write strictly in the language of the page.' => 'Пишите строго на том языке, на котором написана страница.',
     'Profession College'=>'Профессия Колледжа',
     'Profession University'=>'Профессия Университета',
-    'Select specialization' => 'Выбрать специальность'
+    'Select specialization' => 'Выбрать специальность',
+    'January' => 'Январь',
+    'February' => 'Февраль',
+    'March' => 'Март',
+    'April' => 'Апрель',
+    'May' => 'Май',
+    'June' => 'Июнь',
+    'July' => 'Июль',
+    'August' => 'Август',
+    'September' => 'Сентябрь',
+    'October' => 'Октябрь',
+    'November' => 'Ноябрь',
+    'December' => 'Декабрь',
 
 ];

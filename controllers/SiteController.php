@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Departament;
 use app\models\Profession;
+use app\models\Events;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
@@ -77,6 +78,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
+        $current_month = (int) Yii::$app->formatter->asDate('today', 'MM');
+        $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
         $news_for_home = News::find()
             ->select([
                 LanguageHelper::title() . ' AS title',
@@ -86,8 +90,47 @@ class SiteController extends Controller
             ->limit(3)
             ->asArray()
             ->all();
-        
-        return $this->render('index' , ['news'=>$news_for_home]);
+
+        // $events = Events::find()
+        // ->select([
+        //         'title_en AS title',
+        //         'content_en AS content',
+        //         'year',
+        //         'month',
+        //         'day',
+        //     ])
+        // ->where(['>','day',$current_day])
+        // ->andWhere(['>','month',$current_month])
+        // ->andWhere(['>','year',$current_year])
+        // ->orderBy([
+        //     'day'=>SORT_ASC,
+        //     'month'=>SORT_ASC,
+        //     'year'=>SORT_ASC
+        // ])
+        // ->all();
+
+        $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
+
+        $events = Events::find()
+            ->select([
+                'title_en AS title',
+                'content_en AS content',
+                'year',
+                'month',
+                'day',
+            ])
+            ->where(['>', 'DATE(CONCAT(year, "-", month, "-", day))', $current_date])
+            ->orderBy([
+                'year' => SORT_ASC,
+                'month' => SORT_ASC,
+                'day' => SORT_ASC
+            ])
+            ->asArray()
+            ->limit(3)
+            ->all();
+
+
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events]);
     }
     public function actionFaculty($name)
     {

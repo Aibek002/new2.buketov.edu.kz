@@ -3,8 +3,11 @@
 :root {
   --second-family: 'IBM Plex Mono', monospace;
   --darkblue: var(--darkblue);
-  --indigoblue: #405e89;
-  --indigoblue-50: #405e8998;
+  --whiteblue:#415e8a;
+  --indigoblue-font: #2c5ca9;
+
+  --indigoblue: linear-gradient(145deg, #1f3b6e, #2c5ca9);
+  --indigoblue-50: linear-gradient(145deg, #1f3b6eab, #2c5ca97d);;
   --light-gray: #f9f9f9;
   --sand: #c0a282;
   --white: #fff;
@@ -66,63 +69,6 @@
   }
 }
 
-.teachers-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-}
-
-.teachers-box {
-  width: 400px;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  overflow: hidden;
-  text-align: center;
-  padding: 15px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  transition: transform 0.3s ease;
-}
-
-.teachers-box:hover {
-  transform: scale(1.03);
-}
-
-.teachers-box img {
-  height: 200px;
-  object-fit: cover;
-  margin: 0 auto 10px;
-}
-
-.fio {
-  font-weight: bold;
-  font-size: 10px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.job_title {
-  font-size: 10px;
-
-  font-style: italic;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.info {
-  font-size: 10px;
-  color: #444;
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
-
 
 
 
@@ -134,10 +80,10 @@
   font-family: 'Arial', sans-serif;
   font-size: 34px;
   font-weight: 700;
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
   padding: 10px 15px;
   border-left: 5px solid var(--indigoblue);
-  background-color: var(--light-gray);
+  background: var(--light-gray);
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -148,10 +94,10 @@
   font-family: 'Arial', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
   padding: 10px 15px;
   border-left: 5px solid var(--indigoblue);
-  background-color: var(--light-gray);
+  background: var(--light-gray);
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -171,9 +117,9 @@
 }
 
 .select-section button {
-  border: 1px solid var(--indigoblue);
-  background-color: var(--light-gray);
-  color: var(--indigoblue);
+  border: 1px solid var(--indigoblue-font);
+  background: var(--light-gray);
+  color: var(--indigoblue-font);
   font-size: var(--font-16);
   font-weight: var(--font-700);
   transition: all .3s ease;
@@ -197,7 +143,7 @@
 b,
 strong {
   font-weight: bolder;
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
 }
 
 .button-section {
@@ -207,11 +153,11 @@ strong {
 }
 
 .button-section button {
-  border: 1px solid var(--indigoblue);
+  border: 1px solid var(--indigoblue-font);
   border-radius: 20px;
-  background-color: var(--white);
+  background: var(--white);
   font-size: var(--font-16);
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
   font-weight: var(--font-700);
   padding-block: 10px;
   margin-block: 20px;
@@ -219,7 +165,7 @@ strong {
 }
 
 .button-section button:hover {
-  box-shadow: 0 10px 10px var(--indigoblue);
+  box-shadow: 0 10px 10px var(--indigoblue-font);
   transform: scale(1.05);
 }
 
@@ -237,7 +183,7 @@ strong {
 .person-section .person-fio {
   font-size: var(--font-22);
   font-family: 'Courier New', Courier, monospace;
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
 }
 
 .person-info {
@@ -276,7 +222,7 @@ strong {
 .person-email .email a {
   font-size: var(--font-18);
   font-family: 'Courier New', Courier, monospace;
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
   text-decoration: none;
 }
 
@@ -486,7 +432,7 @@ strong {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;
     align-items: center;
@@ -508,7 +454,7 @@ strong {
 
 .dropdown-item:hover {
     color: #007bff;
-    background-color: transparent;
+    background: transparent;
 }
 
 .dropdown-submenu {
@@ -521,7 +467,7 @@ strong {
     left: 100%;
     width: 200px;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     display: none;
     z-index: 1001;
 }
@@ -663,12 +609,12 @@ main>.container {
 
 /* ========== HEADER ========== */
 .header {
-  background-color: transparent;
+  background: transparent;
 
 }
 
 .header.scrolled {
-  background-color: var(--indigoblue-50);
+  background: var(--indigoblue-50);
 }
 
 .logoBuketov {
@@ -727,7 +673,7 @@ main>.container {
   width: 100vw;
   height: 100vh;
   padding: 20px;
-  background-color: var(--indigoblue);
+  background: var(--indigoblue);
   display: none;
   /* Скрыто по умолчанию */
   justify-content: center;
@@ -745,15 +691,13 @@ main>.container {
 /*Dropdown-main-menu Role*/
 .dropdown-menu-header.active .dropdown-main-menu {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
   width: 30%;
-  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   border-right: 1px #fff solid;
+  padding-block: 2%;
 }
 
 .dropdown-menu-header.active .dropdown-main-menu button,
@@ -763,7 +707,7 @@ main>.container {
   justify-content: space-between;
   text-align: left;
   gap: 20px;
-  background-color: transparent;
+  background: transparent;
   border: none;
   color: var(--white);
   width: 100%;
@@ -842,7 +786,7 @@ main>.container {
   letter-spacing: 0.1em;
   transition: 0.3s;
   border: none;
-  background-color: transparent;
+  background: transparent;
   text-decoration: none;
   text-align: left;
 }
@@ -911,7 +855,7 @@ main>.container {
   padding: 20px;
   transition: 0.3s;
   gap: 20px;
-  background-color: var(--indigoblue);
+  background: var(--indigoblue);
   border: 1px var(--white) solid;
   border-radius: 20px;
 
@@ -976,7 +920,7 @@ main>.container {
   transition: 0.3s;
   text-decoration: none;
   border: none;
-  background-color: transparent;
+  background: transparent;
 }
 
 
@@ -1007,12 +951,12 @@ main>.container {
   font-size: 16px;
   text-align: center;
   color: #fff;
-  font-family: var(--second-family), sans-serif;
+  font-family:  sans-serif;
   padding-block: 0;
 }
 
 body {
-  font-family: var(--second-family), sans-serif;
+  /* font-family: sans-serif; */
   /* Используем переменную шрифта */
 }
 
@@ -1045,8 +989,7 @@ body {
   width: 50vw;
   left: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: end;
   flex-direction: column;
 }
 
@@ -1109,7 +1052,7 @@ body {
   border: 1px var(--white) solid;
   border-radius: 20px;
   padding-block: 20px;
-  background-color: transparent;
+  background: transparent;
 }
 
 .card-blur-bg {
@@ -1129,7 +1072,7 @@ body {
 
 /* ========== BLOCK HEADER ========== */
 .block-header {
-  background-color: var(--indigoblue);
+  background: var(--indigoblue);
   color: var(--white);
   border-radius: 50px;
 }
@@ -1143,7 +1086,6 @@ body {
 }
 
 .university-branding {
-  padding: 2rem;
   color: var(--white);
   /* Индиго стиль */
   border-radius: 20px;
@@ -1155,7 +1097,7 @@ body {
   font-size: 6em;
   line-height: 70px;
   font-weight: bold;
-  margin: 0.5rem 0;
+  margin: 0.5rem -8px;
   letter-spacing: 1px;
 }
 
@@ -1163,15 +1105,14 @@ body {
   font-size: 1.2rem;
   color: #ccc;
   font-family: sans-serif, sans-serif;
-  margin: 0 0.8rem;
+  margin: 0;
 }
 
 .university-year {
   font-size: 1rem;
   color: #ccc;
-  margin: 0 0.8rem;
   font-family: sans-serif, sans-serif;
-  ;
+  margin: 0;
 
 }
 
@@ -1183,15 +1124,15 @@ body {
 
 .admissionBtnLeft,
 .admissionBtnRight {
-  background-color: transparent;
+  background: transparent;
   padding-block: 10px;
-  border: 1px solid var(--indigoblue);
+  border: 1px solid var(--indigoblue-font);
   width: 49%;
   transition: transform 1s ease;
   border-radius: 50px;
   font-size: var(--font-24);
   font-weight: var(--font-700);
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
 }
 
 .admissionBtnLeft.active,
@@ -1201,7 +1142,7 @@ body {
 }
 
 .admission-btn-bg {
-  background-color: var(--indigoblue);
+  background: var(--indigoblue);
   position: absolute;
   z-index: -1;
   border-radius: 50px;
@@ -1247,7 +1188,7 @@ body {
 .edu-title {
   font-size: var(--font-22);
   font-weight: var(--font-700);
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
   font-family: var(--font-heading);
 }
 
@@ -1297,7 +1238,7 @@ body {
 }
 
 .news-item:hover .card.shadow-sm {
-  border: 5px solid var(--indigoblue);
+  border: 5px solid var(--whiteblue);
   background: var(--indigoblue-50);
 }
 
@@ -1452,7 +1393,7 @@ body {
   font-weight: var(--font-700);
   font-size: 4em;
   line-height: 100%;
-  color: var(--indigoblue);
+  color: var(--indigoblue-font);
   font-family: sans-serif, sans-serif;
 }
 
@@ -1488,7 +1429,7 @@ body {
 
 /* ========== FOOTER ========== */
 .footer {
-  background-color: var(--indigoblue);
+  background: var(--indigoblue);
   font-size: var(--font-14);
   padding: 100px;
   position: relative;

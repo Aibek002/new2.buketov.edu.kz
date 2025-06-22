@@ -1,7 +1,9 @@
 <?php
 use app\components\LanguageHelper;
 use yii\helpers\Html;
+use app\assets\DepartamentAsset;
 
+DepartamentAsset::register($this);
 ?>
 
 <div class="faculty-hero">
@@ -35,7 +37,8 @@ use yii\helpers\Html;
             <p>Email: <a href="">
                     <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
                 </a></p>
-            <p><?= Html::a(Yii::t('app', 'Для просмотра истории кафедры перейдите по ссылке'), ['site/history-departament', 'departament_id' => $departament_id ]) ?></p>
+            <p><?= Html::a(Yii::t('app', 'Для просмотра истории кафедры перейдите по ссылке'), ['site/history-departament', 'departament_id' => $departament_id]) ?>
+            </p>
         </div>
 
         <div class="faculty-image">
@@ -43,16 +46,25 @@ use yii\helpers\Html;
         </div>
 
     </div>
- <div class="teachers-container">
-    <?php foreach($teachers as $teacher):?>
-        <div class="teachers-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
-            <p class="fio"><?= $teacher['surname'] . " " . $teacher['name'] . " " . $teacher['patronymic'] ?></p>
-            <p class="job_title"><?= $teacher['job_title'] ?></p>
-            <p class="info"><?= $teacher['information'] ?></p>
+    <div class="teacher-title"><?= Yii::t('app', 'Teachers') ?>
+        <div class="teachers-container">
+            <?php foreach ($teachers as $teacher): ?>
+                <div onclick="openTeachersBox(this)"
+                    data-fio='<?= $teacher["surname"] . " " . $teacher["name"] . " " . $teacher["patronymic"] ?>'
+                    data-jobtitle=" <?= $teacher['job_title'] ?>" data-info='<?= $teacher["information"] ?>'
+                    class="teachers-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
+                    <div class="content-teacher">
+                        <p class="fio"><?= $teacher['surname'] . " " . $teacher['name'] . " " . $teacher['patronymic'] ?>
+                        </p>
+                        <p class="job_title"><?= $teacher['job_title'] ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-    <?php endforeach;?>
-</div>
+    </div>
+    <div class="blur"></div>
+    <div class="more-teachers-overlay"></div>
 
     <!-- <?= !empty($departament->name_ru) ? nl2br(htmlspecialchars($departament->{LanguageHelper::name()})) : '( Здесь ничего не задано )' ?> -->
 

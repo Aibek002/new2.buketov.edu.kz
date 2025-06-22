@@ -57,7 +57,8 @@ use yii\helpers\Html;
                         <h3> <?= Html::a(
                             $departament_item->{LanguageHelper::name()}
                             ,
-                            ['site/departament', 'departament_id' => $departament_item->id]
+                            ['site/departament', 'departament_id' => $departament_item->id],
+                            ['class'=>'link-button']
                         ) ?></h3>
                     </div>
                 <?php endforeach; ?>

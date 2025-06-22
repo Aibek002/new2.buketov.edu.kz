@@ -132,7 +132,7 @@ AdmissionAsset::register($this);
         </div>
 
         <div class="p-5"
-            style="width: 94vw; min-height: 100%; background-color: var(--indigoblue-50); border-radius:20px; border:1px solid var(--indigoblue); margin-block:50px">
+            style="width: 94vw; min-height: 100%; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font); margin-block:50px">
             <h1 class="title-content">
                 10 популярных профессий прошлого года (2024) в Казахстане (ориентируясь на данные по приёму в вузы)
             </h1>
@@ -337,7 +337,7 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Форма для выбора профильных предметов и доступных профессий") ?>
         </div>
         <div
-            style="width: 94vw; height: 500px; background-color: var(--indigoblue-50); border-radius:20px; border:1px solid var(--indigoblue);">
+            style="width: 94vw; height: 500px; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font);">
         </div>
         <div class="title-content">
             <?= Yii::t("app", "Стоимость обучение") ?>

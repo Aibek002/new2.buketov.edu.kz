@@ -63,7 +63,18 @@ return [
     'Write strictly in the language of the page.' => 'Сайттың тілінде қатаң түрде жазыңыз.',
     'Profession College'=>'Колледж Мамандығы',
     'Profession University'=>'Университет Мамандығы',
-    'Select specialization' => 'Мамандық таңдау'
-
+    'Select specialization' => 'Мамандық таңдау',
+    'January' => 'Қаңтар',
+    'February' => 'Ақпан',
+    'March' => 'Наурыз',
+    'April' => 'Сәуір',
+    'May' => 'Мамыр',
+    'June' => 'Маусым',
+    'July' => 'Шілде',
+    'August' => 'Тамыз',
+    'September' => 'Қыркүйек',
+    'October' => 'Қазан',
+    'November' => 'Қараша',
+    'December' => 'Желтоқсан',
 
 ];

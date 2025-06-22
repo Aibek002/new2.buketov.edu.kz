@@ -5,7 +5,7 @@
     width: 80vw;
     height: 750px;
     transform: translate(-50%, -50%); /* центрирование */
-    background-color: var(--indigoblue); /* затемнение, можно изменить */
+    background-color: var(--whiteblue); /* затемнение, можно изменить */
     z-index: 10000; /* выше других */
     display: none; /* по умолчанию скрыто, включай через JS */
     border-radius: 10px;
@@ -35,4 +35,37 @@
 }
 .card-text-news p span{
     color: white !important;
+}
+.more-events-overlay{
+    display: none;
+    position: fixed; /* поверх всех элементов */
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    height: 400px;
+    transform: translate(-50%, -50%); /* центрирование */
+    background-color: var(--whiteblue); /* затемнение, можно изменить */
+    z-index: 10000; /* выше других */
+    display: none; /* по умолчанию скрыто, включай через JS */
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    
+}
+.more-events-overlay.active{
+    display: block;
+
+}
+.event-modal {
+    background: linear-gradient(145deg, #274b7a, #2f5fa1);
+    border: 2px solid #5c8ecb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+.event-modal h2 {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.event-modal button:hover {
+    color: #ffdddd;
 }
