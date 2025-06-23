@@ -5,6 +5,8 @@ function openTeachersBox(element) {
     let fio = element.dataset.fio;
     let job_title = element.dataset.jobtitle;
     let info = element.dataset.info;
+    let email = element.dataset.email;
+
 
     header.style.display = "none";
     blurs.classList.add('active');
@@ -29,8 +31,11 @@ function openTeachersBox(element) {
         </div>
 
         <!-- Информация -->
-        <div class="card-text-teacher" style="overflow-y: auto; font-family: 'Segoe UI', sans-serif; font-size: 16px; flex-grow: 1; line-height: 1.7;">
+        <div class="card-text-teacher" style=" font-family: 'Segoe UI', sans-serif; font-size: 16px; ">
             ${info}
+        </div>
+        <div class="card-text-teacher" style=" font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+           email:  ${email}
         </div>
     </div>
 </div>

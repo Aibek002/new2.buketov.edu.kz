@@ -38,8 +38,9 @@
 .content-teacher {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 10%;
     right: 0;
+    width: 80%;
 }
 
 .teachers-box:hover {
@@ -57,17 +58,18 @@
 
 .fio {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 5px;
     color: #fff;
 }
 
 .job_title {
-    font-size: 12px;
-
+    font-size: 10px;
     font-style: italic;
     color: #fff;
     margin-bottom: 10px;
+    font-weight: 100;
+    text-transform: lowercase;
 }
 
 .info {
@@ -99,11 +101,11 @@
     display: none;
     position: fixed;
     /* поверх всех элементов */
-    top: 50%;
-    left: 50%;
-    width: 50vw;
-    height: 400px;
-    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 40%;
+    width: 60vw;
+    height: 650px;
+    transform: translate(-40%, -40%);
     /* центрирование */
     background-color: var(--whiteblue);
     /* затемнение, можно изменить */

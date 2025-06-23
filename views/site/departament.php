@@ -52,6 +52,7 @@ DepartamentAsset::register($this);
                 <div onclick="openTeachersBox(this)"
                     data-fio='<?= $teacher["surname"] . " " . $teacher["name"] . " " . $teacher["patronymic"] ?>'
                     data-jobtitle=" <?= $teacher['job_title'] ?>" data-info='<?= $teacher["information"] ?>'
+                    data-email=" <?= $teacher['email'] ?>"
                     class="teachers-box">
                     <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
                     <div class="content-teacher">

@@ -179,7 +179,9 @@ class SiteController extends Controller
                 'patronymic' => LanguageHelper::patronymic(),
                 'patronymic' => LanguageHelper::patronymic(),
                 'information' => LanguageHelper::information(),
-                'job_title' => LanguageHelper::job_title()
+                'job_title' => LanguageHelper::job_title(),
+                'email'
+
 
             ])->from('staff')
             ->innerJoin('ref_staff', ' ref_staff.id = staff.ref_staff_id ')
