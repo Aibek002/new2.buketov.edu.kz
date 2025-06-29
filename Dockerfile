@@ -1,29 +1,29 @@
-FROM php:8.1-fpm
+FROM php:8.3-fpm
 
-ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update 
 
-RUN apt-get update && apt-get install -y \
-    php-mysql \
-    php-mbstring \
-    php-gd \
-    php-intl \
-    php-xml \
-    php-curl \
-    php-zip \
-    curl \
-    wget \
-    vim \
-    nano \
-    git \
-    unzip \
-    ca-certificates \
-    && apt-get clean
+RUN docker-php-ext-install mysqli pdo pdo_mysql \
+    && docker-php-ext-enable pdo_mysql 
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN chmod +x /usr/local/bin/composer
+RUN apt-get install -y ffmpeg 
 
-# Optional: Install Yii2 TinyMCE if needed
-# RUN composer require dosamigos/yii2-tinymce-lib "~1.0"
+RUN apt install -y curl unzip 
 
-WORKDIR /var/www/html
+RUN curl -sS https://getcomposer.org/installer | php 
+
+RUN mv composer.phar /usr/local/bin/composer \
+    && composer require guzzlehttp/guzzle
+
+RUN apt update && \
+    apt install -y curl unzip gnupg2 ca-certificates lsb-release && \
+    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
+    curl -fsSL https://packages.sury.org/php/apt.gpg | gpg --dearmor -o /etc/apt/trusted
+
+
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
+RUN echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.client_port=9003" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
