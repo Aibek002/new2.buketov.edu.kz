@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Departament;
 use app\models\Profession;
+use yii\web\UploadedFile;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
@@ -16,6 +17,8 @@ use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
 use app\models\News;
+use app\models\Image;
+
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
 use app\models\ProfessionCollege;
@@ -109,16 +112,44 @@ class AdminController extends Controller
     public function actionNewsAdminPanel()
     {
         $news = new News();
+
         if (Yii::$app->request->isPost) {
             if ($news->load(Yii::$app->request->post()) && $news->save()) {
+
+                $uploadedImages = UploadedFile::getInstances(new Image(), 'image');
+                foreach ($uploadedImages as $image_item) {
+                    $imgName = 'news_' . uniqid() . '.' . $image_item->extension;
+                    $path = '/etc/docker/new2-buketov/site/images/';
+                    // $path = Yii::getAlias('@webroot/images/news/');
+
+                    if (!is_dir($path)) {
+                        if (!mkdir($path, 0775, true)) {
+                            Yii::error("Не удалось создать папку: $path", __METHOD__);
+                            throw new \RuntimeException("Не удалось создать папку для загрузки изображений.");
+                        }
+                    }
+                    $image_item->saveAs(Yii::getAlias($path . $imgName));
+
+                    $imageModel = new Image();
+                    $imageModel->ref_image_id = 1;
+                    $imageModel->column_id = $news->id;
+                    $imageModel->image = $imgName;
+                    $imageModel->save(false);
+                }
+
                 Yii::$app->session->setFlash('success', 'Successfully created!');
                 return $this->redirect(['admin/index']);
             } else {
                 Yii::$app->session->setFlash('error', 'Error when creating!');
             }
         }
-        return $this->render('news-admin-panel', ['model' => $news]);
+
+        return $this->render('news-admin-panel', [
+            'model' => $news,
+            'images' => new Image()
+        ]);
     }
+
 
 }
 

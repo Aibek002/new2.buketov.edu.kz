@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "profession".
  *
+ * @property string $special_code
  * @property int $id
- * @property string|null $special_code
  * @property string|null $name_kz
  * @property string|null $name_ru
  * @property string|null $name_en
@@ -40,7 +40,8 @@ class Profession extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['special_code', 'name_kz', 'name_ru', 'name_en', 'semi_passing_points', 'passing_points', 'skill_level_id', 'ref_type_profession_id'], 'default', 'value' => null],
+            [['name_kz', 'name_ru', 'name_en', 'semi_passing_points', 'passing_points', 'skill_level_id', 'ref_type_profession_id'], 'default', 'value' => null],
+            [['special_code'], 'required'],
             [['special_code', 'name_kz', 'name_ru', 'name_en'], 'string'],
             [['semi_passing_points', 'passing_points', 'skill_level_id', 'ref_type_profession_id'], 'integer'],
             [['ref_type_profession_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefTypeProfession::class, 'targetAttribute' => ['ref_type_profession_id' => 'id']],
@@ -54,8 +55,8 @@ class Profession extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
             'special_code' => 'Special Code',
+            'id' => 'ID',
             'name_kz' => 'Name Kz',
             'name_ru' => 'Name Ru',
             'name_en' => 'Name En',
