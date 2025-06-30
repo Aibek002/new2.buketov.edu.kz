@@ -12,23 +12,12 @@
         "irc": "ircs://irc.libera.chat:6697/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-
     "minimum-stability": "stable",
-
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
-
     "require": {
         "php": ">=7.4.0",
         "yiisoft/yii2": "~2.0.53",
         "yiisoft/yii2-bootstrap5": "~2.0.50",
-        "bower-asset/jquery": "^3.6",
-        "yiisoft/yii2-symfonymailer": "~2.0.4",
-        "2amigos/yii2-tinymce-widget": "^1.1.3"
+        "yiisoft/yii2-symfonymailer": "~2.0.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -44,7 +33,7 @@
     },
     "config": {
         "allow-plugins": {
-            "yiisoft/yii2-composer": true
+            "yiisoft/yii2-composer" : true
         },
         "process-timeout": 1800,
         "fxp-asset": {
@@ -75,5 +64,11 @@
                 "config/web.php"
             ]
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }
