@@ -18,6 +18,7 @@ use app\models\Staff;
 use app\models\Article;
 use app\models\News;
 use app\models\Image;
+use app\models\AdmissionPdf;
 
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
@@ -26,7 +27,31 @@ use app\models\ProfessionCollege;
 
 class AdminController extends Controller
 {
-
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['logout'],
+                'rules' => [
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+            'language' => [
+                'class' => \app\components\LanguageBehavior::class,
+            ],
+        ];
+    }
     public function actionIndex()
     {
         return $this->render('index');
@@ -112,14 +137,14 @@ class AdminController extends Controller
     public function actionNewsAdminPanel()
     {
         $news = new News();
-
+        $path = Yii::getAlias('@app/../files/images/news/');
         if (Yii::$app->request->isPost) {
             if ($news->load(Yii::$app->request->post()) && $news->save()) {
 
                 $uploadedImages = UploadedFile::getInstances(new Image(), 'image');
                 foreach ($uploadedImages as $image_item) {
                     $imgName = 'news_' . uniqid() . '.' . $image_item->extension;
-                    $path = '/etc/docker/new2-buketov/site/images/';
+
                     // $path = Yii::getAlias('@webroot/images/news/');
 
                     if (!is_dir($path)) {
@@ -137,7 +162,7 @@ class AdminController extends Controller
                     $imageModel->save(false);
                 }
 
-                Yii::$app->session->setFlash('success', 'Successfully created!');
+                Yii::$app->session->setFlash('success', "News Successfully created!");
                 return $this->redirect(['admin/index']);
             } else {
                 Yii::$app->session->setFlash('error', 'Error when creating!');
@@ -148,6 +173,53 @@ class AdminController extends Controller
             'model' => $news,
             'images' => new Image()
         ]);
+    }
+    public function actionAdmissionPdfAdminPanel()
+    {
+        $models = new AdmissionPdf();
+
+        if (Yii::$app->request->isPost) {
+            if ($models->load(Yii::$app->request->post())) {
+                $file = UploadedFile::getInstance($models, 'path');
+
+                if ($models->path) {
+                    $update = AdmissionPdf::find()->where(['path' => $models->replace_file_id])->one();
+                    if ($update) {
+                        $update->archive = 1;
+                        $update->save(false);
+                    }
+                }
+
+                if ($file) {
+                    $savePath = Yii::getAlias("@app/../files/pdf/admission/bachelor/$models->lang_pdf/");
+
+                    if (!is_dir($savePath)) {
+                        if (!mkdir($savePath, 0775, true)) {
+                            Yii::error("Не удалось создать папку: $savePath", __METHOD__);
+                            throw new \RuntimeException("Не удалось создать папку для загрузки PDF приемный комиссий.");
+                        }
+                    }
+
+                    $fileName = $models->name_url . "." . $file->extension;
+                    $file->saveAs($savePath . $fileName);
+                    $models->name_url = $models->name_url;
+                    $models->lang_pdf = $models->lang_pdf;
+                    $models->archive = 0;
+
+
+                    $models->path = $fileName; // путь для сохранения в БД
+                }
+
+                if ($models->save()) {
+                    Yii::$app->session->setFlash('success', 'Файл успешно загружен');
+                    return $this->redirect(['admission-pdf-admin-panel']);
+                } else {
+                    Yii::$app->session->setFlash('error', 'Ошибка при сохранении');
+                }
+            }
+        }
+
+        return $this->render('admission-pdf-admin-panel', ['models' => $models]);
     }
 
 

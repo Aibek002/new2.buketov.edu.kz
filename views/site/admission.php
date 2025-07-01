@@ -64,7 +64,7 @@ AdmissionAsset::register($this);
         </button>
     </div>
 
-    <div class="bakalavriat <?php echo ($type == 'bachelor')? 'active' : '';?>">
+    <div class="bakalavriat <?php echo ($type == 'bachelor') ? 'active' : ''; ?>">
         <div class="title-content">
             <?= Yii::t("app", "Bakalavriat") ?>
         </div>
@@ -88,23 +88,17 @@ AdmissionAsset::register($this);
         <div class="title-content">
             <?= Yii::t("app", "Общие правила и сроки поступления") ?>
         </div>
+
         <div class="button-section">
-            <button
-                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/Правила приема.pdf')">
-                Правила поступления
-            </button>
-            <button
-                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/типовые правила приема в вузы.pdf')">
-                Типовые правила
-            </button>
-            <button
-                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/бакалавриат_сроки_приема.pdf')">
-                Сроки приема документов
-            </button>
-            <button
-                onclick="openGeneralRulesPdf('/pdf/admission/bachelor/<?= Yii::$app->language ?>/Программа собеседования.pdf')">
-                Программа собеседования
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                    <button
+                        onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                        <?= $pdf_item["name_url"] ?>
+                    </button>
+                <?php endif ?>
+            <?php endforeach; ?>
         </div>
         <div class="d-flex justify-content-center">
             <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
@@ -113,18 +107,15 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Образавательные программы") ?>
         </div>
         <div class="button-section">
-            <button>
-                Образовательные программы бакалавриата
-            </button>
-            <button>
-                Приём бакалавриата (очные программы)
-            </button>
-            <button>
-                Сокращённый бакалавриат
-            </button>
-            <button>
-                Программы бакалавриата (сокращ., дистанц., очно)
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+
+                    <button
+                        onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                        <?= $pdf_item["name_url"] ?>
+                    </button>
+                <?php endif ?>
+            <?php endforeach; ?>
         </div>
 
         <div class="title-content">
@@ -288,7 +279,7 @@ AdmissionAsset::register($this);
             </button>
         </div>
     </div>
-    <div class="magistrant <?php echo ($type == 'magistracy')? 'active' : '';?>">
+    <div class="magistrant <?php echo ($type == 'magistracy') ? 'active' : ''; ?>">
         <div class="title-content">
             <?= Yii::t("app", "Magistrant") ?>
 
@@ -391,7 +382,7 @@ AdmissionAsset::register($this);
         </div>
 
     </div>
-    <div class="doctorant <?php echo ($type == 'doctoral')? 'active' : '';?>">
+    <div class="doctorant <?php echo ($type == 'doctoral') ? 'active' : ''; ?>">
         <div class="title-content">
             <?= Yii::t("app", "Doctorant") ?>
 

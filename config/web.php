@@ -10,8 +10,9 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
+        '@uploads' => '/etc/docker/new2-buketov/site'
     ],
-  
+
     'language' => 'kz',
     'components' => [
         'request' => [
@@ -43,6 +44,7 @@ $config = [
                 ],
             ],
         ],
+
         'db' => $db,
         /*
         'urlManager' => [
@@ -52,20 +54,20 @@ $config = [
             ],
         ],
         */
-          'i18n' => [
-        'translations' => [
-            'app*' => [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'basePath' => '@app/messages',
-                'sourceLanguage' => 'en-US',
-                'fileMap' => [
-                    'app' => 'app.php',
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                    ],
                 ],
             ],
         ],
     ],
-    ],
-    
+
     'params' => $params,
 ];
 

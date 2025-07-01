@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\AdmissionPdf;
 use app\models\Departament;
 use app\models\Profession;
 use app\models\Events;
@@ -238,10 +239,16 @@ class SiteController extends Controller
     {
         $subjects = Subject::find()->orderBy(LanguageHelper::name())->all();
         $profession_university = Profession::find()->orderBy(LanguageHelper::name())->all();
+        $pdf = AdmissionPdf::find()
+            ->orderBy('ref_sort_order_id')
+            ->asArray()
+            ->all();
+
         return $this->render('admission', [
             'subjects' => $subjects,
             'profession_university' => $profession_university,
-            'type' => $type
+            'type' => $type,
+            'pdf' => $pdf
         ]);
     }
 
