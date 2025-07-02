@@ -53,6 +53,6 @@ echo $lang;
         ['prompt' => 'Выберите файл, который хотите заменить (если нужно)']
     ) ?>
 
-    <?= $form->field($models, 'path')->fileInput(['multiple' => false]) ?>
+    <?= $form->field($models, 'file')->fileInput(['multiple' => false]) ?>
     <?= Html::submitButton('Отправить', ['class' => 'btn btn-success']) ?>
     <?php ActiveForm::end() ?>

@@ -180,9 +180,14 @@ class AdminController extends Controller
 
         if (Yii::$app->request->isPost) {
             if ($models->load(Yii::$app->request->post())) {
-                $file = UploadedFile::getInstance($models, 'path');
-
-                if ($models->path) {
+                $file = UploadedFile::getInstance($models, 'file');
+                $levels = [
+                    1 => 'bachelor',
+                    2 => 'magistracy',
+                    3 => 'doctorant',
+                ];
+                $skill_level = $levels[$models->skill_level_id] ?? 'unknown';
+                if ($models->replace_file_id) {
                     $update = AdmissionPdf::find()->where(['path' => $models->replace_file_id])->one();
                     if ($update) {
                         $update->archive = 1;
@@ -191,7 +196,7 @@ class AdminController extends Controller
                 }
 
                 if ($file) {
-                    $savePath = Yii::getAlias("@app/../files/pdf/admission/bachelor/$models->lang_pdf/");
+                    $savePath = Yii::getAlias("@app/../files/pdf/admission/$skill_level/$models->lang_pdf/");
 
                     if (!is_dir($savePath)) {
                         if (!mkdir($savePath, 0775, true)) {
@@ -201,7 +206,12 @@ class AdminController extends Controller
                     }
 
                     $fileName = $models->name_url . "." . $file->extension;
-                    $file->saveAs($savePath . $fileName);
+                    if (!$file->saveAs($savePath . $fileName)) {
+                        Yii::error("Ошибка при сохранении файла: {$file->error}", __METHOD__);
+                        Yii::$app->session->setFlash('error', 'Ошибка при сохранении файла: ' . $file->error);
+                        return $this->refresh();
+                    }
+
                     $models->name_url = $models->name_url;
                     $models->lang_pdf = $models->lang_pdf;
                     $models->archive = 0;

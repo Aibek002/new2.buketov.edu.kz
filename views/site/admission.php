@@ -10,7 +10,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\assets\AdmissionAsset;
 AdmissionAsset::register($this);
-
+$lang = Yii::$app->language;
 ?>
 
 <div class="container p-5">
@@ -91,13 +91,17 @@ AdmissionAsset::register($this);
 
         <div class="button-section">
             <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
 
-                    <button
-                        onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
-                        <?= $pdf_item["name_url"] ?>
-                    </button>
+                    <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
                 <?php endif ?>
+
             <?php endforeach; ?>
         </div>
         <div class="d-flex justify-content-center">
@@ -108,13 +112,17 @@ AdmissionAsset::register($this);
         </div>
         <div class="button-section">
             <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
 
-                    <button
-                        onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
-                        <?= $pdf_item["name_url"] ?>
-                    </button>
+                    <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
                 <?php endif ?>
+
             <?php endforeach; ?>
         </div>
 
@@ -232,32 +240,39 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Стоимость обучение") ?>
         </div>
         <div class="button-section">
-            <button>
-                Стоимость обучения
-            </button>
-            <button>
-                Льготы
-            </button>
-            <button>
-                Банковские реквизиты Karaganda Buketov University
-            </button>
-            <button>
-                Положение о порядке присуждения именной стипендии
-            </button>
+         <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
         <div class="title-content">
             <?= Yii::t("app", "Для поступающих на творческие и педагогические направления ") ?>
         </div>
         <div class="button-section">
-            <button>
-                Поступающим на творческие ОП
-            </button>
-            <button>
-                Поступающим на пед. ОП
-            </button>
-            <button>
-                Расписание творческих/спецэкзаменов
-            </button>
+        <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 4): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
 
         </div>
 
@@ -265,18 +280,20 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Полезные информации ") ?>
         </div>
         <div class="button-section">
-            <button>
-                Госзаказ 2025–2026
-            </button>
-            <button>
-                Квоты Букетова
-            </button>
-            <button>
-                Баллы и предметы (НЦТ)
-            </button>
-            <button>
-                Контакты приёмной
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
     </div>
     <div class="magistrant <?php echo ($type == 'magistracy') ? 'active' : ''; ?>">
@@ -288,20 +305,20 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Общие правила и сроки поступления") ?>
         </div>
         <div class="button-section">
-            <button
-                onclick="openGeneralRulesPdf('https://drive.google.com/file/d/1gMgFMC7-kIJFYOaITzYorZ13uF9iaCm8/view?usp=sharing')">
-                Типовые правила
-            </button>
-            <button
-                onclick="openGeneralRulesPdf('https://drive.google.com/file/d/1gMgFMC7-kIJFYOaITzYorZ13uF9iaCm8/view?usp=sharing')">
-                Правила поступления
-            </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
-                Сроки приема документов
-            </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
-                Программа собеседования
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
         <div class="d-flex justify-content-center">
             <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
@@ -310,75 +327,67 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Образавательные программы") ?>
         </div>
         <div class="button-section">
-            <button>
-                Образовательные программы бакалавриата
-            </button>
-            <button>
-                Приём бакалавриата (очные программы)
-            </button>
-            <button>
-                Сокращённый бакалавриат
-            </button>
-            <button>
-                Программы бакалавриата (сокращ., дистанц., очно)
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
 
-        <div class="title-content">
+        <!--div class="title-content">
             <?= Yii::t("app", "Форма для выбора профильных предметов и доступных профессий") ?>
         </div>
         <div
             style="width: 94vw; height: 500px; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font);">
-        </div>
+        </div-->
         <div class="title-content">
             <?= Yii::t("app", "Стоимость обучение") ?>
         </div>
         <div class="button-section">
-            <button>
-                Стоимость обучения
-            </button>
-            <button>
-                Льготы
-            </button>
-            <button>
-                Банковские реквизиты Karaganda Buketov University
-            </button>
-            <button>
-                Положение о порядке присуждения именной стипендии
-            </button>
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Для поступающих на творческие и педагогические направления ") ?>
-        </div>
-        <div class="button-section">
-            <button>
-                Поступающим на творческие ОП
-            </button>
-            <button>
-                Поступающим на пед. ОП
-            </button>
-            <button>
-                Расписание творческих/спецэкзаменов
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
 
         </div>
+
 
         <div class="title-content">
             <?= Yii::t("app", "Полезные информации ") ?>
         </div>
         <div class="button-section">
-            <button>
-                Госзаказ 2025–2026
-            </button>
-            <button>
-                Квоты Букетова
-            </button>
-            <button>
-                Баллы и предметы (НЦТ)
-            </button>
-            <button>
-                Контакты приёмной
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
 
     </div>
@@ -391,19 +400,21 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Общие правила и сроки поступления") ?>
         </div>
         <div class="button-section">
-            <button
-                onclick="openGeneralRulesPdf('C:\\Users\\AIBEK\\Desktop\\new2.buketov.edu.kz\\yii2\\web\\bg-images\\additional-links-bg.jpg')">
-                Типовые правила
-            </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
-                Правила поступления
-            </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
-                Сроки приема документов
-            </button>
-            <button onclick="openGeneralRulesPdf('/pdf/admission/file1.pdf')">
-                Программа собеседования
-            </button>
+
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
         <div class="d-flex justify-content-center">
             <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
@@ -412,18 +423,20 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Образавательные программы") ?>
         </div>
         <div class="button-section">
-            <button>
-                Образовательные программы бакалавриата
-            </button>
-            <button>
-                Приём бакалавриата (очные программы)
-            </button>
-            <button>
-                Сокращённый бакалавриат
-            </button>
-            <button>
-                Программы бакалавриата (сокращ., дистанц., очно)
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 4): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
+
         </div>
 
 
@@ -431,50 +444,38 @@ AdmissionAsset::register($this);
             <?= Yii::t("app", "Стоимость обучение") ?>
         </div>
         <div class="button-section">
-            <button>
-                Стоимость обучения
-            </button>
-            <button>
-                Льготы
-            </button>
-            <button>
-                Банковские реквизиты Karaganda Buketov University
-            </button>
-            <button>
-                Положение о порядке присуждения именной стипендии
-            </button>
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Для поступающих на творческие и педагогические направления ") ?>
-        </div>
-        <div class="button-section">
-            <button>
-                Поступающим на творческие ОП
-            </button>
-            <button>
-                Поступающим на пед. ОП
-            </button>
-            <button>
-                Расписание творческих/спецэкзаменов
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
 
+                    <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
         </div>
+
 
         <div class="title-content">
             <?= Yii::t("app", "Полезные информации ") ?>
         </div>
         <div class="button-section">
-            <button>
-                Госзаказ 2025–2026
-            </button>
-            <button>
-                Квоты Букетова
-            </button>
-            <button>
-                Баллы и предметы (НЦТ)
-            </button>
-            <button>
-                Контакты приёмной
-            </button>
+            <?php foreach ($pdf as $pdf_item): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
+
+                    <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
+
+                        <button
+                            onclick='openGeneralRulesPdf("/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
+                    <?php endif ?>
+                <?php endif ?>
+
+            <?php endforeach; ?>
         </div>
     </div>

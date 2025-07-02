@@ -1,3 +1,4 @@
+
 <?php
 use yii\helpers\Html;
 
@@ -19,3 +20,4 @@ $this->title = 'Admin Page';
 
 
 </div>
+<?php phpinfo(); ?>

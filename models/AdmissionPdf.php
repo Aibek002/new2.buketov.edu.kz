@@ -20,6 +20,8 @@ class AdmissionPdf extends \yii\db\ActiveRecord
 {
 
     public $replace_file_id;
+    public $file;
+
 
     /**
      * {@inheritdoc}
@@ -38,6 +40,7 @@ class AdmissionPdf extends \yii\db\ActiveRecord
             [['ref_sort_order_id', 'skill_level_id', 'path', 'archive'], 'default', 'value' => null],
             [['ref_sort_order_id', 'skill_level_id', 'archive'], 'integer'],
             [['replace_file_id'], 'integer'],
+             [['file'], 'file', 'extensions' => 'pdf', 'mimeTypes' => 'application/pdf'],
             [['path', 'name_url', 'lang_pdf'], 'string', 'max' => 255],
             [['path'], 'string'],
             [['ref_sort_order_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefSortOrderAdmissionPdf::class, 'targetAttribute' => ['ref_sort_order_id' => 'id']],

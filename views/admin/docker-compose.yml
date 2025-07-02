@@ -1,0 +1,54 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: new2-buketov-web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/log/nginx:/var/log/nginx
+      - ./site:/var/www/html
+      - ./ssl:/etc/docker/new2-buketov/ssl:ro
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=aibek
+      - DB_PASSWORD=${MYSQL_USER_PASSWORD}
+      - DB_NAME=new_buketov_edu_kz
+    networks:
+      - new2-buketov-network
+
+  db:
+    image: mysql:8.0
+    container_name: new-buketov-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: new_buketov_edu_kz
+      MYSQL_USER: aibek
+      MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - new2-buketov-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: new2-buketov-phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - new2-buketov-network
+
+volumes:
+  db_data:
+
+networks:
+  new2-buketov-network:
+    driver: bridge
