@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Departament;
 use app\models\Profession;
+use app\models\User;
 use yii\web\UploadedFile;
 use Symfony\Component\BrowserKit\History;
 use Yii;
@@ -32,10 +33,13 @@ class AdminController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['sign-in'],
+                        'allow' => true,
+                        'roles' => ['?'], // ? — только для неавторизованных (гостей)
+                    ],
+                    [
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -210,27 +214,81 @@ class AdminController extends Controller
                         Yii::error("Ошибка при сохранении файла: {$file->error}", __METHOD__);
                         Yii::$app->session->setFlash('error', 'Ошибка при сохранении файла: ' . $file->error);
                         return $this->refresh();
+                    } else {
+                        $models->name_url = $models->name_url;
+                        $models->lang_pdf = $models->lang_pdf;
+                        $models->archive = 0;
+                        $models->path = $fileName;
+                        if ($models->save()) {
+                            Yii::$app->session->setFlash('success', 'Файл успешно загружен');
+                            return $this->redirect(['admission-pdf-admin-panel']);
+                        } else {
+                            Yii::$app->session->setFlash('error', 'Ошибка при сохранении');
+                        }
                     }
 
-                    $models->name_url = $models->name_url;
-                    $models->lang_pdf = $models->lang_pdf;
-                    $models->archive = 0;
 
-
-                    $models->path = $fileName; // путь для сохранения в БД
                 }
 
-                if ($models->save()) {
-                    Yii::$app->session->setFlash('success', 'Файл успешно загружен');
-                    return $this->redirect(['admission-pdf-admin-panel']);
-                } else {
-                    Yii::$app->session->setFlash('error', 'Ошибка при сохранении');
-                }
+
             }
         }
 
         return $this->render('admission-pdf-admin-panel', ['models' => $models]);
     }
+    public function actionSignUp()
+    {
+        $user = new User();
+        if ($user->load(Yii::$app->request->post())) {
+            $user->auth_key = Yii::$app->security->generateRandomString();
+            if ($user->save(false)) {
+                if (!empty($user->role)) {
+                    $auth = Yii::$app->authManager;
+                    $role = $auth->getRole($user->role);
+                    if ($role) {
+                        $auth->assign($role, $user->id);
+                        Yii::$app->session->setFlash("success", "User created with role!");
+                        return $this->redirect(['admin/index']); // или редирект
+
+                    } else {
+                        Yii::$app->session->setFlash("error", "User created without role!");
+
+                    }
+                } else {
+                    Yii::$app->session->setFlash("error", "Role is empty!");
+
+                }
+            }
+
+        }
+
+        return $this->render('sign-up', ['user' => $user]);
+    }
+    public function actionSignIn()
+    {
+        $form = new User();
+
+        if ($form->load(Yii::$app->request->post())) {
+            $user = User::findOne(['username' => $form->username]);
+
+            if ($user && $user->password_hash === $form->password_hash) {
+                Yii::$app->user->login($user); // login принимает объект пользователя
+                return $this->redirect(['admin/index']); // перенаправление на главную
+            } else {
+                Yii::$app->session->setFlash('error', 'Неверный логин или пароль.');
+            }
+        }
+
+        return $this->render('sign-in', [
+            'user' => $form
+        ]);
+    }
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->redirect(['admin/index']);
+    }
+
 
 
 }

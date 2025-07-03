@@ -27,6 +27,8 @@ RUN apt-get update && apt-get install -y \
 # Установка Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && chmod +x /usr/local/bin/composer
+RUN php yii migrate --migrationPath=@yii/rbac/migrations/
+
 
 # Настройка PHP-FPM
 RUN sed -i 's|listen =.*|listen = /run/php/php8.1-fpm.sock|' /etc/php/8.1/fpm/pool.d/www.conf \

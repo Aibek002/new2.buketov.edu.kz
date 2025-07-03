@@ -15,6 +15,9 @@ $config = [
 
     'language' => 'kz',
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager', // или PhpManager для хранения в файле
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'vlGiOTT_4Igk2D70YDR6BqTGXcWmerbZ',
@@ -25,6 +28,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' =>['admin/sign-in']
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
