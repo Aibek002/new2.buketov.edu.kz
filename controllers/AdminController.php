@@ -218,6 +218,9 @@ class AdminController extends Controller
                         $models->name_url = $models->name_url;
                         $models->lang_pdf = $models->lang_pdf;
                         $models->archive = 0;
+                        $models->author = Yii::$app->user->identity->id;
+
+
                         $models->path = $fileName;
                         if ($models->save()) {
                             Yii::$app->session->setFlash('success', 'Файл успешно загружен');
