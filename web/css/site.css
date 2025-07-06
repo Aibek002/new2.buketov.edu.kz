@@ -152,7 +152,8 @@ strong {
   gap: 20px;
 }
 
-.button-section button {
+.button-section button, 
+.button-section a button{
   border: 1px solid var(--indigoblue-font);
   border-radius: 20px;
   background: var(--white);
