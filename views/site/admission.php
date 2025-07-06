@@ -96,7 +96,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
                      
                             <button
-                                onclick="openGeneralRulesPdf('#general-rules-pdf-bachelor','/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item['name_url'] ?>.pdf','bachelor')">
+                                onclick="openGeneralRulesPdf('/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item['name_url'] ?>.pdf','bachelor')">
                                 <?= $pdf_item["name_url"] ?>
                             </button>
                     <?php endif ?>

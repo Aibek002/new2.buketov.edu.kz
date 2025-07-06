@@ -1,21 +1,21 @@
-function openGeneralRulesPdf(id, filePath, type) {
+function openGeneralRulesPdf(filePath, type) {
+    let selector = '.general-rules-pdf-bachelor'; // Это класс
+    const general_rules_pdf = document.querySelector(selector); // получаем элемент по классу
 
-    let selector = '.general-rules-pdf-bachelor';
+    if (!general_rules_pdf) {
+        console.warn("Элемент не найден:", selector);
+        return;
+    }
 
-    console.log(selector);
-    const general_rules_pdf = document.querySelector(selector);
+    // Очистка и обновление источника PDF
     general_rules_pdf.src = "";
     general_rules_pdf.classList.remove("active");
 
-
     setTimeout(() => {
         general_rules_pdf.classList.add("active");
-        console.log(filePath);
         general_rules_pdf.src = filePath;
     }, 50);
-    const element = document.getElementById(selector);
-    console.log(element)
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
+
+    // Прокрутка к элементу
+    general_rules_pdf.scrollIntoView({ behavior: 'smooth' });
 }
