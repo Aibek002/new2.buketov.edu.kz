@@ -16,6 +16,8 @@ $this->title = 'Admin Page';
         <?= Html::a('Профессий колледжа', ['admin/profession-college'], ['class' => 'fas st-university']) ?>
         <?= Html::a('Сотрудники', ['admin/staff-admin-panel'], ['class' => 'fas st-university']) ?>
         <?= Html::a('Факультеты', ['admin/faculty-admin-panel'], ['class' => 'fas fa-university']) ?>
+        <?= Html::a('Загрузить фоты на инфармациионные страницы', ['admin/upload-image'], ['class' => 'fas fa-university']) ?>
+
         <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
     <?php elseif (Yii::$app->user->can("admissionAdmin") ): ?>

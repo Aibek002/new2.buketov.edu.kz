@@ -36,7 +36,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
-    <?php if (Yii::$app->user->isGuest): ?>
+    <?php if (Yii::$app->user->isGuest || Yii::$app->controller->id == 'site'): ?>
         <header id="header">
             <div class="navbar navbar-expand-md fixed-top  p-3 header">
                 <a class="navbar-brand" href="<?= Yii::$app->homeUrl ?>">
@@ -329,7 +329,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 </ul>
             </div>
         </header>
-    <?php else: ?>
+    <?php elseif(Yii::$app->controller->id == 'admin'): ?>
         <div class="w-100 d-flex justify-content-end align-items-center p-2 bg-light border-bottom">
             <span class="text-primary fw-bold">
                 <i class="bi bi-person-circle me-2"></i>

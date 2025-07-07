@@ -20,6 +20,7 @@ use app\models\Article;
 use app\models\News;
 use app\models\Image;
 use app\models\AdmissionPdf;
+use app\models\ImageArticle;
 
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
@@ -236,6 +237,47 @@ class AdminController extends Controller
         }
 
         return $this->render('admission-pdf-admin-panel', ['models' => $models]);
+    }
+    public function actionUploadImage()
+    {
+        $image = new ImageArticle();
+
+        if (Yii::$app->request->isPost) {
+            if ($image->load(Yii::$app->request->post())) {
+                $image->images = UploadedFile::getInstances($image, 'images');
+
+                print_r($image->images);
+                if (empty($image->images)) {
+                    Yii::$app->session->setFlash('error', 'Нет загруженных файлов.');
+                    return $this->refresh();
+                }
+
+                $upload_path = Yii::getAlias("@app/../files/images/image_article/{$image->ref_article_id}/");
+
+                if (!is_dir($upload_path) && !mkdir($upload_path, 0755, true)) {
+                    Yii::error("Не удалось создать папку: $upload_path", __METHOD__);
+                    throw new \RuntimeException("Не удалось создать папку для загрузки изображений.");
+                }
+
+
+                foreach ($image->images as $uploadedFile) {
+                    $filename = "article_{$image->ref_article_id}_" . uniqid() . "." . $uploadedFile->extension;
+                    $uploadedFile->saveAs($upload_path . $filename);
+                    $newRecord = new ImageArticle();
+                    $newRecord->ref_article_id = $image->ref_article_id;
+                    $newRecord->author = Yii::$app->user->id;
+                    $newRecord->image = $filename;
+                    $newRecord->save(false);
+                }
+
+                Yii::$app->session->setFlash("success", "Файлы успешно загружены.");
+                return $this->refresh();
+            } else {
+                Yii::$app->session->setFlash("error", "Ошибка при загрузке формы.");
+            }
+        }
+
+        return $this->render('upload-image', ['model' => $image]);
     }
     public function actionSignUp()
     {
