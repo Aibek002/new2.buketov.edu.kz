@@ -20,11 +20,13 @@ $this->title = 'Admin Page';
 
         <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
-    <?php elseif (Yii::$app->user->can("admissionAdmin") ): ?>
+        <?= Html::a('Решение Единственного Акционера', ['admin/corporate-sole-shareholder'], ['class' => 'fas fa-university']) ?>
+
+    <?php elseif (Yii::$app->user->can("admissionAdmin")): ?>
         <?= Html::a('ПДФ для приемный коммиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Контроль над Документами', ['admin/'], ['class' => 'fas fa-university']) ?>
-    
-    <?php elseif (Yii::$app->user->can("admissionEditor") ): ?>
+
+    <?php elseif (Yii::$app->user->can("admissionEditor")): ?>
         <?= Html::a('ПДФ для приемный коммиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
     <?php endif ?>
 

@@ -25,6 +25,8 @@ use app\models\ImageArticle;
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
 use app\models\ProfessionCollege;
+use app\models\CorporateGovernanceSoleShareholderDecision;
+
 
 
 class AdminController extends Controller
@@ -331,7 +333,34 @@ class AdminController extends Controller
         Yii::$app->user->logout();
         return $this->redirect(['admin/index']);
     }
+    public function actionCorporateSoleShareholder()
+    {
+        $model = new CorporateGovernanceSoleShareholderDecision();
+        if (Yii::$app->request->isPost) {
+            if ($model->load(Yii::$app->request->post())) {
+                $pdf = UploadedFile::getInstance(new CorporateGovernanceSoleShareholderDecision(), 'pdf');
 
+                $path = Yii::getAlias("@app/../files/pdf/corporate_governance/sole-shareholder/$model->year/$model->lang/");
+                if (!is_dir($path)) {
+                    if (!mkdir($path, 0775, true)) {
+                        Yii::$app->session->setFlash('error', 'Error when mkdir directory!');
+                    }
+                }
+                if ($pdf->saveAs($path . $model->file_name . "." . $pdf->extension)) {
+                    if ($model->save()) {
+                        Yii::$app->session->setFlash('success', 'Successfully saved!');
+                        return $this->refresh();
+
+
+                    }
+                } else {
+                    Yii::$app->session->setFlash('error', 'Error when save!');
+
+                }
+            }
+        }
+        return $this->render('corporate-sole-shareholder', ['model' => $model]);
+    }
 
 
 }

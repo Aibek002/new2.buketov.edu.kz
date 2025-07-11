@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\AdmissionPdf;
+use app\models\CorporateGovernanceSoleShareholderDecision;
 use app\models\Departament;
 use app\models\Profession;
 use app\models\Events;
@@ -227,8 +228,9 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-
-        return $this->render('corparate');
+        $year = CorporateGovernanceSoleShareholderDecision::find()->select('year')->orderBy('year')->all();
+        $pdf = CorporateGovernanceSoleShareholderDecision::find()->all();
+        return $this->render('corparate', ['years' => $year, 'pdf' => $pdf]);
     }
 
     public function actionSovet()
