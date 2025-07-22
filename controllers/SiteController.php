@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\AdmissionPdf;
-use app\models\CorporateGovernanceSoleShareholderDecision;
+use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\Profession;
 use app\models\Events;
@@ -228,8 +228,8 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-        $year = CorporateGovernanceSoleShareholderDecision::find()->select('year')->orderBy('year')->all();
-        $pdf = CorporateGovernanceSoleShareholderDecision::find()->all();
+        $year = CorpSoleShareholder::find()->select(['year','lang']) ->distinct()->orderBy('year')->all();
+        $pdf = CorpSoleShareholder::find()->all();
         return $this->render('corparate', ['years' => $year, 'pdf' => $pdf]);
     }
 

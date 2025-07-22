@@ -1,0 +1,9 @@
+# vendor
+# node_modules
+# .git
+# .env
+# *.log
+# docker-compose.override.yml
+# uploadImage
+# bg-videos
+# bg-images

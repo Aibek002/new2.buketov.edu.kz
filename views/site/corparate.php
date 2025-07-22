@@ -36,23 +36,26 @@ $this->title = Yii::t("app", "Corporate governance");
         <h2 class="title-content"><?= Yii::t("app", "Decisions of the Sole Shareholder") ?></h2>
 
         <?php foreach ($years as $year): ?>
-            <div class="title-content">
-                <h5 class="mb-0">
-                    <?= Yii::t("app", "Decisions of the Sole Shareholder") ?> — <?= Html::encode($year->year) ?>
-                </h5>
-            </div>
+            <?php if ($year->lang == $lang): ?>
+                <div class="title-content">
+                    <h5 class="mb-0">
+                        <?= Yii::t("app", "Decisions of the Sole Shareholder") ?> — <?= Html::encode($year->year) ?>
+                    </h5>
+                </div>
 
-            <div class="button-section">
-                <?php foreach ($pdf as $pdf_item): ?>
-                    <?php if ($pdf_item->year == $year->year && $lang == $pdf_item->lang): ?>
-                        <button
-                            onclick='loadPDF("/files/pdf/corporate_governance/sole-shareholder/<?= $year->year . "/" . $lang . "/" . $pdf_item->file_name . ".pdf" ?>")'>
-                            <?= Html::encode($pdf_item->file_name) ?>
-                        </button>
+                <div class="button-section">
+                    <?php foreach ($pdf as $pdf_item): ?>
+                        <?php if ($pdf_item->year == $year->year && $lang == $pdf_item->lang): ?>
+                            <button
+                                onclick='loadPDF("/files/pdf/corporate_governance/sole-shareholder/<?= $year->year . "/" . $lang . "/" . $pdf_item->name_pdf ?>.pdf")'>
+                                <?= Html::encode($pdf_item->name_pdf) ?>
+                            </button>
 
-                    <?php endif ?>
-                <?php endforeach; ?>
-            </div>
+                        <?php endif ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif ?>
+
         <?php endforeach; ?>
 
         <div class="text-center">

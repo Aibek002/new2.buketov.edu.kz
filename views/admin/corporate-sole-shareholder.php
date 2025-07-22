@@ -22,11 +22,11 @@ use yii\helpers\Html;
             </div>
 
             <div class="col-md-8">
-                <?= $form->field($model, 'file_name')->textInput(['maxlength' => true, 'placeholder' => 'Введите название файла'])->label('Название файла') ?>
+                <?= $form->field($model, 'name_pdf')->textInput(['maxlength' => true, 'placeholder' => 'Введите название файла'])->label('Название файла') ?>
             </div>
 
             <div class="col-md-12">
-                <?= $form->field($model, 'pdf')->fileInput(['multiple' => true, 'class' => 'form-control'])->label('Загрузите PDF-файл') ?>
+                <?= $form->field($model, 'pdf')->fileInput(['accept'=>'application/pdf','multiple' => true, 'class' => 'form-control'])->label('Загрузите PDF-файл') ?>
             </div>
 
             <div class="col-md-6">
