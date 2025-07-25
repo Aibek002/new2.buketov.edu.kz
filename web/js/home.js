@@ -13,6 +13,7 @@ function openBox(element, type) {
         const title = element.dataset.title;
         const content = element.dataset.content;
         const date = element.dataset.date;
+        const image= element.dataset.img;
         header.style.display = "none";
         box.innerHTML = `
         <div class="news-card p-4 rounded shadow-lg text-white" style="width: 100%; height: 100%; position: relative; background: linear-gradient(145deg, #1f3b6e, #2c5ca9); border: 1px solid rgba(255,255,255,0.2);">
@@ -31,7 +32,7 @@ function openBox(element, type) {
 
                     <!-- Изображение -->
                     <div class="d-flex justify-content-center align-items-start px-3" style="flex: 1;">
-                        <img src="https://e.buketov.edu.kz/img/logo_ksu.png" alt="Новость" style="max-width: 100%; max-height: 160px; object-fit: contain;">
+                        <img src="/files/images/news/${image}" alt="Новость фото" style="max-width: 90%; min-height: 160px; object-fit: contain;">
                     </div>
                 </div>
             </div>
@@ -46,9 +47,7 @@ function openBoxEvents(element, type) {
 
     const title = element.dataset.title;
     const content = element.dataset.content;
-    const day = element.dataset.day;
-    const month = element.dataset.month;
-    const year = element.dataset.year;
+    const day = element.dataset.time_events;
     header.style.display = "none";
 
     more_events_overlay.innerHTML =
@@ -59,7 +58,7 @@ function openBoxEvents(element, type) {
 
                 <!-- Основной блок -->
                 <div class="d-flex flex-column h-100">
-                    <div style="font-size: 16px; font-weight: 500; opacity: 0.85;">📅 ${day}-${month}-${year}</div>
+                    <div style="font-size: 16px; font-weight: 500; opacity: 0.85;">📅 ${day}</div>
                     <h2 class="my-3 fw-bold" style="font-size: 28px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">
                         📌 ${title}
                     </h2>

@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\AdmissionPdf;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
+use app\models\FeedbackForm;
 use app\models\Profession;
 use app\models\Events;
 use Symfony\Component\BrowserKit\History;
@@ -83,33 +84,21 @@ class SiteController extends Controller
         $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
         $current_month = (int) Yii::$app->formatter->asDate('today', 'MM');
         $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
+        $form = new FeedbackForm();
         $news_for_home = News::find()
             ->select([
                 LanguageHelper::title() . ' AS title',
                 LanguageHelper::content() . ' AS content',
                 'date',
-            ])->orderBy(['id' => SORT_DESC])
+                'image'
+            ])
+            ->innerJoin('image', 'image.column_id = news.id AND image.ref_image_id = 1')
+            ->orderBy(['news.id' => SORT_DESC])
             ->limit(3)
             ->asArray()
             ->all();
 
-        // $events = Events::find()
-        // ->select([
-        //         'title_en AS title',
-        //         'content_en AS content',
-        //         'year',
-        //         'month',
-        //         'day',
-        //     ])
-        // ->where(['>','day',$current_day])
-        // ->andWhere(['>','month',$current_month])
-        // ->andWhere(['>','year',$current_year])
-        // ->orderBy([
-        //     'day'=>SORT_ASC,
-        //     'month'=>SORT_ASC,
-        //     'year'=>SORT_ASC
-        // ])
-        // ->all();
+        
 
         $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
 
@@ -117,22 +106,19 @@ class SiteController extends Controller
             ->select([
                 'title_en AS title',
                 'content_en AS content',
-                'year',
-                'month',
-                'day',
+                new \yii\db\Expression('DAY(time_events) as day'),
+                new \yii\db\Expression('MONTH(time_events) as month'),
+                new \yii\db\Expression('YEAR(time_events) as year'),
+                
             ])
-            ->where(['>', 'DATE(CONCAT(year, "-", month, "-", day))', $current_date])
+            ->where(['>', 'time_events', $current_date])
             ->orderBy([
-                'year' => SORT_ASC,
-                'month' => SORT_ASC,
-                'day' => SORT_ASC
+                'time_events' => SORT_ASC,
             ])
             ->asArray()
             ->limit(3)
             ->all();
-
-
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events,'model'=>$form]);
     }
     public function actionFaculty($name)
     {

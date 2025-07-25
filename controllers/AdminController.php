@@ -146,6 +146,8 @@ class AdminController extends Controller
     {
         $news = new News();
         $path = Yii::getAlias('@app/../files/images/news/');
+        // $path = Yii::getAlias('@app/files/images/news/');
+
         if (Yii::$app->request->isPost) {
             if ($news->load(Yii::$app->request->post()) && $news->save()) {
 
@@ -341,7 +343,7 @@ class AdminController extends Controller
             if ($model->load(Yii::$app->request->post())) {
                 $pdf = UploadedFile::getInstance(new CorpSoleShareholder(), 'pdf');
 
-                $path = Yii::getAlias("@app/files/pdf/corporate_governance/sole-shareholder/$model->year/$model->lang/");
+                $path = Yii::getAlias("@app/../files/pdf/corporate_governance/sole-shareholder/$model->year/$model->lang/");
                 // print_r($path);
                 if (!is_dir($path)) {
                     if (!mkdir($path, 0775, true)) {
