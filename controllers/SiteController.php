@@ -98,7 +98,7 @@ class SiteController extends Controller
             ->asArray()
             ->all();
 
-        
+
 
         $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
 
@@ -109,7 +109,7 @@ class SiteController extends Controller
                 new \yii\db\Expression('DAY(time_events) as day'),
                 new \yii\db\Expression('MONTH(time_events) as month'),
                 new \yii\db\Expression('YEAR(time_events) as year'),
-                
+
             ])
             ->where(['>', 'time_events', $current_date])
             ->orderBy([
@@ -118,7 +118,7 @@ class SiteController extends Controller
             ->asArray()
             ->limit(3)
             ->all();
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events,'model'=>$form]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
     }
     public function actionFaculty($name)
     {
@@ -214,7 +214,7 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-        $year = CorpSoleShareholder::find()->select(['year','lang']) ->distinct()->orderBy('year')->all();
+        $year = CorpSoleShareholder::find()->select(['year', 'lang'])->distinct()->orderBy(['year' => SORT_DESC])->all();
         $pdf = CorpSoleShareholder::find()->all();
         return $this->render('corparate', ['years' => $year, 'pdf' => $pdf]);
     }

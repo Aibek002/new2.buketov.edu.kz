@@ -66,7 +66,7 @@ $this->title = Yii::t("app", "Corporate governance");
 </div>
 <div class="board-of-directors">
     <div class="title-content">
-        <?= Yii::t("app", "Composition of the Board of Directors") ?>
+        <?= Yii::t("app", "Board of Directors") ?>
     </div>
     <div id="board-members" class="board-of-directors-section">
 
@@ -79,7 +79,19 @@ $this->title = Yii::t("app", "Corporate governance");
 
         <div class="container-board-of-directors"></div>
     </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Internal Audit Service") ?>
+    </div>
+    <div id="audit-members" class="board-of-directors-section">
+        <div class="container-board-of-directors"></div>
+    </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Anti-corruption Compliance Service") ?>
+    </div>
+    <div id="anti-corruption" class="board-of-directors-section">
 
+        <div class="container-board-of-directors"></div>
+    </div>
     <div class="title-content">
         <?= Yii::t("app", "Meeting of the board of directors") ?>
     </div>
@@ -91,29 +103,25 @@ $this->title = Yii::t("app", "Corporate governance");
         <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
         <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
     </div>
-    <div class="title-content">
-        <?= Yii::t("app", "Internal Audit Service") ?>
-    </div>
-    <div id="audit-members" class="board-of-directors-section">
 
-        <div class="container-board-of-directors"></div>
-    </div>
-    <div class="title-content">
-        <?= Yii::t("app", "Anti-corruption Compliance Service") ?>
-    </div>
-    <div id="anti-corruption" class="board-of-directors-section">
 
-        <div class="container-board-of-directors"></div>
-    </div>
     <div class="title-content">
-        <?= Yii::t("app", "Documents Anti-corruption Compliance Service") ?>
+        <?= Yii::t("app", "Committees of the Board of Directors") ?>
     </div>
     <div class="button-section">
-        <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Regulation on ACS') ?></button>
-        <button onclick="loadPDF('/pdf/file2.pdf')"><?= Yii::t('app', 'Reports') ?></button>
-        <button onclick="loadPDF('/pdf/file3.pdf')"><?= Yii::t('app', 'ACS Documents') ?></button>
-        <button onclick="loadPDF('/pdf/file4.pdf')"><?= Yii::t('app', 'Comprehensive Work Plans') ?></button>
+        <button onclick="selectCommittee('audit')"><?= Yii::t('app', 'Audit Committee') ?></button>
+        <button onclick="selectCommittee('hr-rem')"><?= Yii::t('app', 'HR and Remuneration Committee') ?></button>
+        <button onclick="selectCommittee('str-plan')"><?= Yii::t('app', 'Strategic Planning Committee') ?></button>
 
+    </div>
+    <div class="button-section points">
+        <button data-point="position" data-lang="<?= Yii::$app->language?>"><?= Yii::t('app', 'Position') ?></button>
+        <button data-point="composition"><?= Yii::t('app', 'Composition') ?></button>
+        <button data-point="plan"><?= Yii::t('app', 'Plan') ?></button>
+        <button data-point="meeting"><?= Yii::t('app', 'Meeting') ?></button>
+    </div>
+    <div class="text-center">
+        <embed class="pdfViewerBoards border rounded mt-4" src="" width="80%" height="600" type="application/pdf">
     </div>
     <div class="title-content">
         <?= Yii::t("app", "Corporate events") ?>
@@ -129,13 +137,13 @@ $this->title = Yii::t("app", "Corporate governance");
 
     </div>
 
-    <div class="title-content">
+    <!-- <div class="title-content">
         <?= Yii::t("app", "Committees of the Board of Directors") ?>
     </div>
     <div id="committee-of-board" class="board-of-directors-section">
 
         <div class="container-board-of-directors"></div>
-    </div>
+    </div> -->
 </div>
 <div class="governance">
     <div class="title-content">
