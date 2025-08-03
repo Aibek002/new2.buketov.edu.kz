@@ -33,38 +33,31 @@
     border-radius: 0 10px 10px 0;
 }
 
-.sole-shareholder {
+
+
+.board-of-directors,
+.governance,
+.sole-shareholder,
+.sustainable_development
+
+{
     display: none;
+    margin-inline: 50px;
 }
 
-.sole-shareholder.active {
+.board-of-directors.active,
+.sole-shareholder.active,
+.sustainable_development.active{
     display: block;
 }
 
-.board-of-directors {
+
+.button-section.points{
     display: none;
 }
-
-.board-of-directors.active {
-    display: block;
+.button-section.points.active{
+    display: grid;
 }
-
-.governance {
-    display: none;
-}
-
-.governance.active {
-    display: block;
-}
-
-.sustainable_development {
-    display: none;
-}
-
-.sustainable_development.active {
-    display: block;
-}
-
 .documentsAndReporting {
     display: none;
 }
@@ -132,13 +125,15 @@
     transform: scale(1.1);
 }
 
-.pdfViewer {
-    margin-inline: 25%;
+.pdfViewer,
+.pdfViewerBoards {
+    margin-inline: 10%;
     margin-block: 100px;
     display: none;
 }
 
-.pdfViewer.active {
+.pdfViewer.active,
+.pdfViewerBoards.active {
     display: block;
 }
 

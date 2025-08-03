@@ -10,10 +10,14 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
+        '@uploads' => '/etc/docker/new2-buketov/site'
     ],
-  
+
     'language' => 'kz',
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager', // или PhpManager для хранения в файле
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'vlGiOTT_4Igk2D70YDR6BqTGXcWmerbZ',
@@ -24,6 +28,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' =>['admin/sign-in']
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -43,6 +48,7 @@ $config = [
                 ],
             ],
         ],
+
         'db' => $db,
         /*
         'urlManager' => [
@@ -52,20 +58,20 @@ $config = [
             ],
         ],
         */
-          'i18n' => [
-        'translations' => [
-            'app*' => [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'basePath' => '@app/messages',
-                'sourceLanguage' => 'en-US',
-                'fileMap' => [
-                    'app' => 'app.php',
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                    ],
                 ],
             ],
         ],
     ],
-    ],
-    
+
     'params' => $params,
 ];
 

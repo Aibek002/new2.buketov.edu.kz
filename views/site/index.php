@@ -2,6 +2,7 @@
 
 /** @var yii\web\View $this */
 use app\assets\HomeAsset;
+use yii\bootstrap5\ActiveForm;
 
 HomeAsset::register($this);
 
@@ -20,7 +21,8 @@ $this->title = 'Buketov University';
 
         </div>
         <div class="col-md-12 w-100" style="overflow:hidden">
-            <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted" loop="loop" class="video">
+            <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted"
+                loop="loop" class="video">
                 <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
             </video>
         </div>
@@ -239,15 +241,17 @@ $this->title = 'Buketov University';
 
                 <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?>"
                     data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>"
-                    data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>" class="col news-item">
-                    <div class="card shadow-sm">
+                    data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>"
+                    data-img="<?= htmlspecialchars($news_item['image']) ?>" class="col news-item">
+                    <div class="card shadow-sm"
+                        style="--news-image: url('/files/images/news/<?= $news_item['image'] ?>');  background-position: center;background-repeat: no-repeat;background-size: cover;">
                         <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
 
                         <div class="card-body news-text">
                             <p class="card-text"><?= $news_item['title'] ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small
-                                    class="text-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?></small>
+                                    class="white-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?></small>
                             </div>
                         </div>
                     </div>
@@ -266,36 +270,24 @@ $this->title = 'Buketov University';
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch upcoming-event">
             <?php foreach ($events as $event_item): ?>
                 <?php
-                // Массив для сопоставления числового значения месяца и его текстового представления
-                $months = [
-                    1 => "January",
-                    2 => "February",
-                    3 => "March",
-                    4 => "April",
-                    5 => "May",
-                    6 => "June",
-                    7 => "July",
-                    8 => "August",
-                    9 => "September",
-                    10 => "October",
-                    11 => "November",
-                    12 => "December",
-                ];
+                $month = date('F', $event_item['month']);
+                $day = $event_item['day'];
+                $year = $event_item['year'];
 
-                // Получаем месяц по числовому значению
-                $month = isset($months[$event_item['month']]) ? $months[$event_item['month']] : "Unknown";
                 ?>
                 <div class="col upcoming-event-item ">
                     <div class="calendar-card">
                         <div class="calendar-bg"></div>
-                        <div onclick="openBoxEvents(this, 'open')" data-day="<?= $event_item['day'] ?>"
-                            data-month="<?= $event_item['month'] ?>" data-year="<?= $event_item['year'] ?>" data-title="<?= $event_item['title'] ?>"
-                            data-content="<?= $event_item['content'] ?>" class="calendar-content">
-                            <p class="upcoming-event-month"><?= Yii::t('app', $month) ?></p>
-                            <p class="upcoming-event-day"><?= $event_item['day'] ?></p>
-                            <p class="upcoming-event-time"><?= $event_item['year'] ?></p>
+                        <div onclick="openBoxEvents(this, 'open')"
+                            data-time_events="<?= $day . "-" . $month . "-" . $year ?>"
+                            data-title="<?= $event_item['title'] ?>" data-content="<?= $event_item['content'] ?>"
+                            class="calendar-content">
+
                             <p class="upcoming-event-title"><?= $event_item['title'] ?></p>
-                            <p class="upcoming-event-text"><?= $event_item['content'] ?></p>
+                            <p class="upcoming-event-day"><?= $day ?></p>
+                            <p class="upcoming-event-date"><?= $month . " " . $year ?></p>
+
+
                         </div>
                     </div>
                 </div>
@@ -338,19 +330,43 @@ $this->title = 'Buketov University';
         <p>Форма обратной связи</p>
     </div>-->
     <div class="d-flex justify-content-center my-5 g-0">
-        <div style="border-radius: 50px 0 0 50px;"
+        <div style="border-radius: 10px 0 0 10px;"
             class="col-md-5 d-flex justify-content-center align-items-center block-header">
             <p><?= Yii::t('app', 'Feedback Form') ?></p>
         </div>
-        <div style="border-radius: 0 50px 50px 0; background: transparent; border: 1px var(--indigoblue-font) solid;"
+        <div style="border-radius: 0 10px 10px 0; background: transparent; border: 1px var(--indigoblue-font) solid;"
             class="col-md-5 d-flex justify-content-center align-items-center block-header">
             <p style=" color: var(--indigoblue-font);"><?= Yii::t('app', 'Citizens Reception Schedule') ?></p>
         </div>
 
     </div>
-    <div class="col-md-10 d-flex justify-content-center align-items-center my-5">
-        <img width="80%" src="/bg-images/form.png">
+    <div class="col-md-10 justify-content-between align-items-center">
+        <p class="feedback-form-text">Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и мы
+            обязательно свяжемся с вами в
+            кратчайшие сроки.</p>
+        <?php $form = ActiveForm::begin() ?>
+        <div class="feedback-form-container">
+            <div class="col-md-4">
+                <?= $form->field($model, 'fio')->textInput([
+                    'class' => 'form-control',
+                    'placeholder' => 'ФИО'
+                ])->label(false) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'email')->textInput([
+                    'class' => 'form-control',
+                    'placeholder' => 'Email'
+                ])->label(false) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'phone')->textInput([
+                    'class' => 'form-control',
+                    'placeholder' => 'Телефон'
+                ])->label(false) ?>
+            </div>
+        </div>
 
+        <?php ActiveForm::end() ?>
     </div>
 </div>
 <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
@@ -360,7 +376,7 @@ $this->title = 'Buketov University';
     </div>
     <div class="col-md-10 d-flex justify-content-center align-items-center block-smi my-5">
         <div
-            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch smi-about-us">
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
             <div class="col">
                 <div class="card shadow-sm h-100 w-100 position-relative p-3">
                     <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">

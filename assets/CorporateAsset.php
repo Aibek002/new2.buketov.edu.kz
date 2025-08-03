@@ -14,6 +14,7 @@ class CorporateAsset extends AssetBundle
     public $js = [
         "js/corporate-ajax-request.js",
         'js/corporate-load-pdf.js',
+        'js/corporate-main.js',
         'https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js'
     ];
     public $depends = [

@@ -14,7 +14,7 @@ class m250612_094423_create_skill_level_table extends Migration
     {
         $this->createTable('{{%skill_level}}', [
             'id' => $this->primaryKey(),
-            'type' => $this->string(255),
+            'type_en' => $this->string(255),
         ]);
     }
 
@@ -25,4 +25,6 @@ class m250612_094423_create_skill_level_table extends Migration
     {
         $this->dropTable('{{%skill_level}}');
     }
+    
+
 }

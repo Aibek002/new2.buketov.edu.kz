@@ -2,6 +2,7 @@
 $lang = Yii::$app->language;
 
 use app\assets\CorporateAsset;
+use yii\helpers\Html;
 
 
 
@@ -31,118 +32,142 @@ $this->title = Yii::t("app", "Corporate governance");
         </button>
 
     </div>
-    <div class="sole-shareholder active">
-        <div class="title-content">
-            <?= Yii::t("app", "Decisions of the Sole Shareholder") ?>
-        </div>
-        <div class="button-section">
-            <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
-            <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
-            <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
-            <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
-            <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
-            <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
+    <div class=" container my-5 sole-shareholder active">
+        <h2 class="title-content"><?= Yii::t("app", "Decisions of the Sole Shareholder") ?></h2>
 
+        <?php foreach ($years as $year): ?>
+            <?php if ($year->lang == $lang): ?>
+                <div class="title-content">
+                    <h5 class="mb-0">
+                        <?= Yii::t("app", "Decisions of the Sole Shareholder") ?> — <?= Html::encode($year->year) ?>
+                    </h5>
+                </div>
 
-        </div>
-        <embed class="pdfViewer" src="" width="50%" height="600" type="application/pdf">
-    </div>
-    <div class="board-of-directors">
-        <div class="title-content">
-            <?= Yii::t("app", "Composition of the Board of Directors") ?>
-        </div>
-        <div id="board-members" class="board-of-directors-section">
+                <div class="button-section">
+                    <?php foreach ($pdf as $pdf_item): ?>
+                        <?php if ($pdf_item->year == $year->year && $lang == $pdf_item->lang): ?>
+                            <button
+                                onclick='loadPDF("/files/pdf/corporate_governance/sole-shareholder/<?= $year->year . "/" . $lang . "/" . $pdf_item->name_pdf ?>.pdf")'>
+                                <?= Html::encode($pdf_item->name_pdf) ?>
+                            </button>
 
-            <div class="container-board-of-directors"></div>
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Corporate Secretary") ?>
-        </div>
-        <div id="secretary" class="board-of-directors-section">
+                        <?php endif ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif ?>
 
-            <div class="container-board-of-directors"></div>
-        </div>
+        <?php endforeach; ?>
 
-        <div class="title-content">
-            <?= Yii::t("app", "Meeting of the board of directors") ?>
-        </div>
-        <div class="button-section">
-            <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
-            <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
-            <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
-            <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
-            <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
-            <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Internal Audit Service") ?>
-        </div>
-        <div id="audit-members" class="board-of-directors-section">
-
-            <div class="container-board-of-directors"></div>
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Anti-corruption Compliance Service") ?>
-        </div>
-        <div id="anti-corruption" class="board-of-directors-section">
-
-            <div class="container-board-of-directors"></div>
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Documents Anti-corruption Compliance Service") ?>
-        </div>
-        <div class="button-section">
-            <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Regulation on ACS') ?></button>
-            <button onclick="loadPDF('/pdf/file2.pdf')"><?= Yii::t('app', 'Reports') ?></button>
-            <button onclick="loadPDF('/pdf/file3.pdf')"><?= Yii::t('app', 'ACS Documents') ?></button>
-            <button onclick="loadPDF('/pdf/file4.pdf')"><?= Yii::t('app', 'Comprehensive Work Plans') ?></button>
-
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Corporate events") ?>
-        </div>
-        <div class="button-section">
-            <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
-            <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
-            <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
-            <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
-            <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
-            <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
-
-
-        </div>
-        
-        <div class="title-content">
-            <?= Yii::t("app", "Committees of the Board of Directors") ?>
-        </div>
-           <div id="committee-of-board" class="board-of-directors-section">
-
-            <div class="container-board-of-directors"></div>
+        <div class="text-center">
+            <embed class="pdfViewer border rounded mt-4" src="" width="80%" height="600" type="application/pdf">
         </div>
     </div>
-    <div class="governance">
-        <div class="title-content">
-            <?= Yii::t("app", "Composition of the Governance") ?>
-        </div>
-        <div class="container-governance"></div>
-        <div class="title-content">
-            <?= Yii::t("app", "Board meeting") ?>
-        </div>
-        <div class="button-section">
-            <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
-            <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
-            <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
-            <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
-            <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
-            <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
-        </div>
+
+</div>
+<div class="board-of-directors">
+    <div class="title-content">
+        <?= Yii::t("app", "Board of Directors") ?>
+    </div>
+    <div id="board-members" class="board-of-directors-section">
+
+        <div class="container-board-of-directors"></div>
+    </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Corporate Secretary") ?>
+    </div>
+    <div id="secretary" class="board-of-directors-section">
+
+        <div class="container-board-of-directors"></div>
+    </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Internal Audit Service") ?>
+    </div>
+    <div id="audit-members" class="board-of-directors-section">
+        <div class="container-board-of-directors"></div>
+    </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Anti-corruption Compliance Service") ?>
+    </div>
+    <div id="anti-corruption" class="board-of-directors-section">
+
+        <div class="container-board-of-directors"></div>
+    </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Meeting of the board of directors") ?>
+    </div>
+    <div class="button-section">
+        <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
+        <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
+        <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
+        <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
+        <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
+        <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
+    </div>
+
+
+    <div class="title-content">
+        <?= Yii::t("app", "Committees of the Board of Directors") ?>
+    </div>
+    <div class="button-section">
+        <button onclick="selectCommittee('audit')"><?= Yii::t('app', 'Audit Committee') ?></button>
+        <button onclick="selectCommittee('hr-rem')"><?= Yii::t('app', 'HR and Remuneration Committee') ?></button>
+        <button onclick="selectCommittee('str-plan')"><?= Yii::t('app', 'Strategic Planning Committee') ?></button>
+
+    </div>
+    <div class="button-section points">
+        <button data-point="position" data-lang="<?= Yii::$app->language?>"><?= Yii::t('app', 'Position') ?></button>
+        <button data-point="composition"><?= Yii::t('app', 'Composition') ?></button>
+        <button data-point="plan"><?= Yii::t('app', 'Plan') ?></button>
+        <button data-point="meeting"><?= Yii::t('app', 'Meeting') ?></button>
+    </div>
+    <div class="text-center">
+        <embed class="pdfViewerBoards border rounded mt-4" src="" width="80%" height="600" type="application/pdf">
+    </div>
+    <div class="title-content">
+        <?= Yii::t("app", "Corporate events") ?>
+    </div>
+    <div class="button-section">
+        <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
+        <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
+        <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
+        <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
+        <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
+        <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
+
 
     </div>
 
-    <div class="sustainable_development">
-        <div class="title-content">
-            <?= Yii::t("app", "Sustainable Development") ?>
-        </div>
+    <!-- <div class="title-content">
+        <?= Yii::t("app", "Committees of the Board of Directors") ?>
+    </div>
+    <div id="committee-of-board" class="board-of-directors-section">
+
+        <div class="container-board-of-directors"></div>
+    </div> -->
+</div>
+<div class="governance">
+    <div class="title-content">
+        <?= Yii::t("app", "Composition of the Governance") ?>
+    </div>
+    <div class="container-governance"></div>
+    <div class="title-content">
+        <?= Yii::t("app", "Board meeting") ?>
+    </div>
+    <div class="button-section">
+        <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
+        <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
+        <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
+        <button onclick="loadPDF('/pdf/file4.pdf')">2023</button>
+        <button onclick="loadPDF('/pdf/file5.pdf')">2024</button>
+        <button onclick="loadPDF('/pdf/file6.pdf')">2025</button>
+    </div>
+
+</div>
+
+<div class="sustainable_development">
+    <div class="title-content">
+        <?= Yii::t("app", "Sustainable Development") ?>
+    </div>
     <!-- </div>
     <div class="DocumentsAndReporting">
         <div class="title-content">

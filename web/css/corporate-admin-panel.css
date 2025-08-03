@@ -1,0 +1,12 @@
+.select-year,
+.select-file,
+.name_url_input,
+.submitButton{
+    display: none !important;
+}
+.select-year.active,
+.select-file.active,
+.name_url_input.active,
+.submitButton.active{
+    display: block !important;
+}

@@ -3,11 +3,12 @@
 :root {
   --second-family: 'IBM Plex Mono', monospace;
   --darkblue: var(--darkblue);
-  --whiteblue:#415e8a;
+  --whiteblue: #415e8a;
   --indigoblue-font: #2c5ca9;
 
   --indigoblue: linear-gradient(145deg, #1f3b6e, #2c5ca9);
-  --indigoblue-50: linear-gradient(145deg, #1f3b6eab, #2c5ca97d);;
+  --indigoblue-50: linear-gradient(145deg, #1f3b6eab, #2c5ca97d);
+  ;
   --light-gray: #f9f9f9;
   --sand: #c0a282;
   --white: #fff;
@@ -71,8 +72,34 @@
 
 
 
+.feedback-form-container {
+    display: flex;
+    gap: 15px;       /* расстояние между полями */
+    width: 100%;     /* на всю ширину */
+}
 
+.feedback-form-container .form-group {
+    flex: 1;         /* каждый контейнер занимает равную ширину */
+    min-width: 0;    /* не ломаем flex при длинных плейсхолдерах */
+}
 
+.feedback-form-container .form-control {
+    width: 100%;     /* инпут тянется на всю ширину своего контейнера */
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.feedback-form-container .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.row,
+.col,
+.col-md-10 {
+  padding-left: 0;
+}
 
 .title-page {
   padding: 20px;
@@ -128,11 +155,11 @@
 }
 
 .select-section button:first-child {
-  border-radius: 20px 0 0 20px;
+  border-radius: 10px 0 0 10px;
 }
 
 .select-section button:last-child {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 .select-section button:hover {
@@ -152,9 +179,10 @@ strong {
   gap: 20px;
 }
 
-.button-section button {
+.button-section button,
+.button-section a button {
   border: 1px solid var(--indigoblue-font);
-  border-radius: 20px;
+  border-radius: 10px;
   background: var(--white);
   font-size: var(--font-16);
   color: var(--indigoblue-font);
@@ -258,7 +286,7 @@ strong {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 
 }
 
@@ -338,7 +366,7 @@ strong {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .carousel .thumbnail .item .content {
@@ -387,7 +415,7 @@ strong {
 
 .carousel .list .item .content .tel .svg {
   background: transparent;
-  border-radius: 50px;
+  border-radius: 10px;
   width: 50px;
   height: 50px;
   display: flex;
@@ -399,7 +427,7 @@ strong {
 .carousel .list .item .content .tel span {
   background: transparent;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 10px;
   padding-inline: 20px;
   border: 1px #fff solid;
 }
@@ -408,7 +436,7 @@ strong {
   width: 150px;
   border: 1px #fff solid;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -418,7 +446,7 @@ strong {
   position: absolute;
   bottom: 0;
   background: linear-gradient(to top, rgba(15, 33, 71, 0.73) 0%, rgba(7, 35, 72, 0.73) 40%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 20px;
+  border-radius: 10px;
   z-index: 1;
 }
 
@@ -525,7 +553,7 @@ strong {
     left: 0;
     bottom: 0%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
   }
 }
 
@@ -857,7 +885,7 @@ main>.container {
   gap: 20px;
   background: var(--indigoblue);
   border: 1px var(--white) solid;
-  border-radius: 20px;
+  border-radius: 10px;
 
 }
 
@@ -951,7 +979,7 @@ main>.container {
   font-size: 16px;
   text-align: center;
   color: #fff;
-  font-family:  sans-serif;
+  font-family: sans-serif;
   padding-block: 0;
 }
 
@@ -1050,13 +1078,13 @@ body {
   background: url(/bg-images/additional-links-bg.jpg) no-repeat;
   background-size: cover;
   border: 1px var(--white) solid;
-  border-radius: 20px;
+  border-radius: 10px;
   padding-block: 20px;
   background: transparent;
 }
 
 .card-blur-bg {
-  border-radius: 20px;
+  border-radius: 10px;
   position: absolute;
   inset: 0;
   background: url('/bg-images/additional-links-bg.jpg') center/cover no-repeat;
@@ -1074,7 +1102,7 @@ body {
 .block-header {
   background: var(--indigoblue);
   color: var(--white);
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .block-header p {
@@ -1088,7 +1116,7 @@ body {
 .university-branding {
   color: var(--white);
   /* Индиго стиль */
-  border-radius: 20px;
+  border-radius: 10px;
   max-width: 100%;
   margin: 2rem auto;
 }
@@ -1129,7 +1157,7 @@ body {
   border: 1px solid var(--indigoblue-font);
   width: 49%;
   transition: transform 1s ease;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: var(--font-24);
   font-weight: var(--font-700);
   color: var(--indigoblue-font);
@@ -1145,19 +1173,19 @@ body {
   background: var(--indigoblue);
   position: absolute;
   z-index: -1;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: transform 1s ease, border-radius 1s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .admission-btn-bg.animate-left {
-  border-radius: 150px 0 0 150px;
+  border-radius: 10px 0 0 10px;
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .admission-btn-bg.animate-right {
-  border-radius: 0 150px 150px 0;
+  border-radius: 0 10px 10px 0;
   transform: scale(1.05) rotate(-5deg);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
@@ -1222,24 +1250,20 @@ body {
 }
 
 .news-item .card.shadow-sm {
-  border-radius: 20px;
+  border-radius: 10px;
   height: 100%;
   width: 100%;
-  background: url('https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/19/24/27/1924278e-f64e-b612-2aed-12736a4eb6dd/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png');
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-repeat: repeat;
-  background-size: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background: var(--news-image);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .news-item:hover .card.shadow-sm {
-  border: 5px solid var(--whiteblue);
-  background: var(--indigoblue-50);
+  /* border: 5px solid var(--whiteblue); */
+  background: var(--indigoblue);
+  /* или убери, если хочешь сохранить картинку */
+  height: 100%;
 }
 
 .news-item:hover .news-text {
@@ -1262,78 +1286,98 @@ body {
   position: relative;
   width: 100%;
   height: 300px;
-  transition: transform 0.3s ease;
-  /* плавная анимация */
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
+.calendar-card:hover {
+  transform: translateY(-8px);
+  /* box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); */
+}
 
 .calendar-bg {
-  background: url('/bg-images/upcoming-event-bg.png') no-repeat center top;
+
+  background: url('/bg-images/upcoming-event-bg-2.png') no-repeat center top;
   background-size: contain;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 0;
   top: 0px;
+  transition: opacity 0.3s ease;
+}
 
+.calendar-card:hover .calendar-bg {
+  opacity: 0.6;
 }
 
 .calendar-content {
   position: relative;
   z-index: 1;
-  padding: 20px 0 10px 0;
-  text-align: center;
   width: 100%;
-  background: var(--white);
-  border-left: 10px solid #bcbec0;
-  border-right: 10px solid #bcbec0;
-  border-bottom: 10px solid #bcbec0;
-  border-radius: 40px;
+  padding: 25px 15px;
+  text-align: center;
+  background: #fff;
+  border: 3px solid #bcbec0;
+  border-radius: 10px;
   box-sizing: border-box;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-card:hover .calendar-content {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .calendar-content p {
-  margin: 0;
+  margin: 8px 0;
 }
 
 .upcoming-event-day {
   font-weight: 700;
-  font-size: var(--font-96);
-  text-align: center;
-  color: var(--darkblue);
-  line-height: 100px;
+  font-size: 48px;
+  color: #004080;
+  line-height: 1;
 }
 
 .upcoming-event-month {
-  font-weight: 700;
-  font-size: var(--font-24);
-  line-height: 87%;
-  text-align: center;
-  color: var(--darkblue);
-}
-
-.upcoming-event-time {
-  font-weight: 300;
-  font-size: var(--font-16);
-  text-align: center;
-  color: var(--gray);
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #0073e6;
+  margin-bottom: 5px;
 }
 
 .upcoming-event-title {
   font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555;
+}
+
+.upcoming-event-time {
   font-weight: 300;
-  font-size: var(--font-16);
-  text-align: center;
-  color: var(--gray);
+  font-size: 14px;
+  color: #888;
 }
 
 .upcoming-event-text {
   display: none;
 }
 
+@media (max-width: 768px) {
+  .calendar-card {
+    height: 250px;
+  }
+
+  .upcoming-event-day {
+    font-size: 40px;
+  }
+}
 
 /* ========== SIXTH BLOCK - BLOCK RECTOR ========== */
 .block-rector {
@@ -1356,7 +1400,7 @@ body {
 /* .box-img-rector:hover{
   position: relative;
   background: var(--indigoblue);
-  border-radius: 50px;
+  border-radius: 10px;
   width: 30%;
   height: 300px;
   transition: all 1s;
@@ -1370,7 +1414,7 @@ body {
 } */
 .skewX {
   background: var(--indigoblue);
-  border-radius: 50px;
+  border-radius: 10px;
   width: 90%;
   height: 300px;
   transition: 0.5s all;
@@ -1416,6 +1460,7 @@ body {
 /* ========== EIGHTH BLOCK - BLOCK SMI ========== */
 .block-smi {
   gap: 30px;
+  padding-left: 0;
 }
 
 .smi-logo-buketov {
@@ -1502,9 +1547,6 @@ body {
 
   }
 
-  .block-header {
-    border-radius: 0;
-  }
 
   .box-icon {
     display: none !important;
@@ -1546,10 +1588,6 @@ body {
 
   .align-items-stretch {
     padding-inline: 10%;
-  }
-
-  .block-header {
-    border-radius: 0;
   }
 
   .box-icon {
