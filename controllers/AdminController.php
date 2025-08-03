@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\Profession;
@@ -335,6 +336,12 @@ class AdminController extends Controller
     {
         Yii::$app->user->logout();
         return $this->redirect(['admin/index']);
+    }
+    public function actionCorporateGovernanceFile()
+    {
+        $model = new CorporateGovernanceFile();
+        return $this->render('corporate_governance_file', ['model' => $model]);
+
     }
     public function actionCorporateSoleShareholder()
     {
