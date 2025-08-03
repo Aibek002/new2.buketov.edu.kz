@@ -1,6 +1,8 @@
-.select-year{
+.select-year,
+.select-file{
     display: none !important;
 }
-.select-year.active{
+.select-year.active,
+.select-file.active{
     display: block !important;
 }

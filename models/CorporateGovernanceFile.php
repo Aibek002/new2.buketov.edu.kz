@@ -24,6 +24,7 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
 
     public $subsection_corporate_governance;
     public $year;
+    public $file;
     /**
      * {@inheritdoc}
      */
