@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     select_file.addEventListener('change', function () {
                         if (select_file.files.length > 0) {
                             name_url.classList.add('active');
-                            submitButton.addEventListener('change', function () {
-                                if (name_url.value.trim !== "") {
+                            name_url.addEventListener('change', function () {
+                                if (name_url.value.trim != "") {
                                     submitButton.classList.add('active');
                                 } else {
                                     submitButton.classList.remove('active');
