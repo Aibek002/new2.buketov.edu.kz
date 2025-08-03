@@ -46,7 +46,7 @@ $this->title = "Управление файлами Корпоративного
         ->label(false);
     ?>
     <?= $form->field($model, 'file')->fileInput(['class' => 'select-file', 'placeholder' => 'Выберите файл'])->label(false) ?>
-    <?= $form->field($model, 'name_url')->textInput(['class' => 'name_url_input', 'placeholder' => 'Название ссылки'])->label(false); ?>
-
+    <?= $form->field($model, 'name_url')->textInput(['class' => 'form-control name_url_input', 'placeholder' => 'Название ссылки'])->label(false); ?>
+    <?= Html::submitButton('Submit', ['class' => 'submitButton btn btn-success']) ?>
     <?php ActiveForm::end() ?>
 </div>
