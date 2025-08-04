@@ -123,7 +123,7 @@
   font-weight: 700;
   color: var(--indigoblue-font);
   padding: 10px 15px;
-  border-left: 5px solid var(--indigoblue);
+  border-left: 5px solid var(--indigoblue-font);
   background: var(--light-gray);
   margin-bottom: 20px;
   border-radius: 10px;

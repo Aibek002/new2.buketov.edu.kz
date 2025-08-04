@@ -3,6 +3,7 @@
 .select-committee-subsection,
 .select-year,
 .select-file,
+.language_file,
 .name_url_input,
 .submitButton {
     display: none !important;
@@ -13,6 +14,7 @@
 .select-committee-subsection.active,
 .select-year.active,
 .select-file.active,
+.language_file.active,
 .name_url_input.active,
 .submitButton.active {
     display: block !important;

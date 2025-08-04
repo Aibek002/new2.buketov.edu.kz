@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\AdmissionPdf;
+use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\FeedbackForm;
@@ -214,9 +215,11 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-        $year = CorpSoleShareholder::find()->select(['year', 'lang'])->distinct()->orderBy(['year' => SORT_DESC])->all();
-        $pdf = CorpSoleShareholder::find()->all();
-        return $this->render('corparate', ['years' => $year, 'pdf' => $pdf]);
+        $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file','ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
+        // $pdf = CorpSoleShareholder::find()->all();
+        $pdf = CorporateGovernanceFile::find()
+            ->orderBy(['sort_id' => SORT_DESC, 'sort_id' => SORT_DESC])->all();
+        return $this->render('corparate', [ 'year'=>$year,'pdf' => $pdf]);
     }
 
     public function actionSovet()

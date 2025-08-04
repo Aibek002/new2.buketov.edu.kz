@@ -48,7 +48,7 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
             [['name_url', 'path_file', 'sort_id'], 'required'],
             [['path_file', 'sort_id'], 'string'],
             [['ref_corporate_governance', 'author', 'status'], 'integer'],
-            [['date_create'], 'safe'],
+            [['date_create','subsection_corporate_governance','board_subsec','committee_subsec','committee_subsection','year','language_file'], 'safe'],
             [['name_url'], 'string', 'max' => 255],
             [['author'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author' => 'id']],
             [['ref_corporate_governance'], 'exist', 'skipOnError' => true, 'targetClass' => RefCorporateGovernance::class, 'targetAttribute' => ['ref_corporate_governance' => 'id']],

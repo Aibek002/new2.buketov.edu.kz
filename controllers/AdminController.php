@@ -340,9 +340,119 @@ class AdminController extends Controller
     public function actionCorporateGovernanceFile()
     {
         $model = new CorporateGovernanceFile();
+        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance(new CorporateGovernanceFile(), 'file');
+            $model->author = Yii::$app->user->id;
+
+            if ($model->subsection_corporate_governance === 'Решения Единственного Акционера') {
+
+                $path = Yii::getAlias("@app/../files/pdf/corporate_governance/sole-shareholder/$model->year/$model->language_file/");
+                $fileName = uniqid() . "_" . $model->name_url . "." . $file->extension;
+                $model->ref_corporate_governance = 1;
+                $model->path_file = "/files/pdf/corporate_governance/sole-shareholder/" . $model->year . "/" . $model->language_file . "/";
+                $model->sort_id = $model->year;
+                $model->fileName = $fileName;
+
+                if (!is_dir($path)) {
+                    if (!mkdir($path, 0775, true)) {
+                        Yii::$app->session->setFlash('error', 'Error when create directory');
+                    }
+                }
+                if (!$file->saveAs($path . $fileName)) {
+                    Yii::$app->session->setFlash('error', 'Error when save file');
+                }
+                if ($model->validate()) {
+                    if ($model->save()) {
+                        Yii::$app->session->setFlash('success', 'Successfully created');
+                        return $this->refresh();
+
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Error created');
+
+                    }
+                } else {
+                    // Вывод всех ошибок валидации в лог
+                    Yii::error($model->getErrors(), __METHOD__);
+
+                    // Или вывести пользователю на экране (временно, для отладки)
+                    Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
+
+                }
+
+            } elseif ($model->subsection_corporate_governance === 'Совет директоров') {
+
+                if (
+                    $model->board_subsec === 'Заседание Совета директоров'
+                    || $model->board_subsec === 'Корпоративные события'
+                ) {
+                    $path = Yii::getAlias("@app/../files/pdf/corporate_governance/board-of-directors/$model->board_subsec/$model->year/$model->language_file/");
+                    $fileName = uniqid() . "_" . $model->name_url . "." . $file->extension;
+                    $model->fileName = $fileName;
+                    $model->path_file = $path;
+                    $model->ref_corporate_governance = 2;
+                    $model->sort_id = $model->board_subsec . "/" . $model->year;
+
+                    if (!is_dir($path)) {
+                        if (!mkdir($path, 0775, true)) {
+                            Yii::$app->session->setFlash('error', 'Error when create directory');
+                        }
+                    }
+                    if (!$file->saveAs($path . $fileName)) {
+                        Yii::$app->session->setFlash('error', 'Error when save file');
+                    }
+                    if ($model->validate()) {
+                        if ($model->save()) {
+                            Yii::$app->session->setFlash('success', 'Successfully created');
+                            return $this->refresh();
+
+                        } else {
+                            Yii::$app->session->setFlash('error', 'Error created');
+
+                        }
+                    } else {
+                        // Вывод всех ошибок валидации в лог
+                        Yii::error($model->getErrors(), __METHOD__);
+
+                        // Или вывести пользователю на экране (временно, для отладки)
+                        Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
+
+                    }
+                }
+
+
+            }
+        }
         return $this->render('corporate_governance_file', ['model' => $model]);
 
     }
+    // public function actionCopy()
+    // {
+    //     $from = CorpSoleShareholder::find()->all();
+    //     foreach ($from as $item) {
+    //         echo $item->name_pdf . "<br>";
+    //     }
+    //     foreach ($from as $from_item) {
+    //         $to = new CorporateGovernanceFile(); // нужно создавать новый объект в каждой итерации
+
+    //         $to->fileName = $from_item->name_pdf . ".pdf";
+    //         $to->name_url = $from_item->name_pdf;
+
+    //         $to->language_file = $from_item->lang;
+    //         $to->author = 1;
+    //         $to->ref_corporate_governance = 1;
+    //         $to->sort_id =  (string)$from_item->year; // было $from->year — неправильно
+    //         $to->path_file = "/files/pdf/corporate_governance/sole-shareholder/" . $from_item->year . "/" . $from_item->lang . "/";
+    //         if (!$to->save()) {
+    //             echo "<pre>";
+    //             print_r($to->errors);
+    //             echo "</pre>";
+    //             exit;
+    //         }
+    //     }
+    //     Yii::$app->session->setFlash('success', 'Данные успешно скопированы.');
+    //     return $this->redirect(['index']); // укажите нужное действие для редиректа
+    // }
+
     public function actionCorporateSoleShareholder()
     {
         $model = new CorpSoleShareholder();

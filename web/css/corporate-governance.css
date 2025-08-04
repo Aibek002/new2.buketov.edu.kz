@@ -184,3 +184,14 @@
     gap: 20px;
     margin-bottom: 20px;
 }
+
+.board-meeting,
+.board-events{
+    display: none;
+}
+.board-meeting.active,
+.board-events.active{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -21,6 +21,7 @@ $this->title = 'Admin Page';
         <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Решение Единственного Акционера', ['admin/corporate-sole-shareholder'], ['class' => 'fas fa-university']) ?>
+        <?= Html::a('Управление файлами Корпоративного управление', ['admin/corporate-governance-file'], ['class' => 'fas fa-university']) ?>
 
     <?php elseif (Yii::$app->user->can("admissionAdmin")): ?>
         <?= Html::a('ПДФ для приемный коммиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
