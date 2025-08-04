@@ -158,6 +158,7 @@ $this->title = Yii::t("app", "Corporate governance");
         <button data-point="plan"><?= Yii::t('app', 'Plan') ?></button>
         <button data-point="meeting"><?= Yii::t('app', 'Meeting') ?></button>
     </div>
+    
     <div class="text-center">
         <embed class="pdfViewerBoards border rounded mt-4" src="" width="80%" height="600" type="application/pdf">
     </div>
