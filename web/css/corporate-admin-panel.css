@@ -1,12 +1,19 @@
+.select-board-subsec,
+.select-committee-subsec,
+.select-committee-subsection,
 .select-year,
 .select-file,
 .name_url_input,
-.submitButton{
+.submitButton {
     display: none !important;
 }
+
+.select-board-subsec.active,
+.select-committee-subsec.active,
+.select-committee-subsection.active,
 .select-year.active,
 .select-file.active,
 .name_url_input.active,
-.submitButton.active{
+.submitButton.active {
     display: block !important;
 }

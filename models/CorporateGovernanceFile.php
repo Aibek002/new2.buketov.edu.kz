@@ -23,6 +23,10 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
 {
 
     public $subsection_corporate_governance;
+    public $board_subsec;
+    public $committee_subsec;
+    public $committee_subsection;
+
     public $year;
     public $file;
     /**
