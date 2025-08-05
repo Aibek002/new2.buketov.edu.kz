@@ -93,9 +93,29 @@ function closeAllSubCom() {
   positon3 = document.querySelector(
     ".Комитет-по-стратегическому-планированию-Положение"
   );
+  plan1 = document.querySelector(".Комитет-по-аудиту-План");
+  plan2 = document.querySelector(".Комитет-по-кадрам-и-вознаграждениям-План");
+  plan3 = document.querySelector(
+    ".Комитет-по-стратегическому-планированию-План"
+  );
+
+  meeting1 = document.querySelector(".Комитет-по-аудиту-Заседание");
+  meeting2 = document.querySelector(
+    ".Комитет-по-кадрам-и-вознаграждениям-Заседание"
+  );
+  meeting3 = document.querySelector(
+    ".Комитет-по-стратегическому-планированию-Заседание"
+  );
+
   positon1.classList.remove("active");
   positon2.classList.remove("active");
   positon3.classList.remove("active");
+  plan1.classList.remove("active");
+  plan2.classList.remove("active");
+  plan3.classList.remove("active");
+  meeting1.classList.remove("active");
+  meeting2.classList.remove("active");
+  meeting3.classList.remove("active");
 }
 
 function openBoardMeeting(safe_id) {
