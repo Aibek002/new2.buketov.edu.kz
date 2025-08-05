@@ -76,7 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
       name_url
     );
     if (committee_subsection.value !== "Положение") {
-      selectedYear(select_year, select_file, name_url, submitButton, add);
+      console.log(committee_subsection.value);
+      selectedYear(
+        select_year,
+        select_file,
+        select_language,
+        name_url,
+        submitButton,
+        add
+      );
       selectFile(select_file, select_language, name_url, submitButton, remove);
     } else {
       selectedYear(

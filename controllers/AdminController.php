@@ -417,7 +417,7 @@ class AdminController extends Controller
                         Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
 
                     }
-                } elseif ($model->board_subsec === 'Комитеты Совета директоров') {  
+                } elseif ($model->board_subsec === 'Комитеты Совета директоров') {
                     $model->ref_corporate_governance = 2;
                     if ($model->committee_subsection === 'Положение') {
                         $path = Yii::getAlias("@app/../files/pdf/corporate_governance/board-of-directors/$model->board_subsec/$model->committee_subsection/$model->language_file/");
@@ -425,6 +425,7 @@ class AdminController extends Controller
                         $model->ref_corporate_governance = 2;
                         $model->path_file = $path;
                         $model->sort_id = $model->committee_subsec . '/' . $model->committee_subsection;
+                        $model->fileName = $fileName;
                         if (!is_dir($path)) {
                             if (!mkdir($path, 0775, true)) {
                                 Yii::$app->session->setFlash('error', 'Error when create directory!');
@@ -433,20 +434,53 @@ class AdminController extends Controller
                         if (!$file->saveAs($path . $fileName)) {
                             Yii::$app->session->setFlash('error', 'Error when save file!');
                         }
-                        if (!$model->validate() && !$model->save()) {
-                            Yii::$app->session->setFlash('error', 'Error when save data!');
+                        if (!$model->validate()) {
+                            print_r($path);
 
+                            Yii::error($model->getErrors(), __METHOD__);
+                            Yii::$app->session->setFlash('error', JSON_UNESCAPED_UNICODE);
+
+                        } else {
+                            if (!$model->save()) {
+                                Yii::error($model->getErrors(), __METHOD__);
+                                Yii::$app->session->setFlash('error', JSON_UNESCAPED_UNICODE);
+                            } else {
+                                Yii::$app->session->setFlash('success', 'Successfylly created!');
+                                return $this->refresh();
+                            }
                         }
 
-                    } elseif ($model->committee_subsection === 'План') {
-
-                    } elseif ($model->committee_subsection === 'Заседание') {
-
+                    } elseif ($model->committee_subsection === 'План' || $model->committee_subsection === 'Заседание') {
+                        $path = Yii::getAlias("@app/../files/pdf/corporate_governance/board-of-directors/$model->board_subsec/$model->committee_subsection/$model->year/$model->language_file/");
+                        $fileName = uniqid() . '_' . $model->name_url . "." . $file->extension;
+                        $model->fileName = $fileName;
+                        $model->path_file = $path;
+                        $model->sort_id = $model->committee_subsec . "/" . $model->committee_subsection;
+                        if (!is_dir($path)) {
+                            if (!mkdir($path, 0775, true)) {
+                                Yii::$app->session->setFlash('error', 'Error when create directory!');
+                            }
+                        }
+                        if (!$file->saveAs($path . $fileName)) {
+                            Yii::$app->session->setFlash('error', 'Error when save file!');
+                        }
+                        if (!$model->validate()) {
+                            Yii::error(json_encode($model->getErrors()), __METHOD__);
+                            Yii::$app->session->setFlash('error', JSON_UNESCAPED_UNICODE);
+                        } else {
+                            if (!$model->save()) {
+                                Yii::error(json_encode($model->getErrors()), __METHOD__);
+                                Yii::$app->session->setFlash('error', JSON_UNESCAPED_UNICODE);
+                            } else {
+                                Yii::$app->session->setFlash('success', 'Successfully created!');
+                                return $this->refresh();
+                            }
+                        }
                     }
 
-                    $fileName = uniqid() . '_' . $model->name_url . "." . $file->extension;
-                    $model->fileName = $fileName;
-                    $model->path_file = $path;
+                    // $fileName = uniqid() . '_' . $model->name_url . "." . $file->extension;
+                    // $model->fileName = $fileName;
+                    // $model->path_file = $path;
 
 
                 }

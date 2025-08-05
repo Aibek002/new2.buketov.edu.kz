@@ -126,14 +126,16 @@
 }
 
 .pdfViewer,
-.pdfViewerBoards {
+.pdfViewerBoards,
+.board_governance_pdf {
     margin-inline: 10%;
     margin-block: 100px;
     display: none;
 }
 
 .pdfViewer.active,
-.pdfViewerBoards.active {
+.pdfViewerBoards.active,
+.board_governance_pdf.active {
     display: block;
 }
 
@@ -186,11 +188,21 @@
 }
 
 .board-meeting,
-.board-events{
+.board-events,
+.Комитет-по-аудиту-Положение,
+.Комитет-по-кадрам-и-вознаграждениям-Положение,
+.Комитет-по-стратегическому-планированию-Положение,
+.Комитет-по-аудиту-Заседание,
+.Комитет-по-аудиту-План{
     display: none;
 }
 .board-meeting.active,
-.board-events.active{
+.board-events.active,
+.Комитет-по-аудиту-Положение.active,
+.Комитет-по-кадрам-и-вознаграждениям-Положение.active,
+.Комитет-по-стратегическому-планированию-Положение.active,
+.Комитет-по-аудиту-Заседание.active,
+.Комитет-по-аудиту-План.active{
     display: flex;
     flex-direction: column;
     gap: 20px;
