@@ -162,11 +162,11 @@ $this->title = Yii::t("app", "Corporate governance");
     </div>
     <?php $documents_committee = []; ?>
     <?php foreach ($pdf as $pdf_item): ?>
-        <?php if (str_contains($pdf_item->sort_id, 'Комитет') && $pdf_item->language_file === Yii::$app->language ): ?>
-                <?php
-                $parts = str_replace([' ', '/'], '-', $pdf_item->sort_id);
-                $documents_committee[$parts][] = $pdf_item;
-                ?>
+        <?php if (str_contains($pdf_item->sort_id, 'Комитет') && $pdf_item->language_file === Yii::$app->language): ?>
+            <?php
+            $parts = str_replace([' ', '/'], '-', $pdf_item->sort_id);
+            $documents_committee[$parts][] = $pdf_item;
+            ?>
 
 
         <?php endif; ?>
@@ -190,45 +190,17 @@ $this->title = Yii::t("app", "Corporate governance");
     <div class="title-content">
         <?= Yii::t("app", "Corporate events") ?>
     </div>
-    <?php
-    $grouped_corp_events = [];
-    foreach ($pdf as $pdf_item) {
-        if ($pdf_item->ref_corporate_governance === 2 && str_contains($pdf_item->sort_id, 'Корпоративные события')) {
-            if (Yii::$app->language === $pdf_item->language_file) {
-
-                $grouped_corp_events[$pdf_item->sort_id][] = $pdf_item;
-            }
-        }
-    } ?>
     <div class="button-section">
-        <?php foreach ($grouped_corp_events as $sort_id => $items): ?>
-            <?php
-            $safe_id = str_replace([' ', '/'], '-', $sort_id);
-            $parts = explode('/', $sort_id);
-            $year = end($parts); ?>
+        <?php
+        foreach ($pdf as $pdf_item): ?>
+            <?php if (str_contains( $pdf_item->sort_id,'Корпоративные события')): ?>
+                <?php $parts = explode('/', $pdf_item->sort_id);
+                $year = end($parts) ?>
+                <button><?= $year ?></button>
 
-            <button
-                onclick="loadPDFBoardGovernance('<?= htmlspecialchars($safe_id) ?>')"><?= htmlspecialchars($year) ?></button>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
-
-    <?php foreach ($grouped_corp_events as $sort_id => $items): ?>
-        <?php $safe_id = str_replace([' ', '/'], '-', $sort_id); ?>
-        <div class="board-events <?= htmlspecialchars($safe_id) ?>">
-            <h3 class="title-content">
-                <?= Yii::t("app", "Corporate events") ?> -
-                <?= $year ?>
-                <div class="button-section">
-                    <?php foreach ($items as $item): ?>
-
-
-                        <button><?= $item->name_url ?></button>
-
-                    <?php endforeach; ?>
-                </div>
-        </div>
-        </h3>
-    <?php endforeach; ?>
     <!-- <button onclick="loadPDF('/pdf/file1.pdf')">2020</button>
         <button onclick="loadPDF('/pdf/file2.pdf')">2021</button>
         <button onclick="loadPDF('/pdf/file3.pdf')">2022</button>
