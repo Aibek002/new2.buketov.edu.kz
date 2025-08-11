@@ -133,8 +133,9 @@ $this->title = Yii::t("app", "Corporate governance");
             <h3 class="title-content"><?= htmlspecialchars($safe_id) ?>
                 <div class="button-section">
                     <?php foreach ($items as $item): ?>
-                        <?php $path = str_replace(['/var/www/html/yii2/','..'], '', $item->path_file); ?>
-                        <button onclick="loadPDFBoardGovernance('<?= $path . $item->fileName ?>')"><?= $item->name_url ?></button>
+                        <?php $path = str_replace(['/var/www/html/yii2/', '..'], '', $item->path_file); ?>
+                        <button
+                            onclick="loadPDFBoardGovernance('<?= $path . $item->fileName ?>')"><?= $item->name_url ?></button>
 
                     <?php endforeach; ?>
                 </div>
@@ -143,7 +144,7 @@ $this->title = Yii::t("app", "Corporate governance");
         </div>
     <?php endforeach; ?>
 
-    
+
     <div class="title-content">
         <?= Yii::t("app", "Committees of the Board of Directors") ?>
     </div>
@@ -161,25 +162,23 @@ $this->title = Yii::t("app", "Corporate governance");
     </div>
     <?php $documents_committee = []; ?>
     <?php foreach ($pdf as $pdf_item): ?>
-        <?php if (str_contains($pdf_item->sort_id, 'Комитет')): ?>
-            <div class="position-committee"></div>
-            <?php if (str_contains($pdf_item->sort_id, 'Комитет')): ?>
+        <?php if (str_contains($pdf_item->sort_id, 'Комитет') && $pdf_item->language_file === Yii::$app->language ): ?>
                 <?php
                 $parts = str_replace([' ', '/'], '-', $pdf_item->sort_id);
                 $documents_committee[$parts][] = $pdf_item;
                 ?>
 
 
-            <?php endif; ?>
         <?php endif; ?>
     <?php endforeach; ?>
+
     <?php foreach ($documents_committee as $parts => $items): ?>
         <h2 class="title-content position-committee <?= $parts ?>">
             <?= str_replace(['-'], ' ', $parts) ?>
             <div class="button-section">
                 <?php foreach ($items as $item): ?>
-
-                    <button><?= $item->name_url ?></button>
+                    <?php $path = str_replace(['var/www/html/yii2/', '../'], '', $item->path_file) ?>
+                    <button onclick="loadPDFBoardGovernance('<?= $path . $item->fileName ?>')"><?= $item->name_url ?></button>
                 <?php endforeach; ?>
 
             </div>
@@ -187,7 +186,7 @@ $this->title = Yii::t("app", "Corporate governance");
 
     <?php endforeach; ?>
 
-   
+
     <div class="title-content">
         <?= Yii::t("app", "Corporate events") ?>
     </div>
@@ -208,7 +207,8 @@ $this->title = Yii::t("app", "Corporate governance");
             $parts = explode('/', $sort_id);
             $year = end($parts); ?>
 
-            <button onclick="loadPDFBoardGovernance('<?= htmlspecialchars($safe_id) ?>')"><?= htmlspecialchars($year) ?></button>
+            <button
+                onclick="loadPDFBoardGovernance('<?= htmlspecialchars($safe_id) ?>')"><?= htmlspecialchars($year) ?></button>
         <?php endforeach; ?>
     </div>
 

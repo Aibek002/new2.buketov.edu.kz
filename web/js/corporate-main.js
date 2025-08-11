@@ -39,21 +39,21 @@ function openBox(element, type, path) {
     ".Комитет-по-стратегическому-планированию-Заседание"
   );
 
-  positon1.classList.remove("active");
-  positon2.classList.remove("active");
-  positon3.classList.remove("active");
-  plan1.classList.remove("active");
-  plan2.classList.remove("active");
-  plan3.classList.remove("active");
-  meeting1.classList.remove("active");
-  meeting2.classList.remove("active");
-  meeting3.classList.remove("active");
+  positon1?.classList.remove("active");
+  positon2?.classList.remove("active");
+  positon3?.classList.remove("active");
+  plan1?.classList.remove("active");
+  plan2?.classList.remove("active");
+  plan3?.classList.remove("active");
+  meeting1?.classList.remove("active");
+  meeting2?.classList.remove("active");
+  meeting3?.classList.remove("active");
 
   if (type.includes("audit-position")) {
     positon1.classList.add("active");
   } else if (type.includes("hr-rem-position")) {
     positon2.classList.add("active");
-  } else if (type.includes("str-plan-committee")) {
+  } else if (type.includes("str-plan-position")) {
     positon3.classList.add("active");
   }
 
@@ -86,6 +86,7 @@ function openBox(element, type, path) {
 //   pdfViewer.classList.remove("active");
 // }
 function closeAllSubCom() {
+  pdfViewer = document.querySelector('.board_governance_pdf');
   positon1 = document.querySelector(".Комитет-по-аудиту-Положение");
   positon2 = document.querySelector(
     ".Комитет-по-кадрам-и-вознаграждениям-Положение"
@@ -107,15 +108,16 @@ function closeAllSubCom() {
     ".Комитет-по-стратегическому-планированию-Заседание"
   );
 
-  positon1.classList.remove("active");
-  positon2.classList.remove("active");
-  positon3.classList.remove("active");
-  plan1.classList.remove("active");
-  plan2.classList.remove("active");
-  plan3.classList.remove("active");
-  meeting1.classList.remove("active");
-  meeting2.classList.remove("active");
-  meeting3.classList.remove("active");
+  positon1?.classList.remove("active");
+  positon2?.classList.remove("active");
+  positon3?.classList.remove("active");
+  plan1?.classList.remove("active");
+  plan2?.classList.remove("active");
+  plan3?.classList.remove("active");
+  meeting1?.classList.remove("active");
+  meeting2?.classList.remove("active");
+  meeting3?.classList.remove("active");
+  pdfViewer?.classList.remove('active');
 }
 
 function openBoardMeeting(safe_id) {

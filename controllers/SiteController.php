@@ -218,7 +218,7 @@ class SiteController extends Controller
         $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file','ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
         // $pdf = CorpSoleShareholder::find()->all();
         $pdf = CorporateGovernanceFile::find()
-            ->orderBy(['sort_id' => SORT_DESC, 'sort_id' => SORT_DESC])->all();
+            ->orderBy(['sort_id' => SORT_DESC, 'fileName' => SORT_DESC])->all();
         return $this->render('corparate', [ 'year'=>$year,'pdf' => $pdf]);
     }
 

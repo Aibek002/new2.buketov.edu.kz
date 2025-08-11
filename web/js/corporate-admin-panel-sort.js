@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   const select_year = document.querySelector(".select-year");
+  const select_date = document.querySelector('.select-date');
+  const input_text = document.querySelector('.input-text');
   const select_file = document.querySelector(".select-file");
   const select_language = document.querySelector(".language_file");
   const name_url = document.querySelector(".name_url_input");
@@ -35,8 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.classList.remove("active");
 
     if (
-      select_board_subsec.value === "Заседание Совета директоров" ||
-      select_board_subsec.value === "Корпоративные события"
+      select_board_subsec.value === "Заседание Совета директоров" 
     ) {
       selectedYear(
         select_year,
@@ -56,6 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
         submitButton,
         remove
       );
+    }else if(select_board_subsec.value === 'Корпоративные события'){
+      select_year.classList.add('active');
+      select_date.classList.add('active');
+      input_text.classList.add('active');
+      select_language.classList.add('active');
+      submitButton.classList.add('active');
+
     }
   });
   // 🔄 Добавляем один раз обработчик committee_subsec

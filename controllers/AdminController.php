@@ -383,7 +383,7 @@ class AdminController extends Controller
 
                 if (
                     $model->board_subsec === 'Заседание Совета директоров'
-                    || $model->board_subsec === 'Корпоративные события'
+
                 ) {
                     $path = Yii::getAlias("@app/../files/pdf/corporate_governance/board-of-directors/$model->board_subsec/$model->year/$model->language_file/");
                     $fileName = uniqid() . "_" . $model->name_url . "." . $file->extension;
@@ -483,6 +483,25 @@ class AdminController extends Controller
                     // $model->path_file = $path;
 
 
+                } elseif ($model->board_subsec === 'Корпоративные события') {
+                    $model->sort_id = $model->board_subsec;
+                    $model->path_file = '/';
+                    $model->fileName = "Null";
+                    $model->ref_corporate_governance = 2;
+                    $model->author = Yii::$app->user->id;
+                    $model->name_url = $model->date;
+
+                    if ($model->save()) {
+                        Yii::$app->session->setFlash('success', 'Successfully created');
+                        return $this->refresh();
+                    } else {
+                        // Вывод всех ошибок валидации в лог
+                        Yii::error($model->getErrors(), __METHOD__);
+
+                        // Или вывести пользователю на экране (временно, для отладки)
+                        Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
+
+                    }
                 }
 
 
