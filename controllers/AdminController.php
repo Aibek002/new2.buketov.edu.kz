@@ -484,7 +484,7 @@ class AdminController extends Controller
 
 
                 } elseif ($model->board_subsec === 'Корпоративные события') {
-                    $model->sort_id = $model->board_subsec;
+                    $model->sort_id = $model->board_subsec . '/' . $model->year;
                     $model->path_file = '/';
                     $model->fileName = "Null";
                     $model->ref_corporate_governance = 2;
@@ -505,6 +505,57 @@ class AdminController extends Controller
                 }
 
 
+            } elseif ($model->subsection_corporate_governance === 'Правление') {
+                $path = Yii::getAlias("@app/../files/pdf/corporate_governance/governance/$model->year/$model->language_file/");
+                $fileName = uniqid() . "_" . $model->name_url . "." . $file->extension;
+                $model->ref_corporate_governance = 3;
+                $model->path_file = "/files/pdf/corporate_governance/governance/" . $model->year . "/" . $model->language_file . "/";
+                $model->sort_id = 'Заседание правления/' . $model->year;
+                $model->fileName = $fileName;
+
+                if (!is_dir($path)) {
+                    if (!mkdir($path, 0775, true)) {
+                        Yii::$app->session->setFlash('error', 'Error when create directory');
+                    }
+                }
+                Yii::error(print_r($_FILES, true), __METHOD__);
+
+                if (!$file->saveAs($path . $fileName)) {
+                    // 1. Ошибки загрузки PHP
+                    if ($file->error !== UPLOAD_ERR_OK) {
+                        Yii::error("Upload error code: {$file->error}", __METHOD__);
+                    }
+
+                    // 2. Проверим доступность папки
+                    if (!is_writable($path)) {
+                        Yii::error("Directory is not writable: {$path}", __METHOD__);
+                    }
+
+                    // 3. Размер файла
+                    Yii::error("File size: {$file->size} bytes", __METHOD__);
+
+                    // 4. Дамп всей информации
+                    Yii::error(print_r($file, true), __METHOD__);
+
+                    Yii::$app->session->setFlash('error', 'File save failed. See logs for details.');
+                }
+                if ($model->validate()) {
+                    if ($model->save()) {
+                        Yii::$app->session->setFlash('success', 'Successfully created');
+                        return $this->refresh();
+
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Error created');
+
+                    }
+                } else {
+                    // Вывод всех ошибок валидации в лог
+                    Yii::error($model->getErrors(), __METHOD__);
+
+                    // Или вывести пользователю на экране (временно, для отладки)
+                    Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
+
+                }
             }
         }
         return $this->render('corporate_governance_file', ['model' => $model]);

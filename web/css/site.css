@@ -72,28 +72,6 @@
 
 
 
-.feedback-form-container {
-    display: flex;
-    gap: 15px;       /* расстояние между полями */
-    width: 100%;     /* на всю ширину */
-}
-
-.feedback-form-container .form-group {
-    flex: 1;         /* каждый контейнер занимает равную ширину */
-    min-width: 0;    /* не ломаем flex при длинных плейсхолдерах */
-}
-
-.feedback-form-container .form-control {
-    width: 100%;     /* инпут тянется на всю ширину своего контейнера */
-    padding: 10px 12px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-
-.feedback-form-container .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0,123,255,0.3);
-}
 
 .row,
 .col,
@@ -1098,12 +1076,7 @@ body {
 
 /* ========== THIRD BLOCK ========== */
 
-/* ========== BLOCK HEADER ========== */
-.block-header {
-  background: var(--indigoblue);
-  color: var(--white);
-  border-radius: 10px;
-}
+
 
 .block-header p {
   margin: 0;
@@ -1111,6 +1084,10 @@ body {
   font-weight: var(--font-700);
   font-size: var(--font-36);
   color: var(--white);
+  width: 100%;
+  text-align: center;
+  background: var(--indigoblue);
+  border-radius: 10px;
 }
 
 .university-branding {

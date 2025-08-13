@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const SECTION_SOLE = "Решения Единственного Акционера";
   const SECTION_BOARD = "Совет директоров";
+  const SECTION_GOVERNANCE = "Правление";
+
   const add = "add";
   const remove = "remove";
 
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     submitButton.classList.remove("active");
 
-    if (select_subsection.value === SECTION_SOLE) {
+    if (select_subsection.value === SECTION_SOLE || select_subsection.value === SECTION_GOVERNANCE) {
       selectedYear(
         select_year,
         select_file,

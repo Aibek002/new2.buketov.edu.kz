@@ -86,6 +86,18 @@ class SiteController extends Controller
         $current_month = (int) Yii::$app->formatter->asDate('today', 'MM');
         $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
         $form = new FeedbackForm();
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+        Yii::$app->mailer->compose()
+            ->setFrom($form) // От кого
+            ->setTo('aibekseitzhan002@gmail.com') // Кому
+            ->setSubject('Сообщение с сайта')
+            ->setTextBody('Текстовое сообщение') // Можно просто текст
+            ->setHtmlBody('<b>Это HTML версия письма</b>') // HTML-версия
+            ->send();
+
+        Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
+        return $this->refresh();
+    }
         $news_for_home = News::find()
             ->select([
                 LanguageHelper::title() . ' AS title',

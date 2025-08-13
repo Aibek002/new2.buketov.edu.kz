@@ -15,6 +15,7 @@ $config = [
 
     'language' => 'kz',
     'components' => [
+
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // или PhpManager для хранения в файле
         ],
@@ -28,16 +29,23 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' =>['admin/sign-in']
+            'loginUrl' => ['admin/sign-in']
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => \yii\symfonymailer\Mailer::class,
-            'viewPath' => '@app/mail',
-            // send all mails to a file by default.
-            'useFileTransport' => true,
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@app/mail', // Папка для шаблонов писем
+            'useFileTransport' => false, // false — отправляет реально, true — сохраняет письма в runtime/mail
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => '200103346@stu.sdu.edu.kz',
+                'password' => 'Seitzhan02',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

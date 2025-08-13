@@ -1,3 +1,14 @@
+form{
+    width: 100% !important;
+}
+.feedback-form-container {
+    display: flex;
+    gap: 10px;
+}
+
+.feedback-form-container > div {
+    flex: 1; /* все блоки одинаковой ширины */
+}
 .box-overlay {
     position: fixed; /* поверх всех элементов */
     top: 50%;
@@ -68,4 +79,46 @@
 }
 .event-modal button:hover {
     color: #ffdddd;
+}
+.feedback-form-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    border:1px solid var(--indigoblue-font);
+    margin: auto;
+    transition: box-shadow 0.3s ease;
+}
+
+.feedback-form-wrapper:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.feedback-form-text {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.2rem rgba(74,144,226,0.25);
+}
+
+.btn-primary {
+    background: var(--indigoblue);
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #3a7bd5, #5b1688);
 }

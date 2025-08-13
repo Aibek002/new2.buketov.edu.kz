@@ -86,7 +86,7 @@ function openBox(element, type, path) {
 //   pdfViewer.classList.remove("active");
 // }
 function closeAllSubCom() {
-  pdfViewer = document.querySelector('.board_governance_pdf');
+  pdfViewer = document.querySelector(".board_governance_pdf");
   positon1 = document.querySelector(".Комитет-по-аудиту-Положение");
   positon2 = document.querySelector(
     ".Комитет-по-кадрам-и-вознаграждениям-Положение"
@@ -117,7 +117,7 @@ function closeAllSubCom() {
   meeting1?.classList.remove("active");
   meeting2?.classList.remove("active");
   meeting3?.classList.remove("active");
-  pdfViewer?.classList.remove('active');
+  pdfViewer?.classList.remove("active");
 }
 
 function openBoardMeeting(safe_id) {
@@ -161,4 +161,48 @@ function openBoardEvents(safe_id) {
   if (!isActive) {
     element.classList.add("active");
   }
+}
+function openCorpEvent(year) {
+  // Убираем active у всех элементов с классом title-content
+  document.querySelectorAll(".title-content").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  // Находим нужный элемент и добавляем active
+  const element = document.querySelector(`.title-content.year-${year}-events`);
+  if (element) {
+    element.classList.add("active");
+  }
+}
+function openEvents(date, text) {
+  const blur = document.querySelector(".blur");
+  const over = document.querySelector(".over");
+
+  blur.classList.add("active");
+
+  over.innerHTML = `
+    <button class="close-btn" onclick="closeOver()">✕</button>
+    <h2>${date}</h2>
+    <p>${text}</p>
+  `;
+  over.classList.add("active");
+}
+
+function openGovMeetting(year) {
+  const element = document.querySelector(`.gov_met.year-${year}`);
+  const isActive = element.classList.contains("active");
+
+  // Сначала снимаем active у всех
+  document.querySelectorAll(".gov_met").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  // Если он не был активным — открываем
+  if (!isActive) {
+    element.classList.add("active");
+  }
+}
+function closeOver() {
+  document.querySelector(".blur").classList.remove("active");
+  document.querySelector(".over").classList.remove("active");
 }
