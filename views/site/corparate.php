@@ -286,7 +286,7 @@ $this->title = Yii::t("app", "Corporate governance");
 
 
     ?>
- <div class="text-center">
+    <div class="text-center">
         <embed class="governance_pdf border rounded mt-4" src="" width="80%" height="600" type="application/pdf">
     </div>
 
@@ -1131,9 +1131,36 @@ $this->title = Yii::t("app", "Corporate governance");
         <?= Yii::t("app", "Documents And Reporting") ?>
     </div>
     <div class="content-corporate-documents">
-        <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Corporate documents') ?></button>
+        <?php
+        $corp_docs = [];
+        foreach ($pdf as $pdf_item) {
+            if ($pdf_item->ref_corporate_governance === 4) {
+                $parts = explode('/', $pdf_item->sort_id);
+                $section = reset($parts);
+                $corp_docs[$section] = $pdf_item;
+            }
+
+        }
+
+        ?>
+
+        <?php
+        foreach ($corp_docs as $section => $items) {
+            echo '<button onclick="">' . $section . "</button>";
+        }
+        ?>
+        <div class="button-section">
+            <?php
+            foreach ($corp_docs as $section => $items) {
+                foreach ($items as $item) {
+                    echo '<button onclick="">' . $item->name_url . "</button>";
+                }
+            }
+            ?>
+        </div>
+        <!-- <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Corporate documents') ?></button>
         <button onclick="loadPDF('/pdf/file2.pdf')"><?= Yii::t('app', 'Annual reports of the Company') ?></button>
-        <button onclick="loadPDF('/pdf/file3.pdf')"><?= Yii::t('app', 'Annual financial statements') ?></button>
+        <button onclick="loadPDF('/pdf/file3.pdf')"><?= Yii::t('app', 'Annual financial statements') ?></button> -->
         <br>
 
     </div>

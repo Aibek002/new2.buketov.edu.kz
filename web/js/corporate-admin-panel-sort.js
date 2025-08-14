@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const SECTION_SOLE = "Решения Единственного Акционера";
   const SECTION_BOARD = "Совет директоров";
   const SECTION_GOVERNANCE = "Правление";
+  const SECTION_CORP_DOCS = "Корпоративные документы";
 
   const add = "add";
   const remove = "remove";
@@ -17,11 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   const select_year = document.querySelector(".select-year");
-  const select_date = document.querySelector('.select-date');
-  const input_text = document.querySelector('.input-text');
+  const select_date = document.querySelector(".select-date");
+  const input_text = document.querySelector(".input-text");
   const select_file = document.querySelector(".select-file");
   const select_language = document.querySelector(".language_file");
   const name_url = document.querySelector(".name_url_input");
+  const subsec_corp_docs = document.querySelector(".subsec_corp_doc");
+
   const submitButton = document.querySelector(".submitButton");
 
   // 🔄 Добавляем один раз обработчик board_subsec
@@ -34,13 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
       select_year,
       select_file,
       select_language,
-      name_url
+      name_url,
+      subsec_corp_docs
     );
     submitButton.classList.remove("active");
 
-    if (
-      select_board_subsec.value === "Заседание Совета директоров" 
-    ) {
+    if (select_board_subsec.value === "Заседание Совета директоров") {
       selectedYear(
         select_year,
         select_file,
@@ -59,13 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
         submitButton,
         remove
       );
-    }else if(select_board_subsec.value === 'Корпоративные события'){
-      select_year.classList.add('active');
-      select_date.classList.add('active');
-      input_text.classList.add('active');
-      select_language.classList.add('active');
-      submitButton.classList.add('active');
-
+    } else if (select_board_subsec.value === "Корпоративные события") {
+      select_year.classList.add("active");
+      select_date.classList.add("active");
+      input_text.classList.add("active");
+      select_language.classList.add("active");
+      submitButton.classList.add("active");
     }
   });
   // 🔄 Добавляем один раз обработчик committee_subsec
@@ -116,11 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
       select_year,
       select_file,
       select_language,
-      name_url
+      name_url,
+      subsec_corp_docs
     );
     submitButton.classList.remove("active");
 
-    if (select_subsection.value === SECTION_SOLE || select_subsection.value === SECTION_GOVERNANCE) {
+    if (
+      select_subsection.value === SECTION_SOLE ||
+      select_subsection.value === SECTION_GOVERNANCE
+    ) {
       selectedYear(
         select_year,
         select_file,
@@ -131,6 +136,13 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     } else if (select_subsection.value === SECTION_BOARD) {
       select_board_subsec.classList.add("active");
+    } else if (select_subsection.value === SECTION_CORP_DOCS ) {
+      subsec_corp_docs.classList.add("active");
+      subsec_corp_docs.addEventListener("change", function () {
+        if (subsec_corp_docs.value === "Годовые отчеты" || subsec_corp_docs.value === "Финансовые отчеты") {
+          selectedYear(select_year,select_file,select_language,name_url,submitButton,add);
+        }
+      });
     }
   });
 });
@@ -216,15 +228,15 @@ function resetBoardSubFields(
   select_year,
   select_file,
   select_language,
-  name_url
+  name_url,
+  subsec_corp_docs
 ) {
   select_year.selectedIndex = 0;
   select_language.selectedIndex = 0;
-
   select_file.value = "";
   committee_subsec.selectedIndex = 0;
   committee_subsection.selectedIndex = 0;
-
+  subsec_corp_docs.selectedIndex = 0;
   name_url.value = "";
   committee_subsec.classList.remove("active");
   committee_subsection.classList.remove("active");
@@ -232,6 +244,7 @@ function resetBoardSubFields(
   select_file.classList.remove("active");
   name_url.classList.remove("active");
   select_year.classList.remove("active");
+  subsec_corp_docs.classList.remove("active");
 }
 function resetAllFields(
   select_board_subsec,
@@ -239,17 +252,18 @@ function resetAllFields(
   select_year,
   select_file,
   select_language,
-  name_url
+  name_url,
+  subsec_corp_docs
 ) {
   select_board_subsec.value = "";
   select_year.selectedIndex = 0;
   select_language.selectedIndex = 0;
-
+  subsec_corp_docs.selectedIndex = 0;
   select_file.value = "";
   name_url.value = "";
   select_board_subsec.classList.remove("active");
   select_language.classList.remove("active");
-
+  subsec_corp_docs.classList.remove("active");
   select_file.classList.remove("active");
   name_url.classList.remove("active");
   select_year.classList.remove("active");

@@ -26,6 +26,8 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
     public $board_subsec;
     public $committee_subsec;
     public $committee_subsection;
+    public $subsec_corp_docs;
+
 
     public $year;
     public $file;
@@ -49,7 +51,7 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
             [[  'sort_id'], 'required'],
             [['path_file', 'sort_id'], 'string'],
             [['ref_corporate_governance', 'author', 'status'], 'integer'],
-            [['date_create', 'subsection_corporate_governance', 'board_subsec', 'committee_subsec', 'committee_subsection', 'year', 'language_file','date','text'], 'safe'],
+            [['date_create', 'subsection_corporate_governance', 'board_subsec', 'committee_subsec', 'committee_subsection', 'year', 'language_file','date','text','subsec_corp_docs'], 'safe'],
             [['name_url'], 'string', 'max' => 255],
             [['author'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author' => 'id']],
             [['ref_corporate_governance'], 'exist', 'skipOnError' => true, 'targetClass' => RefCorporateGovernance::class, 'targetAttribute' => ['ref_corporate_governance' => 'id']],

@@ -477,12 +477,6 @@ class AdminController extends Controller
                             }
                         }
                     }
-
-                    // $fileName = uniqid() . '_' . $model->name_url . "." . $file->extension;
-                    // $model->fileName = $fileName;
-                    // $model->path_file = $path;
-
-
                 } elseif ($model->board_subsec === 'Корпоративные события') {
                     $model->sort_id = $model->board_subsec . '/' . $model->year;
                     $model->path_file = '/';
@@ -495,10 +489,7 @@ class AdminController extends Controller
                         Yii::$app->session->setFlash('success', 'Successfully created');
                         return $this->refresh();
                     } else {
-                        // Вывод всех ошибок валидации в лог
                         Yii::error($model->getErrors(), __METHOD__);
-
-                        // Или вывести пользователю на экране (временно, для отладки)
                         Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
 
                     }
@@ -521,40 +512,47 @@ class AdminController extends Controller
                 Yii::error(print_r($_FILES, true), __METHOD__);
 
                 if (!$file->saveAs($path . $fileName)) {
-                    // 1. Ошибки загрузки PHP
-                    if ($file->error !== UPLOAD_ERR_OK) {
-                        Yii::error("Upload error code: {$file->error}", __METHOD__);
-                    }
-
-                    // 2. Проверим доступность папки
-                    if (!is_writable($path)) {
-                        Yii::error("Directory is not writable: {$path}", __METHOD__);
-                    }
-
-                    // 3. Размер файла
-                    Yii::error("File size: {$file->size} bytes", __METHOD__);
-
-                    // 4. Дамп всей информации
-                    Yii::error(print_r($file, true), __METHOD__);
-
                     Yii::$app->session->setFlash('error', 'File save failed. See logs for details.');
                 }
                 if ($model->validate()) {
                     if ($model->save()) {
                         Yii::$app->session->setFlash('success', 'Successfully created');
                         return $this->refresh();
-
                     } else {
                         Yii::$app->session->setFlash('error', 'Error created');
-
                     }
                 } else {
-                    // Вывод всех ошибок валидации в лог
                     Yii::error($model->getErrors(), __METHOD__);
-
-                    // Или вывести пользователю на экране (временно, для отладки)
                     Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
+                }
+            } elseif ($model->subsection_corporate_governance === 'Корпоративные документы') {
+                $path = Yii::getAlias("@app/../files/pdf/corporate_governance/corporate_documents/" . $model->subsec_corp_docs . '/' . $model->year . '/' . $model->language_file . "/");
+               
+                $fileName = uniqid() . '_' . $model->name_url . '.' . $file->extension;
+                $model->fileName = $fileName;
+                $model->path_file = str_replace(['/var/www/html/yii2/', '..'], '', $path);
+                $model->ref_corporate_governance = 4;
+                $model->sort_id = $model->subsec_corp_docs . '/' . $model->year;
 
+                if (!is_dir($path)) {
+                    if (!mkdir($path, 0775, true)) {
+                        Yii::$app->session->setFlash('error', 'Error when create directory');
+                    }
+                }
+
+                if (!$file->saveAs($path . $fileName)) {
+                    Yii::$app->session->setFlash('error', 'File save failed. See logs for details.');
+                }
+                if ($model->validate()) {
+                    if ($model->save()) {
+                        Yii::$app->session->setFlash('success', 'Successfully created');
+                        return $this->refresh();
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Error created');
+                    }
+                } else {
+                    Yii::error($model->getErrors(), __METHOD__);
+                    Yii::$app->session->setFlash('error', json_encode($model->getErrors(), JSON_UNESCAPED_UNICODE));
                 }
             }
         }

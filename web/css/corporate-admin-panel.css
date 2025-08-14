@@ -7,7 +7,8 @@
 .select-file,
 .language_file,
 .name_url_input,
-.submitButton {
+.submitButton,
+.subsec_corp_doc {
     display: none !important;
 }
 
@@ -20,6 +21,7 @@
 .select-file.active,
 .language_file.active,
 .name_url_input.active,
-.submitButton.active {
+.submitButton.active,
+.subsec_corp_doc.active {
     display: block !important;
 }
