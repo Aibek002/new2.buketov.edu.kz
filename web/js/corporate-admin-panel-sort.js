@@ -136,11 +136,31 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     } else if (select_subsection.value === SECTION_BOARD) {
       select_board_subsec.classList.add("active");
-    } else if (select_subsection.value === SECTION_CORP_DOCS ) {
+    } else if (select_subsection.value === SECTION_CORP_DOCS) {
       subsec_corp_docs.classList.add("active");
       subsec_corp_docs.addEventListener("change", function () {
-        if (subsec_corp_docs.value === "Годовые отчеты" || subsec_corp_docs.value === "Финансовые отчеты") {
-          selectedYear(select_year,select_file,select_language,name_url,submitButton,add);
+        resetCommitteeSubsectionFields(
+          select_year,
+          select_file,
+          select_language,
+          name_url,
+          remove
+        );
+
+        if (
+          subsec_corp_docs.value === "Годовые отчеты" ||
+          subsec_corp_docs.value === "Финансовые отчеты"
+        ) {
+          selectedYear(
+            select_year,
+            select_file,
+            select_language,
+            name_url,
+            submitButton,
+            add
+          );
+        } else {
+          selectFile(select_file, select_language, name_url, submitButton, add);
         }
       });
     }
@@ -206,7 +226,7 @@ function select_name_url(name_url, submitButton, type) {
     submitButton.classList.remove("active");
   }
 }
-function selectCommitteeSubsec(committee_subsec) {}
+
 function resetCommitteeSubsectionFields(
   select_year,
   select_file,

@@ -559,6 +559,7 @@ class AdminController extends Controller
         return $this->render('corporate_governance_file', ['model' => $model]);
 
     }
+    
     // public function actionCopy()
     // {
     //     $from = CorpSoleShareholder::find()->all();

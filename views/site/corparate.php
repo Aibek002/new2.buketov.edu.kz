@@ -24,12 +24,13 @@ $this->title = Yii::t("app", "Corporate governance");
         <button id="loadGovernanceBtn" data-lang="<?= $lang ?>">
             <?= Yii::t("app", "Governance") ?>
         </button>
+        <button id="loadDocumentsAndReportingBtn" data-lang="<?= $lang ?>">
+            <?= Yii::t("app", "Corporate documents") ?>
+        </button>
         <button id="loadSustainableDevelopmentBtn" data-lang="<?= $lang ?>">
             <?= Yii::t("app", "Sustainable Development") ?>
         </button>
-        <button id="loadDocumentsAndReportingBtn" data-lang="<?= $lang ?>">
-            <?= Yii::t("app", "Documents And Reporting") ?>
-        </button>
+
 
     </div>
     <div class=" container my-5 sole-shareholder active">
@@ -1127,43 +1128,47 @@ $this->title = Yii::t("app", "Corporate governance");
 
 </div>
 <div class="DocumentsAndReporting">
-    <div class="title-content">
-        <?= Yii::t("app", "Documents And Reporting") ?>
-    </div>
-    <div class="content-corporate-documents">
-        <?php
-        $corp_docs = [];
-        foreach ($pdf as $pdf_item) {
-            if ($pdf_item->ref_corporate_governance === 4) {
-                $parts = explode('/', $pdf_item->sort_id);
-                $section = reset($parts);
-                $corp_docs[$section] = $pdf_item;
-            }
 
+    <!-- <div class="content-corporate-documents"> -->
+    <?php
+    $corp_docs = [];
+    foreach ($pdf as $pdf_item) {
+        if ($pdf_item->ref_corporate_governance === 4 && $pdf_item->language_file === Yii::$app->language) {
+            $parts = explode('/', $pdf_item->sort_id);
+            $section = reset($parts);
+            $corp_docs[$section][] = $pdf_item;
         }
 
-        ?>
+    }
 
-        <?php
-        foreach ($corp_docs as $section => $items) {
-            echo '<button onclick="">' . $section . "</button>";
+    ?>
+
+
+
+
+    <?php
+
+    foreach ($corp_docs as $section => $items) {
+        echo '   <h3 class="title-content">' . $section . "</h3>";
+        echo '<div class="button-section">';
+        foreach ($items as $item) {
+            $path = htmlspecialchars($item->path_file . $item->fileName, ENT_QUOTES);
+            echo "<button onclick=\"pdfViewerCorpDocs('$path')\">{$item->name_url}</button>";
+
         }
-        ?>
-        <div class="button-section">
-            <?php
-            foreach ($corp_docs as $section => $items) {
-                foreach ($items as $item) {
-                    echo '<button onclick="">' . $item->name_url . "</button>";
-                }
-            }
-            ?>
-        </div>
-        <!-- <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Corporate documents') ?></button>
+        echo '</div>';
+    }
+    ?>
+
+    <!-- <button onclick="loadPDF('/pdf/file1.pdf')"><?= Yii::t('app', 'Corporate documents') ?></button>
         <button onclick="loadPDF('/pdf/file2.pdf')"><?= Yii::t('app', 'Annual reports of the Company') ?></button>
         <button onclick="loadPDF('/pdf/file3.pdf')"><?= Yii::t('app', 'Annual financial statements') ?></button> -->
-        <br>
-
+    <br>
+    <div class="text-center">
+        <embed class="corp_docs_pdf border rounded mt-4" src="" width="80%" height="600" type="application/pdf">
     </div>
+
+    <!-- </div> -->
 </div>
 </div>
 

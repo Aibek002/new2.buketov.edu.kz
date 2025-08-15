@@ -131,7 +131,8 @@
 .pdfViewer,
 .pdfViewerBoards,
 .board_governance_pdf,
-.governance_pdf {
+.governance_pdf ,
+.corp_docs_pdf{
     margin-inline: 10%;
     margin-block: 100px;
     display: none;
@@ -140,7 +141,8 @@
 .pdfViewer.active,
 .pdfViewerBoards.active,
 .board_governance_pdf.active,
-.governance_pdf.active {
+.governance_pdf.active,
+.corp_docs_pdf.active {
     display: block;
 }
 
