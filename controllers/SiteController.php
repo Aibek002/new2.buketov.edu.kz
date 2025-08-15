@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\AdmissionPdf;
+use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\FeedbackForm;
@@ -85,6 +86,18 @@ class SiteController extends Controller
         $current_month = (int) Yii::$app->formatter->asDate('today', 'MM');
         $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
         $form = new FeedbackForm();
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+        Yii::$app->mailer->compose()
+            ->setFrom($form) // От кого
+            ->setTo('aibekseitzhan002@gmail.com') // Кому
+            ->setSubject('Сообщение с сайта')
+            ->setTextBody('Текстовое сообщение') // Можно просто текст
+            ->setHtmlBody('<b>Это HTML версия письма</b>') // HTML-версия
+            ->send();
+
+        Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
+        return $this->refresh();
+    }
         $news_for_home = News::find()
             ->select([
                 LanguageHelper::title() . ' AS title',
@@ -214,9 +227,11 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-        $year = CorpSoleShareholder::find()->select(['year', 'lang'])->distinct()->orderBy(['year' => SORT_DESC])->all();
-        $pdf = CorpSoleShareholder::find()->all();
-        return $this->render('corparate', ['years' => $year, 'pdf' => $pdf]);
+        $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file','ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
+        // $pdf = CorpSoleShareholder::find()->all();
+        $pdf = CorporateGovernanceFile::find()
+            ->orderBy(['sort_id' => SORT_DESC, 'fileName' => SORT_DESC])->all();
+        return $this->render('corparate', [ 'year'=>$year,'pdf' => $pdf]);
     }
 
     public function actionSovet()

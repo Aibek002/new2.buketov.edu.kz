@@ -17,7 +17,7 @@ $this->title = "Управление файлами Корпоративного
                 'Совет директоров' => 'Совет директоров',
                 'Правление' => 'Правление',
                 'Корпоративные документы' => 'Корпоративные документы',
-                'Устойчивое развитие' => 'Устойчивое развитие'
+                // 'Устойчивое развитие' => 'Устойчивое развитие'
             ]
             ,
             [
@@ -27,6 +27,8 @@ $this->title = "Управление файлами Корпоративного
         )
         ->label(false);
     ?>
+    <?= $form->field($model, 'subsec_corp_docs')->dropDownList(['Внутренние нормативные документы' => 'Внутренние нормативные документы', 'Годовые отчеты' => 'Годовые отчеты', 'Финансовые отчеты' => 'Финансовые отчеты', 'Документы АКС' => 'Документы АКС', 'Документы СВА' => 'Документы СВА'],['class'=>'subsec_corp_doc','prompt'=>'Выберите подраздел Корпоративного управление'])->label(false) ?>
+
     <?= $form->field($model, 'board_subsec')
         ->dropDownList(
             [
@@ -51,6 +53,8 @@ $this->title = "Управление файлами Корпоративного
         )
         ->label(false);
     ?>
+    <?= $form->field($model, 'date')->input('date', ['class' => 'form-select select-date'])->label(false) ?>
+    <?= $form->field($model, 'text')->textarea(['class' => 'form-select input-text'])->label(false); ?>
     <?= $form->field($model, 'committee_subsection')
         ->dropDownList(
             [
@@ -87,7 +91,10 @@ $this->title = "Управление файлами Корпоративного
         ->label(false);
     ?>
     <?= $form->field($model, 'file')->fileInput(['class' => 'select-file', 'placeholder' => 'Выберите файл'])->label(false) ?>
+    <?= $form->field($model, 'language_file')->dropDownList(['kz' => 'Қазақша', 'ru' => 'Русский', 'en' => 'English'], ['class' => 'language_file', 'prompt' => 'Выберите язык файла'])->label(false); ?>
     <?= $form->field($model, 'name_url')->textInput(['class' => 'form-control name_url_input', 'placeholder' => 'Название ссылки'])->label(false); ?>
+
+
     <?= Html::submitButton('Submit', ['class' => 'submitButton btn btn-success w-100']) ?>
     <?php ActiveForm::end() ?>
 </div>

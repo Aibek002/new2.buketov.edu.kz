@@ -3,6 +3,7 @@
 /** @var yii\web\View $this */
 use app\assets\HomeAsset;
 use yii\bootstrap5\ActiveForm;
+use yii\helpers\Html;
 
 HomeAsset::register($this);
 
@@ -120,7 +121,7 @@ $this->title = 'Buketov University';
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
             <p><?= Yii::t('app', 'Admissions Committee') ?></p>
         </div>
-        <div class="col-md-10 d-flex flex-column align-items:center my-3 px-0">
+        <div class="col-md-10 d-flex flex-column align-items:center my-3">
             <div class="col-md-10 d-flex justify-content-between admission-slider-buttons g-1 ">
                 <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
                     <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
@@ -295,135 +296,155 @@ $this->title = 'Buketov University';
 
         </div>
     </div>
-</div>
-<div class="more-events-overlay"></div>
+    <div class="more-events-overlay"></div>
 
-<div class="sixth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
-    <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-        <p><?= Yii::t('app', 'Rector\'s Blog') ?>
-        </p>
-    </div>
-
-    <div class="col-md-10 d-flex justify-content-center align-items-center block-rector">
-        <div class="col-md-5  d-flex flex-column justify-content-center align-items-center box-img-rector">
-            <div class="skewX"></div>
-            <img src="/bg-images/rector.png">
-        </div>
-        <div class="col-md-7 w-70 d-flex flex-column justify-content-center align-items-start">
-            <p class="name-rector">Дулатбеков Нурлан Орынбасарович</p>
-            <p class="rector-position">Председатель Правления – Ректор</p>
-            <p class="rector-text">“Мы поддерживаем ваше стремление к открытому и честному общению. Здесь вы можете
-                задать
-                интересующие вопросы и сделать обоснованные предложения по улучшению работы университета. Пожалуйста,
-                при
-                обращении соблюдайте речевой этикет и принципы деловой переписки, не допускающей анонимного общения.
-                Спасибо.
+    <div class="sixth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
+        <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
+            <p><?= Yii::t('app', 'Rector\'s Blog') ?>
             </p>
-
         </div>
 
-    </div>
-</div>
+        <div class="col-md-10 d-flex justify-content-between align-items-center block-rector">
+            <div class="col-md-5  d-flex flex-column justify-content-start align-items-start box-img-rector">
+                <div class="skewX"></div>
+                <img src="/bg-images/rector.png">
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-start">
+                <p class="name-rector">Дулатбеков Нурлан Орынбасарович</p>
+                <p class="rector-position">Председатель Правления – Ректор</p>
+                <p class="rector-text">“Мы поддерживаем ваше стремление к открытому и честному общению. Здесь вы можете
+                    задать
+                    интересующие вопросы и сделать обоснованные предложения по улучшению работы университета.
+                    Пожалуйста,
+                    при
+                    обращении соблюдайте речевой этикет и принципы деловой переписки, не допускающей анонимного общения.
+                    Спасибо.
+                </p>
 
-<div class="seventh-block row col-md-12 w-100 d-flex flex-column align-items-center my-5">
-    <!--<div class="col-md-10 d-flex justify-content-center align-items-center block-header">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="seventh-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
+        <!--<div class="col-md-10 d-flex justify-content-center align-items-center block-header">
         <p>Форма обратной связи</p>
     </div>-->
-    <div class="d-flex justify-content-center my-5 g-0">
-        <div style="border-radius: 10px 0 0 10px;"
-            class="col-md-5 d-flex justify-content-center align-items-center block-header">
-            <p><?= Yii::t('app', 'Feedback Form') ?></p>
-        </div>
-        <div style="border-radius: 0 10px 10px 0; background: transparent; border: 1px var(--indigoblue-font) solid;"
-            class="col-md-5 d-flex justify-content-center align-items-center block-header">
-            <p style=" color: var(--indigoblue-font);"><?= Yii::t('app', 'Citizens Reception Schedule') ?></p>
-        </div>
+        <div class="col-md-10 d-flex justify-content-between ">
+            <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
+                <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
+                <?= Yii::t('app', 'Feedback Form') ?> </button>
+            <button type="button" class="admissionBtnRight col-md-6">
+                <?= Yii::t('app', 'Citizens Reception Schedule') ?></button>
 
-    </div>
-    <div class="col-md-10 justify-content-between align-items-center">
-        <p class="feedback-form-text">Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и мы
-            обязательно свяжемся с вами в
-            кратчайшие сроки.</p>
-        <?php $form = ActiveForm::begin() ?>
-        <div class="feedback-form-container">
+        </div>
+<div class="col-md-10 py-5">
+    <div class="feedback-form-wrapper p-4 rounded bg-white">
+        <p class="feedback-form-text text-center mb-4">
+            Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и
+            мы обязательно свяжемся с вами в кратчайшие сроки.
+        </p>
+
+        <?php $form = ActiveForm::begin([
+            'options' => ['class' => 'feedback-form']
+        ]) ?>
+
+        <div class="row g-3">
             <div class="col-md-4">
                 <?= $form->field($model, 'fio')->textInput([
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'placeholder' => 'ФИО'
                 ])->label(false) ?>
             </div>
             <div class="col-md-4">
                 <?= $form->field($model, 'email')->textInput([
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'placeholder' => 'Email'
                 ])->label(false) ?>
             </div>
             <div class="col-md-4">
                 <?= $form->field($model, 'phone')->textInput([
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'placeholder' => 'Телефон'
                 ])->label(false) ?>
             </div>
         </div>
 
+        <div class="mt-3">
+            <?= $form->field($model, 'message')->textarea([
+                'class' => 'form-control form-control-lg',
+                'placeholder' => Yii::t('app', 'Message'),
+                'rows' => 5
+            ])->label(false) ?>
+        </div>
+
+        <div class="mt-4">
+            <?= Html::submitButton(
+                Yii::t('app', 'Отправить'),
+                ['class' => 'btn btn-primary btn-lg w-100']
+            ); ?>
+        </div>
+
         <?php ActiveForm::end() ?>
     </div>
 </div>
-<div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
 
-    <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-        <p><?= Yii::t('app', 'Media About Us') ?></p>
     </div>
-    <div class="col-md-10 d-flex justify-content-center align-items-center block-smi my-5">
-        <div
-            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
-            <div class="col">
-                <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                    <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
-                    <div class="card-body d-flex flex-column justify-content-between position-relative">
-                        <p class="card-text text-gray">
-                            <?= Yii::t('app', 'Cooperation in the field of education and science') ?>
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary text-gray border-gray">
-                                    <?= Yii::t('app', 'View') ?></button>
+    <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
+
+        <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
+            <p><?= Yii::t('app', 'Media About Us') ?></p>
+        </div>
+        <div class="col-md-10 d-flex justify-content-center align-items-center block-smi my-5">
+            <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
+                <div class="col">
+                    <div class="card shadow-sm h-100 w-100 position-relative p-3">
+                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <div class="card-body d-flex flex-column justify-content-between position-relative">
+                            <p class="card-text text-gray">
+                                <?= Yii::t('app', 'Cooperation in the field of education and science') ?>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button"
+                                        class="btn btn-sm btn-outline-secondary text-gray border-gray">
+                                        <?= Yii::t('app', 'View') ?></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm  h-100 w-100 position-relative p-3">
-                    <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
-                    <div class="card-body d-flex flex-column justify-content-between position-relative">
-                        <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
+                <div class="col">
+                    <div class="card shadow-sm  h-100 w-100 position-relative p-3">
+                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <div class="card-body d-flex flex-column justify-content-between position-relative">
+                            <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button"
+                                        class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                    <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
-                    <div class="card-body d-flex flex-column justify-content-between position-relative">
-                        <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button"
-                                    class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
+                <div class="col">
+                    <div class="card shadow-sm h-100 w-100 position-relative p-3">
+                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <div class="card-body d-flex flex-column justify-content-between position-relative">
+                            <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button"
+                                        class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
-
-</div>
-
 </div>

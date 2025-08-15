@@ -11,7 +11,7 @@ const btnDocumentsAndReporting = document.querySelector(
 
 function deleteActiveClass() {
   const allClass = document.querySelectorAll(
-    ".sole-shareholder, .board-of-directors, .governance, .sustainable_development, .documentsAndReporting"
+    ".sole-shareholder, .board-of-directors, .governance, .sustainable_development, .DocumentsAndReporting"
   );
   if (allClass) {
     allClass.forEach(function (el) {
@@ -126,7 +126,7 @@ if (
   });
 
   btnDocumentsAndReporting.addEventListener("click", function () {
-    toggleSection(".content-corporate-documents");
+    toggleSection(".DocumentsAndReporting");
   });
 } else {
   console.error("Одна из кнопок не найдена");
