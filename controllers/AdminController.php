@@ -21,6 +21,8 @@ use app\models\Staff;
 use app\models\Article;
 use app\models\News;
 use app\models\Image;
+use app\models\Files;
+
 use app\models\AdmissionPdf;
 use app\models\ImageArticle;
 
@@ -559,7 +561,11 @@ class AdminController extends Controller
         return $this->render('corporate_governance_file', ['model' => $model]);
 
     }
-    
+    public function actionDissertationAdvice(){
+        $model = new Files();
+        return $this->render('dissertation-advice' , ['model'=>$model]);
+    }
+
     // public function actionCopy()
     // {
     //     $from = CorpSoleShareholder::find()->all();

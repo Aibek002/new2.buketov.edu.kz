@@ -126,16 +126,29 @@ class AjaxController extends Controller
                 [
                     'p_name' => 'p.' . LanguageHelper::name(),
                     'ent' => 's.' . LanguageHelper::name(),
-                    's_passing_points'=>'p.semi_passing_points',
+                    's_passing_points' => 'p.semi_passing_points',
                     'p.passing_points'
 
                 ]
             )->from(['p' => 'profession'])
             ->innerJoin(['stp' => 'subject_to_profession'], 'p.id=stp.profession_id')
             ->innerJoin(['s' => 'subject'], 's.id=stp.subject_id')
-            ->where(['p.id'=> $prof_type])
+            ->where(['p.id' => $prof_type])
             ->orderBy('p.' . LanguageHelper::name())
             ->all();
-        return  $this->asJson($profession);
+        return $this->asJson($profession);
+    }
+    public function actionGetDoctorant($search)
+    {
+        $staff = Staff::find()
+        ->select(['id','surname_ru','name_ru','patronymic_ru'])
+            ->where(['like', 'surname_ru', $search])
+            ->andWhere([
+                'or',
+                ['ref_staff_id' => 12],
+                ['is_doctorant' => 1]
+            ])
+            ->all();
+            return $this->asJson($staff);
     }
 }
