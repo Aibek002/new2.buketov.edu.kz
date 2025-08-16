@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\web\UploadedFile;
 use Yii;
 
 /**
@@ -23,9 +23,12 @@ use Yii;
 class Files extends \yii\db\ActiveRecord
 {
 
-
+    public $files;
     /**
      * {@inheritdoc}
+     *  
+     * @var UploadedFile[]
+    
      */
     public static function tableName()
     {
@@ -38,6 +41,7 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 10],
             [['path_file', 'staff_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
             [['path_file', 'fileName', 'language_file'], 'string'],

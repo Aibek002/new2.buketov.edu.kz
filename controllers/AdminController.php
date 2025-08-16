@@ -529,7 +529,7 @@ class AdminController extends Controller
                 }
             } elseif ($model->subsection_corporate_governance === 'Корпоративные документы') {
                 $path = Yii::getAlias("@app/../files/pdf/corporate_governance/corporate_documents/" . $model->subsec_corp_docs . '/' . $model->year . '/' . $model->language_file . "/");
-               
+
                 $fileName = uniqid() . '_' . $model->name_url . '.' . $file->extension;
                 $model->fileName = $fileName;
                 $model->path_file = str_replace(['/var/www/html/yii2/', '..'], '', $path);
@@ -561,9 +561,14 @@ class AdminController extends Controller
         return $this->render('corporate_governance_file', ['model' => $model]);
 
     }
-    public function actionDissertationAdvice(){
+    public function actionDissertationAdvice()
+    {
         $model = new Files();
-        return $this->render('dissertation-advice' , ['model'=>$model]);
+        $model->files = UploadedFile::getInstances($model, 'files');
+        foreach ($model->files as $file) {
+            print_r($file->baseName . '.' . $file->extension);
+        }
+        return $this->render('dissertation-advice', ['model' => $model]);
     }
 
     // public function actionCopy()
