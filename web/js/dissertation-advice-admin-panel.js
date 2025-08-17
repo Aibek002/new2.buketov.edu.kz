@@ -25,6 +25,7 @@ search_doctorant.addEventListener("input", function () {
             radio.value = doctorant.id;
 
             label.appendChild(radio);
+            radio.classList.add("radio-ds");
             label.appendChild(
               document.createTextNode(
                 " " +
@@ -54,4 +55,15 @@ fileInput.addEventListener("change", () => {
     container_input_name.innerHTML += `<input class="form-control" name="input_name_${index}" placeholder="Напишите название файла и ссылки : ${file.name}"/><br/>`;
   });
   console.log("Выбрано файлов:", fileInput.files.length);
+});
+
+radioContainer.addEventListener("change", (event) => {
+  if (event.target && event.target.matches('input[name="Files[staff_id]"]')) {
+    const selectedRadio = document.querySelector('input[name="Files[staff_id]"]:checked');
+    if (selectedRadio) {
+     document.querySelector('.files').classList.add('active');
+     document.querySelector('.language_input').classList.add('active');
+
+    }
+  }
 });

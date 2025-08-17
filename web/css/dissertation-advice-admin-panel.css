@@ -1,8 +1,12 @@
-.document.active{
+.document.active,
+.files.active,
+.language_input.active{
     display: flex;
     flex-direction: column;
 }
-.document{
+.document,
+.files,
+.language_input{
     display: none ;
 }
 .general-rules-pdf{
