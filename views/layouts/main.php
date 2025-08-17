@@ -199,7 +199,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     </div>
                                     <div class="DissertationCouncil">
                                         <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('История <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('История <span>></span>', ['site/dissertation-advice','faculty_id'=>'2'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Математика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Физика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Педагогика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>

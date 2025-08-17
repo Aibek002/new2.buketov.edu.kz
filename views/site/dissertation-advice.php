@@ -6,6 +6,14 @@ DessertationJobAsset::register($this);
 
 ?>
 <div class="p-5">
+    <?php
+    $diss = [];
+    foreach ($dissertation as $items) {
+        $staff = $items['surname'] . " " . $items['name'];
+        $diss[$staff][] = $items;
+
+    }
+    ?>
     <div class="title-content">
         Профессор кафедры <strong>(название_кафедры)</strong> Карагандинского университета имени академика Е.А. Букетова
         <div class="person-section my-5">
@@ -44,27 +52,31 @@ DessertationJobAsset::register($this);
             <button onclick="openGeneralRulesPdf('/pdf/file1.pdf','.first')"><?= Yii::t('app', 'File ' . $i) ?></button>
         <?php endfor; ?>
     </div>
-       <div class="d-flex justify-content-center first">
-            <embed class=" general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
-        </div>
+    <div class="d-flex justify-content-center first">
+        <embed class=" general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
+    </div>
     <div class="title-content"><?= Yii::t('app', 'Doctoral students` documents') ?></div>
 
     <div class="button-section">
-        <?php for ($i = 0; $i < 5; $i++): ?>
-
-            <button onclick="openDisJob(<?= $i ?>)"><?= Yii::t('app', 'Surname Name Patronymic') ?></button>
-        <?php endfor; ?>
+        <?php foreach ($diss as $staff => $items): ?>
+            <button onclick="openDissJob('<?= str_replace(['  '], '-', $staff) ?>')"><?= $staff ?></button>
+        <?php endforeach; ?>
     </div>
-    <div class="document">
-        <div class="title-content"><?= Yii::t('app', 'Document`s - Surname Name Surname') ?>
-            <div class="button-section">
-                <?php for ($i = 0; $i < 5; $i++): ?>
-                    <button onclick="openGeneralRulesPdf('/pdf/file1.pdf','.second')"><?= Yii::t('app', 'File ' . $i) ?></button>
-                <?php endfor; ?>
-            </div>
-            <div class="d-flex justify-content-center second">
-                <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
+    <?php foreach ($diss as $staff => $items): ?>
+        <div class="document" id="staff-<?= str_replace(['  '], '-', $staff) ?>">
+            <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $staff ?>
+                <div class="button-section">
+                    <?php foreach ($items as $item): ?>
+                        <button
+                            onclick="openDissPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
+
+                    <?php endforeach; ?>
+                </div>
+
             </div>
         </div>
+    <?php endforeach; ?>
+    <div class="d-flex justify-content-center second">
+        <embed class="general-ds-pdf" src="" width="50%" height="600" type="application/pdf">
     </div>
 </div>

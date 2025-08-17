@@ -564,12 +564,54 @@ class AdminController extends Controller
     public function actionDissertationAdvice()
     {
         $model = new Files();
-        $model->files = UploadedFile::getInstances($model, 'files');
-        foreach ($model->files as $file) {
-            print_r($file->baseName . '.' . $file->extension);
+        if (Yii::$app->request->isPost) {
+            if ($model->load(Yii::$app->request->post())) {
+                $files = UploadedFile::getInstances($model, 'files');
+
+                $staff_info = Staff::find()
+                    ->select(['faculty.name_ru AS faculty_name', 'staff.name_ru AS staff_name', 'staff.surname_ru'])
+                    ->innerJoin('faculty', 'faculty.id = staff.faculty_id')
+                    ->where(['staff.id' => $model->staff_id])
+                    ->asArray()
+                    ->one();
+                // print_r($model->staff_id . "/");
+                // die;
+
+                $basePath = Yii::getAlias("@app/../files/pdf/dissertation_advice/"
+                    . $staff_info['faculty_name'] . "/"
+                    . $staff_info['surname_ru'] . "_" . $staff_info['staff_name'] . "/");
+                if (!is_dir($basePath)) {
+                    mkdir($basePath, 0775, true);
+                }
+
+                $i = 1;
+                foreach ($files as $file) {
+                    $fileModel = new Files();
+                    $fileModel->staff_id = $model->staff_id;
+                    $fileModel->author = Yii::$app->user->id;
+                    $fileModel->status = 1;
+                    $fileModel->language_file = $model->language_file;
+
+                    // имя файла
+                    $fileName = $file->baseName . "." . $file->extension;
+
+                    $fileModel->path_file = $basePath . $fileName;
+                    $fileModel->fileName = $fileName;
+
+                    if ($fileModel->save(false)) {
+                        $file->saveAs($basePath . $fileName);
+                    }
+                    $i++;
+                }
+                        return $this->refresh();
+
+            }
         }
+
+
         return $this->render('dissertation-advice', ['model' => $model]);
     }
+
 
     // public function actionCopy()
     // {

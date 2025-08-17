@@ -7,6 +7,7 @@ use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\FeedbackForm;
+use app\models\Files;
 use app\models\Profession;
 use app\models\Events;
 use Symfony\Component\BrowserKit\History;
@@ -87,17 +88,17 @@ class SiteController extends Controller
         $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-        Yii::$app->mailer->compose()
-            ->setFrom($form) // От кого
-            ->setTo('aibekseitzhan002@gmail.com') // Кому
-            ->setSubject('Сообщение с сайта')
-            ->setTextBody('Текстовое сообщение') // Можно просто текст
-            ->setHtmlBody('<b>Это HTML версия письма</b>') // HTML-версия
-            ->send();
+            Yii::$app->mailer->compose()
+                ->setFrom($form) // От кого
+                ->setTo('aibekseitzhan002@gmail.com') // Кому
+                ->setSubject('Сообщение с сайта')
+                ->setTextBody('Текстовое сообщение') // Можно просто текст
+                ->setHtmlBody('<b>Это HTML версия письма</b>') // HTML-версия
+                ->send();
 
-        Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
-        return $this->refresh();
-    }
+            Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
+            return $this->refresh();
+        }
         $news_for_home = News::find()
             ->select([
                 LanguageHelper::title() . ' AS title',
@@ -227,11 +228,11 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-        $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file','ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
+        $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file', 'ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
         // $pdf = CorpSoleShareholder::find()->all();
         $pdf = CorporateGovernanceFile::find()
             ->orderBy(['sort_id' => SORT_DESC, 'fileName' => SORT_DESC])->all();
-        return $this->render('corparate', [ 'year'=>$year,'pdf' => $pdf]);
+        return $this->render('corparate', ['year' => $year, 'pdf' => $pdf]);
     }
 
     public function actionSovet()
@@ -276,8 +277,39 @@ class SiteController extends Controller
 
         return $this->render('open-general-pdf', ['params' => $params]);
     }
-    public function actionDissertationJob()
+    public function actionDissertationAdvice($faculty_id)
     {
-        return $this->render('dissertation-job');
+        // $staff_id = Faculty::find()->select(
+        //     [
+        //         'staff.' . LanguageHelper::name(),
+        //         'staff.' . LanguageHelper::surname(),
+        //         'staff.' . LanguageHelper::patronymic(),
+
+        //     ]
+        // )->innerJoin('staff', "staff.faculty_id=faculty.id")->where(['faculty.id' => $faculty_id])->all();
+        $files = Faculty::find()
+            ->select([
+                'staff.id AS staff_id',
+                'staff.' . LanguageHelper::name() . ' AS name',
+                'staff.' . LanguageHelper::surname() . ' AS surname',
+                'staff.' . LanguageHelper::patronymic() . ' AS patronymic',
+                'files.fileName',
+                'files.path_file'
+            ])
+            ->innerJoin('staff', 'staff.faculty_id = faculty.id')
+            ->innerJoin('files', 'files.staff_id = staff.id')
+            ->where(['faculty.id' => $faculty_id , 'language_file'=>Yii::$app->language])
+            ->asArray()
+            ->all();
+
+        // $staff = Staff::find()
+        //     ->where(['faculty_id' => $faculty_id])
+        //     ->all();
+
+        // $files = Files::find()
+        //     ->where(['staff_id' => array_column($staff, 'id') , 'language_file'=>Yii::$app->language])
+        //     ->all();
+
+        return $this->render('dissertation-advice', ['dissertation' => $files]);
     }
 }

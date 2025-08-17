@@ -1,5 +1,7 @@
 const search_doctorant = document.querySelector(".search-doctorant");
 const radioContainer = document.querySelector(".staff-radio-list");
+const fileInput = document.querySelector(".files");
+const container_input_name = document.querySelector(".container-input-name");
 search_doctorant.addEventListener("input", function () {
   const query = search_doctorant.value.trim();
 
@@ -19,7 +21,7 @@ search_doctorant.addEventListener("input", function () {
             const label = document.createElement("label");
             const radio = document.createElement("input");
             radio.type = "radio";
-            radio.name = "ModelName[staff_id]"; // подставь имя своей модели
+            radio.name = "Files[staff_id]"; // подставь имя своей модели
             radio.value = doctorant.id;
 
             label.appendChild(radio);
@@ -44,4 +46,12 @@ search_doctorant.addEventListener("input", function () {
         console.error("Ошибка запроса:", error);
       });
   }
+});
+fileInput.addEventListener("change", () => {
+  container_input_name.innerHTML = "";
+  Array.from(fileInput.files).forEach((file, index) => {
+    console.log(index);
+    container_input_name.innerHTML += `<input class="form-control" name="input_name_${index}" placeholder="Напишите название файла и ссылки : ${file.name}"/><br/>`;
+  });
+  console.log("Выбрано файлов:", fileInput.files.length);
 });

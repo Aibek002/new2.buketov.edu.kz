@@ -28,7 +28,7 @@ class Files extends \yii\db\ActiveRecord
      * {@inheritdoc}
      *  
      * @var UploadedFile[]
-    
+
      */
     public static function tableName()
     {
@@ -41,6 +41,7 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['staff_id'], 'safe'],
             [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 10],
             [['path_file', 'staff_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
