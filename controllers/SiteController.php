@@ -6,6 +6,7 @@ use app\models\AdmissionPdf;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
+use app\models\DissertationAdvice;
 use app\models\FeedbackForm;
 use app\models\Files;
 use app\models\Profession;
@@ -277,7 +278,7 @@ class SiteController extends Controller
 
         return $this->render('open-general-pdf', ['params' => $params]);
     }
-    public function actionDissertationAdvice($faculty_id)
+    public function actionDissertationAdvice($dissertation_id)
     {
         // $staff_id = Faculty::find()->select(
         //     [
@@ -287,18 +288,29 @@ class SiteController extends Controller
 
         //     ]
         // )->innerJoin('staff', "staff.faculty_id=faculty.id")->where(['faculty.id' => $faculty_id])->all();
+        $id = DissertationAdvice::find()
+            ->select('faculty_id')
+            ->where(['id' => $dissertation_id])
+            ->scalar();
+
+$name = DissertationAdvice::find()
+            ->select('name')
+            ->where(['id' => $dissertation_id])
+            ->scalar();
+            
         $files = Faculty::find()
             ->select([
-                'staff.id AS staff_id',
-                'staff.' . LanguageHelper::name() . ' AS name',
-                'staff.' . LanguageHelper::surname() . ' AS surname',
-                'staff.' . LanguageHelper::patronymic() . ' AS patronymic',
+                'doctorant.id AS doctorant_id',
+
+                'doctorant.full_name_' . Yii::$app->language . ' AS doctorant_full_name',
+
                 'files.fileName',
                 'files.path_file'
             ])
-            ->innerJoin('staff', 'staff.faculty_id = faculty.id')
-            ->innerJoin('files', 'files.staff_id = staff.id')
-            ->where(['faculty.id' => $faculty_id , 'language_file'=>Yii::$app->language])
+            ->innerJoin('dissertation_advice', 'dissertation_advice.faculty_id = faculty.id')
+            ->innerJoin('doctorant', 'doctorant.dissertation_id = dissertation_advice.id')
+            ->innerJoin('files', 'files.doctorant_id = doctorant.id')
+            ->where(['faculty.id' => $id, 'language_file' => Yii::$app->language])
             ->asArray()
             ->all();
 
@@ -310,6 +322,6 @@ class SiteController extends Controller
         //     ->where(['staff_id' => array_column($staff, 'id') , 'language_file'=>Yii::$app->language])
         //     ->all();
 
-        return $this->render('dissertation-advice', ['dissertation' => $files]);
+        return $this->render('dissertation-advice', ['dissertation' => $files , 'dissertation_name'=>$name]);
     }
 }

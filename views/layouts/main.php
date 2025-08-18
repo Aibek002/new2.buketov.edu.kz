@@ -198,14 +198,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                     </div>
                                     <div class="DissertationCouncil">
-                                        <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('История <span>></span>', ['site/dissertation-advice','faculty_id'=>'2'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Математика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Физика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Педагогика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Казахский язык и литература <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Биология <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Химия <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 1], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('История <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 2], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Математика <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 3], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Физика <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 4], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Педагогика и методика начального обучения  <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 5], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Педагогика и психология  <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 6], ['class' => 'menu-item']) ?>
+
+                                        <?= Html::a('Казахский язык и литература <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 7], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Биология <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 8], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Химия <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 9], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Иностранные языки <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Экономика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Филология <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
@@ -329,7 +331,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 </ul>
             </div>
         </header>
-    <?php elseif(Yii::$app->controller->id == 'admin'): ?>
+    <?php elseif (Yii::$app->controller->id == 'admin'): ?>
         <div class="w-100 d-flex justify-content-end align-items-center p-2 bg-light border-bottom">
             <span class="text-primary fw-bold">
                 <i class="bi bi-person-circle me-2"></i>

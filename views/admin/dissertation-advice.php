@@ -10,7 +10,7 @@ DissertationAdviceAdminAsset::register($this);
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'staff_id')->radioList([], ['class' => 'staff-radio-list'])->label(false) ?>
+    <?= $form->field($model, 'doctorant_id')->radioList([], ['class' => 'staff-radio-list'])->label(false) ?>
     <?= $form->field($model, 'files[]')->fileInput(['class' => 'files', 'multiple' => true, 'accept' => 'application/pdf', 'placeholder' => 'Выберите файлы докторантов'])->label(false) ?>
     <?= $form->field($model, 'language_file')->dropDownList(['kz' => 'kz', 'ru' => 'ru', 'en' => 'en'],['class'=>'language_input'])->label(false) ?>
     <!-- <div class="container-input-name">

@@ -19,7 +19,7 @@ class m250815_103835_create_files_table extends Migration
         $this->createTable('{{%files}}', [
             'id' => $this->primaryKey(),
             'path_file' => $this->text(),
-            'staff_id' => $this->integer(),
+            'doctorant_id' => $this->integer(),
             'status' => $this->integer()->defaultValue(1),
             'fileName' => $this->text(),
             'language_file' => $this->text(),
@@ -28,19 +28,19 @@ class m250815_103835_create_files_table extends Migration
             'author' => $this->integer(),
         ]);
 
-        // creates index for column `staff_id`
+        // creates index for column `doctorant_id`
         $this->createIndex(
-            '{{%idx-files-staff_id}}',
+            '{{%idx-files-doctorant_id}}',
             '{{%files}}',
-            'staff_id'
+            'doctorant_id'
         );
 
         // add foreign key for table `{{%staff}}`
         $this->addForeignKey(
-            '{{%fk-files-staff_id}}',
+            '{{%fk-files-doctorant_id}}',
             '{{%files}}',
-            'staff_id',
-            '{{%staff}}',
+            'doctorant_id',
+            '{{%doctorant}}',
             'id',
             'CASCADE'
         );
@@ -70,13 +70,13 @@ class m250815_103835_create_files_table extends Migration
     {
         // drops foreign key for table `{{%staff}}`
         $this->dropForeignKey(
-            '{{%fk-files-staff_id}}',
+            '{{%fk-files-doctorant_id}}',
             '{{%files}}'
         );
 
         // drops index for column `staff_id`
         $this->dropIndex(
-            '{{%idx-files-staff_id}}',
+            '{{%idx-files-doctorant_id}}',
             '{{%files}}'
         );
 

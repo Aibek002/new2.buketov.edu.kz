@@ -1,6 +1,7 @@
 <?php
 use app\components\LanguageHelper;
 use app\assets\DessertationJobAsset;
+use function PHPUnit\Framework\isEmpty;
 
 DessertationJobAsset::register($this);
 
@@ -9,13 +10,13 @@ DessertationJobAsset::register($this);
     <?php
     $diss = [];
     foreach ($dissertation as $items) {
-        $staff = $items['surname'] . " " . $items['name'];
-        $diss[$staff][] = $items;
+        $doctorant = $items['doctorant_full_name'] ;
+        $diss[$doctorant][] = $items;
 
     }
     ?>
     <div class="title-content">
-        Профессор кафедры <strong>(название_кафедры)</strong> Карагандинского университета имени академика Е.А. Букетова
+        Профессор кафедры - <strong><?=$dissertation_name?></strong> :  Карагандинского университета имени академика Е.А. Букетова
         <div class="person-section my-5">
             <div class="person-img">
                 <img width="100%"
@@ -57,25 +58,33 @@ DessertationJobAsset::register($this);
     </div>
     <div class="title-content"><?= Yii::t('app', 'Doctoral students` documents') ?></div>
 
-    <div class="button-section">
-        <?php foreach ($diss as $staff => $items): ?>
-            <button onclick="openDissJob('<?= str_replace(['  '], '-', $staff) ?>')"><?= $staff ?></button>
-        <?php endforeach; ?>
-    </div>
-    <?php foreach ($diss as $staff => $items): ?>
-        <div class="document" id="staff-<?= str_replace(['  '], '-', $staff) ?>">
-            <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $staff ?>
-                <div class="button-section">
-                    <?php foreach ($items as $item): ?>
-                        <button
-                            onclick="openDissPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
 
-                    <?php endforeach; ?>
-                </div>
-
-            </div>
+    <?php if (empty($diss)): ?>
+        <div class="button-section">
+        <h1 style="color:var(--indigoblue-font);text-align:center">Докторантов нет</h1>
         </div>
-    <?php endforeach; ?>
+    <?php else: ?>
+        <div class="button-section">
+            <?php foreach ($diss as $doctorant => $items): ?>
+                <button onclick="openDissJob('<?= str_replace(['  '], '-', $doctorant) ?>')"><?= $doctorant ?></button>
+            <?php endforeach; ?>
+        </div>
+        <?php foreach ($diss as $doctorant => $items): ?>
+            <div class="document" id="staff-<?= str_replace(['  '], '-', $doctorant) ?>">
+                <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $doctorant ?>
+                    <div class="button-section">
+                        <?php foreach ($items as $item): ?>
+                            <button
+                                onclick="openDissPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
+
+                        <?php endforeach; ?>
+                    </div>
+
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
     <div class="d-flex justify-content-center second">
         <embed class="general-ds-pdf" src="" width="50%" height="600" type="application/pdf">
     </div>

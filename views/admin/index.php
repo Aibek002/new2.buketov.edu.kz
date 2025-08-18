@@ -17,6 +17,7 @@ $this->title = 'Admin Page';
         <?= Html::a('Сотрудники', ['admin/staff-admin-panel'], ['class' => 'fas st-university']) ?>
         <?= Html::a('Факультеты', ['admin/faculty-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Загрузить фоты на инфармациионные страницы', ['admin/upload-image'], ['class' => 'fas fa-university']) ?>
+        <?= Html::a('Докторанты', ['admin/doctorant-admin-panel'], ['class' => 'fas st-university']) ?>
 
         <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>

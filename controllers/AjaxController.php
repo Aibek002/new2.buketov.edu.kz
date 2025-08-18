@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use app\components\LanguageHelper;
+use app\models\Doctorant;
 use Yii;
 use yii\web\Controller;
 use app\models\Staff;
@@ -140,14 +141,9 @@ class AjaxController extends Controller
     }
     public function actionGetDoctorant($search)
     {
-        $staff = Staff::find()
-        ->select(['id','surname_ru','name_ru','patronymic_ru'])
-            ->where(['like', 'surname_ru', $search])
-            ->andWhere([
-                'or',
-                ['ref_staff_id' => 12],
-                ['is_doctorant' => 1]
-            ])
+        $staff = Doctorant::find()
+        ->select(['id','full_name_ru'])
+            ->where(['like', 'full_name_ru', $search])
             ->all();
             return $this->asJson($staff);
     }

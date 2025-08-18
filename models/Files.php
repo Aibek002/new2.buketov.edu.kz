@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string|null $path_file
- * @property int|null $staff_id
+ * @property int|null $doctorant_id
  * @property int|null $status
  * @property string|null $fileName
  * @property string|null $language_file
@@ -41,15 +41,15 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['staff_id'], 'safe'],
-            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 10],
-            [['path_file', 'staff_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
+            [['doctorant_id'], 'safe'],
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20],
+            [['path_file', 'doctorant_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
             [['path_file', 'fileName', 'language_file'], 'string'],
-            [['staff_id', 'status', 'author'], 'integer'],
+            [['doctorant_id', 'status', 'author'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['author'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author' => 'id']],
-            [['staff_id'], 'exist', 'skipOnError' => true, 'targetClass' => Staff::class, 'targetAttribute' => ['staff_id' => 'id']],
+            [['doctorant_id'], 'exist', 'skipOnError' => true, 'targetClass' => Staff::class, 'targetAttribute' => ['doctorant_id' => 'id']],
         ];
     }
 
@@ -61,7 +61,7 @@ class Files extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'path_file' => 'Path File',
-            'staff_id' => 'Staff ID',
+            'doctorant_id' => 'Staff ID',
             'status' => 'Status',
             'fileName' => 'File Name',
             'language_file' => 'Language File',
@@ -88,7 +88,7 @@ class Files extends \yii\db\ActiveRecord
      */
     public function getStaff()
     {
-        return $this->hasOne(Staff::class, ['id' => 'staff_id']);
+        return $this->hasOne(Staff::class, ['id' => 'doctorant_id']);
     }
 
 }

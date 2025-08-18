@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
+use app\models\Doctorant;
 use app\models\Profession;
 use app\models\User;
 use yii\web\UploadedFile;
@@ -90,6 +91,20 @@ class AdminController extends Controller
             return $this->redirect(['admin/index']);
         }
         return $this->render('staff-admin-panel', ['model' => $staff]);
+
+    }
+    public function actionDoctorantAdminPanel()
+    {
+        $doctorant = new Doctorant();
+
+        if ($doctorant->load(Yii::$app->request->post())) {
+            $doctorant->author = Yii::$app->user->id;
+            if ($doctorant->save()) {
+                return $this->redirect(['admin/index']);
+
+            }
+        }
+        return $this->render('doctorant-admin-panel', ['model' => $doctorant]);
 
     }
 
@@ -567,19 +582,18 @@ class AdminController extends Controller
         if (Yii::$app->request->isPost) {
             if ($model->load(Yii::$app->request->post())) {
                 $files = UploadedFile::getInstances($model, 'files');
-
-                $staff_info = Staff::find()
-                    ->select(['faculty.name_ru AS faculty_name', 'staff.name_ru AS staff_name', 'staff.surname_ru'])
-                    ->innerJoin('faculty', 'faculty.id = staff.faculty_id')
-                    ->where(['staff.id' => $model->staff_id])
+                $staff_info = Doctorant::find()
+                    ->select(['faculty.name_ru AS faculty_name', 'dissertation_advice.name as dissertation_name', 'doctorant.full_name_ru AS doctorant_full_name'])
+                    ->innerJoin('dissertation_advice', 'dissertation_advice.id = doctorant.dissertation_id')
+                    ->innerJoin('faculty', 'faculty.id = dissertation_advice.faculty_id')
+                    ->where(['doctorant.id' => $model->doctorant_id])
                     ->asArray()
                     ->one();
-                // print_r($model->staff_id . "/");
-                // die;
+                
 
                 $basePath = Yii::getAlias("@app/../files/pdf/dissertation_advice/"
-                    . $staff_info['faculty_name'] . "/"
-                    . $staff_info['surname_ru'] . "_" . $staff_info['staff_name'] . "/");
+                    . $staff_info['faculty_name'] . "/" . $staff_info['dissertation_name'] . "/"
+                    . $staff_info['doctorant_full_name'] . "/");
                 if (!is_dir($basePath)) {
                     mkdir($basePath, 0775, true);
                 }
@@ -587,7 +601,7 @@ class AdminController extends Controller
                 $i = 1;
                 foreach ($files as $file) {
                     $fileModel = new Files();
-                    $fileModel->staff_id = $model->staff_id;
+                    $fileModel->doctorant_id = $model->doctorant_id;
                     $fileModel->author = Yii::$app->user->id;
                     $fileModel->status = 1;
                     $fileModel->language_file = $model->language_file;
@@ -603,7 +617,7 @@ class AdminController extends Controller
                     }
                     $i++;
                 }
-                        return $this->refresh();
+                return $this->refresh();
 
             }
         }

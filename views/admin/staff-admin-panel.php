@@ -109,7 +109,11 @@ $this->title = 'Управлять Персоналом';
                     ['prompt' => 'Без кафедры']
                 ) ?>
             </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'faculty_show')->checkbox(['label' => 'Показать факультет']) ?>
+                <?= $form->field($model, 'dissertation_show')->checkbox(['label' => 'Показать диссертацию']) ?>
 
+            </div>
             <!-- Кнопка -->
             <div class="col-12 text-end mt-3">
                 <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => 'btn btn-success px-4']) ?>

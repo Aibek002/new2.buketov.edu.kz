@@ -7,7 +7,7 @@ search_doctorant.addEventListener("input", function () {
 
   if (query.length > 3) {
     fetch(
-      `https://new.buketov.edu.kz/yii2/web/index.php?r=ajax/get-doctorant&search=${encodeURIComponent(
+      `/yii2/web/index.php?r=ajax/get-doctorant&search=${encodeURIComponent(
         query
       )}`
     )
@@ -16,24 +16,21 @@ search_doctorant.addEventListener("input", function () {
         // Предположим, что сервер вернёт массив объектов doctorants
         if (Array.isArray(data)) {
           radioContainer.innerHTML = "";
-
+            radioContainer.innerHTML = "<br/>"
           data.forEach((doctorant) => {
+            console.log(doctorant);
             const label = document.createElement("label");
             const radio = document.createElement("input");
             radio.type = "radio";
-            radio.name = "Files[staff_id]"; // подставь имя своей модели
+            radio.name = "Files[doctorant_id]"; // подставь имя своей модели
             radio.value = doctorant.id;
 
             label.appendChild(radio);
             radio.classList.add("radio-ds");
             label.appendChild(
               document.createTextNode(
-                " " +
-                  doctorant.surname_ru +
-                  " " +
-                  doctorant.name_ru +
-                  " " +
-                  doctorant.patronymic_ru
+             
+                  doctorant.full_name_ru
               )
             );
             radioContainer.appendChild(label);
@@ -58,12 +55,13 @@ fileInput.addEventListener("change", () => {
 });
 
 radioContainer.addEventListener("change", (event) => {
-  if (event.target && event.target.matches('input[name="Files[staff_id]"]')) {
-    const selectedRadio = document.querySelector('input[name="Files[staff_id]"]:checked');
+  if (event.target && event.target.matches('input[name="Files[doctorant_id]"]')) {
+    const selectedRadio = document.querySelector(
+      'input[name="Files[doctorant_id]"]:checked'
+    );
     if (selectedRadio) {
-     document.querySelector('.files').classList.add('active');
-     document.querySelector('.language_input').classList.add('active');
-
+      document.querySelector(".files").classList.add("active");
+      document.querySelector(".language_input").classList.add("active");
     }
   }
 });
