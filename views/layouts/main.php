@@ -198,7 +198,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                     </div>
                                     <div class="DissertationCouncil">
-                                        <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                        <!-- <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('История <span>></span>', ['site/dissertation-advice','faculty_id'=>'2'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Математика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Физика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
@@ -209,7 +209,19 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <?= Html::a('Иностранные языки <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Экономика <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Филология <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-job'], ['class' => 'menu-item']) ?> -->
+
+                                         <?= Html::a('Биолого-географический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '1'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Исторический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '2'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Иностранных языков <span>></span>', ['site/dissertation-advice', 'faculty_id' => '3'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Математика и ИТ <span>></span>', ['site/dissertation-advice', 'faculty_id' => '5'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Педагогический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '6'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Физико-технический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '7'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Филологический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '9'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Философия и психологии <span>></span>', ['site/dissertation-advice', 'faculty_id' => '10'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Химический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '11'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Экономический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '12'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a('Юридический <span>></span>', ['site/dissertation-advice', 'faculty_id' => '13'], ['class' => 'menu-item']) ?>
 
                                     </div>
                                     <div class="CompetitionsAndGrands">

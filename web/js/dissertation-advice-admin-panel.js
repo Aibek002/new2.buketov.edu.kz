@@ -7,7 +7,7 @@ search_doctorant.addEventListener("input", function () {
 
   if (query.length > 3) {
     fetch(
-      `https://new.buketov.edu.kz/yii2/web/index.php?r=ajax/get-doctorant&search=${encodeURIComponent(
+      `/yii2/web/index.php?r=ajax/get-doctorant&search=${encodeURIComponent(
         query
       )}`
     )

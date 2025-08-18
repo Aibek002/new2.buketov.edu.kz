@@ -1,6 +1,7 @@
 <?php
 use app\components\LanguageHelper;
 use app\assets\DessertationJobAsset;
+use function PHPUnit\Framework\isEmpty;
 
 DessertationJobAsset::register($this);
 
@@ -57,25 +58,33 @@ DessertationJobAsset::register($this);
     </div>
     <div class="title-content"><?= Yii::t('app', 'Doctoral students` documents') ?></div>
 
-    <div class="button-section">
-        <?php foreach ($diss as $staff => $items): ?>
-            <button onclick="openDissJob('<?= str_replace(['  '], '-', $staff) ?>')"><?= $staff ?></button>
-        <?php endforeach; ?>
-    </div>
-    <?php foreach ($diss as $staff => $items): ?>
-        <div class="document" id="staff-<?= str_replace(['  '], '-', $staff) ?>">
-            <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $staff ?>
-                <div class="button-section">
-                    <?php foreach ($items as $item): ?>
-                        <button
-                            onclick="openDissPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
 
-                    <?php endforeach; ?>
-                </div>
-
-            </div>
+    <?php if (empty($diss)): ?>
+        <div class="button-section">
+        <h1 class="text-content">Докторантов нет</h1>
         </div>
-    <?php endforeach; ?>
+    <?php else: ?>
+        <div class="button-section">
+            <?php foreach ($diss as $staff => $items): ?>
+                <button onclick="openDissJob('<?= str_replace(['  '], '-', $staff) ?>')"><?= $staff ?></button>
+            <?php endforeach; ?>
+        </div>
+        <?php foreach ($diss as $staff => $items): ?>
+            <div class="document" id="staff-<?= str_replace(['  '], '-', $staff) ?>">
+                <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $staff ?>
+                    <div class="button-section">
+                        <?php foreach ($items as $item): ?>
+                            <button
+                                onclick="openDissPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
+
+                        <?php endforeach; ?>
+                    </div>
+
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
     <div class="d-flex justify-content-center second">
         <embed class="general-ds-pdf" src="" width="50%" height="600" type="application/pdf">
     </div>
