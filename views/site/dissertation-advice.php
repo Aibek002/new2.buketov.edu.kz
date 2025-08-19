@@ -10,13 +10,15 @@ DessertationJobAsset::register($this);
     <?php
     $diss = [];
     foreach ($dissertation as $items) {
-        $doctorant = $items['doctorant_full_name'] ;
+        $doctorant = $items['doctorant_full_name'];
         $diss[$doctorant][] = $items;
 
     }
     ?>
     <div class="title-content">
-        Профессор кафедры - <strong><?=$dissertation_name?></strong> :  Карагандинского университета имени академика Е.А. Букетова
+        Профессор кафедры - <strong><?= $dissertation_name ?></strong> : Карагандинского университета имени академика
+        Е.А.
+        Букетова
         <div class="person-section my-5">
             <div class="person-img">
                 <img width="100%"
@@ -24,10 +26,26 @@ DessertationJobAsset::register($this);
                     alt="">
             </div>
             <div class="person-info">
-                <p class="person-fio"> Фамилия Имя Отчество </p>
-                <p class="person-position"><i>(название_должности) </i></p>
+                <p class="person-fio">
+                    <?php
+                    if ($secretary !== null && is_array($secretary)) {
+                        $fullName = ($secretary['surname'] ?? '') . ' ' .
+                            ($secretary['name'] ?? '') . ' ' .
+                            ($secretary['patronymic'] ?? '');
+                    } else {
+                        $fullName = ''; // or some default text
+                    }
+                    ?>
+                    <?= $fullName ? $fullName : 'не задано' ?>
+                </p>
+                <p class="person-position"><i>
+                        <?=
+
+                            $secretary['job_title'] ?? 'не задано';
+                        ?>
+                    </i></p>
                 <p class="person-info"><i>
-                        (приветственные_слова)
+                        <?= $secretary['information'] ?? 'не задано'; ?>
                     </i></p>
                 <strong class="person-info">
                     График работы:
@@ -39,19 +57,20 @@ DessertationJobAsset::register($this);
             </div>
             <div class="person-email">
                 <div class="email"><img src="/bg-images/svg/iconEmail.svg"> <a
-                        href="mailto:ucheniesovety@gmail.com">dessertation_job@buketov.edu.kz</a></div>
-                <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a href="tel:+77777777777">+7 7212
-                        90-02-70</a></div>
-                <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a href="tel:+77777777777">+7 7212
-                        35-64-05</a></div>
+                        href="mailto:<?= $secretary['email'] ?? 'не задано'; ?>"><?= $secretary['email'] ?? 'не задано'; ?></a>
+                </div>
+                <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a
+                        href="tel:<?= $secretary['phone'] ?? 'не задано'; ?>"><?= $secretary['phone'] ?? 'не задано'; ?></a>
+                </div>
             </div>
         </div>
     </div>
     <div class="title-content"><?= Yii::t('app', 'Regulatory documents') ?></div>
     <div class="button-section">
-        <?php for ($i = 1; $i < 9; $i++): ?>
-            <button onclick="openGeneralRulesPdf('/pdf/file1.pdf','.first')"><?= Yii::t('app', 'File ' . $i) ?></button>
-        <?php endfor; ?>
+        <?php foreach ($normative as $document): ?>
+            <button
+                onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $document->path_file) ?>','.first')"><?= $document->fileName ?></button>
+        <?php endforeach; ?>
     </div>
     <div class="d-flex justify-content-center first">
         <embed class=" general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
@@ -61,7 +80,8 @@ DessertationJobAsset::register($this);
 
     <?php if (empty($diss)): ?>
         <div class="button-section">
-        <h1 style="color:var(--indigoblue-font);text-align:center">Докторантов нет</h1>
+
+            <h1 style="color:var(--indigoblue-font);text-align:center">Докторантов нет</h1>
         </div>
     <?php else: ?>
         <div class="button-section">
@@ -72,6 +92,7 @@ DessertationJobAsset::register($this);
         <?php foreach ($diss as $doctorant => $items): ?>
             <div class="document" id="staff-<?= str_replace(['  '], '-', $doctorant) ?>">
                 <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $doctorant ?>
+
                     <div class="button-section">
                         <?php foreach ($items as $item): ?>
                             <button

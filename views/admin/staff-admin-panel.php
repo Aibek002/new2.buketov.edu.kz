@@ -1,5 +1,6 @@
 <?php
 
+use app\models\DissertationAdvice;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
@@ -91,25 +92,32 @@ $this->title = 'Управлять Персоналом';
             </div>
 
             <!-- Справочные поля -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <?= $form->field($model, 'ref_staff_id')->dropDownList(
                     ArrayHelper::map(RefStaff::find()->all(), 'id', 'type'),
                     ['prompt' => 'Выберите должность']
                 ) ?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <?= $form->field($model, 'faculty_id')->dropDownList(
                     ArrayHelper::map(Faculty::find()->orderBy('name_ru')->all(), 'id', 'name_ru'),
                     ['prompt' => 'Выберите факультет']
                 ) ?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <?= $form->field($model, 'departament_id')->dropDownList(
                     ArrayHelper::map(Departament::find()->orderBy('name_ru')->all(), 'id', 'name_ru'),
                     ['prompt' => 'Без кафедры']
                 ) ?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <?= $form->field($model, 'dissertation_advice_id')->dropDownList(
+                    ArrayHelper::map(DissertationAdvice::find()->orderBy('name')->all(), 'id', 'name'),
+                    ['prompt' => 'Без  диссертации']
+                ) ?>
+            </div>
+            <br />
+            <div class="col-md-3">
                 <?= $form->field($model, 'faculty_show')->checkbox(['label' => 'Показать факультет']) ?>
                 <?= $form->field($model, 'dissertation_show')->checkbox(['label' => 'Показать диссертацию']) ?>
 

@@ -12,6 +12,7 @@ use yii\helpers\ArrayHelper;
 
 <?php $form = ActiveForm::begin(); ?>
 
+
 <?= $form->field($model, 'full_name_ru')->textInput(['maxlength' => true]) ?>
 <?= $form->field($model, 'full_name_kz')->textInput(['maxlength' => true]) ?>
 <?= $form->field($model, 'full_name_en')->textInput(['maxlength' => true]) ?>
@@ -19,6 +20,7 @@ use yii\helpers\ArrayHelper;
     ArrayHelper::map(DissertationAdvice::find()->orderBy('name')->all(), 'id', 'name'),
     ['prompt' => 'Выберите диссовет']
 ) ?>
+
 
 
 <div class="form-group">

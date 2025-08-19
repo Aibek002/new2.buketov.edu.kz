@@ -292,12 +292,13 @@ class SiteController extends Controller
             ->select('faculty_id')
             ->where(['id' => $dissertation_id])
             ->scalar();
+            print_r($id);
 
-$name = DissertationAdvice::find()
+        $name = DissertationAdvice::find()
             ->select('name')
             ->where(['id' => $dissertation_id])
             ->scalar();
-            
+
         $files = Faculty::find()
             ->select([
                 'doctorant.id AS doctorant_id',
@@ -310,10 +311,28 @@ $name = DissertationAdvice::find()
             ->innerJoin('dissertation_advice', 'dissertation_advice.faculty_id = faculty.id')
             ->innerJoin('doctorant', 'doctorant.dissertation_id = dissertation_advice.id')
             ->innerJoin('files', 'files.doctorant_id = doctorant.id')
-            ->where(['faculty.id' => $id, 'language_file' => Yii::$app->language])
+            ->where(['faculty.id' => $id, 'dissertation_id'=>$dissertation_id, 'language_file' => Yii::$app->language, 'ref_files_id' => 1])
             ->asArray()
             ->all();
+        // $secretary = Staff::find()->where(['dissertation_advice_id' => $dissertation_id])->one();
+        $secretary = Staff::find()
+            ->select([
+                'id',
+                LanguageHelper::surname() . ' as surname',
+                LanguageHelper::name() . ' as name',
+                LanguageHelper::patronymic() . ' as patronymic',
+                LanguageHelper::job_title() . ' as job_title',
+                LanguageHelper::information() . ' as information',
+                'email',
+                'phone'
+            ])
 
+            ->where(['dissertation_advice_id' => $dissertation_id])
+            ->asArray()
+            ->one();
+        $normative = Files::find()->where(['dissertation_advice_id' => $dissertation_id, 'language_file' => Yii::$app->language, 'ref_files_id' => 2])->all();
+        // print_r($normative);
+        // die;
         // $staff = Staff::find()
         //     ->where(['faculty_id' => $faculty_id])
         //     ->all();
@@ -322,6 +341,16 @@ $name = DissertationAdvice::find()
         //     ->where(['staff_id' => array_column($staff, 'id') , 'language_file'=>Yii::$app->language])
         //     ->all();
 
-        return $this->render('dissertation-advice', ['dissertation' => $files , 'dissertation_name'=>$name]);
+        return $this->render('dissertation-advice', ['dissertation' => $files, 'dissertation_name' => $name, 'secretary' => $secretary, 'normative' => $normative]);
     }
+    // public function actionSet()
+    // {
+    //     $files = Files::find()->all();
+
+    //     foreach ($files as $file) {
+    //         $file->ref_files_id = 1;
+    //         $file->save(false); // false чтобы пропустить валидацию, если она не нужна
+    //     }
+
+    // }
 }

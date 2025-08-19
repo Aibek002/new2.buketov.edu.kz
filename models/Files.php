@@ -24,6 +24,8 @@ class Files extends \yii\db\ActiveRecord
 {
 
     public $files;
+    public $type;
+
     /**
      * {@inheritdoc}
      *  
@@ -41,8 +43,8 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['doctorant_id'], 'safe'],
-            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20],
+            [['doctorant_id','type','dissertation_advice_id'], 'safe'],
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20,'on'=>'create'],
             [['path_file', 'doctorant_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
             [['path_file', 'fileName', 'language_file'], 'string'],

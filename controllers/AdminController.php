@@ -589,20 +589,40 @@ class AdminController extends Controller
                     ->where(['doctorant.id' => $model->doctorant_id])
                     ->asArray()
                     ->one();
-                
+                $basePath = Yii::getAlias("@app/../files/pdf/dissertation_advice/");
+                if ($model->type === 'normative') {
+                    $basePath .= "normative_documents/";
 
-                $basePath = Yii::getAlias("@app/../files/pdf/dissertation_advice/"
-                    . $staff_info['faculty_name'] . "/" . $staff_info['dissertation_name'] . "/"
-                    . $staff_info['doctorant_full_name'] . "/");
+                } elseif ($model->type === 'doctorant') {
+                    $basePath .=
+                        $staff_info['faculty_name'] . "/" . $staff_info['dissertation_name'] . "/"
+                        . $staff_info['doctorant_full_name'] . "/";
+
+                }
+                // print_r('Path: ' . $basePath);
+                // die;
+
+
                 if (!is_dir($basePath)) {
                     mkdir($basePath, 0775, true);
                 }
 
+
                 $i = 1;
                 foreach ($files as $file) {
                     $fileModel = new Files();
-                    $fileModel->doctorant_id = $model->doctorant_id;
+                    if ($model->type === 'normative') {
+                        $fileModel->ref_files_id = 2;
+                        $fileModel->dissertation_advice_id = $model->dissertation_advice_id;
+
+
+                    } elseif ($model->type === 'doctorant') {
+                        $fileModel->doctorant_id = $model->doctorant_id;
+                        $fileModel->ref_files_id = 1;
+                    }
+
                     $fileModel->author = Yii::$app->user->id;
+
                     $fileModel->status = 1;
                     $fileModel->language_file = $model->language_file;
 
@@ -612,9 +632,13 @@ class AdminController extends Controller
                     $fileModel->path_file = $basePath . $fileName;
                     $fileModel->fileName = $fileName;
 
-                    if ($fileModel->save(false)) {
+                    if (!$fileModel->save()) {
+                        var_dump($fileModel->errors);
+                        exit;
+                    } else {
                         $file->saveAs($basePath . $fileName);
                     }
+
                     $i++;
                 }
                 return $this->refresh();

@@ -15,7 +15,7 @@ use Yii;
  */
 class DissertationAdvice extends \yii\db\ActiveRecord
 {
-
+    public $type;
 
     /**
      * {@inheritdoc}
@@ -33,6 +33,7 @@ class DissertationAdvice extends \yii\db\ActiveRecord
         return [
             [['name', 'faculty_id'], 'default', 'value' => null],
             [['name'], 'string'],
+            [['type'], 'safe'],
             [['faculty_id'], 'integer'],
             [['faculty_id'], 'exist', 'skipOnError' => true, 'targetClass' => Faculty::class, 'targetAttribute' => ['faculty_id' => 'id']],
         ];

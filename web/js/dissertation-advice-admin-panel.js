@@ -16,7 +16,7 @@ search_doctorant.addEventListener("input", function () {
         // Предположим, что сервер вернёт массив объектов doctorants
         if (Array.isArray(data)) {
           radioContainer.innerHTML = "";
-            radioContainer.innerHTML = "<br/>"
+          radioContainer.innerHTML = "<br/>";
           data.forEach((doctorant) => {
             console.log(doctorant);
             const label = document.createElement("label");
@@ -27,12 +27,7 @@ search_doctorant.addEventListener("input", function () {
 
             label.appendChild(radio);
             radio.classList.add("radio-ds");
-            label.appendChild(
-              document.createTextNode(
-             
-                  doctorant.full_name_ru
-              )
-            );
+            label.appendChild(document.createTextNode(doctorant.full_name_ru));
             radioContainer.appendChild(label);
             radioContainer.appendChild(document.createElement("br"));
           });
@@ -55,13 +50,35 @@ fileInput.addEventListener("change", () => {
 });
 
 radioContainer.addEventListener("change", (event) => {
-  if (event.target && event.target.matches('input[name="Files[doctorant_id]"]')) {
+  if (
+    event.target &&
+    event.target.matches('input[name="Files[doctorant_id]"]')
+  ) {
     const selectedRadio = document.querySelector(
       'input[name="Files[doctorant_id]"]:checked'
     );
     if (selectedRadio) {
       document.querySelector(".files").classList.add("active");
+      
       document.querySelector(".language_input").classList.add("active");
     }
+  }
+});
+const type = document.querySelector(".type");
+
+type.addEventListener("change", () => {
+  if (type.value === "normative") {
+    document.querySelector(".files").classList.add("active");
+    document.querySelector(".language_input").classList.add("active");
+    document.querySelector(".dissertation_advice").classList.add("active");
+
+    document.querySelector(".doctorant").classList.remove("active");
+  } else {
+    document.querySelector(".files").classList.remove("active");
+    document.querySelector(".language_input").classList.remove("active");
+    document.querySelector(".dissertation_advice").classList.remove("active");
+
+    document.querySelector(".doctorant").classList.add("active");
+
   }
 });
