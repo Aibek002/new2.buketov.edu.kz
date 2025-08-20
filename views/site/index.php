@@ -330,7 +330,7 @@ $this->title = 'Buketov University';
         <!--<div class="col-md-10 d-flex justify-content-center align-items-center block-header">
         <p>Форма обратной связи</p>
     </div>-->
-        <div class="col-md-10 d-flex justify-content-between ">
+        <div class="col-md-10 p-0 d-flex justify-content-between ">
             <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
                 <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
                 <?= Yii::t('app', 'Feedback Form') ?> </button>
@@ -338,8 +338,8 @@ $this->title = 'Buketov University';
                 <?= Yii::t('app', 'Citizens Reception Schedule') ?></button>
 
         </div>
-<div class="col-md-10 py-5">
-    <div class="feedback-form-wrapper p-4 rounded bg-white">
+<div class="col-md-10 px-0 py-5">
+    <div class="feedback-form-wrapper p-0 rounded bg-white">
         <p class="feedback-form-text text-center mb-4">
             Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и
             мы обязательно свяжемся с вами в кратчайшие сроки.
@@ -381,7 +381,7 @@ $this->title = 'Buketov University';
         <div class="mt-4">
             <?= Html::submitButton(
                 Yii::t('app', 'Отправить'),
-                ['class' => 'btn btn-primary btn-lg w-100']
+                ['class' => 'submitButton btn-lg w-100']
             ); ?>
         </div>
 

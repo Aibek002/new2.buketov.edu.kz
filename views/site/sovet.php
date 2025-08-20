@@ -1,5 +1,6 @@
 <?php
 use app\assets\SovetAsset;
+use yii\helpers\Url;
 
 SovetAsset::register($this);
 $this->title = Yii::t("app", "Sovet");
@@ -23,7 +24,7 @@ $lang = Yii::$app->language;
             <?= Yii::t("app", "Совет по этике") ?>
         </button>
     </div>
-    <div class="uchenie-sovet">
+    <div class="uchenie-sovet active">
         <div class="title-content">
             <?= Yii::t("app", "Ученый совет") ?>
             <p class="text-content">
@@ -100,6 +101,11 @@ $lang = Yii::$app->language;
                 <?= Yii::t("app", " План работы Совета на текущий год") ?>
             </button>
         </div>
+        <div class="button-section">
+          <button onclick="redirect('<?= Url::to(['site/applicant-academic-titles']) ?>')">
+            <?= Yii::t('app','Applicants for academic titles')?>
+          </button>
+        </div>
     </div>
 
     <div class="academ-sovet">
@@ -150,7 +156,7 @@ $lang = Yii::$app->language;
 
         </div>
     </div>
-    <div class="sovet-etica active">
+    <div class="sovet-etica">
         <p class="title-content">
             Совет по этике
         </p>

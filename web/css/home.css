@@ -1,3 +1,11 @@
+.submitButton{
+    background: var(--indigoblue-font);
+    color: var(--white);
+    border-radius: 10px;
+    width: 100%;
+    padding-block: 10px;
+    border: none;
+}
 form{
     width: 100% !important;
 }
@@ -79,23 +87,6 @@ form{
 }
 .event-modal button:hover {
     color: #ffdddd;
-}
-.feedback-form-wrapper {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 30px;
-    border:1px solid var(--indigoblue-font);
-    margin: auto;
-    transition: box-shadow 0.3s ease;
-}
-
-.feedback-form-wrapper:hover {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.feedback-form-text {
-    font-size: 1.2rem;
-    color: #333;
 }
 
 .form-control {

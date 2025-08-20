@@ -15,56 +15,53 @@ DessertationJobAsset::register($this);
 
     }
     ?>
-    <div class="title-content">
-        Профессор кафедры - <strong><?= $dissertation_name ?></strong> : Карагандинского университета имени академика
-        Е.А.
-        Букетова
-        <div class="person-section my-5">
-            <div class="person-img">
-                <img width="100%"
-                    src="https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg"
-                    alt="">
-            </div>
-            <div class="person-info">
-                <p class="person-fio">
-                    <?php
-                    if ($secretary !== null && is_array($secretary)) {
+    <?php if ($secretary !== null && is_array($secretary)): ?>
+        <div class="title-content">
+            Учёный секретарь диссовета по - <strong><?= $dissertation_name ?></strong> Карагандинского университета имени академика Е. А. Букетова
+            <div class="person-section my-5">
+                <div class="person-img">
+                    <img width="100%"
+                        src="https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg"
+                        alt="">
+                </div>
+                <div class="person-info">
+                    <p class="person-fio">
+                        <?php
                         $fullName = ($secretary['surname'] ?? '') . ' ' .
                             ($secretary['name'] ?? '') . ' ' .
                             ($secretary['patronymic'] ?? '');
-                    } else {
-                        $fullName = ''; // or some default text
-                    }
-                    ?>
-                    <?= $fullName ? $fullName : 'не задано' ?>
-                </p>
-                <p class="person-position"><i>
-                        <?=
 
-                            $secretary['job_title'] ?? 'не задано';
                         ?>
-                    </i></p>
-                <p class="person-info"><i>
-                        <?= $secretary['information'] ?? 'не задано'; ?>
-                    </i></p>
-                <strong class="person-info">
-                    График работы:
-                    <i> Понедельник – пятница 09:00 - 17:00</i>
-                    </i></strong>
+                        <?= $fullName ? $fullName : 'не задано' ?>
+                    </p>
+                    <p class="person-position"><i>
+                            <?=
+
+                                $secretary['job_title'] ?? 'не задано';
+                            ?>
+                        </i></p>
+                    <p class="person-info"><i>
+                            <?= $secretary['information'] ?? 'не задано'; ?>
+                        </i></p>
+                    <strong class="person-info">
+                        График работы:
+                        <i> Понедельник – пятница 09:00 - 17:00</i>
+                        </i></strong>
 
 
 
-            </div>
-            <div class="person-email">
-                <div class="email"><img src="/bg-images/svg/iconEmail.svg"> <a
-                        href="mailto:<?= $secretary['email'] ?? 'не задано'; ?>"><?= $secretary['email'] ?? 'не задано'; ?></a>
                 </div>
-                <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a
-                        href="tel:<?= $secretary['phone'] ?? 'не задано'; ?>"><?= $secretary['phone'] ?? 'не задано'; ?></a>
+                <div class="person-email">
+                    <div class="email"><img src="/bg-images/svg/iconEmail.svg"> <a
+                            href="mailto:<?= $secretary['email'] ?? 'не задано'; ?>"><?= $secretary['email'] ?? 'не задано'; ?></a>
+                    </div>
+                    <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a
+                            href="tel:<?= $secretary['phone'] ?? 'не задано'; ?>"><?= $secretary['phone'] ?? 'не задано'; ?></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
     <div class="title-content"><?= Yii::t('app', 'Regulatory documents') ?></div>
     <div class="button-section">
         <?php foreach ($normative as $document): ?>
