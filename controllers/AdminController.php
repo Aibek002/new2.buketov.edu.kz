@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
+use app\models\ApplicantForAcademicTitles;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\Doctorant;
 use app\models\Profession;
+use app\models\RefFiles;
 use app\models\User;
 use yii\web\UploadedFile;
 use Symfony\Component\BrowserKit\History;
@@ -649,36 +651,55 @@ class AdminController extends Controller
 
         return $this->render('dissertation-advice', ['model' => $model]);
     }
+    public function actionApplicantForAcademicTitles()
+    {
+        $model = new Files();
+        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstances($model, 'files');
+            $type = RefFiles::find()->select('type')->where(['id' => $model->ref_files_id])->scalar();
+            $professor = ApplicantForAcademicTitles::find()->select('full_name_ru')->where(['id' => $model->professor_id])->scalar();
+            $path = Yii::getAlias('@app/../files/pdf/applicant_for_academic_titles/') . $type . '/' . $professor . '/' . $model->language_file . '/';
+            if (!is_dir($path)) {
+                if (!mkdir($path, 0775, true)) {
+                    Yii::$app->session->setFlash('error', 'Error when create directory ' . $path);
+                }
+            }
+            foreach ($file as $file_item) {
+                $fileModel = new Files();
+                $fileModel->path_file = $path;
+                $fileModel->author = Yii::$app->user->id;
+                $fileModel->language_file = $model->language_file;
+                $fileModel->fileName = $file_item->baseName . '.' . $file_item->extension;
+                $fileModel->ref_files_id = $model->ref_files_id;
+                $fileModel->professor_id = $model->professor_id;
+                if ($file_item->saveAs($path . $file_item->baseName . '.' . $file_item->extension)) {
+                    if (!$fileModel->save()) {
+                        Yii::error($file_item->getErrors(), __METHOD__);
+                        Yii::$app->session->setFlash('error', json_encode($fileModel->getErrors(), JSON_UNESCAPED_UNICODE));
+                    }else{
+                        Yii::$app->session->setFlash('success', 'Successfully created!');
+
+                    }
+                }
+            }
+            return $this->refresh();
+
+        }
 
 
-    // public function actionCopy()
-    // {
-    //     $from = CorpSoleShareholder::find()->all();
-    //     foreach ($from as $item) {
-    //         echo $item->name_pdf . "<br>";
-    //     }
-    //     foreach ($from as $from_item) {
-    //         $to = new CorporateGovernanceFile(); // нужно создавать новый объект в каждой итерации
-
-    //         $to->fileName = $from_item->name_pdf . ".pdf";
-    //         $to->name_url = $from_item->name_pdf;
-
-    //         $to->language_file = $from_item->lang;
-    //         $to->author = 1;
-    //         $to->ref_corporate_governance = 1;
-    //         $to->sort_id =  (string)$from_item->year; // было $from->year — неправильно
-    //         $to->path_file = "/files/pdf/corporate_governance/sole-shareholder/" . $from_item->year . "/" . $from_item->lang . "/";
-    //         if (!$to->save()) {
-    //             echo "<pre>";
-    //             print_r($to->errors);
-    //             echo "</pre>";
-    //             exit;
-    //         }
-    //     }
-    //     Yii::$app->session->setFlash('success', 'Данные успешно скопированы.');
-    //     return $this->redirect(['index']); // укажите нужное действие для редиректа
-    // }
-
+        return $this->render('applicant-for-academic-titles', ['model' => $model]);
+    }
+    public function actionAddProfessor(){
+        $model = new ApplicantForAcademicTitles();
+        if(Yii::$app->request->isPost && $model->load(Yii::$app->request->post())){
+            $model->author = Yii::$app->user->id;
+            if($model->save()){
+                Yii::$app->session->setFlash('success','Successfully created!');
+                return $this->refresh();
+            }
+        }
+        return $this->render('add-professor', ['model'=>$model]);
+    }
     public function actionCorporateSoleShareholder()
     {
         $model = new CorpSoleShareholder();

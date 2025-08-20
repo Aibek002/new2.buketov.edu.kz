@@ -292,7 +292,6 @@ class SiteController extends Controller
             ->select('faculty_id')
             ->where(['id' => $dissertation_id])
             ->scalar();
-            print_r($id);
 
         $name = DissertationAdvice::find()
             ->select('name')
@@ -311,7 +310,7 @@ class SiteController extends Controller
             ->innerJoin('dissertation_advice', 'dissertation_advice.faculty_id = faculty.id')
             ->innerJoin('doctorant', 'doctorant.dissertation_id = dissertation_advice.id')
             ->innerJoin('files', 'files.doctorant_id = doctorant.id')
-            ->where(['faculty.id' => $id, 'dissertation_id'=>$dissertation_id, 'language_file' => Yii::$app->language, 'ref_files_id' => 1])
+            ->where(['faculty.id' => $id, 'dissertation_id' => $dissertation_id, 'language_file' => Yii::$app->language, 'ref_files_id' => 1])
             ->asArray()
             ->all();
         // $secretary = Staff::find()->where(['dissertation_advice_id' => $dissertation_id])->one();
@@ -343,14 +342,10 @@ class SiteController extends Controller
 
         return $this->render('dissertation-advice', ['dissertation' => $files, 'dissertation_name' => $name, 'secretary' => $secretary, 'normative' => $normative]);
     }
-    // public function actionSet()
-    // {
-    //     $files = Files::find()->all();
-
-    //     foreach ($files as $file) {
-    //         $file->ref_files_id = 1;
-    //         $file->save(false); // false чтобы пропустить валидацию, если она не нужна
-    //     }
-
-    // }
+    public function actionApplicantAcademicTitles()
+    {
+        $professor = Files::find()->select(['applicant_for_academic_titles.full_name_' . Yii::$app->language  . ' as full_name', 'files.path_file','files.fileName'])->innerJoin('applicant_for_academic_titles','files.professor_id = applicant_for_academic_titles.id' )->where(['files.ref_files_id'=>3 , 'language_file'=>Yii::$app->language])->asArray()->all();
+        
+        return $this->render('applicant-academic-titles',['professors'=>$professor]);
+    }
 }

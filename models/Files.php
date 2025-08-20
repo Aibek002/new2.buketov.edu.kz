@@ -25,7 +25,6 @@ class Files extends \yii\db\ActiveRecord
 
     public $files;
     public $type;
-
     /**
      * {@inheritdoc}
      *  
@@ -43,8 +42,8 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['doctorant_id','type','dissertation_advice_id'], 'safe'],
-            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20,'on'=>'create'],
+            [['doctorant_id', 'type', 'dissertation_advice_id', 'professor_id','ref_files_id'], 'safe'],
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20, 'on' => 'create'],
             [['path_file', 'doctorant_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
             [['path_file', 'fileName', 'language_file'], 'string'],
@@ -64,6 +63,7 @@ class Files extends \yii\db\ActiveRecord
             'id' => 'ID',
             'path_file' => 'Path File',
             'doctorant_id' => 'Staff ID',
+            'professor_id' => 'Professor ID',
             'status' => 'Status',
             'fileName' => 'File Name',
             'language_file' => 'Language File',
@@ -82,15 +82,18 @@ class Files extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::class, ['id' => 'author']);
     }
-
+    public function getProfessor()
+    {
+        return $this->hasOne(ApplicantForAcademicTitles::class, ['id' => 'professor_id']);
+    }
     /**
      * Gets query for [[Staff]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getStaff()
+    public function getDoctorant()
     {
-        return $this->hasOne(Staff::class, ['id' => 'doctorant_id']);
+        return $this->hasOne(Doctorant::class, ['id' => 'doctorant_id']);
     }
 
 }

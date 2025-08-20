@@ -18,6 +18,8 @@ $this->title = 'Admin Page';
         <?= Html::a('Факультеты', ['admin/faculty-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Загрузить фоты на инфармациионные страницы', ['admin/upload-image'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Докторанты', ['admin/doctorant-admin-panel'], ['class' => 'fas st-university']) ?>
+        <?= Html::a('Профессора', ['admin/add-professor'], ['class' => 'fas st-university']) ?>
+        <?= Html::a('Соискатели Ученых звании', ['admin/applicant-for-academic-titles'], ['class' => 'fas st-university']) ?>
 
         <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
