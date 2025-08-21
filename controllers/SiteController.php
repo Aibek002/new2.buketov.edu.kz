@@ -344,8 +344,15 @@ class SiteController extends Controller
     }
     public function actionApplicantAcademicTitles()
     {
-        $professor = Files::find()->select(['applicant_for_academic_titles.full_name_' . Yii::$app->language  . ' as full_name', 'files.path_file','files.fileName'])->innerJoin('applicant_for_academic_titles','files.professor_id = applicant_for_academic_titles.id' )->where(['files.ref_files_id'=>3 , 'language_file'=>Yii::$app->language])->asArray()->all();
-        
-        return $this->render('applicant-academic-titles',['professors'=>$professor]);
+        $professor = Files::find()->select(['ref_files_id','applicant_for_academic_titles.full_name_' . Yii::$app->language . ' as full_name', 'files.path_file', 'files.fileName'])->innerJoin('applicant_for_academic_titles', 'files.professor_id = applicant_for_academic_titles.id')->where(['files.ref_files_id' => 3, 'language_file' => Yii::$app->language])->orderBy(new \yii\db\Expression("
+        CASE
+            WHEN RIGHT(fileName, 3) = 'pdf' THEN 1
+            WHEN RIGHT(fileName, 3) IN ('doc','ocx') THEN 2
+            ELSE 3
+        END 
+        "))->asArray()->all();
+
+
+        return $this->render('applicant-academic-titles', ['professors' => $professor]);
     }
 }
