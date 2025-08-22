@@ -1,0 +1,6 @@
+.button-section[class*='professor-']{
+    display: none;
+}
+.button-section[class*='professor-'].active{
+    display: grid;
+}

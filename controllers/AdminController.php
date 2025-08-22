@@ -9,6 +9,7 @@ use app\models\Departament;
 use app\models\Doctorant;
 use app\models\Profession;
 use app\models\RefFiles;
+use app\models\TypeRefStaff;
 use app\models\User;
 use yii\web\UploadedFile;
 use Symfony\Component\BrowserKit\History;
@@ -89,7 +90,33 @@ class AdminController extends Controller
     public function actionStaffAdminPanel()
     {
         $staff = new Staff();
-        if ($staff->load(Yii::$app->request->post()) && $staff->save()) {
+        if ($staff->load(Yii::$app->request->post())) {
+            $check = Staff::findOne(['surname_ru' => $staff->surname_ru]);
+            $type_ref_staff = new TypeRefStaff();
+            if ($check === null) {
+                $staff->save();
+
+                if ((int) $staff->ref_staff_id === 14 || (int) $staff->ref_staff_id === 15) {
+                    $type_ref_staff->staff_id = $staff->id;
+                    $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
+                    $type_ref_staff->date = $staff->date;
+                    $type_ref_staff->save();
+                }
+            } else {
+                $check_ref_staff_type = TypeRefStaff::findOne([
+                    'ref_staff_id' => $staff->ref_staff_id,
+                    'staff_id' => $check->id,
+                ]);
+                if ($check_ref_staff_type === null) {
+
+                    $type_ref_staff->staff_id = $check->id;
+                    $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
+                    $type_ref_staff->date = $staff->date;
+                    $type_ref_staff->save();
+                } else {
+                    Yii::$app->session->setFlash('error', 'Такой пользователь уже существует!');
+                }
+            }
             return $this->redirect(['admin/index']);
         }
         return $this->render('staff-admin-panel', ['model' => $staff]);
@@ -657,7 +684,7 @@ class AdminController extends Controller
         if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
             $file = UploadedFile::getInstances($model, 'files');
             $type = RefFiles::find()->select('type')->where(['id' => $model->ref_files_id])->scalar();
-            $professor = ApplicantForAcademicTitles::find()->select('full_name_ru')->where(['id' => $model->professor_id])->scalar();
+            $professor = Staff::find()->select('surname_ru')->where(['id' => $model->professor_id])->scalar();
             $path = Yii::getAlias('@app/../files/pdf/applicant_for_academic_titles/') . $type . '/' . $professor . '/' . $model->language_file . '/';
             if (!is_dir($path)) {
                 if (!mkdir($path, 0775, true)) {
@@ -676,7 +703,7 @@ class AdminController extends Controller
                     if (!$fileModel->save()) {
                         Yii::error($file_item->getErrors(), __METHOD__);
                         Yii::$app->session->setFlash('error', json_encode($fileModel->getErrors(), JSON_UNESCAPED_UNICODE));
-                    }else{
+                    } else {
                         Yii::$app->session->setFlash('success', 'Successfully created!');
 
                     }
@@ -689,17 +716,18 @@ class AdminController extends Controller
 
         return $this->render('applicant-for-academic-titles', ['model' => $model]);
     }
-    public function actionAddProfessor(){
-        $model = new ApplicantForAcademicTitles();
-        if(Yii::$app->request->isPost && $model->load(Yii::$app->request->post())){
-            $model->author = Yii::$app->user->id;
-            if($model->save()){
-                Yii::$app->session->setFlash('success','Successfully created!');
-                return $this->refresh();
-            }
-        }
-        return $this->render('add-professor', ['model'=>$model]);
-    }
+    // public function actionAddProfessor()
+    // {
+    //     $model = new ApplicantForAcademicTitles();
+    //     if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+    //         $model->author = Yii::$app->user->id;
+    //         if ($model->save()) {
+    //             Yii::$app->session->setFlash('success', 'Successfully created!');
+    //             return $this->refresh();
+    //         }
+    //     }
+    //     return $this->render('add-professor', ['model' => $model]);
+    // }
     public function actionCorporateSoleShareholder()
     {
         $model = new CorpSoleShareholder();

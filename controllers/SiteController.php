@@ -344,7 +344,23 @@ class SiteController extends Controller
     }
     public function actionApplicantAcademicTitles()
     {
-        $professor = Files::find()->select(['ref_files_id','applicant_for_academic_titles.full_name_' . Yii::$app->language . ' as full_name', 'files.path_file', 'files.fileName'])->innerJoin('applicant_for_academic_titles', 'files.professor_id = applicant_for_academic_titles.id')->where(['files.ref_files_id' => 3, 'language_file' => Yii::$app->language])->orderBy(new \yii\db\Expression("
+        $professor = Files::find()->select(
+            [
+                'ref_files_id',
+                'staff.surname_' . Yii::$app->language . ' as surname',
+                'staff.name_' . Yii::$app->language . ' as name',
+                'staff.patronymic_' . Yii::$app->language . ' as patronymic',
+                'type_ref_staff.date',
+                'files.path_file',
+                'files.fileName'
+            ]
+        )
+            ->innerJoin('staff', 'files.professor_id = staff.id')
+            ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id = staff.id')
+            ->where(['files.ref_files_id' => [3, 4]])
+            ->andWhere(['language_file' => Yii::$app->language])
+
+            ->orderBy(new \yii\db\Expression("
         CASE
             WHEN RIGHT(fileName, 3) = 'pdf' THEN 1
             WHEN RIGHT(fileName, 3) IN ('doc','ocx') THEN 2

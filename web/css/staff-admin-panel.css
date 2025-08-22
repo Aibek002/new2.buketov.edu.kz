@@ -1,0 +1,26 @@
+.row.fio,
+.contact,
+.information,
+.welcome,
+.job-title,
+.faculty,
+.departament,
+.dissertation,
+.date,
+.show,
+.submit{
+    display: none ;
+}
+.fio.active,
+.contact.active,
+.information.active,
+.welcome.active,
+.job-title.active,
+.faculty.active,
+.departament.active,
+.dissertation.active,
+.date.active,
+.show.active,
+.submit.active{
+    display: flex;
+}

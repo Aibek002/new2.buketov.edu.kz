@@ -143,17 +143,21 @@ class AjaxController extends Controller
     public function actionGetDoctorant($search)
     {
         $staff = Doctorant::find()
-        ->select(['id','full_name_ru'])
+            ->select(['id', 'full_name_ru'])
             ->where(['like', 'full_name_ru', $search])
             ->all();
-            return $this->asJson($staff);
+        return $this->asJson($staff);
     }
-        public function actionGetProfessor($search)
+    public function actionGetProfessor($search)
     {
-        $staff = ApplicantForAcademicTitles::find()
-        ->select(['id','full_name_ru'])
-            ->where(['like', 'full_name_ru', $search])
+        $staff = Staff::find()
+            ->select(['staff.id', 'staff.surname_ru','staff.name_ru','staff.patronymic_ru'])
+            ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id=staff.id')
+            ->where(['like', 'surname_ru', $search])
+            ->andWhere(['in', 'type_ref_staff.ref_staff_id', [14, 15]])
+            ->asArray()
             ->all();
-            return $this->asJson($staff);
+
+        return $this->asJson($staff);
     }
 }
