@@ -7,7 +7,7 @@ const date = document.querySelector(".date");
 const submit = document.querySelector(".submit");
 
 ref_staff_id.addEventListener("change", () => {
-  if (ref_staff_id.value === "14" || ref_staff_id === "15") {
+  if (ref_staff_id.value === "14" || ref_staff_id.value === "15") {
     fio.classList.add("active");
     date.classList.add("active");
 

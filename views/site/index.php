@@ -305,7 +305,7 @@ $this->title = 'Buketov University';
         </div>
 
         <div class="col-md-10 d-flex justify-content-between align-items-center block-rector">
-            <div class="col-md-5  d-flex flex-column justify-content-start align-items-start box-img-rector">
+            <div class="col-md-3  d-flex flex-column justify-content-start align-items-start box-img-rector">
                 <div class="skewX"></div>
                 <img src="/bg-images/rector.png">
             </div>

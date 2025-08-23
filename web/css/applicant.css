@@ -1,6 +1,6 @@
-.button-section[class*='professor-']{
+[class*='professor-']{
     display: none;
 }
-.button-section[class*='professor-'].active{
+[class*='professor-'].active{
     display: grid;
 }

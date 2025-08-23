@@ -35,12 +35,9 @@ ApplicantAsset::register($this);
     $assoc_prof = [];
     foreach ($professors as $professor) {
         if ($professor['ref_files_id'] === 3) {
-            echo $professor['ref_files_id'];
-
             $full_name = $professor['surname'] . " " . $professor['name'] . " " . $professor['patronymic'];
             $professor_sort[$full_name][] = $professor;
         } elseif ($professor['ref_files_id'] === 4) {
-            echo $professor['ref_files_id'];
             $full_name = $professor['surname'] . " " . $professor['name'] . " " . $professor['patronymic'];
 
             $assoc_prof[$full_name][] = $professor;
@@ -52,15 +49,18 @@ ApplicantAsset::register($this);
     </h1>
     <div class="button-section">
         <?php foreach ($professor_sort as $full_name => $item): ?>
-            <button onclick="openDocsProf('<?= str_replace([' '], '-', trim($full_name)) ?>')"><?= $full_name  ?></button>
+            <button onclick="openDocsProf('<?= str_replace([' '], '-', trim($full_name)) ?>')"><?= $full_name ?></button>
         <?php endforeach; ?>
     </div>
     <?php foreach ($professor_sort as $full_name => $item): ?>
-        <div class="button-section  professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
-            <?php foreach ($item as $item) {
-                echo "<button onclick=''>" . $item['fileName'] ." " . $item['date']. "</button>";
+        <div class=" title-content professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
+            <?= $item[0]['date'] ?>
+            <div class="button-section">
+                <?php foreach ($item as $item) {
+                    echo "<button onclick=''>" . $item['fileName'] . " " . $item['date'] . "</button>";
 
-            } ?>
+                } ?>
+            </div>
         </div>
 
     <?php endforeach; ?>
@@ -73,11 +73,14 @@ ApplicantAsset::register($this);
         <?php endforeach; ?>
     </div>
     <?php foreach ($assoc_prof as $full_name => $item): ?>
-        <div class="button-section  professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
-            <?php foreach ($item as $item) {
-                echo "<button onclick=''>" . $item['fileName'] . "</button>";
+        <div class=" title-content professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
+            <?= $item[0]['date'] ?>
+            <div class="button-section">
+                <?php foreach ($item as $item) {
+                    echo "<button onclick=''>" . $item['fileName'] . "</button>";
 
-            } ?>
+                } ?>
+            </div>
         </div>
 
     <?php endforeach; ?>

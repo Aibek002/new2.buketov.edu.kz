@@ -716,6 +716,48 @@ class AdminController extends Controller
 
         return $this->render('applicant-for-academic-titles', ['model' => $model]);
     }
+    public function actionAcademicCouncilsForm()
+    {
+        $model = new Files();
+        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+            $path = "";
+            if ($model->type === "Sample design of the list of works" || $model->type === "Composition of the Council for the current year" || $model->type === "The Council's work plan for the current year") {
+                $path = Yii::getAlias("@app/../files/pdf/academic-council/$model->type/$model->language_file/");
+
+            } elseif ($model->type === "Draft decisions of the Academic Council" || $model->type === "Report of the Chairman of the Management Board") {
+                $path = Yii::getAlias("@app/../files/pdf/academic-council/$model->type/$model->years/$model->language_file/");
+
+            }
+            if (!is_dir($path)) {
+                if (!mkdir($path, 0775, true)) {
+                    Yii::$app->session->setFlash("error", "error when create directory: " . $path);
+                }
+            }
+            $files = UploadedFile::getInstances($model, 'files');
+            foreach ($files as $file) {
+                $fileModel = new Files();
+                $fileModel->path_file = $path;
+                $fileModel->fileName = uniqid() . "_" . $file->baseName . "." . $file->extension;
+                $fileModel->author = Yii::$app->user->id;
+                $fileModel->sort_id = $model->years ? $model->type . "/" . $model->years : $model->type;
+                $fileModel->ref_files_id = 5;
+                $fileModel->language_file = $model->language_file;
+                if ($fileModel->save()) {
+                    if ($file->saveAs($path . $fileModel->fileName)) {
+                        Yii::$app->session->setFlash("success", "Successfully created!");
+
+                    } else {
+                        Yii::$app->session->setFlash("error", "Errors created!");
+
+                    }
+                }
+
+            }
+            return $this->refresh();
+
+        }
+        return $this->render('academic-councils-form', ["model" => $model]);
+    }
     // public function actionAddProfessor()
     // {
     //     $model = new ApplicantForAcademicTitles();

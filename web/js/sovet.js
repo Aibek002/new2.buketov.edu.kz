@@ -34,6 +34,27 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".uchenie-sovet").style.display = "block";
 });
 
+
+
 function redirect(link) {
   window.location = href = link;
+}
+
+function openBoxDraft(year) {
+  const draftDocs = document.querySelectorAll(
+    '[class*="draft-"]'
+  );
+  draftDocs.forEach((el) => {
+    el.classList.remove("active");
+  });
+  document.querySelector(`.draft-${year}`).classList.add("active");
+}
+function openBoxReport(year) {
+  const draftDocs = document.querySelectorAll(
+    '[class*="report-"]'
+  );
+  draftDocs.forEach((el) => {
+    el.classList.remove("active");
+  });
+  document.querySelector(`.report-${year}`).classList.add("active");
 }

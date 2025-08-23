@@ -90,12 +90,19 @@ class SiteController extends Controller
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             Yii::$app->mailer->compose()
-                ->setFrom($form) // От кого
-                ->setTo('aibekseitzhan002@gmail.com') // Кому
+                ->setFrom('200103346@stu.sdu.edu.kz')   // твой реальный адрес на домене
+                ->setReplyTo($form->email)             // email пользователя (чтобы можно было ответить)
+                ->setTo('aibekseitzhan002@gmail.com')
                 ->setSubject('Сообщение с сайта')
-                ->setTextBody('Текстовое сообщение') // Можно просто текст
-                ->setHtmlBody('<b>Это HTML версия письма</b>') // HTML-версия
+                ->setHtmlBody("
+        <b>ФИО:</b> {$form->fio}<br>
+        <b>Email:</b> {$form->email}<br>
+        <b>Телефон:</b> {$form->phone}<br>
+        <b>Сообщение:</b><br>
+        {$form->message}
+    ")
                 ->send();
+
 
             Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
             return $this->refresh();
@@ -238,7 +245,9 @@ class SiteController extends Controller
 
     public function actionSovet()
     {
-        return $this->render('sovet');
+        $documents = Files::find()->where(['ref_files_id' => 5, 'language_file' => Yii::$app->language])->all();
+
+        return $this->render('sovet', ['documents' => $documents]);
     }
     public function actionAdmission($type)
     {
