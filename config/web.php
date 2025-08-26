@@ -34,23 +34,51 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => \Yiisoft\Mailer\Symfony\Mailer::class,
-            'mailer' => function () {
-                // ✅ Для Gmail через TLS
-                $dsn = 'smtp://aibekseitzhan009@gmail.com:xfyikbgkwbttnodi@smtp.gmail.com:587';
+        // 'mailer' => [
+        //     'class' => 'yii\symfonymailer\Mailer',
+        //     'viewPath' => '@app/mail', // Папка для шаблонов писем
+        //     'useFileTransport' => false, // false — отправляет реально, true — сохраняет письма в runtime/mail
+        //     'transport' => [
+        //         // 'host' => '192.168.252.225',
+        //         // 'username' => '200103346@stu.sdu.edu.kz',
+        //         // 'password' => 'Seitzhan02',
+        //         // 'port' => '25',
+        //         'dsn' => 'smtp://priemka@buketov.ksu.kz:Mrvl07%284%24@192.168.252.225:25',
 
-                // ✅ Для Яндекс
-                // $dsn = 'smtp://your_email@yandex.ru:your_password@smtp.yandex.ru:465?encryption=ssl';
-            
-                // ✅ Для Mail.ru
-                // $dsn = 'smtp://your_email@mail.ru:your_password@smtp.mail.ru:465?encryption=ssl';
-            
-                return new \Symfony\Component\Mailer\Mailer(
-                    \Symfony\Component\Mailer\Transport\Transport::fromDsn($dsn)
-                );
-            },
+        //         // 'encryption' => 'tls',
+        //     ],
+        // ],
+        'mailer' => [
+            'class' => \yii\symfonymailer\Mailer::class,
+            'useFileTransport' => false,
+            'transport' => [
+                'dsn' => 'smtp://aibekseitzhan009@gmail.com:xfyikbgkwbttnodi@smtp.gmail.com:587?encryption=tls',
+            ],
+            'enableMailerLogging' => true,
         ],
+        //             'class' => \Yiisoft\Mailer\Symfony\Mailer::class,
+//             'mailer' => function () {
+//                 // ✅ Для Gmail через TLS
+
+        //                 // ✅ Для Яндекс
+//                 // $dsn = 'smtp://your_email@yandex.ru:your_password@smtp.yandex.ru:465?encryption=ssl';
+
+        //                 // ✅ Для Mail.ru
+//                 // $dsn = 'smtp://your_email@mail.ru:your_password@smtp.mail.ru:465?encryption=ssl';
+
+        //                 return new \Symfony\Component\Mailer\Mailer(
+//                     \Symfony\Component\Mailer\Transport\Transport::fromDsn($dsn)
+//                 );
+//             },
+
+        // '__class' => Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport::class,
+        // 'host' => 'smtp.gmail.com',
+        // 'username' => 'aibekseitzhan002@mail.ru',
+        // 'password' => 'Seitzhan76740207',
+        // 'port' => 587,
+        // 'encryption' => 'tls',
+
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

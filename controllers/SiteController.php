@@ -1,8 +1,7 @@
 <?php
 
 namespace app\controllers;
-
-use app\models\AdmissionPdf;
+use app\models\AdmissionPdf; 
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
@@ -84,6 +83,31 @@ class SiteController extends Controller
      */
 
 
+public function actionSend()
+{
+    try {
+        $message = Yii::$app->mailer->compose()
+            ->setFrom('priemka@buketov.ksu.kz')
+            ->setTo('aibekseitzhan002@mail.ru')
+            ->setSubject('Сообщение с сайта')
+            ->setHtmlBody("test");
+
+        $send = Yii::$app->mailer->send($message);
+
+        if ($send) {
+            return "success";
+        } else {
+            // Если send() вернул false, выводим информацию
+            return "Mailer returned false (письмо не отправлено)";
+        }
+    } catch (\Throwable $e) {
+        // Ловим исключение и показываем сообщение SMTP
+        return "Mailer exception: " . $e->getMessage();
+    }
+}
+
+
+
     public function actionIndex()
     {
         $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
@@ -92,11 +116,13 @@ class SiteController extends Controller
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             Yii::$app->mailer->compose()
+
                 ->setFrom('aibekseitzhan009@gmail.com')
                 ->setTo('aibekseitzhan002@gmail.com')
                 ->setSubject('Тестовое письмо')
                 ->setTextBody('Привет! Это тест из Yii2 через Symfony Mailer 🚀')
                 ->setHtmlBody('<h1>Привет!</h1><p>Это тестовое письмо.</p>')
+
                 ->send();
 
 

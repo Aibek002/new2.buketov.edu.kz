@@ -1,7 +1,11 @@
 FROM php:8.3-fpm
 
 RUN apt-get update 
+# Копируем сертификат внутрь контейнера
+COPY cacert.pem /usr/local/share/ca-certificates/cacert.crt
 
+# Обновляем хранилище сертификатов
+RUN update-ca-certificates
 RUN docker-php-ext-install mysqli pdo pdo_mysql \
     && docker-php-ext-enable pdo_mysql 
 
@@ -15,7 +19,11 @@ RUN mv composer.phar /usr/local/bin/composer \
     && composer require guzzlehttp/guzzle
 RUN composer require yidas/yii2-bower-asset
 RUN composer require yiisoft/mailer-symfony
-# RUN composer require yiisoft/yii2-swiftmailer
+# # RUN composer require yiisoft/yii2-swiftmailer
+# RUN composer clear-cache
+# RUN composer install --prefer-dist --no-interaction --no-progress
+
+# RUN composer require yiisoft/yii2-symfonymailer:^2.0
 
 
 RUN apt update && \
@@ -26,7 +34,7 @@ RUN apt update && \
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
-    
+
 WORKDIR /var/www/html
 
 
