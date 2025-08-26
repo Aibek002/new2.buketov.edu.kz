@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers;
-
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use app\models\AdmissionPdf;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
@@ -82,6 +82,32 @@ class SiteController extends Controller
      *
      * @return string
      */
+
+public function actionSend()
+{
+    try {
+        $message = Yii::$app->mailer->compose()
+            ->setFrom('priemka@buketov.ksu.kz')
+            ->setTo('aibekseitzhan002@mail.ru')
+            ->setSubject('Сообщение с сайта')
+            ->setHtmlBody("test");
+
+        $send = Yii::$app->mailer->send($message);
+
+        if ($send) {
+            return "success";
+        } else {
+            // Если send() вернул false, выводим информацию
+            return "Mailer returned false (письмо не отправлено)";
+        }
+    } catch (\Throwable $e) {
+        // Ловим исключение и показываем сообщение SMTP
+        return "Mailer exception: " . $e->getMessage();
+    }
+}
+
+
+
     public function actionIndex()
     {
         $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
@@ -91,8 +117,7 @@ class SiteController extends Controller
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             Yii::$app->mailer->compose()
                 ->setFrom('200103346@stu.sdu.edu.kz')   // твой реальный адрес на домене
-                ->setReplyTo($form->email)             // email пользователя (чтобы можно было ответить)
-                ->setTo('aibekseitzhan002@gmail.com')
+                ->setTo('aibekseitzhan002@mail.ru')
                 ->setSubject('Сообщение с сайта')
                 ->setHtmlBody("
         <b>ФИО:</b> {$form->fio}<br>

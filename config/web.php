@@ -34,19 +34,41 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        // 'mailer' => [
+        //     'class' => 'yii\symfonymailer\Mailer',
+        //     'viewPath' => '@app/mail', // Папка для шаблонов писем
+        //     'useFileTransport' => false, // false — отправляет реально, true — сохраняет письма в runtime/mail
+        //     'transport' => [
+        //         // 'host' => '192.168.252.225',
+        //         // 'username' => '200103346@stu.sdu.edu.kz',
+        //         // 'password' => 'Seitzhan02',
+        //         // 'port' => '25',
+        //         'dsn' => 'smtp://priemka@buketov.ksu.kz:Mrvl07%284%24@192.168.252.225:25',
+
+        //         // 'encryption' => 'tls',
+        //     ],
+        // ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@app/mail', // Папка для шаблонов писем
-            'useFileTransport' => false, // false — отправляет реально, true — сохраняет письма в runtime/mail
+            'class' => \yii\symfonymailer\Mailer::class,
+            'useFileTransport' => false,
             'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => '200103346@stu.sdu.edu.kz',
-                'password' => 'Seitzhan02',
-                'port' => '587',
+                'scheme' => 'smtp',
+                'host' => '192.168.252.225',
+                'username' => 'priemka@buketov.ksu.kz',
+                'password' => 'Mrvl07(4$',
+                'port' => 25,
                 'encryption' => 'tls',
+                'streamOptions' => [
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true,
+                    ],
+                ],
             ],
+            'enableMailerLogging' => true,  // <<< включаем логирование
         ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
