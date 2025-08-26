@@ -26,7 +26,7 @@ use app\models\News;
 
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
-use yii\helpers\Html;
+use yii\helpers\Html; 
 use \app\components\LanguageHelper;
 
 class SiteController extends Controller
