@@ -35,17 +35,21 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@app/mail', // Папка для шаблонов писем
-            'useFileTransport' => false, // false — отправляет реально, true — сохраняет письма в runtime/mail
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => '200103346@stu.sdu.edu.kz',
-                'password' => 'Seitzhan02',
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
+            'class' => \Yiisoft\Mailer\Symfony\Mailer::class,
+            'mailer' => function () {
+                // ✅ Для Gmail через TLS
+                $dsn = 'smtp://aibekseitzhan009@gmail.com:xfyikbgkwbttnodi@smtp.gmail.com:587';
+
+                // ✅ Для Яндекс
+                // $dsn = 'smtp://your_email@yandex.ru:your_password@smtp.yandex.ru:465?encryption=ssl';
+            
+                // ✅ Для Mail.ru
+                // $dsn = 'smtp://your_email@mail.ru:your_password@smtp.mail.ru:465?encryption=ssl';
+            
+                return new \Symfony\Component\Mailer\Mailer(
+                    \Symfony\Component\Mailer\Transport\Transport::fromDsn($dsn)
+                );
+            },
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

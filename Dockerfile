@@ -13,6 +13,10 @@ RUN curl -sS https://getcomposer.org/installer | php
 
 RUN mv composer.phar /usr/local/bin/composer \
     && composer require guzzlehttp/guzzle
+RUN composer require yidas/yii2-bower-asset
+RUN composer require yiisoft/mailer-symfony
+# RUN composer require yiisoft/yii2-swiftmailer
+
 
 RUN apt update && \
     apt install -y curl unzip gnupg2 ca-certificates lsb-release && \
