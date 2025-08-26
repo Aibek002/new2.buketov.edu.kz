@@ -17,10 +17,13 @@ RUN curl -sS https://getcomposer.org/installer | php
 
 RUN mv composer.phar /usr/local/bin/composer \
     && composer require guzzlehttp/guzzle
-RUN composer clear-cache
-RUN composer install --prefer-dist --no-interaction --no-progress
+RUN composer require yidas/yii2-bower-asset
+RUN composer require yiisoft/mailer-symfony
+# # RUN composer require yiisoft/yii2-swiftmailer
+# RUN composer clear-cache
+# RUN composer install --prefer-dist --no-interaction --no-progress
 
-RUN composer require yiisoft/yii2-symfonymailer:^2.0
+# RUN composer require yiisoft/yii2-symfonymailer:^2.0
 
 
 RUN apt update && \

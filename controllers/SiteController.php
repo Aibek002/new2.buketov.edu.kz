@@ -82,6 +82,7 @@ class SiteController extends Controller
      * @return string
      */
 
+
 public function actionSend()
 {
     try {
@@ -115,56 +116,56 @@ public function actionSend()
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             Yii::$app->mailer->compose()
-                ->setFrom('200103346@stu.sdu.edu.kz')   // твой реальный адрес на домене
-                ->setTo('aibekseitzhan002@mail.ru')
-                ->setSubject('Сообщение с сайта')
-                ->setHtmlBody("
-        <b>ФИО:</b> {$form->fio}<br>
-        <b>Email:</b> {$form->email}<br>
-        <b>Телефон:</b> {$form->phone}<br>
-        <b>Сообщение:</b><br>
-        {$form->message}
-    ")
+
+                ->setFrom('aibekseitzhan009@gmail.com')
+                ->setTo('aibekseitzhan002@gmail.com')
+                ->setSubject('Тестовое письмо')
+                ->setTextBody('Привет! Это тест из Yii2 через Symfony Mailer 🚀')
+                ->setHtmlBody('<h1>Привет!</h1><p>Это тестовое письмо.</p>')
+
                 ->send();
+
 
 
             Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
             return $this->refresh();
         }
-        $news_for_home = News::find()
-            ->select([
-                LanguageHelper::title() . ' AS title',
-                LanguageHelper::content() . ' AS content',
-                'date',
-                'image'
-            ])
-            ->innerJoin('image', 'image.column_id = news.id AND image.ref_image_id = 1')
-            ->orderBy(['news.id' => SORT_DESC])
-            ->limit(3)
-            ->asArray()
-            ->all();
+        // $news_for_home = News::find()
+        //     ->select([
+        //         LanguageHelper::title() . ' AS title',
+        //         LanguageHelper::content() . ' AS content',
+        //         'date',
+        //         'image'
+        //     ])
+        //     ->innerJoin('image', 'image.column_id = news.id AND image.ref_image_id = 1')
+        //     ->orderBy(['news.id' => SORT_DESC])
+        //     ->limit(3)
+        //     ->asArray()
+        //     ->all();
 
 
 
-        $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
+        // $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
 
-        $events = Events::find()
-            ->select([
-                'title_en AS title',
-                'content_en AS content',
-                new \yii\db\Expression('DAY(time_events) as day'),
-                new \yii\db\Expression('MONTH(time_events) as month'),
-                new \yii\db\Expression('YEAR(time_events) as year'),
+        // $events = Events::find()
+        //     ->select([
+        //         'title_en AS title',
+        //         'content_en AS content',
+        //         new \yii\db\Expression('DAY(time_events) as day'),
+        //         new \yii\db\Expression('MONTH(time_events) as month'),
+        //         new \yii\db\Expression('YEAR(time_events) as year'),
 
-            ])
-            ->where(['>', 'time_events', $current_date])
-            ->orderBy([
-                'time_events' => SORT_ASC,
-            ])
-            ->asArray()
-            ->limit(3)
-            ->all();
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
+        //     ])
+        //     ->where(['>', 'time_events', $current_date])
+        //     ->orderBy([
+        //         'time_events' => SORT_ASC,
+        //     ])
+        //     ->asArray()
+        //     ->limit(3)
+        //     ->all();
+        // return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
+        return $this->render('index', ['model' => $form]);
+
     }
     public function actionFaculty($name)
     {

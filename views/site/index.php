@@ -238,26 +238,7 @@ $this->title = 'Buketov University';
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
-            <?php foreach ($news as $news_item): ?>
-
-                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?>"
-                    data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>"
-                    data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>"
-                    data-img="<?= htmlspecialchars($news_item['image']) ?>" class="col news-item">
-                    <div class="card shadow-sm"
-                        style="--news-image: url('/files/images/news/<?= $news_item['image'] ?>');  background-position: center;background-repeat: no-repeat;background-size: cover;">
-                        <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
-
-                        <div class="card-body news-text">
-                            <p class="card-text"><?= $news_item['title'] ?></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small
-                                    class="white-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+           
         </div>
     </div>
     <div class="blur"></div>
@@ -269,30 +250,7 @@ $this->title = 'Buketov University';
         </div>
         <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch upcoming-event">
-            <?php foreach ($events as $event_item): ?>
-                <?php
-                $month = date('F', $event_item['month']);
-                $day = $event_item['day'];
-                $year = $event_item['year'];
-
-                ?>
-                <div class="col upcoming-event-item ">
-                    <div class="calendar-card">
-                        <div class="calendar-bg"></div>
-                        <div onclick="openBoxEvents(this, 'open')"
-                            data-time_events="<?= $day . "-" . $month . "-" . $year ?>"
-                            data-title="<?= $event_item['title'] ?>" data-content="<?= $event_item['content'] ?>"
-                            class="calendar-content">
-
-                            <p class="upcoming-event-title"><?= $event_item['title'] ?></p>
-                            <p class="upcoming-event-day"><?= $day ?></p>
-                            <p class="upcoming-event-date"><?= $month . " " . $year ?></p>
-
-
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+           
 
         </div>
     </div>

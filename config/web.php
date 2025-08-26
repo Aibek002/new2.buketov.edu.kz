@@ -52,22 +52,32 @@ $config = [
             'class' => \yii\symfonymailer\Mailer::class,
             'useFileTransport' => false,
             'transport' => [
-                'scheme' => 'smtp',
-                'host' => '192.168.252.225',
-                'username' => 'priemka@buketov.ksu.kz',
-                'password' => 'Mrvl07(4$',
-                'port' => 25,
-                'encryption' => 'tls',
-                'streamOptions' => [
-                    'ssl' => [
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true,
-                    ],
-                ],
+                'dsn' => 'smtp://aibekseitzhan009@gmail.com:xfyikbgkwbttnodi@smtp.gmail.com:587?encryption=tls',
             ],
-            'enableMailerLogging' => true,  // <<< включаем логирование
+            'enableMailerLogging' => true,
         ],
+        //             'class' => \Yiisoft\Mailer\Symfony\Mailer::class,
+//             'mailer' => function () {
+//                 // ✅ Для Gmail через TLS
+
+        //                 // ✅ Для Яндекс
+//                 // $dsn = 'smtp://your_email@yandex.ru:your_password@smtp.yandex.ru:465?encryption=ssl';
+
+        //                 // ✅ Для Mail.ru
+//                 // $dsn = 'smtp://your_email@mail.ru:your_password@smtp.mail.ru:465?encryption=ssl';
+
+        //                 return new \Symfony\Component\Mailer\Mailer(
+//                     \Symfony\Component\Mailer\Transport\Transport::fromDsn($dsn)
+//                 );
+//             },
+
+        // '__class' => Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport::class,
+        // 'host' => 'smtp.gmail.com',
+        // 'username' => 'aibekseitzhan002@mail.ru',
+        // 'password' => 'Seitzhan76740207',
+        // 'port' => 587,
+        // 'encryption' => 'tls',
+
 
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

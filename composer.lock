@@ -1254,6 +1254,169 @@
             "time": "2025-04-25T09:37:31+00:00"
         },
         {
+            "name": "yiisoft/mailer",
+            "version": "6.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/mailer.git",
+                "reference": "f3cc147210aede9698523fcc4798291682d8fa2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/mailer/zipball/f3cc147210aede9698523fcc4798291682d8fa2b",
+                "reference": "f3cc147210aede9698523fcc4798291682d8fa2b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "8.1 - 8.4"
+            },
+            "require-dev": {
+                "maglnet/composer-require-checker": "^4.7.1",
+                "phpunit/phpunit": "^10.5.45",
+                "psr/event-dispatcher": "^1.0",
+                "rector/rector": "^2.0.10",
+                "roave/infection-static-analysis-plugin": "^1.35",
+                "spatie/phpunit-watcher": "^1.24",
+                "vimeo/psalm": "^5.26.1 || ^6.9.4",
+                "yiisoft/aliases": "^3.0",
+                "yiisoft/definitions": "^3.4",
+                "yiisoft/di": "^1.3",
+                "yiisoft/files": "^2.0",
+                "yiisoft/test-support": "^3.0.2"
+            },
+            "suggest": {
+                "psr/event-dispatcher": "Use PSR Event Dispatcher implementation for process before/after send events",
+                "yiisoft/event-dispatcher": "Yii Event Dispatcher",
+                "yiisoft/mailer-symfony": "`symfony/mailer` based driver for send emails"
+            },
+            "type": "library",
+            "extra": {
+                "config-plugin": {
+                    "di": "config/di.php",
+                    "params": "config/params.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Mailer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Sending email abstraction",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "mailer",
+                "yii"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/mailer/issues?state=open",
+                "source": "https://github.com/yiisoft/mailer",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2025-03-25T07:55:07+00:00"
+        },
+        {
+            "name": "yiisoft/mailer-symfony",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/mailer-symfony.git",
+                "reference": "3ef6b343137817d81def7437855bbebba14eb976"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/mailer-symfony/zipball/3ef6b343137817d81def7437855bbebba14eb976",
+                "reference": "3ef6b343137817d81def7437855bbebba14eb976",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "symfony/mailer": "^5.3|^6.0|^7.0",
+                "symfony/mime": "^5.4|^6.2|^7.0",
+                "yiisoft/mailer": "^6.0"
+            },
+            "require-dev": {
+                "ext-openssl": "*",
+                "maglnet/composer-require-checker": "^4.2",
+                "phpunit/phpunit": "^10.5",
+                "psr/event-dispatcher": "^1.0",
+                "rector/rector": "^1.2",
+                "roave/infection-static-analysis-plugin": "^1.25",
+                "spatie/phpunit-watcher": "^1.23",
+                "vimeo/psalm": "^5.4",
+                "yiisoft/aliases": "^3.0",
+                "yiisoft/di": "^1.2",
+                "yiisoft/files": "^2.0",
+                "yiisoft/psr-dummy-provider": "^1.0",
+                "yiisoft/test-support": "^3.0"
+            },
+            "suggest": {
+                "psr/event-dispatcher": "Use PSR Event Dispatcher implementation for process before/after send events"
+            },
+            "type": "library",
+            "extra": {
+                "config-plugin": {
+                    "di": "di.php",
+                    "params": "params.php"
+                },
+                "config-plugin-options": {
+                    "source-directory": "config"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Mailer\\Symfony\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Adapter for `yiisoft/mailer` relying on `symfony/mailer`",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer",
+                "yii"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/mailer-symfony/issues?state=open",
+                "source": "https://github.com/yiisoft/mailer-symfony",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2024-10-18T08:28:32+00:00"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "2.0.53",
             "source": {
