@@ -53,7 +53,7 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'dsn' => 'smtp://aibekseitzhan009@gmail.com:xfyikbgkwbttnodi@smtp.gmail.com:587?encryption=tls',
-            ],
+            ], 
             'enableMailerLogging' => true,
         ],
         //             'class' => \Yiisoft\Mailer\Symfony\Mailer::class,
