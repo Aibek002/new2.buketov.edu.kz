@@ -9,6 +9,18 @@ HomeAsset::register($this);
 
 $this->title = 'Buketov University';
 ?>
+<button class="chat-whatsapp">
+    
+</button>
+<button class="chat-phone">
+    
+</button>
+<button class="chat-bot">
+    
+</button>
+<button class="chat-open">
+    
+</button>
 <div class="main-wrapper d-flex flex-column justify-content-center align-items-center w-100">
     <div class="first-block d-flex justify-content-center align-items-cente w-100 h-100">
         <div class="first-block-half p-5">

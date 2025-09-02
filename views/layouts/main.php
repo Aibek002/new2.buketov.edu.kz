@@ -147,14 +147,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             мероприятия<span>+</span></button>
                                         <button class="menu-item ResearchJobStudentBtn">Отдел научно-исследовательскойработы
                                             студентов <span>+</span></button>
-                                        <?= Html::a('Научные журналы и публикации <span>></span>', ['https://vestnik.buketov.edu.kz/'], ['class' => 'menu-item']) ?>
-
-                                        <!--a href="#" class="menu-item">Направления исследования <span>></span></a-->
-                                        <!--a href="#" class="menu-item">Совет молодых ученых <span>></span></a-->
-                                        <!--a href="#" class="menu-item">Претенденты на ученые звания <span>></span></a-->
-                                        <!--a href="#" class="menu-item">Студенческая научная деятельность <span>></span></a-->
-
-
+                                        <?= Html::a('Научные журналы и публикации <span>></span>', 'https://vestnik.buketov.edu.kz/', [
+                                            'class' => 'menu-item',
+                                            'target' => '_blank', // откроется в новой вкладке (по желанию)
+                                            'encode' => false,    // нужно, чтобы <span> не экранировался
+                                        ]) ?>
                                     </div>
                                     <div class="dropdown-submenu international-cooperation">
                                         <a href="#" class="menu-item">Академическая мобильность <span>></span></a>
@@ -213,7 +210,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <?= Html::a('Иностранные языки <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 10], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Экономика <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 11], ['class' => 'menu-item']) ?>
                                         <?= Html::a('Филология <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 12], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 13], ['class' => 'menu-item']) ?>                                        
+                                        <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 13], ['class' => 'menu-item']) ?>
 
                                     </div>
                                     <div class="CompetitionsAndGrands">

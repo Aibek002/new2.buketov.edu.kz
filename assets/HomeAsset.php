@@ -12,7 +12,8 @@ class HomeAsset extends AssetBundle{
         "css/home.css"
         ];
     public $js = [
-        "js/home.js"
+        "js/home.js",
+        "js/home-icon.js"
     ];
    
 }

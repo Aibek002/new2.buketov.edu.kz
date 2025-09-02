@@ -1,4 +1,4 @@
-.submitButton{
+.submitButton {
     background: var(--indigoblue-font);
     color: var(--white);
     border-radius: 10px;
@@ -6,27 +6,36 @@
     padding-block: 10px;
     border: none;
 }
-form{
+
+form {
     width: 100% !important;
 }
+
 .feedback-form-container {
     display: flex;
     gap: 10px;
 }
 
-.feedback-form-container > div {
-    flex: 1; /* все блоки одинаковой ширины */
+.feedback-form-container>div {
+    flex: 1;
+    /* все блоки одинаковой ширины */
 }
+
 .box-overlay {
-    position: fixed; /* поверх всех элементов */
+    position: fixed;
+    /* поверх всех элементов */
     top: 50%;
     left: 50%;
     width: 80vw;
     height: 750px;
-    transform: translate(-50%, -50%); /* центрирование */
-    background-color: var(--whiteblue); /* затемнение, можно изменить */
-    z-index: 10000; /* выше других */
-    display: none; /* по умолчанию скрыто, включай через JS */
+    transform: translate(-50%, -50%);
+    /* центрирование */
+    background-color: var(--whiteblue);
+    /* затемнение, можно изменить */
+    z-index: 10000;
+    /* выше других */
+    display: none;
+    /* по умолчанию скрыто, включай через JS */
     border-radius: 10px;
     padding: 20px;
     color: white;
@@ -37,6 +46,7 @@ form{
 .box-overlay.active {
     display: block;
 }
+
 .blur {
     display: none;
     position: fixed;
@@ -45,36 +55,47 @@ form{
     height: 100vh;
     top: 0;
     left: 0;
-    backdrop-filter: blur(5px); /* Эффект размытия */
-    background-color: rgba(0, 0, 0, 0.5); /* Затемнение */
+    backdrop-filter: blur(5px);
+    /* Эффект размытия */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Затемнение */
 }
 
 .blur.active {
     display: block;
 }
-.card-text-news p span{
+
+.card-text-news p span {
     color: white !important;
 }
-.more-events-overlay{
+
+.more-events-overlay {
     display: none;
-    position: fixed; /* поверх всех элементов */
+    position: fixed;
+    /* поверх всех элементов */
     top: 50%;
     left: 50%;
     width: 50vw;
     height: 400px;
-    transform: translate(-50%, -50%); /* центрирование */
-    background-color: var(--whiteblue); /* затемнение, можно изменить */
-    z-index: 10000; /* выше других */
-    display: none; /* по умолчанию скрыто, включай через JS */
+    transform: translate(-50%, -50%);
+    /* центрирование */
+    background-color: var(--whiteblue);
+    /* затемнение, можно изменить */
+    z-index: 10000;
+    /* выше других */
+    display: none;
+    /* по умолчанию скрыто, включай через JS */
     border-radius: 10px;
     padding: 20px;
     color: white;
-    
+
 }
-.more-events-overlay.active{
+
+.more-events-overlay.active {
     display: block;
 
 }
+
 .event-modal {
     background: linear-gradient(145deg, #274b7a, #2f5fa1);
     border: 2px solid #5c8ecb;
@@ -82,9 +103,11 @@ form{
     color: white;
     font-family: 'Segoe UI', sans-serif;
 }
+
 .event-modal h2 {
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .event-modal button:hover {
     color: #ffdddd;
 }
@@ -98,7 +121,7 @@ form{
 
 .form-control:focus {
     border-color: #4a90e2;
-    box-shadow: 0 0 0 0.2rem rgba(74,144,226,0.25);
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
 }
 
 .btn-primary {
@@ -112,4 +135,154 @@ form{
 
 .btn-primary:hover {
     background: linear-gradient(135deg, #3a7bd5, #5b1688);
+}
+
+
+.chat-open {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/7044/7044732.png');
+    z-index: 1000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: vibrate 0.3s infinite;
+    animation: swing 1s infinite ease-in-out;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0);
+    }
+
+    10% {
+        transform: rotate(15deg);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    70% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+.chat-open::before,
+.chat-open::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid var(--indigoblue-font);
+    /* цвет волны */
+    top: 0;
+    left: 0;
+    animation: ripple 2s infinite;
+    z-index: -1;
+}
+
+.chat-open::after {
+    animation-delay: 1s;
+    /* вторая волна с задержкой */
+}
+
+.chat-whatsapp,
+.chat-phone,
+.chat-bot {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
+    right: 50px;
+    background-size: cover;
+    border-radius: 100%;
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    z-index: 999;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+}
+.chat-whatsapp {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/7044/7044732.png');
+}
+
+.chat-phone {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3670/3670051.png');
+}
+
+.chat-bot {
+    background-image: url('https://www.shutterstock.com/image-vector/chat-bot-icon-virtual-smart-600nw-2478937553.jpg');
+}
+
+/* при открытии */
+.chat-whatsapp.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-70px);
+}
+
+.chat-phone.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-130px);
+}
+
+.chat-bot.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-190px);
+}
+
+/* кнопка открытия */
+.chat-open {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    background: green;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(2.5);
+        /* размер круга */
+        opacity: 0;
+    }
 }
