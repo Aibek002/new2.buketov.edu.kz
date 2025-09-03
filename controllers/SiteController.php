@@ -81,33 +81,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-
-
-    public function actionSend()
-    {
-        try {
-            $message = Yii::$app->mailer->compose()
-                ->setFrom('priemka@buketov.ksu.kz')
-                ->setTo('aibekseitzhan002@mail.ru')
-                ->setSubject('Сообщение с сайта')
-                ->setHtmlBody("test");
-
-            $send = Yii::$app->mailer->send($message);
-
-            if ($send) {
-                return "success";
-            } else {
-                // Если send() вернул false, выводим информацию
-                return "Mailer returned false (письмо не отправлено)";
-            }
-        } catch (\Throwable $e) {
-            // Ловим исключение и показываем сообщение SMTP
-            return "Mailer exception: " . $e->getMessage();
-        }
-    }
-
-
-
+    
     public function actionIndex()
     {
         $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
@@ -118,22 +92,16 @@ class SiteController extends Controller
             $message = Yii::$app->mailer->compose()
                 ->setFrom('aibekseitzhan002@mail.ru')
                 ->setTo('aibekseitzhan002@gmail.com')
-                ->setReplyTo([$form->email => $form->fio])
-                ->setSubject('Сообщение с сайта buketov.edu.kz - ' . Html::encode($form->fio))
-                ->setHtmlBody("
-                <p><b>Имя:</b> " . Html::encode($form->fio) . "</p>
-                <p><b>Email:</b> " . Html::encode($form->email) . "</p>
-                <p><b>Телефон:</b> " . Html::encode($form->phone) . "</p>
-                <p><b>Сообщение:</b><br>" . nl2br(Html::encode($form->message)) . "</p>
-                ");
-            $send = Yii::$app->mailer->send($message);
+                ->setSubject('Тестовое письмо')
+                ->setTextBody('Привет! Это тест из Yii2 через Symfony Mailer 🚀')
+                ->setHtmlBody('<h1>Привет!</h1><p>Это тестовое письмо.</p>')
 
-            if ($send) {
-                return $this->refresh();
-            } else {
-                Yii::$app->session->setFlash('error', 'Письмо не отправлено!');
+                ->send();
 
-            }
+
+
+            Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
+            return $this->refresh();
         }
         $news_for_home = News::find()
             ->select([
@@ -147,11 +115,7 @@ class SiteController extends Controller
             ->limit(3)
             ->asArray()
             ->all();
-
-
-
-        $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
-
+        $current_date = (new \yii\db\Expression('CURDATE()'));  
         $events = Events::find()
             ->select([
                 'title_en AS title',
@@ -169,7 +133,6 @@ class SiteController extends Controller
             ->limit(3)
             ->all();
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
-        // return $this->render('index', ['model' => $form]);
 
     }
     public function actionFaculty($name)

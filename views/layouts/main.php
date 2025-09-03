@@ -151,14 +151,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <button class="menu-item ResearchJobStudentBtn">Отдел научно-исследовательской
                                             работы
                                             студентов <span>+</span></button>
-                                        <?= Html::a('Научные журналы и публикации <span>></span>', ['https://vestnik.buketov.edu.kz/'], ['class' => 'menu-item']) ?>
-
-                                        <!--a href="#" class="menu-item">Направления исследования <span>></span></a-->
-                                        <!--a href="#" class="menu-item">Совет молодых ученых <span>></span></a-->
-                                        <!--a href="#" class="menu-item">Претенденты на ученые звания <span>></span></a-->
-                                        <!--a href="#" class="menu-item">Студенческая научная деятельность <span>></span></a-->
-
-
+                                        <?= Html::a('Научные журналы и публикации <span>></span>', 'https://vestnik.buketov.edu.kz/', [
+                                            'class' => 'menu-item',
+                                            'target' => '_blank', // откроется в новой вкладке (по желанию)
+                                            'encode' => false,    // нужно, чтобы <span> не экранировался
+                                        ]) ?>
                                     </div>
                                     <div class="dropdown-submenu international-cooperation">
                                         <?= Html::a('Академическая мобильность <span>></span>', ['site/academic-mobility'], ['class' => 'menu-item']) ?>
