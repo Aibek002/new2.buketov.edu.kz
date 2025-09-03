@@ -9,6 +9,13 @@ HomeAsset::register($this);
 
 $this->title = 'Buketov University';
 ?>
+
+<div class="chat-bot">
+    <a href="https://wa.me/77001234567?text=Здравствуйте!%20Хочу%20получить%20информацию." target="_blank">
+  <img src="whatsapp-icon.png" alt="WhatsApp" style="width:40px;height:40px;">
+</a>
+
+</div>
 <div class="main-wrapper d-flex flex-column justify-content-center align-items-center w-100">
     <div class="first-block d-flex justify-content-center align-items-cente w-100 h-100">
         <div class="first-block-half p-5">

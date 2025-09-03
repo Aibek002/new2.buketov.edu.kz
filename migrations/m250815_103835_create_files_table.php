@@ -36,14 +36,14 @@ class m250815_103835_create_files_table extends Migration
         );
 
         // add foreign key for table `{{%staff}}`
-        $this->addForeignKey(
-            '{{%fk-files-doctorant_id}}',
-            '{{%files}}',
-            'doctorant_id',
-            '{{%doctorant}}',
-            'id',
-            'CASCADE'
-        );
+        // $this->addForeignKey(
+        //     '{{%fk-files-doctorant_id}}',
+        //     '{{%files}}',
+        //     'doctorant_id',
+        //     '{{%doctorant}}',
+        //     'id',
+        //     'CASCADE'
+        // );
 
         // creates index for column `author`
         $this->createIndex(
@@ -69,16 +69,16 @@ class m250815_103835_create_files_table extends Migration
     public function safeDown()
     {
         // drops foreign key for table `{{%staff}}`
-        $this->dropForeignKey(
-            '{{%fk-files-doctorant_id}}',
-            '{{%files}}'
-        );
+        // $this->dropForeignKey(
+        //     '{{%fk-files-doctorant_id}}',
+        //     '{{%files}}'
+        // );
 
         // drops index for column `staff_id`
-        $this->dropIndex(
-            '{{%idx-files-doctorant_id}}',
-            '{{%files}}'
-        );
+        // $this->dropIndex(
+        //     '{{%idx-files-doctorant_id}}',
+        //     '{{%files}}'
+        // );
 
         // drops foreign key for table `{{%user}}`
         $this->dropForeignKey(

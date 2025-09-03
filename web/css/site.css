@@ -844,13 +844,14 @@ main>.container {
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent {
   display: none;
 }
-
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021 {
   display: none;
 }
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025.active,
 
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active,
@@ -870,7 +871,7 @@ main>.container {
   border-radius: 10px;
 
 }
-
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022.active a,

@@ -1,212 +1,240 @@
-
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('.header');
-  const logo = document.querySelector('.logoBuketov');
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header");
+  const logo = document.querySelector(".logoBuketov");
 
   // if(window.location.pathname !== '/'  &&  header){
   //   logo.style.display='block';
   //   header.style.backgroundColor = 'var(--indigoblue)';
   // }
   /* Script Dropdown Header*/
-  let dropDownHeader = document.querySelector('.dropdown-toggle-header');
-  let dropDownMenuHeader = document.querySelector('.dropdown-menu-header');
-  let year_toggle_btn_2024 = document.querySelector('.year-toggle-btn--2024');
-  let year_toggle_btn_2023 = document.querySelector('.year-toggle-btn--2023');
-  let year_toggle_btn_2022 = document.querySelector('.year-toggle-btn--2022');
-  let year_toggle_btn_2021 = document.querySelector('.year-toggle-btn--2021');
+  let dropDownHeader = document.querySelector(".dropdown-toggle-header");
+  let dropDownMenuHeader = document.querySelector(".dropdown-menu-header");
+  let year_toggle_btn_2025 = document.querySelector(".year-toggle-btn--2025");
+  let year_toggle_btn_2024 = document.querySelector(".year-toggle-btn--2024");
+  let year_toggle_btn_2023 = document.querySelector(".year-toggle-btn--2023");
+  let year_toggle_btn_2022 = document.querySelector(".year-toggle-btn--2022");
+  let year_toggle_btn_2021 = document.querySelector(".year-toggle-btn--2021");
 
-  year_toggle_btn_2024.addEventListener('click', function () {
-    openYearMenu('2024');
+  year_toggle_btn_2025.addEventListener("click", function () {
+    openYearMenu("2025");
   });
-  year_toggle_btn_2023.addEventListener('click', function () {
-    openYearMenu('2023');
+  year_toggle_btn_2024.addEventListener("click", function () {
+    openYearMenu("2024");
   });
-  year_toggle_btn_2022.addEventListener('click', function () {
-    openYearMenu('2022');
+  year_toggle_btn_2023.addEventListener("click", function () {
+    openYearMenu("2023");
   });
-  year_toggle_btn_2021.addEventListener('click', function () {
-    openYearMenu('2021');
+  year_toggle_btn_2022.addEventListener("click", function () {
+    openYearMenu("2022");
+  });
+  year_toggle_btn_2021.addEventListener("click", function () {
+    openYearMenu("2021");
   });
 
   function openYearMenu(year) {
-    let researchJobStudent_2024 = document.querySelector('.ResearchJobStudent-2024');
-    let researchJobStudent_2023 = document.querySelector('.ResearchJobStudent-2023');
-    let researchJobStudent_2022 = document.querySelector('.ResearchJobStudent-2022');
-    let researchJobStudent_2021 = document.querySelector('.ResearchJobStudent-2021');
+    console.log(year);
+    let researchJobStudent_2025 = document.querySelector(
+      ".ResearchJobStudent-2025"
+    );
+    let researchJobStudent_2024 = document.querySelector(
+      ".ResearchJobStudent-2024"
+    );
+    let researchJobStudent_2023 = document.querySelector(
+      ".ResearchJobStudent-2023"
+    );
+    let researchJobStudent_2022 = document.querySelector(
+      ".ResearchJobStudent-2022"
+    );
+    let researchJobStudent_2021 = document.querySelector(
+      ".ResearchJobStudent-2021"
+    );
 
     // Словарь для упрощения
     let elements = {
-      '2024': researchJobStudent_2024,
-      '2023': researchJobStudent_2023,
-      '2022': researchJobStudent_2022,
-      '2021': researchJobStudent_2021,
+      2025: researchJobStudent_2025,
+      2024: researchJobStudent_2024,
+      2023: researchJobStudent_2023,
+      2022: researchJobStudent_2022,
+      2021: researchJobStudent_2021,
     };
-
+    // console.log(elements[year]);
     // Удаляем 'active' у всех блоков
-    Object.values(elements).forEach(el => {
-      if (el) el.classList.remove('active');
+    Object.values(elements).forEach((el) => {
+      if (el) el.classList.remove("active");
     });
 
     if (!elements[year]) {
-
+      console.log("null");
       return;
     }
     // Если выбранный год уже активен — отключаем все и выходим
-    if (elements[year].classList.contains('active')) {
-      Object.values(elements).forEach(el => el.classList.remove('active'));
+    if (elements[year].classList.contains("active")) {
+      Object.values(elements).forEach((el) => {el.classList.remove("active"); console.log(el)});
       return;
+    } else {
+      elements[year].classList.add("active");
     }
   }
 
-  dropDownHeader.addEventListener('click', function () {
+  dropDownHeader.addEventListener("click", function () {
     // console.log("Кнопка нажата");
-    openDropDown('header-dropdown');
+    openDropDown("header-dropdown");
   });
 
   function openDropDown(type) {
-    let toOpenSvg = document.querySelector('.dropdown-toggle-header img');
+    let toOpenSvg = document.querySelector(".dropdown-toggle-header img");
 
-    if (type == 'header-dropdown') {
-      dropDownMenuHeader.classList.toggle('active');
+    if (type == "header-dropdown") {
+      dropDownMenuHeader.classList.toggle("active");
       if (toOpenSvg) {
-        console.log('change svg');
+        console.log("change svg");
 
-        toOpenSvg.classList.remove('rotate');
+        toOpenSvg.classList.remove("rotate");
 
-        toOpenSvg.src = dropDownMenuHeader.classList.contains('active')
-          ? '/bg-images/svg/toClose.svg'
-          : '/bg-images/svg/toOpen.svg';
+        toOpenSvg.src = dropDownMenuHeader.classList.contains("active")
+          ? "/bg-images/svg/toClose.svg"
+          : "/bg-images/svg/toOpen.svg";
 
         toOpenSvg.onload = () => {
           void toOpenSvg.offsetWidth; // перезапускаем анимацию
-          toOpenSvg.classList.add('rotate');
+          toOpenSvg.classList.add("rotate");
         };
-
       }
     }
   }
 
   /* Script Dropdown Select role*/
 
-  let menuAboutUs = document.querySelector('#menu-for-about-us');
-  let menuIncoming = document.querySelector('#menu-for-incoming');
-  let menuStudent = document.querySelector('#menu-for-student');
-  let menuFaculties = document.querySelector('#menu-for-faculties');
-  let menuGraduation = document.querySelector('#menu-for-graduation');
-  let menuScience = document.querySelector('#menu-for-science');
-  let menuInternationalCooperation = document.querySelector('#menu-for-international-cooperation');
-  let menuJobOpenings = document.querySelector('#menu-for-job-openings');
-  let menuContacts = document.querySelector('#menu-for-contacts');
+  let menuAboutUs = document.querySelector("#menu-for-about-us");
+  let menuIncoming = document.querySelector("#menu-for-incoming");
+  let menuStudent = document.querySelector("#menu-for-student");
+  let menuFaculties = document.querySelector("#menu-for-faculties");
+  // let menuGraduation = document.querySelector('#menu-for-graduation');
+  let menuScience = document.querySelector("#menu-for-science");
+  let menuInternationalCooperation = document.querySelector(
+    "#menu-for-international-cooperation"
+  );
+  let menuJobOpenings = document.querySelector("#menu-for-job-openings");
+  let menuContacts = document.querySelector("#menu-for-contacts");
 
-
-
-  menuAboutUs.addEventListener('click', function () {
+  menuAboutUs.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для сотрудника");
 
-    openSubMenu('about-us');
+    openSubMenu("about-us");
   });
-  menuIncoming.addEventListener('click', function () {
+  menuIncoming.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для родитель");
-    openSubMenu('incoming');
+    openSubMenu("incoming");
   });
-  menuStudent.addEventListener('click', function () {
+  menuStudent.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для студентов");
-    openSubMenu('student');
+    openSubMenu("student");
   });
-  menuFaculties.addEventListener('click', function () {
+  menuFaculties.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для выпускников");
-    openSubMenu('faculties');
+    openSubMenu("faculties");
   });
-  menuGraduation.addEventListener('click', function () {
+  // menuGraduation.addEventListener('click', function () {
+  //   console.log("Кнопка нажата, открыта раздел для выпускников");
+  //   openSubMenu('graduation');
+  // });
+  menuScience.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для выпускников");
-    openSubMenu('graduation');
+    openSubMenu("science");
   });
-  menuScience.addEventListener('click', function () {
+  menuInternationalCooperation.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для выпускников");
-    openSubMenu('science');
+    openSubMenu("international-cooperation");
   });
-  menuInternationalCooperation.addEventListener('click', function () {
+  menuJobOpenings.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для выпускников");
-    openSubMenu('international-cooperation');
+    openSubMenu("job-opening");
   });
-  menuJobOpenings.addEventListener('click', function () {
+  menuContacts.addEventListener("click", function () {
     console.log("Кнопка нажата, открыта раздел для выпускников");
-    openSubMenu('job-opening');
-  });
-  menuContacts.addEventListener('click', function () {
-    console.log("Кнопка нажата, открыта раздел для выпускников");
-    openSubMenu('contacts');
+    openSubMenu("contacts");
   });
 
   function openSubMenu(type) {
     openSubMenus();
-    let aboutUsSubMenu = document.querySelector('.dropdown-submenu.university-info');
-    let incomingSubMenu = document.querySelector('.dropdown-submenu.incoming');
-    let studentSubMenu = document.querySelector('.dropdown-submenu.student');
-    let facultiesSubMenu = document.querySelector('.dropdown-submenu.faculties');
-    let graduateSubMenu = document.querySelector('.dropdown-submenu.graduate');
-    let scienceSubMenu = document.querySelector('.dropdown-submenu.science');
-    let internCooperSubMenu = document.querySelector('.dropdown-submenu.international-cooperation');
+    let aboutUsSubMenu = document.querySelector(
+      ".dropdown-submenu.university-info"
+    );
+    let incomingSubMenu = document.querySelector(".dropdown-submenu.incoming");
+    let studentSubMenu = document.querySelector(".dropdown-submenu.student");
+    let facultiesSubMenu = document.querySelector(
+      ".dropdown-submenu.faculties"
+    );
+    let graduateSubMenu = document.querySelector(".dropdown-submenu.graduate");
+    let scienceSubMenu = document.querySelector(".dropdown-submenu.science");
+    let internCooperSubMenu = document.querySelector(
+      ".dropdown-submenu.international-cooperation"
+    );
     closeAllSubmenus();
-    if (type == 'about-us') {
-      aboutUsSubMenu.classList.toggle('active');
-    } else if (type == 'incoming') {
-      incomingSubMenu.classList.toggle('active');
-    } else if (type == 'student') {
-      studentSubMenu.classList.toggle('active');
-    } else if (type == 'faculties') {
-      facultiesSubMenu.classList.toggle('active');
-    } else if (type == 'graduation') {
-      graduateSubMenu.classList.toggle('active');
-    } else if (type == 'science') {
-      scienceSubMenu.classList.toggle('active');
-    } else if (type == 'international-cooperation') {
-      internCooperSubMenu.classList.toggle('active');
+    if (type == "about-us") {
+      aboutUsSubMenu.classList.toggle("active");
+    } else if (type == "incoming") {
+      incomingSubMenu.classList.toggle("active");
+    } else if (type == "student") {
+      studentSubMenu.classList.toggle("active");
+    } else if (type == "faculties") {
+      facultiesSubMenu.classList.toggle("active");
+    } else if (type == "graduation") {
+      graduateSubMenu.classList.toggle("active");
+    } else if (type == "science") {
+      scienceSubMenu.classList.toggle("active");
+    } else if (type == "international-cooperation") {
+      internCooperSubMenu.classList.toggle("active");
     }
   }
 
   function closeAllSubmenus() {
     // Закрыть все подменю, удалив класс 'active'
-    let allSubmenus = document.querySelectorAll('.dropdown-submenu');
-    allSubmenus.forEach(submenu => {
-      submenu.classList.remove('active');
+    let allSubmenus = document.querySelectorAll(".dropdown-submenu");
+    allSubmenus.forEach((submenu) => {
+      submenu.classList.remove("active");
     });
   }
-
 });
 
+let researchCenterBtn = document.querySelector(".researchCenterBtn");
+let dissertationCouncilBtn = document.querySelector(".DissertationCouncilBtn");
+let сompetitionsAndGrandsBtn = document.querySelector(
+  ".CompetitionsAndGrandsBtn"
+);
+let conferencesBtn = document.querySelector(".СonferencesBtn");
+let researchJobStudentBtn = document.querySelector(".ResearchJobStudentBtn");
 
-let researchCenterBtn = document.querySelector('.researchCenterBtn');
-let dissertationCouncilBtn = document.querySelector('.DissertationCouncilBtn');
-let сompetitionsAndGrandsBtn = document.querySelector('.CompetitionsAndGrandsBtn');
-let conferencesBtn = document.querySelector('.СonferencesBtn');
-let researchJobStudentBtn = document.querySelector('.ResearchJobStudentBtn');
-
-
-researchCenterBtn.addEventListener('click', function () {
-  openSubMenus('subMenuResearchCenter');
+researchCenterBtn.addEventListener("click", function () {
+  openSubMenus("subMenuResearchCenter");
 });
-dissertationCouncilBtn.addEventListener('click', function () {
-  openSubMenus('subMenuDissertationCouncil');
+dissertationCouncilBtn.addEventListener("click", function () {
+  openSubMenus("subMenuDissertationCouncil");
 });
-сompetitionsAndGrandsBtn.addEventListener('click', function () {
-  openSubMenus('subMenuCompetitionsAndGrands');
+сompetitionsAndGrandsBtn.addEventListener("click", function () {
+  openSubMenus("subMenuCompetitionsAndGrands");
 });
-conferencesBtn.addEventListener('click', function () {
-  openSubMenus('subMenuСonferences');
+conferencesBtn.addEventListener("click", function () {
+  openSubMenus("subMenuСonferences");
 });
-researchJobStudentBtn.addEventListener('click', function () {
-  openSubMenus('subMenuResearchJobStudent');
+researchJobStudentBtn.addEventListener("click", function () {
+  openSubMenus("subMenuResearchJobStudent");
 });
 function openSubMenus(type) {
-  let subMenu = document.querySelector('.dropdown-menu-social');
-  let existsType = ['researchCenter', 'DissertationCouncil', 'CompetitionsAndGrands', 'Conferences', 'ResearchJobStudent'];
+  let subMenu = document.querySelector(".dropdown-menu-social");
+  let existsType = [
+    "researchCenter",
+    "DissertationCouncil",
+    "CompetitionsAndGrands",
+    "Conferences",
+    "ResearchJobStudent",
+  ];
   if (!type) {
     existsType.forEach((value) => {
       if (subMenu.classList.contains(value)) {
         subMenu.classList.remove(value);
       }
-    })
+    });
   }
   existsType.forEach((value) => {
     if (subMenu.classList.contains(value)) {
@@ -214,15 +242,15 @@ function openSubMenus(type) {
     }
   });
 
-  if (type == 'subMenuResearchCenter') {
-    subMenu.classList.toggle('researchCenter');
-  } else if (type == 'subMenuDissertationCouncil') {
-    subMenu.classList.toggle('DissertationCouncil');
-  } else if (type == 'subMenuCompetitionsAndGrands') {
-    subMenu.classList.toggle('CompetitionsAndGrands');
-  } else if (type == 'subMenuСonferences') {
-    subMenu.classList.toggle('Conferences');
-  } else if (type == 'subMenuResearchJobStudent') {
-    subMenu.classList.toggle('ResearchJobStudent');
+  if (type == "subMenuResearchCenter") {
+    subMenu.classList.toggle("researchCenter");
+  } else if (type == "subMenuDissertationCouncil") {
+    subMenu.classList.toggle("DissertationCouncil");
+  } else if (type == "subMenuCompetitionsAndGrands") {
+    subMenu.classList.toggle("CompetitionsAndGrands");
+  } else if (type == "subMenuСonferences") {
+    subMenu.classList.toggle("Conferences");
+  } else if (type == "subMenuResearchJobStudent") {
+    subMenu.classList.toggle("ResearchJobStudent");
   }
 }

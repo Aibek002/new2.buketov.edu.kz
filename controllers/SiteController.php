@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers;
-use app\models\AdmissionPdf; 
+use app\models\AdmissionPdf;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
@@ -26,7 +26,7 @@ use app\models\News;
 
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
-use yii\helpers\Html; 
+use yii\helpers\Html;
 use \app\components\LanguageHelper;
 
 class SiteController extends Controller
@@ -83,28 +83,28 @@ class SiteController extends Controller
      */
 
 
-public function actionSend()
-{
-    try {
-        $message = Yii::$app->mailer->compose()
-            ->setFrom('priemka@buketov.ksu.kz')
-            ->setTo('aibekseitzhan002@mail.ru')
-            ->setSubject('Сообщение с сайта')
-            ->setHtmlBody("test");
+    public function actionSend()
+    {
+        try {
+            $message = Yii::$app->mailer->compose()
+                ->setFrom('priemka@buketov.ksu.kz')
+                ->setTo('aibekseitzhan002@mail.ru')
+                ->setSubject('Сообщение с сайта')
+                ->setHtmlBody("test");
 
-        $send = Yii::$app->mailer->send($message);
+            $send = Yii::$app->mailer->send($message);
 
-        if ($send) {
-            return "success";
-        } else {
-            // Если send() вернул false, выводим информацию
-            return "Mailer returned false (письмо не отправлено)";
+            if ($send) {
+                return "success";
+            } else {
+                // Если send() вернул false, выводим информацию
+                return "Mailer returned false (письмо не отправлено)";
+            }
+        } catch (\Throwable $e) {
+            // Ловим исключение и показываем сообщение SMTP
+            return "Mailer exception: " . $e->getMessage();
         }
-    } catch (\Throwable $e) {
-        // Ловим исключение и показываем сообщение SMTP
-        return "Mailer exception: " . $e->getMessage();
     }
-}
 
 
 
@@ -115,56 +115,61 @@ public function actionSend()
         $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-            Yii::$app->mailer->compose()
-
-                ->setFrom('aibekseitzhan009@gmail.com')
+            $message = Yii::$app->mailer->compose()
+                ->setFrom('aibekseitzhan002@mail.ru')
                 ->setTo('aibekseitzhan002@gmail.com')
-                ->setSubject('Тестовое письмо')
-                ->setTextBody('Привет! Это тест из Yii2 через Symfony Mailer 🚀')
-                ->setHtmlBody('<h1>Привет!</h1><p>Это тестовое письмо.</p>')
+                ->setReplyTo([$form->email => $form->fio])
+                ->setSubject('Сообщение с сайта buketov.edu.kz - ' . Html::encode($form->fio))
+                ->setHtmlBody("
+                <p><b>Имя:</b> " . Html::encode($form->fio) . "</p>
+                <p><b>Email:</b> " . Html::encode($form->email) . "</p>
+                <p><b>Телефон:</b> " . Html::encode($form->phone) . "</p>
+                <p><b>Сообщение:</b><br>" . nl2br(Html::encode($form->message)) . "</p>
+                ");
+            $send = Yii::$app->mailer->send($message);
 
-                ->send();
+            if ($send) {
+                return $this->refresh();
+            } else {
+                Yii::$app->session->setFlash('error', 'Письмо не отправлено!');
 
-
-
-            Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
-            return $this->refresh();
+            }
         }
-        // $news_for_home = News::find()
-        //     ->select([
-        //         LanguageHelper::title() . ' AS title',
-        //         LanguageHelper::content() . ' AS content',
-        //         'date',
-        //         'image'
-        //     ])
-        //     ->innerJoin('image', 'image.column_id = news.id AND image.ref_image_id = 1')
-        //     ->orderBy(['news.id' => SORT_DESC])
-        //     ->limit(3)
-        //     ->asArray()
-        //     ->all();
+        $news_for_home = News::find()
+            ->select([
+                LanguageHelper::title() . ' AS title',
+                LanguageHelper::content() . ' AS content',
+                'date',
+                'image'
+            ])
+            ->innerJoin('image', 'image.column_id = news.id AND image.ref_image_id = 1')
+            ->orderBy(['news.id' => SORT_DESC])
+            ->limit(3)
+            ->asArray()
+            ->all();
 
 
 
-        // $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
+        $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
 
-        // $events = Events::find()
-        //     ->select([
-        //         'title_en AS title',
-        //         'content_en AS content',
-        //         new \yii\db\Expression('DAY(time_events) as day'),
-        //         new \yii\db\Expression('MONTH(time_events) as month'),
-        //         new \yii\db\Expression('YEAR(time_events) as year'),
+        $events = Events::find()
+            ->select([
+                'title_en AS title',
+                'content_en AS content',
+                new \yii\db\Expression('DAY(time_events) as day'),
+                new \yii\db\Expression('MONTH(time_events) as month'),
+                new \yii\db\Expression('YEAR(time_events) as year'),
 
-        //     ])
-        //     ->where(['>', 'time_events', $current_date])
-        //     ->orderBy([
-        //         'time_events' => SORT_ASC,
-        //     ])
-        //     ->asArray()
-        //     ->limit(3)
-        //     ->all();
-        // return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
-        return $this->render('index', ['model' => $form]);
+            ])
+            ->where(['>', 'time_events', $current_date])
+            ->orderBy([
+                'time_events' => SORT_ASC,
+            ])
+            ->asArray()
+            ->limit(3)
+            ->all();
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
+        // return $this->render('index', ['model' => $form]);
 
     }
     public function actionFaculty($name)
@@ -404,5 +409,25 @@ public function actionSend()
 
 
         return $this->render('applicant-academic-titles', ['professors' => $professor]);
+    }
+    public function actionContact()
+    {
+        return $this->render('contact');
+    }
+    public function actionVacancy()
+    {
+        return $this->render('vacancy');
+    }
+    public function actionAcademicMobility()
+    {
+        return $this->render('academic-mobility');
+    }
+    public function actionConferencesAndSeminar()
+    {
+        return $this->render('conferences-and-seminar');
+    }
+    public function actionIntlOrgMembership()
+    {
+        return $this->render('intl-org-membership');
     }
 }
