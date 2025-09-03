@@ -87,9 +87,8 @@ class SiteController extends Controller
 
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-            Yii::$app->mailer->compose()
-
-                ->setFrom('aibekseitzhan009@gmail.com')
+            $message = Yii::$app->mailer->compose()
+                ->setFrom('aibekseitzhan002@mail.ru')
                 ->setTo('aibekseitzhan002@gmail.com')
                 ->setSubject('Тестовое письмо')
                 ->setTextBody('Привет! Это тест из Yii2 через Symfony Mailer 🚀')
@@ -374,5 +373,25 @@ class SiteController extends Controller
 
 
         return $this->render('applicant-academic-titles', ['professors' => $professor]);
+    }
+    public function actionContact()
+    {
+        return $this->render('contact');
+    }
+    public function actionVacancy()
+    {
+        return $this->render('vacancy');
+    }
+    public function actionAcademicMobility()
+    {
+        return $this->render('academic-mobility');
+    }
+    public function actionConferencesAndSeminar()
+    {
+        return $this->render('conferences-and-seminar');
+    }
+    public function actionIntlOrgMembership()
+    {
+        return $this->render('intl-org-membership');
     }
 }
