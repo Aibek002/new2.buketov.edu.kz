@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers;
-use app\models\AdmissionPdf; 
+use app\models\AdmissionPdf;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
@@ -26,7 +26,7 @@ use app\models\News;
 
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
-use yii\helpers\Html; 
+use yii\helpers\Html;
 use \app\components\LanguageHelper;
 
 class SiteController extends Controller
@@ -81,12 +81,10 @@ class SiteController extends Controller
      *
      * @return string
      */
-    
+
     public function actionIndex()
     {
-        $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
-        $current_month = (int) Yii::$app->formatter->asDate('today', 'MM');
-        $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
+
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             Yii::$app->mailer->compose()
@@ -116,7 +114,8 @@ class SiteController extends Controller
             ->limit(3)
             ->asArray()
             ->all();
-        $current_date = (new \yii\db\Expression('CURDATE()'));  
+        $current_date = (new \yii\db\Expression('CURDATE()'));
+      
         $events = Events::find()
             ->select([
                 'title_en AS title',
@@ -126,13 +125,15 @@ class SiteController extends Controller
                 new \yii\db\Expression('YEAR(time_events) as year'),
 
             ])
-            ->where(['>', 'time_events', $current_date])
+            ->where(['>', 'time_events',  $current_date])
             ->orderBy([
                 'time_events' => SORT_ASC,
             ])
             ->asArray()
             ->limit(3)
             ->all();
+        // print_r($events);die;
+
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
 
     }
