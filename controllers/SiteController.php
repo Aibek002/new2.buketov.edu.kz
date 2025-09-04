@@ -114,7 +114,7 @@ class SiteController extends Controller
             ->asArray()
             ->all();
         $current_date = (new \yii\db\Expression('CURDATE()'));
-      
+
         $events = Events::find()
             ->select([
                 'title_en AS title',
@@ -124,7 +124,7 @@ class SiteController extends Controller
                 new \yii\db\Expression('YEAR(time_events) as year'),
 
             ])
-            ->where(['>', 'time_events',  $current_date])
+            ->where(['>', 'time_events', $current_date])
             ->orderBy([
                 'time_events' => SORT_ASC,
             ])
@@ -222,7 +222,13 @@ class SiteController extends Controller
     public function actionManagementStructure($type)
     {
         $lang = Yii::$app->language;
-        $staff = Staff::find()->joinWith(['refStaff'])->where(['ref_staff.type' => $type])->all();
+        $staff = Staff::find()
+            ->joinWith(['refStaff', 'image.refImage'])
+            ->where(['ref_staff.type' => $type])
+            ->andWhere(['ref_image.page_name' => $type])
+            ->all();
+        // print_r($staff);
+        // die;
         return $this->render('management-structure', ['model' => $staff, 'type' => $type]);
 
     }

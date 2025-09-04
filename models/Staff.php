@@ -42,6 +42,8 @@ use Yii;
 class Staff extends \yii\db\ActiveRecord
 {
     public $date;
+    public $images;
+
 
     /**
      * {@inheritdoc}
@@ -57,7 +59,8 @@ class Staff extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date'],'safe'],
+            [['date', 'images'], 'safe'],
+            [['images'], 'file', 'extensions' => 'jpg', 'checkExtensionByMimeType' => true],
             [['faculty_show', 'dissertation_show'], 'boolean'],
             [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en', 'information_kz', 'information_ru', 'information_en', 'email', 'phone', 'faculty_id', 'departament_id', 'welcome_kz', 'welcome_ru', 'welcome_en', 'job_title_kz', 'job_title_ru', 'job_title_en'], 'default', 'value' => null],
             [['ref_staff_id'], 'required'],
@@ -142,6 +145,10 @@ class Staff extends \yii\db\ActiveRecord
     public function getRefStaff()
     {
         return $this->hasOne(RefStaff::class, ['id' => 'ref_staff_id']);
+    }
+    public function getImage()
+    {
+        return $this->hasOne(Image::class, ['column_id' => 'id']);
     }
 
 }

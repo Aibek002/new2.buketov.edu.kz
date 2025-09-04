@@ -844,6 +844,7 @@ main>.container {
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent {
   display: none;
 }
+
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023,
@@ -851,6 +852,7 @@ main>.container {
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021 {
   display: none;
 }
+
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025.active,
 
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active,
@@ -871,6 +873,7 @@ main>.container {
   border-radius: 10px;
 
 }
+
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active a,
@@ -1241,14 +1244,44 @@ body {
 
 .news-item:hover .card.shadow-sm {
   /* border: 5px solid var(--whiteblue); */
-  background: var(--indigoblue);
   /* или убери, если хочешь сохранить картинку */
   height: 100%;
 }
 
+.card.shadow-sm {
+  position: relative;
+  overflow: hidden;
+}
+
+.card.shadow-sm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--news-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: filter 0.3s ease;
+  z-index: 0; /* фон */
+}
+
+.card-body {
+  position: relative;
+  z-index: 1; /* текст выше фона */
+  background: rgba(0,0,0,0.3); /* необязательно, для контраста */
+  color: white;
+}
+
+.news-item:hover .card.shadow-sm::before {
+  filter: blur(10px);
+}
+
+
 .news-item:hover .news-text {
   display: block;
   color: white;
+  font-weight: 700;
+
   position: absolute;
   bottom: 0;
   left: 0;

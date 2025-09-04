@@ -252,23 +252,28 @@ $this->title = 'Buketov University';
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
             <?php foreach ($news as $news_item): ?>
 
-                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?>"
-                    data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>"
+                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?? '' ?>"
+                    data-content="<?= htmlspecialchars($news_item['content'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                     data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>"
-                    data-img="<?= htmlspecialchars($news_item['image']) ?>" class="col news-item">
-                    <div class="card shadow-sm"
-                        style="--news-image: url('/files/images/news/<?= $news_item['image'] ?>');  background-position: center;background-repeat: no-repeat;background-size: cover;">
-                        <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
+                    data-img="<?= htmlspecialchars($news_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                    class="col news-item">
+
+                    <div class="card shadow-sm" style="--news-image: url('/files/images/news/<?= htmlspecialchars($news_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>');  
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
 
                         <div class="card-body news-text">
-                            <p class="card-text"><?= $news_item['title'] ?></p>
+                            <p class="card-text"><?= $news_item['title'] ?? '' ?></p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small
-                                    class="white-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?></small>
+                                <small class="white-body-secondary">
+                                    <?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>
+                                </small>
                             </div>
                         </div>
                     </div>
                 </div>
+
             <?php endforeach; ?>
         </div>
     </div>

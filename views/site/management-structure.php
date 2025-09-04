@@ -1,6 +1,8 @@
 <?php
 use app\components\LanguageHelper;
 use yii\helpers\HtmlPurifier;
+use app\assets\ManagmentStructureAsset;
+ManagmentStructureAsset::register($this);
 $this->title = Yii::t("app", "Management Structure");
 ?>
 <div class="title-block">
@@ -9,19 +11,34 @@ $this->title = Yii::t("app", "Management Structure");
 <?php if ($model): ?>
     <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 g-4 m-5 p-5 my-5">
         <?php foreach ($model as $index => $model_item): ?>
-            <div class="col staff-management-structure">
+            <div class="card">
+                <div class="avatar-container">
+                    <div class="avatar-circle">
+                        <img src="<?= $model_item->image->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                            class="avatar-img">
+                    </div>
+                </div>
+
+                <h3 class="card-title"> 
+                    <?= $model_item->{LanguageHelper::surname()} ?>
+                    <?= $model_item->{LanguageHelper::name()} ?>
+                    <?= $model_item->{LanguageHelper::patronymic()} ?>
+                </h3>
+                <p class="card-text"><?= $model_item->{LanguageHelper::job_title()} ?></p>
+            </div>
+
+            <!-- <div class="col staff-management-structure">
                 <div class="card h-100 shadow-sm text-center cursor-pointer" data-bs-toggle="modal" data-bs-target="#staffModal"
                     data-title="<?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?>"
                     data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"
-                    
-                    data-img="<?= $model_item->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>">
+                    data-img="<?= $model_item->image->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>">
 
-                    <img src="<?= $model_item->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                    <img src="<?= $model_item->image->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
                         class="card-img-top mx-auto d-block mt-3 rounded-circle" alt="Фото"
                         style="width: 150px; height: 150px; object-fit: cover;">
 
                     <div class="card-body staff-management-structure-card-body">
-                        <h5 class="card-title text-primary"><?= $model_item->{LanguageHelper::job_title()} ?></h5>
+                        <h5 class="card-title text-primary"></h5>
                         <p class="card-text fw-bold mb-1">
                             <?= $model_item->{LanguageHelper::surname()} ?>
                             <?= $model_item->{LanguageHelper::name()} ?>
@@ -29,7 +46,7 @@ $this->title = Yii::t("app", "Management Structure");
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         <?php endforeach; ?>
     </div>
 
