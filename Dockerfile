@@ -24,6 +24,8 @@ RUN composer require yiisoft/mailer-symfony
 # RUN composer install --prefer-dist --no-interaction --no-progress
 
 # RUN composer require yiisoft/yii2-symfonymailer:^2.0
+RUN composer require 2amigos/yii2-tinymce-widget
+
 
 
 RUN apt update && \

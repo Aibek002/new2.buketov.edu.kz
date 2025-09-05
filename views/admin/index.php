@@ -1,31 +1,131 @@
 <?php
 use yii\helpers\Html;
+use app\assets\AdminHomeAsset;
 
-
+AdminHomeAsset::register($this);
 /** @var yii\web\View $this */
 $this->title = 'Admin Page';
+
 ?>
+<div class="admin-panel container my-5">
 
-<div class="admin-panel p-5 my-5">
     <?php if (Yii::$app->user->can("adminAdmin")): ?>
-        <?= Html::a('Создать пользователя', ['admin/sign-up'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('История кафедры', ['admin/history-departament-admin-panel'], ['class' => 'fas st-university']) ?>
-        <?= Html::a('История факультетов', ['admin/history-faculty-admin-panel'], ['class' => 'fas st-university']) ?>
-        <?= Html::a('Информационные страницы', ['admin/article-admin-panel'], ['class' => 'fas ar-university']) ?>
-        <?= Html::a('Кафедры', ['admin/departament-admin-panel'], ['class' => 'fas dp-university']) ?>
-        <?= Html::a('Профессий колледжа', ['admin/profession-college'], ['class' => 'fas st-university']) ?>
-        <?= Html::a('Сотрудники', ['admin/staff-admin-panel'], ['class' => 'fas st-university']) ?>
-        <?= Html::a('Факультеты', ['admin/faculty-admin-panel'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('Загрузить фоты на инфармациионные страницы', ['admin/upload-image'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('Докторанты', ['admin/doctorant-admin-panel'], ['class' => 'fas st-university']) ?>
-        <?= Html::a('Профессора', ['admin/add-professor'], ['class' => 'fas st-university']) ?>
-        <?= Html::a('Соискатели Ученых звании', ['admin/applicant-for-academic-titles'], ['class' => 'fas st-university']) ?>
 
-        <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('Решение Единственного Акционера', ['admin/corporate-sole-shareholder'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('Управление файлами Корпоративного управление', ['admin/corporate-governance-file'], ['class' => 'fas fa-university']) ?>
-        <?= Html::a('Контроль над Диссертационными работами', ['admin/dissertation-advice'], ['class' => 'fas fa-university']) ?>
+        <h2 class="mb-5 text-center fw-bold">Админ Панель</h2>
+        <div class="row g-4">
+            <div >
+                <a style="position: absolute; top: 150px; right: 75px; z-index: 1000; " href="/yii2/web/index.php?r=admin%2Fsign-up" class="admin-card d-block text-center p-3">
+                    <i class="fas fa-user-plus fa-2x mb-2 text-primary"></i>
+                    <p class="fw-semibold mb-0">Edit</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fsign-up" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-user-plus fa-3x mb-3 text-primary"></i>
+                    <p class="fw-semibold">Создать пользователя</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fhistory-departament-admin-panel"
+                    class="admin-card d-block text-center p-4">
+                    <i class="fas fa-landmark fa-3x mb-3 text-success"></i>
+                    <p class="fw-semibold">История кафедры</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fhistory-faculty-admin-panel"
+                    class="admin-card d-block text-center p-4">
+                    <i class="fas fa-school fa-3x mb-3 text-info"></i>
+                    <p class="fw-semibold">История факультетов</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Farticle-admin-panel" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-file-alt fa-3x mb-3 text-warning"></i>
+                    <p class="fw-semibold">Информационные страницы</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fdepartament-admin-panel" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-university fa-3x mb-3 text-danger"></i>
+                    <p class="fw-semibold">Кафедры</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fprofession-college" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-graduation-cap fa-3x mb-3 text-primary"></i>
+                    <p class="fw-semibold">Профессии колледжа</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fstaff-admin-panel" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-users fa-3x mb-3 text-secondary"></i>
+                    <p class="fw-semibold">Сотрудники</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Ffaculty-admin-panel" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-chalkboard-teacher fa-3x mb-3 text-info"></i>
+                    <p class="fw-semibold">Факультеты</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fupload-image" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-image fa-3x mb-3 text-success"></i>
+                    <p class="fw-semibold">Загрузить фото</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fdoctorant-admin-panel" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-user-graduate fa-3x mb-3 text-warning"></i>
+                    <p class="fw-semibold">Докторанты</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fnews-admin-panel" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-newspaper fa-3x mb-3 text-danger"></i>
+                    <p class="fw-semibold">Новости</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fadmission-pdf-admin-panel"
+                    class="admin-card d-block text-center p-4">
+                    <i class="fas fa-file-pdf fa-3x mb-3 text-primary"></i>
+                    <p class="fw-semibold">ПДФ для приёмной комиссии</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fcorporate-governance-file"
+                    class="admin-card d-block text-center p-4">
+                    <i class="fas fa-folder fa-3x mb-3 text-secondary"></i>
+                    <p class="fw-semibold">Файлы корпоративного управления</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fdissertation-advice" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-book fa-3x mb-3 text-success"></i>
+                    <p class="fw-semibold">Контроль диссертаций</p>
+                </a>
+            </div>
+
+        </div>
+
+
+
 
     <?php elseif (Yii::$app->user->can("admissionAdmin")): ?>
         <?= Html::a('ПДФ для приемный коммиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
