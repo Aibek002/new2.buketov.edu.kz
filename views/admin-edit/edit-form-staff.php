@@ -69,26 +69,26 @@ use yii\widgets\ActiveForm;
             <!-- Информация -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 5, 'class'=>'tinymce-editor'])->label('Информация (KZ)') ?>
+                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 5, 'class'=>'tinymce-editor'])->label('Информация (RU)') ?>
+                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_en')->textarea(['rows' => 5, 'class'=>'tinymce-editor'])->label('Информация (EN)') ?>
+                    <?= $form->field($model, 'information_en')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (EN)') ?>
                 </div>
             </div>
 
             <!-- Приветствие -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 4, 'class'=>'tinymce-editor'])->label('Приветствие (KZ)') ?>
+                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 4, 'class'=>'tinymce-editor'])->label('Приветствие (RU)') ?>
+                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 4, 'class'=>'tinymce-editor'])->label('Приветствие (EN)') ?>
+                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (EN)') ?>
                 </div>
             </div>
 
@@ -104,17 +104,21 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($model, 'job_title_en')->textInput()->label('Должность (EN)') ?>
                 </div>
             </div>
-
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <?= $form->field($model, 'images')->fileInput(['accept' => '.jpg']) ?>
+                </div>
+            </div>
             <!-- Связанные поля -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                      <?= $form->field($model, 'faculty_id')->dropDownList(
+                    <?= $form->field($model, 'faculty_id')->dropDownList(
                         ArrayHelper::map(Faculty::find()->all(), 'id', 'name_ru'),
                         ['prompt' => 'Выберите факультет']
                     ) ?>
                 </div>
                 <div class="col-md-4">
-                      <?= $form->field($model, 'faculty_id')->dropDownList(
+                    <?= $form->field($model, 'faculty_id')->dropDownList(
                         ArrayHelper::map(Departament::find()->all(), 'id', 'name_ru'),
                         ['prompt' => 'Выберите кафедру']
                     ) ?>
@@ -140,10 +144,10 @@ use yii\widgets\ActiveForm;
             <!-- Совет по диссертации -->
             <div class="row mt-3">
                 <div class="col-md-12">
-                     <?= $form->field($model, 'dissertation_advice_id')->dropDownList(
+                    <?= $form->field($model, 'dissertation_advice_id')->dropDownList(
                         ArrayHelper::map(DissertationAdvice::find()->all(), 'id', 'name'),
                         ['prompt' => 'Выберите совет']
-                    )->label('Совет по диссертации') ?> 
+                    )->label('Совет по диссертации') ?>
                 </div>
             </div>
 

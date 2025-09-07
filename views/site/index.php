@@ -152,9 +152,8 @@ $this->title = 'Buketov University';
                                 <img width="100%" height="100%" src="/bg-images/bachelor.png">
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Бакалавриат</p>
-                                </a>
+                                <?= Html::a('Бакалавриат <span>></span>', ['site/admission', 'type' => 'bachelor'], ['class' => 'menu-item edu-title']) ?>
+
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Admission instructions') ?>
                                 </p>
@@ -165,9 +164,7 @@ $this->title = 'Buketov University';
                                 <img width="100%" height="100%" src="/bg-images/magistracy.png">
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Магистратура</p>
-                                </a>
+                                <?= Html::a('Магистратура <span>></span>', ['site/admission', 'type' => 'magistracy'], ['class' => 'menu-item edu-title']) ?>
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Admission instructions') ?>
                                 </p>
@@ -180,7 +177,8 @@ $this->title = 'Buketov University';
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
                                 <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Доктарантура</p>
+                                    <?= Html::a('Докторантура <span>></span>', ['site/admission', 'type' => 'doctoral'], ['class' => 'menu-item edu-title']) ?>
+
                                 </a>
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Admission instructions') ?>
@@ -199,11 +197,9 @@ $this->title = 'Buketov University';
                                 </svg>
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2 ">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">
-                                        <?= Yii::t('app', 'Mobility programs') ?>
-                                    </p>
-                                </a>
+                                <?= Html::a(Yii::t('app', 'Mobility programs') . '<span>></span>', ['site/academ-mobility'], ['class' => 'menu-item edu-title']) ?>
+
+
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?>
                                 </p>
@@ -229,11 +225,9 @@ $this->title = 'Buketov University';
                                 </svg>
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">
-                                        <?= Yii::t('app', 'Internship programs') ?>
-                                    </p>
-                                </a>
+
+                                <?= Html::a(Yii::t('app', 'Internship programs') . '<span>></span>', ['site/academ-mobility'], ['class' => 'menu-item edu-title']) ?>
+
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?>
                                 </p>
@@ -417,9 +411,9 @@ $this->title = 'Buketov University';
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
                 <div class="col">
                     <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
                         <div class="card-body d-flex flex-column justify-content-between position-relative">
-                            <p class="card-text text-gray">
+                            <p class="card-text text-black">
                                 <?= Yii::t('app', 'Cooperation in the field of education and science') ?>
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -434,7 +428,7 @@ $this->title = 'Buketov University';
                 </div>
                 <div class="col">
                     <div class="card shadow-sm  h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
                         <div class="card-body d-flex flex-column justify-content-between position-relative">
                             <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -448,7 +442,7 @@ $this->title = 'Buketov University';
                 </div>
                 <div class="col">
                     <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
                         <div class="card-body d-flex flex-column justify-content-between position-relative">
                             <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
                             <div class="d-flex justify-content-between align-items-center">

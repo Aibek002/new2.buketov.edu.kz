@@ -14,6 +14,7 @@ use app\models\RefImage;
 use app\models\RefStaff;
 use app\models\TypeRefStaff;
 use app\models\User;
+use PHPUnit\Framework\TestStatus\Success;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
 use Symfony\Component\BrowserKit\History;
@@ -212,7 +213,7 @@ class AdminEditController extends Controller
 
         return $this->render('edit-form-departament', ['model' => $model]);
     }
-        public function actionEditProfessionCollege()
+    public function actionEditProfessionCollege()
     {
         $model = ProfessionCollege::find()
             ->select([
@@ -240,14 +241,14 @@ class AdminEditController extends Controller
 
         return $this->render('edit-form-profession-college', ['model' => $model]);
     }
-      public function actionEditStaff()
+    public function actionEditStaff()
     {
         $model = Staff::find()
             ->select([
                 'id',
                 'name_ru as name',
-                 'surname_ru as surname',
-                  'patronymic_ru as patronymic',
+                'surname_ru as surname',
+                'patronymic_ru as patronymic',
             ])
             ->orderBy(new \yii\db\Expression("SUBSTRING(name_ru, 9) ASC"))
             ->asArray()
@@ -258,27 +259,55 @@ class AdminEditController extends Controller
     public function actionEditFormStaff($id)
     {
         $model = Staff::findOne($id);
+        $model_image = new Image();
 
         if (!$model) {
-            throw new NotFoundHttpException("History not found");
+            throw new NotFoundHttpException("Staff not found");
         }
 
-        // Если пришли данные из формы
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['admin-edit/edit-staff']);
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'images');
+
+            if ($model->save()) {
+                // Только если файл загружен
+                if ($file) {
+                    $ref_model = RefStaff::find()->select('type')->where(['id' => $model->ref_staff_id])->scalar();
+                    $ref_image_id = RefImage::find()->select('id')->where(['page_name' => $ref_model])->scalar();
+
+                    $model_image->column_id = $model->id;
+                    $model_image->ref_image_id = $ref_image_id;
+
+                    // Безопасное имя папки
+                    $path = Yii::getAlias('@app/../files/image_avatar_staff/') . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/";
+
+                    if (!is_dir($path) && !mkdir($path, 0777, true)) {
+                        throw new \RuntimeException("Не удалось создать директорию: {$path}");
+                    }
+
+                    $fileName = $model->surname_en . "_" . $model->name_en . "." . $file->extension;
+                    if ($file->saveAs($path . $fileName)) {
+                        Yii::$app->session->setFlash("success", "Фото успешно загружено");
+                        $model_image->image = "/files/image_avatar_staff/" . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/" . $fileName; // если у тебя есть колонка для хранения пути
+                        $model_image->save(false);
+                    }
+                }
+
+                return $this->redirect(['admin-edit/edit-staff']);
+            }
         }
 
         return $this->render('edit-form-staff', ['model' => $model]);
     }
-        public function actionEditNews()
+
+    public function actionEditNews()
     {
         $model = News::find()
             ->select([
                 'id',
                 'title_ru as name',
-                
+
             ])
-            
+
             ->asArray()
             ->all();
         // print_r($history);die;

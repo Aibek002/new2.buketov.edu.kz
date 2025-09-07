@@ -23,7 +23,7 @@ class AjaxController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return Staff::find()
-            ->joinWith(['refStaff'])
+            ->joinWith(['refStaff','image'])
             ->where([
                 'ref_staff.type' =>
                     [
@@ -34,9 +34,6 @@ class AjaxController extends Controller
                         'Board-Committee',
 
                     ],
-
-
-
             ])
             ->asArray()
             ->all();
@@ -46,7 +43,7 @@ class AjaxController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return Staff::find()
-            ->joinWith(['refStaff'])
+            ->joinWith(['refStaff','image'])
             ->where([
                 'ref_staff.type' =>
                     [
@@ -151,7 +148,7 @@ class AjaxController extends Controller
     public function actionGetProfessor($search)
     {
         $staff = Staff::find()
-            ->select(['staff.id', 'staff.surname_ru','staff.name_ru','staff.patronymic_ru'])
+            ->select(['staff.id', 'staff.surname_ru', 'staff.name_ru', 'staff.patronymic_ru'])
             ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id=staff.id')
             ->where(['like', 'surname_ru', $search])
             ->andWhere(['in', 'type_ref_staff.ref_staff_id', [14, 15]])

@@ -14,27 +14,19 @@ $this->title = Yii::t("app", "Corporate governance");
     <div class="title-page">
         <?= $this->title ?>
     </div>
-    <div class="select-section">
-        <button id="loadSoleShareHolderBtn"
-            data-lang="<?= $lang ?>"><?= Yii::t("app", "Decisions of the Sole Shareholder") ?>
-        </button>
+    <div class="select-container">
+        <button id="loadSoleShareHolderBtn" data-lang="<?= $lang ?>"
+            class="active"><?= Yii::t("app", "Decisions of the Sole Shareholder") ?></button>
         <button id="loadBoardOfDirectorsBtn" data-lang="<?= $lang ?>">
-            <?= Yii::t("app", "Board of Directors") ?>
-        </button>
-        <button id="loadGovernanceBtn" data-lang="<?= $lang ?>">
-            <?= Yii::t("app", "Governance") ?>
-        </button>
-        <button id="loadDocumentsAndReportingBtn" data-lang="<?= $lang ?>">
-            <?= Yii::t("app", "Corporate documents") ?>
-        </button>
-        <button id="loadSustainableDevelopmentBtn" data-lang="<?= $lang ?>">
-            <?= Yii::t("app", "Sustainable Development") ?>
-        </button>
-
-
+            <?= Yii::t("app", "Board of Directors") ?></button>
+        <button id="loadGovernanceBtn" data-lang="<?= $lang ?>"><?= Yii::t("app", "Governance") ?></button>
+        <button id="loadDocumentsAndReportingBtn"
+            data-lang="<?= $lang ?>"><?= Yii::t("app", "Corporate documents") ?></button>
+        <button id="loadSustainableDevelopmentBtn"
+            data-lang="<?= $lang ?>"><?= Yii::t("app", "Sustainable Development") ?></button>
     </div>
-    <div class=" container my-5 sole-shareholder active">
-        <h2 class="title-content"><?= Yii::t("app", "Decisions of the Sole Shareholder") ?></h2>
+
+    <div class="container my-5 sole-shareholder p-0 active">
 
         <?php foreach ($year as $year):
             if ($year->ref_corporate_governance === 1): ?>
@@ -76,7 +68,6 @@ $this->title = Yii::t("app", "Corporate governance");
         <?= Yii::t("app", "Board of Directors") ?>
     </div>
     <div id="board-members" class="board-of-directors-section">
-
         <div class="container-board-of-directors"></div>
     </div>
     <div class="title-content">

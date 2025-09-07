@@ -1,3 +1,47 @@
+ .select-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        margin: 40px 0;
+        flex-wrap: nowrap;
+    }
+
+    .select-container button {
+        flex: 1 1 0%;
+        min-width: 220px;
+        /* max-width: 220px; */
+        border-radius: 12px;
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: "Segoe UI", Arial, sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    /* Активная кнопка */
+    .select-container button.active {
+        background: var(--indigoblue);
+        color: #fff;
+        border: none;
+        box-shadow: 0 6px 15px rgba(74, 144, 226, 0.35);
+    }
+
+    /* Обычные кнопки */
+    .select-container button:not(.active) {
+        background: #fff;
+        border: 2px solid var(--indigoblue-font);
+        color: var(--indigoblue-font);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Эффект наведения */
+    .select-container button:hover {
+        background: linear-gradient(135deg, #4a90e2, #357abd);
+        color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(74, 144, 226, 0.55);
+    }
 .corporate-container {
     margin-inline: 50px;
 }
@@ -69,18 +113,7 @@
     display: block;
 }
 
-.title-content {
-    padding: 20px;
-    margin-block: 50px;
-    font-family: 'Arial', sans-serif;
-    font-size: 34px;
-    font-weight: 700;
-    color: var(--indigoblue-font);
-    padding: 10px 15px;
-    border-left: 5px solid var(--indigoblue-font);
-    background-color: var(--light-gray);
-    border-radius: 10px;
-}
+
 
 .content-corporate-governance {
     display: grid;
@@ -131,8 +164,8 @@
 .pdfViewer,
 .pdfViewerBoards,
 .board_governance_pdf,
-.governance_pdf ,
-.corp_docs_pdf{
+.governance_pdf,
+.corp_docs_pdf {
     margin-inline: 10%;
     margin-block: 100px;
     display: none;
@@ -146,14 +179,8 @@
     display: block;
 }
 
-.container-governance,
-.container-board-of-directors {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-}
+
+
 
 .governance-card img {
     width: 100%;
@@ -187,11 +214,13 @@
     text-align: center;
     font-size: var(--font-14);
 }
-
+.container-governance,
 .board-of-directors-section {
     display: flex;
-    gap: 20px;
+    gap: 6.6666%;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 
 .board-meeting,
@@ -235,7 +264,7 @@
     /* fixed лучше, чтобы следовало за прокруткой */
     top: 0;
     left: 0;
-    backdrop-filter: blur(24px);
+    filter: blur(24px);
     /* размытие заднего фона */
     background: rgba(255, 255, 255, 0.2);
     /* прозрачность для эффекта */
@@ -865,4 +894,54 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.card {
+    width: 20%;
+    margin-block: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    border: 6px solid #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    /* обрезка */
+}
+
+.avatar-img {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    z-index: 2;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+}
+
+.card-title {
+    margin-top: 40px;
+    font-weight: bold;
+    color: #1d3557;
+    font-size: 20px;
+}
+
+.card-text {
+    color: #555;
+    font-size: 16px;
 }

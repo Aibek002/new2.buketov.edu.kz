@@ -6,6 +6,8 @@ function loadPDF(filePath) {
     pdfViewer.src = filePath + "#toolbar=0&navpanes=0&statusbar=0";
   }, 50);
   pdfViewer.classList.add("active");
+  pdfViewer.scrollIntoView({ behavior: "smooth" });
+
 }
 function loadPDFBoardGovernance(filePath) {
   const pdfViewer = document.querySelector(".board_governance_pdf");
