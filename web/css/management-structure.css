@@ -46,3 +46,10 @@
     color: #555;
     font-size: 16px;
 }
+.overly-resume{
+    display: none;
+}
+.overly-resume.active{
+    display: block;
+    
+}

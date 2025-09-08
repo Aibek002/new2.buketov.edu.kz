@@ -44,7 +44,7 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['doctorant_id', 'type', 'dissertation_advice_id', 'professor_id','ref_files_id','years'], 'safe'],
+            [['doctorant_id', 'type', 'dissertation_advice_id', 'professor_id', 'ref_files_id', 'years'], 'safe'],
             [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20, 'on' => 'create'],
             [['path_file', 'doctorant_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
@@ -97,5 +97,12 @@ class Files extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Doctorant::class, ['id' => 'doctorant_id']);
     }
+
+    public function getDissertationAdvice()
+    {
+        return $this->hasOne(DissertationAdvice::class, ['id' => 'dissertation_id'])
+            ->via('doctorant'); // через связь doctorant
+    }
+
 
 }

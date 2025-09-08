@@ -14,7 +14,7 @@ $this->title = 'Admin Page';
         <h2 class="mb-5 text-center fw-bold">Админ Панель</h2>
         <div class="row g-4">
             <div >
-                <a style="position: absolute; top: 150px; right: 75px; z-index: 1000; " href="/yii2/web/index.php?r=admin%2Fsign-up" class="admin-card d-block text-center p-3">
+                <a style="position: absolute; top: 150px; right: 75px; z-index: 1000; " href="/yii2/web/index.php?r=admin-edit%2F" class="admin-card d-block text-center p-3">
                     <i class="fas fa-user-plus fa-2x mb-2 text-primary"></i>
                     <p class="fw-semibold mb-0">Edit</p>
                 </a>

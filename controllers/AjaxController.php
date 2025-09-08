@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\components\LanguageHelper;
 use app\models\ApplicantForAcademicTitles;
 use app\models\Doctorant;
+use app\models\Files;
 use Yii;
 use yii\web\Controller;
 use app\models\Staff;
@@ -23,7 +24,7 @@ class AjaxController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return Staff::find()
-            ->joinWith(['refStaff','image'])
+            ->joinWith(['refStaff', 'image'])
             ->where([
                 'ref_staff.type' =>
                     [
@@ -43,7 +44,7 @@ class AjaxController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return Staff::find()
-            ->joinWith(['refStaff','image'])
+            ->joinWith(['refStaff', 'image'])
             ->where([
                 'ref_staff.type' =>
                     [
@@ -157,4 +158,16 @@ class AjaxController extends Controller
 
         return $this->asJson($staff);
     }
+    public function actionGetNormativeDocs($diss_id)
+    {
+        $file = Files::find()
+            ->select(['language_file', 'fileName', 'id'])
+            ->where(['dissertation_advice_id' => $diss_id])
+            ->andWhere(['ref_files_id' => 2])
+            ->asArray()
+            ->all();
+
+        return $this->asJson($file);
+    }
+
 }

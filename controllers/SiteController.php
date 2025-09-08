@@ -255,6 +255,7 @@ class SiteController extends Controller
         $profession_university = Profession::find()->orderBy(LanguageHelper::name())->all();
         $pdf = AdmissionPdf::find()
             ->orderBy('ref_sort_order_id')
+            ->where(['archive'=>0])
             ->asArray()
             ->all();
 
