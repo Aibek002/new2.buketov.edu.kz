@@ -124,12 +124,12 @@ class AdminController extends Controller
                                     mkdir($path, 0775, true);
                                 }
 
-                                $filePath = $path  . $file->baseName . "." . $file->extension;
+                                $filePath = $path . $file->baseName . "." . $file->extension;
                                 $image_model = new Image();
                                 $image_model->ref_image_id = RefImage::find()->select('id')->where(['page_name' => $type])->scalar();
 
                                 $image_model->column_id = $staff->id;
-                                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . $staff->surname_en . "_" . $staff->name_en . "/".  $file->baseName . "." . $file->extension;
+                                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . $staff->surname_en . "_" . $staff->name_en . "/" . $file->baseName . "." . $file->extension;
                                 if ($image_model->save(false)) {
                                     if ($file->saveAs($filePath)) {
                                         Yii::$app->session->setFlash('success', 'Successfully created!');
@@ -653,71 +653,70 @@ class AdminController extends Controller
     public function actionDissertationAdvice()
     {
         $model = new Files();
-        if (Yii::$app->request->isPost) {
-            if ($model->load(Yii::$app->request->post())) {
-                $files = UploadedFile::getInstances($model, 'files');
-                $staff_info = Doctorant::find()
-                    ->select(['faculty.name_ru AS faculty_name', 'dissertation_advice.name as dissertation_name', 'doctorant.full_name_ru AS doctorant_full_name'])
-                    ->innerJoin('dissertation_advice', 'dissertation_advice.id = doctorant.dissertation_id')
-                    ->innerJoin('faculty', 'faculty.id = dissertation_advice.faculty_id')
-                    ->where(['doctorant.id' => $model->doctorant_id])
-                    ->asArray()
-                    ->one();
-                $basePath = Yii::getAlias("@app/../files/pdf/dissertation_advice/");
-                if ($model->type === 'normative') {
-                    $basePath .= "normative_documents/";
+        if ($model->load(Yii::$app->request->post())) {
+            $files = UploadedFile::getInstances($model, 'files');
+            $staff_info = Doctorant::find()
+                ->select(['faculty.name_ru AS faculty_name', 'dissertation_advice.name as dissertation_name', 'doctorant.full_name_ru AS doctorant_full_name'])
+                ->innerJoin('dissertation_advice', 'dissertation_advice.id = doctorant.dissertation_id')
+                ->innerJoin('faculty', 'faculty.id = dissertation_advice.faculty_id')
+                ->where(['doctorant.id' => $model->doctorant_id])
+                ->asArray()
+                ->one();
+            $basePath = Yii::getAlias("@app/../files/pdf/dissertation_advice/");
+            if ($model->type === 'normative') {
+                $basePath .= "normative_documents/";
 
-                } elseif ($model->type === 'doctorant') {
-                    $basePath .=
-                        $staff_info['faculty_name'] . "/" . $staff_info['dissertation_name'] . "/"
-                        . $staff_info['doctorant_full_name'] . "/";
-
-                }
-                // print_r('Path: ' . $basePath);
-                // die;
-
-
-                if (!is_dir($basePath)) {
-                    mkdir($basePath, 0775, true);
-                }
-
-
-                $i = 1;
-                foreach ($files as $file) {
-                    $fileModel = new Files();
-                    if ($model->type === 'normative') {
-                        $fileModel->ref_files_id = 2;
-                        $fileModel->dissertation_advice_id = $model->dissertation_advice_id;
-
-
-                    } elseif ($model->type === 'doctorant') {
-                        $fileModel->doctorant_id = $model->doctorant_id;
-                        $fileModel->ref_files_id = 1;
-                    }
-
-                    $fileModel->author = Yii::$app->user->id;
-
-                    $fileModel->status = 1;
-                    $fileModel->language_file = $model->language_file;
-
-                    // имя файла
-                    $fileName = $file->baseName . "." . $file->extension;
-
-                    $fileModel->path_file = $basePath . $fileName;
-                    $fileModel->fileName = $fileName;
-
-                    if (!$fileModel->save()) {
-                        var_dump($fileModel->errors);
-                        exit;
-                    } else {
-                        $file->saveAs($basePath . $fileName);
-                    }
-
-                    $i++;
-                }
-                return $this->refresh();
+            } elseif ($model->type === 'doctorant') {
+                $basePath .=
+                    $staff_info['faculty_name'] . "/" . $staff_info['dissertation_name'] . "/"
+                    . $staff_info['doctorant_full_name'] . "/";
 
             }
+            // print_r('Path: ' . $basePath);
+            // die;
+
+
+            if (!is_dir($basePath)) {
+                mkdir($basePath, 0775, true);
+            }
+
+
+            $i = 1;
+            foreach ($files as $file) {
+                $fileModel = new Files();
+                if ($model->type === 'normative') {
+                    $fileModel->ref_files_id = 2;
+                    $fileModel->dissertation_advice_id = $model->dissertation_advice_id;
+
+
+                } elseif ($model->type === 'doctorant') {
+                    $fileModel->doctorant_id = $model->doctorant_id;
+                    $fileModel->ref_files_id = 1;
+                }
+
+                $fileModel->author = Yii::$app->user->id;
+
+                $fileModel->status = 1;
+                $fileModel->language_file = $model->language_file;
+
+                // имя файла
+                $fileName = $file->baseName . "." . $file->extension;
+
+                $fileModel->path_file = $basePath . $fileName;
+                $fileModel->fileName = $fileName;
+
+                if (!$fileModel->save()) {
+                    var_dump($fileModel->errors);
+                    exit;
+                } else {
+                    $file->saveAs($basePath . $fileName);
+                }
+
+                $i++;
+            }
+            return $this->refresh();
+
+
         }
 
 

@@ -11,6 +11,7 @@ use yii\bootstrap5\ActiveForm;
 
 $this->title = Yii::t("app", "Управление с ПДФами с Приемной комиссий");
 $lang = Yii::$app->language;
+print_r($models->attributes);
 ?>
 <div class="admin-panel p-5 m-5">
     <h1><?= Html::encode($this->title); ?></h1>

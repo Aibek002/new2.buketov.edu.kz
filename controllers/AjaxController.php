@@ -169,5 +169,19 @@ class AjaxController extends Controller
 
         return $this->asJson($file);
     }
+    public function actionGetDoctorants($diss_id)
+    {
+        $doctorant = Doctorant::findAll(['dissertation_id' => $diss_id]);
 
+        return $this->asJson($doctorant);
+    }
+    public function actionGetDoctorantsDoc($doctorant_id)
+    {
+        $doctorant_doc = Files::find()
+            ->where(['doctorant_id' => $doctorant_id])
+            ->orderBy(['fileName' => SORT_ASC]) // или SORT_DESC
+            ->all();
+
+        return $this->asJson($doctorant_doc);
+    }
 }

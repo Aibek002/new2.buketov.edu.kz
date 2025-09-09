@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\assets\DissertationAdviceAdminEditAsset;
+DissertationAdviceAdminEditAsset::register($this);
 ?>
 
 <div class="container mt-4">
@@ -30,50 +32,17 @@ use yii\helpers\Url;
                 <option value="">-- Выберите --</option>
 
             </select>
-
+            <label for="doctorant">Докторанты:</label>
+            <select id="doctorant" class="form-select mb-3" disabled>
+                <option value="">-- Выберите --</option>
+            </select>
+            <label for="doctorant">Документы Докторанта:</label>
+            <select id="doctorant_doc" class="form-select mb-3" disabled>
+                <option value="">-- Выберите --</option>
+            </select>
             <button id="result" disabled>Изменить</button>
         </div>
     </div>
 </div>
 </div>
 
-<script>
-    const dis_advice = document.querySelector('#council');
-    const type_doc = document.querySelector('#docType');
-    const normative_doc = document.querySelector('#normative_doc');
-    const doctorant = document.querySelector('#doctorant');
-    const btn_redirect = document.querySelector('#result');
-
-
-    dis_advice.addEventListener('change', () => {
-        type_doc.removeAttribute("disabled");
-        const diss_id = dis_advice.value;
-        console.log(dis_advice.value);
-        type_doc.addEventListener('change', () => {
-            if (type_doc.value == 2) {
-                fetch(`/yii2/web/index.php?r=ajax/get-normative-docs&diss_id=${dis_advice.value}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        normative_doc.innerHTML = `<option value="">Выберите документ</option>`; // очищаем
-                        data.forEach(element => {
-                            normative_doc.innerHTML += `
-                            <option value="${element.id}">
-                                ${element.fileName + "(" + element.language_file + ")"}
-                            </option>`
-                        });
-                    })
-                    .catch(err => console.error("Ошибка загрузки:", err));
-                normative_doc.removeAttribute('disabled');
-                normative_doc.addEventListener('change', () => {
-                    btn_redirect.removeAttribute('disabled');
-                    btn_redirect.addEventListener('click',()=>{
-                        window.location.href = `/yii2/web/index.php?r=admin-edit/edit-form-dissertation-file&id=${normative_doc.value}`
-                    })
-                })
-            } else if (type_doc == 1) {
-
-            }
-            console.log(type_doc.value);
-        });
-    })
-</script>

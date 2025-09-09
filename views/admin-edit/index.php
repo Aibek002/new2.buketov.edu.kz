@@ -44,6 +44,9 @@ $this->title = 'Админ панель';
                 <li class="list-group-item">
                     <?= Html::a('Редактировать файлы Диссертационного совета', ['admin-edit/edit-dissertation-file'], ['class' => 'text-decoration-none']) ?>
                 </li>
+                <li class="list-group-item">
+                    <?= Html::a('Редактировать Докторантов', ['admin-edit/edit-doctorant'], ['class' => 'text-decoration-none']) ?>
+                </li>
             </ul>
         </div>
     </div>
