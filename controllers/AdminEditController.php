@@ -10,6 +10,7 @@ use app\models\Departament;
 use app\models\DissertationAdvice;
 use app\models\Doctorant;
 use app\models\Profession;
+use app\models\RefCorporateGovernance;
 use app\models\RefFiles;
 use app\models\RefImage;
 use app\models\RefStaff;
@@ -502,5 +503,44 @@ class AdminEditController extends Controller
         ]);
     }
 
+    public function actionEditCorporateFile()
+    {
+        $model = new CorporateGovernanceFile();
+        $type_corporate = RefCorporateGovernance::find()->orderBy('id')->all();
+        $share_sole_holder_years = CorporateGovernanceFile::find()->select('sort_id')->where(['ref_corporate_governance' => 1])->distinct()->all();
 
+        return $this->render('edit-corporate-file', ['model' => $model, 'type_corporate' => $type_corporate, 'share_sole_holder_years' => $share_sole_holder_years]);
+    }
+    public function actionEditFormCorporateFile($id)
+    {
+        $model = CorporateGovernanceFile::findOne($id);
+        $type_corporate = RefCorporateGovernance::find()->orderBy('id')->all();
+        $share_sole_holder_years = CorporateGovernanceFile::find()->select('sort_id')->where(['ref_corporate_governance' => 1])->distinct()->all();
+        $language = CorporateGovernanceFile::find()->select('language_file')->where(['ref_corporate_governance' => 1])->distinct()->all();
+        if (Yii::$app->request->isPost) {
+            $file = UploadedFile::getInstance($model, 'file');
+
+            if ($file) {
+                $path = str_replace([$model->fileName], "", $model->path_file);
+                // print_r($path);
+                // die;
+                $fileName = uniqid() . "_" . $file->baseName . "." . $file->extension;
+                if(!$file->saveAs($path . $fileName)){
+                    print_r("Error when save old file : " . $model->path_file);die;
+
+                }
+            }
+            if (file_exists($model->path_file . $model->fileName)) {
+                if (!unlink($model->path_file . $model->fileName)) {
+                    print_r("Error when delete old file : " . $model->path_file);
+                }
+            }
+            $model->fileName = $fileName;
+            if($model->load(Yii::$app->request->post()) && $model->save(false)){
+                return $this->refresh();
+            }
+        }
+
+        return $this->render('edit-form-corporate-file', ['model' => $model, 'type_corporate' => $type_corporate, 'years' => $share_sole_holder_years, 'language' => $language]);
+    }
 }

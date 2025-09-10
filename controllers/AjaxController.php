@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\components\LanguageHelper;
 use app\models\ApplicantForAcademicTitles;
+use app\models\CorporateGovernanceFile;
 use app\models\Doctorant;
 use app\models\Files;
 use Yii;
@@ -183,5 +184,28 @@ class AjaxController extends Controller
             ->all();
 
         return $this->asJson($doctorant_doc);
+    }
+    public function actionGetSortId($type_corporate = null)
+    {
+        $model = CorporateGovernanceFile::find()
+            ->select('sort_id')
+            ->where([
+                'ref_corporate_governance' => $type_corporate
+            ])
+            ->orderBy(['sort_id' => SORT_ASC])
+            ->distinct()
+            ->all();
+        return $this->asJson($model);
+    }
+    public function actionGetFileForChange($type_corporate = null, $sort_id = null)
+    {
+        $model = CorporateGovernanceFile::find()
+            ->where([
+                'sort_id' => $sort_id,
+                'ref_corporate_governance' => $type_corporate
+            ])
+            ->orderBy(['name_url' => SORT_ASC])
+            ->all();
+        return $this->asJson($model);
     }
 }
