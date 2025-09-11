@@ -138,35 +138,255 @@ form {
 }
 
 
-.chat-bot{
+.chat-open {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
-    background: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg');
+    border: none;
+    background-image: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg');
     z-index: 1000;
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
     animation: vibrate 0.3s infinite;
+    animation: swing 1s infinite ease-in-out;
 }
-.chat-bot::before,
-.chat-bot::after {
+
+@keyframes swing {
+    0% {
+        transform: rotate(0);
+    }
+
+    10% {
+        transform: rotate(15deg);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    70% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+.chat-open::before,
+.chat-open::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 10px solid var(--indigoblue-font); /* цвет волны */
+    border: 10px solid #274b7a;
+    /* цвет волны */
     top: 0;
     left: 0;
     animation: ripple 2s infinite;
     z-index: -1;
 }
 
-.chat-bot::after {
-    animation-delay: 1s; /* вторая волна с задержкой */
+.chat-open::after {
+    animation-delay: 1s;
+    /* вторая волна с задержкой */
+}
+
+.chat-whatsapp,
+.chat-phone,
+.chat-bot {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
+    right: 50px;
+    background-size: cover;
+    border-radius: 100%;
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    z-index: 999;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.chat-whatsapp {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/7044/7044732.png');
+}
+
+.chat-phone {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3670/3670051.png');
+}
+
+.chat-bot {
+    background-image: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg');
+}
+
+/* при открытии */
+.chat-whatsapp.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-70px);
+    z-index: 1000;
+}
+
+.chat-phone.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-130px);
+    z-index: 1000;
+}
+
+.chat-bot.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-190px);
+    z-index: 1000;
+}
+
+/* кнопка открытия */
+/* .chat-open {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    background: green;
+    cursor: pointer;
+    z-index: 1000;
+} */
+.chat-box {
+    width: 400px;
+    height: 550px;
+    background: #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1001;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-chat {
+    width: 100%;
+    height: 60px;
+    background: var(--indigoblue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.header-chat p {
+    margin: 0;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    max-width: 100%;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    flex: 1;
+    margin: 20px;
+    overflow-y: scroll;
+}
+.message strong,
+.message li{
+    color: white;
+}
+
+.message.bot {
+    background: var(--indigoblue);
+    padding: 20px;
+    border-radius: 20px;
+    color: var(--white);
+    max-width: 70%;
+}
+
+.message.user {
+    max-width: 70%;
+    margin-left: 25%;
+    border: 1px solid var(--indigoblue-font);
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    color: var(--indigoblue-font);
+
+}
+
+.chat-box-input {
+    flex: 0 0 50px;
+    /* фиксированная высота */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.chat-box-input input {
+    width: 88%;
+    height: 80%;
+    border-radius: 100px;
+    border: 1px solid var(--indigoblue-font);
+    color: #4a90e2;
+    padding-left: 20px;
+}
+
+.chat-box-input button {
+    width: 10%;
+    height: 80%;
+    background: url('https://cdn-icons-png.freepik.com/512/3682/3682321.png') no-repeat center;
+    border-radius: 100%;
+    background-size: 60%;
+    /* иконка будет занимать 60% кнопки */
+    border: none;
+    cursor: pointer;
+
 }
 
 @keyframes ripple {
@@ -174,8 +394,10 @@ form {
         transform: scale(1);
         opacity: 0.8;
     }
+
     100% {
-        transform: scale(2.5); /* размер круга */
+        transform: scale(2.5);
+        /* размер круга */
         opacity: 0;
     }
 }

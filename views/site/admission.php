@@ -483,7 +483,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
 
                         <button
-                            onclick='openGeneralRulesPdfDoctoral("files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>

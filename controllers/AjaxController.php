@@ -208,4 +208,36 @@ class AjaxController extends Controller
             ->all();
         return $this->asJson($model);
     }
+    public function actionChatBot($message)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $apiKey = trim($_ENV['GOOGLE_API_KEY']);
+
+        $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $apiKey);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
+        $language = Yii::$app->language; // рус, укр, англ и т.д.
+
+        // Инструкция встроена в текст запроса
+        $postData = [
+            "contents" => [
+                [
+                    "role" => "user",
+                    "parts" => [
+                        ["text" => "$message"]
+                    ]
+                ]
+            ]
+        ];
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $data = json_decode($result, true);
+
+        return $data;
+    }
 }
