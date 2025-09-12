@@ -212,7 +212,7 @@ class AjaxController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         // $apiKey = trim($_ENV['GOOGLE_API_KEY']);
-        $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCF2NMWhJAWe86bqX8BOtKEl6RYgUWwLQk");
+        $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=");
 
         // $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $apiKey);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
