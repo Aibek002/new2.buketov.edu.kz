@@ -2,7 +2,7 @@
 return [
     'faculty' => 'факультеті',
     'inspiring intellectuals' => 'шабыттандыратын зияткерлер',
-    'since 1994' => '1994 жылдан бері',
+    'since 1938' => '1938 жылдан бері',
     'National Quality Mark "PERFECT"' => '«Мінсіз» халық сапа белгісі',
     'This is public recognition of goods and services distinguished by high quality, reliability and consumer trust.' =>
         'Бұл — жоғары сапасымен, сенімділігімен және тұтынушылардың сенімімен ерекшеленетін тауарлар мен қызметтерге берілетін қоғамдық мойындау.',

@@ -20,7 +20,7 @@ $this->title = 'Buketov University';
             <div class="university-branding text-start">
                 <p class="university-name">BUKETOV UNIVERSITY</p>
                 <p class="university-motto"><?php echo Yii::t('app', 'inspiring intellectuals') ?></p>
-                <p class="university-year"><?php echo Yii::t('app', 'since 1994') ?></p>
+                <p class="university-year"><?php echo Yii::t('app', 'since 1938') ?></p>
             </div>
 
 
@@ -454,7 +454,7 @@ $this->title = 'Buketov University';
 <div class="chat-box">
     <div class="header-chat">
         <p>BUKETOV AI</p>
-        <img src="https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg" alt="">
+        <button class="close_chat_bot"></button>
     </div>
     <div class="messages"></div>
     <div class="chat-box-input">
@@ -465,61 +465,4 @@ $this->title = 'Buketov University';
 <button class="chat-whatsapp"></button>
 <button class="chat-phone"></button>
 <button class="chat-bot"></button>
-<button class="chat-open"></button>
-<script>
-const input = document.querySelector('.input-message');
-const button = document.querySelector('.chat-submit');
-const messageBox = document.querySelector('.messages');
-
-function sendMessage() {
-    const inputValue = input.value.trim();
-    if (inputValue === "") return;
-
-    // Показываем сообщение пользователя
-    messageBox.innerHTML += `<div class="message user">${inputValue}</div>`;
-
-    // Очищаем инпут
-    input.value = "";
-
-    // Отправка на сервер
-    fetch(`/index.php?r=ajax%2Fchat-bot&message=${encodeURIComponent(inputValue)}`)
-        .then(response => response.json())
-        .then(data => {
-            const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Ошибка AI";
-
-            // Преобразуем markdown
-            let formattedText = rawText
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // жирный
-                .replace(/\*(.*?)\*/g, '<em>$1</em>');             // курсив
-
-            // Списки
-            const listItems = formattedText.match(/^(?:- |\* )(.*)$/gm);
-            if (listItems) {
-                const listHtml = listItems.map(item => `<li>${item.replace(/^- |\* /, '')}</li>`).join('');
-                formattedText = formattedText.replace(/^(?:- |\* ).*$/gm, ''); // удаляем исходные строки
-                formattedText += `<ul>${listHtml}</ul>`;
-            }
-
-            // Добавляем ответ бота
-            messageBox.innerHTML += `<div class="message bot">${formattedText}</div>`;
-
-            // Скролл вниз
-            messageBox.scrollTop = messageBox.scrollHeight;
-        })
-        .catch(err => {
-            console.error(err);
-            messageBox.innerHTML += `<div class="message bot">Ошибка при отправке запроса</div>`;
-        });
-}
-
-// Отправка по клику на кнопку
-button.addEventListener('click', sendMessage);
-
-// Отправка по нажатию Enter
-input.addEventListener('keydown', (event) => {
-    if (event.key === "Enter") {
-        event.preventDefault(); // чтобы не было перехода на новую строку
-        sendMessage();
-    }
-});
-</script>
+<button class="chat-open active"></button>

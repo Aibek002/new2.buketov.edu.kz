@@ -211,9 +211,10 @@ class AjaxController extends Controller
     public function actionChatBot($message)
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $apiKey = trim($_ENV['GOOGLE_API_KEY']);
+        // $apiKey = trim($_ENV['GOOGLE_API_KEY']);
+        $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCF2NMWhJAWe86bqX8BOtKEl6RYgUWwLQk");
 
-        $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $apiKey);
+        // $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $apiKey);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
@@ -225,7 +226,7 @@ class AjaxController extends Controller
                 [
                     "role" => "user",
                     "parts" => [
-                        ["text" => "$message"]
+                        ["text" => "Ты — чат-бот университета Букетова. Отвечай только на вопросы, связанные с университетом: расписание, кафедры, приёмная комиссия, контакты, факультеты, преподаватели. Если вопрос не про университет — отвечай: 'Я могу отвечать только на вопросы по университету.' вопрос - $message"]
                     ]
                 ]
             ]

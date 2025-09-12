@@ -152,6 +152,15 @@ form {
     background-repeat: no-repeat;
     animation: vibrate 0.3s infinite;
     animation: swing 1s infinite ease-in-out;
+    display: none;
+}
+
+.chat-open.active {
+    display: block;
+}
+
+.close_chat_bot {
+    animation: swing 1s infinite ease-in-out;
 }
 
 @keyframes swing {
@@ -201,7 +210,6 @@ form {
     height: 100%;
     border-radius: 50%;
     border: 10px solid #274b7a;
-    /* цвет волны */
     top: 0;
     left: 0;
     animation: ripple 2s infinite;
@@ -288,11 +296,15 @@ form {
     right: 40px;
     z-index: 1001;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    display: flex;
+    display: none;
     flex-direction: column;
     overflow: hidden;
     font-family: "Segoe UI", Tahoma, sans-serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-box.active {
+    display: flex;
 }
 
 .header-chat {
@@ -310,10 +322,14 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.header-chat img {
+.header-chat button {
+    background: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg') no-repeat center;
+    background-size: 100%;
     width: 50px;
     height: 50px;
+    border: none;
     border-radius: 100%;
+    background-color: white;
 }
 
 .header-chat p {
@@ -333,8 +349,9 @@ form {
     margin: 20px;
     overflow-y: scroll;
 }
+
 .message strong,
-.message li{
+.message li {
     color: white;
 }
 
