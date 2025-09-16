@@ -9,6 +9,10 @@ HomeAsset::register($this);
 
 $this->title = 'Buketov University';
 ?>
+
+
+
+
 <div class="main-wrapper d-flex flex-column justify-content-center align-items-center w-100">
     <div class="first-block d-flex justify-content-center align-items-cente w-100 h-100">
         <div class="first-block-half p-5">
@@ -16,7 +20,7 @@ $this->title = 'Buketov University';
             <div class="university-branding text-start">
                 <p class="university-name">BUKETOV UNIVERSITY</p>
                 <p class="university-motto"><?php echo Yii::t('app', 'inspiring intellectuals') ?></p>
-                <p class="university-year"><?php echo Yii::t('app', 'since 1994') ?></p>
+                <p class="university-year"><?php echo Yii::t('app', 'since 1938') ?></p>
             </div>
 
 
@@ -140,9 +144,8 @@ $this->title = 'Buketov University';
                                 <img width="100%" height="100%" src="/bg-images/bachelor.png">
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Бакалавриат</p>
-                                </a>
+                                <?= Html::a('Бакалавриат <span>></span>', ['site/admission', 'type' => 'bachelor'], ['class' => 'menu-item edu-title']) ?>
+
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Admission instructions') ?>
                                 </p>
@@ -153,9 +156,7 @@ $this->title = 'Buketov University';
                                 <img width="100%" height="100%" src="/bg-images/magistracy.png">
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Магистратура</p>
-                                </a>
+                                <?= Html::a('Магистратура <span>></span>', ['site/admission', 'type' => 'magistracy'], ['class' => 'menu-item edu-title']) ?>
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Admission instructions') ?>
                                 </p>
@@ -168,7 +169,8 @@ $this->title = 'Buketov University';
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
                                 <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">Доктарантура</p>
+                                    <?= Html::a('Докторантура <span>></span>', ['site/admission', 'type' => 'doctoral'], ['class' => 'menu-item edu-title']) ?>
+
                                 </a>
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Admission instructions') ?>
@@ -187,11 +189,9 @@ $this->title = 'Buketov University';
                                 </svg>
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2 ">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">
-                                        <?= Yii::t('app', 'Mobility programs') ?>
-                                    </p>
-                                </a>
+                                <?= Html::a(Yii::t('app', 'Mobility programs') . '<span>></span>', ['site/academ-mobility'], ['class' => 'menu-item edu-title']) ?>
+
+
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?>
                                 </p>
@@ -217,11 +217,9 @@ $this->title = 'Buketov University';
                                 </svg>
                             </div>
                             <div class="d-flex flex-column justify-content-center px-2">
-                                <a href="#" style="">
-                                    <p class="edu-title edu-title--bachelor m-0">
-                                        <?= Yii::t('app', 'Internship programs') ?>
-                                    </p>
-                                </a>
+
+                                <?= Html::a(Yii::t('app', 'Internship programs') . '<span>></span>', ['site/academ-mobility'], ['class' => 'menu-item edu-title']) ?>
+
                                 <p class="edu-text edu-text--bachelor m-0">
                                     <?= Yii::t('app', 'Learn about the admission instructions for academic mobility programs') ?>
                                 </p>
@@ -240,23 +238,28 @@ $this->title = 'Buketov University';
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
             <?php foreach ($news as $news_item): ?>
 
-                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?>"
-                    data-content="<?= htmlspecialchars($news_item['content'], ENT_QUOTES, 'UTF-8') ?>"
+                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?? '' ?>"
+                    data-content="<?= htmlspecialchars($news_item['content'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                     data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>"
-                    data-img="<?= htmlspecialchars($news_item['image']) ?>" class="col news-item">
-                    <div class="card shadow-sm"
-                        style="--news-image: url('/files/images/news/<?= $news_item['image'] ?>');  background-position: center;background-repeat: no-repeat;background-size: cover;">
-                        <!--video src="/bg-videos/asweb-dev-bg.mp4" autoplay loop muted playsinline></video-->
+                    data-img="<?= htmlspecialchars($news_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                    class="col news-item">
+
+                    <div class="card shadow-sm" style="--news-image: url('/files/images/news/<?= htmlspecialchars($news_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>');  
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
 
                         <div class="card-body news-text">
-                            <p class="card-text"><?= $news_item['title'] ?></p>
+                            <p class="card-text"><?= $news_item['title'] ?? '' ?></p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small
-                                    class="white-body-secondary"><?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?></small>
+                                <small class="white-body-secondary">
+                                    <?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>
+                                </small>
                             </div>
                         </div>
                     </div>
                 </div>
+
             <?php endforeach; ?>
         </div>
     </div>
@@ -295,6 +298,10 @@ $this->title = 'Buketov University';
             <?php endforeach; ?>
 
         </div>
+        <div class="button-section m-0 col-md-10">
+            <?= Html::a('Смотреть все события', ['/site/events'], ['class' => 'btn btn-primary']) ?>
+
+        </div>
     </div>
     <div class="more-events-overlay"></div>
 
@@ -305,7 +312,7 @@ $this->title = 'Buketov University';
         </div>
 
         <div class="col-md-10 d-flex justify-content-between align-items-center block-rector">
-            <div class="col-md-5  d-flex flex-column justify-content-start align-items-start box-img-rector">
+            <div class="col-md-4  d-flex flex-column justify-content-start align-items-start box-img-rector">
                 <div class="skewX"></div>
                 <img src="/bg-images/rector.png">
             </div>
@@ -330,7 +337,7 @@ $this->title = 'Buketov University';
         <!--<div class="col-md-10 d-flex justify-content-center align-items-center block-header">
         <p>Форма обратной связи</p>
     </div>-->
-        <div class="col-md-10 d-flex justify-content-between ">
+        <div class="col-md-10 p-0 d-flex justify-content-between ">
             <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
                 <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
                 <?= Yii::t('app', 'Feedback Form') ?> </button>
@@ -338,56 +345,56 @@ $this->title = 'Buketov University';
                 <?= Yii::t('app', 'Citizens Reception Schedule') ?></button>
 
         </div>
-<div class="col-md-10 py-5">
-    <div class="feedback-form-wrapper p-4 rounded bg-white">
-        <p class="feedback-form-text text-center mb-4">
-            Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и
-            мы обязательно свяжемся с вами в кратчайшие сроки.
-        </p>
+        <div class="col-md-10 px-0 py-5">
+            <div class="feedback-form-wrapper p-0 rounded bg-white">
+                <p class="feedback-form-text text-center mb-4">
+                    Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и
+                    мы обязательно свяжемся с вами в кратчайшие сроки.
+                </p>
 
-        <?php $form = ActiveForm::begin([
-            'options' => ['class' => 'feedback-form']
-        ]) ?>
+                <?php $form = ActiveForm::begin([
+                    'options' => ['class' => 'feedback-form']
+                ]) ?>
 
-        <div class="row g-3">
-            <div class="col-md-4">
-                <?= $form->field($model, 'fio')->textInput([
-                    'class' => 'form-control form-control-lg',
-                    'placeholder' => 'ФИО'
-                ])->label(false) ?>
-            </div>
-            <div class="col-md-4">
-                <?= $form->field($model, 'email')->textInput([
-                    'class' => 'form-control form-control-lg',
-                    'placeholder' => 'Email'
-                ])->label(false) ?>
-            </div>
-            <div class="col-md-4">
-                <?= $form->field($model, 'phone')->textInput([
-                    'class' => 'form-control form-control-lg',
-                    'placeholder' => 'Телефон'
-                ])->label(false) ?>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'fio')->textInput([
+                            'class' => 'form-control form-control-lg',
+                            'placeholder' => 'ФИО'
+                        ])->label(false) ?>
+                    </div>
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'email')->textInput([
+                            'class' => 'form-control form-control-lg',
+                            'placeholder' => 'Email'
+                        ])->label(false) ?>
+                    </div>
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'phone')->textInput([
+                            'class' => 'form-control form-control-lg',
+                            'placeholder' => 'Телефон'
+                        ])->label(false) ?>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <?= $form->field($model, 'message')->textarea([
+                        'class' => 'form-control form-control-lg',
+                        'placeholder' => Yii::t('app', 'Message'),
+                        'rows' => 5
+                    ])->label(false) ?>
+                </div>
+
+                <div class="mt-4">
+                    <?= Html::submitButton(
+                        Yii::t('app', 'Отправить'),
+                        ['class' => 'submitButton btn-lg w-100']
+                    ); ?>
+                </div>
+
+                <?php ActiveForm::end() ?>
             </div>
         </div>
-
-        <div class="mt-3">
-            <?= $form->field($model, 'message')->textarea([
-                'class' => 'form-control form-control-lg',
-                'placeholder' => Yii::t('app', 'Message'),
-                'rows' => 5
-            ])->label(false) ?>
-        </div>
-
-        <div class="mt-4">
-            <?= Html::submitButton(
-                Yii::t('app', 'Отправить'),
-                ['class' => 'btn btn-primary btn-lg w-100']
-            ); ?>
-        </div>
-
-        <?php ActiveForm::end() ?>
-    </div>
-</div>
 
     </div>
     <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
@@ -400,9 +407,9 @@ $this->title = 'Buketov University';
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
                 <div class="col">
                     <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
                         <div class="card-body d-flex flex-column justify-content-between position-relative">
-                            <p class="card-text text-gray">
+                            <p class="card-text text-black">
                                 <?= Yii::t('app', 'Cooperation in the field of education and science') ?>
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -417,7 +424,7 @@ $this->title = 'Buketov University';
                 </div>
                 <div class="col">
                     <div class="card shadow-sm  h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
                         <div class="card-body d-flex flex-column justify-content-between position-relative">
                             <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -431,7 +438,7 @@ $this->title = 'Buketov University';
                 </div>
                 <div class="col">
                     <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov.png" class="smi-logo-buketov">
+                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
                         <div class="card-body d-flex flex-column justify-content-between position-relative">
                             <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -448,3 +455,18 @@ $this->title = 'Buketov University';
 
     </div>
 </div>
+<div class="chat-box">
+    <div class="header-chat">
+        <p>BUKETOV AI</p>
+        <button class="close_chat_bot"></button>
+    </div>
+    <div class="messages"></div>
+    <div class="chat-box-input">
+        <input class="input-message" type="text" placeholder="Сообщение...">
+        <button class="chat-submit"></button>
+    </div>
+</div>
+<button class="chat-whatsapp"></button>
+<button class="chat-phone"></button>
+<button class="chat-bot"></button>
+<button class="chat-open active"></button>

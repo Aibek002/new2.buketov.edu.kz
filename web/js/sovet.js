@@ -1,35 +1,60 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sections = {
-        loadSoleShareHolderBtn: ".uchenie-sovet",
-        loadBoardOfDirectorsBtn: ".academ-sovet",
-        loadGovernanceBtn: ".nauchno-sovet",
-        loadSustainableDevelopmentBtn: ".sovet-etica"
-    };
+  const sections = {
+    loadSoleShareHolderBtn: ".uchenie-sovet",
+    loadBoardOfDirectorsBtn: ".academ-sovet",
+    loadGovernanceBtn: ".nauchno-sovet",
+    loadSustainableDevelopmentBtn: ".sovet-etica",
+  };
 
-    // Скрыть все секции
-    function hideAllSections() {
-        Object.values(sections).forEach(selector => {
-            document.querySelector(selector).style.display = "none";
-        });
-    }
-
-    // Назначить обработчики на кнопки
-    Object.keys(sections).forEach(buttonId => {
-        const button = document.getElementById(buttonId);
-        const sectionSelector = sections[buttonId];
-
-        if (button && sectionSelector) {
-            button.addEventListener("click", function () {
-                hideAllSections();
-                const section = document.querySelector(sectionSelector);
-                if (section) {
-                    section.style.display = "block";
-                }
-            });
-        }
+  // Скрыть все секции
+  function hideAllSections() {
+    Object.values(sections).forEach((selector) => {
+      document.querySelector(selector).style.display = "none";
     });
+  }
 
-    // Показываем по умолчанию первую секцию
-    hideAllSections();
-    document.querySelector(".sovet-etica").style.display = "block";
+  // Назначить обработчики на кнопки
+  Object.keys(sections).forEach((buttonId) => {
+    const button = document.getElementById(buttonId);
+    const sectionSelector = sections[buttonId];
+
+    if (button && sectionSelector) {
+      button.addEventListener("click", function () {
+        hideAllSections();
+        const section = document.querySelector(sectionSelector);
+        if (section) {
+          section.style.display = "block";
+        }
+      });
+    }
+  });
+
+  // Показываем по умолчанию первую секцию
+  hideAllSections();
+  document.querySelector(".uchenie-sovet").style.display = "block";
 });
+
+
+
+function redirect(link) {
+  window.location = href = link;
+}
+
+function openBoxDraft(year) {
+  const draftDocs = document.querySelectorAll(
+    '[class*="draft-"]'
+  );
+  draftDocs.forEach((el) => {
+    el.classList.remove("active");
+  });
+  document.querySelector(`.draft-${year}`).classList.add("active");
+}
+function openBoxReport(year) {
+  const draftDocs = document.querySelectorAll(
+    '[class*="report-"]'
+  );
+  draftDocs.forEach((el) => {
+    el.classList.remove("active");
+  });
+  document.querySelector(`.report-${year}`).classList.add("active");
+}

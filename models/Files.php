@@ -1,0 +1,111 @@
+<?php
+
+namespace app\models;
+use yii\web\UploadedFile;
+use Yii;
+
+/**
+ * This is the model class for table "files".
+ *
+ * @property int $id
+ * @property string|null $path_file
+ * @property int|null $doctorant_id
+ * @property int|null $status
+ * @property string|null $fileName
+ * @property string|null $language_file
+ * @property string|null $created_at
+ * @property string|null $updated_at
+ * @property int|null $author
+ *
+ * @property User $author0
+ * @property Staff $staff
+ */
+class Files extends \yii\db\ActiveRecord
+{
+
+    public $files;
+    public $s_file;
+
+    public $years;
+
+    public $type;
+    /**
+     * {@inheritdoc}
+     *  
+     * @var UploadedFile[]
+
+     */
+    public static function tableName()
+    {
+        return 'files';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['s_file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf'],
+            [['doctorant_id', 'type', 'dissertation_advice_id', 'professor_id', 'ref_files_id', 'years'], 'safe'],
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx', 'maxFiles' => 20, 'on' => 'create'],
+            [['path_file', 'doctorant_id', 'fileName', 'language_file', 'updated_at', 'author'], 'default', 'value' => null],
+            [['status'], 'default', 'value' => 1],
+            [['path_file', 'fileName', 'language_file'], 'string'],
+            [['doctorant_id', 'status', 'author'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
+            [['author'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author' => 'id']],
+            [['doctorant_id'], 'exist', 'skipOnError' => true, 'targetClass' => Staff::class, 'targetAttribute' => ['doctorant_id' => 'id']],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'path_file' => 'Path File',
+            'doctorant_id' => 'Staff ID',
+            'professor_id' => 'Professor ID',
+            'status' => 'Status',
+            'fileName' => 'File Name',
+            'language_file' => 'Language File',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'author' => 'Author',
+        ];
+    }
+
+    /**
+     * Gets query for [[Author0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAuthor0()
+    {
+        return $this->hasOne(User::class, ['id' => 'author']);
+    }
+    public function getProfessor()
+    {
+        return $this->hasOne(ApplicantForAcademicTitles::class, ['id' => 'professor_id']);
+    }
+    /**
+     * Gets query for [[Staff]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDoctorant()
+    {
+        return $this->hasOne(Doctorant::class, ['id' => 'doctorant_id']);
+    }
+
+    public function getDissertationAdvice()
+    {
+        return $this->hasOne(DissertationAdvice::class, ['id' => 'dissertation_id'])
+            ->via('doctorant'); // через связь doctorant
+    }
+
+
+}

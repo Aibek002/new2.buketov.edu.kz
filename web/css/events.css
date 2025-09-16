@@ -1,0 +1,19 @@
+.date-box {
+    border-radius: 12px;
+    display: inline-block;
+    min-width: 80px;
+}
+.date-box h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+.date-box p {
+    font-size: 1rem;
+    margin: 0;
+}
+.list-group-item.active{
+    background:var(--indigoblue);
+}
+.title{
+    color: var(--indigoblue-font) !important;
+}

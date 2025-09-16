@@ -2,7 +2,7 @@
 return [
     'faculty' => 'факультет',
     'inspiring intellectuals' => 'вдохновляющие интеллектуалы',
-    'since 1994' => 'с 1994 года',
+    'since 1938' => 'с 1938 года',
     'National Quality Mark "PERFECT"' => 'Народный знак качества «БЕЗУПРЕЧНО»',
     'This is public recognition of goods and services distinguished by high quality, reliability and consumer trust.' =>
         'Это общественное признание товаров и услуг, отличающихся высоким качеством, надёжностью и доверием потребителей.',

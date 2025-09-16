@@ -1,0 +1,21 @@
+.document.active,
+.files.active,
+.language_input.active,
+.doctorant.active,
+.dissertation_advice.active{
+    display: flex;
+    flex-direction: column;
+}
+.document,
+.files,
+.language_input,
+.doctorant,
+.dissertation_advice{
+    display: none ;
+}
+.general-rules-pdf{
+    display: none;
+}
+.general-rules-pdf.active{
+    display: block;
+}

@@ -1,0 +1,14 @@
+
+.admin-card {
+  background: #fff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #333;
+}
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-decoration: none;
+  color: #000;
+}

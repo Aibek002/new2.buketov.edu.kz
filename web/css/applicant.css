@@ -1,0 +1,6 @@
+[class*='professor-']{
+    display: none;
+}
+[class*='professor-'].active{
+    display: grid;
+}

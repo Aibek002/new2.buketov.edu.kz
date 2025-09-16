@@ -27,6 +27,10 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
     public $committee_subsec;
     public $committee_subsection;
     public $subsec_corp_docs;
+    public $type_corporate;
+    public $share_sole_holder_years;
+    public $file_for_change;
+
 
 
     public $year;
@@ -46,12 +50,13 @@ class CorporateGovernanceFile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['type_corporate','share_sole_holder_years','file_for_change'],'safe'],
             [['ref_corporate_governance', 'author'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 1],
-            [[  'sort_id'], 'required'],
+            [['sort_id'], 'required'],
             [['path_file', 'sort_id'], 'string'],
             [['ref_corporate_governance', 'author', 'status'], 'integer'],
-            [['date_create', 'subsection_corporate_governance', 'board_subsec', 'committee_subsec', 'committee_subsection', 'year', 'language_file','date','text','subsec_corp_docs'], 'safe'],
+            [['date_create', 'subsection_corporate_governance', 'board_subsec', 'committee_subsec', 'committee_subsection', 'year', 'language_file', 'date', 'text', 'subsec_corp_docs'], 'safe'],
             [['name_url'], 'string', 'max' => 255],
             [['author'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author' => 'id']],
             [['ref_corporate_governance'], 'exist', 'skipOnError' => true, 'targetClass' => RefCorporateGovernance::class, 'targetAttribute' => ['ref_corporate_governance' => 'id']],

@@ -3,7 +3,8 @@
 namespace app\assets;
 use yii\web\AssetBundle;
 
-class CorporateAdminAsset extends AssetBundle{
+class CorporateAdminAsset extends AssetBundle
+{
     public $basePath = "@webroot";
     public $baseUrl = "@web";
 
@@ -15,6 +16,6 @@ class CorporateAdminAsset extends AssetBundle{
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        
+
     ];
 }

@@ -1,0 +1,28 @@
+.row.fio,
+.row.contact,
+.row.information,
+.row.welcome,
+.row.job-title,
+.row.faculty,
+.row.departament,
+.row.dissertation,
+.row.date,
+.row.show,
+.row.upload-img,
+.row.submit{
+    display: none ;
+}
+.row.fio.active,
+.row.contact.active,
+.row.information.active,
+.row.welcome.active,
+.row.job-title.active,
+.row.faculty.active,
+.row.departament.active,
+.row.dissertation.active,
+.row.date.active,
+.row.show.active,
+.row.upload-img.active,
+.row.submit.active{
+    display: flex;
+}

@@ -1,12 +1,13 @@
 <?php
 
 namespace app\controllers;
-
 use app\models\AdmissionPdf;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
+use app\models\DissertationAdvice;
 use app\models\FeedbackForm;
+use app\models\Files;
 use app\models\Profession;
 use app\models\Events;
 use Symfony\Component\BrowserKit\History;
@@ -80,24 +81,26 @@ class SiteController extends Controller
      *
      * @return string
      */
+
     public function actionIndex()
     {
-        $current_day = (int) Yii::$app->formatter->asDate('today', 'dd');
-        $current_month = (int) Yii::$app->formatter->asDate('today', 'MM');
-        $current_year = (int) Yii::$app->formatter->asDate('today', 'yyyy');
+
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-        Yii::$app->mailer->compose()
-            ->setFrom($form) // От кого
-            ->setTo('aibekseitzhan002@gmail.com') // Кому
-            ->setSubject('Сообщение с сайта')
-            ->setTextBody('Текстовое сообщение') // Можно просто текст
-            ->setHtmlBody('<b>Это HTML версия письма</b>') // HTML-версия
-            ->send();
+            $message = Yii::$app->mailer->compose()
+                ->setFrom('aibekseitzhan002@mail.ru')
+                ->setTo('aibekseitzhan002@gmail.com')
+                ->setSubject('Тестовое письмо')
+                ->setTextBody('Привет! Это тест из Yii2 через Symfony Mailer 🚀')
+                ->setHtmlBody('<h1>Привет!</h1><p>Это тестовое письмо.</p>')
 
-        Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
-        return $this->refresh();
-    }
+                ->send();
+
+
+
+            Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
+            return $this->refresh();
+        }
         $news_for_home = News::find()
             ->select([
                 LanguageHelper::title() . ' AS title',
@@ -110,10 +113,7 @@ class SiteController extends Controller
             ->limit(3)
             ->asArray()
             ->all();
-
-
-
-        $current_date = (new \yii\db\Expression('CURDATE()'));  // Получаем текущую дату
+        $current_date = (new \yii\db\Expression('CURDATE()'));
 
         $events = Events::find()
             ->select([
@@ -131,7 +131,10 @@ class SiteController extends Controller
             ->asArray()
             ->limit(3)
             ->all();
+        // print_r($events);die;
+
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
+
     }
     public function actionFaculty($name)
     {
@@ -219,7 +222,13 @@ class SiteController extends Controller
     public function actionManagementStructure($type)
     {
         $lang = Yii::$app->language;
-        $staff = Staff::find()->joinWith(['refStaff'])->where(['ref_staff.type' => $type])->all();
+        $staff = Staff::find()
+            ->joinWith(['refStaff', 'image.refImage'])
+            ->where(['ref_staff.type' => $type])
+            ->andWhere(['ref_image.page_name' => $type])
+            ->all();
+        // print_r($staff);
+        // die;
         return $this->render('management-structure', ['model' => $staff, 'type' => $type]);
 
     }
@@ -227,16 +236,18 @@ class SiteController extends Controller
 
     public function actionCorparate()
     {
-        $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file','ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
+        $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file', 'ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();
         // $pdf = CorpSoleShareholder::find()->all();
         $pdf = CorporateGovernanceFile::find()
             ->orderBy(['sort_id' => SORT_DESC, 'fileName' => SORT_DESC])->all();
-        return $this->render('corparate', [ 'year'=>$year,'pdf' => $pdf]);
+        return $this->render('corparate', ['year' => $year, 'pdf' => $pdf]);
     }
 
     public function actionSovet()
     {
-        return $this->render('sovet');
+        $documents = Files::find()->where(['ref_files_id' => 5, 'language_file' => Yii::$app->language])->all();
+
+        return $this->render('sovet', ['documents' => $documents]);
     }
     public function actionAdmission($type)
     {
@@ -244,6 +255,7 @@ class SiteController extends Controller
         $profession_university = Profession::find()->orderBy(LanguageHelper::name())->all();
         $pdf = AdmissionPdf::find()
             ->orderBy('ref_sort_order_id')
+            ->where(['archive'=>0])
             ->asArray()
             ->all();
 
@@ -276,8 +288,121 @@ class SiteController extends Controller
 
         return $this->render('open-general-pdf', ['params' => $params]);
     }
-    public function actionDissertationJob()
+    public function actionDissertationAdvice($dissertation_id)
     {
-        return $this->render('dissertation-job');
+        // $staff_id = Faculty::find()->select(
+        //     [
+        //         'staff.' . LanguageHelper::name(),
+        //         'staff.' . LanguageHelper::surname(),
+        //         'staff.' . LanguageHelper::patronymic(),
+
+        //     ]
+        // )->innerJoin('staff', "staff.faculty_id=faculty.id")->where(['faculty.id' => $faculty_id])->all();
+        $id = DissertationAdvice::find()
+            ->select('faculty_id')
+            ->where(['id' => $dissertation_id])
+            ->scalar();
+
+        $name = DissertationAdvice::find()
+            ->select('name')
+            ->where(['id' => $dissertation_id])
+            ->scalar();
+
+        $files = Faculty::find()
+            ->select([
+                'doctorant.id AS doctorant_id',
+
+                'doctorant.full_name_' . Yii::$app->language . ' AS doctorant_full_name',
+
+                'files.fileName',
+                'files.path_file'
+            ])
+            ->innerJoin('dissertation_advice', 'dissertation_advice.faculty_id = faculty.id')
+            ->innerJoin('doctorant', 'doctorant.dissertation_id = dissertation_advice.id')
+            ->innerJoin('files', 'files.doctorant_id = doctorant.id')
+            ->where(['faculty.id' => $id, 'dissertation_id' => $dissertation_id, 'language_file' => Yii::$app->language, 'ref_files_id' => 1])
+            ->asArray()
+            ->all();
+        // $secretary = Staff::find()->where(['dissertation_advice_id' => $dissertation_id])->one();
+        $secretary = Staff::find()
+            ->select([
+                'id',
+                LanguageHelper::surname() . ' as surname',
+                LanguageHelper::name() . ' as name',
+                LanguageHelper::patronymic() . ' as patronymic',
+                LanguageHelper::job_title() . ' as job_title',
+                LanguageHelper::information() . ' as information',
+                'email',
+                'phone'
+            ])
+
+            ->where(['dissertation_advice_id' => $dissertation_id])
+            ->asArray()
+            ->one();
+        $normative = Files::find()->where(['dissertation_advice_id' => $dissertation_id, 'language_file' => Yii::$app->language, 'ref_files_id' => 2])->all();
+        // print_r($normative);
+        // die;
+        // $staff = Staff::find()
+        //     ->where(['faculty_id' => $faculty_id])
+        //     ->all();
+
+        // $files = Files::find()
+        //     ->where(['staff_id' => array_column($staff, 'id') , 'language_file'=>Yii::$app->language])
+        //     ->all();
+
+        return $this->render('dissertation-advice', ['dissertation' => $files, 'dissertation_name' => $name, 'secretary' => $secretary, 'normative' => $normative]);
+    }
+    public function actionApplicantAcademicTitles()
+    {
+        $professor = Files::find()->select(
+            [
+                'ref_files_id',
+                'staff.surname_' . Yii::$app->language . ' as surname',
+                'staff.name_' . Yii::$app->language . ' as name',
+                'staff.patronymic_' . Yii::$app->language . ' as patronymic',
+                'type_ref_staff.date',
+                'files.path_file',
+                'files.fileName'
+            ]
+        )
+            ->innerJoin('staff', 'files.professor_id = staff.id')
+            ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id = staff.id')
+            ->where(['files.ref_files_id' => [3, 4]])
+            ->andWhere(['language_file' => Yii::$app->language])
+
+            ->orderBy(new \yii\db\Expression("
+        CASE
+            WHEN RIGHT(fileName, 3) = 'pdf' THEN 1
+            WHEN RIGHT(fileName, 3) IN ('doc','ocx') THEN 2
+            ELSE 3
+        END 
+        "))->asArray()->all();
+
+
+        return $this->render('applicant-academic-titles', ['professors' => $professor]);
+    }
+    public function actionContact()
+    {
+        return $this->render('contact');
+    }
+    public function actionVacancy()
+    {
+        return $this->render('vacancy');
+    }
+    public function actionAcademicMobility()
+    {
+        return $this->render('academic-mobility');
+    }
+    public function actionConferencesAndSeminar()
+    {
+        return $this->render('conferences-and-seminar');
+    }
+    public function actionIntlOrgMembership()
+    {
+        return $this->render('intl-org-membership');
+    }
+       public function actionEvents()
+    {
+        return $this->render('events');
     }
 }

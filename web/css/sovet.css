@@ -3,12 +3,16 @@
 .uchenie-sovet,
 .academ-sovet,
 .nauchno-sovet,
-.sovet-etica{
+.sovet-etica,
+[class*='draft-'],
+[class*='report-']{
     display: none;
 }
 .uchenie-sovet.active,
 .academ-sovet.active,
 .nauchno-sovet.active,
-.sovet-etica.active{
+.sovet-etica.active,
+[class*='draft-'].active,
+[class*='report-'].active{
     display: block;
 }

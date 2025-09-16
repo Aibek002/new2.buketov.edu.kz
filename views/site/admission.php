@@ -94,11 +94,11 @@ $lang = Yii::$app->language;
                 <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
 
                     <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
-                     
-                            <button
-                                onclick="openGeneralRulesPdf('/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item['name_url'] ?>.pdf','bachelor')">
-                                <?= $pdf_item["name_url"] ?>
-                            </button>
+
+                        <button
+                            onclick="openGeneralRulesPdf('/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item['path'] ?>','bachelor')">
+                            <?= $pdf_item["name_url"] ?>
+                        </button>
                     <?php endif ?>
                 <?php endif ?>
 
@@ -115,7 +115,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -244,7 +244,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -263,7 +263,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 4): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -284,7 +284,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -318,7 +318,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -327,9 +327,7 @@ $lang = Yii::$app->language;
             <?php endforeach; ?>
 
         </div>
-        <div class="d-flex justify-content-center">
-            <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
-        </div>
+
         <div class="title-content">
             <?= Yii::t("app", "Образавательные программы") ?>
         </div>
@@ -340,7 +338,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -366,7 +364,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -387,7 +385,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -396,7 +394,15 @@ $lang = Yii::$app->language;
             <?php endforeach; ?>
 
         </div>
+        <div class="title-content">
+            <div class="d-flex justify-content-center align-items-center flex-column">
 
+                <?= Yii::t("app", "PDF") ?>
+
+                <embed id="general-rules-pdf-magistr" class="general-rules-pdf-magistr" src="" width="50%" height="600"
+                    type="application/pdf">
+            </div>
+        </div>
     </div>
     <div class="doctorant <?php echo ($type == 'doctoral') ? 'active' : ''; ?>">
         <div class="title-content">
@@ -414,7 +420,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -431,12 +437,12 @@ $lang = Yii::$app->language;
         </div>
         <div class="button-section">
             <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
 
-                    <?php if ($pdf_item['ref_sort_order_id'] === 4): ?>
+                    <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -457,7 +463,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -477,7 +483,7 @@ $lang = Yii::$app->language;
                     <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
 
                         <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["name_url"] ?>.pdf")'>
+                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
                             <?= $pdf_item["name_url"] ?>
                         </button>
                     <?php endif ?>
@@ -485,4 +491,15 @@ $lang = Yii::$app->language;
 
             <?php endforeach; ?>
         </div>
+        <div class="title-content">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+
+                <?= Yii::t("app", "PDF") ?>
+
+                <embed id="general-rules-pdf-doctoral" class="general-rules-pdf-doctoral" src="" width="50%"
+                    height="600" type="application/pdf">
+            </div>
+        </div>
     </div>
+
+</div>

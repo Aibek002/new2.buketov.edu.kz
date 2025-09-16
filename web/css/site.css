@@ -94,7 +94,8 @@
 }
 
 .title-content {
-  padding: 10px;
+
+  /* padding: 10px;
   margin: 20px 0 0 0;
   font-family: 'Arial', sans-serif;
   font-size: 24px;
@@ -104,7 +105,33 @@
   border-left: 5px solid var(--indigoblue-font);
   background: var(--light-gray);
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 10px; */
+}
+
+.title-content {
+  background: var(--indigoblue);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  color: #fff;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.title-content:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.title-content h5 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .text-content {
@@ -151,10 +178,11 @@ strong {
   color: var(--indigoblue-font);
 }
 
-.button-section {
+/* .button-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  margin-block: 20px;
 }
 
 .button-section button,
@@ -164,17 +192,46 @@ strong {
   background: var(--white);
   font-size: var(--font-16);
   color: var(--indigoblue-font);
-  font-weight: var(--font-700);
   padding-block: 10px;
   margin-block: 20px;
   transition: all .3s ease;
+  width: 100%;
 }
 
 .button-section button:hover {
   box-shadow: 0 10px 10px var(--indigoblue-font);
+  background: var(--indigoblue);
+  color: white;
   transform: scale(1.05);
-}
+} */
+ .button-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 50px 0;
+    }
 
+    .button-section button {
+        background: #fff;
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.4s ease;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--indigoblue-font);
+        border: none;
+    }
+
+    .button-section button:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(74, 144, 226, 0.4);
+        background: var(--indigoblue);
+        color: #fff;
+    }
 .person-section {
   display: flex;
   gap: 50px;
@@ -189,26 +246,27 @@ strong {
 .person-section .person-fio {
   font-size: var(--font-22);
   font-family: 'Courier New', Courier, monospace;
-  color: var(--indigoblue-font);
+  color: #fff;
 }
 
 .person-info {
   font-size: var(--font-18);
   padding-inline-end: 5%;
+  text-align: left;
 }
 
 .person-section .person-position {
   font-size: var(--font-16);
   font-weight: var(--font-300);
   font-family: 'Courier New', Courier, monospace;
-  color: var(--gray);
+  color: #fff;
 
 }
 
 .person-section .person-info {
   font-size: var(--font-14);
   font-family: 'Courier New', Courier, monospace;
-  color: var(--gray);
+  color: #fff;
 
 }
 
@@ -228,7 +286,7 @@ strong {
 .person-email .email a {
   font-size: var(--font-18);
   font-family: 'Courier New', Courier, monospace;
-  color: var(--indigoblue-font);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -841,12 +899,15 @@ main>.container {
   display: none;
 }
 
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2021 {
   display: none;
 }
+
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025.active,
 
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active,
@@ -867,6 +928,7 @@ main>.container {
 
 }
 
+.dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2025.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2024.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2023.active a,
 .dropdown-menu-header.active .dropdown-menu-social .ResearchJobStudent .ResearchJobStudent-2022.active a,
@@ -1213,8 +1275,6 @@ body {
 .seventh-block {
   position: relative;
   z-index: 999;
-  background: var(--white);
-  overflow: hidden;
 
 }
 
@@ -1238,14 +1298,43 @@ body {
 
 .news-item:hover .card.shadow-sm {
   /* border: 5px solid var(--whiteblue); */
-  background: var(--indigoblue);
   /* или убери, если хочешь сохранить картинку */
   height: 100%;
 }
 
+.card.shadow-sm {
+  position: relative;
+}
+
+.card.shadow-sm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--news-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: filter 0.3s ease;
+  z-index: 0;
+  /* фон */
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.news-item:hover .card.shadow-sm::before {
+  filter: blur(10px);
+}
+
+
 .news-item:hover .news-text {
   display: block;
   color: white;
+  font-weight: 700;
+
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1369,9 +1458,11 @@ body {
 
 .box-img-rector img {
   position: absolute;
-  bottom: -20px;
+  bottom: 0px;
   transition: 0.5s all;
-
+  height: 500px;
+  filter: drop-shadow(-7px 1px 17px);
+  z-index: 999;
 }
 
 /* .box-img-rector:hover{
@@ -1392,23 +1483,22 @@ body {
 .skewX {
   background: var(--indigoblue);
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   height: 300px;
   transition: 0.5s all;
 }
 
-.box-img-rector:hover .skewX {
+/* .box-img-rector:hover .skewX {
   transform: skewX(20deg);
 
 
-}
+} */
 
-.box-img-rector:hover img {
+/* .box-img-rector:hover img {
   transform: scale(1.1);
   bottom: 0px;
   left: 120px;
-  filter: drop-shadow(-7px 1px 17px);
-}
+} */
 
 .name-rector {
   font-weight: var(--font-700);
