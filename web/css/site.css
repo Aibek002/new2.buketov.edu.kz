@@ -1322,7 +1322,7 @@ body {
 .card-body {
   position: relative;
   z-index: 1;
-  color: white;
+  color: rgb(157, 156, 156);
 }
 
 .news-item:hover .card.shadow-sm::before {

@@ -102,7 +102,7 @@ class AdminController extends Controller
                     $type_ref_staff->date = $staff->date;
                     $type_ref_staff->save();
                     $staff->save();
-                } elseif ((int) $staff->ref_staff_id === 6) {
+                } elseif ((int) $staff->ref_staff_id === 6 || (int) $staff->ref_staff_id === 1 || (int) $staff->ref_staff_id === 2 || (int) $staff->ref_staff_id === 3 || (int) $staff->ref_staff_id === 5) {
                     if ($staff->save(false)) {  // Сначала сохраняем staff, чтобы получить id
                         $type_ref_staff->staff_id = $staff->id;
                         $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
@@ -162,7 +162,7 @@ class AdminController extends Controller
                     Yii::$app->session->setFlash('error', 'Такой пользователь уже существует!');
                 }
             }
-            // return $this->redirect(['admin/index']);
+            return $this->redirect(['admin/index']);
         }
         return $this->render('staff-admin-panel', ['model' => $staff]);
 

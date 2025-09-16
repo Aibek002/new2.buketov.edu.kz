@@ -9,7 +9,7 @@ use yii\helpers\Html;
         <h1>
             <br>
             <?= !empty($faculty) && !empty($faculty->{LanguageHelper::name()}) ? htmlspecialchars($faculty->{LanguageHelper::name()}) : '( Здесь ничего не задано )' ?>
-            <?= strcasecmp($name, 'Военная кафедра') === 0 ? '' : Yii::t('app', 'faculty')  ?>
+            <?= strcasecmp($name, 'Военная кафедра') === 0 ? '' : Yii::t('app', 'faculty') ?>
 
         </h1>
     </div>
@@ -29,20 +29,22 @@ use yii\helpers\Html;
                 <p>( Здесь ничего не задано )</p>
             <?php endif; ?>
             <b><?= !empty($dean->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::surname()} . " " . $dean->{LanguageHelper::name()} . " " . $dean->{LanguageHelper::patronymic()})) : '( Здесь ничего не задано )' ?>
-            </b> -
-
+            </b>
+            <br />
+            <?= Yii::t('app', 'Dean'); ?> -
             <?= !empty($dean->{LanguageHelper::job_title()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()})) : '( Здесь ничего не задано )' ?>
 
             </p>
             <p>Email: <a href="">
-                    <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
+                    <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>
                 </a></p>
             <p><?= Html::a(Yii::t('app', 'Для просмотра истории факультета перейдите по ссылке'), ['site/history-faculty', 'faculty_id' => $faculty_id]) ?>
             </p>
         </div>
 
         <div class="faculty-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Декан факультета" />
+            <img src=" <?= !empty($dean->image) ? nl2br(htmlspecialchars($dean->image->image)) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                alt="Декан факультета" />
         </div>
 
     </div>
@@ -58,7 +60,7 @@ use yii\helpers\Html;
                             $departament_item->{LanguageHelper::name()}
                             ,
                             ['site/departament', 'departament_id' => $departament_item->id],
-                            ['class'=>'link-button']
+                            ['class' => 'link-button']
                         ) ?></h3>
                     </div>
                 <?php endforeach; ?>

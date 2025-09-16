@@ -94,5 +94,5 @@ class Faculty extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Staff::class, ['faculty_id' => 'id']);
     }
-
+ 
 }

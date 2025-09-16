@@ -144,7 +144,8 @@ class SiteController extends Controller
         $faculty = Faculty::findOne(['name_ru' => $name]);
         $faculty_id = $faculty->id;
         $dean = Staff::find()
-            ->joinWith(['refStaff']) // связи между таблицами
+            ->select(['image.image', 'staff.*'])
+            ->joinWith(['refStaff', 'image']) // связи из модели Staff
             ->where([
                 'staff.faculty_id' => $faculty_id,
                 'ref_staff.type' => 'dean',
@@ -255,7 +256,7 @@ class SiteController extends Controller
         $profession_university = Profession::find()->orderBy(LanguageHelper::name())->all();
         $pdf = AdmissionPdf::find()
             ->orderBy('ref_sort_order_id')
-            ->where(['archive'=>0])
+            ->where(['archive' => 0])
             ->asArray()
             ->all();
 
@@ -401,7 +402,7 @@ class SiteController extends Controller
     {
         return $this->render('intl-org-membership');
     }
-       public function actionEvents()
+    public function actionEvents()
     {
         return $this->render('events');
     }

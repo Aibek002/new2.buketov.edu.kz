@@ -76,5 +76,6 @@ return [
     'October' => 'Қазан',
     'November' => 'Қараша',
     'December' => 'Желтоқсан',
+    'Dean'=>'Декан',
 
 ];

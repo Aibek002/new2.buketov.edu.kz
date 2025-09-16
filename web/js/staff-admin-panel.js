@@ -44,6 +44,24 @@ ref_staff_id.addEventListener("input", () => {
     job_title.classList.add("active");
     upload_img.classList.add("active");
     submit.classList.add("active");
+  } else if (ref_staff_id.value === "3") {
+    fio.classList.add("active");
+    contact.classList.add("active");
+    // information.classList.add("active");
+    job_title.classList.add("active");
+    upload_img.classList.add("active");
+    faculty.classList.add("active");
+    submit.classList.add("active");
+  } else if (ref_staff_id.value === "5") {
+    fio.classList.add("active");
+    contact.classList.add("active");
+    information.classList.add("active");
+    welcome.classList.add("active");
+    job_title.classList.add("active");
+    upload_img.classList.add("active");
+    faculty.classList.add("active");
+    departament.classList.add("active");
 
+    submit.classList.add("active");
   }
 });
