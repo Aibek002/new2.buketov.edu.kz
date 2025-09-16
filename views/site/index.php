@@ -298,6 +298,10 @@ $this->title = 'Buketov University';
             <?php endforeach; ?>
 
         </div>
+        <div class="button-section m-0 col-md-10">
+            <?= Html::a('Смотреть все события', ['/site/events'], ['class' => 'btn btn-primary']) ?>
+
+        </div>
     </div>
     <div class="more-events-overlay"></div>
 

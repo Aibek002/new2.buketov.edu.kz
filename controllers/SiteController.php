@@ -401,4 +401,8 @@ class SiteController extends Controller
     {
         return $this->render('intl-org-membership');
     }
+       public function actionEvents()
+    {
+        return $this->render('events');
+    }
 }
