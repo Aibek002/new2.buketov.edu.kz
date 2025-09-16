@@ -19,6 +19,8 @@ $this->title = 'Admin Page';
         <?= Html::a('Загрузить фоты на инфармациионные страницы', ['admin/upload-image'], ['class' => 'fas fa-university']) ?>
 
         <?= Html::a('Новости', ['admin/news-admin-panel'], ['class' => 'fas fa-university']) ?>
+        <?= Html::a('События', ['admin/add-events'], ['class' => 'fas fa-university']) ?>
+        
         <?= Html::a('ПДФ для приемный комиссий', ['admin/admission-pdf-admin-panel'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Решение Единственного Акционера', ['admin/corporate-sole-shareholder'], ['class' => 'fas fa-university']) ?>
         <?= Html::a('Управление файлами Корпоративного управление', ['admin/corporate-governance-file'], ['class' => 'fas fa-university']) ?>

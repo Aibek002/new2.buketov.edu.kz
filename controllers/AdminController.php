@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
+use app\models\Events;
 use app\models\Profession;
 use app\models\User;
 use yii\web\UploadedFile;
@@ -527,7 +528,7 @@ class AdminController extends Controller
                 }
             } elseif ($model->subsection_corporate_governance === 'Корпоративные документы') {
                 $path = Yii::getAlias("@app/../files/pdf/corporate_governance/corporate_documents/" . $model->subsec_corp_docs . '/' . $model->year . '/' . $model->language_file . "/");
-               
+
                 $fileName = uniqid() . '_' . $model->name_url . '.' . $file->extension;
                 $model->fileName = $fileName;
                 $model->path_file = str_replace(['/var/www/html/yii2/', '..'], '', $path);
@@ -559,7 +560,7 @@ class AdminController extends Controller
         return $this->render('corporate_governance_file', ['model' => $model]);
 
     }
-    
+
     // public function actionCopy()
     // {
     //     $from = CorpSoleShareholder::find()->all();
@@ -616,6 +617,15 @@ class AdminController extends Controller
             }
         }
         return $this->render('corporate-sole-shareholder', ['model' => $model]);
+    }
+    public function actionAddEvents()
+    {
+        $events = new Events();
+        if (Yii::$app->request->isPost && $events->load(Yii::$app->request->post()) && $events->save()) {
+            Yii::$app->session->setFlash('success', 'successfully created!');
+            return $this->refresh();
+        }
+        return $this->render('add-events', ['model' => $events]);
     }
 
 
