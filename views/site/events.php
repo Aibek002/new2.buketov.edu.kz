@@ -6,24 +6,13 @@ EventsAsset::register($this);
     <div class="row">
         <!-- Левая колонка: месяцы -->
         <div class="col-md-3">
-            <div class="list-group shadow-sm">
-                <a href="#" class="list-group-item list-group-item-action active">Январь</a>
-                <a href="#" class="list-group-item list-group-item-action">Февраль</a>
-                <a href="#" class="list-group-item list-group-item-action">Март</a>
-                <a href="#" class="list-group-item list-group-item-action">Апрель</a>
-                <a href="#" class="list-group-item list-group-item-action">Май</a>
-                <a href="#" class="list-group-item list-group-item-action">Июнь</a>
-                <a href="#" class="list-group-item list-group-item-action">Июль</a>
-                <a href="#" class="list-group-item list-group-item-action">Август</a>
-                <a href="#" class="list-group-item list-group-item-action">Сентябрь</a>
-                <a href="#" class="list-group-item list-group-item-action">Октябрь</a>
-                <a href="#" class="list-group-item list-group-item-action">Ноябрь</a>
-                <a href="#" class="list-group-item list-group-item-action">Декабрь</a>
+            <div class="month-list list-group shadow-sm">
+
             </div>
         </div>
 
         <!-- Правая колонка: события -->
-        <div class="col-md-9 g-2">
+        <div class="col-md-9 g-2 events">
             <h3 class="fw-bold mb-4 title">События за Сентябрь</h3>
 
             <!-- Событие -->
@@ -46,6 +35,39 @@ EventsAsset::register($this);
             </div>
 
 
+        </div>
+    </div>
+</div>
+<script>
+    const date = new Date();
+    const year = new Date().getFullYear();
+    const currentMonthIndex = date.getMonth();
+    const option = { month: 'long' };
+    const month = date.toLocaleString('ru-Ru', option);
+    console.log(month);
+    const container_mon_list = document.querySelector('.month-list');
+    const events_container = document.querySelector('.events');
+    const months = [
+        "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+        "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    ];
+    months.forEach((element, index) => {
+        // если месяц совпадает с текущим, добавляем "active"
+        const activeClass = index === currentMonthIndex ? "active" : "";
+        container_mon_list.innerHTML += `
+        <button class="list-group-item list-group-item-action ${activeClass}" onclick="openMonthEvents('${index + 1}' ,'${year}')">${element}</button>
+        `;
+
+    });
+    function openMonthEvents(month, year) {
+        fetch(`/yii2/web/index.php?r=ajax/events-for-month&month=${month}&year=${year}`)
+            .then(request => request.json())
+            .then(data => {
+                console.log(data);
+                data.forEach(element => {
+                    events_container.innerHTML +=`
+            <h3 class="fw-bold mb-4 title">События за Сентябрь</h3>
+
             <!-- Событие -->
             <div class="card shadow-sm border-0 rounded-3 my-1">
                 <div class="card-body">
@@ -64,6 +86,12 @@ EventsAsset::register($this);
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+
+
+          
+                    `
+                });
+                
+            });
+    }
+</script>

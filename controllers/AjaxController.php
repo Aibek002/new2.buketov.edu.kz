@@ -5,6 +5,7 @@ use app\components\LanguageHelper;
 use app\models\ApplicantForAcademicTitles;
 use app\models\CorporateGovernanceFile;
 use app\models\Doctorant;
+use app\models\Events;
 use app\models\Files;
 use Yii;
 use yii\web\Controller;
@@ -238,6 +239,18 @@ class AjaxController extends Controller
         curl_close($ch);
 
         $data = json_decode($result, true);
+
+        return $data;
+    }
+    public function actionEventsForMonth($month = null, $year = null)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $data = Events::find()
+            ->where(['YEAR(time_events)' => $year])
+            ->andWhere(['MONTH(time_events)' => $month])
+            ->asArray()
+            ->all();
 
         return $data;
     }

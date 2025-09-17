@@ -149,6 +149,118 @@
     }
 }
 
+.first-flex-faculty {
+    background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faculty-text {
+    flex: 1 1 55%;
+}
+
+.faculty-text h2 {
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.faculty-text p {
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+}
+
+.faculty-text b {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.faculty-text a {
+    color: #0066cc;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.faculty-text a:hover {
+    text-decoration: underline;
+}
+
+.faculty-image {
+    flex: 1 1 35%;
+    text-align: center;
+}
+
+.faculty-image img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+
+.department-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 60px 0 30px;
+    color: #003366;
+    position: relative;
+}
+
+.department-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #0066cc;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.departments-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 20px 40px;
+}
+
+.department-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.department-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.department-box h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.department-box a {
+    text-decoration: none;
+    color: #003366;
+}
+
+.department-box a:hover {
+    color: #0066cc;
+}
 
 /* .faculty-info{
 
