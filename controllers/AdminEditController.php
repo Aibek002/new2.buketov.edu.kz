@@ -262,7 +262,6 @@ class AdminEditController extends Controller
     public function actionEditFormStaff($id)
     {
         $model = Staff::findOne($id);
-        $model_image = new Image();
 
         if (!$model) {
             throw new NotFoundHttpException("Staff not found");
@@ -272,25 +271,41 @@ class AdminEditController extends Controller
             $file = UploadedFile::getInstance($model, 'images');
 
             if ($model->save()) {
-                // Только если файл загружен
                 if ($file) {
+                    // Получаем ref_model и ref_image_id
                     $ref_model = RefStaff::find()->select('type')->where(['id' => $model->ref_staff_id])->scalar();
                     $ref_image_id = RefImage::find()->select('id')->where(['page_name' => $ref_model])->scalar();
+
+                    // Ищем изображение по column_id
+                    $model_image = Image::find()->where(['column_id' => $model->id])->one();
+
+                    if ($model_image && $model_image->image) {
+                        $filePath = Yii::getAlias('@app/..') . $model_image->image;
+                        if (file_exists($filePath)) {
+                            @unlink($filePath);
+                        }
+                    }
+
+                    if (!$model_image) {
+                        $model_image = new Image();
+                    }
 
                     $model_image->column_id = $model->id;
                     $model_image->ref_image_id = $ref_image_id;
 
-                    // Безопасное имя папки
+                    // Путь для сохранения
                     $path = Yii::getAlias('@app/../files/image_avatar_staff/') . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/";
 
                     if (!is_dir($path) && !mkdir($path, 0777, true)) {
                         throw new \RuntimeException("Не удалось создать директорию: {$path}");
                     }
 
-                    $fileName = $model->surname_en . "_" . $model->name_en . "." . $file->extension;
+                    $fileName = trim($model->surname_en) . "_" . trim($model->name_en) . "." . $file->extension;
+
                     if ($file->saveAs($path . $fileName)) {
                         Yii::$app->session->setFlash("success", "Фото успешно загружено");
-                        $model_image->image = "/files/image_avatar_staff/" . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/" . $fileName; // если у тебя есть колонка для хранения пути
+
+                        $model_image->image = "/files/image_avatar_staff/" . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/" . $fileName;
                         $model_image->save(false);
                     }
                 }
@@ -301,6 +316,7 @@ class AdminEditController extends Controller
 
         return $this->render('edit-form-staff', ['model' => $model]);
     }
+
 
     public function actionEditNews()
     {
@@ -525,8 +541,9 @@ class AdminEditController extends Controller
                 // print_r($path);
                 // die;
                 $fileName = uniqid() . "_" . $file->baseName . "." . $file->extension;
-                if(!$file->saveAs($path . $fileName)){
-                    print_r("Error when save old file : " . $model->path_file);die;
+                if (!$file->saveAs($path . $fileName)) {
+                    print_r("Error when save old file : " . $model->path_file);
+                    die;
 
                 }
             }
@@ -536,7 +553,7 @@ class AdminEditController extends Controller
                 }
             }
             $model->fileName = $fileName;
-            if($model->load(Yii::$app->request->post()) && $model->save(false)){
+            if ($model->load(Yii::$app->request->post()) && $model->save(false)) {
                 return $this->refresh();
             }
         }
