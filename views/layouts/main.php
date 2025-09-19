@@ -43,7 +43,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <?= Html::img('/bg-images/logo-buketov.png', [
                         'alt' => 'Buketov Logo',
                         'class' => 'navbar-logo logoBuketov',
-                        'style' => 'height: 6s0px;' // Установите нужную высоту
+                        'style' => 'height: 60px;' // Установите нужную высоту
                     ]) ?>
                 </a>
                 <ul class="navbar-nav ms-auto text-white px-5">
@@ -376,7 +376,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <div class="container">
             <div class="row text-white">
                 <div class="col-md-6 text-center text-md-start d-flex flex-column">
-                    <?php echo Html::img('https://dist.buketov.edu.kz/img/logo_buketov.png', [
+                    <?php echo Html::img('/bg-images/logo-buketov.png', [
                         'alt' => 'Buketov Logo',
                         'class' => 'navbar-logo',
                         'style' => '
@@ -387,7 +387,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     ]); ?>
                     <div class="col-md-6 d-flex flex-column justify-content-end" style="min-height: 100px;">
                         <p>Казахстан, Караганда,<br> ул. Университетская, 28</p>
-                        <p>&copy; <?= Yii::t('app', 'This website was designed by Aibek Seitzhan') ?> <?= date('Y') ?>
+                        <p>&copy;  <?= date('Y') ?>
                         </p>
                     </div>
                 </div>
