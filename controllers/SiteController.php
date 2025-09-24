@@ -7,6 +7,7 @@ use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\DissertationAdvice;
 use app\models\FeedbackForm;
+use app\models\FeedbackFormMessage;
 use app\models\Files;
 use app\models\Profession;
 use app\models\Events;
@@ -406,4 +407,17 @@ class SiteController extends Controller
     {
         return $this->render('events');
     }
+    public function actionMessages()
+    {
+        $questions = FeedbackFormMessage::find()
+            ->where(['type_message' => 'question'])
+            ->with('answers')
+            ->orderBy(['date_time' => SORT_DESC])
+            ->all();
+
+        return $this->render('messages', [
+            'questions' => $questions,
+        ]);
+    }
+
 }
