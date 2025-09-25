@@ -61,8 +61,8 @@ return [
     'Doctorant' => 'Докторантура',
     'Search for a college specislization' => 'Пишите специялизацию колледже',
     'Write strictly in the language of the page.' => 'Пишите строго на том языке, на котором написана страница.',
-    'Profession College'=>'Профессия Колледжа',
-    'Profession University'=>'Профессия Университета',
+    'Profession College' => 'Профессия Колледжа',
+    'Profession University' => 'Профессия Университета',
     'Select specialization' => 'Выбрать специальность',
     'January' => 'Январь',
     'February' => 'Февраль',
@@ -76,6 +76,20 @@ return [
     'October' => 'Октябрь',
     'November' => 'Ноябрь',
     'December' => 'Декабрь',
-    'Dean'=>'Декан',
-    'Events for'=>'События за',
+    'Dean' => 'Декан',
+    'Events for' => 'События за',
+    'Chairman of the Management Board' => 'Председатель Правления',
+    'If you have any questions or suggestions, please fill out the form below and we will get back to you as soon as possible.' => '   Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и мы обязательно свяжемся с вами в кратчайшие сроки.',
+    'Full Name' => 'ФИО',
+    'Email' => 'Почта',
+    'Phone' => 'Телефон',
+    'Title' => 'Заголовка',
+    'Message' => 'Сообщение',
+    'Submit' => 'Отправить',
+    'FAQ' => 'Часто задаваемые вопросы',
+    'View' => 'Смотреть',
+    'View all events'=>'Смотреть все события',
+
+
+
 ];

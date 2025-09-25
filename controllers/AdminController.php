@@ -7,12 +7,14 @@ use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\Doctorant;
+use app\models\FeedbackFormMessage;
 use app\models\Profession;
 use app\models\RefFiles;
 use app\models\RefImage;
 use app\models\RefStaff;
 use app\models\TypeRefStaff;
 use app\models\User;
+use finfo;
 use yii\web\UploadedFile;
 use Symfony\Component\BrowserKit\History;
 use Yii;
@@ -852,7 +854,55 @@ class AdminController extends Controller
         }
         return $this->render('add-events', ['model' => $events]);
     }
+    public function actionAllMessages()
+    {
+        $messages = FeedbackFormMessage::find()->where(['status' => 0])->andWhere(['type_message' => 'question'])->all();
+        return $this->render('all-messages', ['messages' => $messages]);
+    }
+    public function actionAnswerFeedback($id)
+    {
+        $feedback = FeedbackFormMessage::findOne($id);
+        $answer = new FeedbackFormMessage();
+        if (Yii::$app->request->isPost() && $answer->load(Yii::$app->request->post())) {
+            $send = Yii::$app->mailer->compose()
+                ->setFrom('aibekseitzhan002@mail.ru')
+                ->setTo($feedback->email)
+                ->setSubject($answer->title)
+                ->setTextBody($answer->message)
+                ->send();
+            if ($send) {
+                $answer->email = 'aibekseitzhan002@mail.ru';
+                $answer->question_id = $id;
+                $answer->type_message = 'answer';
+                $answer->save();
+            }
+        }
+        return $this->render('answer-feedback', ['model' => $answer]);
 
+    }
+    public function actionShowFeedback($id)
+    {
+        // обновляем вопрос
+        FeedbackFormMessage::updateAll(['status' => 1], ['id' => $id]);
 
+        // обновляем все ответы
+        FeedbackFormMessage::updateAll(['status' => 1], ['question_id' => $id]);
+        return $this->redirect(['admin/all-messages']);
+
+    }
+    public function actionAddSmiAboutUs()
+    {
+        $model = new \app\models\SmiAboutUs();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Запись успешно добавлена.');
+            return $this->redirect(['admin/index']); // или куда тебе нужно
+        }
+
+        return $this->render('add-smi-about-us', [
+            'model' => $model,
+        ]);
+    }
 }
+
 

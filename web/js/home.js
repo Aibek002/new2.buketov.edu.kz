@@ -1,21 +1,21 @@
-const header = document.querySelector('.header')
-const blurs = document.querySelector('.blur');
-const more_events_overlay = document.querySelector('.more-events-overlay');
+const header = document.querySelector(".header");
+const blurs = document.querySelector(".blur");
+const more_events_overlay = document.querySelector(".more-events-overlay");
 
 function openBox(element, type) {
-    const box = document.querySelector('.box-overlay');
-    box.innerHTML = ""; // Очищаем содержимое
+  const box = document.querySelector(".box-overlay");
+  box.innerHTML = ""; // Очищаем содержимое
 
-    if (type === 'open') {
-        box.classList.add('active');
-        blurs.classList.add('active');
+  if (type === "open") {
+    box.classList.add("active");
+    blurs.classList.add("active");
 
-        const title = element.dataset.title;
-        const content = element.dataset.content;
-        const date = element.dataset.date;
-        const image= element.dataset.img;
-        header.style.display = "none";
-        box.innerHTML = `
+    const title = element.dataset.title;
+    const content = element.dataset.content;
+    const date = element.dataset.date;
+    const image = element.dataset.img;
+    header.style.display = "none";
+    box.innerHTML = `
         <div class="news-card p-4 rounded shadow-lg text-white" style="width: 100%; height: 100%; position: relative; background: linear-gradient(145deg, #1f3b6e, #2c5ca9); border: 1px solid rgba(255,255,255,0.2);">
                 <!-- Кнопка закрытия -->
                 <button onclick="closeBox('news')" style="position: absolute; top: 15px; right: 20px; font-size: 32px; background: none; border: none; color: white; cursor: pointer;">&times;</button>
@@ -39,19 +39,18 @@ function openBox(element, type) {
 
 
         `;
-    }
+  }
 }
 function openBoxEvents(element, type) {
-    blurs.classList.add('active')
-    more_events_overlay.classList.add('active')
+  blurs.classList.add("active");
+  more_events_overlay.classList.add("active");
 
-    const title = element.dataset.title;
-    const content = element.dataset.content;
-    const day = element.dataset.time_events;
-    header.style.display = "none";
+  const title = element.dataset.title;
+  const content = element.dataset.content;
+  const day = element.dataset.time_events;
+  header.style.display = "none";
 
-    more_events_overlay.innerHTML =
-        `
+  more_events_overlay.innerHTML = `
             <div class="event-modal p-5 rounded shadow-lg text-white" style="width: 100%; height: 100%; position: relative; background: linear-gradient(145deg, #274b7a, #2f5fa1); border: 2px solid #5c8ecb;">
                 <!-- Кнопка закрытия -->
                 <button onclick="closeBox('events')" style="position: absolute; top: 10px; right: 15px; font-size: 35px; background: none; border: none; color: white; cursor: pointer;">&times;</button>
@@ -69,23 +68,27 @@ function openBoxEvents(element, type) {
             </div>
 
     `;
-
 }
 
 function closeBox(type) {
-    if (type == 'news') {
-        const box = document.querySelector('.box-overlay');
-        box.classList.remove('active');
-        blurs.classList.remove('active');
-        header.style.display = "flex";
-        box.innerHTML = "";
-    } else if (type = 'events') {
-        more_events_overlay.classList.remove('active');
-        header.style.display = "flex";
-        more_events_overlay.innerHTML="";
-        blurs.classList.remove('active');
-
-    }
-
+  if (type == "news") {
+    const box = document.querySelector(".box-overlay");
+    box.classList.remove("active");
+    blurs.classList.remove("active");
+    header.style.display = "flex";
+    box.innerHTML = "";
+  } else if ((type = "events")) {
+    more_events_overlay.classList.remove("active");
+    header.style.display = "flex";
+    more_events_overlay.innerHTML = "";
+    blurs.classList.remove("active");
+  }
 }
+const short_text = document.querySelectorAll(".short-text");
 
+short_text.forEach((element) => {
+    let text = element.textContent;
+  if (text.length > 100) {
+    element.innerHTML = text.substring(0, 100) + "...";
+  }
+});

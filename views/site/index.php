@@ -2,6 +2,7 @@
 
 /** @var yii\web\View $this */
 use app\assets\HomeAsset;
+use app\components\LanguageHelper;
 use yii\bootstrap5\ActiveForm;
 use yii\helpers\Html;
 
@@ -27,8 +28,8 @@ $this->title = 'Buketov University';
         </div>
         <div class="col-md-12 w-100" style="overflow:hidden">
             <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted"
-                loop="loop" class="video">
-                <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
+                poster="https://up.buketov.edu.kz/event/2025/08_12/1.jpg" loop="loop" class="video">
+                <source src="https://youtu.be/7zxVObbZPLA?si=dbGzi73nGZPtW3dv" type="video/mp4">
             </video>
         </div>
     </div>
@@ -250,7 +251,7 @@ $this->title = 'Buketov University';
                 background-size: cover;">
 
                         <div class="card-body news-text">
-                            <p class="card-text"><?= $news_item['title'] ?? '' ?></p>
+                            <p class="card-text short-text"><?= $news_item['title'] ?? '' ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="white-body-secondary">
                                     <?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>
@@ -299,7 +300,7 @@ $this->title = 'Buketov University';
 
         </div>
         <div class="button-section m-0 col-md-10">
-            <?= Html::a('Смотреть все события', ['/site/events'], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(Yii::t('app','View all events'), ['/site/events'], ['class' => 'btn btn-primary']) ?>
 
         </div>
     </div>
@@ -316,16 +317,24 @@ $this->title = 'Buketov University';
                 <div class="skewX"></div>
                 <img src="/bg-images/rector.png">
             </div>
+            <?php
+            $surname = LanguageHelper::surname();
+            $name = LanguageHelper::name();
+            $patronymic = LanguageHelper::patronymic();
+            $job_title = LanguageHelper::job_title();
+            $welcome = LanguageHelper::welcome();
+
+
+
+            ?>
             <div class="d-flex flex-column justify-content-center align-items-start">
-                <p class="name-rector">Дулатбеков Нурлан Орынбасарович</p>
-                <p class="rector-position">Председатель Правления – Ректор</p>
-                <p class="rector-text">“Мы поддерживаем ваше стремление к открытому и честному общению. Здесь вы можете
-                    задать
-                    интересующие вопросы и сделать обоснованные предложения по улучшению работы университета.
-                    Пожалуйста,
-                    при
-                    обращении соблюдайте речевой этикет и принципы деловой переписки, не допускающей анонимного общения.
-                    Спасибо.
+                <p class="name-rector">
+                    <?= mb_strtoupper($rector->$surname . " " . $rector->$name . " " . $rector->$patronymic) ?>
+                </p>
+                <p class="rector-position">
+                    <?= Yii::t('app', 'Chairman of the Management Board') . " - " . $rector->$job_title ?>
+                </p>
+                <p class="rector-text"><?= $rector->$welcome ?>
                 </p>
 
             </div>
@@ -348,8 +357,8 @@ $this->title = 'Buketov University';
         <div class="col-md-10 px-0 py-5">
             <div class="feedback-form-wrapper p-0 rounded bg-white">
                 <p class="feedback-form-text text-center mb-4">
-                    Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже, и
-                    мы обязательно свяжемся с вами в кратчайшие сроки.
+                    <?= Yii::t('app', 'If you have any questions or suggestions, please fill out the form below and we will get back to you as soon as possible.') ?></button>
+
                 </p>
 
                 <?php $form = ActiveForm::begin([
@@ -360,21 +369,27 @@ $this->title = 'Buketov University';
                     <div class="col-md-4">
                         <?= $form->field($model, 'fio')->textInput([
                             'class' => 'form-control form-control-lg',
-                            'placeholder' => 'ФИО'
+                            'placeholder' => Yii::t('app', 'Full Name')
                         ])->label(false) ?>
                     </div>
                     <div class="col-md-4">
                         <?= $form->field($model, 'email')->textInput([
                             'class' => 'form-control form-control-lg',
-                            'placeholder' => 'Email'
+                            'placeholder' => Yii::t('app', 'Email')
                         ])->label(false) ?>
                     </div>
                     <div class="col-md-4">
                         <?= $form->field($model, 'phone')->textInput([
                             'class' => 'form-control form-control-lg',
-                            'placeholder' => 'Телефон'
+                            'placeholder' => Yii::t('app', 'Phone')
                         ])->label(false) ?>
                     </div>
+                </div>
+                <div class="mt-3">
+                    <?= $form->field($model, 'title')->textInput([
+                        'class' => 'form-control form-control-lg',
+                        'placeholder' => Yii::t('app', 'Title'),
+                    ])->label(false) ?>
                 </div>
 
                 <div class="mt-3">
@@ -387,7 +402,7 @@ $this->title = 'Buketov University';
 
                 <div class="mt-4">
                     <?= Html::submitButton(
-                        Yii::t('app', 'Отправить'),
+                        Yii::t('app', 'Submit'),
                         ['class' => 'submitButton btn-lg w-100']
                     ); ?>
                 </div>
@@ -395,7 +410,10 @@ $this->title = 'Buketov University';
                 <?php ActiveForm::end() ?>
             </div>
         </div>
+        <div class="button-section m-0 col-md-10">
+            <?= Html::a(Yii::t('app', 'FAQ'), ['/site/messages'], ['class' => 'btn btn-primary']) ?>
 
+        </div>
     </div>
     <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
 
@@ -405,51 +423,27 @@ $this->title = 'Buketov University';
         <div class="col-md-10 d-flex justify-content-center align-items-center block-smi my-5">
             <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
-                <div class="col">
-                    <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
-                        <div class="card-body d-flex flex-column justify-content-between position-relative">
-                            <p class="card-text text-black">
-                                <?= Yii::t('app', 'Cooperation in the field of education and science') ?>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button"
-                                        class="btn btn-sm btn-outline-secondary text-gray border-gray">
-                                        <?= Yii::t('app', 'View') ?></button>
+                <?php foreach ($smi as $smi_item): ?>
+                    <div class="col">
+                        <div class="card shadow-sm h-100 w-100 position-relative p-3">
+                            <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
+                            <div class="card-body d-flex flex-column justify-content-between position-relative">
+                                <p class="card-text text-black short-text">
+                                    <?= $smi_item['title'] ?>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button onclick="openBoxEvents(this, 'open')" data-time_events="<?= date('Y-m-d'); ?>"
+                                            data-title="<?= $smi_item['title'] ?>"
+                                            data-content="<?= $smi_item['content'] ?>"
+                                            class="btn btn-sm btn-outline-secondary text-gray border-gray">
+                                            <?= Yii::t('app', 'View') ?></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm  h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
-                        <div class="card-body d-flex flex-column justify-content-between position-relative">
-                            <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button"
-                                        class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm h-100 w-100 position-relative p-3">
-                        <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
-                        <div class="card-body d-flex flex-column justify-content-between position-relative">
-                            <p class="card-text text-black">Сотрудничество в сфере образования и науки</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button"
-                                        class="btn btn-sm btn-outline-secondary text-gray border-gray"><?= Yii::t('app', 'View') ?></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 

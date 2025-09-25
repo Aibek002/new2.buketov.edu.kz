@@ -11,6 +11,7 @@ use app\models\FeedbackFormMessage;
 use app\models\Files;
 use app\models\Profession;
 use app\models\Events;
+use app\models\SmiAboutUs;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
@@ -88,7 +89,7 @@ class SiteController extends Controller
 
         $form = new FeedbackForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-            $message = Yii::$app->mailer->compose()
+            $sent = Yii::$app->mailer->compose()
                 ->setFrom('aibekseitzhan002@mail.ru')
                 ->setTo('aibekseitzhan002@gmail.com')
                 ->setSubject('Тестовое письмо')
@@ -96,7 +97,17 @@ class SiteController extends Controller
                 ->setHtmlBody('<h1>Привет!</h1><p>Это тестовое письмо.</p>')
 
                 ->send();
+            if ($sent) {
+                $feedback = new FeedbackFormMessage();
+                $feedback->email = $form->email;
+                $feedback->title = $form->title;
+                $feedback->message = $form->message;
+                $feedback->type_message = 'question';
+                $feedback->save();
 
+            } else {
+                Yii::error("Ошибка при отправке письма", __METHOD__);
+            }
 
 
             Yii::$app->session->setFlash('success', 'Письмо успешно отправлено!');
@@ -118,8 +129,8 @@ class SiteController extends Controller
 
         $events = Events::find()
             ->select([
-                'title_en AS title',
-                'content_en AS content',
+                LanguageHelper::title() . ' AS title',
+                LanguageHelper::content() . ' AS content',
                 new \yii\db\Expression('DAY(time_events) as day'),
                 new \yii\db\Expression('MONTH(time_events) as month'),
                 new \yii\db\Expression('YEAR(time_events) as year'),
@@ -132,9 +143,17 @@ class SiteController extends Controller
             ->asArray()
             ->limit(3)
             ->all();
-        // print_r($events);die;
+        $smi = SmiAboutUs::find()
+            ->select([
+                LanguageHelper::title() . ' AS title',
+                LanguageHelper::content() . ' AS content',
+            ])
+            ->asArray()
+            ->limit(3)
+            ->all();
+        $rector = Staff::findOne(['ref_staff_id' => 1]);
 
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector,'smi'=>$smi]);
 
     }
     public function actionFaculty($name)
