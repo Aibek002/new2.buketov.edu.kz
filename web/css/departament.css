@@ -141,3 +141,56 @@
     margin: 40px auto;
     padding: 0 5vw;
 }
+
+.dean {
+   text-align: center;
+  position: relative;
+  background: var(--indigoblue);
+  border-radius: 20px;
+  flex-direction: column;
+  padding: 40px 0;
+  gap: 20px;
+}
+
+.image-dean {
+    border: 10px solid white;
+    border-radius: 100%;
+    width: 50%;
+}
+
+
+.information-dean {}
+
+.information-dean .full-name-dean {
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.information-dean .job-title-dean {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.information-dean .email-dean a {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-decoration: none;
+
+}
+
+.information-dean .history-departament {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-decoration: none;
+}

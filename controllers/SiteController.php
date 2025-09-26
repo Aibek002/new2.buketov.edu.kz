@@ -12,6 +12,7 @@ use app\models\Files;
 use app\models\Profession;
 use app\models\Events;
 use app\models\SmiAboutUs;
+use Codeception\Lib\InnerBrowser;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
@@ -153,7 +154,7 @@ class SiteController extends Controller
             ->all();
         $rector = Staff::findOne(['ref_staff_id' => 1]);
 
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector,'smi'=>$smi]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi]);
 
     }
     public function actionFaculty($name)
@@ -197,11 +198,27 @@ class SiteController extends Controller
         // 'select name_ . $lang , '
 
         $departament = Departament::findOne(['id' => $departament_id]);
+        $dean = (new \yii\db\Query())
+            ->select([
+                'name' => "staff." . LanguageHelper::name(),
+                'surname' => "staff." . LanguageHelper::surname(),
+                'patronymic' => "staff." . LanguageHelper::patronymic(),
+                'information' => "staff." . LanguageHelper::information(),
+                'job_title' => "staff." . LanguageHelper::job_title(),
+                'email' => 'staff.email',
+                'image' => 'image.image',
+            ])
+            ->from('staff')
+            ->innerJoin('image', ['image.column_id' => new \yii\db\Expression('staff.id')])
+            ->where(['departament_id' => $departament_id])
+            ->andWhere(['staff.ref_staff_id' => 5])
+            ->one();
+
+        // print_r($dean);die;
         $teachers = (new \yii\db\Query())
             ->select([
                 'name' => LanguageHelper::name(),
                 'surname' => LanguageHelper::surname(),
-                'patronymic' => LanguageHelper::patronymic(),
                 'patronymic' => LanguageHelper::patronymic(),
                 'information' => LanguageHelper::information(),
                 'job_title' => LanguageHelper::job_title(),
@@ -211,9 +228,10 @@ class SiteController extends Controller
             ])->from('staff')
             ->innerJoin('ref_staff', ' ref_staff.id = staff.ref_staff_id ')
             ->where(['departament_id' => $departament_id])
+            ->andWhere(['staff.ref_staff_id' => 12])
             ->orderBy(LanguageHelper::name())
             ->all();
-        return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id, 'teachers' => $teachers]);
+        return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id, 'teachers' => $teachers, 'dean' => $dean]);
     }
     public function actionHistoryDepartament($departament_id)
     {

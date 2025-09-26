@@ -120,18 +120,18 @@ class AdminController extends Controller
                                 $type = $ref_staff->type;
 
                                 $path = Yii::getAlias('@app/../files/image_avatar_staff/') .
-                                    $type . '/' . $staff->surname_en . "_" . $staff->name_en . "/";
+                                    $type . '/' . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/";
 
                                 if (!is_dir($path)) {
                                     mkdir($path, 0775, true);
                                 }
 
-                                $filePath = $path . $file->baseName . "." . $file->extension;
+                                $filePath = $path . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
                                 $image_model = new Image();
                                 $image_model->ref_image_id = RefImage::find()->select('id')->where(['page_name' => $type])->scalar();
 
                                 $image_model->column_id = $staff->id;
-                                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . $staff->surname_en . "_" . $staff->name_en . "/" . $file->baseName . "." . $file->extension;
+                                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
                                 if ($image_model->save(false)) {
                                     if ($file->saveAs($filePath)) {
                                         Yii::$app->session->setFlash('success', 'Successfully created!');

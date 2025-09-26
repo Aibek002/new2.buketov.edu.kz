@@ -4,6 +4,8 @@ use yii\helpers\Html;
 use app\assets\DepartamentAsset;
 
 DepartamentAsset::register($this);
+
+print_r($dean);
 ?>
 
 <div class="faculty-hero">
@@ -15,34 +17,50 @@ DepartamentAsset::register($this);
     </div>
 </div>
 
-<div class="first-flex-faculty p-5 my-5">
+<div class="first-flex-faculty p-5 m-3">
     <div class="faculty-container">
 
         <div class="faculty-text">
             <?php if (!empty($departament)): ?>
-                <h2><?= !empty($departament->{LanguageHelper::welcome()}) ? nl2br(htmlspecialchars($departament->{LanguageHelper::welcome()})) : '( Здесь ничего не задано )' ?>
+                <h2><?= !empty($departament->{LanguageHelper::welcome()}) ? $departament->{LanguageHelper::welcome()} : '( Здесь ничего не задано )' ?>
                 </h2>
-                <p><?= !empty($departament->{LanguageHelper::information()}) ? nl2br(htmlspecialchars($departament->{LanguageHelper::information()})) : '( Здесь ничего не задано )' ?>
+
+                <p><?= !empty($departament->{LanguageHelper::information()}) ? $departament->{LanguageHelper::information()} : '( Здесь ничего не задано )' ?>
                 </p>
+
             <?php else: ?>
                 <h2>( Здесь ничего не задано )</h2>
                 <p>( Здесь ничего не задано )</p>
             <?php endif; ?>
-            <b><?= !empty($dean->{LanguageHelper::name()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::surname()} . " " . $dean->{LanguageHelper::name()} . " " . $dean->{LanguageHelper::patronymic()})) : '( Здесь ничего не задано )' ?>
-            </b> -
 
-            <?= !empty($dean->{LanguageHelper::job_title()}) ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()})) : '( Здесь ничего не задано )' ?>
-
-            </p>
-            <p>Email: <a href="">
-                    <?= !empty($dean->email) ? nl2br(htmlspecialchars($dean->email)) : '( Здесь ничего не задано )' ?>,
-                </a></p>
-            <p><?= Html::a(Yii::t('app', 'Для просмотра истории кафедры перейдите по ссылке'), ['site/history-departament', 'departament_id' => $departament_id]) ?>
-            </p>
         </div>
 
-        <div class="faculty-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Декан факультета" />
+        <div class="dean d-flex justify-content-center align-items-center">
+            <img class="image-dean"
+                src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                alt="Декан факультета" />
+            <div class="information-dean">
+                <p class="full-name-dean">
+                    <?= !empty($dean['name'])
+                        ? nl2br(htmlspecialchars(
+                            $dean['surname'] . " " .
+                            $dean['name'] . " " .
+                            $dean['patronymic']
+                        ))
+                        : '( Здесь ничего не задано )' ?>
+                </p>
+                <p class="job-title-dean">
+                    <?= !empty($dean['job_title'])
+                        ? nl2br(htmlspecialchars($dean['job_title']))
+                        : '( Здесь ничего не задано )' ?>
+                </p>
+                <p class="email-dean"><a href="mail:to:<?= $dean['email'] ?>">
+                        <?= !empty($dean['email']) ? nl2br(htmlspecialchars($dean['email'])) : '( Здесь ничего не задано )' ?>
+                    </a>
+                </p>
+                <?= Html::a(Yii::t('app', 'Для просмотра истории кафедры перейдите по ссылке'), ['site/history-departament', 'departament_id' => $departament_id],['class'=>'history-departament']) ?>
+                
+            </div>
         </div>
 
     </div>
@@ -52,8 +70,7 @@ DepartamentAsset::register($this);
                 <div onclick="openTeachersBox(this)"
                     data-fio='<?= $teacher["surname"] . " " . $teacher["name"] . " " . $teacher["patronymic"] ?>'
                     data-jobtitle=" <?= $teacher['job_title'] ?>" data-info='<?= $teacher["information"] ?>'
-                    data-email=" <?= $teacher['email'] ?>"
-                    class="teachers-box">
+                    data-email=" <?= $teacher['email'] ?>" class="teachers-box">
                     <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
                     <div class="content-teacher">
                         <p class="fio"><?= $teacher['surname'] . " " . $teacher['name'] . " " . $teacher['patronymic'] ?>
