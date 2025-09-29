@@ -7,6 +7,7 @@ use app\models\CorporateGovernanceFile;
 use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\Doctorant;
+use app\models\Events;
 use app\models\FeedbackFormMessage;
 use app\models\Profession;
 use app\models\RefFiles;

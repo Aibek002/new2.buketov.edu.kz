@@ -29,7 +29,7 @@ $this->title = 'Buketov University';
         <div class="col-md-12 w-100" style="overflow:hidden">
             <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted"
                 poster="https://up.buketov.edu.kz/event/2025/08_12/1.jpg" loop="loop" class="video">
-                <source src="https://youtu.be/7zxVObbZPLA?si=dbGzi73nGZPtW3dv" type="video/mp4">
+                <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
             </video>
         </div>
     </div>

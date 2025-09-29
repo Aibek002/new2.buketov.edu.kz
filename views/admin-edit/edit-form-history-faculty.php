@@ -29,13 +29,13 @@ use yii\widgets\ActiveForm;
 
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'content_kz')->textarea(['rows' => 8, 'class'=>'form-control tinymce-editor'])->label('Описание (KZ)') ?>
+                    <?= $form->field($model, 'content_kz')->textarea(['rows' => 20, 'class'=>'form-control tinymce-editor'])->label('Описание (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'content_ru')->textarea(['rows' => 8, 'class'=>'form-control tinymce-editor'])->label('Описание (RU)') ?>
+                    <?= $form->field($model, 'content_ru')->textarea(['rows' => 20, 'class'=>'form-control tinymce-editor'])->label('Описание (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'content_en')->textarea(['rows' => 8, 'class'=>'form-control tinymce-editor'])->label('Описание (EN)') ?>
+                    <?= $form->field($model, 'content_en')->textarea(['rows' => 20, 'class'=>'form-control tinymce-editor'])->label('Описание (EN)') ?>
                 </div>
             </div>
 

@@ -11,7 +11,7 @@
          
                     <span class="fw-bold"><?= str_replace(['ПОДРОБНАЯ ИНФОРМАЦИЯ О '],"", Html::decode($item['title'])) ?></span>
                     <?= Html::a('✏️ Редактировать', 
-                        ['admin-edit/edit-form-faculty', 'id' => $item['id']], 
+                        ['admin-edit/edit-form-history-faculty', 'id' => $item['id']], 
                         ['class' => 'btn btn-sm btn-outline-primary']
                     ) ?>
                 </div>

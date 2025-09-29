@@ -265,6 +265,7 @@ class SiteController extends Controller
             ->joinWith(['refStaff', 'image.refImage'])
             ->where(['ref_staff.type' => $type])
             ->andWhere(['ref_image.page_name' => $type])
+            ->orderBy(['staff.' . LanguageHelper::job_title() => SORT_ASC])
             ->all();
         // print_r($staff);
         // die;

@@ -115,12 +115,13 @@ class AdminEditController extends Controller
             ])
             ->asArray()
             ->all();
+            
         // print_r($history);die;
         return $this->render('edit-history-faculty', ['history' => $history]);
     }
     public function actionEditFormHistoryFaculty($id)
     {
-        $model = HistoryFaculty::findOne($id);
+        $model = HistoryFaculty::findOne(['id' => $id]);
 
         if (!$model) {
             throw new NotFoundHttpException("History not found");
