@@ -12,12 +12,12 @@ $this->title = Yii::t("app", "Management Structure");
     <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 g-4 m-5 p-5 my-5">
         <?php foreach ($model as $index => $model_item): ?>
             <div class="card" data-bs-toggle="modal" data-bs-target="#staffModal"
-                data-name="<?= $model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()} ?>"
-                data-job="<?= $model_item->{LanguageHelper::job_title()} ?: 'Нет данных о должности' ?>"
-                data-email="<?= $model_item->email ?: 'Нет данных о email' ?>"
-                data-info='<?= $model_item->{LanguageHelper::information()} ?: 'Нет данных о info' ?>'
-                data-phone="<?= $model_item->phone ?: 'Нет данных о phone' ?>"
-                data-image="<?= $model_item->image->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>">
+                data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"
+                data-job="<?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?: 'Нет данных о должности' ?>"
+                data-email="<?= htmlspecialchars($model_item->email) ?: 'Нет данных о email' ?>"
+                data-info='<?= htmlspecialchars($model_item->{LanguageHelper::information()}) ?: 'Нет данных о info' ?>'
+                data-phone="<?= htmlspecialchars($model_item->phone) ?: 'Нет данных о phone' ?>"
+                data-image="<?= htmlspecialchars($model_item->image->image) ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>">
 
                 <div class="avatar-container">
                     <div class="avatar-circle">
@@ -27,11 +27,11 @@ $this->title = Yii::t("app", "Management Structure");
                 </div>
 
                 <h3 class="card-title">
-                    <?= $model_item->{LanguageHelper::surname()} ?>
-                    <?= $model_item->{LanguageHelper::name()} ?>
-                    <?= $model_item->{LanguageHelper::patronymic()} ?>
+                    <?= htmlspecialchars($model_item->{LanguageHelper::surname()}) ?>
+                    <?= htmlspecialchars($model_item->{LanguageHelper::name()}) ?>
+                    <?= htmlspecialchars($model_item->{LanguageHelper::patronymic()}) ?>
                 </h3>
-                <p class="card-text"><?= $model_item->{LanguageHelper::job_title()} ?></p>
+                <p class="card-text"><?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?></p>
             </div>
         <?php endforeach; ?>
     </div>

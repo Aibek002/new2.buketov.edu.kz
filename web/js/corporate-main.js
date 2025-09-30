@@ -206,3 +206,6 @@ function closeOver() {
   document.querySelector(".blur").classList.remove("active");
   document.querySelector(".over").classList.remove("active");
 }
+
+
+

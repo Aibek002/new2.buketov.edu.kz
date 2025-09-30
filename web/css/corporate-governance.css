@@ -506,11 +506,11 @@
     overflow: scroll;
 }
 
-.modal-content p:first-child {
+/* .modal-content p:first-child {
     color: #E5243B;
     font-weight: bold;
     font-size: 20px;
-}
+} */
 
 .modal-close {
     position: absolute;

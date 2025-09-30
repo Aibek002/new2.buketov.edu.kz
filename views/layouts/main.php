@@ -61,76 +61,160 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             <img src="/bg-images/svg/toOpen.svg" alt="Menu Icon">
                         </button>
                         <div class="dropdown-menu-header">
-                            <img width="200px" src="/bg-images/bg-first-block-half1.png">
+                            <a class="navbar-brand" href="<?= Yii::$app->homeUrl ?>"><img width="200px"
+                                    src="/bg-images/bg-first-block-half1.png"> </a>
                             <div class="d-flex g-2 my-5 dropdown-main-flex">
                                 <div class="dropdown-main-menu">
                                     <!-- <p class="type-person">Пожалуйста, выберите, кем вы являетесь:</p>-->
-                                    <?= Html::a('Buketov University ', ['site/index'], ['class' => 'menu-item']) ?>
-                                    <button id="menu-for-about-us">О нас <span>+</span></button>
-                                    <button id="menu-for-incoming">Поступающим <span>+</span></button>
-                                    <button id="menu-for-student"> Студентам <span>+</span></button>
-                                    <button id="menu-for-faculties"> Факультеты <span>+</span></button>
-                                    <!--button id="menu-for-graduation"> Выпускникам <span>+</span></button-->
-                                    <button id="menu-for-science"> Наука <span>+</span></button>
-                                    <button id="menu-for-international-cooperation"> Международные сотрудничество
-                                        <span>+</span></button>
-                                    <?= Html::a('Вакансия <span>></span>', ['site/vacancy'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a(Yii::t('app', 'Buketov University'), ['site/index'], ['class' => 'menu-item']) ?>
 
-                                    <?= Html::a('Контакты <span>></span>', ['site/contact'], ['class' => 'menu-item']) ?>
+                                    <button id="menu-for-about-us"><?= Yii::t('app', 'About Us') ?> <span>+</span></button>
+                                    <button id="menu-for-incoming"><?= Yii::t('app', 'Applicants') ?>
+                                        <span>+</span></button>
+                                    <button id="menu-for-student"><?= Yii::t('app', 'Students') ?> <span>+</span></button>
+                                    <button id="menu-for-faculties"><?= Yii::t('app', 'Faculties') ?>
+                                        <span>+</span></button>
+                                    <!--button id="menu-for-graduation"><?= Yii::t('app', 'Graduates') ?> <span>+</span></button-->
+                                    <button id="menu-for-science"><?= Yii::t('app', 'Science') ?> <span>+</span></button>
+                                    <button
+                                        id="menu-for-international-cooperation"><?= Yii::t('app', 'International Cooperation') ?>
+                                        <span>+</span></button>
+
+                                    <?= Html::a(Yii::t('app', 'Vacancies') . ' <span>></span>', ['site/vacancy'], ['class' => 'menu-item']) ?>
+                                    <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], ['class' => 'menu-item']) ?>
+
 
                                 </div>
                                 <div class="dropdown-submenus">
                                     <div class="dropdown-submenu university-info">
-                                        <?= Html::a('История университета <span>></span>', ['site/article', 'type' => 'history-of-the-university', 'title' => 'Important events in the history of the university'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Миссия университета <span>></span>', ['site/article', 'type' => 'mission-of-the-university', 'title' => 'Mission of the university'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Программа развития <span>></span>', ['site/article', 'type' => 'development-program', 'title' => 'Karaganda University named after Academician E.A. Buketov and approval of its Development Program for 2024-2028'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Мы в рейтингах <span>></span>', ['site/article', 'type' => 'university-in-the-ranking', 'title' => 'WE ARE IN THE RATINGS'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(
+                                            Yii::t('app', 'History of the University') . ' <span>></span>',
+                                            ['site/article', 'type' => 'history-of-the-university', 'title' => 'Important events in the history of the university'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
-                                        <?= Html::a('Корпоративное управление <span>></span>', ['site/corparate'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Административные службы <span>></span>', ['site/management-structure', 'type' => 'administrative-services'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Советы <span>></span>', ['site/sovet'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Свидетельство об аккредитации <span>></span>', ['site/img'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(
+                                            Yii::t('app', 'Mission of the University') . ' <span>></span>',
+                                            ['site/article', 'type' => 'mission-of-the-university', 'title' => 'Mission of the university'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Development Program') . ' <span>></span>',
+                                            ['site/article', 'type' => 'development-program', 'title' => 'Karaganda University named after Academician E.A. Buketov and approval of its Development Program for 2024-2028'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'We are in the Rankings') . ' <span>></span>',
+                                            ['site/article', 'type' => 'university-in-the-ranking', 'title' => 'WE ARE IN THE RATINGS'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Corporate Governance') . ' <span>></span>',
+                                            ['site/corparate'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Administrative Services') . ' <span>></span>',
+                                            ['site/management-structure', 'type' => 'administrative-services'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Councils') . ' <span>></span>',
+                                            ['site/sovet'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Accreditation Certificate') . ' <span>></span>',
+                                            ['site/img'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
                                     </div>
                                     <div class="dropdown-submenu incoming">
-                                        <?= Html::a('Бакалавриат <span>></span>', ['site/admission', 'type' => 'bachelor'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Магистратура <span>></span>', ['site/admission', 'type' => 'magistracy'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Докторантура <span>></span>', ['site/admission', 'type' => 'doctoral'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Иностранным студентам <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Информация об общежитии  <span>></span>', ['site/article', 'type' => 'information-about-the-student-house', 'title' => '"House of Students" complex'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Контакты <span>></span>', ['site/contact'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(
+                                            Yii::t('app', 'Bachelor') . ' <span>></span>',
+                                            ['site/admission', 'type' => 'bachelor'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Master\'s Degree') . ' <span>></span>',
+                                            ['site/admission', 'type' => 'magistracy'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Doctoral Studies') . ' <span>></span>',
+                                            ['site/admission', 'type' => 'doctoral'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'For International Students') . ' <span>></span>',
+                                            ['site/international-students'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Student Dormitory Information') . ' <span>></span>',
+                                            ['site/article', 'type' => 'information-about-the-student-house', 'title' => '"House of Students" complex'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Contacts') . ' <span>></span>',
+                                            ['site/contact'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
                                     </div>
                                     <div class="dropdown-submenu student">
-                                        <a href="#" class="menu-item">Жизнь в кампусе <span>></span></a>
-                                        <?= Html::a('Библиотека <span>></span>', 'https://library.buketov.edu.kz/', [
-                                            'class' => 'menu-item',
-                                            'encode' => false,
-                                            'target' => '_blank', // если хочешь открыть в новой вкладке
+                                        <?= Html::a(Yii::t('app', 'Campus Life') . ' <span>></span>', '#', [
+                                            'class' => 'menu-item'
                                         ]) ?>
 
+                                        <?= Html::a(Yii::t('app', 'Library') . ' <span>></span>', 'https://library.buketov.edu.kz/', [
+                                            'class' => 'menu-item',
+                                            'encode' => false,
+                                            'target' => '_blank', // открывать в новой вкладке
+                                        ]) ?>
 
-                                        <?= Html::a('Военная кафедра <span>></span>', ['site/faculty', 'name' => 'Военная кафедра'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(
+                                            Yii::t('app', 'Military Department') . ' <span>></span>',
+                                            ['site/faculty', 'name' => 'Военная кафедра'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
-                                        <a href="#" class="menu-item">Отдел карьеры <span>></span></a>
-                                        <?= Html::a('Контакты <span>></span>', ['site/contact'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Career Center') . ' <span>></span>', '#', [
+                                            'class' => 'menu-item'
+                                        ]) ?>
+
+                                        <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], [
+                                            'class' => 'menu-item'
+                                        ]) ?>
 
                                     </div>
 
                                     <div class="dropdown-submenu faculties">
-                                        <?= Html::a('Биолого-географический <span>></span>', ['site/faculty', 'name' => 'биолого-географический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Исторический <span>></span>', ['site/faculty', 'name' => 'исторический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Иностранных языков <span>></span>', ['site/faculty', 'name' => 'Иностранных языков'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Математика и ИТ <span>></span>', ['site/faculty', 'name' => 'Математики и информационных технологий'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Педагогический <span>></span>', ['site/faculty', 'name' => 'Педагогический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Физико-технический <span>></span>', ['site/faculty', 'name' => 'Физико-технический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Физкультура и спорт <span>></span>', ['site/faculty', 'name' => 'Физической культуры и спорта'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Филологический <span>></span>', ['site/faculty', 'name' => 'Филологический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Философия и психологии <span>></span>', ['site/faculty', 'name' => 'Философии и психологии'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Химический <span>></span>', ['site/faculty', 'name' => 'Химический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Экономический <span>></span>', ['site/faculty', 'name' => 'Экономический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Юридический <span>></span>', ['site/faculty', 'name' => 'Юридический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Доп. образование <span>></span>', ['site/faculty', 'name' => 'Факультет дополнительного образования'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Biology and Geography') . ' <span>></span>', ['site/faculty', 'name' => 'биолого-географический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of History') . ' <span>></span>', ['site/faculty', 'name' => 'исторический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Foreign Languages') . ' <span>></span>', ['site/faculty', 'name' => 'иностранных языков'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Mathematics and IT') . ' <span>></span>', ['site/faculty', 'name' => 'математики и информационных технологий'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Education') . ' <span>></span>', ['site/faculty', 'name' => 'педагогический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Physics and Technology') . ' <span>></span>', ['site/faculty', 'name' => 'физико-технический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Physical Education and Sport') . ' <span>></span>', ['site/faculty', 'name' => 'физической культуры и спорта'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Philology') . ' <span>></span>', ['site/faculty', 'name' => 'филологический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Philosophy and Psychology') . ' <span>></span>', ['site/faculty', 'name' => 'философии и психологии'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Chemistry') . ' <span>></span>', ['site/faculty', 'name' => 'химический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Economics') . ' <span>></span>', ['site/faculty', 'name' => 'экономический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Law') . ' <span>></span>', ['site/faculty', 'name' => 'юридический'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Continuing Education') . ' <span>></span>', ['site/faculty', 'name' => 'факультет дополнительного образования'], ['class' => 'menu-item']) ?>
 
 
                                     </div>
@@ -140,28 +224,34 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <a href="#" class="menu-item">Контакты <span>></span></a>
                                     </div>
                                     <div class="dropdown-submenu science">
-                                        <button class="menu-item researchCenterBtn">Научно-исследовательские
-                                            центры<span>+</span></button>
-                                        <button class="menu-item DissertationCouncilBtn">Диссертационные
-                                            советы<span>+</span></button>
-                                        <button class="menu-item CompetitionsAndGrandsBtn">Научные конкурсы и
-                                            гранты<span>+</span></button>
-                                        <button class="menu-item СonferencesBtn">Научные конференции и
-                                            мероприятия<span>+</span></button>
-                                        <button class="menu-item ResearchJobStudentBtn">Отдел научно-исследовательской
-                                            работы
-                                            студентов <span>+</span></button>
-                                        <?= Html::a('Научные журналы и публикации <span>></span>', 'https://vestnik.buketov.edu.kz/', [
+                                        <button class="menu-item researchCenterBtn">
+                                            <?= Yii::t('app', 'Research Centers') ?><span>+</span>
+                                        </button>
+                                        <button class="menu-item DissertationCouncilBtn">
+                                            <?= Yii::t('app', 'Dissertation Councils') ?><span>+</span>
+                                        </button>
+                                        <button class="menu-item CompetitionsAndGrantsBtn">
+                                            <?= Yii::t('app', 'Scientific Competitions and Grants') ?><span>+</span>
+                                        </button>
+                                        <button class="menu-item ConferencesBtn">
+                                            <?= Yii::t('app', 'Scientific Conferences and Events') ?><span>+</span>
+                                        </button>
+                                        <button class="menu-item ResearchJobStudentBtn">
+                                            <?= Yii::t('app', 'Department of Student Research Work') ?><span>+</span>
+                                        </button>
+
+                                        <?= Html::a(Yii::t('app', 'Scientific Journals and Publications') . ' <span>></span>', 'https://vestnik.buketov.edu.kz/', [
                                             'class' => 'menu-item',
-                                            'target' => '_blank', // откроется в новой вкладке (по желанию)
-                                            'encode' => false,    // нужно, чтобы <span> не экранировался
+                                            'target' => '_blank',
+                                            'encode' => false,
                                         ]) ?>
+
                                     </div>
                                     <div class="dropdown-submenu international-cooperation">
-                                        <?= Html::a('Академическая мобильность <span>></span>', ['site/academic-mobility'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Обучение иностранных студентов <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Международные конференции и семинары <span>></span>', ['site/conferences-and-seminar'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Членство в международных организациях  <span>></span>', ['site/intl-org-membership'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Academic Mobility') . ' <span>></span>', ['site/academic-mobility'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Education of International Students') . ' <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'International Conferences and Seminars') . ' <span>></span>', ['site/conferences-and-seminar'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Membership in International Organizations') . ' <span>></span>', ['site/intl-org-membership'], ['class' => 'menu-item']) ?>
 
                                         <!--a href="#" class="menu-item">Международные проекты и научные исследования<span>></span></a-->
                                         <!--a href="#" class="menu-item">Международные конференции и семинары<span>></span></a-->
@@ -179,85 +269,182 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <p>Мы в социальных сетях</p>
 
                                     <div class="researchCenter">
-                                        <?= Html::a('Институт молекулярной нанофотоники <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Molecular Nanophotonics'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Центр нанотехнологий и наноматериалов <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific Center "Nanotechnology and functional nanomaterials"'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('НИИ химических проблем <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-Research Institute of Chemical Issues'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('НИЦ прикладной химии <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Applied Chemistry" scientific-research center'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Лаборатория физико-химических исследований <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Laboratory of engineering profile "Physic-chemical methods of research"'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Исследовательский парк биотехнологий <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Biotechnology and Eco-Monitoring Research Park'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Лаборатория прикладной механики и робототехники <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Laboratory "Applied Mechanics and Robotics"'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Институт цифровой экономики <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of digital economy research'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('НИИ правоведения и государствоведения <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-research institute of legal research and state studies'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Институт духовного наследия <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute for the Study of the Spiritual Heritage of the Kazakh People'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Институт прикладной математики <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Лаборатория религиозной ситуации в Казахстане <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Laboratory of the Comprehensive Study of the Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Сарыаркинский археологический институт <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('НИЦ «Тұлғатану» <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Центр этно- и антропологических исследований <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Лаборатория языкового образования <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Центр инклюзивного образования <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Resource Center for Inclusive and Special Education'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Социально-психологическая лаборатория <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a('Научная лаборатория  химии органических полупроводников <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Molecular Nanophotonics') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Molecular Nanophotonics'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Nanotechnology and Nanomaterials') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific Center "Nanotechnology and functional nanomaterials"'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Chemical Problems') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-Research Institute of Chemical Issues'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center of Applied Chemistry') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Applied Chemistry" scientific-research center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Physico-Chemical Research') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Laboratory of engineering profile "Physic-chemical methods of research"'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Biotechnology Research Park') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Biotechnology and Eco-Monitoring Research Park'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Applied Mechanics and Robotics') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Laboratory "Applied Mechanics and Robotics"'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Digital Economy') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of digital economy research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Law and State Studies') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-research institute of legal research and state studies'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Spiritual Heritage') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute for the Study of the Spiritual Heritage of the Kazakh People'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Applied Mathematics') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Religious Situation in Kazakhstan') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Laboratory of the Comprehensive Study of the Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Saryarka Archaeological Institute') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Inclusive Education') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Resource Center for Inclusive and Special Education'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
 
 
                                     </div>
                                     <div class="DissertationCouncil">
+                                        <?= Html::a(Yii::t('app', 'Law') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 1], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'History') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 2], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Mathematics') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 3], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Physics') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 4], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Pedagogy and primary education methods') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 5], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Pedagogy and psychology') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 6], ['class' => 'menu-item']) ?>
 
-                                        <?= Html::a('Юриспруденция <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 1], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('История <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 2], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Математика <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 3], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Физика <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 4], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Педагогика и методика начального обучения  <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 5], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Педагогика и психология  <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 6], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Kazakh language and literature') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 7], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Biology') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 8], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Chemistry') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 9], ['class' => 'menu-item']) ?>
 
-                                        <?= Html::a('Казахский язык и литература <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 7], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Биология <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 8], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Химия <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 9], ['class' => 'menu-item']) ?>
-
-                                        <?= Html::a('Иностранные языки <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 10], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Экономика <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 11], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Филология <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 12], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Теплофизика и теоретическая теплотехник <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 13], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Foreign languages') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 10], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Economics') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 11], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Philology') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 12], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Thermophysics and theoretical heat engineering') . ' <span>></span>', ['site/dissertation-advice', 'dissertation_id' => 13], ['class' => 'menu-item']) ?>
 
                                     </div>
                                     <div class="CompetitionsAndGrands">
-                                        <?= Html::a('Конкурс научных работ - Право и гражданское общество <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конкурс', 'url' => 'Международный конкурс научных робот'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Положение о проведении конкурса <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конкурс', 'url' => 'положение'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(
+                                            Yii::t('app', 'Scientific works competition - Law and civil society') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конкурс', 'url' => 'Международный конкурс научных робот'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
+                                        <?= Html::a(
+                                            Yii::t('app', 'Regulations on the competition') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конкурс', 'url' => 'положение'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
                                     </div>
                                     <div class="Conferences">
-                                        <?= Html::a('Календарь конференций <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Календарь конференций'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Букетовские чтения – 2025 <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Букетовские чтения-2025'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Букетовские чтения – 2024 <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Букетовские чтения-2024'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('125 лет К. Сатпаеву - Международная конференция <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Сборник конф-и Сатпаева'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a('Современные проблемы правовой науки  <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Современные проблемы правовой науки'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(
+                                            Yii::t('app', 'Conference Calendar') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Календарь конференций'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
 
+                                        <?= Html::a(
+                                            Yii::t('app', 'Buketov Readings – 2025') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Букетовские чтения-2025'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Buketov Readings – 2024') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Букетовские чтения-2024'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', '125 years of K. Satpayev - International Conference') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Сборник конф-и Сатпаева'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
+
+                                        <?= Html::a(
+                                            Yii::t('app', 'Modern problems of legal science') . ' <span>></span>',
+                                            ['site/open-general-pdf', 'path' => '/files/pdf/Science/Конференция', 'url' => 'Современные проблемы правовой науки'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
                                     </div>
                                     <div class="ResearchJobStudent">
                                         <button class="menu-item year-toggle-btn--2025">2024–2025 <span>+</span></button>
                                         <div class="ResearchJobStudent-2025">
-                                            <?= Html::a('(6В11401) Социальная работа <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В11405 (6В11401) Социальная работа'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В07201) Технология фармацевтического производства <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В07201 Технология фармацевтического производства'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В05302) Фундаментальная  химия <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В05302 Фундаментальная  химия'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В02303) Иностранная филология <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В02310 (6В02303) Иностранная филология'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В02201) Философия <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В02201 Философия'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6B03202) Связь с общественностью <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6B03202 Связь с общественностью'], ['class' => 'menu-item']) ?>
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В11401) Social Work') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В11405 (6В11401) Социальная работа'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
 
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В07201) Pharmaceutical Production Technology') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В07201 Технология фармацевтического производства'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В05302) Fundamental Chemistry') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В05302 Фундаментальная  химия'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В02303) Foreign Philology') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В02310 (6В02303) Иностранная филология'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В02201) Philosophy') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6В02201 Философия'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6B03202) Public Relations') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2024-2025', 'url' => 'Протокол по ОП 6B03202 Связь с общественностью'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
 
 
                                         </div>
 
                                         <button class="menu-item year-toggle-btn--2024">2023–2024 <span>+</span></button>
                                         <div class="ResearchJobStudent-2024">
-                                            <?= Html::a('(6В07201) ТФП <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В07201 ТФП'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В06205) РЭТ <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В06205 РЭТ'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В05302) Фунд Химия <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В05302 Фунд Химия'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В05301) Химия <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В05301 Химия'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В02203) Археология <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В02203Археология'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В01410) Мировая экономика <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01410 Мировая экономика'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В01406) Виз.искусство <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01406 Виз.искусство'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(6В01402) НВП <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01402 НВП'], ['class' => 'menu-item']) ?>
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В07201) PPhT') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В07201 ТФП'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В06205) RET') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В06205 РЭТ'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В05302) Fundamental Chemistry') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В05302 Фунд Химия'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В05301) Chemistry') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В05301 Химия'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В02203) Archaeology') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В02203 Археология'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В01410) World Economy') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01410 Мировая экономика'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В01406) Visual Arts') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01406 Виз.искусство'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(6В01402) Military Training') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2023-2024', 'url' => 'Протокол по специальности 6В01402 НВП'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
 
 
 
@@ -270,22 +457,74 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                         <button class="menu-item year-toggle-btn--2022">2021–2022 <span>+</span></button>
                                         <div class="ResearchJobStudent-2022">
-                                            <?= Html::a('(5В060600) химия <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В060600 химия'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В050800) учет и аудит <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В050800 учет и аудит'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В0502000) политология <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В0502000 политология'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В050100) социология <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В050100 социология'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В011500) основы права и экономики <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В011500 основы права и экономики'], ['class' => 'menu-item']) ?>
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В060600) Chemistry') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В060600 химия'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
 
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В050800) Accounting and Audit') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В050800 учет и аудит'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В0502000) Political Science') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В0502000 политология'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В050100) Sociology') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В050100 социология'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В011500) Fundamentals of Law and Economics') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2021-2022', 'url' => 'Протокол по специальности 5В011500 основы права и экономики'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
                                         </div>
 
                                         <button class="menu-item year-toggle-btn--2021">2020–2021 <span>+</span></button>
                                         <div class="ResearchJobStudent-2021">
-                                            <?= Html::a('(5В090500) Социальная работа <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В090500 Социальная работа'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В071600) Приборостроение <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В071600 Приборостроение1'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В052100) Государственный аудит <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В052100 Государственный аудит'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В020700) Переводческое дело <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В020700 Переводческое дело'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В012000) Профессиональное обучение <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В012000 Профессиональное обучение'], ['class' => 'menu-item']) ?>
-                                            <?= Html::a('(5В011900) Иностранный язык два иностранных языка <span>></span>', ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В011900 Иностранный язык два иностранных языка'], ['class' => 'menu-item']) ?>
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В090500) Social Work') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В090500 Социальная работа'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В071600) Instrument Engineering') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В071600 Приборостроение'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В052100) State Audit') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В052100 Государственный аудит'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В020700) Translation Studies') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В020700 Переводческое дело'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В012000) Vocational Training') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В012000 Профессиональное обучение'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
+
+                                            <?= Html::a(
+                                                Yii::t('app', '(5В011900) Foreign Language: Two Foreign Languages') . ' <span>></span>',
+                                                ['site/open-general-pdf', 'path' => '/files/pdf/Science/НИРС', 'year' => '2020-2021', 'url' => 'Протокол по специальности 5В011900 Иностранный язык два иностранных языка'],
+                                                ['class' => 'menu-item']
+                                            ) ?>
 
                                         </div>
 
@@ -387,7 +626,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     ]); ?>
                     <div class="col-md-6 d-flex flex-column justify-content-end" style="min-height: 100px;">
                         <p>Казахстан, Караганда,<br> ул. Университетская, 28</p>
-                        <p>&copy;  <?= date('Y') ?>
+                        <p>&copy; <?= date('Y') ?>
                         </p>
                     </div>
                 </div>
