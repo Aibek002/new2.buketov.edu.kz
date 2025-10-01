@@ -257,6 +257,7 @@ $this->title = 'Buketov University';
                                     <?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>
                                 </small>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -288,10 +289,10 @@ $this->title = 'Buketov University';
                             data-title="<?= $event_item['title'] ?>" data-content="<?= $event_item['content'] ?>"
                             class="calendar-content">
 
-                            <p class="upcoming-event-title"><?= $event_item['title'] ?></p>
+
                             <p class="upcoming-event-day"><?= $day ?></p>
                             <p class="upcoming-event-date"><?= $month . " " . $year ?></p>
-
+                            <p class="upcoming-event-title"><?= $event_item['title'] ?></p>
 
                         </div>
                     </div>
@@ -300,7 +301,7 @@ $this->title = 'Buketov University';
 
         </div>
         <div class="button-section m-0 col-md-10">
-            <?= Html::a(Yii::t('app','View all events'), ['/site/events'], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(Yii::t('app', 'View all events'), ['/site/events'], ['class' => 'btn btn-primary']) ?>
 
         </div>
     </div>
@@ -433,11 +434,15 @@ $this->title = 'Buketov University';
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button onclick="openBoxEvents(this, 'open')" data-time_events="<?= date('Y-m-d'); ?>"
-                                            data-title="<?= $smi_item['title'] ?>"
-                                            data-content="<?= $smi_item['content'] ?>"
-                                            class="btn btn-sm btn-outline-secondary text-gray border-gray">
-                                            <?= Yii::t('app', 'View') ?></button>
+                                        <?= Html::button(Yii::t('app', 'View'), [
+                                            'onclick' => "openBoxEvents(this, 'open')",
+                                            'data' => [
+                                                'time_events' => date('Y-m-d'),
+                                                'title' => $smi_item['title'],
+                                                'content' => $smi_item['content'],
+                                            ],
+                                            'class' => 'btn btn-sm btn-outline-secondary text-gray border-gray'
+                                        ]) ?>
                                     </div>
                                 </div>
                             </div>

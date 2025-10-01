@@ -84,11 +84,19 @@ function closeBox(type) {
     blurs.classList.remove("active");
   }
 }
-const short_text = document.querySelectorAll(".short-text");
+const smi_short_title = document.querySelectorAll(".short-text");
+const news_short_title = document.querySelectorAll(".upcoming-event-title");
 
-short_text.forEach((element) => {
-    let text = element.textContent;
+smi_short_title.forEach((element) => {
+  let text = element.textContent;
   if (text.length > 100) {
     element.innerHTML = text.substring(0, 100) + "...";
+  }
+});
+news_short_title.forEach((element) => {
+  console.log(element.textContent);
+  let text = element.textContent;
+  if (text.length > 50) {
+    element.innerHTML = text.substring(0, 50) + "...";
   }
 });

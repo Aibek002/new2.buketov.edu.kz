@@ -106,6 +106,12 @@ $this->title = 'Admin Page';
                 </a>
             </div>
             <div class="col-md-3 col-sm-6">
+                <a href="/yii2/web/index.php?r=admin%2Fadd-smi-about-us" class="admin-card d-block text-center p-4">
+                    <i class="fas fa-book fa-3x mb-3 text-success"></i>
+                    <p class="fw-semibold">СМИ о нас</p>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
                 <a href="/yii2/web/index.php?r=admin%2Fadmission-pdf-admin-panel"
                     class="admin-card d-block text-center p-4">
                     <i class="fas fa-file-pdf fa-3x mb-3 text-primary"></i>

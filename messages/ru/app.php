@@ -205,4 +205,5 @@ return [
     '(5В020700) Translation Studies' => '(5В020700) Переводческое дело',
     '(5В012000) Vocational Training' => '(5В012000) Профессиональное обучение',
     '(5В011900) Foreign Language: Two Foreign Languages' => '(5В011900) Иностранный язык: два иностранных языка',
+    'We are on social networks' => 'Мы в социальных сетях',
 ];
