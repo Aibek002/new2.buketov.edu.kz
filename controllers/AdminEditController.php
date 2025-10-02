@@ -115,7 +115,7 @@ class AdminEditController extends Controller
             ])
             ->asArray()
             ->all();
-            
+
         // print_r($history);die;
         return $this->render('edit-history-faculty', ['history' => $history]);
     }
@@ -249,21 +249,32 @@ class AdminEditController extends Controller
     {
         $model = Staff::find()
             ->select([
-                'id',
-                'name_ru as name',
-                'surname_ru as surname',
-                'patronymic_ru as patronymic',
+                'staff.id as staff_id',
+                'type_ref_staff.id as type_ref_staff_id',
+
+                'staff.name_ru as name',
+                'staff.surname_ru as surname',
+                'staff.patronymic_ru as patronymic',
             ])
-            ->orderBy(new \yii\db\Expression("SUBSTRING(name_ru, 9) ASC"))
+            ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id = staff.id')
+            ->orderBy(new \yii\db\Expression("SUBSTRING(staff.name_ru, 9) ASC"))
             ->asArray()
             ->all();
-        // print_r($history);die;
+        // print_r($model);die;
         return $this->render('edit-staff', ['model' => $model]);
     }
-    public function actionEditFormStaff($id)
+    public function actionEditFormStaff($id, $type_ref_staff_id = null)
     {
-        $model = Staff::findOne($id);
+        $model = Staff::findOne(['id' => $id]);
+        if (!empty($type_ref_staff_id)) {
+            $type_ref_staff = TypeRefStaff::findOne(['id' => $type_ref_staff_id]);
+            $type_ref_staff->job_title_en = $model->job_title_en;
+            $type_ref_staff->job_title_ru = $model->job_title_ru;
+            $type_ref_staff->job_title_kz = $model->job_title_kz;
+            $type_ref_staff->save(false);
 
+
+        }
         if (!$model) {
             throw new NotFoundHttpException("Staff not found");
         }

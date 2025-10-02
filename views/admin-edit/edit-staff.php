@@ -11,7 +11,7 @@
          
                     <span class="fw-bold"><?= str_replace(['КАФЕДРА '],"",  $item['surname']." " .$item['name'] . " " . $item['patronymic']) ?></span>
                     <?= Html::a('✏️ Редактировать', 
-                        ['admin-edit/edit-form-staff', 'id' => $item['id']], 
+                        ['admin-edit/edit-form-staff', 'id' => $item['staff_id'] , 'type_ref_staff_id'=> $item['type_ref_staff_id']], 
                         ['class' => 'btn btn-sm btn-outline-primary']
                     ) ?>
                 </div>

@@ -143,13 +143,13 @@
 }
 
 .dean {
-   text-align: center;
-  position: relative;
-  background: var(--indigoblue);
-  border-radius: 20px;
-  flex-direction: column;
-  padding: 40px 0;
-  gap: 20px;
+    text-align: center;
+    position: relative;
+    background: var(--indigoblue);
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 40px 0;
+    gap: 20px;
 }
 
 .image-dean {
@@ -159,13 +159,20 @@
 }
 
 
-.information-dean {}
+.information-dean {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .information-dean .full-name-dean {
     font-size: 25px;
     font-weight: 700;
     color: white;
     margin: 0;
+    width: 70%;
+    text-transform: uppercase;
 }
 
 .information-dean .job-title-dean {
@@ -173,6 +180,8 @@
     font-weight: 700;
     color: white;
     margin: 0;
+    width: 70%;
+
 }
 
 .information-dean .email-dean a {
@@ -181,6 +190,8 @@
     color: white;
     margin: 0;
     text-decoration: none;
+    text-transform: lowercase;
+
 
 }
 

@@ -96,7 +96,7 @@ class AdminController extends Controller
     {
         $staff = new Staff();
         if ($staff->load(Yii::$app->request->post())) {
-            $check = Staff::findOne(['surname_ru' => $staff->surname_ru]);
+            $check = Staff::findOne(['surname_ru' => trim($staff->surname_ru)]);
             $type_ref_staff = new TypeRefStaff();
             if ($check === null) {
                 if ((int) $staff->ref_staff_id === 14 || (int) $staff->ref_staff_id === 15) {
@@ -109,44 +109,13 @@ class AdminController extends Controller
                     if ($staff->save(false)) {  // Сначала сохраняем staff, чтобы получить id
                         $type_ref_staff->staff_id = $staff->id;
                         $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
-                        $type_ref_staff->job_title_en = $staff->job_title_en;
-                        $type_ref_staff->job_title_kz = $staff->job_title_kz;
-                        $type_ref_staff->job_title_ru = $staff->job_title_ru;
+                        $type_ref_staff->job_title_en = trim($staff->job_title_en);
+                        $type_ref_staff->job_title_kz = trim($staff->job_title_kz);
+                        $type_ref_staff->job_title_ru = trim($staff->job_title_ru);
 
-                        if ($type_ref_staff->save()) {
+                        if (!$type_ref_staff->save()) {
 
-                            $file = UploadedFile::getInstance($staff, 'images');
-                            if ($file) {
-                                $ref_staff = RefStaff::findOne(['id' => $staff->ref_staff_id]);
-                                $type = $ref_staff->type;
 
-                                $path = Yii::getAlias('@app/../files/image_avatar_staff/') .
-                                    $type . '/' . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/";
-
-                                if (!is_dir($path)) {
-                                    mkdir($path, 0775, true);
-                                }
-
-                                $filePath = $path . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
-                                $image_model = new Image();
-                                $image_model->ref_image_id = RefImage::find()->select('id')->where(['page_name' => $type])->scalar();
-
-                                $image_model->column_id = $staff->id;
-                                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
-                                if ($image_model->save(false)) {
-                                    if ($file->saveAs($filePath)) {
-                                        Yii::$app->session->setFlash('success', 'Successfully created!');
-                                        return $this->refresh();
-
-                                    }
-
-                                } else {
-                                    Yii::error($image_model->getErrors(), __METHOD__);
-                                    print_r($image_model->getErrors());
-                                    die;
-                                }
-
-                            }
                         }
                     }
                 }
@@ -158,12 +127,48 @@ class AdminController extends Controller
                 if ($check_ref_staff_type === null) {
 
                     $type_ref_staff->staff_id = $check->id;
+                    $type_ref_staff->job_title_en = trim($staff->job_title_en);
+                    $type_ref_staff->job_title_ru = trim($staff->job_title_ru);
+                    $type_ref_staff->job_title_kz = trim($staff->job_title_kz);
+
                     $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
                     $type_ref_staff->date = $staff->date;
                     $type_ref_staff->save();
                 } else {
                     Yii::$app->session->setFlash('error', 'Такой пользователь уже существует!');
                 }
+            }
+            $file = UploadedFile::getInstance($staff, 'images');
+            if ($file) {
+                $ref_staff = RefStaff::findOne(['id' => $staff->ref_staff_id]);
+                $type = $ref_staff->type;
+
+                $path = Yii::getAlias('@app/../files/image_avatar_staff/') .
+                    $type . '/' . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/";
+
+                if (!is_dir($path)) {
+                    mkdir($path, 0775, true);
+                }
+
+                $filePath = $path . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
+                $image_model = new Image();
+                $image_model->ref_image_id = RefImage::find()->select('id')->where(['page_name' => $type])->scalar();
+
+                $image_model->column_id = $staff->id;
+                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
+                if ($image_model->save(false)) {
+                    if ($file->saveAs($filePath)) {
+                        Yii::$app->session->setFlash('success', 'Successfully created!');
+                        return $this->refresh();
+
+                    }
+
+                } else {
+                    Yii::error($image_model->getErrors(), __METHOD__);
+                    print_r($image_model->getErrors());
+                    die;
+                }
+
             }
             return $this->redirect(['admin/index']);
         }

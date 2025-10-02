@@ -204,14 +204,16 @@ class SiteController extends Controller
                 'surname' => "staff." . LanguageHelper::surname(),
                 'patronymic' => "staff." . LanguageHelper::patronymic(),
                 'information' => "staff." . LanguageHelper::information(),
-                'job_title' => "staff." . LanguageHelper::job_title(),
+                'job_title' => "type_ref_staff." . LanguageHelper::job_title(),
                 'email' => 'staff.email',
                 'image' => 'image.image',
             ])
             ->from('staff')
             ->innerJoin('image', ['image.column_id' => new \yii\db\Expression('staff.id')])
+            ->innerJoin('type_ref_staff', ['type_ref_staff.staff_id' => new \yii\db\Expression('staff.id')])
+
             ->where(['departament_id' => $departament_id])
-            ->andWhere(['staff.ref_staff_id' => 5])
+            ->andWhere(['type_ref_staff.ref_staff_id' => 5])
             ->one();
 
         // print_r($dean);die;

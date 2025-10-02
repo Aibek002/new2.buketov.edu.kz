@@ -35,7 +35,7 @@ print_r($dean);
 
         </div>
 
-        <div class="dean d-flex justify-content-center align-items-center">
+        <div class="dean d-flex justify-content-center align-items-center p-5">
             <img class="image-dean"
                 src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
                 alt="Декан факультета" />
@@ -54,12 +54,13 @@ print_r($dean);
                         ? nl2br(htmlspecialchars($dean['job_title']))
                         : '( Здесь ничего не задано )' ?>
                 </p>
-                <p class="email-dean"><a href="mail:to:<?= $dean['email'] ?>">
+                <p class="email-dean"><a
+                        href="mail:to:<?= !empty($dean['email']) ? $dean['email'] : Yii::t('app', 'not specified') ?>">
                         <?= !empty($dean['email']) ? nl2br(htmlspecialchars($dean['email'])) : '( Здесь ничего не задано )' ?>
                     </a>
                 </p>
-                <?= Html::a(Yii::t('app', 'Для просмотра истории кафедры перейдите по ссылке'), ['site/history-departament', 'departament_id' => $departament_id],['class'=>'history-departament']) ?>
-                
+                <?= Html::a(Yii::t('app', 'Для просмотра истории кафедры перейдите по ссылке'), ['site/history-departament', 'departament_id' => $departament_id], ['class' => 'history-departament']) ?>
+
             </div>
         </div>
 
