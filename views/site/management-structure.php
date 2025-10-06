@@ -11,7 +11,7 @@ $this->title = Yii::t("app", "Management Structure");
 <?php if ($model): ?>
     <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 g-4 m-5 p-5 my-5">
         <?php foreach ($model as $index => $model_item): ?>
-            <div class="card" data-bs-toggle="modal" data-bs-target="#staffModal"
+            <div class="cards" data-bs-toggle="modal" data-bs-target="#staffModal"
                 data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"
                 data-job="<?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?: 'Нет данных о должности' ?>"
                 data-email="<?= htmlspecialchars($model_item->email) ?: 'Нет данных о email' ?>"

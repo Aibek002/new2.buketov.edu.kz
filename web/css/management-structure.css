@@ -1,10 +1,33 @@
-.card {
+.button_collapse span {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--indigoblue-font);
+}
+
+.button_collapse {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--indigoblue-font);
+}
+
+.button_collapse:hover {
+    background: var(--indigoblue-font);
+    border-radius: 10px;
+    border: 1px solid var(--indigoblue-font);
+}
+
+.button_collapse:hover span {
+    color: white;
+
+}
+
+.cards {
     width: 300px;
     margin: 50px auto;
     text-align: center;
     background: #fff;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
 
@@ -21,8 +44,9 @@
     position: relative;
     z-index: 1;
     border: 6px solid #fff;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    overflow: hidden; /* обрезка */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    /* обрезка */
 }
 
 .avatar-img {
@@ -32,7 +56,7 @@
     transform: translateX(-50%);
     width: 120px;
     z-index: 2;
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
 }
 
 .card-title {
@@ -46,10 +70,12 @@
     color: #555;
     font-size: 16px;
 }
-.overly-resume{
+
+.overly-resume {
     display: none;
 }
-.overly-resume.active{
+
+.overly-resume.active {
     display: block;
-    
+
 }

@@ -118,11 +118,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         ) ?>
 
                                         <?= Html::a(
-                                            Yii::t('app', 'Administrative Services') . ' <span>></span>',
+                                            Yii::t('app', 'Administrative Services') . "1" . ' <span>></span>',
                                             ['site/management-structure', 'type' => 'administrative-services'],
                                             ['class' => 'menu-item']
                                         ) ?>
-
+                                        <?= Html::a(
+                                            Yii::t('app', 'Administrative Services') . "2" . ' <span>></span>',
+                                            ['site/management-structure-ex', 'type' => 'administrative-services'],
+                                            ['class' => 'menu-item']
+                                        ) ?>
                                         <?= Html::a(
                                             Yii::t('app', 'Councils') . ' <span>></span>',
                                             ['site/sovet'],

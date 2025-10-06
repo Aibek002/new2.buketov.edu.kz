@@ -275,7 +275,20 @@ class SiteController extends Controller
 
     }
 
+   public function actionManagementStructureEx($type)
+    {
+        $lang = Yii::$app->language;
+        $staff = Staff::find()
+            ->joinWith(['refStaff', 'image.refImage'])
+            ->where(['ref_staff.type' => $type])
+            ->andWhere(['ref_image.page_name' => $type])
+            ->orderBy(['staff.' . LanguageHelper::job_title() => SORT_ASC])
+            ->all();
+        // print_r($staff);
+        // die;
+        return $this->render('management-structure-ex', ['model' => $staff, 'type' => $type]);
 
+    }
     public function actionCorparate()
     {
         $year = CorporateGovernanceFile::find()->select(['sort_id', 'language_file', 'ref_corporate_governance'])->distinct()->orderBy(['sort_id' => SORT_DESC])->all();

@@ -205,5 +205,6 @@ return [
     '(5В012000) Vocational Training' => '(5В012000) Кәсіптік оқыту',
     '(5В011900) Foreign Language: Two Foreign Languages' => '(5В011900) Шетел тілі: екі шетел тілі',
     'We are on social networks' => 'Біз әлеуметтік желілерде',
+    'Information'=>'Ақпарат',
 
 ];
