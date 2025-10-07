@@ -255,78 +255,86 @@ class AdminEditController extends Controller
                 'staff.name_ru as name',
                 'staff.surname_ru as surname',
                 'staff.patronymic_ru as patronymic',
+                'ref_staff.type as job_title',
+
             ])
             ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id = staff.id')
+            ->innerJoin('ref_staff', 'ref_staff.id = type_ref_staff.ref_staff_id')
+
             ->orderBy(new \yii\db\Expression("SUBSTRING(staff.name_ru, 9) ASC"))
             ->asArray()
+            ->distinct(['type_ref_staff.ref_staff_id', 'type_ref_staff.staff_id'])
             ->all();
         // print_r($model);die;
         return $this->render('edit-staff', ['model' => $model]);
     }
     public function actionEditFormStaff($id, $type_ref_staff_id = null)
     {
-        $model = Staff::findOne(['id' => $id]);
-        if (!empty($type_ref_staff_id)) {
-            $type_ref_staff = TypeRefStaff::findOne(['id' => $type_ref_staff_id]);
-            $type_ref_staff->job_title_en = $model->job_title_en;
-            $type_ref_staff->job_title_ru = $model->job_title_ru;
-            $type_ref_staff->job_title_kz = $model->job_title_kz;
-            $type_ref_staff->save(false);
+        $staff = Staff::find(['id' => $id]);
+        $type_ref_staff = TypeRefStaff::find(['staff_id' => $id, 'ref_staff_id' => $type_ref_staff_id]);
 
 
-        }
-        if (!$model) {
-            throw new NotFoundHttpException("Staff not found");
-        }
+        // if (!empty($type_ref_staff_id)) {
+        //     $type_ref_staff = TypeRefStaff::findOne(['id' => $type_ref_staff_id]);
+        //     $type_ref_staff->job_title_en = $model->job_title_en;
+        //     $type_ref_staff->job_title_ru = $model->job_title_ru;
+        //     $type_ref_staff->job_title_kz = $model->job_title_kz;
+        //     $type_ref_staff->save(false);
 
-        if ($model->load(Yii::$app->request->post())) {
-            $file = UploadedFile::getInstance($model, 'images');
 
-            if ($model->save()) {
-                if ($file) {
-                    // Получаем ref_model и ref_image_id
-                    $ref_model = RefStaff::find()->select('type')->where(['id' => $model->ref_staff_id])->scalar();
-                    $ref_image_id = RefImage::find()->select('id')->where(['page_name' => $ref_model])->scalar();
+        // }
+        // if (!$model) {
+        //     throw new NotFoundHttpException("Staff not found");
+        // }
 
-                    // Ищем изображение по column_id
-                    $model_image = Image::find()->where(['column_id' => $model->id])->one();
+        // if ($model->load(Yii::$app->request->post())) {
+        //     $file = UploadedFile::getInstance($model, 'images');
 
-                    if ($model_image && $model_image->image) {
-                        $filePath = Yii::getAlias('@app/..') . $model_image->image;
-                        if (file_exists($filePath)) {
-                            @unlink($filePath);
-                        }
-                    }
+        //     if ($model->save()) {
+        //         if ($file) {
+        //             // Получаем ref_model и ref_image_id
+        //             $ref_model = RefStaff::find()->select('type')->where(['id' => $model->ref_staff_id])->scalar();
+        //             $ref_image_id = RefImage::find()->select('id')->where(['page_name' => $ref_model])->scalar();
 
-                    if (!$model_image) {
-                        $model_image = new Image();
-                    }
+        //             // Ищем изображение по column_id
+        //             $model_image = Image::find()->where(['column_id' => $model->id])->one();
 
-                    $model_image->column_id = $model->id;
-                    $model_image->ref_image_id = $ref_image_id;
+        //             if ($model_image && $model_image->image) {
+        //                 $filePath = Yii::getAlias('@app/..') . $model_image->image;
+        //                 if (file_exists($filePath)) {
+        //                     @unlink($filePath);
+        //                 }
+        //             }
 
-                    // Путь для сохранения
-                    $path = Yii::getAlias('@app/../files/image_avatar_staff/') . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/";
+        //             if (!$model_image) {
+        //                 $model_image = new Image();
+        //             }
 
-                    if (!is_dir($path) && !mkdir($path, 0777, true)) {
-                        throw new \RuntimeException("Не удалось создать директорию: {$path}");
-                    }
+        //             $model_image->column_id = $model->id;
+        //             $model_image->ref_image_id = $ref_image_id;
 
-                    $fileName = trim($model->surname_en) . "_" . trim($model->name_en) . "." . $file->extension;
+        //             // Путь для сохранения
+        //             $path = Yii::getAlias('@app/../files/image_avatar_staff/') . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/";
 
-                    if ($file->saveAs($path . $fileName)) {
-                        Yii::$app->session->setFlash("success", "Фото успешно загружено");
+        //             if (!is_dir($path) && !mkdir($path, 0777, true)) {
+        //                 throw new \RuntimeException("Не удалось создать директорию: {$path}");
+        //             }
 
-                        $model_image->image = "/files/image_avatar_staff/" . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/" . $fileName;
-                        $model_image->save(false);
-                    }
-                }
+        //             $fileName = trim($model->surname_en) . "_" . trim($model->name_en) . "." . $file->extension;
 
-                return $this->redirect(['admin-edit/edit-staff']);
-            }
-        }
+        //             if ($file->saveAs($path . $fileName)) {
+        //                 Yii::$app->session->setFlash("success", "Фото успешно загружено");
 
-        return $this->render('edit-form-staff', ['model' => $model]);
+        //                 $model_image->image = "/files/image_avatar_staff/" . $ref_model . "/" . $model->surname_en . "_" . $model->name_en . "/" . $fileName;
+        //                 $model_image->save(false);
+        //             }
+        //         }
+
+        //         return $this->redirect(['admin-edit/edit-staff']);
+        //     }
+        // }
+
+        return $this->render('edit-form-staff', ['staff' => $staff, 'type_ref_staff' => $type_ref_staff]);
     }
 
 
