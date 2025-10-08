@@ -2,6 +2,7 @@
 use app\models\Departament;
 use app\models\DissertationAdvice;
 use app\models\Faculty;
+use app\models\RefStaff;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -22,129 +23,121 @@ use yii\widgets\ActiveForm;
             <!-- ФИО -->
             <div class="row">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'surname_kz')->textInput()->label('Фамилия (KZ)') ?>
+                    <?= $form->field($staff, 'surname_kz')->textInput()->label('Фамилия (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'surname_ru')->textInput()->label('Фамилия (RU)') ?>
+                    <?= $form->field($staff, 'surname_ru')->textInput()->label('Фамилия (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'surname_en')->textInput()->label('Фамилия (EN)') ?>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-md-4">
-                    <?= $form->field($model, 'name_kz')->textInput()->label('Имя (KZ)') ?>
-                </div>
-                <div class="col-md-4">
-                    <?= $form->field($model, 'name_ru')->textInput()->label('Имя (RU)') ?>
-                </div>
-                <div class="col-md-4">
-                    <?= $form->field($model, 'name_en')->textInput()->label('Имя (EN)') ?>
+                    <?= $form->field($staff, 'surname_en')->textInput()->label('Фамилия (EN)') ?>
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'patronymic_kz')->textInput()->label('Отчество (KZ)') ?>
+                    <?= $form->field($staff, 'name_kz')->textInput()->label('Имя (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'patronymic_ru')->textInput()->label('Отчество (RU)') ?>
+                    <?= $form->field($staff, 'name_ru')->textInput()->label('Имя (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'patronymic_en')->textInput()->label('Отчество (EN)') ?>
+                    <?= $form->field($staff, 'name_en')->textInput()->label('Имя (EN)') ?>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <?= $form->field($staff, 'patronymic_kz')->textInput()->label('Отчество (KZ)') ?>
+                </div>
+                <div class="col-md-4">
+                    <?= $form->field($staff, 'patronymic_ru')->textInput()->label('Отчество (RU)') ?>
+                </div>
+                <div class="col-md-4">
+                    <?= $form->field($staff, 'patronymic_en')->textInput()->label('Отчество (EN)') ?>
                 </div>
             </div>
 
             <!-- Контакты -->
             <div class="row mt-3">
                 <div class="col-md-6">
-                    <?= $form->field($model, 'email')->input('email')->label('Email') ?>
+                    <?= $form->field($type_ref_staff, 'email')->input('email')->label('Email') ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'phone')->textInput()->label('Телефон') ?>
+                    <?= $form->field($type_ref_staff, 'phone')->textInput()->label('Телефон') ?>
                 </div>
             </div>
 
             <!-- Информация -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (KZ)') ?>
+                    <?= $form->field($type_ref_staff, 'information_kz')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (RU)') ?>
+                    <?= $form->field($type_ref_staff, 'information_ru')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_en')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (EN)') ?>
+                    <?= $form->field($type_ref_staff, 'information_en')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (EN)') ?>
                 </div>
             </div>
 
             <!-- Приветствие -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (KZ)') ?>
+                    <?= $form->field($type_ref_staff, 'welcome_kz')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (RU)') ?>
+                    <?= $form->field($type_ref_staff, 'welcome_ru')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (EN)') ?>
+                    <?= $form->field($type_ref_staff, 'welcome_en')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (EN)') ?>
                 </div>
             </div>
 
             <!-- Должность -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'job_title_kz')->textInput()->label('Должность (KZ)') ?>
+                    <?= $form->field($type_ref_staff, 'job_title_kz')->textInput()->label('Должность (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'job_title_ru')->textInput()->label('Должность (RU)') ?>
+                    <?= $form->field($type_ref_staff, 'job_title_ru')->textInput()->label('Должность (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'job_title_en')->textInput()->label('Должность (EN)') ?>
+                    <?= $form->field($type_ref_staff, 'job_title_en')->textInput()->label('Должность (EN)') ?>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <?= $form->field($model, 'images')->fileInput(['accept' => '.jpg']) ?>
+                    <?= $form->field($staff, 'images')->fileInput(['accept' => '.jpg']) ?>
                 </div>
             </div>
             <!-- Связанные поля -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'faculty_id')->dropDownList(
+                    <?= $form->field($type_ref_staff, 'faculty_id')->dropDownList(
                         ArrayHelper::map(Faculty::find()->all(), 'id', 'name_ru'),
                         ['prompt' => 'Выберите факультет']
                     ) ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'faculty_id')->dropDownList(
+                    <?= $form->field($type_ref_staff, 'departament_id')->dropDownList(
                         ArrayHelper::map(Departament::find()->all(), 'id', 'name_ru'),
                         ['prompt' => 'Выберите кафедру']
                     ) ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'ref_staff_id')->textInput()->label('Ссылка на сотрудника (ID)') ?>
+                    <?= $form->field($type_ref_staff, 'ref_staff_id')
+                        ->dropDownList(
+                            ArrayHelper::map(RefStaff::find()->all(), 'id', 'type')
+                        )->label('Ссылка на сотрудника (ID)') ?>
                 </div>
             </div>
 
-            <!-- Прочее -->
-            <div class="row mt-3">
-                <div class="col-md-4">
-                    <?= $form->field($model, 'is_doctorant')->checkbox()->label('Докторант') ?>
-                </div>
-                <div class="col-md-4">
-                    <?= $form->field($model, 'faculty_show')->checkbox()->label('Показывать на факультете') ?>
-                </div>
-                <div class="col-md-4">
-                    <?= $form->field($model, 'dissertation_show')->checkbox()->label('Показывать диссертацию') ?>
-                </div>
-            </div>
+            
 
             <!-- Совет по диссертации -->
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <?= $form->field($model, 'dissertation_advice_id')->dropDownList(
+                    <?= $form->field($type_ref_staff, 'dissertation_advice_id')->dropDownList(
                         ArrayHelper::map(DissertationAdvice::find()->all(), 'id', 'name'),
                         ['prompt' => 'Выберите совет']
                     )->label('Совет по диссертации') ?>

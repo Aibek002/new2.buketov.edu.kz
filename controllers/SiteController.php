@@ -212,7 +212,7 @@ class SiteController extends Controller
             ->innerJoin('image', ['image.column_id' => new \yii\db\Expression('staff.id')])
             ->innerJoin('type_ref_staff', ['type_ref_staff.staff_id' => new \yii\db\Expression('staff.id')])
 
-            ->where(['departament_id' => $departament_id])
+            ->where(['type_ref_staff.departament_id' => $departament_id])
             ->andWhere(['type_ref_staff.ref_staff_id' => 5])
             ->one();
 

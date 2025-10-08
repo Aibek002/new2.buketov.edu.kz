@@ -256,6 +256,7 @@ class AdminEditController extends Controller
                 'staff.surname_ru as surname',
                 'staff.patronymic_ru as patronymic',
                 'ref_staff.type as job_title',
+                'type_ref_staff.ref_staff_id as ref_staff_id',
 
             ])
             ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id = staff.id')
@@ -268,12 +269,35 @@ class AdminEditController extends Controller
         // print_r($model);die;
         return $this->render('edit-staff', ['model' => $model]);
     }
-    public function actionEditFormStaff($id, $type_ref_staff_id = null)
+    public function actionEditFormStaff($id, $type_ref_staff_id = null, $ref_staff_id = null)
     {
-        $staff = Staff::find(['id' => $id]);
-        $type_ref_staff = TypeRefStaff::find(['staff_id' => $id, 'ref_staff_id' => $type_ref_staff_id]);
+        $staff = Staff::findOne(['id' => $id]);
 
+        if ($staff === null) {
+            throw new NotFoundHttpException("Staff not found");
+        }
 
+        if ($type_ref_staff_id === null || $id === null || $ref_staff_id === null) {
+            $type_ref_staff = new TypeRefStaff(); // создаём пустую модель, если нет
+        } else {
+            $type_ref_staff = TypeRefStaff::findOne(['staff_id' => (int) $id, 'id' => (int) $type_ref_staff_id, 'ref_staff_id' => (int) $ref_staff_id]);
+        }
+        if (
+            Yii::$app->request->isPost &&
+            $staff->load(Yii::$app->request->post()) &&
+            $type_ref_staff->load(Yii::$app->request->post())
+        ) {
+            $isValid = $staff->validate();
+            $isValid = $type_ref_staff->validate() && $isValid;
+
+            if ($isValid) {
+                $staff->save(false);
+                $type_ref_staff->save(false);
+                return $this->redirect(['admin-edit/index']);
+            }
+        }
+        // print_r($type_ref_staff );
+        // die;
         // if (!empty($type_ref_staff_id)) {
         //     $type_ref_staff = TypeRefStaff::findOne(['id' => $type_ref_staff_id]);
         //     $type_ref_staff->job_title_en = $model->job_title_en;
@@ -579,5 +603,44 @@ class AdminEditController extends Controller
         }
 
         return $this->render('edit-form-corporate-file', ['model' => $model, 'type_corporate' => $type_corporate, 'years' => $share_sole_holder_years, 'language' => $language]);
+    }
+
+    public function actionPhotoMove()
+    {
+        $staff = Staff::findAll(['ref_staff_id' => 5]);
+
+        foreach ($staff as $staff_item) {
+            $image = Image::findOne([
+                'ref_image_id' => 9,
+                'column_id' => $staff_item->id
+            ]);
+
+            if ($image !== null) {
+                $file = Yii::getAlias('@app/../') . ltrim($image->image, '/'); // путь к файлу
+
+                if (file_exists($file)) {
+                    echo "Картина существует <br/>";
+                    $targetDir = Yii::getAlias('@app/../files/staff_avatar/' . $staff_item->id . '/');
+                    if (!is_dir($targetDir)) {
+                        mkdir($targetDir, 0777, true);
+                    }
+                    $ext = pathinfo($file, PATHINFO_EXTENSION);
+                    $destination = $targetDir . uniqid() . '.' . $ext;
+
+                    if (copy($file, $destination)) {
+                        echo "Файл успешно скопирован!";
+                    } else {
+                        echo "Ошибка при копировании файла!";
+                    }
+
+                } else {
+                    echo "Картина не существует <br/>";
+
+                }
+            } else {
+                echo "Нет картинки для staff_id {$staff_item->id}<br/>";
+            }
+
+        }
     }
 }

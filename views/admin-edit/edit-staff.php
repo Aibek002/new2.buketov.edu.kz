@@ -13,7 +13,7 @@
                         class="fw-bold"><?= str_replace(['КАФЕДРА '], "", $item['surname'] . " " . $item['name'] . " " . $item['patronymic']) . " (" . $item['job_title'] . ")" ?></span>
                     <?= Html::a(
                         '✏️ Редактировать',
-                        ['admin-edit/edit-form-staff', 'id' => $item['staff_id'], 'type_ref_staff_id' => $item['type_ref_staff_id']],
+                        ['admin-edit/edit-form-staff', 'id' => $item['staff_id'], 'type_ref_staff_id' => $item['type_ref_staff_id'],'ref_staff_id' => $item['ref_staff_id']],
                         ['class' => 'btn btn-sm btn-outline-primary']
                     ) ?>
                 </div>
