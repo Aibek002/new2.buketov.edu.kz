@@ -5,7 +5,6 @@ use app\assets\DepartamentAsset;
 
 DepartamentAsset::register($this);
 
-print_r($dean);
 ?>
 
 <div class="faculty-hero">
@@ -20,7 +19,7 @@ print_r($dean);
 <div class="first-flex-faculty p-5 m-3">
     <div class="faculty-container">
 
-        <div class="faculty-text">
+        <div class="faculty-text col-md-6">
             <?php if (!empty($departament)): ?>
                 <h2><?= !empty($departament->{LanguageHelper::welcome()}) ? $departament->{LanguageHelper::welcome()} : '( Здесь ничего не задано )' ?>
                 </h2>
@@ -35,7 +34,7 @@ print_r($dean);
 
         </div>
 
-        <div class="dean d-flex justify-content-center align-items-center p-5">
+        <div class="dean d-flex justify-content-center align-items-center col-md-4">
             <div style="overflow:hidden;width:300px;height:300px;
                         border: 10px solid white;
                         border-radius: 100%;">

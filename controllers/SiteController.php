@@ -203,9 +203,9 @@ class SiteController extends Controller
                 'name' => "staff." . LanguageHelper::name(),
                 'surname' => "staff." . LanguageHelper::surname(),
                 'patronymic' => "staff." . LanguageHelper::patronymic(),
-                'information' => "staff." . LanguageHelper::information(),
+                'information' => "type_ref_staff." . LanguageHelper::information(),
                 'job_title' => "type_ref_staff." . LanguageHelper::job_title(),
-                'email' => 'staff.email',
+                'email' => 'type_ref_staff.email',
                 'image' => 'image.image',
             ])
             ->from('staff')
