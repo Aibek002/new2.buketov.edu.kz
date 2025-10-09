@@ -103,6 +103,16 @@ class AdminController extends Controller
                     $type_ref_staff->staff_id = $staff->id;
                     $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
                     $type_ref_staff->date = $staff->date;
+                    $type_ref_staff->faculty_id = $staff->faculty_id;
+                    $type_ref_staff->departament_id = $staff->departament_id;
+                    $type_ref_staff->email = $staff->email;
+                    $type_ref_staff->information_kz = $staff->information_kz;
+                    $type_ref_staff->information_ru = $staff->information_ru;
+                    $type_ref_staff->information_en = $staff->information_en;
+                    $type_ref_staff->job_title_en = $staff->job_title_en;
+                    $type_ref_staff->job_title_kz = $staff->job_title_kz;
+                    $type_ref_staff->job_title_ru = $staff->job_title_ru;
+
                     $type_ref_staff->save();
                     $staff->save();
                 } elseif ((int) $staff->ref_staff_id === 6 || (int) $staff->ref_staff_id === 1 || (int) $staff->ref_staff_id === 2 || (int) $staff->ref_staff_id === 3 || (int) $staff->ref_staff_id === 5) {
@@ -112,7 +122,12 @@ class AdminController extends Controller
                         $type_ref_staff->job_title_en = trim($staff->job_title_en);
                         $type_ref_staff->job_title_kz = trim($staff->job_title_kz);
                         $type_ref_staff->job_title_ru = trim($staff->job_title_ru);
-
+                        $type_ref_staff->faculty_id = $staff->faculty_id;
+                        $type_ref_staff->departament_id = $staff->departament_id;
+                        $type_ref_staff->email = $staff->email;
+                        $type_ref_staff->information_kz = $staff->information_kz;
+                        $type_ref_staff->information_ru = $staff->information_ru;
+                        $type_ref_staff->information_en = $staff->information_en;
                         if (!$type_ref_staff->save()) {
 
 
@@ -130,7 +145,12 @@ class AdminController extends Controller
                     $type_ref_staff->job_title_en = trim($staff->job_title_en);
                     $type_ref_staff->job_title_ru = trim($staff->job_title_ru);
                     $type_ref_staff->job_title_kz = trim($staff->job_title_kz);
-
+                    $type_ref_staff->faculty_id = $staff->faculty_id;
+                    $type_ref_staff->departament_id = $staff->departament_id;
+                    $type_ref_staff->email = $staff->email;
+                    $type_ref_staff->information_kz = $staff->information_kz;
+                    $type_ref_staff->information_ru = $staff->information_ru;
+                    $type_ref_staff->information_en = $staff->information_en;
                     $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
                     $type_ref_staff->date = $staff->date;
                     $type_ref_staff->save();
@@ -143,21 +163,21 @@ class AdminController extends Controller
                 $ref_staff = RefStaff::findOne(['id' => $staff->ref_staff_id]);
                 $type = $ref_staff->type;
 
-                $path = Yii::getAlias('@app/../files/image_avatar_staff/') .
-                    $type . '/' . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/";
+                $path = Yii::getAlias('@app/../files/staff_avatar/') .
+                    $staff->id . "/";
 
                 if (!is_dir($path)) {
                     mkdir($path, 0775, true);
                 }
 
-                $filePath = $path . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
+                $filePath = uniqid() . "." . $file->extension;
                 $image_model = new Image();
                 $image_model->ref_image_id = RefImage::find()->select('id')->where(['page_name' => $type])->scalar();
 
                 $image_model->column_id = $staff->id;
-                $image_model->image = "/files/image_avatar_staff/" . $type . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "/" . trim($staff->surname_en) . "_" . trim($staff->name_en) . "." . $file->extension;
+                $image_model->image = "/files/staff_avatar/" . $staff->id . "/" . $filePath;
                 if ($image_model->save(false)) {
-                    if ($file->saveAs($filePath)) {
+                    if ($file->saveAs( $path . $filePath)) {
                         Yii::$app->session->setFlash('success', 'Successfully created!');
                         return $this->refresh();
 
