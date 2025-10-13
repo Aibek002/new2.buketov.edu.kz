@@ -96,7 +96,7 @@ class AdminController extends Controller
     {
         $staff = new Staff();
         if ($staff->load(Yii::$app->request->post())) {
-            $check = Staff::findOne(['surname_ru' => trim($staff->surname_ru)]);
+            $check = Staff::findOne(['surname_ru' =>  mb_strtoupper(trim($staff->surname_ru)), 'name_ru' =>  mb_strtoupper(trim($staff->name_ru)), 'patronymic_ru' =>  mb_strtoupper(trim($staff->patronymic_ru))]);
             $type_ref_staff = new TypeRefStaff();
             if ($check === null) {
                 if ((int) $staff->ref_staff_id === 14 || (int) $staff->ref_staff_id === 15) {
@@ -105,7 +105,7 @@ class AdminController extends Controller
                     $type_ref_staff->date = $staff->date;
                     $type_ref_staff->faculty_id = $staff->faculty_id;
                     $type_ref_staff->departament_id = $staff->departament_id;
-                    $type_ref_staff->email = $staff->email;
+                    $type_ref_staff->email = trim($staff->email);
                     $type_ref_staff->information_kz = $staff->information_kz;
                     $type_ref_staff->information_ru = $staff->information_ru;
                     $type_ref_staff->information_en = $staff->information_en;
@@ -114,6 +114,17 @@ class AdminController extends Controller
                     $type_ref_staff->job_title_ru = $staff->job_title_ru;
 
                     $type_ref_staff->save();
+
+                    $staff->name_kz = mb_strtoupper(trim($staff->name_kz));
+                    $staff->name_ru = mb_strtoupper(trim($staff->name_ru));
+                    $staff->name_en = mb_strtoupper(trim($staff->name_en));
+
+                    $staff->surname_kz = mb_strtoupper(trim($staff->surname_kz));
+                    $staff->surname_ru = mb_strtoupper(trim($staff->surname_ru));
+                    $staff->surname_en = mb_strtoupper(trim($staff->surname_en));
+
+
+                    $staff->email = mb_strtolower(trim($staff->email));
                     $staff->save();
                 } elseif ((int) $staff->ref_staff_id === 6 || (int) $staff->ref_staff_id === 1 || (int) $staff->ref_staff_id === 2 || (int) $staff->ref_staff_id === 3 || (int) $staff->ref_staff_id === 5) {
                     if ($staff->save(false)) {  // Сначала сохраняем staff, чтобы получить id
@@ -147,7 +158,7 @@ class AdminController extends Controller
                     $type_ref_staff->job_title_kz = trim($staff->job_title_kz);
                     $type_ref_staff->faculty_id = $staff->faculty_id;
                     $type_ref_staff->departament_id = $staff->departament_id;
-                    $type_ref_staff->email = $staff->email;
+                    $type_ref_staff->email = mb_strtolower(trim($staff->email));
                     $type_ref_staff->information_kz = $staff->information_kz;
                     $type_ref_staff->information_ru = $staff->information_ru;
                     $type_ref_staff->information_en = $staff->information_en;
@@ -162,9 +173,10 @@ class AdminController extends Controller
             if ($file) {
                 $ref_staff = RefStaff::findOne(['id' => $staff->ref_staff_id]);
                 $type = $ref_staff->type;
+                $staff_id = $staff->id ??   $check->id;
 
                 $path = Yii::getAlias('@app/../files/staff_avatar/') .
-                    $staff->id . "/";
+                    $staff_id . "/";
 
                 if (!is_dir($path)) {
                     mkdir($path, 0775, true);
@@ -174,10 +186,10 @@ class AdminController extends Controller
                 $image_model = new Image();
                 $image_model->ref_image_id = RefImage::find()->select('id')->where(['page_name' => $type])->scalar();
 
-                $image_model->column_id = $staff->id;
-                $image_model->image = "/files/staff_avatar/" . $staff->id . "/" . $filePath;
+                $image_model->column_id = $staff_id;
+                $image_model->image = "/files/staff_avatar/" . $staff_id . "/" . $filePath;
                 if ($image_model->save(false)) {
-                    if ($file->saveAs( $path . $filePath)) {
+                    if ($file->saveAs($path . $filePath)) {
                         Yii::$app->session->setFlash('success', 'Successfully created!');
                         return $this->refresh();
 

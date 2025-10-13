@@ -38,7 +38,7 @@ DepartamentAsset::register($this);
             <div style="overflow:hidden;width:300px;height:300px;
                         border: 10px solid white;
                         border-radius: 100%;">
-                <img style="position: relative; bottom: -30px;" src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                <img style="position: relative;" src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
                     alt="Декан факультета" />
             </div>
 
