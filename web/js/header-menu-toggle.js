@@ -200,9 +200,9 @@ document.addEventListener("DOMContentLoaded", function () {
 let researchCenterBtn = document.querySelector(".researchCenterBtn");
 let dissertationCouncilBtn = document.querySelector(".DissertationCouncilBtn");
 let сompetitionsAndGrandsBtn = document.querySelector(
-  ".CompetitionsAndGrandsBtn"
+  ".CompetitionsAndGrantsBtn"
 );
-let conferencesBtn = document.querySelector(".СonferencesBtn");
+let conferencesBtn = document.querySelector(".ConferencesBtn");
 let researchJobStudentBtn = document.querySelector(".ResearchJobStudentBtn");
 
 researchCenterBtn.addEventListener("click", function () {
@@ -212,6 +212,7 @@ dissertationCouncilBtn.addEventListener("click", function () {
   openSubMenus("subMenuDissertationCouncil");
 });
 сompetitionsAndGrandsBtn.addEventListener("click", function () {
+  console.log("grants");
   openSubMenus("subMenuCompetitionsAndGrands");
 });
 conferencesBtn.addEventListener("click", function () {
