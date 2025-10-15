@@ -279,9 +279,7 @@ class AdminEditController extends Controller
 
         // Если не найден связанный type_ref_staff — создаём новый
         $type_ref_staff = TypeRefStaff::findOne([
-            'staff_id' => (int) $id,
             'id' => (int) $type_ref_staff_id,
-            'ref_staff_id' => (int) $ref_staff_id
         ]);
 
         if ($type_ref_staff === null) {
@@ -293,9 +291,8 @@ class AdminEditController extends Controller
         }
 
         if (
-            Yii::$app->request->isPost &&
-            $staff->load(Yii::$app->request->post()) &&
-            $type_ref_staff->load(Yii::$app->request->post())
+            Yii::$app->request->isPost && $type_ref_staff->load(Yii::$app->request->post()) && $staff->load(Yii::$app->request->post())
+
         ) {
             $isValid = $staff->validate();
             $isValid = $type_ref_staff->validate() && $isValid;
@@ -303,45 +300,49 @@ class AdminEditController extends Controller
             $file = UploadedFile::getInstance($staff, 'images');
 
             if ($isValid) {
-                $staff->save(false);
-                $type_ref_staff->staff_id = $staff->id; // на всякий случай, чтобы связь сохранялась корректно
-                $type_ref_staff->save(false);
+                if ($staff->save(false)) {
+                    $type_ref_staff->staff_id = $staff->id; // на всякий случай, чтобы связь сохранялась корректно
+                    if ($type_ref_staff->save(false)) {
 
-                // Если загружен файл
-                if ($file) {
-                    $path = Yii::getAlias('@app/../files/staff_avatar/') . $staff->id . "/";
-                    $file_name = uniqid() . "." . $file->extension;
-                    // print_r($file_name);
-                    // die;
 
-                    if (!is_dir($path) && !mkdir($path, 0777, true)) {
-                        Yii::$app->session->setFlash("error", "Ошибка при создании директории: " . $path);
-                    } else {
-                        $image = Image::findOne(['column_id' => $staff->id]);
+                        // Если загружен файл
+                        if ($file) {
+                            $path = Yii::getAlias('@app/../files/staff_avatar/') . $staff->id . "/";
+                            $file_name = uniqid() . "." . $file->extension;
+                            // print_r($file_name);
+                            // die;
 
-                        if (!$image) {
-                            // Если нет — создаём новую
-                            $image = new Image();
-                            $image->column_id = $staff->id;
-                        }
-
-                        // Сохраняем путь к файлу
-                        $image->image = '/files/staff_avatar/' . $staff->id . "/" . $file_name;
-                        if ($file->saveAs($path . $file_name)) {
-                            // Сохраняем запись в базу
-                            if ($image->save(false)) {
-                                Yii::$app->session->setFlash('success', 'Изображение успешно обновлено!');
+                            if (!is_dir($path) && !mkdir($path, 0777, true)) {
+                                Yii::$app->session->setFlash("error", "Ошибка при создании директории: " . $path);
                             } else {
-                                Yii::$app->session->setFlash('error', 'Ошибка при сохранении изображения.');
-                            }
-                        }else{
-                                Yii::$app->session->setFlash('error', 'Ошибка при сохранении изображения.');
+                                $image = Image::findOne(['column_id' => $staff->id]);
 
+                                if (!$image) {
+                                    // Если нет — создаём новую
+                                    $image = new Image();
+                                    $image->column_id = $staff->id;
+                                }
+
+                                // Сохраняем путь к файлу
+                                $image->image = '/files/staff_avatar/' . $staff->id . "/" . $file_name;
+                                if ($file->saveAs($path . $file_name)) {
+                                    // Сохраняем запись в базу
+                                    if ($image->save(false)) {
+                                        Yii::$app->session->setFlash('success', 'Изображение успешно обновлено!');
+                                    } else {
+                                        Yii::$app->session->setFlash('error', 'Ошибка при сохранении изображения.');
+                                    }
+                                } else {
+                                    Yii::$app->session->setFlash('error', 'Ошибка при сохранении изображения.');
+
+                                }
+
+                            }
                         }
+                        return $this->redirect(['admin-edit/edit-staff']);
 
                     }
                 }
-
                 return $this->redirect(['admin-edit/edit-staff']);
             }
         }

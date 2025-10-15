@@ -52,7 +52,7 @@ ref_staff_id.addEventListener("input", () => {
     upload_img.classList.add("active");
     faculty.classList.add("active");
     submit.classList.add("active");
-  } else if (ref_staff_id.value === "5") {
+  } else if (ref_staff_id.value === "5" || ref_staff_id.value === "12") {
     fio.classList.add("active");
     contact.classList.add("active");
     information.classList.add("active");
@@ -64,4 +64,5 @@ ref_staff_id.addEventListener("input", () => {
 
     submit.classList.add("active");
   }
+
 });

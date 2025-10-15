@@ -124,19 +124,10 @@ $this->title = 'Buketov University';
     <div class="third-block row col-md-12 w-100 d-flex flex-column align-items-center p-3">
 
         <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-            <p><?= Yii::t('app', 'Admissions Committee') ?></p>
+            <p><?= Yii::t('app', 'Admission Instructions') ?></p>
         </div>
         <div class="col-md-10 d-flex flex-column align-items:center my-3">
-            <div class="col-md-10 d-flex justify-content-between admission-slider-buttons g-1 ">
-                <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
-                    <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
-                    <?= Yii::t('app', 'Admission Instructions') ?>
-                </button>
-                <button type="button" class="admissionBtnRight col-md-6">
-                    <?= Yii::t('app', 'International Cooperation') ?>
-                </button>
-
-            </div>
+        
             <div class="admission-slider col-md-12 overflow-hidden w-100">
                 <div class="admission-move w-200 d-flex">
                     <div class="admission-slider-first-part w-100 d-flex justify-content-around align-items-center">

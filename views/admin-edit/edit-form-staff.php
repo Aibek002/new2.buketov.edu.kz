@@ -83,7 +83,7 @@ use yii\widgets\ActiveForm;
             <!-- Приветствие -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($type_ref_staff, 'welcome_kz')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (KZ)') ?>
+                    <?= $form->field($type_ref_staff, 'welcome_kz')->textarea(['rows' => 4])->label('Приветствие (KZ)') ?>
                 </div>
                 <div class="col-md-4">
                     <?= $form->field($type_ref_staff, 'welcome_ru')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (RU)') ?>
@@ -132,7 +132,7 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>
 
-            
+
 
             <!-- Совет по диссертации -->
             <div class="row mt-3">
@@ -156,13 +156,33 @@ use yii\widgets\ActiveForm;
 </div>
 
 <?php
+
+$this->registerJsFile('https://cdn.tiny.cloud/1/wmtfk0v9m750xo316xpx88hktns85a0m5lgbaiz4kbnun0cj/tinymce/7/tinymce.min.js', [
+    'referrerpolicy' => 'origin'
+]);
+
+
 $this->registerJs("
+    // Инициализация TinyMCE
     tinymce.init({
         selector: '.tinymce-editor',
         plugins: 'lists link image table code',
         toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
         menubar: false,
         height: 250,
-        language: 'ru'
+        language: 'ru',
+        setup: function (editor) {
+            editor.on('change', function () {
+                tinymce.triggerSave(); // синхронизирует контент с textarea при каждом изменении
+            });
+        }
+    });
+
+    // Перед отправкой формы — сохранить данные из TinyMCE в textarea
+    $('form').on('submit', function() {
+        tinymce.triggerSave();
     });
 ");
+
+
+?>
