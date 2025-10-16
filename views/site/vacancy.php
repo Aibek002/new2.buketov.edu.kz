@@ -13,9 +13,10 @@
 
     <!-- Vacancies Section -->
     <section class="max-w-6xl mx-auto p-6 py-12">
-        <h2 class="title-content text-center">Вакансии
+        <h2 class="title-content text-center">
+            <strong class="text-white">Вакансии</strong>
 
-            <p class="text-center text-lg mb-12 text-gray-600">
+            <p class="text-center text-lg mb-12 text-white-600 m-0">
                 Мы приглашаем талантливых специалистов присоединиться к нашей команде!
             </p>
         </h2>
@@ -31,10 +32,7 @@
                     <li>Опыт преподавания</li>
                     <li>Знание современных IT-технологий</li>
                 </ul>
-                <a href="#apply"
-                    class="inline-block bg-[#4a90e2] text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
-                    Подать заявку
-                </a>
+            
             </div>
 
             <!-- Вакансия 2 -->
@@ -46,10 +44,7 @@
                     <li>Знание 1С</li>
                     <li>Опыт работы от 3 лет</li>
                 </ul>
-                <a href="#apply"
-                    class="inline-block bg-[#4a90e2] text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
-                    Подать заявку
-                </a>
+            
             </div>
 
             <!-- Вакансия 3 -->
@@ -62,10 +57,7 @@
                     <li>Ответственность</li>
                     <li>Умение работать с документами</li>
                 </ul>
-                <a href="#apply"
-                    class="inline-block bg-[#4a90e2] text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
-                    Подать заявку
-                </a>
+            
             </div>
 
             <!-- Вакансия 4 -->
@@ -78,15 +70,12 @@
                     <li>Знание сетевых технологий</li>
                     <li>Администрирование серверов</li>
                 </ul>
-                <a href="#apply"
-                    class="inline-block bg-[#4a90e2] text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
-                    Подать заявку
-                </a>
+            
             </div>
         </div>
     </section>
 
-    <!-- Форма отклика -->
+    <!-- Форма отклика
     <section id="apply" class="bg-white max-w-4xl mx-auto p-6 py-12 shadow-lg rounded-2xl mt-12">
         <h3 class="text-2xl font-bold mb-6 text-[#4a90e2]">Отклик на вакансию</h3>
         <form class="space-y-4">
@@ -103,7 +92,7 @@
                 Отправить заявку
             </button>
         </form>
-    </section>
+    </section> -->
 
 
 

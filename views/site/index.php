@@ -137,14 +137,15 @@ $this->title = 'Buketov University';
         <p><?= Yii::t('app', 'Faculties') ?></p>
     </div>
     <div style="
-    overflow-x: scroll; 
+    overflow-x: hidden; 
     overflow-y: hidden;
     margin: auto; 
     padding: 20px 0;
     /* ОСНОВНОЙ ФОН - СЛУЧАЙНЫЙ ЦВЕТ */
     background: var(--indigoblue); 
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    margin: 0; 
 " class="col-md-10 carousel-faculty">
 
         <?php $facultyCount = count($faculty); ?>
@@ -155,6 +156,7 @@ $this->title = 'Buketov University';
         flex-wrap: nowrap;
         justify-content: start;
         padding: 0 20px;
+        margin: 0;
     " class="faculty-container">
 
             <?php foreach ($ranking as $ranking_item): ?>
@@ -165,20 +167,16 @@ $this->title = 'Buketov University';
     height: 190px; /* Немного выше */
     margin: 10px 20px; /* Добавим вертикальный отступ */
     border-radius: 18px; /* Более мягкие углы */
-    
     background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Мягкий белый градиент */
     border: 1px solid #e0e0e0; /* Тонкая светлая рамка */
-    
-    /* ПОСТОЯННАЯ 3D-ПЕРСПЕКТИВА */
     transform: perspective(1000px) rotateY(-2deg); 
-    
     box-shadow: 0 10px 30px rgba(44, 92, 169, 0.3); /* Цветная тень от акцентного цвета */
-    
     display: flex; 
     flex-direction: column; 
     justify-content: space-between; 
     padding: 30px; /* Увеличенный внутренний отступ */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Более плавный переход */
+    margin: 0;
 " class="faculty-box" onmouseover="
     this.style.transform='perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px)'; /* Выпрямление и подъем */
     this.style.boxShadow='0 20px 50px rgba(44, 92, 169, 0.6)'; /* Усиленная, светящаяся тень */
@@ -192,7 +190,7 @@ $this->title = 'Buketov University';
         justify-content: space-between; /* Логотип справа, возможно, текст слева */
         align-items: center;
     ">
-                        <span style="color: #2c5ca9; font-size: 1.2rem; font-weight: 700;">Факультет</span>
+                        <!-- <span style="color: #2c5ca9; font-size: 1.2rem; font-weight: 700;">Факультет</span> -->
 
                         <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип" style="
             width: 45px; /* Немного крупнее */
@@ -216,7 +214,7 @@ $this->title = 'Buketov University';
             margin: 10px 0 5px 0; /* Увеличен отступ сверху */
             line-height: 1.1;
             overflow-y: hidden;
-        "><?= htmlspecialchars($ranking_item['title']) ?></h2>
+        "><?= Html::decode($ranking_item['title']) ?></h2>
 
                         <p style="
             color: #888888; /* Более мягкий серый */
@@ -350,7 +348,7 @@ $this->title = 'Buketov University';
         <p><?= Yii::t('app', 'Faculties') ?></p>
     </div>
     <div style="
-    overflow-x: scroll; 
+    overflow-x: hidden; 
     overflow-y: hidden;
     margin: auto; 
     padding: 20px 0;
@@ -368,6 +366,7 @@ $this->title = 'Buketov University';
         flex-wrap: nowrap;
         justify-content: start;
         padding: 0 20px;
+        margin: 0;
     " class="faculty-container">
 
             <?php foreach ($faculty as $faculty_items): ?>
@@ -392,6 +391,7 @@ $this->title = 'Buketov University';
     justify-content: space-between; 
     padding: 30px; /* Увеличенный внутренний отступ */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Более плавный переход */
+    margin: 0;
 " class="faculty-box" onmouseover="
     this.style.transform='perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px)'; /* Выпрямление и подъем */
     this.style.boxShadow='0 20px 50px rgba(44, 92, 169, 0.6)'; /* Усиленная, светящаяся тень */

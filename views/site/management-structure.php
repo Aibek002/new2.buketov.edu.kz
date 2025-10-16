@@ -9,6 +9,63 @@ $this->title = Yii::t("app", "Management Structure");
     <?php echo Yii::t('app', $type) ?>
 </div>
 <?php if ($model): ?>
+    <div id="button-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+        <?php
+        if (!empty($model) && is_array($model)):
+            $title_key = LanguageHelper::job_title();
+            foreach ($model as $index => $model_item):
+                $job_title = htmlspecialchars($model_item->{$title_key});
+                ?>
+                <button type="button" style="display: inline-block;border: none;" class="model-selector-button"
+                    data-bs-toggle="modal" data-bs-target="#staffModal"
+                    data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"
+                    data-job="<?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?: 'Нет данных о должности' ?>"
+                    data-email="<?= htmlspecialchars($model_item->email) ?: 'Нет данных о email' ?>"
+                    data-info='<?= htmlspecialchars($model_item->{LanguageHelper::information()}) ?: 'Нет данных о info' ?>'
+                    data-phone="<?= htmlspecialchars($model_item->phone) ?: 'Нет данных о phone' ?>"
+                    data-image="<?= htmlspecialchars($model_item->image->image) ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>">
+                    <?= $job_title ?>
+                </button>
+                <?php
+            endforeach;
+        endif;
+        ?>
+    </div>
+
+    <div id="pagination" style="text-align: center; margin-top: 10px;"></div>
+
+    <script>
+        const buttonsPerPage = 10;
+        const buttons = document.querySelectorAll('.model-selector-button');
+        const totalPages = Math.ceil(buttons.length / buttonsPerPage);
+        const paginationContainer = document.getElementById('pagination');
+
+        function showPage(page) {
+            // скрываем все кнопки
+            buttons.forEach((btn, i) => {
+                btn.style.display = (i >= (page - 1) * buttonsPerPage && i < page * buttonsPerPage)
+                    ? 'inline-block'
+                    : 'none';
+            });
+
+            // обновляем активную страницу
+            document.querySelectorAll('.page-link').forEach(link => link.classList.remove('active'));
+            const active = document.querySelector(`.page-link[data-page="${page}"]`);
+            if (active) active.classList.add('active');
+        }
+
+        // создаем пагинацию
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            btn.dataset.page = i;
+            btn.className = 'page-link';
+            btn.addEventListener('click', () => showPage(i));
+            paginationContainer.appendChild(btn);
+        }
+
+        showPage(1);
+    </script>
     <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 g-4 m-5 p-5 my-5">
         <?php foreach ($model as $index => $model_item): ?>
             <div class="cards" data-bs-toggle="modal" data-bs-target="#staffModal"

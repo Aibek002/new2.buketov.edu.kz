@@ -159,7 +159,7 @@ class SiteController extends Controller
             ->all();
         $ranking = Article::find()
             ->select([LanguageHelper::title() . " as title"])
-            ->where(['ref_article' => 3])
+            ->where(['ref_article_id' => 3])
             ->asArray()
             ->all();
 
@@ -256,18 +256,27 @@ class SiteController extends Controller
         ;
         return $this->render('history-departament', ['model' => $departament]);
     }
-    public function actionArticle($type, $title)
+    public function actionArticle($type = null, $title = null, $ref_article_id = null)
     {
         $lang = Yii::$app->language;
+        if ($ref_article_id === null) {
+            $article = Article::find()
+                ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
+                ->where([
+                    'ref_article.type' => $type,
+                    'article.title_en' => $title,
+                ])
+                ->one();
+        } else {
+            $article = Article::find()
+                ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
+                ->where([
+                    'article.ref_article_id' => $ref_article_id
+                ])
+                ->one();
+        }
 
-        $article = Article::find()
-            ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
-            ->where([
-                'ref_article.type' => $type,
-                'article.title_en' => $title,
-            ])
-            ->one();
-
+        // print_r($article);die;
         return $this->render('article', ['model' => $article]);
 
     }
