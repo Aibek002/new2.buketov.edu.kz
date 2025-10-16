@@ -153,8 +153,19 @@ class SiteController extends Controller
             ->limit(3)
             ->all();
         $rector = Staff::findOne(['ref_staff_id' => 1]);
+        $faculty = Faculty::find()
+            ->select([LanguageHelper::name() . ' as name'])
+            ->asArray()
+            ->all();
+        $ranking = Article::find()
+            ->select([LanguageHelper::title() . " as title"])
+            ->where(['ref_article' => 3])
+            ->asArray()
+            ->all();
 
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi]);
+        // print_r($events);die;
+
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
 
     }
     public function actionFaculty($name)
@@ -275,7 +286,7 @@ class SiteController extends Controller
 
     }
 
-   public function actionManagementStructureEx($type)
+    public function actionManagementStructureEx($type)
     {
         $lang = Yii::$app->language;
         $staff = Staff::find()

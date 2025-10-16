@@ -207,4 +207,6 @@ return [
     '(5В011900) Foreign Language: Two Foreign Languages' => '(5В011900) Иностранный язык: два иностранных языка',
     'We are on social networks' => 'Мы в социальных сетях',
     'Information'=>'Информация',
+    'Faculties'=>'Факультеты',
+
 ];
