@@ -1,3 +1,84 @@
+.carousel-faculty {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: auto;
+    padding: 20px 0;
+    background: var(--indigoblue);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+}
+
+.carousel-faculty .faculty-container {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    padding: 20px;
+    margin: 0;
+}
+
+.faculty-box,
+.ratings-box {
+    width: 300px;
+    min-width: 300px;
+    height: 190px;
+    margin: 10px 20px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    border: 1px solid #e0e0e0;
+    transform: perspective(1000px) rotateY(-2deg);
+    box-shadow: 0 10px 30px rgba(44, 92, 169, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 0;
+}
+
+.faculty-box:hover,
+.ratings-box:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px);
+    box-shadow: 0 20px 50px rgba(44, 92, 169, 0.6);
+
+}
+
+.faculty-box .logo,
+.ratings-box .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faculty-box .logo span {
+    color: #2c5ca9;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.faculty-box .logo img,
+.ratings-box .logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #2c5ca9;
+    box-shadow: 0 0 10px #2c5ca9, 0 0 20px #2c5ca9 inset;
+}
+
+.faculty-box .text h2,
+.ratings-box .text h2 {
+    background: linear-gradient(45deg, #2c5ca9, #001f40);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 10px 0 5px 0;
+    line-height: 1.1;
+    overflow-y: hidden;
+}
+
+
 .submitButton {
     background: var(--indigoblue-font);
     color: var(--white);

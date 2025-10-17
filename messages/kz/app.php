@@ -207,5 +207,6 @@ return [
     'We are on social networks' => 'Біз әлеуметтік желілерде',
     'Information'=>'Ақпарат',
     'Faculties'=>'Факультеттер',
+    'Place of the University in the world ranking'=>'Университеттің әлемдік рейтингтегі орны',
 
 ];

@@ -208,5 +208,7 @@ return [
     'We are on social networks' => 'Мы в социальных сетях',
     'Information'=>'Информация',
     'Faculties'=>'Факультеты',
+    'Place of the University in the world ranking'=>'Место университета в мировом рейтинге',
+
 
 ];

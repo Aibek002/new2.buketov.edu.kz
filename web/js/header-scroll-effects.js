@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }else if(window.scrollY<400){
         header.classList.remove('scrolled');
         logo.style.display='none';
-        langswitcher.style.background="var(--indigoblue-50)"
+        langswitcher.style.background="var(--indigoblue)"
        
         menuIcon.style.background="transparent"
         menuIcon.style.border="1px solid white";

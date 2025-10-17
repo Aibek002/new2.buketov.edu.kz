@@ -121,20 +121,9 @@ $this->title = 'Buketov University';
             </div>
         </div>
     </div>
-    <?php
-    // PHP-код для генерации случайного цвета из палитры
-    $colors = [
-        '#E74C3C', // Красный (Amethyst)
-        '#9B59B6', // Фиолетовый (Pomegranate)
-        '#3498DB', // Синий (Wisteria)
-        '#1ABC9C', // Бирюзовый (Turquoise)
-        '#2ECC71', // Зеленый (Emerald)
-        '#F39C12', // Оранжевый (Orange)
-    ];
-    $randomColor = $colors[array_rand($colors)];
-    ?>
+
     <div class="col-md-10 d-flex justify-content-center align-items-center block-header py-3">
-        <p><?= Yii::t('app', 'Faculties') ?></p>
+        <p><?= Yii::t('app', 'Place of the University in the world ranking') ?></p>
     </div>
     <div style="
     overflow-x: hidden; 
@@ -148,87 +137,38 @@ $this->title = 'Buketov University';
     margin: 0; 
 " class="col-md-10 carousel-faculty">
 
-        <?php $facultyCount = count($faculty); ?>
+        <?php $ratingCount = count($rating); ?>
 
         <div style="
-        width: <?= $facultyCount * 340 ?>px; /* Увеличил ширину для большего отступа */
+        width: <?= $ratingCount * 320 ?>px; /* Увеличил ширину для большего отступа */
         display: inline-flex;
         flex-wrap: nowrap;
         justify-content: start;
         padding: 0 20px;
         margin: 0;
-    " class="faculty-container">
+    " class="ratings-container">
 
-            <?php foreach ($ranking as $ranking_item): ?>
+            <?php foreach ($rating as $rating_item): ?>
 
-                <div style="
-    width: 300px; 
-    min-width: 300px; 
-    height: 190px; /* Немного выше */
-    margin: 10px 20px; /* Добавим вертикальный отступ */
-    border-radius: 18px; /* Более мягкие углы */
-    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Мягкий белый градиент */
-    border: 1px solid #e0e0e0; /* Тонкая светлая рамка */
-    transform: perspective(1000px) rotateY(-2deg); 
-    box-shadow: 0 10px 30px rgba(44, 92, 169, 0.3); /* Цветная тень от акцентного цвета */
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    padding: 30px; /* Увеличенный внутренний отступ */
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Более плавный переход */
-    margin: 0;
-" class="faculty-box" onmouseover="
-    this.style.transform='perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px)'; /* Выпрямление и подъем */
-    this.style.boxShadow='0 20px 50px rgba(44, 92, 169, 0.6)'; /* Усиленная, светящаяся тень */
-" onmouseout="
-    this.style.transform='perspective(1000px) rotateY(-2deg) scale(1) translateY(0)'; /* Возврат */
-    this.style.boxShadow='0 10px 30px rgba(44, 92, 169, 0.3)';
-">
+                <div class="ratings-box">
 
-                    <div style="
-        display: flex; 
-        justify-content: space-between; /* Логотип справа, возможно, текст слева */
-        align-items: center;
-    ">
-                        <!-- <span style="color: #2c5ca9; font-size: 1.2rem; font-weight: 700;">Факультет</span> -->
-
-                        <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип" style="
-            width: 45px; /* Немного крупнее */
-            height: 45px; 
-            border-radius: 50%;
-            border: 3px solid #2c5ca9; /* Более толстая рамка */
-            box-shadow: 0 0 10px #2c5ca9, 0 0 20px #2c5ca9 inset; /* Эффект свечения */
-        ">
+                    <div class="logo">
+                        <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип">
                     </div>
 
-                    <div>
-                        <h2 style="
-            /* Усиленный градиент текста */
-            background: linear-gradient(45deg, #2c5ca9, #001f40); 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent; 
-            
-            font-size: 1.5rem; /* Крупный и заметный */
-            font-weight: 900; 
-            margin: 10px 0 5px 0; /* Увеличен отступ сверху */
-            line-height: 1.1;
-            overflow-y: hidden;
-        "><?= Html::decode($ranking_item['title']) ?></h2>
-
-                        <p style="
-            color: #888888; /* Более мягкий серый */
-            font-size: 1rem; 
-            font-weight: 500;
-            margin: 0;
-            letter-spacing: 0.5px;
-        ">
-                        </p>
+                    <div class="text">
+                        <h2 class="title"><?= Html::decode($rating_item['title']) ?></h2>
                     </div>
                 </div>
 
             <?php endforeach; ?>
 
+        </div>
+        <div class="move-ratings-container" style="display: flex;gap: 15px;padding: 20px;justify-content: center;">
+            <button class="moveLeftRatings" onclick="moveRatings('left' , <?= $ratingCount * 320 ?>)"
+                style="width: 50%;height: 30px;border-radius: 10px 0 0 10px;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000997;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&lt;</button>
+            <button class="moveRightRatings" onclick="moveRatings('right',<?= $ratingCount * 320 ?>)"
+                style="width: 50%;height: 30px;border-radius: 0 10px 10px 0;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000c2f;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&gt;</button>
         </div>
     </div>
     <div class="third-block row col-md-12 w-100 d-flex flex-column align-items-center py-3">
@@ -332,118 +272,39 @@ $this->title = 'Buketov University';
             </div>
         </div>
     </div>
-    <?php
-    // PHP-код для генерации случайного цвета из палитры
-    $colors = [
-        '#E74C3C', // Красный (Amethyst)
-        '#9B59B6', // Фиолетовый (Pomegranate)
-        '#3498DB', // Синий (Wisteria)
-        '#1ABC9C', // Бирюзовый (Turquoise)
-        '#2ECC71', // Зеленый (Emerald)
-        '#F39C12', // Оранжевый (Orange)
-    ];
-    $randomColor = $colors[array_rand($colors)];
-    ?>
+
     <div class="col-md-10 d-flex justify-content-center align-items-center block-header py-3">
         <p><?= Yii::t('app', 'Faculties') ?></p>
     </div>
-    <div style="
-    overflow-x: hidden; 
-    overflow-y: hidden;
-    margin: auto; 
-    padding: 20px 0;
-    /* ОСНОВНОЙ ФОН - СЛУЧАЙНЫЙ ЦВЕТ */
-    background: var(--indigoblue); 
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); 
-" class="col-md-10 carousel-faculty">
+    <div class="col-md-10 carousel-faculty">
 
         <?php $facultyCount = count($faculty); ?>
 
-        <div style="
-        width: <?= $facultyCount * 340 ?>px; /* Увеличил ширину для большего отступа */
-        display: inline-flex;
-        flex-wrap: nowrap;
-        justify-content: start;
-        padding: 0 20px;
-        margin: 0;
-    " class="faculty-container">
+        <div style="width: <?= $facultyCount * 320 ?>px;" class="faculty-container">
 
             <?php foreach ($faculty as $faculty_items): ?>
 
-                <div style="
-    width: 300px; 
-    min-width: 300px; 
-    height: 190px; /* Немного выше */
-    margin: 10px 20px; /* Добавим вертикальный отступ */
-    border-radius: 18px; /* Более мягкие углы */
-    
-    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Мягкий белый градиент */
-    border: 1px solid #e0e0e0; /* Тонкая светлая рамка */
-    
-    /* ПОСТОЯННАЯ 3D-ПЕРСПЕКТИВА */
-    transform: perspective(1000px) rotateY(-2deg); 
-    
-    box-shadow: 0 10px 30px rgba(44, 92, 169, 0.3); /* Цветная тень от акцентного цвета */
-    
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    padding: 30px; /* Увеличенный внутренний отступ */
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Более плавный переход */
-    margin: 0;
-" class="faculty-box" onmouseover="
-    this.style.transform='perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px)'; /* Выпрямление и подъем */
-    this.style.boxShadow='0 20px 50px rgba(44, 92, 169, 0.6)'; /* Усиленная, светящаяся тень */
-" onmouseout="
-    this.style.transform='perspective(1000px) rotateY(-2deg) scale(1) translateY(0)'; /* Возврат */
-    this.style.boxShadow='0 10px 30px rgba(44, 92, 169, 0.3)';
-">
+                <div class="faculty-box">
 
-                    <div style="
-        display: flex; 
-        justify-content: space-between; /* Логотип справа, возможно, текст слева */
-        align-items: center;
-    ">
-                        <span style="color: #2c5ca9; font-size: 1.2rem; font-weight: 700;">Факультет</span>
+                    <div class="logo">
+                        <span>Факультет</span>
 
-                        <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип" style="
-            width: 45px; /* Немного крупнее */
-            height: 45px; 
-            border-radius: 50%;
-            border: 3px solid #2c5ca9; /* Более толстая рамка */
-            box-shadow: 0 0 10px #2c5ca9, 0 0 20px #2c5ca9 inset; /* Эффект свечения */
-        ">
+                        <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип">
                     </div>
 
-                    <div>
-                        <h2 style="
-            /* Усиленный градиент текста */
-            background: linear-gradient(45deg, #2c5ca9, #001f40); 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent; 
-            
-            font-size: 1.5rem; /* Крупный и заметный */
-            font-weight: 900; 
-            margin: 10px 0 5px 0; /* Увеличен отступ сверху */
-            line-height: 1.1;
-            overflow-y: hidden;
-        "><?= htmlspecialchars($faculty_items['name']) ?></h2>
-
-                        <p style="
-            color: #888888; /* Более мягкий серый */
-            font-size: 1rem; 
-            font-weight: 500;
-            margin: 0;
-            letter-spacing: 0.5px;
-        ">
-                        </p>
+                    <div class="text">
+                        <h2><?= htmlspecialchars($faculty_items['name']) ?></h2>
                     </div>
                 </div>
 
             <?php endforeach; ?>
 
+        </div>
+        <div class="move-faculty-container" style="display: flex;gap: 15px;padding: 20px;justify-content: center;">
+            <button class="moveLeftFaculty" onclick="moveFaculty('left' , <?= $facultyCount * 320 ?>)"
+                style="width: 50%;height: 30px;border-radius: 10px 0 0 10px;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000997;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&lt;</button>
+            <button class="moveRightFaculty" onclick="moveFaculty('right',<?= $facultyCount * 320 ?>)"
+                style="width: 50%;height: 30px;border-radius: 0 10px 10px 0;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000c2f;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&gt;</button>
         </div>
     </div>
     <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center py-3">

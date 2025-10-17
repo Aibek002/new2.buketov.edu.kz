@@ -157,7 +157,7 @@ class SiteController extends Controller
             ->select([LanguageHelper::name() . ' as name'])
             ->asArray()
             ->all();
-        $ranking = Article::find()
+        $rating = Article::find()
             ->select([LanguageHelper::title() . " as title"])
             ->where(['ref_article_id' => 3])
             ->asArray()
@@ -165,7 +165,7 @@ class SiteController extends Controller
 
         // print_r($events);die;
 
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'rating' => $rating]);
 
     }
     public function actionFaculty($name)

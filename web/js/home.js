@@ -100,3 +100,68 @@ news_short_title.forEach((element) => {
     element.innerHTML = text.substring(0, 50) + "...";
   }
 });
+let currentPosition = 0;
+
+function moveFaculty(type, length) {
+  const container = document.querySelector(".faculty-container");
+  const step = 900;
+  const maxOfStep = -(length - step);
+  leftBtn = document.querySelector(".moveLeftFaculty");
+  rightBtn = document.querySelector(".moveRightFaculty");
+  if (type === "left") {
+    // Двигаемся вправо, если не в начале
+    if (currentPosition < 0) {
+      currentPosition += step;
+    } else {
+    }
+  } else if (type === "right") {
+    // Двигаемся влево, если не дошли до конца
+    if (currentPosition > maxOfStep) {
+      currentPosition -= step;
+    } else {
+    }
+  }
+
+  container.style.transform = `translateX(${currentPosition}px)`;
+  container.style.transition = "transform 0.5s ease";
+  leftBtn.disabled = currentPosition === 0;
+  rightBtn.disabled = currentPosition <= maxOfStep;
+  // 🔹 Изменяем стиль неактивных кнопок (по желанию)
+  [leftBtn, rightBtn].forEach((btn) => {
+    btn.style.opacity = btn.disabled ? "0.5" : "1";
+    btn.style.cursor = btn.disabled ? "not-allowed" : "pointer";
+  });
+  console.log(`current: ${currentPosition}, max: ${maxOfStep}`);
+}
+
+function moveRatings(type, length) {
+  const container = document.querySelector(".ratings-container");
+  const step = 900;
+  const maxOfStep = -(length - step);
+  leftBtn = document.querySelector(".moveLeftRatings");
+  rightBtn = document.querySelector(".moveRightRatings");
+  if (type === "left") {
+    // Двигаемся вправо, если не в начале
+    if (currentPosition < 0) {
+      currentPosition += step;
+    } else {
+    }
+  } else if (type === "right") {
+    // Двигаемся влево, если не дошли до конца
+    if (currentPosition > maxOfStep) {
+      currentPosition -= step;
+    } else {
+    }
+  }
+
+  container.style.transform = `translateX(${currentPosition}px)`;
+  container.style.transition = "transform 0.5s ease";
+  leftBtn.disabled = currentPosition === 0;
+  rightBtn.disabled = currentPosition <= maxOfStep;
+  // 🔹 Изменяем стиль неактивных кнопок (по желанию)
+  [leftBtn, rightBtn].forEach((btn) => {
+    btn.style.opacity = btn.disabled ? "0.5" : "1";
+    btn.style.cursor = btn.disabled ? "not-allowed" : "pointer";
+  });
+  console.log(`current: ${currentPosition}, max: ${maxOfStep}`);
+}
