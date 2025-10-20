@@ -244,6 +244,16 @@ form {
     animation: swing 1s infinite ease-in-out;
 }
 
+.close_chat_bot2 {
+    background: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg') no-repeat center;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 100%;
+    background-color: white;
+}
+
 @keyframes swing {
     0% {
         transform: rotate(0);
@@ -304,7 +314,8 @@ form {
 
 .chat-whatsapp,
 .chat-phone,
-.chat-bot {
+.chat-bot,
+.chat-bot2 {
     position: fixed;
     width: 50px;
     height: 50px;
@@ -332,25 +343,36 @@ form {
     background-image: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg');
 }
 
-/* при открытии */
-.chat-whatsapp.active {
+.chat-bot2 {
+    background-image: url('https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?semt=ais_hybrid&w=740&q=80');
+}
+
+.chat-bot2.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-70px);
     z-index: 1000;
 }
 
-.chat-phone.active {
+/* при открытии */
+.chat-whatsapp.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-130px);
     z-index: 1000;
 }
 
-.chat-bot.active {
+.chat-phone.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-190px);
+    z-index: 1000;
+}
+
+.chat-bot.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-250px);
     z-index: 1000;
 }
 
@@ -498,4 +520,52 @@ form {
         /* размер круга */
         opacity: 0;
     }
+}
+
+.chat-widget {
+    width: 400px;
+    height: 550px;
+    background: #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1001;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-widget.active {
+    display: block;
+}
+
+/* Минимальные стили, которые нельзя сделать инлайн */
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.user-message {
+    background-color: #d1e7dd;
+    /* Светло-зеленый */
+    align-self: flex-end;
+    margin-left: 20%;
+}
+
+.bot-message {
+    background-color: #f8f9fa;
+    /* Светлый фон */
+    align-self: flex-start;
+    margin-right: 20%;
+}
+
+.menu-button:hover {
+    background-color: #2c5ca9;
+    box-shadow: 0 4px 10px rgba(44, 92, 169, 0.4);
 }

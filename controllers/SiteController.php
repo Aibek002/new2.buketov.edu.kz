@@ -168,6 +168,8 @@ class SiteController extends Controller
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'rating' => $rating]);
 
     }
+
+
     public function actionFaculty($name)
     {
         $lang = Yii::$app->language;
@@ -491,6 +493,10 @@ class SiteController extends Controller
         return $this->render('messages', [
             'questions' => $questions,
         ]);
+    }
+    public function actionChatbot()
+    {
+        return $this->render('chatbot');
     }
 
 }

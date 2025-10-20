@@ -11,9 +11,14 @@ const color = ["green", "#2c5ca9"];
 const whatsapp = document.querySelector(".chat-whatsapp");
 const phone = document.querySelector(".chat-phone");
 const chat_bot_btn = document.querySelector(".chat-bot");
+const chat_bot_btn2 = document.querySelector(".chat-bot2");
+
 const close_btn = document.querySelector(".close_chat_bot");
+const close_btn2 = document.querySelector(".close_chat_bot2");
+
 let closeInterval = null;
 const chat_box = document.querySelector(".chat-box");
+const chat_box2 = document.querySelector(".chat-widget");
 const icon_close_chat = [
   "https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg",
   "https://icons.veryicon.com/png/o/miscellaneous/all-blue-icon/close-428.png",
@@ -28,6 +33,8 @@ setInterval(() => {
 
 chat_open_btn.addEventListener("click", () => {
   chat_bot_btn.classList.toggle("active");
+  chat_bot_btn2.classList.toggle("active");
+
   phone.classList.toggle("active");
   whatsapp.classList.toggle("active");
 });
@@ -37,6 +44,7 @@ chat_bot_btn.addEventListener("click", () => {
   phone.classList.remove("active");
   whatsapp.classList.remove("active");
   chat_open_btn.classList.remove("active");
+  chat_bot_btn2.classList.remove("active");
   chat_box.classList.add("active");
   if (chat_box.classList.contains("active") && close_btn) {
     if (closeInterval) clearInterval(closeInterval);
@@ -51,7 +59,26 @@ chat_bot_btn.addEventListener("click", () => {
     chat_open_btn.classList.add("active");
   });
 });
-
+chat_bot_btn2.addEventListener("click", () => {
+  chat_bot_btn.classList.remove("active");
+  phone.classList.remove("active");
+  whatsapp.classList.remove("active");
+  chat_open_btn.classList.remove("active");
+  chat_bot_btn2.classList.remove("active");
+  chat_box2.classList.add("active");
+  if (chat_box2.classList.contains("active") && close_btn) {
+    if (closeInterval) clearInterval(closeInterval);
+    closeInterval = setInterval(() => {
+      close_index = (close_index + 1) % icon_close_chat.length;
+      close_btn.style.backgroundImage = `url(${icon_close_chat[close_index]})`;
+      close_btn.style.backgroundSize = "cover";
+    }, 1000);
+  }
+  close_btn2.addEventListener("click", () => {
+    chat_box2.classList.remove("active");
+    chat_open_btn.classList.add("active");
+  });
+});
 const input = document.querySelector(".input-message");
 const submit_msg = document.querySelector(".chat-submit");
 const messageBox = document.querySelector(".messages");

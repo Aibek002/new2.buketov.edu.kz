@@ -427,9 +427,111 @@ $this->title = 'Buketov University';
             <button type="button" class="admissionBtnLeft col-md-6 active position-relative">
                 <span class="position-absolute top-0 start-0 w-100 h-100 admission-btn-bg"></span>
                 <?= Yii::t('app', 'Feedback Form') ?> </button>
-            <button type="button" class="admissionBtnRight col-md-6">
+            <button type="button" class="admissionBtnRight col-md-6"
+                onclick="document.getElementById('admissionModal').style.display='flex';">
                 <?= Yii::t('app', 'Citizens Reception Schedule') ?></button>
 
+        </div>
+        <div id="admissionModal" class="modal">
+
+            <div class="modal-content" style="
+                background-color: #ffffff;
+                margin: auto;
+                padding: 30px;
+                border: 1px solid #888;
+                width: 90%;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+                animation-name: animatetop;
+                animation-duration: 0.4s;
+            ">
+
+                <button class="close-btn" onclick="document.getElementById('admissionModal').style.display='none';"
+                    style="
+                   float: right;
+                    margin-left: 15px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #aaa;
+                    line-height: 1;
+                    border: none;
+                    background: none;
+                    text-align: end;
+                ">&times;</button>
+
+                <h2 style="color: #1f3b6e; margin-top: 0; border-bottom: 2px solid #2c5ca9; padding-bottom: 10px;">
+                    <?= Yii::t("app", "Reception schedule for citizens") ?>
+                </h2>
+
+
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <thead>
+                        <tr style="background-color: #f1f1f1;">
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; color: #1f3b6e;">
+                                <?= Yii::t("app", "Day") ?>
+                            </th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; color: #1f3b6e;">
+                                <?= Yii::t("app", "Time (Уақыты / Время)") ?>
+                            </th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: left; color: #1f3b6e;">
+                                <?= Yii::t("app", "Responsible person") ?>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Monday") ?>
+                            </td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">14:00 – 17:00</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Specialist") ?>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Tuesday") ?>
+                            </td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">10:00 – 13:00</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Specialist") ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Wednesday") ?>
+                            </td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">14:00 – 17:00</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Commission secretary") ?>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Thursday") ?>
+                            </td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">10:00 – 13:00</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Commission secretary") ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Friday") ?>
+                            </td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">14:00 – 16:00</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <?= Yii::t("app", "Specialist") ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 20px; font-size: 0.9em; color: #555;">
+                    <?= Yii::t("app", "*Reception is conducted by prior appointment. For more information, you can call by phone.") ?>
+                </p>
+
+            </div>
         </div>
         <div class="col-md-10 px-0 py-5">
             <div class="feedback-form-wrapper p-0 rounded bg-white">
@@ -530,6 +632,53 @@ $this->title = 'Buketov University';
 
     </div>
 </div>
+
+<div class="chat-widget" id="chat-widget" style="
+            width: 100%; 
+            max-width: 400px; 
+            margin: 50px auto; 
+            border: 1px solid #ccc; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+            overflow: hidden; 
+            font-family: Arial, sans-serif;
+        ">
+
+    <div
+        style="display:flex;justify-content:space-between;background-color: #1f3b6e; color: white; padding: 15px; font-size: 1.2rem; font-weight: bold;">
+        <p>BUKETOV BOT</p>
+        <button class="close_chat_bot2"></button>
+
+    </div>
+
+    <div id="chat-window" style="
+                height: 350px; 
+                padding: 15px; 
+                overflow-y: auto; 
+                background-color: #ffffff; 
+                display: flex; 
+                flex-direction: column;
+            ">
+    </div>
+
+    <div id="chat-input-area" style="
+                padding: 15px; 
+                background-color: #eeeeee;
+                border-top: 1px solid #ccc;
+            ">
+
+        <div id="chat-menu" style="
+                    display: flex; 
+                    flex-wrap: wrap; 
+                    gap: 8px; 
+                    margin-bottom: 15px;
+                ">
+        </div>
+
+    </div>
+</div>
+
+
 <div class="chat-box">
     <div class="header-chat">
         <p>BUKETOV AI</p>
@@ -544,4 +693,6 @@ $this->title = 'Buketov University';
 <button class="chat-whatsapp"></button>
 <button class="chat-phone"></button>
 <button class="chat-bot"></button>
+<button class="chat-bot2"></button>
+
 <button class="chat-open active"></button>
