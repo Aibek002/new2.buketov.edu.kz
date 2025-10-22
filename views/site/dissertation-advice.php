@@ -17,7 +17,8 @@ DessertationJobAsset::register($this);
     ?>
     <?php if ($secretary !== null && is_array($secretary)): ?>
         <div class="title-content">
-            Учёный секретарь диссовета по - <strong><?= $dissertation_name ?></strong> Карагандинского университета имени академика Е. А. Букетова
+            Учёный секретарь диссовета по - <strong><?= $dissertation_name ?></strong> Карагандинского университета имени
+            академика Е. А. Букетова
             <div class="person-section my-5">
                 <div class="person-img">
                     <img width="100%"
@@ -69,8 +70,14 @@ DessertationJobAsset::register($this);
                 onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $document->path_file) ?>','.first')"><?= $document->fileName ?></button>
         <?php endforeach; ?>
     </div>
-    <div class="d-flex justify-content-center first">
-        <embed class=" general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
+    <div id="pdfModal" class="modal-pdf">
+        <span class="close-pdf-btn" onclick="document.getElementById('pdfModal').style.display='none';">&times;</span>
+
+        <div class="modal-content-pdf">
+            <iframe id="pdfIframe" src="" type="application/pdf"
+                style="width: 100%; height: 100%; border: none; display: block;">
+            </iframe>
+        </div>
     </div>
     <div class="title-content"><?= Yii::t('app', 'Doctoral students` documents') ?></div>
 
@@ -88,12 +95,12 @@ DessertationJobAsset::register($this);
         </div>
         <?php foreach ($diss as $doctorant => $items): ?>
             <div class="document" id="staff-<?= str_replace(['  '], '-', $doctorant) ?>">
-                <div class="title-content"><?= Yii::t('app', 'Document`s') . ' - ' . $doctorant ?>
+                <div class="title-content"><?= "<h2>" . Yii::t('app', 'Document`s') . "</h2>" . '<p>' . $doctorant . "</p>" ?>
 
                     <div class="button-section">
                         <?php foreach ($items as $item): ?>
                             <button
-                                onclick="openDissPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
+                                onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
 
                         <?php endforeach; ?>
                     </div>

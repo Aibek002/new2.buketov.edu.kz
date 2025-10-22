@@ -100,3 +100,228 @@ news_short_title.forEach((element) => {
     element.innerHTML = text.substring(0, 50) + "...";
   }
 });
+let currentPosition = 0;
+
+function moveFaculty(type, length) {
+  const container = document.querySelector(".faculty-container");
+  const step = 900;
+  const maxOfStep = -(length - step);
+  leftBtn = document.querySelector(".moveLeftFaculty");
+  rightBtn = document.querySelector(".moveRightFaculty");
+  if (type === "left") {
+    // Двигаемся вправо, если не в начале
+    if (currentPosition < 0) {
+      currentPosition += step;
+    } else {
+    }
+  } else if (type === "right") {
+    // Двигаемся влево, если не дошли до конца
+    if (currentPosition > maxOfStep) {
+      currentPosition -= step;
+    } else {
+    }
+  }
+
+  container.style.transform = `translateX(${currentPosition}px)`;
+  container.style.transition = "transform 0.5s ease";
+  leftBtn.disabled = currentPosition === 0;
+  rightBtn.disabled = currentPosition <= maxOfStep;
+  // 🔹 Изменяем стиль неактивных кнопок (по желанию)
+  [leftBtn, rightBtn].forEach((btn) => {
+    btn.style.opacity = btn.disabled ? "0.5" : "1";
+    btn.style.cursor = btn.disabled ? "not-allowed" : "pointer";
+  });
+  console.log(`current: ${currentPosition}, max: ${maxOfStep}`);
+}
+
+function moveRatings(type, length) {
+  const container = document.querySelector(".ratings-container");
+  const step = 900;
+  const maxOfStep = -(length - step);
+  leftBtn = document.querySelector(".moveLeftRatings");
+  rightBtn = document.querySelector(".moveRightRatings");
+  if (type === "left") {
+    // Двигаемся вправо, если не в начале
+    if (currentPosition < 0) {
+      currentPosition += step;
+    } else {
+    }
+  } else if (type === "right") {
+    // Двигаемся влево, если не дошли до конца
+    if (currentPosition > maxOfStep) {
+      currentPosition -= step;
+    } else {
+    }
+  }
+
+  container.style.transform = `translateX(${currentPosition}px)`;
+  container.style.transition = "transform 0.5s ease";
+  leftBtn.disabled = currentPosition === 0;
+  rightBtn.disabled = currentPosition <= maxOfStep;
+  // 🔹 Изменяем стиль неактивных кнопок (по желанию)
+  [leftBtn, rightBtn].forEach((btn) => {
+    btn.style.opacity = btn.disabled ? "0.5" : "1";
+    btn.style.cursor = btn.disabled ? "not-allowed" : "pointer";
+  });
+  console.log(`current: ${currentPosition}, max: ${maxOfStep}`);
+}
+// === КОНФИГУРАЦИЯ БОТА ===
+const RESPONSES = {
+  START: {
+    text: "Сәлеметсіз бе! Мен Сізге көмектесуге дайынмын. Сізді қандай сұрақтар қызықтырады? (Выберите интересующий Вас пункт)",
+    menu: [
+      { label: "ЕНТ/КТ", action: "ENT" },
+      { label: "Специальности", action: "SPECIALTIES" },
+      { label: "Общежитие", action: "DORMITORY" },
+      { label: "Контакты", action: "CONTACTS" },
+    ],
+  },
+  ENT: {
+    text: "ЕНТ тапсыру туралы ақпарат алу үшін біздің 'ЕНТ бойынша іздеу' бөліміне өтіңіз. Басқа сұрақтар болса, тағы да пункт таңдаңыз. (Для информации о ЕНТ/КТ перейдите в раздел 'Поиск по ЕНТ' или выберите другой пункт)",
+    menu: [
+      { label: "Специальности", action: "SPECIALTIES" },
+      { label: "Общежитие", action: "DORMITORY" },
+      { label: "Вернуться к началу", action: "START" },
+    ],
+  },
+  SPECIALTIES: {
+    text: "Біздің университетте 40-тан астам мамандық бар. Барлық тізімді 'Специальности' бөлімінен көре аласыз. Оқыту тілі: қазақша/орысша. (У нас более 40 специальностей. Полный список доступен в разделе 'Специальности'.)",
+    menu: [
+      { label: "ЕНТ/КТ", action: "ENT" },
+      { label: "Общежитие", action: "DORMITORY" },
+      { label: "Вернуться к началу", action: "START" },
+    ],
+  },
+  DORMITORY: {
+    text: "Ия, біздің университетте қала сыртынан келген студенттерге жатақхана беріледі. Орын алу үшін өтінішті құжаттарды тапсыру кезінде жазу қажет. (Да, для иногородних студентов предоставляется общежитие. Заявление подается вместе с основными документами.)",
+    menu: [
+      { label: "ЕНТ/КТ", action: "ENT" },
+      { label: "Специальности", action: "SPECIALTIES" },
+      { label: "Вернуться к началу", action: "START" },
+    ],
+  },
+  CONTACTS: {
+    text: "Қабылдау комиссиясының байланыс деректері: \nТелефон: +7 7212 90 02 70 \nEmail: priemka@buketov.edu.kz \n(Приемная комиссия: +7 7212 90 02 70, priemka@buketov.edu.kz)",
+    menu: [{ label: "Вернуться к началу", action: "START" }],
+  },
+};
+
+const chatWindow = document.getElementById("chat-window");
+const chatMenu = document.getElementById("chat-menu");
+
+/**
+ * Добавляет сообщение в окно чата.
+ * @param {string} text - Текст сообщения.
+ * @param {string} sender - Отправитель ('bot' или 'user').
+ */
+function displayMessage(text, sender) {
+  const msgElement = document.createElement("div");
+
+  // Заменяем переносы строк на <br> для корректного отображения
+  const formattedText = text.replace(/\n/g, "<br>");
+
+  msgElement.innerHTML = formattedText;
+  msgElement.className = "chat-message";
+
+  if (sender === "bot") {
+    msgElement.classList.add("bot-message");
+    msgElement.style.cssText = `
+                    background-color: #f8f9fa; 
+                    align-self: flex-start; 
+                    margin-right: 20%; 
+                    color: #333; 
+                    font-size: 0.95rem; 
+                    padding: 10px 15px; 
+                    margin-bottom: 10px; 
+                    border-radius: 15px 15px 15px 0;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                `;
+  } else if (sender === "user") {
+    msgElement.classList.add("user-message");
+    msgElement.style.cssText = `
+                    background-color: #d1e7dd; /* Light green */
+                    align-self: flex-end; 
+                    margin-left: 20%; 
+                    color: #333; 
+                    font-size: 0.95rem; 
+                    padding: 10px 15px; 
+                    margin-bottom: 10px; 
+                    border-radius: 15px 15px 0 15px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                `;
+  }
+
+  chatWindow.appendChild(msgElement);
+  // Прокрутка вниз
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+/**
+ * Обновляет кнопки меню в зависимости от текущего состояния.
+ * @param {Array} menuItems - Массив объектов меню.
+ */
+function updateMenu(menuItems) {
+  chatMenu.innerHTML = "";
+
+  menuItems.forEach((item) => {
+    const button = document.createElement("button");
+    button.textContent = item.label;
+    button.className = "menu-button";
+
+    // Инлайн стили для кнопок меню
+    button.style.cssText = `
+                    background-color: #2c5ca9; /* Синий акцент */
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    transition: all 0.2s;
+                    flex-grow: 1; 
+                `;
+
+    button.onclick = () => handleUserInput(item.action, item.label);
+    chatMenu.appendChild(button);
+  });
+}
+
+/**
+ * Обрабатывает выбор пользователя и вызывает ответ бота.
+ * @param {string} action - Ключ действия (ENT, SPECIALTIES и т.д.).
+ * @param {string} label - Текст кнопки, который нажал пользователь.
+ */
+function handleUserInput(action, label) {
+  // 1. Показываем сообщение пользователя
+  displayMessage(label, "user");
+
+  // 2. Получаем ответ бота
+  const response = RESPONSES[action];
+
+  if (response) {
+    // 3. Показываем сообщение бота
+    setTimeout(() => {
+      displayMessage(response.text, "bot");
+      // 4. Обновляем меню для следующего шага
+      updateMenu(response.menu);
+    }, 500); // Небольшая задержка для имитации "думающего" бота
+  } else {
+    displayMessage(
+      "Кешіріңіз, мен бұл сұрақты түсінбедім. Қайтадан таңдаңыз. (Извините, я не понял запрос. Начните сначала.)",
+      "bot"
+    );
+    updateMenu(RESPONSES.START.menu);
+  }
+}
+
+// === ИНИЦИАЛИЗАЦИЯ ЧАТА ===
+function initChat() {
+  // Начальное сообщение от бота
+  displayMessage(RESPONSES.START.text, "bot");
+  // Начальное меню
+  updateMenu(RESPONSES.START.menu);
+}
+
+// Запускаем бота при загрузке страницы
+window.onload = initChat;

@@ -206,7 +206,83 @@ return [
     '(5В012000) Vocational Training' => '(5В012000) Профессиональное обучение',
     '(5В011900) Foreign Language: Two Foreign Languages' => '(5В011900) Иностранный язык: два иностранных языка',
     'We are on social networks' => 'Мы в социальных сетях',
-    'Information'=>'Информация',
-    'Faculties'=>'Факультеты',
-
+    'Information' => 'Информация',
+    'Faculties' => 'Факультеты',
+    'Place of the University in the world ranking' => 'Место университета в мировом рейтинге',
+    'Profession' => 'Профессия',
+    'Semi-passing points' => 'Полупроходной балл',
+    'Passing points' => 'Проходной балл',
+    'College Profession' => 'Профессия колледжа',
+    'ENT' => 'ЕНТ',
+    'Choose specialty by college specialty' => 'Выбрать специальность по специальности колледжа',
+    'Choose specialty at university' => 'Выбрать специальность в вузе',
+    'Search by ENT' => 'Поиск по ЕНТ',
+    'Search by Specialization' => 'Поиск по специальности',
+    'Search by College' => 'Поиск по колледжу',
+    'Choose a specialty by ENT subject' => 'Выбрать специальность по профильному предмету ЕНТ',
+    'Select subject 1' => 'Выберите предмет 1',
+    'Select subject 2' => 'Выберите предмет 2',
+    'Select university specialty' => 'Выберите специальность вуза',
+    'For applicants to creative and pedagogical fields' => 'Для поступающих на творческие и педагогические направления',
+    'Useful information' => 'Полезная информация',
+    'Tuition fees' => 'Стоимость обучения',
+    'Form for selecting profile subjects and available professions' => 'Форма для выбора профильных предметов и доступных профессий',
+    'Educational programs' => 'Образовательные программы',
+    'General admission rules and deadlines' => 'Общие правила и сроки поступления',
+    '10 popular professions of the past year (2025) in Kazakhstan (based on university admission data)' =>
+        '10 популярных профессий прошлого года (2025) в Казахстане (ориентируясь на данные по приёму в вузы)',
+    '6B01705 – Foreign language: two foreign languages (English) — 572' =>
+        '6B01705 – Иностранный язык: два иностранных языка (английский) — 572',
+    '6B01403 – Physical education and sport — 262' =>
+        '6B01403 – Физическая культура и спорт — 262',
+    '6B01701 – Kazakh language and literature — 209' =>
+        '6B01701 – Казахский язык и литература — 209',
+    '6B07201 – Pharmaceutical production technology — 192' =>
+        '6B07201 – Технология фармацевтического производства — 192',
+    '6B04201 – Jurisprudence — 164' =>
+        '6B04201 – Юриспруденция — 164',
+    '6B01601 – History — 140' =>
+        '6B01601 – История — 140',
+    '6B06103 – Information systems — 133' =>
+        '6B06103 – Информационные системы — 133',
+    '6B03106 – Psychology — 110' =>
+        '6B03106 – Психология — 110',
+    '6B05201 – Ecology — 90' =>
+        '6B05201 – Экология — 90',
+    '6B04204 – Judicial and prosecutorial activity — 89' =>
+        '6B04204 – Судебная и прокурорская деятельность — 89',
+    'This is the first level of university education.' => 'Это первый уровень университетского образования.',
+    'The duration of bachelor’s studies may vary. If an applicant enters after secondary school, the study period is 4 years.' =>
+        'Продолжительность обучения в бакалавриате может быть разной. Если абитуриент поступает после средней школы, срок его обучения составит 4 года.',
+    'Applicants who graduated from college can study for 3 years.' =>
+        'Абитуриенты, окончившие колледж, могут обучаться 3 года.',
+    'Applicants with higher education can study for only 2 years.' =>
+        'Для абитуриентов с высшим образованием срок обучения составит всего 2 года.',
+    'A mandatory condition for obtaining a diploma is the completion of at least 240 credits.' =>
+        'Обязательное условие получения диплома — необходимо освоить не менее 240 кредитов.',
+    'Training is conducted in two languages: Kazakh and Russian.' =>
+        'Обучение ведется сразу на двух языках: казахском и русском.',
+    'Online registration (registration is valid during the admission period from June 20 to August 25)' =>
+        'Онлайн регистрация (регистрация актуальна в период приемной комиссии с 20.06 по 25.08)',
+    'The admission committee is organized by the responsible secretary'
+    => 'Организует работу приёмной комиссии ответственный секретарь',
+    'Responsible Secretary of the Admission Committee'
+    => 'Ответственный секретарь приёмной комиссии',
+    'Applicants can contact the Admission Committee for consultation on the admission rules, deadlines, and document submission procedures, as well as to attend preparatory courses for the UNT subjects.'
+    => 'Абитуриенты могут обратиться в Приёмную комиссию для получения консультации о правилах поступления, сроках и порядке подачи документов, а также прохождения подготовительных курсов по дисциплинам ЕНТ.',
+    'Barykova Alena Rudolfovna'
+    => 'Барикова Алёна Рудольфовна',
+     "Reception schedule for citizens" => "График приёма граждан",
+    "Day" => "День",
+    "Time (Уақыты / Время)" => "Время",
+    "Responsible person" => "Ответственный",
+    "Monday" => "Понедельник",
+    "Tuesday" => "Вторник",
+    "Wednesday" => "Среда",
+    "Thursday" => "Четверг",
+    "Friday" => "Пятница",
+    "Specialist" => "Специалист",
+    "Commission secretary" => "Секретарь комиссии",
+    "*Reception is conducted by prior appointment. For more information, you can call by phone." 
+        => "*Приём проводится по предварительной записи. Более подробную информацию можно получить по телефону.",
 ];

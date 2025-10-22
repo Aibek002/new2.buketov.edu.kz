@@ -205,7 +205,83 @@ return [
     '(5В012000) Vocational Training' => '(5В012000) Кәсіптік оқыту',
     '(5В011900) Foreign Language: Two Foreign Languages' => '(5В011900) Шетел тілі: екі шетел тілі',
     'We are on social networks' => 'Біз әлеуметтік желілерде',
-    'Information'=>'Ақпарат',
-    'Faculties'=>'Факультеттер',
-
+    'Information' => 'Ақпарат',
+    'Faculties' => 'Факультеттер',
+    'Place of the University in the world ranking' => 'Университеттің әлемдік рейтингтегі орны',
+    'Profession' => 'Мамандық',
+    'Semi-passing points' => 'Жартылай өту балы',
+    'Passing points' => 'Өту балы',
+    'College Profession' => 'Колледж мамандығы',
+    'ENT' => 'ҰБТ',
+    'Choose specialty by college specialty' => 'Колледж мамандығы бойынша мамандықты таңдау',
+    'Choose specialty at university' => 'Жоғары оқу орнындағы мамандықты таңдау',
+    'Search by ENT' => 'ҰБТ бойынша іздеу',
+    'Search by Specialization' => 'Мамандығы бойынша іздеу',
+    'Search by College' => 'Колледж бойынша іздеу',
+    'Choose a specialty by ENT subject' => 'ҰБТ бейіндік пәні бойынша мамандықты таңдау',
+    'Select subject 1' => '1-пәнді таңдаңыз',
+    'Select subject 2' => '2-пәнді таңдаңыз',
+    'Select university specialty' => 'Жоғары оқу орнының мамандығын таңдаңыз',
+    'For applicants to creative and pedagogical fields' => 'Шығармашылық және педагогикалық бағыттарға түсушілерге арналған',
+    'Useful information' => 'Пайдалы ақпарат',
+    'Tuition fees' => 'Оқу ақысы',
+    'Form for selecting profile subjects and available professions' => 'Профильдік пәндер мен мамандықтарды таңдау формасы',
+    'Educational programs' => 'Білім беру бағдарламалары',
+    'General admission rules and deadlines' => 'Қабылдау ережелері мен мерзімдері',
+    '10 popular professions of the past year (2025) in Kazakhstan (based on university admission data)' =>
+        'Өткен жылдың (2025) Қазақстандағы 10 танымал мамандығы (жоғары оқу орындарына қабылдау деректері бойынша)',
+    '6B01705 – Foreign language: two foreign languages (English) — 572' =>
+        '6B01705 – Шетел тілі: екі шетел тілі (ағылшын) — 572',
+    '6B01403 – Physical education and sport — 262' =>
+        '6B01403 – Дене шынықтыру және спорт — 262',
+    '6B01701 – Kazakh language and literature — 209' =>
+        '6B01701 – Қазақ тілі мен әдебиеті — 209',
+    '6B07201 – Pharmaceutical production technology — 192' =>
+        '6B07201 – Фармацевтикалық өндіріс технологиясы — 192',
+    '6B04201 – Jurisprudence — 164' =>
+        '6B04201 – Құқықтану — 164',
+    '6B01601 – History — 140' =>
+        '6B01601 – Тарих — 140',
+    '6B06103 – Information systems — 133' =>
+        '6B06103 – Ақпараттық жүйелер — 133',
+    '6B03106 – Psychology — 110' =>
+        '6B03106 – Психология — 110',
+    '6B05201 – Ecology — 90' =>
+        '6B05201 – Экология — 90',
+    '6B04204 – Judicial and prosecutorial activity — 89' =>
+        '6B04204 – Сот және прокурорлық қызмет — 89',
+    'This is the first level of university education.' => 'Бұл — жоғары білімнің бірінші деңгейі.',
+    'The duration of bachelor’s studies may vary. If an applicant enters after secondary school, the study period is 4 years.' =>
+        'Бакалавриатта оқу мерзімі әртүрлі болуы мүмкін. Егер талапкер орта мектептен кейін түссе, оқу мерзімі 4 жылды құрайды.',
+    'Applicants who graduated from college can study for 3 years.' =>
+        'Колледжді бітірген талапкерлер 3 жыл оқи алады.',
+    'Applicants with higher education can study for only 2 years.' =>
+        'Жоғары білімі бар талапкерлер үшін оқу мерзімі небәрі 2 жыл.',
+    'A mandatory condition for obtaining a diploma is the completion of at least 240 credits.' =>
+        'Диплом алу үшін міндетті шарт — кемінде 240 кредитті игеру.',
+    'Training is conducted in two languages: Kazakh and Russian.' =>
+        'Оқыту қазақ және орыс тілдерінде жүргізіледі.',
+    'Online registration (registration is valid during the admission period from June 20 to August 25)' =>
+        'Онлайн тіркеу (қабылдау комиссиясы кезеңінде 20.06 - 25.08 аралығында өзекті)',
+    'The admission committee is organized by the responsible secretary'
+    => 'Қабылдау комиссиясының жұмысын ұйымдастыратын жауапты хатшы',
+    'Responsible Secretary of the Admission Committee'
+    => 'Қабылдау комиссиясының жауапты хатшысы',
+    'Applicants can contact the Admission Committee for consultation on the admission rules, deadlines, and document submission procedures, as well as to attend preparatory courses for the UNT subjects.'
+    => 'Абитуриенттер университетке түсу ережелері, құжаттарды тапсыру мерзімдері мен тәртібі туралы кеңес алу, сондай-ақ ҰБТ пәндері бойынша дайындық курстарына қатысу үшін Қабылдау комиссиясына жүгіне алады.',
+    'Barykova Alena Rudolfovna'
+    => 'Барыкова Алена Рудольфовна',
+    "Reception schedule for citizens" => "Азаматтарды қабылдау кестесі",
+    "Day" => "Күн",
+    "Time (Уақыты / Время)" => "Уақыты",
+    "Responsible person" => "Қабылдаушы",
+    "Monday" => "Дүйсенбі",
+    "Tuesday" => "Сейсенбі",
+    "Wednesday" => "Сәрсенбі",
+    "Thursday" => "Бейсенбі",
+    "Friday" => "Жұма",
+    "Specialist" => "Маман",
+    "Commission secretary" => "Комиссия хатшысы",
+    "*Reception is conducted by prior appointment. For more information, you can call by phone."
+    => "*Қабылдау алдын ала жазылу бойынша жүргізіледі. Толығырақ ақпаратты телефон арқылы алуға болады.",
 ];

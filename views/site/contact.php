@@ -10,10 +10,10 @@
 
 
   <!-- Contact Section -->
-  <section class="max-w-6xl mx-auto p-6 py-12">
-    <h2 class="title-content">Контакты</h2>
+  <section class="max-w-6xl mx-auto p-6 my-5 py-12">
+    <h2 class="title-content"><strong class="text-white">Контакты</strong></h2>
     
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-1 gap-8">
       
       <!-- Контактная информация -->
       <div class="bg-white shadow-lg rounded-2xl p-8">
@@ -23,7 +23,7 @@
         <ul class="space-y-4">
           <li>
             <span class="font-semibold">Адрес:</span><br>
-            г. Караганда, ул. Университетская 18
+            г. Караганда, ул. Университетская 28
           </li>
           <li>
             <span class="font-semibold">Телефон:</span><br>
@@ -40,7 +40,7 @@
         </ul>
       </div>
 
-      <!-- Форма обратной связи -->
+      <!-- Форма обратной связи
       <div class="bg-white shadow-lg rounded-2xl p-8">
         <h3 class="text-xl font-semibold mb-4">Напишите нам</h3>
         <form class="space-y-4">
@@ -51,7 +51,7 @@
             Отправить
           </button>
         </form>
-      </div>
+      </div> -->
     </div>
   </section>
 

@@ -108,6 +108,7 @@
   border-radius: 10px; */
 }
 
+/* 
 .title-content {
   background: var(--indigoblue);
   padding: 10px 20px;
@@ -124,6 +125,91 @@
 .title-content:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+} */
+/* Основной контейнер */
+.title-content {
+  /* Основные стили блока */
+  background: var(--indigoblue);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  margin: 30px auto;
+  color: var(--text-color);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default;
+  line-height: 1.4;
+
+  /* Анимация и hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стиль при наведении (Hover) */
+.title-content:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Заголовок "Document's" */
+.title-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  margin-bottom: 5px;
+}
+
+/* Имя диссертанта */
+.title-content p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--light-blue-accent);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+/* Контейнер для кнопок (Flexbox) */
+.button-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Стили для всех кнопок */
+/* Стили для всех кнопок */
+.button-section button {
+  /* Визуальные стили */
+  background: var(--indigoblue-font);
+  color: var(--white);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+  /* Flexbox и выравнивание */
+  flex: 1 1 280px;
+  min-width: 280px;
+  line-height: 1.2;
+
+  /* Анимация и hover */
+  transition: all 0.2s ease;
+}
+
+/* Стили при наведении на кнопки (Hover) */
+.button-section button:hover {
+  background: var(--white) !important;
+  color: var(--indigoblue-font);
+  /* Насыщенный синий при наведении */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .title-content h5 {
@@ -204,7 +290,7 @@ strong {
   color: white;
   transform: scale(1.05);
 } */
- .button-section {
+/* .button-section {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
@@ -231,7 +317,7 @@ strong {
         box-shadow: 0 15px 35px rgba(74, 144, 226, 0.4);
         background: var(--indigoblue);
         color: #fff;
-    }
+    } */
 .person-section {
   display: flex;
   gap: 50px;
@@ -678,7 +764,7 @@ main>.container {
 }
 
 .header.scrolled {
-  background: var(--indigoblue-50);
+  background: var(--indigoblue);
 }
 
 .logoBuketov {

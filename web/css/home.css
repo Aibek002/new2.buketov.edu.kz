@@ -1,3 +1,84 @@
+.carousel-faculty {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: auto;
+    padding: 20px 0;
+    background: var(--indigoblue);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+}
+
+.carousel-faculty .faculty-container {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    padding: 20px;
+    margin: 0;
+}
+
+.faculty-box,
+.ratings-box {
+    width: 300px;
+    min-width: 300px;
+    height: 190px;
+    margin: 10px 20px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    border: 1px solid #e0e0e0;
+    transform: perspective(1000px) rotateY(-2deg);
+    box-shadow: 0 10px 30px rgba(44, 92, 169, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 0;
+}
+
+.faculty-box:hover,
+.ratings-box:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px);
+    box-shadow: 0 20px 50px rgba(44, 92, 169, 0.6);
+
+}
+
+.faculty-box .logo,
+.ratings-box .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faculty-box .logo span {
+    color: #2c5ca9;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.faculty-box .logo img,
+.ratings-box .logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #2c5ca9;
+    box-shadow: 0 0 10px #2c5ca9, 0 0 20px #2c5ca9 inset;
+}
+
+.faculty-box .text h2,
+.ratings-box .text h2 {
+    background: linear-gradient(45deg, #2c5ca9, #001f40);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 10px 0 5px 0;
+    line-height: 1.1;
+    overflow-y: hidden;
+}
+
+
 .submitButton {
     background: var(--indigoblue-font);
     color: var(--white);
@@ -163,6 +244,16 @@ form {
     animation: swing 1s infinite ease-in-out;
 }
 
+.close_chat_bot2 {
+    background: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg') no-repeat center;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 100%;
+    background-color: white;
+}
+
 @keyframes swing {
     0% {
         transform: rotate(0);
@@ -223,7 +314,8 @@ form {
 
 .chat-whatsapp,
 .chat-phone,
-.chat-bot {
+.chat-bot,
+.chat-bot2 {
     position: fixed;
     width: 50px;
     height: 50px;
@@ -251,25 +343,36 @@ form {
     background-image: url('https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg');
 }
 
-/* при открытии */
-.chat-whatsapp.active {
+.chat-bot2 {
+    background-image: url('https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?semt=ais_hybrid&w=740&q=80');
+}
+
+.chat-bot2.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-70px);
     z-index: 1000;
 }
 
-.chat-phone.active {
+/* при открытии */
+.chat-whatsapp.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-130px);
     z-index: 1000;
 }
 
-.chat-bot.active {
+.chat-phone.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-190px);
+    z-index: 1000;
+}
+
+.chat-bot.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-250px);
     z-index: 1000;
 }
 
@@ -417,4 +520,52 @@ form {
         /* размер круга */
         opacity: 0;
     }
+}
+
+.chat-widget {
+    width: 400px;
+    height: 550px;
+    background: #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1001;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-widget.active {
+    display: block;
+}
+
+/* Минимальные стили, которые нельзя сделать инлайн */
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.user-message {
+    background-color: #d1e7dd;
+    /* Светло-зеленый */
+    align-self: flex-end;
+    margin-left: 20%;
+}
+
+.bot-message {
+    background-color: #f8f9fa;
+    /* Светлый фон */
+    align-self: flex-start;
+    margin-right: 20%;
+}
+
+.menu-button:hover {
+    background-color: #2c5ca9;
+    box-shadow: 0 4px 10px rgba(44, 92, 169, 0.4);
 }

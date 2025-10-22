@@ -157,12 +157,14 @@ class SiteController extends Controller
             ->select([LanguageHelper::name() . ' as name'])
             ->asArray()
             ->all();
+
         $ranking = Article::find()
             ->select([
                 "article." . LanguageHelper::title() . " as title",
                 'image.image'
             ])
             ->leftJoin('image', ['article.id' => 'image.column_id'])
+
             ->where(['ref_article_id' => 3])
             ->asArray()
             ->all();
@@ -172,6 +174,8 @@ class SiteController extends Controller
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
 
     }
+
+
     public function actionFaculty($name)
     {
         $lang = Yii::$app->language;
@@ -260,18 +264,27 @@ class SiteController extends Controller
         ;
         return $this->render('history-departament', ['model' => $departament]);
     }
-    public function actionArticle($type, $title)
+    public function actionArticle($type = null, $title = null, $ref_article_id = null)
     {
         $lang = Yii::$app->language;
+        if ($ref_article_id === null) {
+            $article = Article::find()
+                ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
+                ->where([
+                    'ref_article.type' => $type,
+                    'article.title_en' => $title,
+                ])
+                ->one();
+        } else {
+            $article = Article::find()
+                ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
+                ->where([
+                    'article.ref_article_id' => $ref_article_id
+                ])
+                ->one();
+        }
 
-        $article = Article::find()
-            ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
-            ->where([
-                'ref_article.type' => $type,
-                'article.title_en' => $title,
-            ])
-            ->one();
-
+        // print_r($article);die;
         return $this->render('article', ['model' => $article]);
 
     }
@@ -486,6 +499,10 @@ class SiteController extends Controller
         return $this->render('messages', [
             'questions' => $questions,
         ]);
+    }
+    public function actionChatbot()
+    {
+        return $this->render('chatbot');
     }
 
 }

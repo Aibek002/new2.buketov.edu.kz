@@ -137,7 +137,9 @@ $this->title = 'Buketov University';
     margin: 0; 
 " class="col-md-10 carousel-faculty">
 
+
         <?php $ratingCount = count($ranking); ?>
+
 
         <div style="
         width: <?= $ratingCount * 320 ?>px; /* Увеличил ширину для большего отступа */
@@ -146,19 +148,23 @@ $this->title = 'Buketov University';
         justify-content: start;
         padding: 0 20px;
         margin: 0;
+
         gap:10px;
+
     " class="ratings-container">
 
-            <?php foreach ($ranking as $ranking_item): ?>
+            <?php foreach ($rating as $rating_item): ?>
 
                 <div class="ratings-box">
 
                     <div class="logo">
+
                         <img src="<?= $ranking_item['image']?>" alt="Логотип">
                     </div>
 
                     <div class="text">
                         <h2 class="title"><?= Html::decode($ranking_item['title']) ?></h2>
+
                     </div>
                 </div>
 
