@@ -21,7 +21,7 @@ use Yii;
 class Article extends \yii\db\ActiveRecord
 {
 
-
+    public $image;
     /**
      * {@inheritdoc}
      */
@@ -36,6 +36,7 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['image'], 'safe'],
             [['ref_article_id', 'title_kz', 'title_ru', 'title_en', 'content_kz', 'content_ru', 'content_en'], 'default', 'value' => null],
             [['ref_article_id'], 'integer'],
             [['title_kz', 'title_ru', 'title_en', 'content_kz', 'content_ru', 'content_en'], 'string'],

@@ -158,8 +158,12 @@ class SiteController extends Controller
             ->asArray()
             ->all();
         $ranking = Article::find()
-            ->select([LanguageHelper::title() . " as title"])
-            ->where(['ref_article' => 3])
+            ->select([
+                "article." . LanguageHelper::title() . " as title",
+                'image.image'
+            ])
+            ->leftJoin('image', ['article.id' => 'image.column_id'])
+            ->where(['ref_article_id' => 3])
             ->asArray()
             ->all();
 

@@ -240,6 +240,25 @@ class AdminController extends Controller
     {
         $article = new Article();
         if ($article->load(Yii::$app->request->post()) && $article->save()) {
+            $file = UploadedFile::getInstance($article,  'image');
+            $db_image = new Image();
+            $db_image->column_id = $article->id;
+            $db_image->ref_image_id = 10;
+            $path = Yii::getAlias('@app/../files/article/') . $article->id . "/";
+            $fileName = uniqid() . "." . $file->extension;
+            if (!is_dir($path)) {
+                if (!mkdir($path, 0775, true)) {
+                    print_r("Error when create directory");
+                    die;
+                }
+            }
+            if ($file->saveAs($path . $fileName)) {
+                $db_image->image = "/files/article/" . $article->id . "/" . $fileName;
+                if ($db_image->save()) {
+                    return $this->redirect(['admin/index']);
+                }
+            }
+
             return $this->redirect(['admin/index']);
         }
         return $this->render('article-admin-panel', ['model' => $article]);
