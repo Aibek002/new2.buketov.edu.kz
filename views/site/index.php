@@ -125,50 +125,35 @@ $this->title = 'Buketov University';
     <div class="col-md-10 d-flex justify-content-center align-items-center block-header py-3">
         <p><?= Yii::t('app', 'Place of the University in the world ranking') ?></p>
     </div>
-    <div style="
-    overflow-x: hidden; 
-    overflow-y: hidden;
-    margin: auto; 
-    padding: 20px 0;
-    /* ОСНОВНОЙ ФОН - СЛУЧАЙНЫЙ ЦВЕТ */
-    background: var(--indigoblue); 
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    margin: 0; 
-" class="col-md-10 carousel-faculty">
+    <div class="col-md-10 carousel-ranking">
 
-        <?php $ratingCount = count($rating); ?>
+        <?php $ratingCount = count($ranking); ?>
 
-        <div style="
-        width: <?= $ratingCount * 320 ?>px; /* Увеличил ширину для большего отступа */
-        display: inline-flex;
-        flex-wrap: nowrap;
-        justify-content: start;
-        padding: 0 20px;
-        margin: 0;
-    " class="ratings-container">
+    <div style="width: <?= $ratingCount * 320 ?>px;" class="ratings-container">
 
-            <?php foreach ($rating as $rating_item): ?>
+            <?php foreach ($ranking as $ranking_item): ?>
 
-                <div class="ratings-box">
-
-                    <div class="logo">
-                        <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип">
-                    </div>
-
-                    <div class="text">
-                        <h2 class="title"><?= Html::decode($rating_item['title']) ?></h2>
+                <div class="rating-box"
+                    onclick="openBox(this, 'ranking')" data-title="<?= $ranking_item['title'] ?? '' ?>"
+                    data-content="<?= htmlspecialchars($ranking_item['content'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                    data-date="<?= date('Y-m-d') ?>"
+                    data-img="<?= htmlspecialchars($ranking_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                    <div
+                        style=" background: linear-gradient(to top, rgba(0, 31, 63, 0.9) 0%, rgba(0, 31, 63, 0.3) 50%, rgba(0, 31, 63, 0) 100%), url(' <?= Html::decode($ranking_item['image']) ?>') center center / cover no-repeat;">
+                        <div class="logo">
+                            <span>Рейтинги</span>
+                            <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип">
+                        </div>
+                        <h2> <?= Html::decode($ranking_item['title']) ?></h2>
                     </div>
                 </div>
 
             <?php endforeach; ?>
 
         </div>
-        <div class="move-ratings-container" style="display: flex;gap: 15px;padding: 20px;justify-content: center;">
-            <button class="moveLeftRatings" onclick="moveRatings('left' , <?= $ratingCount * 320 ?>)"
-                style="width: 50%;height: 30px;border-radius: 10px 0 0 10px;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000997;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&lt;</button>
-            <button class="moveRightRatings" onclick="moveRatings('right',<?= $ratingCount * 320 ?>)"
-                style="width: 50%;height: 30px;border-radius: 0 10px 10px 0;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000c2f;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&gt;</button>
+        <div class="move-rankings-container">
+            <button class="moveLeftRatings" onclick="moveRatings('left' , <?= $ratingCount * 320 ?>)">&lt;</button>
+            <button class="moveRightRatings" onclick="moveRatings('right',<?= $ratingCount * 320 ?>)">&gt;</button>
         </div>
     </div>
     <div class="third-block row col-md-12 w-100 d-flex flex-column align-items-center py-3">
@@ -300,11 +285,9 @@ $this->title = 'Buketov University';
             <?php endforeach; ?>
 
         </div>
-        <div class="move-faculty-container" style="display: flex;gap: 15px;padding: 20px;justify-content: center;">
-            <button class="moveLeftFaculty" onclick="moveFaculty('left' , <?= $facultyCount * 320 ?>)"
-                style="width: 50%;height: 30px;border-radius: 10px 0 0 10px;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000997;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&lt;</button>
-            <button class="moveRightFaculty" onclick="moveFaculty('right',<?= $facultyCount * 320 ?>)"
-                style="width: 50%;height: 30px;border-radius: 0 10px 10px 0;border: none;cursor: pointer;font-size: 1.2rem;font-weight: bold;color: #000c2f;background: linear-gradient(145deg, #fff, #fff);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);transition: all 0.2s ease-in-out;display: flex;justify-content: center;align-items: center;line-height: 1;">&gt;</button>
+        <div class="move-faculty-container">
+            <button class="moveLeftFaculty" onclick="moveFaculty('left' , <?= $facultyCount * 320 ?>)">&lt;</button>
+            <button class="moveRightFaculty" onclick="moveFaculty('right',<?= $facultyCount * 320 ?>)">&gt;</button>
         </div>
     </div>
     <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center py-3">
@@ -315,7 +298,7 @@ $this->title = 'Buketov University';
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-10 d-flex justify-content-between align-items-stretch news-block">
             <?php foreach ($news as $news_item): ?>
 
-                <div onclick="openBox(this, 'open')" data-title="<?= $news_item['title'] ?? '' ?>"
+                <div onclick="openBox(this, 'news')" data-title="<?= $news_item['title'] ?? '' ?>"
                     data-content="<?= htmlspecialchars($news_item['content'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                     data-date="<?= Yii::$app->formatter->asDate($news_item['date'], 'php:d.m.Y') ?>"
                     data-img="<?= htmlspecialchars($news_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>"

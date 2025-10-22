@@ -107,7 +107,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                         <?= Html::a(
                                             Yii::t('app', 'We are in the Rankings') . ' <span>></span>',
-                                            ['site/article', 'ref_article_id' => 3 ],
+                                            ['site/article', 'ref_article_id' => 3,'ref_image_id' => 10 ],
                                             ['class' => 'menu-item']
                                         ) ?>
 

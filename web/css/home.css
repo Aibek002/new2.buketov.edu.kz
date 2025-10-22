@@ -1,20 +1,27 @@
-.carousel-faculty {
+.carousel-faculty,
+.carousel-ranking {
     overflow-x: hidden;
     overflow-y: hidden;
     margin: auto;
-    padding: 20px 0;
-    background: var(--indigoblue);
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #eef2f7;
+    padding: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 
 }
 
-.carousel-faculty .faculty-container {
+.carousel-faculty .faculty-container,
+.carousel-ranking .ratings-container {
     display: inline-flex;
     flex-wrap: nowrap;
     justify-content: start;
-    padding: 20px;
+    padding: 25px 25px;
     margin: 0;
+    gap: 30px;
 }
 
 .faculty-box,
@@ -24,10 +31,9 @@
     height: 190px;
     margin: 10px 20px;
     border-radius: 18px;
-    background: linear-gradient(135deg, #ffffff, #f0f0f0);
     border: 1px solid #e0e0e0;
     transform: perspective(1000px) rotateY(-2deg);
-    box-shadow: 0 10px 30px rgba(44, 92, 169, 0.3);
+    box-shadow: 8px 8px 16px #c8cdd3, -8px -8px 16px #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,8 +44,7 @@
 
 .faculty-box:hover,
 .ratings-box:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.08) translateY(-8px);
-    box-shadow: 0 20px 50px rgba(44, 92, 169, 0.6);
+   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
 }
 
@@ -78,6 +83,105 @@
     overflow-y: hidden;
 }
 
+.move-rankings-container,
+.move-faculty-container {
+    display: flex;
+    gap: 40px;
+    padding: 10px 0 40px 0;
+    justify-content: space-around;
+}
+
+.move-rankings-container button,
+.move-faculty-container button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: not-allowed;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #555;
+    background: #eef2f7;
+    box-shadow: 8px 8px 16px #c8cdd3, -8px -8px 16px #ffffff;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    opacity: 0.6;
+}
+
+.rating-box {
+    width: 300px;
+    height: 200px;
+    flex-shrink: 0;
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0, 40, 80, 0.4);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+
+.rating-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 40, 80, 0.6);
+}
+
+
+
+.rating-box>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.rating-box .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.rating-box .logo span {
+
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 8px;
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+}
+
+.rating-box .logo img {
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #63a4ff;
+    box-shadow: 0 0 10px rgba(99, 164, 255, 0.8), 0 0 20px rgba(99, 164, 255, 0.3) inset;
+}
+
+
+.rating-box h2 {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+}
 
 .submitButton {
     background: var(--indigoblue-font);

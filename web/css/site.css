@@ -15,6 +15,14 @@
   --transparent-white-50: rgba(255, 255, 255, 0.466);
   --gray: #999;
   --yellow: #c55;
+  --indigoblue: #1f3b6e;
+  /* Темный синий фон основного блока */
+  --light-blue-accent: #2c5ca9;
+  /* Средний синий для акцентов/hover */
+  --button-bg: #3f51b5;
+  /* Цвет кнопок */
+  --white: #ffffff;
+  --gold-accent: #ffc107;
   --font-main: 'Roboto', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
   --font-14: 14px;
@@ -31,6 +39,7 @@
   --font-300: 300;
   --font-400: 400;
   --font-700: 700;
+
 }
 
 @media (max-width: 1200px) {
@@ -181,7 +190,8 @@
 
 /* Стили для всех кнопок */
 /* Стили для всех кнопок */
-.button-section button {
+.button-section button,
+.button-section a {
   /* Визуальные стили */
   background: var(--indigoblue-font);
   color: var(--white);
@@ -204,7 +214,8 @@
 }
 
 /* Стили при наведении на кнопки (Hover) */
-.button-section button:hover {
+.button-section button:hover,
+.button-section a:hover {
   background: var(--white) !important;
   color: var(--indigoblue-font);
   /* Насыщенный синий при наведении */
@@ -212,12 +223,144 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
+/* 
 .title-content h5 {
   margin: 0;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+} */
+/* Основной контейнер */
+.title-content {
+  /* Базовые стили блока */
+  background: var(--indigoblue);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  margin: 30px auto;
+  color: var(--white);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default;
+  line-height: 1.4;
+
+  /* Анимация и hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стиль при наведении на основной блок (Hover) */
+.title-content:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Стиль для текста внутри title-content */
+.title-content-text {
+  font-size: 1.8rem;
+  /* Увеличенный размер для заголовка */
+  font-weight: 700;
+  color: var(--gold-accent);
+  /* Акцентный цвет для лучшей видимости */
+  margin: 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--light-blue-accent);
+}
+
+/* Контейнер для кнопок (Flexbox) */
+.button-section {
+  /* Flexbox для красивого, ровного распределения */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Центрирование кнопок, если их мало */
+  align-items: stretch;
+  gap: 15px;
+  /* Увеличил отступ */
+  margin-top: 25px;
+  /* Отступ от заголовка */
+}
+
+/* Стили для всех кнопок */
+.button-section button {
+  /* Визуальные стили */
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  /* Увеличенные отступы для лучшей читабельности */
+  border-radius: 8px;
+  font-size: 1.05rem;
+  /* Более крупный шрифт */
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  white-space: normal;
+  /* Разрешить перенос текста */
+  line-height: 1.2;
+  height: auto;
+
+  transition: all 0.2s ease;
+}
+
+/* Стили при наведении на кнопки (Hover) */
+.button-section button:hover {
+  background-color: var(--light-blue-accent) !important;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.modal-pdf {
+  display: none;
+  /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 10001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Темный фон для лучшего контраста */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-pdf {
+  position: relative;
+  background-color: #fefefe;
+  padding: 0;
+  border: 1px solid #888;
+  width: 90%;
+  height: 90%;
+  max-width: 1000px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  /* Важно для iframe */
+}
+
+/* Кнопка закрытия */
+.close-pdf-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  /* Белый цвет на темном фоне оверлея */
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  z-index: 1001;
+  /* Поверх содержимого */
+}
+
+.close-pdf-btn:hover,
+.close-pdf-btn:focus {
+  color: #ccc;
 }
 
 .text-content {
@@ -229,33 +372,55 @@
 
 .select-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-block: 50px;
-
+  /* Используем minmax для гибкости, 
+           но также позволяем кнопкам растягиваться на всю ширину на маленьких экранах */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  /* Увеличил отступ между кнопками */
+  margin: 50px auto;
+  /* Центрируем блок, если он не на всю ширину */
+  padding: 0 15px;
+  /* Отступы по бокам для адаптивности */
 }
 
 .select-section button {
-  border: 1px solid var(--indigoblue-font);
-  background: var(--light-gray);
-  color: var(--indigoblue-font);
-  font-size: var(--font-16);
+  /* Общие стили кнопок */
+  border: none;
+  /* Убираем стандартную рамку */
+  background: var(--indigoblue);
+  /* Светло-серый фон по умолчанию */
+  color: var(--white);
+  /* Темно-синий текст */
+  font-size: 1.15rem;
+  /* Немного увеличил шрифт для лучшей читабельности */
   font-weight: var(--font-700);
+  padding: 20px 25px;
+  /* Увеличил вертикальный и горизонтальный padding */
+  border-radius: 12px;
+  /* Более мягкие скругленные углы для всех кнопок */
+  cursor: pointer;
   transition: all .3s ease;
-  padding-block: 20px;
-
+  /* Плавный переход для всех свойств */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Мягкая тень */
+  outline: none;
+  /* Убираем синюю обводку при фокусе */
+  text-transform: uppercase;
+  /* Текст в верхнем регистре для акцента */
+  letter-spacing: 0.5px;
+  /* Небольшой межбуквенный интервал */
 }
 
-.select-section button:first-child {
-  border-radius: 10px 0 0 10px;
-}
-
-.select-section button:last-child {
-  border-radius: 0 10px 10px 0;
-}
-
+/* Стили при наведении на кнопки */
 .select-section button:hover {
-  box-shadow: 0 9px 20px var(--indigoblue);
-  transform: scale(1.05);
+  background: var(--white);
+  /* Градиент при наведении */
+  color: var(--indigoblue-font);
+  /* Белый текст при наведении */
+  transform: translateY(-3px) scale(1.02);
+  /* Легкий подъем и увеличение */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  /* Более выраженная тень */
 }
 
 b,
@@ -409,7 +574,7 @@ strong {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .carousel .list .item .content {
@@ -482,6 +647,11 @@ strong {
   height: 300px;
   position: relative;
   flex-shrink: 0;
+  transition: all 0.5s ease;
+}
+
+.carousel .thumbnail .item:hover {
+  transform: translateY(-20px);
 }
 
 .carousel .thumbnail .item img {
@@ -570,6 +740,7 @@ strong {
   background: linear-gradient(to top, rgba(15, 33, 71, 0.73) 0%, rgba(7, 35, 72, 0.73) 40%, rgba(0, 0, 0, 0) 100%);
   border-radius: 10px;
   z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .carousel .list .item:nth-last-child(1) {

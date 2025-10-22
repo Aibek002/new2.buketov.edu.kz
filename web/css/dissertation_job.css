@@ -122,56 +122,6 @@
     display: block;
 }
 
-.modal-pdf {
-    display: none;
-    /* Скрыто по умолчанию */
-    position: fixed;
-    z-index: 10001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Темный фон для лучшего контраста */
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content-pdf {
-    position: relative;
-    background-color: #fefefe;
-    padding: 0;
-    border: 1px solid #888;
-    width: 90%;
-    height: 90%;
-    max-width: 1000px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    /* Важно для iframe */
-}
-
-/* Кнопка закрытия */
-.close-pdf-btn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: #fff;
-    /* Белый цвет на темном фоне оверлея */
-    font-size: 35px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-    z-index: 1001;
-    /* Поверх содержимого */
-}
-
-.close-pdf-btn:hover,
-.close-pdf-btn:focus {
-    color: #ccc;
-}
 
 /* Скрываем исходный embed, который больше не нужен */
 .first {

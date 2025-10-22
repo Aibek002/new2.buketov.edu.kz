@@ -157,19 +157,23 @@ class SiteController extends Controller
             ->select([LanguageHelper::name() . ' as name'])
             ->asArray()
             ->all();
-        $rating = Article::find()
-            ->select([LanguageHelper::title() . " as title"])
+        $ranking = Article::find()
+            ->select([
+                "article." . LanguageHelper::title() . " as title",
+                "article." . LanguageHelper::content() . " as content",
+
+                'image.image'
+            ])
+            ->leftJoin('image', 'article.id = image.column_id AND image.ref_image_id = 10')
             ->where(['ref_article_id' => 3])
             ->asArray()
             ->all();
 
-        // print_r($events);die;
+        // print_r($ranking);die;
 
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'rating' => $rating]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
 
     }
-
-
     public function actionFaculty($name)
     {
         $lang = Yii::$app->language;
@@ -258,7 +262,7 @@ class SiteController extends Controller
         ;
         return $this->render('history-departament', ['model' => $departament]);
     }
-    public function actionArticle($type = null, $title = null, $ref_article_id = null)
+    public function actionArticle($type = null, $title = null, $ref_article_id = null, $ref_image_id = null)
     {
         $lang = Yii::$app->language;
         if ($ref_article_id === null) {
@@ -267,19 +271,27 @@ class SiteController extends Controller
                 ->where([
                     'ref_article.type' => $type,
                     'article.title_en' => $title,
+
                 ])
                 ->one();
         } else {
             $article = Article::find()
-                ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
-                ->where([
-                    'article.ref_article_id' => $ref_article_id
+                ->select([
+                    'article.' . LanguageHelper::title() . ' AS title',
+                    'article.' . LanguageHelper::content() . ' AS content',
+                    'image.image'
                 ])
-                ->one();
+                ->leftJoin('image', 'image.column_id = article.id AND image.ref_image_id = :ref_image_id', [
+                    ':ref_image_id' => $ref_image_id
+                ])
+                ->where(['article.ref_article_id' => $ref_article_id])
+                ->asArray()
+                ->all();
         }
-
         // print_r($article);die;
         return $this->render('article', ['model' => $article]);
+
+
 
     }
     public function actionManagementStructure($type)
@@ -498,5 +510,4 @@ class SiteController extends Controller
     {
         return $this->render('chatbot');
     }
-
 }

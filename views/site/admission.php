@@ -18,47 +18,51 @@ $lang = Yii::$app->language;
         <?= Yii::t("app", "Admission Committee") ?>
 
     </div>
-<p style="font-size: 1.25rem; color: #555; margin-bottom: 30px; text-align: center;">
-    <?= Yii::t('app', 'The admission committee is organized by the responsible secretary') ?>
-</p>
+    <p style="font-size: 1.25rem; color: #555; margin-bottom: 30px; text-align: center;">
+        <?= Yii::t('app', 'The admission committee is organized by the responsible secretary') ?>
+    </p>
 
-<div style="margin: 40px auto; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); position: relative; display: flex;">
-    <div style="display: flex; gap: 30px; padding: 20px; border-top: 1px solid #eee; margin-top: 20px;">
-        
-        <div class="person-img" style="width: 250px; height: 250px; overflow: hidden; flex-shrink: 0; border-radius: 8px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); background-color: #f9f9f9;">
-            <img width="100%" alt="<?= Yii::t('app', 'Barykova Alena Rudolfovna') ?>"
-                src="/files/image_avatar_staff/Administrative-Services/ Barikova_ Alena/Приемная_комиссия-removebg-preview.jpg"
-                style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 8px;">
-        </div>
-        
-        <div class="person-info" style="padding-right: 20px;">
-            <p class="person-fio" style="font-size: 1.8rem; font-weight: 700; color: #2c5ca9; margin-bottom: 10px; text-transform: uppercase;">
-                <?= Yii::t('app', 'Barykova Alena Rudolfovna') ?>
-            </p>
-            <p class="person-position" style="font-size: 1.1rem; color: #6a6a6a; margin-bottom: 20px;">
-                <?= Yii::t('app', 'Responsible Secretary of the Admission Committee') ?>
-            </p>
-            <p class="person-info" style="font-size: 0.95rem; color: #555;">
-                <?= Yii::t('app', 'Applicants can contact the Admission Committee for consultation on the admission rules, deadlines, and document submission procedures, as well as to attend preparatory courses for the UNT subjects.') ?>
-            </p>
-        </div>
-        
-        <div class="person-email" style="flex-shrink: 0; display: flex; flex-direction: column; gap: 15px; min-width: 200px; padding-left: 20px; border-left: 1px solid #eee;">
-            <div class="email" style="display: flex; align-items: center;">
-                <img src="/bg-images/svg/iconEmail.svg" style="width: 24px; height: 24px; margin-right: 10px;">
-                <a href="mailto:priemka@buketov.edu.kz" style="color: #2c5ca9;">priemka@buketov.edu.kz</a>
+    <div
+        style="margin: 40px auto; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); position: relative; display: flex;">
+        <div style="display: flex; gap: 30px; padding: 20px; border-top: 1px solid #eee; margin-top: 20px;">
+
+            <div class="person-img"
+                style="width: 250px; height: 250px; overflow: hidden; flex-shrink: 0; border-radius: 8px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); background-color: #f9f9f9;">
+                <img width="100%" alt="<?= Yii::t('app', 'Barykova Alena Rudolfovna') ?>"
+                    src="/files/image_avatar_staff/Administrative-Services/ Barikova_ Alena/Приемная_комиссия-removebg-preview.jpg"
+                    style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 8px;">
             </div>
-            <div class="phone" style="display: flex; align-items: center;">
-                <img src="/bg-images/svg/iconPhone.svg" style="width: 24px; height: 24px; margin-right: 10px;">
-                <a href="tel:+77212900270" style="color: #2c5ca9;">+7 7212 90-02-70</a>
+
+            <div class="person-info" style="padding-right: 20px;">
+                <p class="person-fio"
+                    style="font-size: 1.8rem; font-weight: 700; color: #2c5ca9; margin-bottom: 10px; text-transform: uppercase;">
+                    <?= Yii::t('app', 'Barykova Alena Rudolfovna') ?>
+                </p>
+                <p class="person-position" style="font-size: 1.1rem; color: #6a6a6a; margin-bottom: 20px;">
+                    <?= Yii::t('app', 'Responsible Secretary of the Admission Committee') ?>
+                </p>
+                <p class="person-info" style="font-size: 0.95rem; color: #555;">
+                    <?= Yii::t('app', 'Applicants can contact the Admission Committee for consultation on the admission rules, deadlines, and document submission procedures, as well as to attend preparatory courses for the UNT subjects.') ?>
+                </p>
             </div>
-            <div class="phone" style="display: flex; align-items: center;">
-                <img src="/bg-images/svg/iconPhone.svg" style="width: 24px; height: 24px; margin-right: 10px;">
-                <a href="tel:+77212356405" style="color: #2c5ca9;">+7 7212 35-64-05</a>
+
+            <div class="person-email"
+                style="flex-shrink: 0; display: flex; flex-direction: column; gap: 15px; min-width: 200px; padding-left: 20px; border-left: 1px solid #eee;">
+                <div class="email" style="display: flex; align-items: center;">
+                    <img src="/bg-images/svg/iconEmail.svg" style="width: 24px; height: 24px; margin-right: 10px;">
+                    <a href="mailto:priemka@buketov.edu.kz" style="color: #2c5ca9;">priemka@buketov.edu.kz</a>
+                </div>
+                <div class="phone" style="display: flex; align-items: center;">
+                    <img src="/bg-images/svg/iconPhone.svg" style="width: 24px; height: 24px; margin-right: 10px;">
+                    <a href="tel:+77212900270" style="color: #2c5ca9;">+7 7212 90-02-70</a>
+                </div>
+                <div class="phone" style="display: flex; align-items: center;">
+                    <img src="/bg-images/svg/iconPhone.svg" style="width: 24px; height: 24px; margin-right: 10px;">
+                    <a href="tel:+77212356405" style="color: #2c5ca9;">+7 7212 35-64-05</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <div class="select-section">
@@ -75,71 +79,81 @@ $lang = Yii::$app->language;
 
     <div class="bakalavriat <?php echo ($type == 'bachelor') ? 'active' : ''; ?>">
         <div class="title-content">
-            <?= Yii::t("app", "Bakalavriat") ?>
+            <div class="title-content-text">
+                <?= Yii::t("app", "Bakalavriat") ?>
+            </div>
+            <div class="text-content text-start">
+                <?= Yii::t('app', 'This is the first level of university education.') ?><br><br>
+
+                <?= Yii::t('app', 'The duration of bachelor’s studies may vary. If an applicant enters after secondary school, the study period is 4 years.') ?><br><br>
+
+                <?= Yii::t('app', 'Applicants who graduated from college can study for 3 years.') ?><br><br>
+
+                <?= Yii::t('app', 'Applicants with higher education can study for only 2 years.') ?><br><br>
+
+                <?= Yii::t('app', 'A mandatory condition for obtaining a diploma is the completion of at least 240 credits.') ?><br>
+                <?= Yii::t('app', 'Training is conducted in two languages: Kazakh and Russian.') ?><br><br>
+
+                <strong class="text-white"><?= Yii::t('app', 'Online registration (registration is valid during the admission period from June 20 to August 25)') ?></strong><br>
+            </div>
         </div>
-        <div class="text-content">
-            <?= Yii::t('app', 'This is the first level of university education.') ?><br><br>
 
-            <?= Yii::t('app', 'The duration of bachelor’s studies may vary. If an applicant enters after secondary school, the study period is 4 years.') ?><br><br>
 
-            <?= Yii::t('app', 'Applicants who graduated from college can study for 3 years.') ?><br><br>
-
-            <?= Yii::t('app', 'Applicants with higher education can study for only 2 years.') ?><br><br>
-
-            <?= Yii::t('app', 'A mandatory condition for obtaining a diploma is the completion of at least 240 credits.') ?><br>
-            <?= Yii::t('app', 'Training is conducted in two languages: Kazakh and Russian.') ?><br><br>
-
-            <strong><?= Yii::t('app', 'Online registration (registration is valid during the admission period from June 20 to August 25)') ?></strong><br>
-        </div>
 
         <div class="title-content">
-            <?= Yii::t("app", "General admission rules and deadlines") ?>
-        </div>
+            <div class="title-content-text">
+                <?= Yii::t("app", "General admission rules and deadlines") ?>
+            </div>
 
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
 
-                    <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 1): ?>
 
-                        <button
-                            onclick="openGeneralRulesPdf('/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item['path'] ?>','bachelor')">
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
+                        <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                            <button
+                                onclick="openGeneralRulesPdf('/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item['path'] ?>','bachelor')">
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
                     <?php endif ?>
-                <?php endif ?>
 
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
 
         <div class="title-content">
-            <?= Yii::t("app", "Educational programs") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
+            <div class="title-content-text">
+                <?= Yii::t("app", "Educational programs") ?>
+            </div>
 
-                    <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 1): ?>
 
-                        <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
+                        <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
                     <?php endif ?>
-                <?php endif ?>
 
-            <?php endforeach; ?>
-        </div>
-
-        <div class="title-content">
-            <?= Yii::t("app", "Form for selecting profile subjects and available professions") ?>
+                <?php endforeach; ?>
+            </div>
         </div>
 
         <div class="p-5"
             style="width: 94vw; min-height: 100%; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font); margin-block:50px">
-            <h1 class="title-content">
-                <?= Yii::t('app', '10 popular professions of the past year (2025) in Kazakhstan (based on university admission data)') ?>
-            </h1>
+            <div class="title-content-text">
+                <?= Yii::t("app", "Form for selecting profile subjects and available professions") ?>
+            </div>
+            <strong
+                class="text-white p-2"><?= Yii::t('app', '10 popular professions of the past year (2025) in Kazakhstan (based on university admission data)') ?>
+                :
+            </strong>
 
             <ul type="1" class="popular-list">
                 <li><?= Yii::t('app', '6B01705 – Foreign language: two foreign languages (English) — 572') ?></li>
@@ -243,271 +257,277 @@ $lang = Yii::$app->language;
             </div>
         </div>
         <div class="title-content">
-            <?= Yii::t("app", "Tuition fees") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
+            <div class="title-content-text">
+                <?= Yii::t("app", "Tuition fees") ?>
+            </div>
 
-                    <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
 
-                        <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) (int) $pdf_item['skill_level_id'] === 1): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] == 3): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
                     <?php endif ?>
-                <?php endif ?>
 
-            <?php endforeach; ?>
+                <?php endforeach; ?>
 
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "For applicants to creative and pedagogical fields") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 4): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-
-
-        </div>
-
-        <div class="title-content">
-            <?= Yii::t("app", "Useful information") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 1): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-
-        </div>
-        <div class="title-content">
-            <div class="d-flex justify-content-center align-items-center flex-column">
-
-                <?= Yii::t("app", "PDF") ?>
-
-                <embed id="general-rules-pdf-bachelor" class="general-rules-pdf-bachelor" src="" width="50%"
-                    height="600" type="application/pdf">
             </div>
         </div>
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "For applicants to creative and pedagogical fields") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 1): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 4): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+
+            </div>
+        </div>
+
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Useful information") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 1): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/bachelor/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
     </div>
     <div class="magistrant <?php echo ($type == 'magistracy') ? 'active' : ''; ?>">
         <div class="title-content">
-            <?= Yii::t("app", "Magistrant") ?>
+            <div class="title-content-text">
+                <?= Yii::t("app", "Magistrant") ?>
+            </div>
 
         </div>
         <div class="title-content">
-            <?= Yii::t("app", "General admission rules and deadlines") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
+            <div class="title-content-text">
+                <?= Yii::t("app", "General admission rules and deadlines") ?>
+            </div>
 
-                    <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 2): ?>
 
-                        <button
-                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
+                        <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
                     <?php endif ?>
-                <?php endif ?>
 
-            <?php endforeach; ?>
-
-        </div>
-
-        <div class="title-content">
-            <?= Yii::t("app", "Educational programs") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-
-        </div>
-
-        <!--div class="title-content">
-            <?= Yii::t("app", "Form for selecting profile subjects and available professions") ?>
-        </div>
-        <div
-            style="width: 94vw; height: 500px; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font);">
-        </div-->
-        <div class="title-content">
-            <?= Yii::t("app", "Tuition fees") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-
-        </div>
-
-
-        <div class="title-content">
-            <?= Yii::t("app", "Useful information") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 2): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdfMagistr("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-
-        </div>
-        <div class="title-content">
-            <div class="d-flex justify-content-center align-items-center flex-column">
-
-                <?= Yii::t("app", "PDF") ?>
-
-                <embed id="general-rules-pdf-magistr" class="general-rules-pdf-magistr" src="" width="50%" height="600"
-                    type="application/pdf">
+                <?php endforeach; ?>
             </div>
         </div>
+
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Educational programs") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 2): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Tuition fees") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 2): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Useful information") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 2): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/magistracy/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
     </div>
     <div class="doctorant <?php echo ($type == 'doctoral') ? 'active' : ''; ?>">
         <div class="title-content">
-            <?= Yii::t("app", "Doctorant") ?>
+            <div class="title-content-text">
+                <?= Yii::t("app", "Doctorant") ?>
+            </div>
 
         </div>
         <div class="title-content">
-            <?= Yii::t("app", "General admission rules and deadlines") ?>
-        </div>
-        <div class="button-section">
+            <div class="title-content-text">
+                <?= Yii::t("app", "General admission rules and deadlines") ?>
+            </div>
 
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
+            <div class="button-section">
 
-                    <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 3): ?>
 
-                        <button
-                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
+                        <?php if ($pdf_item['ref_sort_order_id'] === 1): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
                     <?php endif ?>
-                <?php endif ?>
 
-            <?php endforeach; ?>
-
-        </div>
-        <div class="d-flex justify-content-center">
-            <embed class="general-rules-pdf" src="" width="50%" height="600" type="application/pdf">
-        </div>
-        <div class="title-content">
-            <?= Yii::t("app", "Educational programs") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-
-        </div>
-
-
-        <div class="title-content">
-            <?= Yii::t("app", "Tuition fees") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-        </div>
-
-
-        <div class="title-content">
-            <?= Yii::t("app", "Useful information") ?>
-        </div>
-        <div class="button-section">
-            <?php foreach ($pdf as $pdf_item): ?>
-                <?php if ($pdf_item['lang_pdf'] === $lang && $pdf_item['skill_level_id'] === 3): ?>
-
-                    <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
-
-                        <button
-                            onclick='openGeneralRulesPdfDoctoral("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
-                            <?= $pdf_item["name_url"] ?>
-                        </button>
-                    <?php endif ?>
-                <?php endif ?>
-
-            <?php endforeach; ?>
-        </div>
-        <div class="title-content">
-            <div class="d-flex justify-content-center align-items-center flex-column">
-
-                <?= Yii::t("app", "PDF") ?>
-
-                <embed id="general-rules-pdf-doctoral" class="general-rules-pdf-doctoral" src="" width="50%"
-                    height="600" type="application/pdf">
+                <?php endforeach; ?>
             </div>
         </div>
-    </div>
 
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Educational programs") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 3): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 2): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Tuition fees") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 3): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 3): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div class="title-content">
+            <div class="title-content-text">
+                <?= Yii::t("app", "Useful information") ?>
+            </div>
+
+            <div class="button-section">
+                <?php foreach ($pdf as $pdf_item): ?>
+                    <?php if ($pdf_item['lang_pdf'] === $lang && (int) $pdf_item['skill_level_id'] === 3): ?>
+
+                        <?php if ($pdf_item['ref_sort_order_id'] === 5): ?>
+
+                            <button
+                                onclick='openGeneralRulesPdf("/files/pdf/admission/doctorant/<?= Yii::$app->language ?>/<?= $pdf_item["path"] ?>")'>
+                                <?= $pdf_item["name_url"] ?>
+                            </button>
+                        <?php endif ?>
+                    <?php endif ?>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    </div>
+    <div id="pdfModal" class="modal-pdf">
+        <span class="close-pdf-btn" onclick="document.getElementById('pdfModal').style.display='none';">&times;</span>
+
+        <div class="modal-content-pdf">
+            <iframe id="pdfIframe" src="" type="application/pdf"
+                style="width: 100%; height: 100%; border: none; display: block;">
+            </iframe>
+        </div>
+    </div>
 </div>
