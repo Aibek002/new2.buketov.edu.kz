@@ -127,11 +127,14 @@ $this->title = 'Buketov University';
     </div>
     <div class="col-md-10 carousel-ranking">
 
+
         <?php $ratingCount = count($ranking); ?>
 
     <div style="width: <?= $ratingCount * 320 ?>px;" class="ratings-container">
 
+
             <?php foreach ($ranking as $ranking_item): ?>
+
 
                 <div class="rating-box"
                     onclick="openBox(this, 'ranking')" data-title="<?= $ranking_item['title'] ?? '' ?>"
@@ -145,6 +148,7 @@ $this->title = 'Buketov University';
                             <img src="https://abiturient.buketov.edu.kz/images/logo2023.png" alt="Логотип">
                         </div>
                         <h2> <?= Html::decode($ranking_item['title']) ?></h2>
+
                     </div>
                 </div>
 

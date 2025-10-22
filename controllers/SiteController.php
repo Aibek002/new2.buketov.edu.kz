@@ -172,6 +172,7 @@ class SiteController extends Controller
         // print_r($ranking);die;
 
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
 
     }
     public function actionFaculty($name)
