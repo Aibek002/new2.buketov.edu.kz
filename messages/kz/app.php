@@ -284,4 +284,25 @@ return [
     "Commission secretary" => "Комиссия хатшысы",
     "*Reception is conducted by prior appointment. For more information, you can call by phone."
     => "*Қабылдау алдын ала жазылу бойынша жүргізіледі. Толығырақ ақпаратты телефон арқылы алуға болады.",
+    'Councils' => 'Кеңестер',
+    'Academic Council' => "Ғылыми Кеңес",
+    "The Academic Council is an elected collegial body.The Council is responsible for evaluating the implementation of the University's strategic objectives.The Board is headed by the Chairman of the Board, the Rector of the University.The Board consists of members of the Management Board, representatives of the faculty, administrative and managerial staff, students.The members of the Council are elected by secret ballot for a term of 3 years.The Council's work takes place in a meeting mode with a frequency of once a month." => "Ғылыми Кеңес-сайланған алқалы орган.Кеңес Университеттің стратегиялық мақсаттарының орындалуын бағалауға жауапты. Басқарманы Басқарма Төрағасы, Университет Ректоры басқарады.Басқарма Құрамына Басқарма мүшелері, факультет өкілдері, әкімшілік-басқару құрамы, студенттер кіреді. Кеңес мүшелері жасырын дауыс беру арқылы 3 жыл мерзімге сайланады. Кеңестің жұмысы айына бір рет жиілікпен отырыс режимінде жүзеге асырылады.",
+    "Academic Secretary of the Council" => "Кеңестің ғылыми Хатшысы",
+    "Tutinova Nurgul Yerkanatovna" => "Тутинова Нұргүл Ерқанатқызы",
+    "Scientific Secretary of the Council" => "Кеңестің ғылыми хатшысы",
+    "Tutinova Nurgul Yerkanatovna is an Associate Professor of the Department of Philosophy and Theory of Culture, PhD, Scientific Secretary."
+    => "Тутинова Нұргүл Ерқанатқызы – философия және мәдениет теориясы кафедрасының қауымдастырылған профессоры, PhD докторы, ғылыми хатшы.",
+    "Regulation on the Academic Council" => "Ғылыми кеңес туралы ереже",
+    "Report of the Chairman of the Board – Rector on the university's activities for the academic year and on the tasks for the upcoming academic year."
+    => "Басқарма төрағасы – ректордың оқу жылы ішіндегі университет қызметі және алдағы оқу жылына арналған міндеттері туралы есебі.",
+    'Draft decisions of the Academic Council' => 'Ғылыми кеңестің шешімдерінің жобалары',
+    'Report of the Chairman of the Management Board' => 'Басқарма төрағасының есебі',
+    'Other documents' => 'Басқа құжаттар',
+    'Applicants for academic titles' => 'Ғылыми атақтарға үміткерлер',
+    "Open page" => "Бетті ашу",
+    'Document`s' => 'Құжаттар',
+    'Doctoral students` documents' => 'Докторанттардың құжаттары',
+    'Regulatory documents' => 'Нормативтік құжаттар',
+    'Working hours:' => 'Жұмыс уақыты:',
+    'Monday – Friday 09:00 - 17:00' => 'Дүйсенбі – Жұма 09:00 - 17:00',
 ];

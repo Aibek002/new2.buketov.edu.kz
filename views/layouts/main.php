@@ -89,19 +89,19 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <div class="dropdown-submenu university-info">
                                         <?= Html::a(
                                             Yii::t('app', 'History of the University') . ' <span>></span>',
-                                            ['site/article', 'type' => 'history-of-the-university', 'title' => 'Important events in the history of the university'],
+                                            ['site/article', 'ref_article_id' => '1'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
                                         <?= Html::a(
                                             Yii::t('app', 'Mission of the University') . ' <span>></span>',
-                                            ['site/article', 'type' => 'mission-of-the-university', 'title' => 'Mission of the university'],
+                                            ['site/article', 'ref_article_id' => '2'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
                                         <?= Html::a(
                                             Yii::t('app', 'Development Program') . ' <span>></span>',
-                                            ['site/article', 'type' => 'development-program', 'title' => 'Karaganda University named after Academician E.A. Buketov and approval of its Development Program for 2024-2028'],
+                                            ['site/article', 'ref_article_id' => '5'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
@@ -179,9 +179,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                     </div>
                                     <div class="dropdown-submenu student">
-                                        <?= Html::a(Yii::t('app', 'Campus Life') . ' <span>></span>', '#', [
+                                        <!-- <?= Html::a(Yii::t('app', 'Campus Life') . ' <span>></span>', '#', [
                                             'class' => 'menu-item'
-                                        ]) ?>
+                                        ]) ?> -->
 
                                         <?= Html::a(Yii::t('app', 'Library') . ' <span>></span>', 'https://library.buketov.edu.kz/', [
                                             'class' => 'menu-item',
@@ -273,25 +273,25 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <p><?= Yii::t('app', 'We are on social networks') ?></p>
 
                                     <div class="researchCenter">
-                                        <?= Html::a(Yii::t('app', 'Institute of Molecular Nanophotonics') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Molecular Nanophotonics'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Center for Nanotechnology and Nanomaterials') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific Center "Nanotechnology and functional nanomaterials"'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Institute of Chemical Problems') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-Research Institute of Chemical Issues'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Center of Applied Chemistry') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Applied Chemistry" scientific-research center'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Physico-Chemical Research') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Laboratory of engineering profile "Physic-chemical methods of research"'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Biotechnology Research Park') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Biotechnology and Eco-Monitoring Research Park'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Applied Mechanics and Robotics') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Laboratory "Applied Mechanics and Robotics"'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Institute of Digital Economy') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of digital economy research'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Institute of Law and State Studies') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-research institute of legal research and state studies'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Institute of Spiritual Heritage') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute for the Study of the Spiritual Heritage of the Kazakh People'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Institute of Applied Mathematics') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Religious Situation in Kazakhstan') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Research Laboratory of the Comprehensive Study of the Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Saryarka Archaeological Institute') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Center for Inclusive Education') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Resource Center for Inclusive and Special Education'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article', 'type' => 'scientific-research-centers', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Molecular Nanophotonics') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Institute of Molecular Nanophotonics'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Nanotechnology and Nanomaterials') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific Center "Nanotechnology and functional nanomaterials"'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Chemical Problems') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific-Research Institute of Chemical Issues'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center of Applied Chemistry') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => '"Applied Chemistry" scientific-research center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Physico-Chemical Research') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Laboratory of engineering profile "Physic-chemical methods of research"'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Biotechnology Research Park') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Biotechnology and Eco-Monitoring Research Park'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Applied Mechanics and Robotics') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Research Laboratory "Applied Mechanics and Robotics"'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Digital Economy') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Institute of digital economy research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Law and State Studies') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific-research institute of legal research and state studies'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Spiritual Heritage') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Institute for the Study of the Spiritual Heritage of the Kazakh People'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Institute of Applied Mathematics') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Religious Situation in Kazakhstan') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Research Laboratory of the Comprehensive Study of the Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Saryarka Archaeological Institute') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Inclusive Education') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Resource Center for Inclusive and Special Education'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
 
 
                                     </div>

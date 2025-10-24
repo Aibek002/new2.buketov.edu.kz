@@ -20,7 +20,16 @@
   --light-blue-accent: #2c5ca9;
   /* Средний синий для акцентов/hover */
   --button-bg: #3f51b5;
-  /* Цвет кнопок */
+  --primary-blue: #2c5ca9;
+  /* Основной синий цвет */
+  --light-background: #ffffff;
+  /* Белый фон блока */
+  --text-color-dark: #333333;
+  /* Темный текст для контраста */
+  --text-color-medium: #555;
+  /* Серый текст для основного контента */
+  --off-white: #eef2f7;
+  /* Очень светлый серый/фон страницы */
   --white: #ffffff;
   --gold-accent: #ffc107;
   --font-main: 'Roboto', sans-serif;
@@ -137,29 +146,58 @@
 } */
 /* Основной контейнер */
 .title-content {
-  /* Основные стили блока */
-  background: var(--indigoblue);
-  padding: 20px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  margin: 30px auto;
-  color: var(--text-color);
-  text-align: center;
+  background: var(--light-background);
+  padding: 30px 40px;
+  border-radius: 20px;
+  margin: 40px auto;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 0 0 4px var(--off-white) inset;
+
+  /* Текст и Шрифт */
+  color: var(--text-color-dark);
+  text-align: left;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: default;
-  line-height: 1.4;
+  line-height: 1.6;
 
-  /* Анимация и hover */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Анимация для интерактивности */
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
 }
 
-/* Стиль при наведении (Hover) */
+.title-content span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  /* Синий акцент */
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--off-white);
+  /* Светлый разделитель */
+}
+
+/* Стилизация Параграфа */
+.title-content .text-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color-medium);
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+/* 🔥 Эффект наведения (Hover Effect) - доступен только в отдельном CSS */
 .title-content:hover {
-  transform: scale(1.01);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  /* Блок "подлетает" */
+  transform: translateY(-5px);
+  /* Тень становится немного глубже */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 4px var(--off-white) inset;
 }
 
-/* Заголовок "Document's" */
+/* Заголовок "Document's"
 .title-content h2 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -167,7 +205,7 @@
   margin-bottom: 5px;
 }
 
-/* Имя диссертанта */
+
 .title-content p {
   font-size: 1.5rem;
   font-weight: 600;
@@ -176,7 +214,7 @@
   border-bottom: 2px solid var(--light-blue-accent);
   padding-bottom: 10px;
   margin-bottom: 25px;
-}
+} */
 
 /* Контейнер для кнопок (Flexbox) */
 .button-section {
@@ -192,36 +230,23 @@
 /* Стили для всех кнопок */
 .button-section button,
 .button-section a {
-  /* Визуальные стили */
-  background: var(--indigoblue-font);
-  color: var(--white);
-  border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  border: 1px solid #1d4585;
+  background: linear-gradient(180deg, #4d8ad4 0%, #2c5ca9 100%);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 15px 15px;
+  border-radius: 10px;
   cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-
-  /* Flexbox и выравнивание */
-  flex: 1 1 280px;
-  min-width: 280px;
-  line-height: 1.2;
-
-  /* Анимация и hover */
-  transition: all 0.2s ease;
+  box-shadow: 0 8px #1d4585;
+  flex: 1 1 300px;
 }
 
-/* Стили при наведении на кнопки (Hover) */
-.button-section button:hover,
-.button-section a:hover {
-  background: var(--white) !important;
-  color: var(--indigoblue-font);
-  /* Насыщенный синий при наведении */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
+
 
 /* 
 .title-content h5 {
@@ -231,29 +256,6 @@
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 } */
-/* Основной контейнер */
-.title-content {
-  /* Базовые стили блока */
-  background: var(--indigoblue);
-  padding: 20px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  margin: 30px auto;
-  color: var(--white);
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: default;
-  line-height: 1.4;
-
-  /* Анимация и hover */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Стиль при наведении на основной блок (Hover) */
-.title-content:hover {
-  transform: scale(1.01);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-}
 
 /* Стиль для текста внутри title-content */
 .title-content-text {
@@ -267,50 +269,6 @@
   border-bottom: 2px solid var(--light-blue-accent);
 }
 
-/* Контейнер для кнопок (Flexbox) */
-.button-section {
-  /* Flexbox для красивого, ровного распределения */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* Центрирование кнопок, если их мало */
-  align-items: stretch;
-  gap: 15px;
-  /* Увеличил отступ */
-  margin-top: 25px;
-  /* Отступ от заголовка */
-}
-
-/* Стили для всех кнопок */
-.button-section button {
-  /* Визуальные стили */
-  background-color: var(--button-bg);
-  color: white;
-  border: none;
-  padding: 15px 25px;
-  /* Увеличенные отступы для лучшей читабельности */
-  border-radius: 8px;
-  font-size: 1.05rem;
-  /* Более крупный шрифт */
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  white-space: normal;
-  /* Разрешить перенос текста */
-  line-height: 1.2;
-  height: auto;
-
-  transition: all 0.2s ease;
-}
-
-/* Стили при наведении на кнопки (Hover) */
-.button-section button:hover {
-  background-color: var(--light-blue-accent) !important;
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
 
 .modal-pdf {
   display: none;
@@ -372,56 +330,28 @@
 
 .select-section {
   display: grid;
-  /* Используем minmax для гибкости, 
-           но также позволяем кнопкам растягиваться на всю ширину на маленьких экранах */
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
-  /* Увеличил отступ между кнопками */
   margin: 50px auto;
-  /* Центрируем блок, если он не на всю ширину */
-  padding: 0 15px;
-  /* Отступы по бокам для адаптивности */
 }
 
 .select-section button {
-  /* Общие стили кнопок */
-  border: none;
-  /* Убираем стандартную рамку */
-  background: var(--indigoblue);
-  /* Светло-серый фон по умолчанию */
-  color: var(--white);
-  /* Темно-синий текст */
-  font-size: 1.15rem;
-  /* Немного увеличил шрифт для лучшей читабельности */
-  font-weight: var(--font-700);
-  padding: 20px 25px;
-  /* Увеличил вертикальный и горизонтальный padding */
-  border-radius: 12px;
-  /* Более мягкие скругленные углы для всех кнопок */
+  border: 1px solid #1d4585;
+  background: linear-gradient(180deg, #4d8ad4 0%, #2c5ca9 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 15px 25px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all .3s ease;
-  /* Плавный переход для всех свойств */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Мягкая тень */
   outline: none;
-  /* Убираем синюю обводку при фокусе */
   text-transform: uppercase;
-  /* Текст в верхнем регистре для акцента */
   letter-spacing: 0.5px;
-  /* Небольшой межбуквенный интервал */
+  text-align: center;
+  box-shadow: 0 8px #1d4585;
+  transform: translateY(0);
 }
 
-/* Стили при наведении на кнопки */
-.select-section button:hover {
-  background: var(--white);
-  /* Градиент при наведении */
-  color: var(--indigoblue-font);
-  /* Белый текст при наведении */
-  transform: translateY(-3px) scale(1.02);
-  /* Легкий подъем и увеличение */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  /* Более выраженная тень */
-}
 
 b,
 strong {
@@ -484,66 +414,98 @@ strong {
         color: #fff;
     } */
 .person-section {
+
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 20px;
   display: flex;
-  gap: 50px;
-  height: 300px;
-  padding-inline: 50px;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 30px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+
+/* Изображение персоны (УВЕЛИЧЕНО) */
+.person-img {
+  flex-basis: 160px;
+  /* Увеличенная фиксированная ширина */
+  flex-shrink: 0;
 }
 
 .person-img img {
-  width: 300px;
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #eef2f7;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.person-section .person-fio {
-  font-size: var(--font-22);
-  font-family: 'Courier New', Courier, monospace;
-  color: #fff;
-}
-
+/* Основная информация о персоне */
 .person-info {
-  font-size: var(--font-18);
-  padding-inline-end: 5%;
-  text-align: left;
+  flex-grow: 1;
+  min-width: 280px;
 }
 
-.person-section .person-position {
-  font-size: var(--font-16);
-  font-weight: var(--font-300);
-  font-family: 'Courier New', Courier, monospace;
-  color: #fff;
-
+.person-fio {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c5ca9;
+  margin: 0 0 5px 0;
 }
 
-.person-section .person-info {
-  font-size: var(--font-14);
-  font-family: 'Courier New', Courier, monospace;
-  color: #fff;
-
+.person-position {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0 0 15px 0;
+  font-style: normal;
 }
 
+.person-info p.person-info {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #777;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Контакты */
 .person-email {
+  flex-basis: 250px;
+  flex-shrink: 0;
+  text-align: right;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .person-email .phone,
 .person-email .email {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.person-email .phone a,
-.person-email .email a {
-  font-size: var(--font-18);
-  font-family: 'Courier New', Courier, monospace;
-  color: #fff;
+.person-email img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  filter: invert(28%) sepia(35%) saturate(2360%) hue-rotate(195deg) brightness(97%) contrast(85%);
+}
+
+.person-email a {
+  color: #2c5ca9;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
-.person-email .phone img,
-.person-email .email img {
-  width: 20px;
+.person-email a:hover {
+  text-decoration: underline;
+  color: #1d4585;
 }
 
 /* ========== CAROUSEL CONTAINERS ========== */
@@ -1493,7 +1455,6 @@ body {
 
 .admission-slider-first-part {
   gap: 3%;
-  padding-block: 2%;
 }
 
 /* ========== ICON BOX ========== */

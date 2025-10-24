@@ -272,7 +272,7 @@ return [
     => 'Абитуриенты могут обратиться в Приёмную комиссию для получения консультации о правилах поступления, сроках и порядке подачи документов, а также прохождения подготовительных курсов по дисциплинам ЕНТ.',
     'Barykova Alena Rudolfovna'
     => 'Барикова Алёна Рудольфовна',
-     "Reception schedule for citizens" => "График приёма граждан",
+    "Reception schedule for citizens" => "График приёма граждан",
     "Day" => "День",
     "Time (Уақыты / Время)" => "Время",
     "Responsible person" => "Ответственный",
@@ -283,6 +283,27 @@ return [
     "Friday" => "Пятница",
     "Specialist" => "Специалист",
     "Commission secretary" => "Секретарь комиссии",
-    "*Reception is conducted by prior appointment. For more information, you can call by phone." 
-        => "*Приём проводится по предварительной записи. Более подробную информацию можно получить по телефону.",
+    "*Reception is conducted by prior appointment. For more information, you can call by phone."
+    => "*Приём проводится по предварительной записи. Более подробную информацию можно получить по телефону.",
+    'Councils' => 'Советы',
+    'Academic Council' => "Ученый Совет",
+    "The Academic Council is an elected collegial body.The Council is responsible for evaluating the implementation of the University's strategic objectives.The Board is headed by the Chairman of the Board, the Rector of the University.The Board consists of members of the Management Board, representatives of the faculty, administrative and managerial staff, students.The members of the Council are elected by secret ballot for a term of 3 years.The Council's work takes place in a meeting mode with a frequency of once a month." => "Ученый совет является выборным коллегиальным органом.Совет отвечает за оценку реализации стратегических целей университета. Совет возглавляет председатель Совета, ректор университета.В состав Совета входят члены Правления, представители профессорско-преподавательского состава, административно-управленческого персонала, студенты. Члены Совета избираются тайным голосованием сроком на 3 года. Работа Совета проходит в режиме заседаний с периодичностью один раз в месяц.",
+    "Academic Secretary of the Council" => "Ученый секретарь Совета",
+    "Tutinova Nurgul Yerkanatovna" => "Тутинова Нургуль Ерканатовна",
+    "Scientific Secretary of the Council" => "Ученый секретарь Совета",
+    "Tutinova Nurgul Yerkanatovna is an Associate Professor of the Department of Philosophy and Theory of Culture, PhD, Scientific Secretary."
+    => "Тутинова Нургуль Ерканатовна — ассоциированный профессор кафедры философии и теории культуры, доктор PhD, учёный секретарь.",
+    "Regulation on the Academic Council" => "Положение об Ученом совете",
+    "Report of the Chairman of the Board – Rector on the university's activities for the academic year and on the tasks for the upcoming academic year."
+    => "Отчет Председателя Правления – Ректора о деятельности университета за учебный год и о задачах на предстоящий учебный год.",
+    'Draft decisions of the Academic Council' => 'Проекты решений Ученого совета',
+    'Report of the Chairman of the Management Board' => 'Отчет Председателя Правления',
+    'Other documents' => 'Прочие документы',
+    'Applicants for academic titles' => 'Соискатели ученых званий',
+    "Open page" => "Открыть страницу",
+    'Document`s' => 'Документы',
+    'Doctoral students` documents' => 'Документы докторантов',
+    'Regulatory documents' => 'Нормативные документы',
+    'Working hours:' => 'График работы:',
+    'Monday – Friday 09:00 - 17:00' => 'Понедельник – Пятница 09:00 - 17:00',
 ];

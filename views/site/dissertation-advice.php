@@ -17,8 +17,9 @@ DessertationJobAsset::register($this);
     ?>
     <?php if ($secretary !== null && is_array($secretary)): ?>
         <div class="title-content">
-            Учёный секретарь диссовета по - <strong><?= $dissertation_name ?></strong> Карагандинского университета имени
-            академика Е. А. Букетова
+            <span> Учёный секретарь диссовета по - <?= $dissertation_name ?> Карагандинского университета
+                имени
+                академика Е. А. Букетова</span>
             <div class="person-section my-5">
                 <div class="person-img">
                     <img width="100%"
@@ -45,9 +46,11 @@ DessertationJobAsset::register($this);
                             <?= $secretary['information'] ?? 'не задано'; ?>
                         </i></p>
                     <strong class="person-info">
-                        График работы:
-                        <i> Понедельник – пятница 09:00 - 17:00</i>
-                        </i></strong>
+                        <?= Yii::t("app", "Working hours:") ?>
+                        <i>
+                            <?= Yii::t("app", "Monday – Friday 09:00 - 17:00") ?>
+                        </i>
+                    </strong>
 
 
 
@@ -63,12 +66,14 @@ DessertationJobAsset::register($this);
             </div>
         </div>
     <?php endif; ?>
-    <div class="title-content"><?= Yii::t('app', 'Regulatory documents') ?></div>
-    <div class="button-section">
-        <?php foreach ($normative as $document): ?>
-            <button
-                onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $document->path_file) ?>','.first')"><?= $document->fileName ?></button>
-        <?php endforeach; ?>
+    <div class="title-content">
+        <span><?= Yii::t('app', 'Regulatory documents') ?></span>
+        <div class="button-section">
+            <?php foreach ($normative as $document): ?>
+                <button
+                    onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $document->path_file) ?>','.first')"><?= str_replace([".pdf", ".doc", ".docx", "(1)"], '', $document->fileName) ?></button>
+            <?php endforeach; ?>
+        </div>
     </div>
     <div id="pdfModal" class="modal-pdf">
         <span class="close-pdf-btn" onclick="document.getElementById('pdfModal').style.display='none';">&times;</span>
@@ -79,38 +84,36 @@ DessertationJobAsset::register($this);
             </iframe>
         </div>
     </div>
-    <div class="title-content"><?= Yii::t('app', 'Doctoral students` documents') ?></div>
+    <div class="title-content">
+        <span><?= Yii::t('app', 'Doctoral students` documents') ?></span>
+        <?php if (empty($diss)): ?>
+            <div class="button-section">
 
+                <h1 style="color:var(--indigoblue-font);text-align:center">Докторантов нет</h1>
+            </div>
+        <?php else: ?>
 
-    <?php if (empty($diss)): ?>
-        <div class="button-section">
-
-            <h1 style="color:var(--indigoblue-font);text-align:center">Докторантов нет</h1>
-        </div>
-    <?php else: ?>
-        <div class="button-section">
+            <div class="button-section">
+                <?php foreach ($diss as $doctorant => $items): ?>
+                    <button onclick="openDissJob('<?= str_replace(['  '], '-', $doctorant) ?>')"><?= $doctorant ?></button>
+                <?php endforeach; ?>
+            </div>
             <?php foreach ($diss as $doctorant => $items): ?>
-                <button onclick="openDissJob('<?= str_replace(['  '], '-', $doctorant) ?>')"><?= $doctorant ?></button>
-            <?php endforeach; ?>
-        </div>
-        <?php foreach ($diss as $doctorant => $items): ?>
-            <div class="document" id="staff-<?= str_replace(['  '], '-', $doctorant) ?>">
-                <div class="title-content"><?= "<h2>" . Yii::t('app', 'Document`s') . "</h2>" . '<p>' . $doctorant . "</p>" ?>
+                <div class="my-3 document" id="staff-<?= str_replace(['  '], '-', $doctorant) ?>">
+                    <?= "<span>" . Yii::t('app', 'Document`s') . ' - ' . $doctorant . "</span>" ?>
 
                     <div class="button-section">
                         <?php foreach ($items as $item): ?>
                             <button
-                                onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= $item['fileName'] ?></button>
+                                onclick="openGeneralRulesPdf('<?= str_replace(['/var/www/html/yii2/', '..'], '', $item['path_file']) ?>','.second')"><?= str_replace([".pdf", ".doc", ".docx", "(1)"], '', $item['fileName']) ?></button>
 
                         <?php endforeach; ?>
                     </div>
-
                 </div>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
 
-    <div class="d-flex justify-content-center second">
-        <embed class="general-ds-pdf" src="" width="50%" height="600" type="application/pdf">
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
+</div>
+
 </div>

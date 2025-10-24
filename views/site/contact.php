@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты | Университет</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
 
   <!-- Contact Section -->
   <section class="max-w-6xl mx-auto p-6 my-5 py-12">
-    <h2 class="title-content"><strong class="text-white">Контакты</strong></h2>
-    
-    <div class="grid md:grid-cols-1 gap-8">
-      
-      <!-- Контактная информация -->
-      <div class="bg-white shadow-lg rounded-2xl p-8">
-        <h3 class="text-xl font-semibold mb-4">Свяжитесь с нами</h3>
-        <p class="mb-4">Мы всегда открыты для ваших вопросов и предложений.</p>
-        
-        <ul class="space-y-4">
-          <li>
-            <span class="font-semibold">Адрес:</span><br>
-            г. Караганда, ул. Университетская 28
-          </li>
-          <li>
-            <span class="font-semibold">Телефон:</span><br>
-            +7 (7212) 12-34-56
-          </li>
-          <li>
-            <span class="font-semibold">Email:</span><br>
-            info@university.kz
-          </li>
-          <li>
-            <span class="font-semibold">Часы работы:</span><br>
-            Пн–Пт: 9:00 – 18:00
-          </li>
-        </ul>
+    <div class="title-content"><span>Контакты</span>
+
+      <div class="grid md:grid-cols-1 gap-8">
+
+        <!-- Контактная информация -->
+        <div class="">
+          <h3 class="text-xl font-semibold mb-4">Свяжитесь с нами</h3>
+          <p class="mb-4">Мы всегда открыты для ваших вопросов и предложений.</p>
+
+          <ul class="space-y-4">
+            <li>
+              <span class="font-semibold">Адрес:</span><br>
+              г. Караганда, ул. Университетская 28
+            </li>
+            <li>
+              <span class="font-semibold">Телефон:</span><br>
+              +7 (7212) 12-34-56
+            </li>
+            <li>
+              <span class="font-semibold">Email:</span><br>
+              info@university.kz
+            </li>
+            <li>
+              <span class="font-semibold">Часы работы:</span><br>
+              Пн–Пт: 9:00 – 18:00
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Форма обратной связи
@@ -65,4 +68,5 @@
 
 
 </body>
+
 </html>

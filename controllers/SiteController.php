@@ -172,7 +172,7 @@ class SiteController extends Controller
         // print_r($ranking);die;
 
         return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
+        // return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
 
     }
     public function actionFaculty($name)
@@ -266,15 +266,21 @@ class SiteController extends Controller
     public function actionArticle($type = null, $title = null, $ref_article_id = null, $ref_image_id = null)
     {
         $lang = Yii::$app->language;
-        if ($ref_article_id === null) {
+        if ($ref_article_id !== null && $title !== null) {
             $article = Article::find()
-                ->joinWith(['refArticle']) // 'refArticle' — имя связи в модели Article
+                ->select([
+                    LanguageHelper::title() . ' AS title',
+                    LanguageHelper::content() . ' AS content',
+                ])
                 ->where([
-                    'ref_article.type' => $type,
-                    'article.title_en' => $title,
+                    'ref_article_id' => $ref_article_id,
+                    'title_en' => $title,
 
                 ])
-                ->one();
+                ->asArray()
+                ->all();
+            // print_r($article);
+            // die;
         } else {
             $article = Article::find()
                 ->select([

@@ -34,27 +34,43 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".uchenie-sovet").style.display = "block";
 });
 
-
-
 function redirect(link) {
   window.location = href = link;
 }
 
 function openBoxDraft(year) {
-  const draftDocs = document.querySelectorAll(
-    '[class*="draft-"]'
-  );
+  const draftDocs = document.querySelectorAll('[class*="draft-"]');
   draftDocs.forEach((el) => {
     el.classList.remove("active");
   });
   document.querySelector(`.draft-${year}`).classList.add("active");
 }
 function openBoxReport(year) {
-  const draftDocs = document.querySelectorAll(
-    '[class*="report-"]'
-  );
+  const draftDocs = document.querySelectorAll('[class*="report-"]');
   draftDocs.forEach((el) => {
     el.classList.remove("active");
   });
   document.querySelector(`.report-${year}`).classList.add("active");
+}
+
+function openCouncilPDF(file_link) {
+  const modal = document.getElementById("pdfModal");
+  const iframe = document.getElementById("pdfIframe");
+
+  if (!modal || !iframe) {
+    console.error("Элемент модального окна не найден.");
+    return;
+  }
+
+  // Очистка и обновление источника iframe
+  iframe.src = "";
+
+  // Небольшая задержка для корректного сброса src в некоторых браузерах
+  setTimeout(() => {
+    iframe.src =
+      "https://docs.google.com/gview?url=https://new.buketov.edu.kz" +
+      file_link +
+      "&embedded=true";
+    modal.style.display = "flex"; // Показываем модальное окно
+  }, 50);
 }
