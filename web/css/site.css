@@ -430,8 +430,26 @@ strong {
 /* Изображение персоны (УВЕЛИЧЕНО) */
 .person-img {
   flex-basis: 160px;
-  /* Увеличенная фиксированная ширина */
+  position: relative;
   flex-shrink: 0;
+}
+
+.person-img .icon {
+
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  background: linear-gradient(135deg, #a7b7c9, #eef3f7);
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #1a2a5b;
+  box-shadow: 0 0 15px #007BFF;
+
 }
 
 .person-img img {
@@ -442,6 +460,8 @@ strong {
   border-radius: 50%;
   border: 5px solid #eef2f7;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #f9f9fb,
+    0 0 0 10px rgba(0, 123, 255, 0.1), 0 0 0 20px rgba(0, 123, 255, 0.05);
 }
 
 /* Основная информация о персоне */
