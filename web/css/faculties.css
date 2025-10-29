@@ -1,11 +1,12 @@
 .faculty-hero {
-    background: url('https://backend.narxozedu.kz/uploads/February2025/e8057854-16bd-4ea3-8135-817ff6b6330c/thumbnail.webp') no-repeat center center / cover;
-    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://backend.narxozedu.kz/uploads/February2025/e8057854-16bd-4ea3-8135-817ff6b6330c/thumbnail.webp) no-repeat center center / cover;
+    height: 85vh;
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
 }
 
 .link-button {
@@ -15,26 +16,31 @@
 
 .faculty-overlay {
     background: var(--indigoblue-50);
-    width: 60%;
-    /* height: 100%;  */
+    width: 45%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 5vw;
+    padding: 30px 5vw;
     color: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 10px 10px 0;
 }
 
 .faculty-overlay h1 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 4.5vw;
-    margin: 0 0 10px 0;
-    line-height: 1;
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    font-weight: 800;
+    font-size: 3.5vw;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    filter: drop-shadow(8px 8px 16px #C8CDD3, -8px -8px 16px #ffffff);
+    text-shadow: -4px -4px 8px rgba(255, 255, 255, 0.4), 4px 4px 8px rgba(31, 59, 110, 0.79);
 }
 
 .faculty-overlay p {

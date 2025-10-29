@@ -17,14 +17,20 @@ DessertationJobAsset::register($this);
     ?>
     <?php if ($secretary !== null && is_array($secretary)): ?>
         <div class="title-content">
-            <span> Учёный секретарь диссовета по - <?= $dissertation_name ?> Карагандинского университета
-                имени
-                академика Е. А. Букетова</span>
+            <span>
+                <?= Yii::t('app', 'Учёный секретарь диссовета по - {name} Карагандинского университета имени академика Е. А. Букетова', [
+                    'name' => $dissertation_name,
+                ]) ?>
+            </span>
+
             <div class="person-section my-5">
                 <div class="person-img">
                     <img width="100%"
                         src="https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg"
                         alt="">
+                    <div class="icon">
+                        🎓
+                    </div>
                 </div>
                 <div class="person-info">
                     <p class="person-fio">
