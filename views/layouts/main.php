@@ -107,7 +107,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                         <?= Html::a(
                                             Yii::t('app', 'We are in the Rankings') . ' <span>></span>',
-                                            ['site/article', 'ref_article_id' => 3,'ref_image_id' => 10 ],
+                                            ['site/article', 'ref_article_id' => 3, 'ref_image_id' => 10],
                                             ['class' => 'menu-item']
                                         ) ?>
 
@@ -159,11 +159,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(
-                                            Yii::t('app', 'For International Students') . ' <span>></span>',
-                                            ['site/international-students'],
-                                            ['class' => 'menu-item']
-                                        ) ?>
+                                        <?= Html::a(Yii::t('app', 'Education of International Students') . ' <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
+
 
                                         <?= Html::a(
                                             Yii::t('app', 'Student Dormitory Information') . ' <span>></span>',
@@ -182,6 +179,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <!-- <?= Html::a(Yii::t('app', 'Campus Life') . ' <span>></span>', '#', [
                                             'class' => 'menu-item'
                                         ]) ?> -->
+                                        <?= Html::a(Yii::t('app', 'Education of International Students') . ' <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
 
                                         <?= Html::a(Yii::t('app', 'Library') . ' <span>></span>', 'https://library.buketov.edu.kz/', [
                                             'class' => 'menu-item',
@@ -286,12 +284,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <?= Html::a(Yii::t('app', 'Institute of Applied Mathematics') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
                                         <?= Html::a(Yii::t('app', 'Laboratory of Religious Situation in Kazakhstan') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Research Laboratory of the Comprehensive Study of the Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
                                         <?= Html::a(Yii::t('app', 'Saryarka Archaeological Institute') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
                                         <?= Html::a(Yii::t('app', 'Center for Inclusive Education') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Resource Center for Inclusive and Special Education'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
 
 
                                     </div>

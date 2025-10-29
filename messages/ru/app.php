@@ -308,5 +308,183 @@ return [
     'Monday – Friday 09:00 - 17:00' => 'Понедельник – Пятница 09:00 - 17:00',
     'Professors' => 'Профессора',
     'Associative professors' => 'Ассоциированные профессора',
+    'Ethics Council' => 'Совет по этике',
+    "The Ethics Council is an advisory body that considers issues of labor discipline, compliance with anti-corruption legislation, the Code of Corporate Ethics, and the University's Academic Integrity Rules. You can contact the Council in cases of violation of your academic, official, or labor rights, or in case of conflict situations in the team. A written appeal can be submitted personally through the University's Office, by corporate e-mail: office@ksu.kz, or via the website in the 'Feedback' section (Blog of the Chairman of the Board-Rector, Blog of the Vice-Rector for Social and Cultural Development). The Council includes the chairman of the university's trade union, representatives of students, the head of the Legal Department, the Human Resources Department, and representatives of administrative staff. The Chairman of the Ethics Council is the Vice-Rector for Social and Cultural Development. The composition of the Council is approved by the order of the Chairman of the Board-Rector of the university. The Council meets as needed."
+    =>
+        "Совет по этике является консультативно-совещательным органом, рассматривающим вопросы трудовой дисциплины, соблюдения антикоррупционного законодательства, Кодекса корпоративной этики, Правил академической честности университета. Вы можете обратиться в Совет в случаях нарушения ваших академических, должностных, трудовых прав, возникновения конфликтных ситуаций в коллективе. Подать письменное обращение можно лично через Канцелярию университета, на корпоративный e-mail: office@ksu.kz или зайдя на сайт в раздел «Обратная связь» (Блог Председателя Правления-Ректора, Блог проректора по социально-культурному развитию). В состав Совета входят председатель профсоюзного союза университета, представители студенчества, руководитель Юридического управления, Управления персоналом и представители административно-управленческого персонала. Председателем Совета по этике является проректор по социально-культурному развитию. Состав Совета утверждается приказом председателя Правления-ректором университета. Совет созывается по мере необходимости.",
+    'Scientific and Technical Council' => 'Научно-технический совет',
+    'The Scientific and Technical Council is a collegial body authorized to manage the university\'s research activities. The Council is responsible for evaluating the implementation of the university\'s strategic program in science and for reviewing the scientific works of university researchers. The Council includes deputy deans for research of faculties, heads of university research institutes, the Postgraduate Education Department, the Science and Commercialization Department, and the chairman of the Council of Young Scientists. The Council is headed by the Vice-Rector for Research. Members of the Scientific and Technical Council are delegated by faculties or included by position. The Council meets at least once a month.'
+    =>
+        'Научно-технический совет является коллегиальным органом, который уполномочен управлять научно-исследовательской деятельностью университета. В компетенцию Совета входит оценка реализации стратегической программы университета в области науки, экспертиза научных трудов ученых университета. В состав Совета входят заместители деканов по научной работе факультетов, руководители НИИ университета, Управления послевузовского образования, Управления науки и коммерциализации, председатель Совета молодых ученых. Возглавляет Совет проректор по научной работе. Члены Научно-технического совета делегируются факультетами или входят в него по должности. Работа Совета проходит в режиме заседаний с периодичностью не менее одного раза в месяц.',
+    'Academic Council' => 'Академический совет',
+    'Academic Council text' => 'Академический совет является коллегиальным органом, который уполномочен управлять научно-методической деятельностью университета. В компетенцию Совета входит давать оценку качеству реализации образовательных программ, их методической обеспеченности. Академический совет включает академический комитет по вопросам методического обеспечения образовательного процесса, академический комитет по проектированию и экспертизе образовательных программ, Комиссию по оценке качества преподавания. В работе академических комитетов Академического совета принимают участие руководители подразделений, отвечающих за организацию процесса обучения, опытные преподаватели, представляющие факультеты, обучающиеся и работодатели. Возглавляет Совет член Правления по академическим вопросам-проректор. Члены Совета делегируются факультетами или входят в него по должности. Работа Совета проходит в режиме заседаний с периодичностью один раз в два месяца.',
+    'Academic Council' => 'Академический совет',
+    'Scientific and Technical Council' => 'Научно-технический совет',
+    'Ethics Council' => 'Совет по этике',
+    'Scientific Council' => 'Ученый совет',
+    'Work plan of the Council for the current year' => 'План работы Совета на текущий год',
+    'Composition of the Academic Council for the current academic year' => 'Состав Академического совета на текущий учебный год',
+    'Composition of the Council for the current year' => 'Состав Совета на текущий год',
+    'Plan of the Academic Council Meetings for 2024–2025' => 'План заседаний Учёного совета на 2024–2025 учебный год',
+    'Agenda Items' => 'Повестка заседания',
+    'Date' => 'Дата',
+    'Responsible Persons' => 'Ответственные лица',
+    'On the objectives and main directions of the Academic Council work for the 2024–2025 academic year' => 'О целях и основных направлениях работы Учёного совета в 2024–2025 учебном году',
+    'September' => 'Сентябрь',
+    'Chairman of the Academic Council' => 'Председатель Учёного совета',
+    'On students’ academic performance results for the 2023–2024 academic year and the introduction of new approaches to student knowledge assessment' => 'О результатах успеваемости студентов за 2023–2024 учебный год и внедрении новых подходов к оценке знаний студентов',
+    'Head of Registrar’s Office' => 'Руководитель офиса регистратора',
+    'On the results of the survey “Student satisfaction with the organization of the examination session”' => 'О результатах опроса «Удовлетворенность студентов организацией экзаменационной сессии»',
+    'Head of Quality Assurance Department' => 'Руководитель отдела обеспечения качества образования',
+    'Miscellaneous, including the results of the expertise of teaching and methodological literature by faculty' => 'Разное, включая результаты экспертизы учебно-методической литературы преподавателями',
+    'On planning and implementing activities for methodological support of young teachers' => 'О планировании и реализации мероприятий по методической поддержке молодых преподавателей',
+    'November' => 'Ноябрь',
+    'Head of the Department of DiPPP' => 'Заведующий кафедрой ДИПП',
+    'On the results of monitoring the quality of teaching and methodological materials implemented at the Faculty of Foreign Languages' => 'О результатах мониторинга качества учебно-методических материалов, реализуемых на факультете иностранных языков',
+    'Chair of the Quality Assurance Commission of the Faculty of Foreign Languages' => 'Председатель комиссии по обеспечению качества факультета иностранных языков',
+    'Employer satisfaction with the quality of training of graduates of the Faculty of Biology and Geography' => 'Об удовлетворенности работодателей качеством подготовки выпускников факультета биологии и географии',
+    'Chair of the Quality Assurance Commission of the Faculty of Biology and Geography' => 'Председатель комиссии по обеспечению качества факультета биологии и географии',
+    'December' => 'Декабрь',
+    'On the results of the Teaching Quality Assurance Commission work in the 1st semester of the 2024–2025 academic year' => 'О результатах работы Комиссии по обеспечению качества обучения за 1 семестр 2024–2025 учебного года',
+    'Head of the Commission' => 'Председатель комиссии',
+    'Analysis of the availability and content of educational video content for distance learning programs for 2024 by faculty' => 'Анализ доступности и содержания образовательного видеоконтента по программам дистанционного обучения на 2024 год',
+    'Head of the Center for Distance Education' => 'Руководитель центра дистанционного обучения',
+    'On the forms of cooperation between the departments of the Faculty of Philosophy and Psychology and employers, and the effectiveness of departmental branches' => 'О формах сотрудничества кафедр факультета философии и психологии с работодателями и эффективности кафедральных филиалов',
+    'Chair of the Quality Assurance Commission of the Faculty of Philosophy and Psychology' => 'Председатель комиссии по обеспечению качества факультета философии и психологии',
+    'February' => 'Февраль',
+    'On the relevance and demand of bachelor’s, master’s, and doctoral programs' => 'О востребованности и актуальности программ бакалавриата, магистратуры и докторантуры',
+    'Director of the Department for Academic Affairs' => 'Директор департамента академических вопросов',
+    'On the cooperation of the Faculty of Education with educational organizations of Karaganda: results and prospects' => 'О сотрудничестве факультета педагогики с образовательными организациями Караганды: результаты и перспективы',
+    'Head of the Department of PIMNO' => 'Заведующий кафедрой ПИМНО',
+    'April' => 'Апрель',
+    'Ensuring the educational process with electronic materials (lectures, multimedia presentations) for the 2024–2025 academic year' => 'Обеспечение учебного процесса электронными материалами (лекции, мультимедийные презентации) на 2024–2025 учебный год',
+    'Analysis of the content of syllabi of economic disciplines' => 'Анализ содержания силлабусов экономических дисциплин',
+    'Chair of the Quality Assurance Commission of the Faculty of Economics' => 'Председатель комиссии по обеспечению качества факультета экономики',
+    'On the results of educational program accreditation' => 'О результатах аккредитации образовательных программ',
+    'June' => 'Июнь',
+    'On the quality of organization and effectiveness of research practice for master’s students' => 'О качестве организации и эффективности научной практики магистрантов',
+    'Head of Practice' => 'Руководитель практики',
+    'On the results of the Teaching Quality Assurance Commission work in the 2nd semester of the 2024–2025 academic year' => 'О результатах работы Комиссии по обеспечению качества обучения за 2 семестр 2024–2025 учебного года',
+    'On the implementation of the Academic Council decisions' => 'О выполнении решений Учёного совета',
+    'Commission' => 'Комиссия',
+    'Composition of the Academic Council' => 'Состав Ученого совета',
+    'The following composition of the Academic Council for the 2024–2025 academic year has been approved:'
+    => 'Утвержден следующий состав Ученого совета на 2024–2025 учебный год:',
+    'M.M. Umurkuloва — Chairperson, Member of the Board for Academic Affairs – Vice-Rector'
+    => 'М.М. Умуркулова — председатель, член Правления по академическим вопросам – проректор',
+    'T.M. Khasenova — Director of the Department of Academic Affairs'
+    => 'Т.М. Хасенова — директор департамента академической работы',
+    'S.V. Gagolina — Deputy Director of the Department of Academic Affairs, Candidate of Biological Sciences'
+    => 'С.В. Гаголина — заместитель директора департамента академической работы, кандидат биологических наук',
+    'S.L. Smailova — Deputy Director of the Department of Academic Affairs'
+    => 'С.Л. Смаилова — заместитель директора департамента академической работы',
+    'M.S. Abisheva — Deputy Director of the Department of Academic Affairs, Candidate of Philological Sciences, PhD'
+    => 'М.С. Әбишева — заместитель директора департамента академической работы, кандидат филологических наук, PhD',
+    'G.Zh. Zhetimekova — Head of the Distance Education Center'
+    => 'Г.Ж. Жетімекова — руководитель центра дистанционного образования',
+    'O.A. Tyan — Head of the Registrar’s Office, Candidate of Economic Sciences'
+    => 'О.А. Тян — руководитель офиса регистратора, кандидат экономических наук',
+    'G.Zh. Zhomartova — Chair of the Quality Assurance Commission of the Faculty of Biology and Geography, Senior Lecturer of the Department of Zoology'
+    => 'Г.Ж. Жомартова — председатель комиссии по обеспечению качества факультета биологии и географии, старший преподаватель кафедры зоологии',
+    'A.A. Palina — Chair of the Quality Assurance Commission of the Faculty of Foreign Languages, Assistant Professor of the Department of Theory and Methods of Foreign Language Training, PhD'
+    => 'А.А. Палина — председатель комиссии по обеспечению качества факультета иностранных языков, ассистент профессора кафедры теории и методики обучения иностранным языкам, PhD',
+    'A.Z. Zhumanova — Chair of the Quality Assurance Commission of the Faculty of History, Associate Professor of the Department of History of Kazakhstan and World History, PhD'
+    => 'А.З. Жуманова — председатель комиссии по обеспечению качества исторического факультета, доцент кафедры истории Казахстана и всеобщей истории, PhD',
+    'U.A. Kosybaeva — Chair of the Quality Assurance Commission of the Faculty of Mathematics and Information Technologies, Candidate of Pedagogical Sciences'
+    => 'У.А. Косыбаева — председатель комиссии по обеспечению качества факультета математики и информационных технологий, кандидат педагогических наук',
+
+    'Meeting №' => '№ заседания',
+    '№' => '№ п/п',
+    'Discussed issues' => 'Рассматриваемые вопросы',
+    'Month' => 'Месяц',
+    'Speakers' => 'Докладчики',
+
+    'Approval of the composition of the Scientific and Technical Council for the 2020–2021 academic year'
+    => 'Утверждение состава Научно-технического Совета на 2020–2021 учебный год',
+    'Approval of the work plan of the Scientific and Technical Council for the 2020–2021 academic year'
+    => 'Утверждение плана работы Научно-технического Совета на 2020–2021 учебный год',
+    'Approval of the university plan for holding international and republican conferences in 2021'
+    => 'Утверждение плана университета по проведению международных и республиканских конференций в 2021 году',
+    'Preparation for the conference dedicated to the 125th anniversary of N. Nurmakov and the 175th anniversary of A. Kunanbayev'
+    => 'О подготовке к конференции, посвященной 125-летию Н. Нурмакова и 175-летию А. Кунанбаева',
+    'Conducting pedagogical research by faculties, including inclusive education'
+    => 'О проведении факультетами научных исследований в области педагогики, включая инклюзивное образование',
+    'Approval of topics of master’s and doctoral dissertations, supervisors, and commission members'
+    => 'Утверждение тем магистерских и докторских диссертаций, научных руководителей и членов комиссий',
+    'Implementation of the work plan of the winners of the “Best University Teacher – 2019” grant'
+    => 'О ходе реализации плана работы обладателей гранта «Лучший преподаватель вуза – 2019»',
+    'Implementation of the university digitalization roadmap'
+    => 'Выполнение дорожной карты цифровизации университета',
+    'State and development prospects of university scientific journals'
+    => 'О состоянии и перспективах развития научных изданий университета',
+    'Implementation of calendar plans for fundamental, applied, and contractual research topics'
+    => 'О выполнении календарных планов фундаментальных, прикладных и хоздоговорных тем',
+
+    'August 2020' => 'Август 2020',
+    'September 2020' => 'Сентябрь 2020',
+    'October 2020' => 'Октябрь 2020',
+    'November 2020' => 'Ноябрь 2020',
+    'December 2020' => 'Декабрь 2020',
+
+    'Chairperson of STC' => 'Председатель НТС',
+    'Head of SRC' => 'Начальник УНК',
+    'Vice-Rector for Socio-Cultural Development, Head of SRC, Deputy Deans' => 'Проректор по соц.-культурному развитию, Начальник УНК, Зам. деканы',
+    'Deputy Dean of Pedagogical Faculty' => 'Зам. декана пед. факультета',
+    'Head of DPE' => 'Начальник УПО',
+    'Deputy Chairperson of STC' => 'Зам. председателя НТС',
+    'Deputy Deans for Research' => 'Зам. деканы по Научной работе',
+    'Commission' => 'Комиссия',
+    'Head of SRC, SRC Accountant' => 'Начальник УНК, бухгалтер УНК',
+    'Reception schedule for citizens' => 'График приёма граждан',
+    'Composition of the Council for the current year' => 'Состав Совета на текущий год',
+    'Syzdykov M.Zh. – Member of the Board, Vice-Rector for Social and Cultural Development, Chairman of the Council'
+    => 'Сыздыков М.Ж. – член Правления, проректор по социально-культурному развитию, председатель Совета',
+    'Sagintayeva S.S. – Member of the Board, Vice-Rector for Academic Affairs, Member of the Council'
+    => 'Сагинтаева С.С. – член Правления, проректор по академическим вопросам, член Совета',
+    'Moldabayev A.S. – Member of the Board, Vice-Rector for Administrative and Economic Affairs, Member of the Council'
+    => 'Молдабаев А.С. – член Правления, проректор по административно-хозяйственным вопросам, член Совета',
+    'Khasenova T.M. – Acting Director of the Department of Academic Affairs, Member of the Council'
+    => 'Хасенова Т.М. – и.о. директора департамента академических вопросов, член Совета',
+    'Toleubekov A.T. – Head of the Human Resources Department, Member of the Council'
+    => 'Толеубеков А.Т. – начальник отдела кадров, член Совета',
+    'Oleynik V.I. – Head of the Anti-Corruption Compliance Service, Member of the Council'
+    => 'Олейник В.И. – руководитель службы антикоррупционного комплаенса, член Совета',
+    'Baikenzhina Sh.T. – Head of the Legal Department, Member of the Council'
+    => 'Байкенжина Ш.Т. – начальник юридического отдела, член Совета',
+    'Kassymov S.S. – Director of the Department of Science, Member of the Council'
+    => 'Касымов С.С. – директор департамента науки, член Совета',
+    'Zhunusova M.K. – Chair of the University Trade Union, Member of the Council'
+    => 'Жунусова М.К. – председатель профсоюза университета, член Совета',
+    'Rakhimov A.S. – Master’s student of the Faculty of Philosophy and Psychology, Member of the Council'
+    => 'Рахимов А.С. – магистрант факультета философии и психологии, член Совета',
+    'Zhumzhumayev N.S. – Legal Specialist of the Legal Department, Secretary of the Council'
+    => 'Жумжумаев Н.С. – юрисконсульт юридического отдела, секретарь Совета',
+    "One-year Kazakh language training program. It takes into account the student's starting level. Persons without experience of learning the Kazakh language are accepted. Participants of the program will be offered advanced learning technologies that provide immersion in the language environment and develop skills of oral and written speech, as well as its perception.
+Upon completion of the program, the student will be proficient in Kazakh at least at the B1 level."
+    => "Одногодичная программа обучения казахскому языку. Учитывается исходный уровень студента. Принимаются лица без опыта изучения казахского языка. Участникам программы будут предложены современные технологии обучения, обеспечивающие погружение в языковую среду и развитие навыков устной и письменной речи, а также ее восприятия.",
+    "Foundation: Kazakh language training program" => "Фаундейшн: Программа обучения казахскому языку",
+    "Foundation" => "Фаундейшн",
+    "International students" => "Иностранные студенты",
+    " Send a request or a question about the possibility of studying at the university" => " Отправьте запрос или вопрос о возможности обучения в университете",
+    "The university currently offers several study formats for foreign citizens" => "В настоящее время университет предлагает несколько форматов обучения для иностранных граждан",
+    "Kazakh language training program" => "Программа обучения казахскому языку",
+    "Rusian language training program" => "Программа обучения русскому языку",
+    "English language training program" => "Программа обучения английскому языку",
+    "'Russian as a Foreign Language' program" => "Программа 'Русский как иностранный'",
+    "Exchange programs" => "Программы обмена",
+    "The University has experience in implementing exchange programs that can be tailored to the needs of incoming students. Before starting negotiations, you should study the proposals of our faculties and choose educational programs.
+By contacting the Office of International Cooperation, you will receive a list of subjects taught in the selected program, including in English." => 'В университете есть опыт реализации программ обмена, которые могут быть адаптированы под потребности приезжающих студентов. Перед началом переговоров следует изучить предложения наших факультетов и выбрать образовательные программы.
+Обратившись в Управление международного сотрудничества, вы получите список дисциплин, преподаваемых по выбранной программе, в том числе на английском языке.',
+    "The program 'Russian as a foreign language'" => "Программа 'Русский как иностранный'",
+    "The program is implemented in the bachelor's degree format and is designed for 4 years of study, or 240 credits. The student's starting level should be at least A2. The program's profile is aimed at training a Russian language teacher for a foreign-speaking audience. Students will study theoretical linguistics courses, a practical Russian language course, and methods of teaching it in a foreign language classroom. The training takes place in conditions of maximum immersion in the language environment, and provides live communication with native speakers of the Russian language. At the initial stage of training, English can be used for mediation purposes. The graduate of the program will be proficient in Russian at the C1 level."
+    => "Программа реализуется в формате бакалавриата и рассчитана на 4 года обучения, или 240 кредитов. Исходный уровень студента должен быть не ниже A2. Профиль программы направлен на подготовку преподавателя русского языка для иностранноязычной аудитории. Студенты будут изучать курсы теоретической лингвистики, практический курс русского языка и методику его преподавания в классе иностранного языка. Обучение проходит в условиях максимального погружения в языковую среду и обеспечивает живое общение с носителями русского языка. На начальном этапе обучения для целей медиативного общения может использоваться английский язык. Выпускник программы будет владеть русским языком на уровне C1.",
+    "One-year English language training program. It takes into account the student's starting level. The minimum level of language proficiency should be at least A1. The program participants will be offered advanced learning technologies that develop all types of speech activity.
+Upon completion of the program, the student will be proficient in English at least at the B1 level."
+    => "Одногодичная программа обучения английскому языку. Учитывается исходный уровень студента. Минимальный уровень владения языком должен быть не ниже A1. Участникам программы будут предложены современные технологии обучения, развивающие все виды речевой деятельности.",
+    "One-year Russian language training program. It takes into account the student's starting level. People without experience of learning Russian are accepted.Participants of the program will be offered advanced learning technologies that provide immersion in the language environment and develop skills of oral and written speech, as well as its perception.
+Upon completion of the program, the student will have at least a B1 level command of the Russian language."
+    => "Одногодичная программа обучения русскому языку. Учитывается исходный уровень студента. Принимаются лица без опыта изучения русского языка. Участникам программы будут предложены современные технологии обучения, обеспечивающие погружение в языковую среду и развитие навыков устной и письменной речи, а также ее восприятия.",
+    "The program 'Russian as a foreign language'" => "Программа 'Русский как иностранный'",
+    "Russian language training program" => "Программа обучения русскому языку",
 
 ];

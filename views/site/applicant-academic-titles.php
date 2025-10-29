@@ -11,6 +11,9 @@ ApplicantAsset::register($this);
                 <img width="100%"
                     src="https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg"
                     alt="">
+                <div class="icon">
+                    🎓
+                </div>
             </div>
             <div class="person-info">
                 <p class="person-fio"> <?= Yii::t("app", "Tutinova Nurgul Yerkanatovna") ?> </p>
@@ -48,44 +51,59 @@ ApplicantAsset::register($this);
         }
 
     } ?>
-    <h1 class="title-content">
-        <?= Yii::t('app', 'Professors') ?>
-    </h1>
-    <div class="button-section">
+    <div class="title-content">
+        <span> <?= Yii::t('app', 'Professors') ?></span>
+
+        <div class="button-section">
+            <?php foreach ($professor_sort as $full_name => $item): ?>
+                <button
+                    onclick="openDocsProf('<?= str_replace([' '], '-', trim($full_name)) ?>')"><?= $full_name ?></button>
+            <?php endforeach; ?>
+        </div>
         <?php foreach ($professor_sort as $full_name => $item): ?>
-            <button onclick="openDocsProf('<?= str_replace([' '], '-', trim($full_name)) ?>')"><?= $full_name ?></button>
+            <div class=" title-content professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
+                <span><?= trim($full_name) . " - " . $item[0]['date'] ?></span>
+                <div class="button-section">
+                    <?php foreach ($item as $item) {
+                        echo "<button onclick='openGeneralRulesPdf(\"" . str_replace(['/var/www/html/yii2/', '..'], "", $item['path_file']) . $item['fileName'] . "\")'>" . str_replace(['.pdf', '.docx', '.doc'], "", trim($item['fileName'])) . "</button>";
+
+
+                    } ?>
+                </div>
+            </div>
+
         <?php endforeach; ?>
     </div>
-    <?php foreach ($professor_sort as $full_name => $item): ?>
-        <div class=" title-content professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
-            <?= $item[0]['date'] ?>
-            <div class="button-section">
-                <?php foreach ($item as $item) {
-                    echo "<button onclick=''>" . $item['fileName'] . " " . $item['date'] . "</button>";
+    <div class="title-content">
+        <span><?= Yii::t('app', 'Associative professors') ?></span>
 
-                } ?>
-            </div>
+        <div class="button-section">
+            <?php foreach ($assoc_prof as $full_name => $item): ?>
+                <button
+                    onclick="openDocsProf('<?= str_replace([' '], '-', trim($full_name)) ?>')"><?= $full_name ?></button>
+            <?php endforeach; ?>
         </div>
-
-    <?php endforeach; ?>
-    <h1 class="title-content">
-        <?= Yii::t('app', 'Associative professors') ?>
-    </h1>
-    <div class="button-section">
         <?php foreach ($assoc_prof as $full_name => $item): ?>
-            <button onclick="openDocsProf('<?= str_replace([' '], '-', trim($full_name)) ?>')"><?= $full_name ?></button>
+            <div class=" title-content professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
+                <span><?= trim($full_name) . " - " . $item[0]['date'] ?></span>
+
+                <div class="button-section">
+                    <?php foreach ($item as $item) {
+                        echo "<button onclick='openGeneralRulesPdf(\"" . str_replace(['/var/www/html/yii2/', '..'], "", $item['path_file']) . $item['fileName'] . "\")'>" . str_replace(['.pdf', '.docx', '.doc'], "", $item['fileName']) . "</button>";
+
+                    } ?>
+                </div>
+            </div>
+
         <?php endforeach; ?>
     </div>
-    <?php foreach ($assoc_prof as $full_name => $item): ?>
-        <div class=" title-content professor-<?= str_replace([' '], '-', trim($full_name)) ?>">
-            <?= $item[0]['date'] ?>
-            <div class="button-section">
-                <?php foreach ($item as $item) {
-                    echo "<button onclick=''>" . $item['fileName'] . "</button>";
+    <div id="pdfModal" class="modal-pdf">
+        <span class="close-pdf-btn" onclick="document.getElementById('pdfModal').style.display='none';">&times;</span>
 
-                } ?>
-            </div>
+        <div class="modal-content-pdf">
+            <iframe id="pdfIframe" src="" type="application/pdf"
+                style="width: 100%; height: 100%; border: none; display: block;">
+            </iframe>
         </div>
-
-    <?php endforeach; ?>
+    </div>
 </div>

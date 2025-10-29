@@ -11,4 +11,35 @@ return [
     'This website was designed by Aibek Seitzhan'=> 'This website was designed by Aibek Seitzhan',
     'administrative-services'=> 'Administrative Services',
     'Corporate governance'=> 'Corporate governance',
+    'Academic Council' => 'Academic Council',
+    'Academic Council text' => 'The Academic Council is a collegial body authorized to manage the university’s scientific and methodological activities. The Council is responsible for evaluating the quality of educational programs and their methodological support. The Academic Council includes the academic committee on methodological support of the educational process, the academic committee on the design and expertise of educational programs, and the Teaching Quality Assessment Commission. The work of the Academic Council’s committees involves heads of departments responsible for organizing the learning process, experienced faculty representatives, students, and employers. The Council is headed by the Vice-Rector for Academic Affairs, a member of the university’s Board. Council members are delegated by faculties or join it by position. The Council meets once every two months.',
+'Состав Научно-технического совета на 2020–2021 учебный год' => 'Composition of the Scientific and Technical Council for the 2020–2021 academic year',
+
+    'Тажбаев Е.М. – доктор химических наук, проректор по Научной работе, председатель Совета.' => 'E.M. Tazhbayev – Doctor of Chemical Sciences, Vice-Rector for Research, Chairperson of the Council.',
+    'Ранова Г.А. – магистр технических наук, секретарь Совета.' => 'G.A. Ranova – Master of Technical Sciences, Secretary of the Council.',
+
+    'Руководители подразделений науки и послевузовского образования:' => 'Heads of Science and Postgraduate Education Departments:',
+    'Карстина С.Г. – доктор физико-математических наук, начальник Управления послевузовского образования.' => 'S.G. Karstina – Doctor of Physical and Mathematical Sciences, Head of the Postgraduate Education Department.',
+    'Касымов С.С. – кандидат физико-математических наук, начальник Управления науки и коммерциализации, заместитель председателя Совета.' => 'S.S. Kasymov – Candidate of Physical and Mathematical Sciences, Head of the Department of Science and Commercialization, Deputy Chairperson of the Council.',
+
+    'Руководители НИИ:' => 'Heads of Research Institutes:',
+    'Ишмуратова М.Ю. – кандидат биологических наук, профессор, руководитель Исследовательского парка биотехнологии и экомониторинга.' => 'M.Yu. Ishmuratova – Candidate of Biological Sciences, Professor, Head of the Biotechnology and Ecomonitoring Research Park.',
+    'Мамраева Д.Г. – кандидат экономических наук, директор Института исследований цифровой экономики.' => 'D.G. Mamraeva – Candidate of Economic Sciences, Director of the Institute for Digital Economy Research.',
+
+    'Председатель Совета молодых ученых:' => 'Chairperson of the Council of Young Scientists:',
+    'Камбарова Ж.Т. – доктор PhD, доцент кафедры физики и нанотехнологий.' => 'Zh.T. Kambarova – PhD, Associate Professor of the Department of Physics and Nanotechnology.',
+
+    'Заместители деканов по Научной работе факультетов:' => 'Deputy Deans for Scientific Work of Faculties:',
+    'Абугалиев Б.Н. – магистр педагогических наук, старший преподаватель факультета физической культуры и спорта.' => 'B.N. Abugaliev – Master of Pedagogical Sciences, Senior Lecturer of the Faculty of Physical Culture and Sports.',
+    'Аманжолова Б.А. – кандидат юридических наук, ассоциированный профессор юридического факультета.' => 'B.A. Amanzholova – Candidate of Juridical Sciences, Associate Professor of the Faculty of Law.',
+    'Балтабеков А.С. – кандидат физико-математических наук, доктор PhD, доцент физико-технического факультета.' => 'A.S. Baltabekov – Candidate of Physical and Mathematical Sciences, PhD, Associate Professor of the Faculty of Physics and Technology.',
+    'Демьянова Ю.А. – магистр гуманитарных наук, старший преподаватель филологического факультета.' => 'Yu.A. Demyanova – Master of Humanities, Senior Lecturer of the Faculty of Philology.',
+    'Жартай Ж.М. – доктор PhD экономического факультета.' => 'Zh.M. Zhartai – PhD, Faculty of Economics.',
+    'Жумина А.Г. – доктор PhD, доцент биолого-географического факультета.' => 'A.G. Zhumina – PhD, Associate Professor of the Faculty of Biology and Geography.',
+    'Ишанов П.З. – кандидат педагогических наук, доктор философии PhD, ассоциированный профессор педагогического факультета.' => 'P.Z. Ishanov – Candidate of Pedagogical Sciences, Doctor of Philosophy (PhD), Associate Professor of the Faculty of Pedagogy.',
+    'Кохановер Т.А. – магистр педагогических наук, старший преподаватель факультета иностранных языков.' => 'T.A. Kokhanover – Master of Pedagogical Sciences, Senior Lecturer of the Faculty of Foreign Languages.',
+    'Самойлова И.А. – магистр механики, старший преподаватель факультета математики и информационных технологий.' => 'I.A. Samoylova – Master of Mechanics, Senior Lecturer of the Faculty of Mathematics and Information Technologies.',
+    'Смагулов Н.Б. – магистр истории, старший преподаватель исторического факультета.' => 'N.B. Smagulov – Master of History, Senior Lecturer of the Faculty of History.',
+    'Уксукбаева М.Т. – магистр социальной философии, старший преподаватель факультета философии и психологии.' => 'M.T. Uksukbayeva – Master of Social Philosophy, Senior Lecturer of the Faculty of Philosophy and Psychology.',
+    'Хамитова Т.О. – доктор PhD химического факультета.' => 'T.O. Khamitova – PhD, Faculty of Chemistry.',
 ];

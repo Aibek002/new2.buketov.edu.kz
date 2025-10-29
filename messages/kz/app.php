@@ -307,5 +307,196 @@ return [
     'Monday – Friday 09:00 - 17:00' => 'Дүйсенбі – Жұма 09:00 - 17:00',
     'Professors' => 'Профессорлар',
     'Associative professors' => 'Ассоциативті профессорлар',
+    'Ethics Council' => 'Этика кеңесі',
+    "The Ethics Council is an advisory body that considers issues of labor discipline, compliance with anti-corruption legislation, the Code of Corporate Ethics, and the University's Academic Integrity Rules. You can contact the Council in cases of violation of your academic, official, or labor rights, or in case of conflict situations in the team. A written appeal can be submitted personally through the University's Office, by corporate e-mail: office@ksu.kz, or via the website in the 'Feedback' section (Blog of the Chairman of the Board-Rector, Blog of the Vice-Rector for Social and Cultural Development). The Council includes the chairman of the university's trade union, representatives of students, the head of the Legal Department, the Human Resources Department, and representatives of administrative staff. The Chairman of the Ethics Council is the Vice-Rector for Social and Cultural Development. The composition of the Council is approved by the order of the Chairman of the Board-Rector of the university. The Council meets as needed."
+    =>
+        "Этика кеңесі еңбек тәртібі, сыбайлас жемқорлыққа қарсы заңнаманы сақтау, корпоративтік этика кодексі және университеттің академиялық адалдық ережелері мәселелерін қарастыратын кеңесші-кеңес органы болып табылады. Сіз кеңеске өзіңіздің академиялық, қызметтік немесе еңбек құқықтарыңыздың бұзылуы немесе ұжымдағы жанжал жағдайлары туындаған жағдайда жүгіне аласыз. Жазбаша өтінішті университеттің канцеляриясы арқылы, корпоративтік e-mail: office@ksu.kz мекенжайына немесе сайттағы «Кері байланыс» бөлімінде (Басқарма төрағасы–ректор блогы, Әлеуметтік-мәдени даму жөніндегі проректор блогы) беруге болады. Кеңестің құрамына университеттің кәсіподақ ұйымының төрағасы, студенттер өкілдері, Заң басқармасының, Персоналды басқару басқармасының және әкімшілік-басқару персоналының өкілдері кіреді. Этика кеңесінің төрағасы – әлеуметтік-мәдени даму жөніндегі проректор. Кеңестің құрамы университеттің басқарма төрағасы-ректорының бұйрығымен бекітіледі. Кеңес қажет болған жағдайда шақырылады.",
+    'Scientific and Technical Council' => 'Ғылыми-техникалық кеңес',
+    'The Scientific and Technical Council is a collegial body authorized to manage the university\'s research activities. The Council is responsible for evaluating the implementation of the university\'s strategic program in science and for reviewing the scientific works of university researchers. The Council includes deputy deans for research of faculties, heads of university research institutes, the Postgraduate Education Department, the Science and Commercialization Department, and the chairman of the Council of Young Scientists. The Council is headed by the Vice-Rector for Research. Members of the Scientific and Technical Council are delegated by faculties or included by position. The Council meets at least once a month.'
+    =>
+        'Ғылыми-техникалық кеңес университеттің ғылыми-зерттеу қызметін басқаруға уәкілетті алқалы орган болып табылады. Кеңестің құзыретіне университеттің ғылым саласындағы стратегиялық бағдарламасын іске асыруды бағалау және университет ғалымдарының ғылыми еңбектерін сараптау кіреді. Кеңестің құрамына факультеттердің ғылыми жұмыс жөніндегі декан орынбасарлары, университеттің ғылыми-зерттеу институттарының басшылары, Жоғары оқу орнынан кейінгі білім беру басқармасы, Ғылым және коммерцияландыру басқармасы, Жас ғалымдар кеңесінің төрағасы кіреді. Кеңесті ғылыми жұмыс жөніндегі проректор басқарады. Ғылыми-техникалық кеңестің мүшелері факультеттер тарапынан делегатталады немесе лауазымы бойынша енгізіледі. Кеңес айына кемінде бір рет отырыс өткізеді.',
+    'Academic Council' => 'Академиялық кеңес',
+    'Academic Council text' => 'Академиялық кеңес – университеттің ғылыми-әдістемелік қызметін басқаруға өкілетті алқалы орган. Кеңестің құзыретіне білім беру бағдарламаларын іске асыру сапасын және олардың әдістемелік қамтамасыз етілуін бағалау кіреді. Академиялық кеңеске оқу процесін әдістемелік қамтамасыз ету мәселелері жөніндегі академиялық комитет, білім беру бағдарламаларын жобалау және сараптау жөніндегі академиялық комитет, оқыту сапасын бағалау комиссиясы кіреді. Академиялық кеңестің академиялық комитеттерінің жұмысына оқу процесін ұйымдастыруға жауапты бөлім басшылары, факультеттердің тәжірибелі оқытушылары, студенттер және жұмыс берушілер қатысады. Кеңесті академиялық мәселелер жөніндегі басқарма мүшесі – проректор басқарады. Кеңес мүшелері факультеттер арқылы делегатталады немесе лауазымы бойынша кіреді. Кеңес отырыстары екі айда бір рет өткізіледі.',
+    'Academic Council' => 'Академиялық кеңес',
+    'Scientific and Technical Council' => 'Ғылыми-техникалық кеңес',
+    'Ethics Council' => 'Этика кеңесі',
+    'Scientific Council' => 'Ғылыми кеңес',
+    'Work plan of the Council for the current year' => 'Кеңестің ағымдағы жылға арналған жұмыс жоспары',
+    'Composition of the Academic Council for the current academic year' => 'Академиялық кеңестің ағымдағы оқу жылындағы құрамы',
+    'Composition of the Council for the current year' => 'Кеңестің ағымдағы жылдағы құрамы',
+    'Plan of the Academic Council Meetings for 2024–2025' => '2024–2025 оқу жылына арналған Академиялық Кеңестің отырыстар жоспары',
+    'Agenda Items' => 'Күн тәртібіндегі мәселелер',
+    'Date' => 'Күні',
+    'Responsible Persons' => 'Жауаптылар',
+    'On the objectives and main directions of the Academic Council work for the 2024–2025 academic year' => '2024–2025 оқу жылындағы Академиялық кеңестің мақсаттары мен негізгі бағыттары туралы',
+    'September' => 'Қыркүйек',
+    'Chairman of the Academic Council' => 'Академиялық кеңестің төрағасы',
+    'On students’ academic performance results for the 2023–2024 academic year and the introduction of new approaches to student knowledge assessment' => '2023–2024 оқу жылындағы студенттердің үлгерімі нәтижелері және білімді бағалаудың жаңа тәсілдерін енгізу туралы',
+    'Head of Registrar’s Office' => 'Тіркеуші кеңсесінің басшысы',
+    'On the results of the survey “Student satisfaction with the organization of the examination session”' => '«Емтихан сессиясын ұйымдастыруға студенттердің қанағаттануы» сауалнамасының нәтижелері туралы',
+    'Head of Quality Assurance Department' => 'Білім сапасын қамтамасыз ету бөлімінің басшысы',
+    'Miscellaneous, including the results of the expertise of teaching and methodological literature by faculty' => 'Әртүрлі, оның ішінде оқытушылардың оқу-әдістемелік әдебиеттерге сараптама нәтижелері',
+    'On planning and implementing activities for methodological support of young teachers' => 'Жас оқытушыларға әдістемелік қолдау көрсету іс-шараларын жоспарлау және жүзеге асыру туралы',
+    'November' => 'Қараша',
+    'Head of the Department of DiPPP' => 'ДИПП кафедрасының меңгерушісі',
+    'On the results of monitoring the quality of teaching and methodological materials implemented at the Faculty of Foreign Languages' => 'Шетел тілдері факультетінде жүзеге асырылған оқу-әдістемелік материалдардың сапасын мониторингтеу нәтижелері туралы',
+    'Chair of the Quality Assurance Commission of the Faculty of Foreign Languages' => 'Шетел тілдері факультетінің сапаны қамтамасыз ету комиссиясының төрағасы',
+    'Employer satisfaction with the quality of training of graduates of the Faculty of Biology and Geography' => 'Биология және география факультеті түлектерін даярлау сапасына жұмыс берушілердің қанағаттануы туралы',
+    'Chair of the Quality Assurance Commission of the Faculty of Biology and Geography' => 'Биология және география факультетінің сапаны қамтамасыз ету комиссиясының төрағасы',
+    'December' => 'Желтоқсан',
+    'On the results of the Teaching Quality Assurance Commission work in the 1st semester of the 2024–2025 academic year' => '2024–2025 оқу жылының бірінші семестріндегі Оқыту сапасын қамтамасыз ету комиссиясының жұмысы туралы',
+    'Head of the Commission' => 'Комиссия төрағасы',
+    'Analysis of the availability and content of educational video content for distance learning programs for 2024 by faculty' => '2024 жылға арналған қашықтықтан оқыту бағдарламалары бойынша бейнематериалдардың қолжетімділігі мен мазмұнын талдау',
+    'Head of the Center for Distance Education' => 'Қашықтықтан оқыту орталығының басшысы',
+    'On the forms of cooperation between the departments of the Faculty of Philosophy and Psychology and employers, and the effectiveness of departmental branches' => 'Философия және психология факультеті кафедралары мен жұмыс берушілер арасындағы ынтымақтастық түрлері және кафедра филиалдарының тиімділігі туралы',
+    'Chair of the Quality Assurance Commission of the Faculty of Philosophy and Psychology' => 'Философия және психология факультетінің сапаны қамтамасыз ету комиссиясының төрағасы',
+    'February' => 'Ақпан',
+    'On the relevance and demand of bachelor’s, master’s, and doctoral programs' => 'Бакалавриат, магистратура және докторантура бағдарламаларының өзектілігі мен сұранысы туралы',
+    'Director of the Department for Academic Affairs' => 'Академиялық мәселелер жөніндегі департамент директоры',
+    'On the cooperation of the Faculty of Education with educational organizations of Karaganda: results and prospects' => 'Педагогика факультетінің Қарағандыдағы білім беру ұйымдарымен ынтымақтастығы: нәтижелер мен болашағы туралы',
+    'Head of the Department of PIMNO' => 'ПИМНО кафедрасының меңгерушісі',
+    'April' => 'Сәуір',
+    'Ensuring the educational process with electronic materials (lectures, multimedia presentations) for the 2024–2025 academic year' => '2024–2025 оқу жылында оқу процесін электронды материалдармен (дәрістер, мультимедиялық презентациялар) қамтамасыз ету',
+    'Analysis of the content of syllabi of economic disciplines' => 'Экономикалық пәндер силлабустарының мазмұнын талдау',
+    'Chair of the Quality Assurance Commission of the Faculty of Economics' => 'Экономика факультетінің сапаны қамтамасыз ету комиссиясының төрағасы',
+    'On the results of educational program accreditation' => 'Білім беру бағдарламаларының аккредитация нәтижелері туралы',
+    'June' => 'Маусым',
+    'On the quality of organization and effectiveness of research practice for master’s students' => 'Магистранттардың ғылыми тәжірибесін ұйымдастыру сапасы мен тиімділігі туралы',
+    'Head of Practice' => 'Тәжірибе жетекшісі',
+    'On the results of the Teaching Quality Assurance Commission work in the 2nd semester of the 2024–2025 academic year' => '2024–2025 оқу жылының екінші семестріндегі Оқыту сапасын қамтамасыз ету комиссиясының жұмысы туралы',
+    'On the implementation of the Academic Council decisions' => 'Академиялық кеңес шешімдерінің орындалуы туралы',
+    'Commission' => 'Комиссия',
+    'Composition of the Academic Council' => 'Академиялық Кеңестің құрамы',
+    'The following composition of the Academic Council for the 2024–2025 academic year has been approved:'
+    => '2024–2025 оқу жылына арналған Академиялық Кеңестің келесі құрамы бекітілсін:',
+    'M.M. Umurkuloва — Chairperson, Member of the Board for Academic Affairs – Vice-Rector'
+    => 'М.М. Умуркулова — төраға, Академиялық мәселелер бойынша Басқарма мүшесі – проректор',
+    'T.M. Khasenova — Director of the Department of Academic Affairs'
+    => 'Т.М. Хасенова — Академиялық жұмыс департаментінің директоры',
+    'S.V. Gagolina — Deputy Director of the Department of Academic Affairs, Candidate of Biological Sciences'
+    => 'С.В. Гаголина — Академиялық жұмыс департаменті директорының орынбасары, б.ғ.к.',
+    'S.L. Smailova — Deputy Director of the Department of Academic Affairs'
+    => 'С.Л. Смаилова — Академиялық жұмыс департаменті директорының орынбасары',
+    'M.S. Abisheva — Deputy Director of the Department of Academic Affairs, Candidate of Philological Sciences, PhD'
+    => 'М.С. Әбишева — Академиялық жұмыс департаменті директорының орынбасары, фил.ғ.к., PhD',
+    'G.Zh. Zhetimekova — Head of the Distance Education Center'
+    => 'Г.Ж. Жетімекова — Қашықтықтан білім беру орталығының басшысы',
+    'O.A. Tyan — Head of the Registrar’s Office, Candidate of Economic Sciences'
+    => 'О.А. Тян — Тіркеуші кеңсе басшысы, э.ғ.к.',
+    'G.Zh. Zhomartova — Chair of the Quality Assurance Commission of the Faculty of Biology and Geography, Senior Lecturer of the Department of Zoology'
+    => 'Г.Ж. Жомартова — Биология-география факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, зоология кафедрасының аға оқытушысы',
+    'A.A. Palina — Chair of the Quality Assurance Commission of the Faculty of Foreign Languages, Assistant Professor of the Department of Theory and Methods of Foreign Language Training, PhD'
+    => 'А.А. Палина — Шет тілдер факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, шет тілдік дайындық теориясы мен әдістемесі кафедрасының профессор ассистенті, PhD',
+    'A.Z. Zhumanova — Chair of the Quality Assurance Commission of the Faculty of History, Associate Professor of the Department of History of Kazakhstan and World History, PhD'
+    => 'А.З. Жуманова — Тарих факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, Қазақстан тарихы және дүниежүзі тарихы кафедрасының қауымдастырылған профессоры, PhD',
+    'U.A. Kosybaeva — Chair of the Quality Assurance Commission of the Faculty of Mathematics and Information Technologies, Candidate of Pedagogical Sciences'
+    => 'У.А. Косыбаева — Математика және ақпараттық технологиялар факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, п.ғ.к.',
+    'Composition of the Academic Council' => 'Академиялық кеңестің құрамы',
+    'The following composition of the Academic Council for the 2024–2025 academic year has been approved:' => '2024–2025 оқу жылына арналған Академиялық кеңестің келесі құрамы бекітілсін:',
+
+    'M.M. Umurkuloва — Chairperson, Member of the Board for Academic Affairs – Vice-Rector' => 'М.М. Умуркулова — төраға, Академиялық мәселелер бойынша басқарма мүшесі – проректор',
+    'T.M. Khasenova — Director of the Department of Academic Affairs' => 'Т.М. Хасенова — Академиялық жұмыс департаментінің директоры',
+    'S.V. Gagolina — Deputy Director of the Department of Academic Affairs, Candidate of Biological Sciences' => 'С.В. Гаголина — Академиялық жұмыс департаменті директорының орынбасары, б.ғ.к.',
+    'S.L. Smailova — Deputy Director of the Department of Academic Affairs' => 'С.Л. Смаилова — Академиялық жұмыс департаменті директорының орынбасары',
+    'M.S. Abisheva — Deputy Director of the Department of Academic Affairs, Candidate of Philological Sciences, PhD' => 'М.С. Әбишева — Академиялық жұмыс департаменті директорының орынбасары, фил.ғ.к., PhD',
+    'G.Zh. Zhetimekova — Head of the Distance Education Center' => 'Г.Ж. Жетімекова — Қашықтықтан білім беру орталығының басшысы',
+    'O.A. Tyan — Head of the Registrar’s Office, Candidate of Economic Sciences' => 'О.А. Тян — Тіркеуші кеңсе басшысы, э.ғ.к.',
+    'G.Zh. Zhomartova — Chair of the Quality Assurance Commission of the Faculty of Biology and Geography, Senior Lecturer of the Department of Zoology' => 'Г.Ж. Жомартова — Биология-география факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, Зоология кафедрасының аға оқытушысы',
+    'A.A. Palina — Chair of the Quality Assurance Commission of the Faculty of Foreign Languages, Assistant Professor of the Department of Theory and Methods of Foreign Language Training, PhD' => 'А.А. Палина — Шет тілдер факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, Шет тілдік дайындық теориясы мен әдістемесі кафедрасының ассистент-профессоры, PhD',
+    'A.Z. Zhumanova — Chair of the Quality Assurance Commission of the Faculty of History, Associate Professor of the Department of History of Kazakhstan and World History, PhD' => 'А.З. Жуманова — Тарих факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, Қазақстан және әлем тарихы кафедрасының қауымдастырылған профессоры, PhD',
+    'U.A. Kosybaeva — Chair of the Quality Assurance Commission of the Faculty of Mathematics and Information Technologies, Candidate of Pedagogical Sciences' => 'У.А. Косыбаева — Математика және ақпараттық технологиялар факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, п.ғ.к.',
+    'Состав Научно-технического совета на 2020–2021 учебный год' => '2020–2021 оқу жылына арналған Ғылыми-техникалық кеңестің құрамы',
+
+    'Тажбаев Е.М. – доктор химических наук, проректор по Научной работе, председатель Совета.' => 'Е.М. Тажбаев – химия ғылымдарының докторы, ғылыми жұмыс жөніндегі проректор, кеңес төрағасы.',
+    'Ранова Г.А. – магистр технических наук, секретарь Совета.' => 'Г.А. Ранова – техника ғылымдарының магистрі, кеңес хатшысы.',
+
+    'Руководители подразделений науки и послевузовского образования:' => 'Ғылым және магистратура бөлімдерінің басшылары:',
+    'Карстина С.Г. – доктор физико-математических наук, начальник Управления послевузовского образования.' => 'С.Г. Карстина – физика-математика ғылымдарының докторы, магистратура басқармасының басшысы.',
+    'Касымов С.С. – кандидат физико-математических наук, начальник Управления науки и коммерциализации, заместитель председателя Совета.' => 'С.С. Қасымов – физика-математика ғылымдарының кандидаты, ғылым және коммерцияландыру басқармасының басшысы, кеңес төрағасының орынбасары.',
+
+    'Руководители НИИ:' => 'Ғылыми-зерттеу институттарының басшылары:',
+    'Ишмуратова М.Ю. – кандидат биологических наук, профессор, руководитель Исследовательского парка биотехнологии и экомониторинга.' => 'М.Ю. Ишмуратова – биология ғылымдарының кандидаты, профессор, биотехнология және экомониторинг зерттеу паркінің басшысы.',
+    'Мамраева Д.Г. – кандидат экономических наук, директор Института исследований цифровой экономики.' => 'Д.Г. Мамраева – экономика ғылымдарының кандидаты, цифрлық экономика зерттеу институтының директоры.',
+
+    'Председатель Совета молодых ученых:' => 'Жас ғалымдар кеңесінің төрағасы:',
+    'Камбарова Ж.Т. – доктор PhD, доцент кафедры физики и нанотехнологий.' => 'Ж.Т. Камбарова – PhD докторы, физика және нанотехнология кафедрасының доценті.',
+
+    'Заместители деканов по Научной работе факультетов:' => 'Факультеттердің ғылыми жұмыс жөніндегі декан орынбасарлары:',
+    'Абугалиев Б.Н. – магистр педагогических наук, старший преподаватель факультета физической культуры и спорта.' => 'Б.Н. Әбугалиев – педагогика ғылымдарының магистрі, дене мәдениеті және спорт факультетінің аға оқытушысы.',
+    'Аманжолова Б.А. – кандидат юридических наук, ассоциированный профессор юридического факультета.' => 'Б.А. Аманжолова – заң ғылымдарының кандидаты, заң факультетінің қауымдастырылған профессоры.',
+    'Балтабеков А.С. – кандидат физико-математических наук, доктор PhD, доцент физико-технического факультета.' => 'А.С. Балтабеков – физика-математика ғылымдарының кандидаты, PhD докторы, физика-техникалық факультетінің доценті.',
+    'Демьянова Ю.А. – магистр гуманитарных наук, старший преподаватель филологического факультета.' => 'Ю.А. Демьянова – гуманитарлық ғылымдар магистрі, филология факультетінің аға оқытушысы.',
+    'Жартай Ж.М. – доктор PhD экономического факультета.' => 'Ж.М. Жартай – PhD докторы, экономика факультеті.',
+    'Жумина А.Г. – доктор PhD, доцент биолого-географического факультета.' => 'А.Г. Жумина – PhD докторы, биология-география факультетінің доценті.',
+    'Ишанов П.З. – кандидат педагогических наук, доктор философии PhD, ассоциированный профессор педагогического факультета.' => 'П.З. Ишанов – педагогика ғылымдарының кандидаты, философия докторы (PhD), педагогика факультетінің қауымдастырылған профессоры.',
+    'Кохановер Т.А. – магистр педагогических наук, старший преподаватель факультета иностранных языков.' => 'Т.А. Кохановер – педагогика ғылымдарының магистрі, шет тілдер факультетінің аға оқытушысы.',
+    'Самойлова И.А. – магистр механики, старший преподаватель факультета математики и информационных технологий.' => 'И.А. Самойлова – механика магистрі, математика және ақпараттық технологиялар факультетінің аға оқытушысы.',
+    'Смагулов Н.Б. – магистр истории, старший преподаватель исторического факультета.' => 'Н.Б. Смағұлов – тарих магистрі, тарих факультетінің аға оқытушысы.',
+    'Уксукбаева М.Т. – магистр социальной философии, старший преподаватель факультета философии и психологии.' => 'М.Т. Ұқсуқбаева – әлеуметтік философия магистрі, философия және психология факультетінің аға оқытушысы.',
+    'Хамитова Т.О. – доктор PhD химического факультета.' => 'Т.О. Хамитова – PhD докторы, химия факультеті.',
+    'Reception schedule for citizens' => 'Азаматтарды қабылдау кестесі',
+
+    'Composition of the Council for the current year' => 'Ағымдағы жылдың Кеңес құрамасы',
+
+    'Syzdykov M.Zh. – Member of the Board, Vice-Rector for Social and Cultural Development, Chairman of the Council'
+    => 'Сыздыков М.Ж. – Басқарма мүшесі, әлеуметтік-мәдени даму жөніндегі проректор, Кеңес төрағасы',
+
+    'Sagintayeva S.S. – Member of the Board, Vice-Rector for Academic Affairs, Member of the Council'
+    => 'Сагинтаева С.С. – Басқарма мүшесі, академиялық мәселелер жөніндегі проректор, Кеңес мүшесі',
+
+    'Moldabayev A.S. – Member of the Board, Vice-Rector for Administrative and Economic Affairs, Member of the Council'
+    => 'Молдабаев А.С. – Басқарма мүшесі, әкімшілік-шаруашылық жұмыс жөніндегі проректор, Кеңес мүшесі',
+
+    'Khasenova T.M. – Acting Director of the Department of Academic Affairs, Member of the Council'
+    => 'Хасенова Т.М. – Академиялық істер департаментінің директоры міндетін атқарушы, Кеңес мүшесі',
+
+    'Toleubekov A.T. – Head of the Human Resources Department, Member of the Council'
+    => 'Төлеубеков А.Т. – Кадр бөлімі басшысы, Кеңес мүшесі',
+
+    'Oleynik V.I. – Head of the Anti-Corruption Compliance Service, Member of the Council'
+    => 'Олейник В.И. – Сыбайлас жемқорлыққа қарсы комплаенс қызметінің басшысы, Кеңес мүшесі',
+
+    'Baikenzhina Sh.T. – Head of the Legal Department, Member of the Council'
+    => 'Байкенжина Ш.Т. – Заң бөлімінің басшысы, Кеңес мүшесі',
+
+    'Kassymov S.S. – Director of the Department of Science, Member of the Council'
+    => 'Қасымов С.С. – Ғылым департаментінің директоры, Кеңес мүшесі',
+
+    'Zhunusova M.K. – Chair of the University Trade Union, Member of the Council'
+    => 'Жүнісова М.К. – Университет кәсіподақ комитетінің төрайымы, Кеңес мүшесі',
+
+    'Rakhimov A.S. – Master’s student of the Faculty of Philosophy and Psychology, Member of the Council'
+    => 'Рахимов А.С. – Философия және психология факультетінің магистранты, Кеңес мүшесі',
+
+    'Zhumzhumayev N.S. – Legal Specialist of the Legal Department, Secretary of the Council'
+    => 'Жұмжұмаев Н.С. – Заң бөлімінің заңгері, Кеңес хатшысы',
+    "Foundation: Kazakh language training program" => "Фаундейшн: Қазақ тілі даярлау бағдарламасы",
+    "Foundation" => "Фаундейшн",
+    "One-year Kazakh language training program. It takes into account the student's starting level. Persons without experience of learning the Kazakh language are accepted. Participants of the program will be offered advanced learning technologies that provide immersion in the language environment and develop skills of oral and written speech, as well as its perception.
+Upon completion of the program, the student will be proficient in Kazakh at least at the B1 level." => "Бір жылдық қазақ тілі даярлау бағдарламасы. Студенттің бастапқы деңгейі ескеріледі. Қазақ тілін оқыту тәжірибесі жоқ тұлғалар қабылданады. Бағдарлама қатысушыларына тілдік ортаға енуге және ауызша және жазбаша сөйлеу дағдыларын, сондай-ақ оның қабылдауын дамытуға мүмкіндік беретін жетілдірілген оқыту технологиялары ұсынылады.",
+    "International students" => "Халықаралық студенттер",
+    "Send a request or a question about the possibility of studying at the university" => "Жоғары оқу орнында оқыту мүмкіндігі туралы сұрау немесе сұрақ жіберу",
+    "The university currently offers several study formats for foreign citizens" => "Университет қазірде шетел азаматтары үшін бірнеше оқу форматтарын ұсынады",
+    "Kazakh language training program" => "Қазақ тілі даярлау бағдарламасы",
+    "Rusian language training program" => "Орыс тілі даярлау бағдарламасы",
+    "English language training program" => "Ағылшын тілі даярлау бағдарламасы",
+    "'Russian as a Foreign Language' program" => "«Орыс тілі шет тілі ретінде» бағдарламасы",
+    "Exchange programs" => "Алмасу бағдарламалары",
+    "The University has experience in implementing exchange programs that can be tailored to the needs of incoming students. Before starting negotiations, you should study the proposals of our faculties and choose educational programs.
+By contacting the Office of International Cooperation, you will receive a list of subjects taught in the selected program, including in English." => 'Университет кіріс студенттердің қажеттіліктеріне бейімделуі мүмкін алмасу бағдарламаларын жүзеге асыру тәжірибесіне ие. Келіссөздерді бастамас бұрын, біздің факультеттердің ұсыныстарын зерттеп, білім беру бағдарламаларын таңдау қажет.
+Халықаралық ынтымақтастық кеңсесіне хабарласу арқылы сіз таңдалған бағдарламада, соның ішінде ағылшын тілінде оқытылатын пәндердің тізімін аласыз.',
+    "The program 'Russian as a foreign language'" => "Бағдарлама 'Орыс тілі шет тілі ретінде'",
+    "The program is implemented in the bachelor's degree format and is designed for 4 years of study, or 240 credits. The student's starting level should be at least A2. The program's profile is aimed at training a Russian language teacher for a foreign-speaking audience. Students will study theoretical linguistics courses, a practical Russian language course, and methods of teaching it in a foreign language classroom. The training takes place in conditions of maximum immersion in the language environment, and provides live communication with native speakers of the Russian language. At the initial stage of training, English can be used for mediation purposes. The graduate of the program will be proficient in Russian at the C1 level."
+    => "Бағдарлама бакалавриат форматы бойынша жүзеге асырылады және 4 жылдық оқу немесе 240 кредитке арналған. Студенттің бастапқы деңгейі кемінде A2 болуы керек. Бағдарламаның профилі шет тілінде сөйлейтін аудиторияға орыс тілі мұғалімін даярлауға бағытталған. Студенттер теориялық лингвистика курстарын, практикалық орыс тілі курсін және оны шет тіліндегі сыныпта оқыту әдістерін оқиды. Оқыту тілдік ортаға барынша ену жағдайында өтеді және орыс тілінің ана тілі болып табылатын адамдармен тікелей қарым-қатынасты қамтамасыз етеді. Оқытуның бастапқы кезеңінде делдалдық мақсаттар үшін ағылшын тілі пайдаланылуы мүмкін. Бағдарлама түлегі орыс тілін C1 деңгейінде меңгереді.",
+    "One-year English language training program. It takes into account the student's starting level. The minimum level of language proficiency should be at least A1. The program participants will be offered advanced learning technologies that develop all types of speech activity.
+Upon completion of the program, the student will be proficient in English at least at the B1 level."
+    => "Бір жылдық ағылшын тілі даярлау бағдарламасы. Студенттің бастапқы деңгейі ескеріледі. Тіл меңгеруінің минималды деңгейі кемінде A1 болуы керек. Бағдарлама қатысушыларына барлық сөйлеу түрлерін дамытатын жетілдірілген оқыту технологиялары ұсынылады.",
+    "One-year Russian language training program. It takes into account the student's starting level. People without experience of learning Russian are accepted.Participants of the program will be offered advanced learning technologies that provide immersion in the language environment and develop skills of oral and written speech, as well as its perception.
+Upon completion of the program, the student will have at least a B1 level command of the Russian language."
+    => "Бір жылдық орыс тілі даярлау бағдарламасы. Студенттің бастапқы деңгейі ескеріледі. Орыс тілін оқыту тәжірибесі жоқ тұлғалар қабылданады. Бағдарлама қатысушыларына тілдік ортаға енуге және ауызша және жазбаша сөйлеу дағдыларын, сондай-ақ оның қабылдауын дамытуға мүмкіндік беретін жетілдірілген оқыту технологиялары ұсынылады.
+Бағдарламаны аяқтағаннан кейін студент орыс тілін кемінде B1 деңгейінде меңгереді.",
+"The program 'Russian as a foreign language'" => "Бағдарлама 'Орыс тілі шет тілі ретінде'",
+"Russian language training program" => "Орыс тілі даярлау бағдарламасы",
+
 
 ];
