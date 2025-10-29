@@ -306,4 +306,7 @@ return [
     'Regulatory documents' => 'Нормативные документы',
     'Working hours:' => 'График работы:',
     'Monday – Friday 09:00 - 17:00' => 'Понедельник – Пятница 09:00 - 17:00',
+    'Professors' => 'Профессора',
+    'Associative professors' => 'Ассоциированные профессора',
+
 ];

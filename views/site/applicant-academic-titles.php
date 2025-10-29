@@ -3,9 +3,9 @@ use app\assets\ApplicantAsset;
 ApplicantAsset::register($this);
 ?>
 <div class="my-5 p-5">
-    <h1 class="title-content">Applicant for the Academic titles</h1>
+    <h1 class="title-page"><span><?= Yii::t('app', 'Applicants for academic titles') ?> </span></h1>
     <div class="title-content">
-        <?= Yii::t("app", "Ученый секретарь Совета") ?>
+        <span> <?= Yii::t("app", "Academic Secretary of the Council") ?></span>
         <div class="person-section my-5">
             <div class="person-img">
                 <img width="100%"
@@ -13,15 +13,19 @@ ApplicantAsset::register($this);
                     alt="">
             </div>
             <div class="person-info">
-                <p class="person-fio"> Тутинова Нургуль Ерканатовна</p>
-                <p class="person-position"><i>Ученый секретарь - Ученного Совета</i></p>
-                <p class="person-info"><i>
-                        Тутинова Нургуль Ерканатовна ассоциированный профессор кафедры философии и теории культуры,
-                        доктор PhD, учёный секретарь</i></p>
+                <p class="person-fio"> <?= Yii::t("app", "Tutinova Nurgul Yerkanatovna") ?> </p>
 
+                <p class="person-position">
+                    <i><?= Yii::t("app", "Scientific Secretary of the Council") ?></i>
+                </p>
 
-
+                <p class="person-info">
+                    <i>
+                        <?= Yii::t("app", "Tutinova Nurgul Yerkanatovna is an Associate Professor of the Department of Philosophy and Theory of Culture, PhD, Scientific Secretary.") ?>
+                    </i>
+                </p>
             </div>
+
             <div class="person-email">
                 <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a href="tel:+77777777777">+7(777) -
                         777 - 77 - 77</a></div>

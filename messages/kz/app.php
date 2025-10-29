@@ -305,4 +305,7 @@ return [
     'Regulatory documents' => 'Нормативтік құжаттар',
     'Working hours:' => 'Жұмыс уақыты:',
     'Monday – Friday 09:00 - 17:00' => 'Дүйсенбі – Жұма 09:00 - 17:00',
+    'Professors' => 'Профессорлар',
+    'Associative professors' => 'Ассоциативті профессорлар',
+
 ];

@@ -40,6 +40,9 @@ $lang = Yii::$app->language;
                     <img width="100%"
                         src="https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg"
                         alt="">
+                    <div class="icon">
+                        🎓
+                    </div>
                 </div>
                 <div class="person-info">
                     <p class="person-fio"> <?= Yii::t("app", "Tutinova Nurgul Yerkanatovna") ?> </p>

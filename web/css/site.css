@@ -6,7 +6,8 @@
   --whiteblue: #415e8a;
   --indigoblue-font: #2c5ca9;
 
-  --indigoblue: linear-gradient(145deg, #1f3b6e, #2c5ca9);
+  /* --indigoblue: linear-gradient(145deg, #1f3b6e, #2c5ca9); */
+  --indigoblue: linear-gradient(180deg, #004191 0%, #2c5ca9 100%);
   --indigoblue-50: linear-gradient(145deg, #1f3b6eab, #2c5ca97d);
   ;
   --light-gray: #f9f9f9;
@@ -15,21 +16,13 @@
   --transparent-white-50: rgba(255, 255, 255, 0.466);
   --gray: #999;
   --yellow: #c55;
-  --indigoblue: #1f3b6e;
-  /* Темный синий фон основного блока */
   --light-blue-accent: #2c5ca9;
-  /* Средний синий для акцентов/hover */
   --button-bg: #3f51b5;
   --primary-blue: #2c5ca9;
-  /* Основной синий цвет */
   --light-background: #ffffff;
-  /* Белый фон блока */
   --text-color-dark: #333333;
-  /* Темный текст для контраста */
   --text-color-medium: #555;
-  /* Серый текст для основного контента */
   --off-white: #eef2f7;
-  /* Очень светлый серый/фон страницы */
   --white: #ffffff;
   --gold-accent: #ffc107;
   --font-main: 'Roboto', sans-serif;
@@ -50,6 +43,7 @@
   --font-700: 700;
 
 }
+
 
 @media (max-width: 1200px) {
   :root {
@@ -98,17 +92,30 @@
 }
 
 .title-page {
-  padding: 20px;
-  margin: 150px 0 0 0;
+  background: #ffffff;
+  padding: 15px 25px;
+  margin: 150px 0 30px 0;
+  border-bottom: 8px solid var(--indigoblue);
+  border-radius: 12px;
   font-family: 'Arial', sans-serif;
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--indigoblue-font);
-  padding: 10px 15px;
-  border-left: 5px solid var(--indigoblue);
-  background: var(--light-gray);
-  margin-bottom: 20px;
-  border-radius: 10px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--indigoblue-font, #1d4585);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    -5px 0 0 rgba(0, 0, 0, 0.05) inset;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.title-page:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .title-content {
@@ -430,8 +437,26 @@ strong {
 /* Изображение персоны (УВЕЛИЧЕНО) */
 .person-img {
   flex-basis: 160px;
-  /* Увеличенная фиксированная ширина */
+  position: relative;
   flex-shrink: 0;
+}
+
+.person-img .icon {
+
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  background: linear-gradient(135deg, #a7b7c9, #eef3f7);
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #1a2a5b;
+  box-shadow: 0 0 15px #007BFF;
+
 }
 
 .person-img img {
@@ -442,6 +467,8 @@ strong {
   border-radius: 50%;
   border: 5px solid #eef2f7;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #f9f9fb,
+    0 0 0 10px rgba(0, 123, 255, 0.1), 0 0 0 20px rgba(0, 123, 255, 0.05);
 }
 
 /* Основная информация о персоне */
