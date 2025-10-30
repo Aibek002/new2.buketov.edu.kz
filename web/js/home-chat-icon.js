@@ -3,11 +3,11 @@ let index = 0;
 let close_index = 0;
 
 const icons = [
-  "https://cdn-icons-png.flaticon.com/512/3670/3670051.png",
-  "https://cdn-icons-png.flaticon.com/512/7044/7044732.png",
+  "https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?semt=ais_hybrid&w=740&q=80",
+  "https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg",
 ];
 
-const color = ["green", "#2c5ca9"];
+const color = ["#2c5ca9", "#ffffffff"];
 const whatsapp = document.querySelector(".chat-whatsapp");
 const phone = document.querySelector(".chat-phone");
 const chat_bot_btn = document.querySelector(".chat-bot");
@@ -20,7 +20,7 @@ let closeInterval = null;
 const chat_box = document.querySelector(".chat-box");
 const chat_box2 = document.querySelector(".chat-widget");
 const icon_close_chat = [
-  "https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg",
+  // "https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg",
   "https://icons.veryicon.com/png/o/miscellaneous/all-blue-icon/close-428.png",
 ];
 

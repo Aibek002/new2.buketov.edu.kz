@@ -200,13 +200,17 @@ class SiteController extends Controller
         $lang = Yii::$app->language;
 
         $article = HistoryFaculty::find()
-
+            ->select([
+                LanguageHelper::title() . ' AS title',
+                LanguageHelper::content() . ' AS content',
+            ])
             ->where([
                 'faculty_id' => $faculty_id,
 
             ])
-            ->one();
-
+            ->asArray()
+            ->all();
+            // print_r($article);die;
         return $this->render('article', ['model' => $article]);
 
     }

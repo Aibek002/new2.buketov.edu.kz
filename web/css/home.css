@@ -18,7 +18,7 @@
 .carousel-ranking .ratings-container {
     display: inline-flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: space-between;
     padding: 25px 25px;
     margin: 0;
     gap: 30px;
@@ -44,7 +44,7 @@
 
 .faculty-box:hover,
 .ratings-box:hover {
-   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
 }
 
@@ -208,28 +208,22 @@ form {
 
 .box-overlay {
     position: fixed;
-    /* поверх всех элементов */
-    top: 50%;
-    left: 50%;
-    width: 80vw;
-    height: 750px;
-    transform: translate(-50%, -50%);
-    /* центрирование */
-    background-color: var(--whiteblue);
-    /* затемнение, можно изменить */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
     z-index: 10000;
-    /* выше других */
-    display: none;
-    /* по умолчанию скрыто, включай через JS */
-    border-radius: 10px;
     padding: 20px;
-    color: white;
-    display: none;
 }
 
 /* Активный класс для отображения */
 .box-overlay.active {
-    display: block;
+    display: flex;
 }
 
 .blur {
@@ -476,7 +470,7 @@ form {
 .chat-bot.active {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(-250px);
+    transform: translateY(-130px);
     z-index: 1000;
 }
 

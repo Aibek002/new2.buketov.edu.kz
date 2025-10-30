@@ -85,7 +85,7 @@
 .modal {
     display: none; /* Скрыто по умолчанию */
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
@@ -98,10 +98,8 @@
 .modal-content {
     background-color: #ffffff;
     margin: 5% auto; /* Центрируем, уменьшив верхний отступ */
-    padding: 30px;
     border: none;
     width: 90%; /* Адаптивная ширина */
-    max-width: 700px; /* Ограничим максимальную ширину */
     border-radius: 15px; /* Более мягкое скругление */
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     animation-name: animatetop ;

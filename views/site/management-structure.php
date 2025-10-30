@@ -5,7 +5,7 @@ use app\assets\ManagmentStructureAsset;
 ManagmentStructureAsset::register($this);
 $this->title = Yii::t("app", "Management Structure");
 ?>
-<div class="title-block">
+<div class="title-page" style="margin-inline: 50px;">
     <?php echo Yii::t('app', $type) ?>
 </div>
 <?php if ($model): ?>
@@ -16,7 +16,7 @@ $this->title = Yii::t("app", "Management Structure");
             foreach ($model as $index => $model_item):
                 $job_title = htmlspecialchars($model_item->{$title_key});
                 ?>
-                <button type="button" style="display: inline-block;border: none;" class="model-selector-button"
+                <button type="button" style="display: inline-block;" class="model-selector-button"
                     data-bs-toggle="modal" data-bs-target="#staffModal"
                     data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"
                     data-job="<?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?: 'Нет данных о должности' ?>"
@@ -66,7 +66,7 @@ $this->title = Yii::t("app", "Management Structure");
 
         showPage(1);
     </script>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 g-4 m-5 p-5 my-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 gap-4 m-5 justify-content-between my-5">
         <?php foreach ($model as $index => $model_item): ?>
             <div class="cards" data-bs-toggle="modal" data-bs-target="#staffModal"
                 data-name="<?= htmlspecialchars($model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()}) ?>"

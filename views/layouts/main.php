@@ -168,11 +168,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(
+                                        <!-- <?= Html::a(
                                             Yii::t('app', 'Contacts') . ' <span>></span>',
                                             ['site/contact'],
                                             ['class' => 'menu-item']
-                                        ) ?>
+                                        ) ?> -->
 
                                     </div>
                                     <div class="dropdown-submenu student">
@@ -193,13 +193,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(Yii::t('app', 'Career Center') . ' <span>></span>', '#', [
+                                        <!-- <?= Html::a(Yii::t('app', 'Career Center') . ' <span>></span>', '#', [
                                             'class' => 'menu-item'
-                                        ]) ?>
+                                        ]) ?> -->
 
-                                        <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], [
+                                        <!-- <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], [
                                             'class' => 'menu-item'
-                                        ]) ?>
+                                        ]) ?> -->
 
                                     </div>
 

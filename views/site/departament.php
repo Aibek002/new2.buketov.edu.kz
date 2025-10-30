@@ -38,7 +38,8 @@ DepartamentAsset::register($this);
             <div style="overflow:hidden;width:300px;height:300px;
                         border: 10px solid white;
                         border-radius: 100%;">
-                <img style="position: relative;" src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                <img style="position: relative;"
+                    src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
                     alt="Декан факультета" />
             </div>
 
@@ -72,9 +73,10 @@ DepartamentAsset::register($this);
         <div class="teachers-container">
             <?php foreach ($teachers as $teacher): ?>
                 <div onclick="openTeachersBox(this)"
-                    data-fio='<?= $teacher["surname"] . " " . $teacher["name"] . " " . $teacher["patronymic"] ?>'
-                    data-jobtitle=" <?= $teacher['job_title'] ?>" data-info='<?= $teacher["information"] ?>'
-                    data-email=" <?= $teacher['email'] ?>" class="teachers-box">
+                    data-fio="<?= Html::encode($teacher['surname'] . ' ' . $teacher['name'] . ' ' . $teacher['patronymic']) ?>"
+                    data-jobtitle="<?= Html::encode($teacher['job_title']) ?>"
+                    data-info="<?= Html::encode($teacher['information']) ?>"
+                    data-email="<?= Html::encode($teacher['email']) ?>" class="teachers-box">
                     <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
                     <div class="content-teacher">
                         <p class="fio"><?= $teacher['surname'] . " " . $teacher['name'] . " " . $teacher['patronymic'] ?>
