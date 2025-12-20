@@ -573,7 +573,7 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  z-index: 1;
 }
 
 .carousel .list .item .content .title {
@@ -617,6 +617,25 @@ strong {
   /* animation: showThumbnail 0.5s linear 1 forwards; */
 }
 
+.carousel .item:before {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.45);
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: 10px;
+}
+
+.carousel .thumbnail .item::before {
+  z-index: 1;
+  background: transparent;
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: 10px;
+
+}
+
 /* @keyframes showThumbnail{
   to{
     left:50%;
@@ -630,6 +649,7 @@ strong {
   position: relative;
   flex-shrink: 0;
   transition: all 0.5s ease;
+
 }
 
 .carousel .thumbnail .item:hover {
