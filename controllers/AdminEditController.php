@@ -307,7 +307,7 @@ class AdminEditController extends Controller
 
                         // Если загружен файл
                         if ($file) {
-                            $path = Yii::getAlias('@app/../files/staff_avatar/') . $staff->id . "/";
+                            $path = Yii::getAlias('@app/../files/image_avatar_staff/teacher/') . $staff->id . "/";
                             $file_name = uniqid() . "." . $file->extension;
                             // print_r($file_name);
                             // die;
@@ -324,7 +324,11 @@ class AdminEditController extends Controller
                                 }
 
                                 // Сохраняем путь к файлу
-                                $image->image = '/files/staff_avatar/' . $staff->id . "/" . $file_name;
+                                $image->image = '/files/image_avatar_staff/teacher/' . $staff->id . "/" . $file_name;
+                                if ($type_ref_staff->ref_staff_id == 12) {
+                                    $image->ref_image_id = 8;
+                                }
+
                                 if ($file->saveAs($path . $file_name)) {
                                     // Сохраняем запись в базу
                                     if ($image->save(false)) {

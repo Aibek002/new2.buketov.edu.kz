@@ -3,12 +3,12 @@ let index = 0;
 let close_index = 0;
 
 const icons = [
-  "https://cdn-icons-png.flaticon.com/512/3670/3670051.png",
-  "https://cdn-icons-png.flaticon.com/512/7044/7044732.png",
+  "https://www.shutterstock.com/image-vector/chat-bot-icon-virtual-smart-600nw-2478937553.jpg",
+  "https://avatars.mds.yandex.net/i?id=813b2070e81414b4326f00a8c21f6d46bab23041-10194750-images-thumbs&n=13",
 ];
 
-const color = ["green", "#2c5ca9"];
-const whatsapp = document.querySelector(".chat-whatsapp");
+const color = ["white", "#2c5ca9"];
+// const whatsapp = document.querySelector(".chat-whatsapp");
 const phone = document.querySelector(".chat-phone");
 const chat_bot_btn = document.querySelector(".chat-bot");
 const chat_bot_btn2 = document.querySelector(".chat-bot2");
@@ -32,18 +32,18 @@ setInterval(() => {
 }, 3000);
 
 chat_open_btn.addEventListener("click", () => {
-  chat_bot_btn.classList.toggle("active");
-  chat_bot_btn2.classList.toggle("active");
+  chat_bot_btn.classList.add("active");
+  chat_bot_btn2.classList.add("active");
 
-  phone.classList.toggle("active");
-  whatsapp.classList.toggle("active");
+  // phone.classList.toggle("active");
+  // whatsapp.classList.toggle("active");
 });
 
 chat_bot_btn.addEventListener("click", () => {
-  chat_bot_btn.classList.remove("active");
-  phone.classList.remove("active");
-  whatsapp.classList.remove("active");
+  // phone.classList.remove("active");
+  // whatsapp.classList.remove("active");
   chat_open_btn.classList.remove("active");
+  chat_bot_btn.classList.remove("active");
   chat_bot_btn2.classList.remove("active");
   chat_box.classList.add("active");
   if (chat_box.classList.contains("active") && close_btn) {
@@ -60,10 +60,10 @@ chat_bot_btn.addEventListener("click", () => {
   });
 });
 chat_bot_btn2.addEventListener("click", () => {
-  chat_bot_btn.classList.remove("active");
-  phone.classList.remove("active");
-  whatsapp.classList.remove("active");
+  // phone.classList.remove("active");
+  // whatsapp.classList.remove("active");
   chat_open_btn.classList.remove("active");
+  chat_bot_btn.classList.remove("active");
   chat_bot_btn2.classList.remove("active");
   chat_box2.classList.add("active");
   if (chat_box2.classList.contains("active") && close_btn) {

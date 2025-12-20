@@ -68,13 +68,13 @@ $this->title = 'Управлять Персоналом';
             </div>
             <div class="row information p-2  g-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (KZ)') ?>
+                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 5])->label('Информация (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (RU)') ?>
+                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 5])->label('Информация (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_en')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (EN)') ?>
+                    <?= $form->field($model, 'information_en')->textarea(['rows' => 5])->label('Информация (EN)') ?>
                 </div>
             </div>
             <div class="row welcome p-2  g-3">
@@ -158,25 +158,33 @@ $this->title = 'Управлять Персоналом';
 </div>
 <?php
 
-$this->registerJsFile('https://cdn.tiny.cloud/1/wmtfk0v9m750xo316xpx88hktns85a0m5lgbaiz4kbnun0cj/tinymce/7/tinymce.min.js', [
-    'referrerpolicy' => 'origin'
+$this->registerJsFile('@web/tinymce/tinymce.min.js', [
+    'position' => \yii\web\View::POS_HEAD
 ]);
-
-$this->registerJs("
-tinymce.remove(); // если TinyMCE уже инициализирован — удалить
+$this->registerJs(<<<JS
 tinymce.init({
-    selector: '.tinymce-editor',
-    plugins: 'lists link image table code',
-    toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
-    menubar: false,
-    height: 250,
-    language: 'ru',
-    branding: false,
-    setup: function(editor) {
-        editor.on('init', function() {
-            console.log('TinyMCE инициализирован');
-        });
-    }
+  selector: 'textarea',
+  plugins: 'link image code lists',
+  toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code',
+  menubar: false
 });
-");
+JS, \yii\web\View::POS_END);
+
+// $this->registerJs("
+// tinymce.remove(); // если TinyMCE уже инициализирован — удалить
+// tinymce.init({
+//     selector: '.tinymce-editor',
+//     plugins: 'lists link image table code',
+//     toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
+//     menubar: false,
+//     height: 250,
+//     language: 'ru',
+//     branding: false,
+//     setup: function(editor) {
+//         editor.on('init', function() {
+//             console.log('TinyMCE инициализирован');
+//         });
+//     }
+// });
+// ");
 ?>

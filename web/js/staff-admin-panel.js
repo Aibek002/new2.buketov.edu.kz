@@ -6,6 +6,8 @@ const welcome = document.querySelector(".welcome");
 const job_title = document.querySelector(".job-title");
 const faculty = document.querySelector(".faculty");
 const departament = document.querySelector(".departament");
+const dissertation = document.querySelector(".dissertation");
+
 const show = document.querySelector(".show");
 const upload_img = document.querySelector(".upload-img");
 
@@ -63,6 +65,13 @@ ref_staff_id.addEventListener("input", () => {
     departament.classList.add("active");
 
     submit.classList.add("active");
+  }else if(ref_staff_id.value === "13"){
+    fio.classList.add("active");
+    contact.classList.add("active");
+    information.classList.add("active");
+    
+    job_title.classList.add("active");
+    upload_img.classList.add("active");
+    dissertation.classList.add("active");
   }
-
 });

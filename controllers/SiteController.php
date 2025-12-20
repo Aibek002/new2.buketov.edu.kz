@@ -242,15 +242,21 @@ class SiteController extends Controller
                 'patronymic' => LanguageHelper::patronymic(),
                 'information' => LanguageHelper::information(),
                 'job_title' => LanguageHelper::job_title(),
-                'email'
+                'email',
+                'image' => 'image.image',
 
 
             ])->from('staff')
             ->innerJoin('ref_staff', ' ref_staff.id = staff.ref_staff_id ')
+            ->leftJoin(
+                'image',
+                'image.column_id = staff.id AND image.ref_image_id = 8'
+            )
             ->where(['departament_id' => $departament_id])
             ->andWhere(['staff.ref_staff_id' => 12])
             ->orderBy(LanguageHelper::name())
             ->all();
+        // print_r($teachers);die;
         return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id, 'teachers' => $teachers, 'dean' => $dean]);
     }
     public function actionHistoryDepartament($departament_id)

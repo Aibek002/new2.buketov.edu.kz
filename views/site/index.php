@@ -28,7 +28,7 @@ $this->title = 'Buketov University';
         </div>
         <div class="col-md-12 w-100" style="overflow:hidden">
             <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted"
-                poster="https://up.buketov.edu.kz/event/2025/08_12/1.jpg" loop="loop" class="video">
+                poster="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/nxHd6CmrFv6MEsMpSa3pz.jpg">
                 <source src="/bg-videos/first_block_bg_video_new.mp4" type="video/mp4">
             </video>
         </div>
@@ -38,7 +38,8 @@ $this->title = 'Buketov University';
             <div class="carousel">
                 <div class="list">
                     <div class="item">
-                        <img src="/bg-images/carousel/1.carousel.jpg">
+                        <img
+                            src="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/pER4VTSx8_2R4hiiG8NWI.jpg">
                         <div class="content">
                             <div class="title"><?= Yii::t('app', 'National Quality Mark "PERFECT"') ?></div>
                             <div class="description">
@@ -50,7 +51,8 @@ $this->title = 'Buketov University';
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/bg-images/carousel/2.carousel.jpg">
+                        <img
+                            src="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/D5F3GVnPnEBj7X9uQa-10.jpg">
                         <div class="content">
                             <div class="title"><?= Yii::t('app', 'Corporate culture of a modern university') ?></div>
                             <div class="description">
@@ -63,7 +65,8 @@ $this->title = 'Buketov University';
                     </div>
                     <div class="item">
 
-                        <img src="/bg-images/carousel/3.carousel.jpg">
+                        <img src="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/LZO0tcZoSk6-Mxrz96cuS.jpg"
+                            style="object-position: center 35%;">
                         <div class="content">
                             <div class="title"><?= Yii::t('app', 'Hotline') ?></div>
                             <div class="description">
@@ -87,7 +90,8 @@ $this->title = 'Buketov University';
                 <div class="thumbnail">
                     <div class="item">
                         <div class="overly"></div>
-                        <img src="/bg-images/carousel/1.thumbnail.jpg">
+                        <img
+                            src="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/pER4VTSx8_2R4hiiG8NWI.jpg">
                         <div class="content">
                             <div class="title"><?= Yii::t('app', 'National Quality Mark "PERFECT"') ?></div>
 
@@ -96,7 +100,8 @@ $this->title = 'Buketov University';
                     </div>
                     <div class="item">
                         <div class="overly"></div>
-                        <img src="/bg-images/carousel/2.thumbnail.jpg">
+                        <img
+                            src="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/D5F3GVnPnEBj7X9uQa-10.jpg">
                         <div class="content">
                             <div class="title"><?= Yii::t('app', 'Corporate culture of a modern university') ?></div>
 
@@ -104,7 +109,8 @@ $this->title = 'Buketov University';
                     </div>
                     <div class="item">
                         <div class="overly"></div>
-                        <img src="/bg-images/carousel/3.thumbnail.jpg">
+                        <img
+                            src="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/LZO0tcZoSk6-Mxrz96cuS.jpg">
                         <div class="content">
                             <div class="title"><?= Yii::t('app', 'Hotline') ?></div>
 
@@ -129,12 +135,11 @@ $this->title = 'Buketov University';
 
         <?php $ratingCount = count($ranking); ?>
 
-    <div style="width: <?= $ratingCount * 320 ?>px;" class="ratings-container">
+        <div style="width: <?= $ratingCount * 320 ?>px;" class="ratings-container">
 
             <?php foreach ($ranking as $ranking_item): ?>
 
-                <div class="rating-box"
-                    onclick="openBox(this, 'ranking')" data-title="<?= $ranking_item['title'] ?? '' ?>"
+                <div class="rating-box" onclick="openBox(this, 'ranking')" data-title="<?= $ranking_item['title'] ?? '' ?>"
                     data-content="<?= htmlspecialchars($ranking_item['content'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                     data-date="<?= date('Y-m-d') ?>"
                     data-img="<?= htmlspecialchars($ranking_item['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>">

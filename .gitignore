@@ -20,3 +20,4 @@ nca_rsa.crl
 web/.htaccess
 storage
 data
+/web/tinymce/

@@ -7,7 +7,7 @@ DepartamentAsset::register($this);
 
 ?>
 
-<div class="faculty-hero">
+<div class="departament-hero">
     <div class="faculty-overlay">
         <h1>
             <br>
@@ -75,7 +75,7 @@ DepartamentAsset::register($this);
                     data-fio='<?= $teacher["surname"] . " " . $teacher["name"] . " " . $teacher["patronymic"] ?>'
                     data-jobtitle=" <?= $teacher['job_title'] ?>" data-info='<?= $teacher["information"] ?>'
                     data-email=" <?= $teacher['email'] ?>" class="teachers-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
+                    <img src="<?= empty($teacher['image']) ? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' : $teacher['image'] ?>" alt="Фото преподавателя">
                     <div class="content-teacher">
                         <p class="fio"><?= $teacher['surname'] . " " . $teacher['name'] . " " . $teacher['patronymic'] ?>
                         </p>
