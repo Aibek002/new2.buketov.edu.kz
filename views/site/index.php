@@ -28,9 +28,9 @@ $this->title = 'Buketov University';
 
         </div>
         <div class="col-md-12 w-100" style="overflow:hidden">
-            <video id="bgVideo" width="100%" autoplay loop muted playsinline style="object-fit: cover;"
-                poster="https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/nxHd6CmrFv6MEsMpSa3pz.jpg">
-                <source src="/bg-videos/img-7607_vuqJCMjb.mp4" type="video/mp4">
+            <video style="object-fit: cover;height:100vh;" width="100%" autoplay="autoplay" playsinline="" muted="muted"
+                poster="https://up.buketov.edu.kz/event/2025/08_12/1.jpg" loop="loop" class="video">
+                <source src="/bg-videos/DJI_0091.MP4" type="video/mp4">
             </video>
             <script>
                 const video = document.getElementById('bgVideo');
@@ -143,7 +143,7 @@ $this->title = 'Buketov University';
 
         <?php $ratingCount = count($ranking); ?>
 
-        <div style="width: <?= $ratingCount * 320 ?>px;" class="ratings-container">
+    <div style="width: 100%" class="ratings-container">
 
             <?php foreach ($ranking as $ranking_item): ?>
 
@@ -685,8 +685,8 @@ $this->title = 'Buketov University';
         <button class="chat-submit"></button>
     </div>
 </div>
-<button class="chat-whatsapp"></button>
-<button class="chat-phone"></button>
+<!-- <button class="chat-whatsapp"></button> -->
+<!-- <button class="chat-phone"></button> -->
 <button class="chat-bot"></button>
 <button class="chat-bot2"></button>
 

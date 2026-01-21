@@ -86,10 +86,10 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($type_ref_staff, 'welcome_kz')->textarea(['rows' => 4])->label('Приветствие (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($type_ref_staff, 'welcome_ru')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (RU)') ?>
+                    <?= $form->field($type_ref_staff, 'welcome_ru')->textarea(['rows' => 4])->label('Приветствие (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($type_ref_staff, 'welcome_en')->textarea(['rows' => 4, 'class' => 'tinymce-editor'])->label('Приветствие (EN)') ?>
+                    <?= $form->field($type_ref_staff, 'welcome_en')->textarea(['rows' => 4])->label('Приветствие (EN)') ?>
                 </div>
             </div>
 

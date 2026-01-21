@@ -40,6 +40,8 @@ DepartamentAsset::register($this);
                         border-radius: 100%;">
                 <img style="position: relative;"
                     src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                <img style="position: relative;"
+                    src="<?= !empty($dean['image']) ? nl2br(htmlspecialchars($dean['image'])) : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
                     alt="Декан факультета" />
             </div>
 
@@ -80,6 +82,12 @@ DepartamentAsset::register($this);
     <div class="teacher-title"><?= Yii::t('app', 'Teachers') ?>
         <div class="teachers-container">
             <?php foreach ($teachers as $teacher): ?>
+                <div onclick="openTeachersBox(this)"
+                    data-fio="<?= Html::encode($teacher['surname'] . ' ' . $teacher['name'] . ' ' . $teacher['patronymic']) ?>"
+                    data-jobtitle="<?= Html::encode($teacher['job_title']) ?>"
+                    data-info="<?= Html::encode($teacher['information']) ?>"
+                    data-email="<?= Html::encode($teacher['email']) ?>" class="teachers-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4519/4519678.png" alt="Фото преподавателя">
                 <?php
                 $fio = trim($teacher['surname'] . ' ' . $teacher['name'] . ' ' . $teacher['patronymic']);
                 $image = empty($teacher['image'])

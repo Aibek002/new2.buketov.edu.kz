@@ -200,12 +200,18 @@ class SiteController extends Controller
         $lang = Yii::$app->language;
 
         $article = HistoryFaculty::find()
-
-            ->where([
-                'faculty_id' => $faculty_id,
-
+            ->select([
+                'id',
+               LanguageHelper::title(),
+                LanguageHelper::content() ,
             ])
+            ->where(['faculty_id' => $faculty_id])
+            // ->asArray()
             ->one();
+
+        // print_r($article);
+        // die;
+
 
         return $this->render('history-faculty', ['model' => $article]);
 
@@ -235,27 +241,43 @@ class SiteController extends Controller
             ->one();
 
         // print_r($dean);die;
+        $imageSubQuery = (new \yii\db\Query())
+            ->select([
+                'column_id',
+                'MAX(id) AS image_id'
+            ])
+            ->from('image')
+            ->where(['ref_image_id' => 8])
+            ->groupBy('column_id');
+
         $teachers = (new \yii\db\Query())
             ->select([
-                'staff.' . LanguageHelper::name() . " as name",
-                'staff.' . LanguageHelper::surname() . " as surname",
-                'staff.' . LanguageHelper::patronymic() . " as patronymic",
-                'type_ref_staff.' . LanguageHelper::information() . " as information",
-                'type_ref_staff.' . LanguageHelper::job_title() . " as job_title",
-                'type_ref_staff.email',
-                'image.image',
-
-
-            ])->from('staff')
-            ->leftJoin('type_ref_staff', ' type_ref_staff.staff_id = staff.id ')
+                'staff.id',
+                'staff.' . LanguageHelper::name() . ' AS name',
+                'staff.' . LanguageHelper::surname() . ' AS surname',
+                'staff.' . LanguageHelper::patronymic() . ' AS patronymic',
+                'trs.' . LanguageHelper::information() . ' AS information',
+                'trs.' . LanguageHelper::job_title() . ' AS job_title',
+                'trs.email',
+                'img.image',
+            ])
+            ->from('staff')
+            ->leftJoin('type_ref_staff trs', 'trs.staff_id = staff.id')
+            ->leftJoin(['i' => $imageSubQuery], 'i.column_id = staff.id')
             ->leftJoin(
-                'image',
-                'image.column_id = staff.id AND image.ref_image_id = 8'
+                ['img' => 'image'],
+                'img.id = image_id AND img.column_id = staff.id'
             )
-            ->where(['type_ref_staff.departament_id' => $departament_id])
-            ->andWhere(['type_ref_staff.ref_staff_id' => 12 ,  'type_ref_staff.is_delete' => 0])
+
+            ->where([
+                'trs.departament_id' => $departament_id,
+                'trs.ref_staff_id' => 12,
+                'trs.is_delete' => 0,
+            ])
             ->orderBy(LanguageHelper::name())
             ->all();
+
+
         // print_r($teachers);die;
         return $this->render('departament', ['departament' => $departament, 'departament_id' => $departament_id, 'teachers' => $teachers, 'dean' => $dean]);
     }
@@ -338,11 +360,11 @@ class SiteController extends Controller
         $staff = Staff::find()
             ->select([
                 'staff.id',
-                'staff.name_' . Yii::$app->language ,
-                'staff.surname_' . Yii::$app->language ,
-                'staff.patronymic_' . Yii::$app->language ,
-                'staff.job_title_' . Yii::$app->language ,
-                'staff.information_' . Yii::$app->language ,
+                'staff.name_' . Yii::$app->language,
+                'staff.surname_' . Yii::$app->language,
+                'staff.patronymic_' . Yii::$app->language,
+                'staff.job_title_' . Yii::$app->language,
+                'staff.information_' . Yii::$app->language,
                 'staff.email',
                 'staff.phone',
                 'img.image',

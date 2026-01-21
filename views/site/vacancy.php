@@ -90,7 +90,16 @@
                 <p class="mb-4 text-gray-600">
                     <?= Yii::t('app', 'A teacher is required for the specialty "Computer Science". Work experience of at least 2 years.') ?>
                 </p>
+                <h3 class="text-xl font-semibold mb-3">
+                    <?= Yii::t('app', 'Computer Science Teacher') ?>
+                </h3>
+                <p class="mb-4 text-gray-600">
+                    <?= Yii::t('app', 'A teacher is required for the specialty "Computer Science". Work experience of at least 2 years.') ?>
+                </p>
                 <ul class="mb-4 list-disc list-inside text-gray-600 space-y-1">
+                    <li><?= Yii::t('app', 'Higher education') ?></li>
+                    <li><?= Yii::t('app', 'Teaching experience') ?></li>
+                    <li><?= Yii::t('app', 'Knowledge of modern IT technologies') ?></li>
                     <li><?= Yii::t('app', 'Higher education') ?></li>
                     <li><?= Yii::t('app', 'Teaching experience') ?></li>
                     <li><?= Yii::t('app', 'Knowledge of modern IT technologies') ?></li>
@@ -104,7 +113,16 @@
                 <p class="mb-4 text-gray-600">
                     <?= Yii::t('app', 'We are looking for a responsible accountant to manage financial reporting.') ?>
                 </p>
+                <h3 class="text-xl font-semibold mb-3">
+                    <?= Yii::t('app', 'Accountant') ?>
+                </h3>
+                <p class="mb-4 text-gray-600">
+                    <?= Yii::t('app', 'We are looking for a responsible accountant to manage financial reporting.') ?>
+                </p>
                 <ul class="mb-4 list-disc list-inside text-gray-600 space-y-1">
+                    <li><?= Yii::t('app', 'Higher economic education') ?></li>
+                    <li><?= Yii::t('app', 'Knowledge of 1C') ?></li>
+                    <li><?= Yii::t('app', 'Work experience of at least 3 years') ?></li>
                     <li><?= Yii::t('app', 'Higher economic education') ?></li>
                     <li><?= Yii::t('app', 'Knowledge of 1C') ?></li>
                     <li><?= Yii::t('app', 'Work experience of at least 3 years') ?></li>
@@ -118,7 +136,16 @@
                 <p class="mb-4 text-gray-600">
                     <?= Yii::t('app', 'A manager is required to organize the educational process and interact with students.') ?>
                 </p>
+                <h3 class="text-xl font-semibold mb-3">
+                    <?= Yii::t('app', 'Student Affairs Manager') ?>
+                </h3>
+                <p class="mb-4 text-gray-600">
+                    <?= Yii::t('app', 'A manager is required to organize the educational process and interact with students.') ?>
+                </p>
                 <ul class="mb-4 list-disc list-inside text-gray-600 space-y-1">
+                    <li><?= Yii::t('app', 'Communication skills') ?></li>
+                    <li><?= Yii::t('app', 'Responsibility') ?></li>
+                    <li><?= Yii::t('app', 'Ability to work with documents') ?></li>
                     <li><?= Yii::t('app', 'Communication skills') ?></li>
                     <li><?= Yii::t('app', 'Responsibility') ?></li>
                     <li><?= Yii::t('app', 'Ability to work with documents') ?></li>
@@ -132,14 +159,25 @@
                 <p class="mb-4 text-gray-600">
                     <?= Yii::t('app', 'A system administrator is required to support the university\'s IT infrastructure.') ?>
                 </p>
+                <h3 class="text-xl font-semibold mb-3">
+                    <?= Yii::t('app', 'System Administrator') ?>
+                </h3>
+                <p class="mb-4 text-gray-600">
+                    <?= Yii::t('app', 'A system administrator is required to support the university\'s IT infrastructure.') ?>
+                </p>
                 <ul class="mb-4 list-disc list-inside text-gray-600 space-y-1">
+                    <li><?= Yii::t('app', 'Work experience in IT for at least 2 years') ?></li>
+                    <li><?= Yii::t('app', 'Knowledge of network technologies') ?></li>
+                    <li><?= Yii::t('app', 'Server administration') ?></li>
                     <li><?= Yii::t('app', 'Work experience in IT for at least 2 years') ?></li>
                     <li><?= Yii::t('app', 'Knowledge of network technologies') ?></li>
                     <li><?= Yii::t('app', 'Server administration') ?></li>
                 </ul>
             </div>
 
+
         </div>
+
 
     </section>
 

@@ -21,14 +21,35 @@ function openBox(element, type) {
 
   if (type === "news") {
     imageHTML = `
-      <div class="d-flex justify-content-center align-items-start px-3" style="flex: 1;">
-        <img src="/files/images/news/${image}" alt="Новость фото" style="max-width: 90%; min-height: 160px; object-fit: contain;">
+      <div class="d-flex justify-content-center align-items-start px-3" style="
+            flex: 1;
+            min-width: 250px; /* Минимальная ширина для изображения */
+            padding-right: 0;
+            margin-top: 20px; height: 400px;/* Отступ сверху для мобильной версии */
+        ">
+        <img src="/files/images/news/${image}" alt="Новость фото" style="
+                max-width: 100%; 
+                object-fit: contain;
+                border-radius: 10px; /* Скругление углов изображения */
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);width: 100%; /* Тень для изображения */
+            ">
       </div>
     `;
   } else if (type === "ranking") {
     imageHTML = `
-      <div class="d-flex justify-content-center align-items-start px-3" style="flex: 1;">
-        <img src="${image}" alt="Рейтинг фото" style="max-width: 90%; min-height: 160px; object-fit: contain;">
+      <div class="d-flex justify-content-center align-items-start px-3"style="
+            flex: 1;
+            min-width: 250px; /* Минимальная ширина для изображения */
+            padding-right: 0;
+            margin-top: 20px;height: 400px; /* Отступ сверху для мобильной версии */
+        ">
+        <img src="${image}" alt="Рейтинг фото" style="
+                max-width: 100%; 
+                max-height: 300px; /* Максимальная высота */
+                object-fit: contain;
+                border-radius: 8px; /* Скругление углов изображения */
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); width: 100%;/* Тень для изображения */
+            ">
       </div>
     `;
   }
@@ -36,20 +57,63 @@ function openBox(element, type) {
   // Основной шаблон
   box.innerHTML = `
     <div class="news-card p-4 rounded shadow-lg text-white" 
-         style="width: 100%; height: 100%; position: relative; background: linear-gradient(145deg, #1f3b6e, #2c5ca9); border: 1px solid rgba(255,255,255,0.2);">
+         style="width: 90%; 
+         /* Ограничим максимальную ширину */
+        height: 80%; /* Ограничим высоту, чтобы поместилось на экране */
+        position: relative; 
+        
+        /* Глубокий градиент с акцентом */
+        background: linear-gradient(135deg, #1d4585 0%, #2c5ca9 100%); 
+        border: none; /* Убираем тонкую белую рамку */
+        border-radius: 16px; /* Более мягкое скругление */
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); /* Сильная тень для глубины */
+        color: #ffffff;
+        padding: 30px; /* Увеличим внутренние отступы */
+        font-family: Arial, sans-serif;">
       
       <!-- Кнопка закрытия -->
       <button onclick="closeBox('news')" 
-              style="position: absolute; top: 15px; right: 20px; font-size: 32px; background: none; border: none; color: white; cursor: pointer;">
+              style="
+        position: absolute; 
+        top: 15px; 
+        right: 25px; 
+        font-size: 40px; 
+        background: none; 
+        border: none; 
+        color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый */
+        cursor: pointer;
+        line-height: 1;
+        font-weight: 300; /* Тонкий шрифт для современного крестика */
+        transition: color 0.2s;
+      ">
               &times;
       </button>
 
-      <div class="d-flex flex-column flex-md-row mt-4">
+      <div class="d-flex flex-column flex-md-row mt-4" style="display: flex; flex-direction: column; gap: 20px;">
         <!-- Текст -->
-        <div class="p-3 d-flex flex-column" style="flex: 2;">
-          <span class="mb-2" style="font-size: 14px; color: #e0e0e0;">📅 ${date}</span>
-          <h2 class="mb-3 fw-bold" style="font-size: 24px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 8px;">📰 ${title}</h2>
-          <div class="card-text-news" style="font-size: 16px; font-family: 'Segoe UI', sans-serif; line-height: 1.7; overflow-y: auto; max-height: 300px;">
+        <div class="p-3 d-flex flex-column" style="flex: 2; padding: 0 15px 0 0;">
+          <span class="mb-2" style="
+            font-size: 14px; 
+            color: #d3e1ff; /* Светло-голубой для даты */
+            margin-bottom: 10px;
+            font-weight: 600;
+          ">📅 ${date}</span>
+          <h2 class="mb-3 fw-bold"style="
+            font-size: 28px; /* Увеличенный размер заголовка */
+            border-bottom: 2px solid rgba(255,255,255,0.2); 
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+          ">📰 ${title}</h2>
+          <div class="card-text-news" style="
+            font-size: 16px; 
+            font-family: 'Segoe UI', sans-serif; 
+            line-height: 1.7; 
+            overflow-y: auto; 
+            max-height: 30vh; /* Адаптивная максимальная высота */
+            padding-right: 15px; /* Для отступа от полосы прокрутки */
+            color: #f0f0f0; /* Чуть светлее, чем белый */
+          ">
             ${content}
           </div>
         </div>

@@ -195,7 +195,7 @@ $lang = Yii::$app->language;
     <div class="academ-sovet">
         <div class="title-content">
             <span><?= Yii::t('app', 'Academic Council') ?></span>
-            <p class="text-content"><?= Yii::t('app', 'Academic Council description') ?></p>
+            <p class="text-content"><?= Yii::t('app', 'Academic Council text') ?></p>
 
         </div>
         <div class="select-section">
@@ -211,7 +211,7 @@ $lang = Yii::$app->language;
             <span><?= Yii::t('app', 'Scientific and Technical Council') ?></span>
 
             <p class="text-content">
-                <?= Yii::t('app', 'Scientific and Technical Council description') ?>
+                <?= Yii::t('app', 'The Scientific and Technical Council is a collegial body authorized to manage the university\'s research activities. The Council is responsible for evaluating the implementation of the university\'s strategic program in science and for reviewing the scientific works of university researchers. The Council includes deputy deans for research of faculties, heads of university research institutes, the Postgraduate Education Department, the Science and Commercialization Department, and the chairman of the Council of Young Scientists. The Council is headed by the Vice-Rector for Research. Members of the Scientific and Technical Council are delegated by faculties or included by position. The Council meets at least once a month.') ?>
             </p>
 
         </div>
@@ -228,7 +228,7 @@ $lang = Yii::$app->language;
             <span><?= Yii::t('app', 'Ethics Council') ?></span>
 
             <p class="text-content">
-                <?= Yii::t('app', "Ethics Council description") ?>
+                <?= Yii::t('app', "The Ethics Council is an advisory body that considers issues of labor discipline, compliance with anti-corruption legislation, the Code of Corporate Ethics, and the University's Academic Integrity Rules. You can contact the Council in cases of violation of your academic, official, or labor rights, or in case of conflict situations in the team. A written appeal can be submitted personally through the University's Office, by corporate e-mail: office@ksu.kz, or via the website in the 'Feedback' section (Blog of the Chairman of the Board-Rector, Blog of the Vice-Rector for Social and Cultural Development). The Council includes the chairman of the university's trade union, representatives of students, the head of the Legal Department, the Human Resources Department, and representatives of administrative staff. The Chairman of the Ethics Council is the Vice-Rector for Social and Cultural Development. The composition of the Council is approved by the order of the Chairman of the Board-Rector of the university. The Council meets as needed.") ?>
             </p>
 
         </div>
@@ -260,7 +260,6 @@ $lang = Yii::$app->language;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.5);
                 animation-name: animatetop;
                 animation-duration: 0.4s;
-                overflow-y:scroll;
             ">
 
         <button class="close-btn" onclick="document.getElementById('ethics-council-modal').style.display='none';" style="
@@ -434,102 +433,92 @@ $lang = Yii::$app->language;
     ">&times;</button>
 
         <h2 style="color: #1f3b6e; margin-top: 0; border-bottom: 2px solid #2c5ca9; padding-bottom: 10px;">
-            <?= Yii::t('app', 'План работы Научно-технического совета на 2020–2021 учебный год') ?>
+            <?= Yii::t('app', 'Work plan of the Council for the current year') ?>
         </h2>
 
         <div style="overflow-x:auto; margin-top: 20px;">
-            <table style="width:100%; border-collapse: collapse; font-size: 15px;">
-                <thead>
-                    <tr style="background-color: #1f3b6e; color: white;">
-                        <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Meeting №') ?></th>
-                        <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', '№') ?></th>
-                        <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Discussed issues') ?></th>
-                        <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Month') ?></th>
-                        <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Speakers') ?></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="2">1</td>
-                        <td>1.1</td>
-                        <td><?= Yii::t('app', 'Approval of the composition of the Scientific and Technical Council for the 2020–2021 academic year') ?>
-                        </td>
-                        <td><?= Yii::t('app', 'August 2020') ?></td>
-                        <td><?= Yii::t('app', 'Chairperson of STC') ?></td>
-                    </tr>
-                    <tr>
-                        <td>1.2</td>
-                        <td><?= Yii::t('app', 'Approval of the work plan of the Scientific and Technical Council for the 2020–2021 academic year') ?>
-                        </td>
-                        <td></td>
-                        <td><?= Yii::t('app', 'Chairperson of STC') ?></td>
-                    </tr>
+         <table style="width:100%; border-collapse: collapse; font-size: 15px;">
+    <thead>
+        <tr style="background-color: #1f3b6e; color: white;">
+            <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Meeting №') ?></th>
+            <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', '№') ?></th>
+            <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Discussed issues') ?></th>
+            <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Month') ?></th>
+            <th style="padding: 10px; border: 1px solid #ccc;"><?= Yii::t('app', 'Speakers') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>1.1</td>
+            <td><?= Yii::t('app', 'Approval of the composition of the Scientific and Technical Council for the 2020–2021 academic year') ?></td>
+            <td><?= Yii::t('app', 'August 2020') ?></td>
+            <td><?= Yii::t('app', 'Chairperson of STC') ?></td>
+        </tr>
+        <tr>
+            <td>1.2</td>
+            <td><?= Yii::t('app', 'Approval of the work plan of the Scientific and Technical Council for the 2020–2021 academic year') ?></td>
+            <td></td>
+            <td><?= Yii::t('app', 'Chairperson of STC') ?></td>
+        </tr>
 
-                    <tr>
-                        <td rowspan="2">2</td>
-                        <td>2.1</td>
-                        <td><?= Yii::t('app', 'Approval of the university plan for holding international and republican conferences in 2021') ?>
-                        </td>
-                        <td><?= Yii::t('app', 'September 2020') ?></td>
-                        <td><?= Yii::t('app', 'Head of SRC') ?></td>
-                    </tr>
-                    <tr>
-                        <td>2.2</td>
-                        <td><?= Yii::t('app', 'Preparation for the conference dedicated to the 125th anniversary of N. Nurmakov and the 175th anniversary of A. Kunanbayev') ?>
-                        </td>
-                        <td></td>
-                        <td><?= Yii::t('app', 'Vice-Rector for Socio-Cultural Development, Head of SRC, Deputy Deans') ?>
-                        </td>
-                    </tr>
+        <tr>
+            <td rowspan="2">2</td>
+            <td>2.1</td>
+            <td><?= Yii::t('app', 'Approval of the university plan for holding international and republican conferences in 2021') ?></td>
+            <td><?= Yii::t('app', 'September 2020') ?></td>
+            <td><?= Yii::t('app', 'Head of SRC') ?></td>
+        </tr>
+        <tr>
+            <td>2.2</td>
+            <td><?= Yii::t('app', 'Preparation for the conference dedicated to the 125th anniversary of N. Nurmakov and the 175th anniversary of A. Kunanbayev') ?></td>
+            <td></td>
+            <td><?= Yii::t('app', 'Vice-Rector for Socio-Cultural Development, Head of SRC, Deputy Deans') ?></td>
+        </tr>
 
-                    <tr>
-                        <td rowspan="2">3</td>
-                        <td>3.1</td>
-                        <td><?= Yii::t('app', 'Conducting pedagogical research by faculties, including inclusive education') ?>
-                        </td>
-                        <td><?= Yii::t('app', 'October 2020') ?></td>
-                        <td><?= Yii::t('app', 'Deputy Dean of Pedagogical Faculty') ?></td>
-                    </tr>
-                    <tr>
-                        <td>3.2</td>
-                        <td><?= Yii::t('app', 'Approval of topics of master’s and doctoral dissertations, supervisors, and commission members') ?>
-                        </td>
-                        <td></td>
-                        <td><?= Yii::t('app', 'Head of DPE') ?></td>
-                    </tr>
+        <tr>
+            <td rowspan="2">3</td>
+            <td>3.1</td>
+            <td><?= Yii::t('app', 'Conducting pedagogical research by faculties, including inclusive education') ?></td>
+            <td><?= Yii::t('app', 'October 2020') ?></td>
+            <td><?= Yii::t('app', 'Deputy Dean of Pedagogical Faculty') ?></td>
+        </tr>
+        <tr>
+            <td>3.2</td>
+            <td><?= Yii::t('app', 'Approval of topics of master’s and doctoral dissertations, supervisors, and commission members') ?></td>
+            <td></td>
+            <td><?= Yii::t('app', 'Head of DPE') ?></td>
+        </tr>
 
-                    <tr>
-                        <td rowspan="2">4</td>
-                        <td>4.1</td>
-                        <td><?= Yii::t('app', 'Implementation of the work plan of the winners of the “Best University Teacher – 2019” grant') ?>
-                        </td>
-                        <td><?= Yii::t('app', 'November 2020') ?></td>
-                        <td><?= Yii::t('app', 'Deputy Chairperson of STC') ?></td>
-                    </tr>
-                    <tr>
-                        <td>4.2</td>
-                        <td><?= Yii::t('app', 'Implementation of the university digitalization roadmap') ?></td>
-                        <td></td>
-                        <td><?= Yii::t('app', 'Deputy Deans for Research') ?></td>
-                    </tr>
+        <tr>
+            <td rowspan="2">4</td>
+            <td>4.1</td>
+            <td><?= Yii::t('app', 'Implementation of the work plan of the winners of the “Best University Teacher – 2019” grant') ?></td>
+            <td><?= Yii::t('app', 'November 2020') ?></td>
+            <td><?= Yii::t('app', 'Deputy Chairperson of STC') ?></td>
+        </tr>
+        <tr>
+            <td>4.2</td>
+            <td><?= Yii::t('app', 'Implementation of the university digitalization roadmap') ?></td>
+            <td></td>
+            <td><?= Yii::t('app', 'Deputy Deans for Research') ?></td>
+        </tr>
 
-                    <tr>
-                        <td rowspan="2">5</td>
-                        <td>5.1</td>
-                        <td><?= Yii::t('app', 'State and development prospects of university scientific journals') ?>
-                        </td>
-                        <td><?= Yii::t('app', 'December 2020') ?></td>
-                        <td><?= Yii::t('app', 'Commission') ?></td>
-                    </tr>
-                    <tr>
-                        <td>5.2</td>
-                        <td><?= Yii::t('app', 'Implementation of calendar plans for fundamental, applied, and contractual research topics') ?>
-                        </td>
-                        <td></td>
-                        <td><?= Yii::t('app', 'Head of SRC, SRC Accountant') ?></td>
-                    </tr>
-                </tbody>
-            </table>
+        <tr>
+            <td rowspan="2">5</td>
+            <td>5.1</td>
+            <td><?= Yii::t('app', 'State and development prospects of university scientific journals') ?></td>
+            <td><?= Yii::t('app', 'December 2020') ?></td>
+            <td><?= Yii::t('app', 'Commission') ?></td>
+        </tr>
+        <tr>
+            <td>5.2</td>
+            <td><?= Yii::t('app', 'Implementation of calendar plans for fundamental, applied, and contractual research topics') ?></td>
+            <td></td>
+            <td><?= Yii::t('app', 'Head of SRC, SRC Accountant') ?></td>
+        </tr>
+    </tbody>
+</table>
 
         </div>
     </div>
@@ -565,34 +554,47 @@ $lang = Yii::$app->language;
 
         <h2 style="color: #1f3b6e; margin-top: 0; border-bottom: 2px solid #2c5ca9; padding-bottom: 10px;">
             <?= Yii::t("app", "Composition of the Academic Council") ?>
+            <!-- Академиялық Кеңестің құрамы -->
         </h2>
 
         <h3 style="color:#1f3b6e; margin-top:30px;">
             <?= Yii::t('app', 'The following composition of the Academic Council for the 2024–2025 academic year has been approved:') ?>
+            <!-- 2024–2025 оқу жылына арналған Академиялық Кеңестің келесі құрамы бекітілсін: -->
         </h3>
 
         <ol style="line-height: 1.8; margin-top: 15px;">
             <li><?= Yii::t('app', 'M.M. Umurkuloва — Chairperson, Member of the Board for Academic Affairs – Vice-Rector') ?>
+                <!-- М.М. Умуркулова — төраға, Академиялық мәселелер бойынша Басқарма мүшесі – проректор -->
             </li>
             <li><?= Yii::t('app', 'T.M. Khasenova — Director of the Department of Academic Affairs') ?>
+                <!-- Т.М. Хасенова — Академиялық жұмыс департаментінің директоры -->
             </li>
             <li><?= Yii::t('app', 'S.V. Gagolina — Deputy Director of the Department of Academic Affairs, Candidate of Biological Sciences') ?>
+                <!-- С.В. Гаголина — Академиялық жұмыс департаменті директорының орынбасары, б.ғ.к. -->
             </li>
             <li><?= Yii::t('app', 'S.L. Smailova — Deputy Director of the Department of Academic Affairs') ?>
+                <!-- С.Л. Смаилова — Академиялық жұмыс департаменті директорының орынбасары -->
             </li>
             <li><?= Yii::t('app', 'M.S. Abisheva — Deputy Director of the Department of Academic Affairs, Candidate of Philological Sciences, PhD') ?>
+                <!-- М.С. Әбишева — Академиялық жұмыс департаменті директорының орынбасары, фил.ғ.к., PhD -->
             </li>
             <li><?= Yii::t('app', 'G.Zh. Zhetimekova — Head of the Distance Education Center') ?>
+                <!-- Г.Ж. Жетімекова — Қашықтықтан білім беру орталығының басшысы -->
             </li>
             <li><?= Yii::t('app', 'O.A. Tyan — Head of the Registrar’s Office, Candidate of Economic Sciences') ?>
+                <!-- О.А. Тян — Тіркеуші кеңсе басшысы, э.ғ.к. -->
             </li>
             <li><?= Yii::t('app', 'G.Zh. Zhomartova — Chair of the Quality Assurance Commission of the Faculty of Biology and Geography, Senior Lecturer of the Department of Zoology') ?>
+                <!-- Г.Ж. Жомартова — Биология-география факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, зоология кафедрасының аға оқытушысы -->
             </li>
             <li><?= Yii::t('app', 'A.A. Palina — Chair of the Quality Assurance Commission of the Faculty of Foreign Languages, Assistant Professor of the Department of Theory and Methods of Foreign Language Training, PhD') ?>
+                <!-- А.А. Палина — Шет тілдер факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, шет тілдік дайындық теориясы мен әдістемесі кафедрасының профессор ассистенті, PhD -->
             </li>
             <li><?= Yii::t('app', 'A.Z. Zhumanova — Chair of the Quality Assurance Commission of the Faculty of History, Associate Professor of the Department of History of Kazakhstan and World History, PhD') ?>
+                <!-- А.З. Жуманова — Тарих факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, Қазақстан тарихы және ХХД кафедрасының қауымдастырылған профессоры, PhD -->
             </li>
             <li><?= Yii::t('app', 'U.A. Kosybaeva — Chair of the Quality Assurance Commission of the Faculty of Mathematics and Information Technologies, Candidate of Pedagogical Sciences') ?>
+                <!-- У.А. Косыбаева — Математика және ақпараттық технологиялар факультетінің сапаны қамтамасыз ету жөніндегі комиссия төрағасы, п.ғ.к. -->
             </li>
         </ol>
 

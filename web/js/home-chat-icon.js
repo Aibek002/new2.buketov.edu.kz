@@ -20,7 +20,7 @@ let closeInterval = null;
 const chat_box = document.querySelector(".chat-box");
 const chat_box2 = document.querySelector(".chat-widget");
 const icon_close_chat = [
-  "https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg",
+  // "https://cb-electronics.com/wp-content/uploads/2021/04/istockphoto-1221348467-612x612-1.jpeg",
   "https://icons.veryicon.com/png/o/miscellaneous/all-blue-icon/close-428.png",
 ];
 

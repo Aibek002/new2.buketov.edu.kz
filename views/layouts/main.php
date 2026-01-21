@@ -159,11 +159,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(
-                                            Yii::t('app', 'For International Students') . ' <span>></span>',
-                                            ['site/international-students'],
-                                            ['class' => 'menu-item']
-                                        ) ?>
+                                        <?= Html::a(Yii::t('app', 'Education of International Students') . ' <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
+
 
                                         <?= Html::a(
                                             Yii::t('app', 'Student Dormitory Information') . ' <span>></span>',
@@ -171,17 +168,18 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(
+                                        <!-- <?= Html::a(
                                             Yii::t('app', 'Contacts') . ' <span>></span>',
                                             ['site/contact'],
                                             ['class' => 'menu-item']
-                                        ) ?>
+                                        ) ?> -->
 
                                     </div>
                                     <div class="dropdown-submenu student">
                                         <!-- <?= Html::a(Yii::t('app', 'Campus Life') . ' <span>></span>', '#', [
                                             'class' => 'menu-item'
                                         ]) ?> -->
+                                        <?= Html::a(Yii::t('app', 'Education of International Students') . ' <span>></span>', ['site/international-students'], ['class' => 'menu-item']) ?>
 
                                         <?= Html::a(Yii::t('app', 'Library') . ' <span>></span>', 'https://library.buketov.edu.kz/', [
                                             'class' => 'menu-item',
@@ -199,9 +197,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             'class' => 'menu-item'
                                         ]) ?> -->
 
-                                        <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], [
+                                        <!-- <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], [
                                             'class' => 'menu-item'
-                                        ]) ?>
+                                        ]) ?> -->
 
                                     </div>
 
