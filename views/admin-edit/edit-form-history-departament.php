@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 <div class="container mt-4">
     <div class="card shadow-sm">
         <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Редактирование истории департамента</h4>
+            <h4 class="mb-0">Редактирование истории кафедры</h4>
         </div>
         <div class="card-body">
             <?php $form = ActiveForm::begin(); ?>
@@ -27,15 +27,15 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>
 
-            <div class="row mt-3">
-                <div class="col-md-4">
-                    <?= $form->field($model, 'content_kz')->textarea(['rows' => 8, 'class'=>'form-control tinymce-editor'])->label('Описание (KZ)') ?>
+            <div class="row row-column mt-3">
+                <div class="col-md-4 ">
+                    <?= $form->field($model, 'content_kz')->textarea(['rows' => 12, 'class'=>'form-control tinymce-editor'])->label('Описание (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'content_ru')->textarea(['rows' => 8, 'class'=>'form-control tinymce-editor'])->label('Описание (RU)') ?>
+                    <?= $form->field($model, 'content_ru')->textarea(['rows' => 12 , 'class'=>'form-control tinymce-editor'])->label('Описание (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'content_en')->textarea(['rows' => 8, 'class'=>'form-control tinymce-editor'])->label('Описание (EN)') ?>
+                    <?= $form->field($model, 'content_en')->textarea(['rows' => 12, 'class'=>'form-control tinymce-editor'])->label('Описание (EN)') ?>
                 </div>
             </div>
 

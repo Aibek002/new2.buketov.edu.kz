@@ -11,8 +11,8 @@ require __DIR__ . '/../vendor/autoload.php';
 // Подключаем .env
 // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 // $dotenv->load();
-$dotenv = Dotenv\Dotenv::createMutable(__DIR__ . '/../');
-$dotenv->load();
+// $dotenv = Dotenv\Dotenv::createMutable(__DIR__ . '/../');
+// $dotenv->load();
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/web.php';

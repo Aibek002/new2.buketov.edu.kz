@@ -18,15 +18,14 @@ DessertationJobAsset::register($this);
     <?php if ($secretary !== null && is_array($secretary)): ?>
         <div class="title-content">
             <span>
-                <?= Yii::t('app', 'Учёный секретарь диссовета по - {name} Карагандинского университета имени академика Е. А. Букетова', [
-                    'name' => $dissertation_name,
-                ]) ?>
+
+
             </span>
 
             <div class="person-section my-5">
                 <div class="person-img">
-                    <img width="100%"
-                        src="https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg"
+                    <img width="100%" style="padding: block 15px;"
+                        src="<?= $secretary['image'] ?? "https://st4.depositphotos.com/7541698/30595/v/450/depositphotos_305955306-stock-illustration-people-icon-person-vector-icon.jpg" ?>"
                         alt="">
                     <div class="icon">
                         🎓
@@ -48,9 +47,9 @@ DessertationJobAsset::register($this);
                                 $secretary['job_title'] ?? 'не задано';
                             ?>
                         </i></p>
-                    <p class="person-info"><i>
+                    <!-- <p class="person-info"><i>
                             <?= $secretary['information'] ?? 'не задано'; ?>
-                        </i></p>
+                        </i></p> -->
                     <strong class="person-info">
                         <?= Yii::t("app", "Working hours:") ?>
                         <i>
@@ -65,9 +64,9 @@ DessertationJobAsset::register($this);
                     <div class="email"><img src="/bg-images/svg/iconEmail.svg"> <a
                             href="mailto:<?= $secretary['email'] ?? 'не задано'; ?>"><?= $secretary['email'] ?? 'не задано'; ?></a>
                     </div>
-                    <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a
+                    <!-- <div class="phone"><img src="/bg-images/svg/iconPhone.svg"> <a
                             href="tel:<?= $secretary['phone'] ?? 'не задано'; ?>"><?= $secretary['phone'] ?? 'не задано'; ?></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

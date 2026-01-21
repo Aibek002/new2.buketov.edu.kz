@@ -157,13 +157,12 @@ use yii\widgets\ActiveForm;
 
 <?php
 
-$this->registerJsFile('https://cdn.tiny.cloud/1/wmtfk0v9m750xo316xpx88hktns85a0m5lgbaiz4kbnun0cj/tinymce/7/tinymce.min.js', [
+$this->registerJsFile('https://cdn.tiny.cloud/1/dh851zzc2lhniwdysf0p1ckjsj3ex5zf5ssp8jvaru77qzk6/tinymce/7/tinymce.min.js', [
     'referrerpolicy' => 'origin'
 ]);
 
 
 $this->registerJs("
-    // Инициализация TinyMCE
     tinymce.init({
         selector: '.tinymce-editor',
         plugins: 'lists link image table code',
@@ -171,18 +170,15 @@ $this->registerJs("
         menubar: false,
         height: 250,
         language: 'ru',
+        apiKey: 'dh851zzc2lhniwdysf0p1ckjsj3ex5zf5ssp8jvaru77qzk6',
         setup: function (editor) {
             editor.on('change', function () {
-                tinymce.triggerSave(); // синхронизирует контент с textarea при каждом изменении
+                tinymce.triggerSave();
             });
         }
     });
 
-    // Перед отправкой формы — сохранить данные из TinyMCE в textarea
     $('form').on('submit', function() {
         tinymce.triggerSave();
     });
 ");
-
-
-?>

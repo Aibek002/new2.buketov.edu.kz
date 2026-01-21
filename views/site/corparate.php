@@ -64,35 +64,35 @@ $this->title = Yii::t("app", "Corporate governance");
 
 </div>
 <div class="board-of-directors">
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Board of Directors") ?>
-    </div>
+    </h3>
     <div id="board-members" class="board-of-directors-section">
         <div class="container-board-of-directors"></div>
     </div>
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Corporate Secretary") ?>
-    </div>
+    </h3>
     <div id="secretary" class="board-of-directors-section">
 
         <div class="container-board-of-directors"></div>
     </div>
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Internal Audit Service") ?>
-    </div>
+    </h3>
     <div id="audit-members" class="board-of-directors-section">
         <div class="container-board-of-directors"></div>
     </div>
-    <div class="title-content">
+    <h3  class="title-content">
         <?= Yii::t("app", "Anti-corruption Compliance Service") ?>
-    </div>
+    </h3>
     <div id="anti-corruption" class="board-of-directors-section">
 
         <div class="container-board-of-directors"></div>
     </div>
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Meeting of the board of directors") ?>
-    </div>
+    </h3>
     <?php
     $grouped = [];
     foreach ($pdf as $pdf_item) {
@@ -137,9 +137,9 @@ $this->title = Yii::t("app", "Corporate governance");
     <?php endforeach; ?>
 
 
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Committees of the Board of Directors") ?>
-    </div>
+    </h3>
     <div class="button-section">
         <button onclick="selectCommittee('audit')"><?= Yii::t('app', 'Audit Committee') ?></button>
         <button onclick="selectCommittee('hr-rem')"><?= Yii::t('app', 'HR and Remuneration Committee') ?></button>
@@ -179,9 +179,9 @@ $this->title = Yii::t("app", "Corporate governance");
     <?php endforeach; ?>
 
 
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Corporate events") ?>
-    </div>
+    </h3>
     <?php
     $years = [];
     foreach ($pdf as $pdf_item) {
@@ -237,13 +237,13 @@ $this->title = Yii::t("app", "Corporate governance");
     </div>
 </div>
 <div class="governance">
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Composition of the Governance") ?>
-    </div>
+    </h3>
     <div class="container-governance"></div>
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Board meeting") ?>
-    </div>
+    </h3>
     <?php
     $meeting = [];
 
@@ -285,9 +285,9 @@ $this->title = Yii::t("app", "Corporate governance");
 </div>
 
 <div class="sustainable_development">
-    <div class="title-content">
+    <h3 class="title-content">
         <?= Yii::t("app", "Sustainable Development") ?>
-    </div>
+    </h3>
 
     <div class="container">
 

@@ -261,7 +261,7 @@ class AdminEditController extends Controller
             ])
             ->innerJoin('type_ref_staff', 'type_ref_staff.staff_id = staff.id')
             ->innerJoin('ref_staff', 'ref_staff.id = type_ref_staff.ref_staff_id')
-
+            ->where('type_ref_staff.is_delete = 0')
             ->orderBy(new \yii\db\Expression("SUBSTRING(staff.name_ru, 9) ASC"))
             ->asArray()
             ->distinct(['type_ref_staff.ref_staff_id', 'type_ref_staff.staff_id'])
@@ -291,17 +291,31 @@ class AdminEditController extends Controller
         }
 
         if (
-            Yii::$app->request->isPost && $type_ref_staff->load(Yii::$app->request->post()) && $staff->load(Yii::$app->request->post())
-
+            Yii::$app->request->isPost &&
+            $staff->load($_POST) &&
+            $type_ref_staff->load($_POST)
         ) {
-            $isValid = $staff->validate();
-            $isValid = $type_ref_staff->validate() && $isValid;
+            if ($staff->validate() && $type_ref_staff->validate()) {
 
-            $file = UploadedFile::getInstance($staff, 'images');
 
-            if ($isValid) {
+
+                $file = UploadedFile::getInstance($staff, 'images');
+                // print_r($type_ref_staff->attributes);die;
+
                 if ($staff->save(false)) {
-                    $type_ref_staff->staff_id = $staff->id; // на всякий случай, чтобы связь сохранялась корректно
+                    $type_ref_staff->staff_id = $staff->id;
+                    $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
+                    $type_ref_staff->faculty_id = $type_ref_staff->faculty_id;
+                    $type_ref_staff->departament_id = $type_ref_staff->departament_id;
+                    $type_ref_staff->information_en = $type_ref_staff->information_en;
+                    $type_ref_staff->information_ru = $type_ref_staff->information_ru;
+                    $type_ref_staff->information_kz = $type_ref_staff->information_kz;
+                    $type_ref_staff->job_title_en = $type_ref_staff->job_title_en;
+                    $type_ref_staff->job_title_ru = $type_ref_staff->job_title_ru;
+                    $type_ref_staff->job_title_kz = $type_ref_staff->job_title_kz;
+                    $type_ref_staff->email = $type_ref_staff->email;
+                    $type_ref_staff->phone = $type_ref_staff->phone;
+
                     if ($type_ref_staff->save(false)) {
 
 
@@ -327,6 +341,8 @@ class AdminEditController extends Controller
                                 $image->image = '/files/image_avatar_staff/teacher/' . $staff->id . "/" . $file_name;
                                 if ($type_ref_staff->ref_staff_id == 12) {
                                     $image->ref_image_id = 8;
+                                } elseif ($type_ref_staff->ref_staff_id == 13) {
+                                    $image->ref_image_id = 11;
                                 }
 
                                 if ($file->saveAs($path . $file_name)) {
@@ -354,6 +370,20 @@ class AdminEditController extends Controller
 
 
         return $this->render('edit-form-staff', ['staff' => $staff, 'type_ref_staff' => $type_ref_staff]);
+    }
+    public function actionDeleteStaff($type_ref_staff_id)
+    {
+        $typeRefStaff = TypeRefStaff::findOne($type_ref_staff_id);
+
+        if (!$typeRefStaff) {
+            throw new NotFoundHttpException("TypeRefStaff not found");
+        }
+
+        // Удаляем запись
+        $typeRefStaff->is_delete = 1;
+        $typeRefStaff->save(false);
+
+        return $this->redirect(['admin-edit/edit-staff']);
     }
 
 

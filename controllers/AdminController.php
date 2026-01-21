@@ -139,6 +139,7 @@ class AdminController extends Controller
                     $type_ref_staff->job_title_kz = trim($staff->job_title_kz);
                     $type_ref_staff->faculty_id = $staff->faculty_id;
                     $type_ref_staff->departament_id = $staff->departament_id;
+                    $type_ref_staff->dissertation_advice_id = $staff->dissertation_advice_id;
                     $type_ref_staff->email = mb_strtolower(trim($staff->email));
                     $type_ref_staff->information_kz = $staff->information_kz;
                     $type_ref_staff->information_ru = $staff->information_ru;

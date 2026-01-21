@@ -38,7 +38,7 @@ $this->title = Yii::t("app", "Management Structure");
                                 <div class="text-center small">
                                     <p class="mb-1"><i class="bi bi-envelope"></i>
                                         <?= $model_item->email ?: 'Нет данных о email' ?></p>
-                                    <p><i class="bi bi-telephone"></i> <?= $model_item->phone ?: 'Нет данных о phone' ?></p>
+                                    <!-- <p><i class="bi bi-telephone"></i> <?= $model_item->phone ?: 'Нет данных о телефоне' ?></p> -->
                                 </div>
                             </div>
 

@@ -43,10 +43,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <?= Html::img('/bg-images/logo-buketov.png', [
                         'alt' => 'Buketov Logo',
                         'class' => 'navbar-logo logoBuketov',
-                        'style' => 'height: 60px;' // Установите нужную высоту
+                        'style' => 'height: 60px; filter:drop-shadow(0 0 5px rgba(0, 0, 0, 0.2))' // Установите нужную высоту
                     ]) ?>
                 </a>
-                <ul class="navbar-nav ms-auto text-white px-5">
+                <ul class="navbar-nav ms-auto text-white">
                     <li class="nav-item d-flex align-items-center lang-switcher">
                         <?= Html::a('kz', Url::current(['lang' => 'kz']), ['class' => 'lang-link']) ?>
                         <?= Html::a('ru', Url::current(['lang' => 'ru']), ['class' => 'lang-link']) ?>
@@ -89,41 +89,41 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <div class="dropdown-submenu university-info">
                                         <?= Html::a(
                                             Yii::t('app', 'History of the University') . ' <span>></span>',
-                                            ['site/article', 'ref_article_id' => '1'],
+                                            ['site/article-history-university'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
                                         <?= Html::a(
                                             Yii::t('app', 'Mission of the University') . ' <span>></span>',
-                                            ['site/article', 'ref_article_id' => '2'],
+                                            ['site/article-mission-university'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
                                         <?= Html::a(
                                             Yii::t('app', 'Development Program') . ' <span>></span>',
-                                            ['site/article', 'ref_article_id' => '5'],
+                                            ['site/article-dev-program-university'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
                                         <?= Html::a(
                                             Yii::t('app', 'We are in the Rankings') . ' <span>></span>',
-                                            ['site/article', 'ref_article_id' => 3,'ref_image_id' => 10 ],
+                                            ['site/article', 'ref_article_id' => 3, 'ref_image_id' => 10],
                                             ['class' => 'menu-item']
                                         ) ?>
 
                                         <?= Html::a(
-                                            Yii::t('app', 'Corporate Governance') . ' <span>></span>',
+                                            Yii::t('app', 'Corporate governance') . ' <span>></span>',
                                             ['site/corparate'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(
+                                        <!-- <?= Html::a(
                                             Yii::t('app', 'Administrative Services') . "1" . ' <span>></span>',
                                             ['site/management-structure', 'type' => 'administrative-services'],
                                             ['class' => 'menu-item']
-                                        ) ?>
+                                        ) ?> -->
                                         <?= Html::a(
-                                            Yii::t('app', 'Administrative Services') . "2" . ' <span>></span>',
+                                            Yii::t('app', 'Administrative Services') . ' <span>></span>',
                                             ['site/management-structure-ex', 'type' => 'administrative-services'],
                                             ['class' => 'menu-item']
                                         ) ?>
@@ -167,7 +167,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                                         <?= Html::a(
                                             Yii::t('app', 'Student Dormitory Information') . ' <span>></span>',
-                                            ['site/article', 'type' => 'information-about-the-student-house', 'title' => '"House of Students" complex'],
+                                            ['site/article', 'type' => 'information-about-the-student-house', 'ref_article_id' => '4'],
                                             ['class' => 'menu-item']
                                         ) ?>
 
@@ -195,9 +195,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                             ['class' => 'menu-item']
                                         ) ?>
 
-                                        <?= Html::a(Yii::t('app', 'Career Center') . ' <span>></span>', '#', [
+                                        <!-- <?= Html::a(Yii::t('app', 'Career Center') . ' <span>></span>', '#', [
                                             'class' => 'menu-item'
-                                        ]) ?>
+                                        ]) ?> -->
 
                                         <?= Html::a(Yii::t('app', 'Contacts') . ' <span>></span>', ['site/contact'], [
                                             'class' => 'menu-item'
@@ -286,12 +286,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <?= Html::a(Yii::t('app', 'Institute of Applied Mathematics') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Institute of Applied Mathematics'], ['class' => 'menu-item', 'encode' => false]) ?>
                                         <?= Html::a(Yii::t('app', 'Laboratory of Religious Situation in Kazakhstan') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Research Laboratory of the Comprehensive Study of the Religious Situation in Kazakhstan'], ['class' => 'menu-item', 'encode' => false]) ?>
                                         <?= Html::a(Yii::t('app', 'Saryarka Archaeological Institute') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Saryarka Archaeological Institute'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Tulgatanu Research Center') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => '"Tulgatanu" Scientific research center'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Center for Ethno-Anthropological Research') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Center of Еthnocultural and Historical-Anthropological Research'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Language Education') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific-research laboratory on the problems of language education'], ['class' => 'menu-item', 'encode' => false]) ?>
                                         <?= Html::a(Yii::t('app', 'Center for Inclusive Education') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Resource Center for Inclusive and Special Education'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
-                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article','ref_article_id' => '6', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Socio-Psychological Laboratory') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Socio-psychological research laboratory'], ['class' => 'menu-item', 'encode' => false]) ?>
+                                        <?= Html::a(Yii::t('app', 'Laboratory of Organic Semiconductor Chemistry') . ' <span>></span>', ['site/article', 'ref_article_id' => '6', 'title' => 'Scientific laboratory  of organic semiconductor chemistry'], ['class' => 'menu-item', 'encode' => false]) ?>
 
 
                                     </div>
@@ -651,6 +651,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         max-height: 100px;
         max-width:250px;
         margin-block:20px;
+        filter:drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
         '
                     ]); ?>
                     <div class="col-md-6 d-flex flex-column justify-content-end" style="min-height: 100px;">

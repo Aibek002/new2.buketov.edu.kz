@@ -2,9 +2,11 @@
 use app\components\LanguageHelper;
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
+use app\assets\DepartamentAsset;
+DepartamentAsset::register($this);
 ?>
 <?php if ($model): ?>
-    <div class="m-5 p-5">
+    <div class="departament-history m-5 p-5">
         <?php
         $title = $model->{LanguageHelper::title()};
         $content = HtmlPurifier::process($model->{LanguageHelper::content()})

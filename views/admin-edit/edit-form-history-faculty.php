@@ -27,14 +27,14 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>
 
-            <div class="row mt-3">
-                <div class="col-md-4">
+            <div class="row flex-column mt-3">
+                <div class="col-md-12">
                     <?= $form->field($model, 'content_kz')->textarea(['rows' => 20, 'class'=>'form-control tinymce-editor'])->label('Описание (KZ)') ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <?= $form->field($model, 'content_ru')->textarea(['rows' => 20, 'class'=>'form-control tinymce-editor'])->label('Описание (RU)') ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <?= $form->field($model, 'content_en')->textarea(['rows' => 20, 'class'=>'form-control tinymce-editor'])->label('Описание (EN)') ?>
                 </div>
             </div>
@@ -56,7 +56,7 @@ $this->registerJs("
         plugins: 'lists link image table code',
         toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
         menubar: false,
-        height: 250,
+        height: 600,
         language: 'ru'
     });
 ");

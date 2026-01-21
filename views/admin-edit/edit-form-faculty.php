@@ -31,26 +31,26 @@ use yii\widgets\ActiveForm;
             <!-- Информация -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Информация (KZ)') ?>
+                    <?= $form->field($model, 'information_kz')->textarea(['rows' => 6 ])->label('Информация (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Информация (RU)') ?>
+                    <?= $form->field($model, 'information_ru')->textarea(['rows' => 6])->label('Информация (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'information_en')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Информация (EN)') ?>
+                    <?= $form->field($model, 'information_en')->textarea(['rows' => 6 ])->label('Информация (EN)') ?>
                 </div>
             </div>
 
             <!-- Приветствие -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Приветствие (KZ)') ?>
+                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 6 ])->label('Приветствие (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Приветствие (RU)') ?>
+                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 6 ])->label('Приветствие (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Приветствие (EN)') ?>
+                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 6 ])->label('Приветствие (EN)') ?>
                 </div>
             </div>
 

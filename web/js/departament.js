@@ -14,7 +14,7 @@ function openTeachersBox(element) {
     more_teachers.classList.add('active');
     more_teachers.innerHTML =
         `
- <div class="event-modal p-5 rounded shadow-lg text-white" style="width: 100%; height: 100%; position: relative; background: linear-gradient(145deg, #274b7a, #2f5fa1); border: 2px solid #5c8ecb;">
+ <div class="teacher-info event-modal p-5 rounded shadow-lg text-white" style="width: 100%; height: 100%; position: relative; background: linear-gradient(145deg, #274b7a, #2f5fa1); border: 2px solid #5c8ecb;">
     <!-- Кнопка закрытия -->
     <button onclick="closeBox('events')" style="position: absolute; top: 10px; right: 15px; font-size: 35px; background: none; border: none; color: white; cursor: pointer;">&times;</button>
 

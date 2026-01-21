@@ -157,6 +157,7 @@ if (
   });
 
   btnBoardOfDirectors.addEventListener("click", function () {
+    console.log("Board of Directors clicked");
     const lang = this.dataset.lang;
     allHeaderBtn.forEach((element) => {
       if (element != btnBoardOfDirectors) {

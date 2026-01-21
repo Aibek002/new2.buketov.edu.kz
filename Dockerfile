@@ -1,5 +1,6 @@
 FROM php:8.3-fpm
 
+
 RUN apt-get update 
 # Копируем сертификат внутрь контейнера
 COPY cacert.pem /usr/local/share/ca-certificates/cacert.crt
@@ -9,14 +10,16 @@ RUN update-ca-certificates
 RUN docker-php-ext-install mysqli pdo pdo_mysql \
     && docker-php-ext-enable pdo_mysql 
 
-RUN apt-get install -y ffmpeg 
+# RUN apt-get install -y ffmpeg 
 
 RUN apt install -y curl unzip 
 
 RUN curl -sS https://getcomposer.org/installer | php 
 
 RUN mv composer.phar /usr/local/bin/composer \
-    && composer require guzzlehttp/guzzle
+        && composer config --global allow-plugins.yiisoft/yii2-composer true \
+        && composer require guzzlehttp/guzzle
+
 RUN composer require yidas/yii2-bower-asset
 RUN composer require yiisoft/mailer-symfony
 # # RUN composer require yiisoft/yii2-swiftmailer

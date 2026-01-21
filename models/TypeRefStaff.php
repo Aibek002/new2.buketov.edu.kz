@@ -37,8 +37,8 @@ class TypeRefStaff extends \yii\db\ActiveRecord
     {
         return [
             [['information_kz','information_ru','information_en','welcome_kz','welcome_ru','welcome_en','job_title_kz', 'job_title_ru', 'job_title_en', 'date', 'staff_id', 'ref_staff_id'], 'default', 'value' => null],
-            [['job_title_kz', 'job_title_ru', 'job_title_en', 'date'], 'string'],
-            [['staff_id', 'ref_staff_id'], 'integer'],
+            [['job_title_kz', 'job_title_ru', 'job_title_en','email','phone', 'date'], 'string'],
+            [['faculty_id','departament_id','staff_id', 'ref_staff_id'], 'integer'],
             [['ref_staff_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefStaff::class, 'targetAttribute' => ['ref_staff_id' => 'id']],
             [['staff_id'], 'exist', 'skipOnError' => true, 'targetClass' => Staff::class, 'targetAttribute' => ['staff_id' => 'id']],
         ];

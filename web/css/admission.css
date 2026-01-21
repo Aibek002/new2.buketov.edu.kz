@@ -10,6 +10,16 @@
     display: block;
 }
 
+.person-card {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
 .general-rules-pdf {
     display: none;
 }
@@ -35,8 +45,9 @@
 .result-title-specialization,
 .result-title-college {
     display: none;
-  
+
 }
+
 .result-title-ent.active,
 .result-title-specialization.active,
 .result-title-college.active {
@@ -44,6 +55,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: 50px;
 }
+
 .result-title-ent p,
 .result-title-specialization p,
 .result-title-college p {
@@ -64,8 +76,8 @@
     padding: 20px;
 }
 
-#view ,
-#viewSpecialization{
+#view,
+#viewSpecialization {
     background: var(--indigoblue);
     border: 1px solid white;
     padding: 5px;
@@ -105,23 +117,29 @@
     padding-left: 20px;
 }
 
-.select-form-by-specialization ,
+.select-form-by-specialization,
 .form-search-by-ent,
 .form-search-by-specialization,
-.form-search-by-college
-{
+.form-search-by-college {
     display: none;
 }
+
 .select-form-by-specialization.active,
 .form-search-by-ent.active,
 .form-search-by-specialization.active,
-.form-search-by-college.active
-{
+.form-search-by-college.active {
     display: block;
 }
-.title-form{
+
+.title-form {
     color: white;
-  font-weight: var(--font-700);
-  text-align: center;
-  font-size: var(--font-22);
+    font-weight: var(--font-700);
+    text-align: center;
+    font-size: var(--font-22);
+}
+@media (max-width: 768px) {
+    .person-card {
+        flex-direction: column;
+        align-items: center;
+    }
 }

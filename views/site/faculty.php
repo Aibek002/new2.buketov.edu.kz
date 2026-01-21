@@ -18,11 +18,7 @@ use yii\helpers\Html;
 <div class="first-flex-faculty" style="margin:auto; padding: 2vw 5vw;">
 
     <!-- Блок декана -->
-    <div style="display: flex; align-items: center; justify-content: space-between; 
-                background: linear-gradient(135deg, #f0f4f8, #e3ebf6); 
-                border-radius: 25px; padding: 40px; 
-                box-shadow: 0 12px 30px rgba(0,0,0,0.1); 
-                transition: transform 0.3s; margin-bottom: 50px;">
+    <div class="block-dean">
 
         <!-- Текст -->
         <div style="flex: 1; padding-right: 40px; font-family: 'Segoe UI', sans-serif; color: #2c3e50;">

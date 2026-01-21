@@ -24,7 +24,7 @@ $lang = Yii::$app->language;
 
     <div
         style="margin: 40px auto; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); position: relative; display: flex;">
-        <div style="display: flex; gap: 30px; padding: 20px; border-top: 1px solid #eee; margin-top: 20px;">
+        <div class="person-card">
 
             <div class="person-img"
                 style="width: 250px; height: 250px; overflow: hidden; flex-shrink: 0; border-radius: 8px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); background-color: #f9f9f9;">
@@ -146,7 +146,7 @@ $lang = Yii::$app->language;
         </div>
 
         <div class="p-5"
-            style="width: 94vw; min-height: 100%; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font); margin-block:50px">
+            style=" min-height: 100%; background: var(--indigoblue); border-radius:20px; border:1px solid var(--indigoblue-font); margin-block:50px">
             <div class="title-content-text">
                 <?= Yii::t("app", "Form for selecting profile subjects and available professions") ?>
             </div>
