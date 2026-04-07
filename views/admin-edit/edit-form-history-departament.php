@@ -17,24 +17,24 @@ use yii\widgets\ActiveForm;
 
             <div class="row">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'title_kz')->textInput(['class'=>'form-control tinymce-editor'])->label('Название (KZ)') ?>
+                    <?= $form->field($model, 'title_kz')->textInput(['class'=>'form-control'])->label('Название (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'title_ru')->textInput(['class'=>'form-control tinymce-editor'])->label('Название (RU)') ?>
+                    <?= $form->field($model, 'title_ru')->textInput(['class'=>'form-control'])->label('Название (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'title_en')->textInput(['class'=>'form-control tinymce-editor'])->label('Название (EN)') ?>
+                    <?= $form->field($model, 'title_en')->textInput(['class'=>'form-control'])->label('Название (EN)') ?>
                 </div>
             </div>
 
             <div class="row row-column mt-3">
-                <div class="col-md-4 ">
+                <div class="col-md-12 ">
                     <?= $form->field($model, 'content_kz')->textarea(['rows' => 12, 'class'=>'form-control tinymce-editor'])->label('Описание (KZ)') ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <?= $form->field($model, 'content_ru')->textarea(['rows' => 12 , 'class'=>'form-control tinymce-editor'])->label('Описание (RU)') ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <?= $form->field($model, 'content_en')->textarea(['rows' => 12, 'class'=>'form-control tinymce-editor'])->label('Описание (EN)') ?>
                 </div>
             </div>
@@ -49,15 +49,29 @@ use yii\widgets\ActiveForm;
     </div>
 </div>
 
-<?php
-$this->registerJs("
-    tinymce.init({
-        selector: '.tinymce-editor',
-        plugins: 'lists link image table code',
-        toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
-        menubar: false,
-        height: 250,
-        language: 'ru'
-    });
-");
-?>
+<script src="/tinymce/tinymce.min.js"></script>
+
+<script>
+tinymce.init({
+    selector: '.tinymce-editor',
+    base_url: '/tinymce',
+    suffix: '.min',
+
+    license_key: 'gpl',
+    language: 'ru',
+    height: 600,
+
+    toolbar: 'bold italic underline | alignleft aligncenter alignright | bullist numlist',
+    plugins: 'lists',
+
+    formats: {
+        hilitecolor: { inline: 'span', styles: {} }
+    },
+
+    setup: function (editor) {
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/background-color:[^;"]+;?/gi, '');
+        });
+    }
+});
+</script>

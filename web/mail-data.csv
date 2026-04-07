@@ -1,0 +1,1109 @@
+﻿;;;;;;;;;
+;СПИСОК СОТРУДНИКОВ;;;;;;;;
+;;;;;;;;;
+Биолого-географический;;;;;;;;;
+;Ботаники;;;;;;;;
+;;1;Абдикаримова;Перизат;Узаковна;Абдикаримова;Перизат;Abdikarimova.P;Abdikarimova.P@karnu-buketov.edu.kz
+;;2;Асанова;Гулзина;Кабылбековна;Асанова;Гулзина;Asanova.G;Asanova.G@karnu-buketov.edu.kz
+;;3;Ахметжанова;Айтбала;Ибжановна;Ахметжанова;Айтбала;Akhmetzhanova.A;Akhmetzhanova.A@karnu-buketov.edu.kz
+;;4;Берген;Нұргүл;Сәкенқызы;Берген;Нургул;Bergen.N;Bergen.N@karnu-buketov.edu.kz
+;;5;Гаврилькова;Елена;Анатольевна;Гаврилькова;Елена;Gavrilkova.Y;Gavrilkova.Y@karnu-buketov.edu.kz
+;;6;Додонова;Александра;Шавкатовна;Додонова;Александра;Dodonova.A;Dodonova.A@karnu-buketov.edu.kz
+;;7;Жумина;Асель;Галымовна;Жумина;Асель;Zhumina.A;Zhumina.A@karnu-buketov.edu.kz
+;;8;Ишмуратова;Маргарита;Юлаевна;Ишмуратова;Маргарита;Ishmuratova.M;Ishmuratova.M@karnu-buketov.edu.kz
+;;9;Карабалинова;Индира;Ерболовна;Карабалинова;Индира;Karabalinova.I;Karabalinova.I@karnu-buketov.edu.kz
+;;10;Кишкенебаева;Динара;Осербековна;Кишкенебаева;Динара;Kishkenebaeva.D;Kishkenebaeva.D@karnu-buketov.edu.kz
+;;11;Кыздарова;Дамет;Канагатовна;Кыздарова;Дамет;Kyzdarova.D;Kyzdarova.D@karnu-buketov.edu.kz
+;;12;Қали;Алмагүл;;Кали;Алмагул;Kali.A;Kali.A@karnu-buketov.edu.kz
+;;13;Мажирова;Сарсенкуль;Маралхановна;Мажирова;Сарсенкуль;Mazhirova.S;Mazhirova.S@karnu-buketov.edu.kz
+;;14;Мусина;Роза;Тлетаевна;Мусина;Роза;Musina.R;Musina.R@karnu-buketov.edu.kz
+;;15;Норцева;Марина;Анатольевна;Норцева;Марина;Nortseva.M;Nortseva.M@karnu-buketov.edu.kz
+;;16;Нуркенова;Айнур;Тулеутаевна;Нуркенова;Айнур;Nurkenova.A;Nurkenova.A@karnu-buketov.edu.kz
+;;17;Погосян;Гаянэ;Павловна;Погосян;Гаянэ;Pogosyan.G;Pogosyan.G@karnu-buketov.edu.kz
+;;18;Сагинишова;Асылзат;Женискызы;Сагинишова;Асылзат;Saginishova.A;Saginishova.A@karnu-buketov.edu.kz
+;;19;Сирман;Денис;Юрьевич;Сирман;Денис;Sirman.D;Sirman.D@karnu-buketov.edu.kz
+;;20;Тлеукенова;Салтанат;Ушкемпировна;Тлеукенова;Салтанат;Tleukenova.S;Tleukenova.S@karnu-buketov.edu.kz
+;;21;Тулегенова;Сымбат;Ержанқызы;Тулегенова;Сымбат;Tulegenova.S;Tulegenova.S@karnu-buketov.edu.kz
+;;22;Шауашеков;Темиргали;Кирикпаевич;Шауашеков;Темиргали;Shauashekov.T;Shauashekov.T@karnu-buketov.edu.kz
+;;23;Шорин;Сабит;Сексембекулы;Шорин;Сабит;Shorin.S;Shorin.S@karnu-buketov.edu.kz
+;Географии;;;;;;;;@karnu-buketov.edu.kz
+;;1;Абиева;Гулшара;Бакбергеновна;Абиева;Гулшара;Abieva.G;Abieva.G@karnu-buketov.edu.kz
+;;2;Акпамбетова;Камшат;Макпалбаевна;Акпамбетова;Камшат;Akpambetova.K;Akpambetova.K@karnu-buketov.edu.kz
+;;3;Аманбек;Жайнагул;;Аманбек;Жайнагул;Amanbek.Zh;Amanbek.Zh@karnu-buketov.edu.kz
+;;4;Аманжолов;Айдын;Иманкешович;Аманжолов;Айдын;Amanzholov.A;Amanzholov.A@karnu-buketov.edu.kz
+;;5;Жангожина;Гаухар;Махановна;Жангожина;Гаухар;Zhangozhina.G;Zhangozhina.G@karnu-buketov.edu.kz
+;;6;Кадирбаева;Дидар;Артыкбаевна;Кадирбаева;Дидар;Kadirbaeva.D;Kadirbaeva.D@karnu-buketov.edu.kz
+;;7;Кенжина;Кулпаш;Дакеновна;Кенжина;Кулпаш;Kenzhina.K;Kenzhina.K@karnu-buketov.edu.kz
+;;8;Муксинов;Ернат;Бекайдарович;Муксинов;Ернат;Muksinov.Y;Muksinov.Y@karnu-buketov.edu.kz
+;;9;Ниязбеков;Шалқар;Бақтыбекұлы;Ниязбеков;Шалкар;Niyazbekov.Sh;Niyazbekov.Sh@karnu-buketov.edu.kz
+;;10;Суймуханов;Узакбай;Алтынбаевич;Суймуханов;Узакбай;Suymukhanov.U;Suymukhanov.U@karnu-buketov.edu.kz
+;;11;Талжанов;Серикболат;Алдунгарович;Талжанов;Серикболат;Talzhanov.S;Talzhanov.S@karnu-buketov.edu.kz
+;;12;Чистякова;Галина;Николаевна;Чистякова;Галина;Chistyakova.G;Chistyakova.G@karnu-buketov.edu.kz
+;Зоологии;;;;;;;;@karnu-buketov.edu.kz
+;;1;Абукенова;Вероника;Сергеевна;Абукенова;Вероника;Abukenova.V;Abukenova.V@karnu-buketov.edu.kz
+;;2;Елеупаева;Шынар;Каукербековна;Елеупаева;Шынар;Yeleupaeva.Sh;Yeleupaeva.Sh@karnu-buketov.edu.kz
+;;3;Елешов;Диас;Зейноллаұлы;Елешов;Диас;Yeleshov.D;Yeleshov.D@karnu-buketov.edu.kz
+;;4;Ельшина;Кымбат;Аяновна;Ельшина;Кымбат;Yelshina.K;Yelshina.K@karnu-buketov.edu.kz
+;;5;Ембергенова;Аида;Рифкатқызы;Ембергенова;Аида;Yembergenova.A;Yembergenova.A@karnu-buketov.edu.kz
+;;6;Ерниязова;Бибижан;Бахытжановна;Ерниязова;Бибижан;Yerniyazova.B;Yerniyazova.B@karnu-buketov.edu.kz
+;;7;Еселханова;Гульжайна;Абдыгасеновна;Еселханова;Гульжайна;Yeselkhanova.G;Yeselkhanova.G@karnu-buketov.edu.kz
+;;8;Ешмагамбетова;Алия;Борашевна;Ешмагамбетова;Алия;Yeshmagambetova.A;Yeshmagambetova.A@karnu-buketov.edu.kz
+;;9;Жомартова;Гульдана;Жолтаевна;Жомартова;Гульдана;Zhomartova.G;Zhomartova.G@karnu-buketov.edu.kz
+;;10;Жузбаева;Гульмира;Окебаевна;Жузбаева;Гульмира;Zhuzbaeva.G;Zhuzbaeva.G@karnu-buketov.edu.kz
+;;11;Жумадилов;Саят;Сагатович;Жумадилов;Саят;Zhumadilov.S;Zhumadilov.S@karnu-buketov.edu.kz
+;;12;Жумашева;Карлыгаш;Айдаровна;Жумашева;Карлыгаш;Zhumasheva.K;Zhumasheva.K@karnu-buketov.edu.kz
+;;13;Картбаева;Гульназ;Толымбековна;Картбаева;Гульназ;Kartbaeva.G;Kartbaeva.G@karnu-buketov.edu.kz
+;;14;Коваленко;Ольга;Леонидовна;Коваленко;Ольга;Kovalenko.O;Kovalenko.O@karnu-buketov.edu.kz
+;;15;Мейрамов;Габит;Габдуллович;Мейрамов;Габит;Meyramov.G;Meyramov.G@karnu-buketov.edu.kz
+;;16;Мырзабаев;Аманай;Байтурымович;Мырзабаев;Аманай;Myrzabaev.A;Myrzabaev.A@karnu-buketov.edu.kz
+;;17;Турлыбекова;Гульжазира;Кантарбаевна;Турлыбекова;Гульжазира;Turlybekova.G;Turlybekova.G@karnu-buketov.edu.kz
+;;18;Тыржанова;Саягуль;Сериковна;Тыржанова;Саягуль;Tyrzhanova.S;Tyrzhanova.S@karnu-buketov.edu.kz
+;;19;Шәйбек;Алтынай;Жұпаркызы;Шайбек;Алтынай;Shaybek.A;Shaybek.A@karnu-buketov.edu.kz
+;Физиологии;;;;;;;;@karnu-buketov.edu.kz
+;;1;Айткулов;Айдар;Муратович;Айткулов;Айдар;Aytkulov.A;Aytkulov.A@karnu-buketov.edu.kz
+;;2;Бодеева;Рахат;Тлеуовна;Бодеева;Рахат;Bodeeva.R;Bodeeva.R@karnu-buketov.edu.kz
+;;3;Канафина;Бейбитгуль;Абилкасовна;Канафина;Бейбитгуль;Kanafina.B;Kanafina.B@karnu-buketov.edu.kz
+;;4;Конкабаева;Айман;Ережеповна;Конкабаева;Айман;Konkabaeva.A;Konkabaeva.A@karnu-buketov.edu.kz
+;;5;Мукашева;Гульнар;Жанатовна;Мукашева;Гульнар;Mukasheva.G;Mukasheva.G@karnu-buketov.edu.kz
+;;6;Нугуманова;Шолпан;Мукатаевна;Нугуманова;Шолпан;Nugumanova.Sh;Nugumanova.Sh@karnu-buketov.edu.kz
+;;7;Нурлыбаева;Кундыз;Амангельдиевна;Нурлыбаева;Кундыз;Nurlybaeva.K;Nurlybaeva.K@karnu-buketov.edu.kz
+;;8;Рамазанов;Алибек;Кайриденович;Рамазанов;Алибек;Ramazanov.A;Ramazanov.A@karnu-buketov.edu.kz
+;;9;Садыкова;Акерке;Жумабайкызы;Садыкова;Акерке;Sadykova.A;Sadykova.A@karnu-buketov.edu.kz
+;;10;Сарсембаева;Айман;Шайменовна;Сарсембаева;Айман;Sarsembaeva.A;Sarsembaeva.A@karnu-buketov.edu.kz
+Иностранных языков;;;;;;;;;@karnu-buketov.edu.kz
+;Иностранной филологии;;;;;;;;@karnu-buketov.edu.kz
+;;1;Абеуова;Айжан;Муратовна;Абеуова;Айжан;Abeuova.A;Abeuova.A@karnu-buketov.edu.kz
+;;2;Адамиди;Алёна;Дмитриевна;Адамиди;Алена;Adamidi.A;Adamidi.A@karnu-buketov.edu.kz
+;;3;Бейсембаева;Айгерим;Уразанбековна;Бейсембаева;Айгерим;Beysembaeva.A;Beysembaeva.A@karnu-buketov.edu.kz
+;;4;Букетова;Нурсулу;Ибраевна;Букетова;Нурсулу;Buketova.N;Buketova.N@karnu-buketov.edu.kz
+;;5;Дәулетбекқызы;Ерке;;Даулетбеккызы;Ерке;Dauletbekkyzy.Y;Dauletbekkyzy.Y@karnu-buketov.edu.kz
+;;6;Динькаева;Милана;Куанышевна;Динькаева;Милана;Dinkaeva.M;Dinkaeva.M@karnu-buketov.edu.kz
+;;7;Ералинова;Торғын;Елемесқызы;Ералинова;Торгын;Yeralinova.T;Yeralinova.T@karnu-buketov.edu.kz
+;;8;Ермеков;Нурлан;Рахметоллаулы;Ермеков;Нурлан;Yermekov.N;Yermekov.N@karnu-buketov.edu.kz
+;;9;Әбілова;Жадыра;Жанатқызы;Абилова;Жадыра;Abilova.Zh;Abilova.Zh@karnu-buketov.edu.kz
+;;10;Исабаева;Нургуль;Сагынтаевна;Исабаева;Нургуль;Isabaeva.N;Isabaeva.N@karnu-buketov.edu.kz
+;;11;Исина;Гаухар;Иликешевна;Исина;Гаухар;Isina.G;Isina.G@karnu-buketov.edu.kz
+;;12;Истомина;Анастасия;Александровна;Истомина;Анастасия;Istomina.A;Istomina.A@karnu-buketov.edu.kz
+;;13;Какжанова;Фазира;Айдархановна;Какжанова;Фазира;Kakzhanova.F;Kakzhanova.F@karnu-buketov.edu.kz
+;;14;Китибаева;Альфия;Каныбековна;Китибаева;Альфия;Kitibaeva.A;Kitibaeva.A@karnu-buketov.edu.kz
+;;15;Максимова;Валентина;Викторовна;Максимова;Валентина;Maksimova.V;Maksimova.V@karnu-buketov.edu.kz
+;;16;Матасова;Ирина;Николаевна;Матасова;Ирина;Matasova.I;Matasova.I@karnu-buketov.edu.kz
+;;17;Мельникова;Анастасия;Сергеевна;Мельникова;Анастасия;Melnikova.A;Melnikova.A@karnu-buketov.edu.kz
+;;18;Муканова;Дарина;Ергалиевна;Муканова;Дарина;Mukanova.D;Mukanova.D@karnu-buketov.edu.kz
+;;19;Мұқажан;Әйгерім;Құрметқызы;Мукажан;Айгерим;Mukazhan.A;Mukazhan.A@karnu-buketov.edu.kz
+;;20;Палина;Анна;Андреевна;Палина;Анна;Palina.A;Palina.A@karnu-buketov.edu.kz
+;;21;Рахымбаева;Айнұр;Сәбитқызы;Рахымбаева;Айнур;Rakhymbaeva.A;Rakhymbaeva.A@karnu-buketov.edu.kz
+;;22;Рыскельдина;Анар;Аблаевна;Рыскельдина;Анар;Ryskeldina.A;Ryskeldina.A@karnu-buketov.edu.kz
+;;23;Серикбаева;Камила;Куанышевна;Серикбаева;Камила;Serikbaeva.K;Serikbaeva.K@karnu-buketov.edu.kz
+;;24;Серикова;Камила;Калкамановна;Серикова;Камила;Serikova.K;Serikova.K@karnu-buketov.edu.kz
+;;25;Улжабаева;Айша;Габдулхамитовна;Улжабаева;Айша;Ulzhabaeva.A;Ulzhabaeva.A@karnu-buketov.edu.kz
+;;26;Холстинина;Карина;Агамуглановна;Холстинина;Карина;Kholstinina.K;Kholstinina.K@karnu-buketov.edu.kz
+;;27;Ыскакнаби;Адал;;Ыскакнаби;Адал;Yskaknabi.A;Yskaknabi.A@karnu-buketov.edu.kz
+;Иностранных языков;;;;;;;;@karnu-buketov.edu.kz
+;;1;Адилханова;Гульден;Бериковна;Адилханова;Гульден;Adilkhanova.G;Adilkhanova.G@karnu-buketov.edu.kz
+;;2;Алибаева;Назым;Абеновна;Алибаева;Назым;Alibaeva.N;Alibaeva.N@karnu-buketov.edu.kz
+;;3;Аманжол;Нәзерке;Ізтілеуқызы;Аманжол;Назерке;Amanzhol.N;Amanzhol.N@karnu-buketov.edu.kz
+;;4;Андреева;Ольга;Александровна;Андреева;Ольга;Andreeva.O;Andreeva.O@karnu-buketov.edu.kz
+;;5;Бейсенбаева;Бакыт;Айтжановна;Бейсенбаева;Бакыт;Beysenbaeva.B;Beysenbaeva.B@karnu-buketov.edu.kz
+;;6;Джолданова;Динара;Канатовна;Джолданова;Динара;Dzholdanova.D;Dzholdanova.D@karnu-buketov.edu.kz
+;;7;Ерғалиева;Мақпал;Нұрланқызы;Ергалиева;Макпал;Yergalieva.M;Yergalieva.M@karnu-buketov.edu.kz
+;;8;Искакова;Ризат;Каригуловна;Искакова;Ризат;Iskakova.R;Iskakova.R@karnu-buketov.edu.kz
+;;9;Кажкенова;Гулсая;Тановна;Кажкенова;Гулсая;Kazhkenova.G;Kazhkenova.G@karnu-buketov.edu.kz
+;;10;Кноль;Марина;Владимировна;Кноль;Марина;Knol.M;Knol.M@karnu-buketov.edu.kz
+;;11;Купеева;Жанар;Сейтовна;Купеева;Жанар;Kupeeva.Zh;Kupeeva.Zh@karnu-buketov.edu.kz
+;;12;Кухарчук;Анастасия;Витальевна;Кухарчук;Анастасия;Kukharchuk.A;Kukharchuk.A@karnu-buketov.edu.kz
+;;13;Маясарова;Медина;Адилкуловна;Маясарова;Медина;Mayasarova.M;Mayasarova.M@karnu-buketov.edu.kz
+;;14;Мейрбекова;Маржан;Кайратовна;Мейрбекова;Маржан;Meyrbekova.M;Meyrbekova.M@karnu-buketov.edu.kz
+;;15;Нашарбекова;Индира;Салимовна;Нашарбекова;Индира;Nasharbekova.I;Nasharbekova.I@karnu-buketov.edu.kz
+;;16;Отыншиева;Малика;Толгандиевна;Отыншиева;Малика;Otynshieva.M;Otynshieva.M@karnu-buketov.edu.kz
+;;17;Рахметуллина;Майкен;Абылаевна;Рахметуллина;Майкен;Rakhmetullina.M;Rakhmetullina.M@karnu-buketov.edu.kz
+;;18;Сагинтаева;Айнур;Сагатовна;Сагинтаева;Айнур;Sagintaeva.A;Sagintaeva.A@karnu-buketov.edu.kz
+;;19;Смагулова;Гульнара;Танатаровна;Смагулова;Гульнара;Smagulovaaa.G;Smagulovaaa.G@karnu-buketov.edu.kz
+;;20;Такуова;Зарина;Сериковна;Такуова;Зарина;Takuova.Z;Takuova.Z@karnu-buketov.edu.kz
+;;21;Тулеубаева;Шолпан;Каленовна;Тулеубаева;Шолпан;Tuleubaeva.Sh;Tuleubaeva.Sh@karnu-buketov.edu.kz
+;;22;Тынбаева;Гульнара;Салимжановна;Тынбаева;Гульнара;Tynbaeva.G;Tynbaeva.G@karnu-buketov.edu.kz
+;;23;Хуланбай;Гүлжан;;Хуланбай;Гулжан;Khulanbay.G;Khulanbay.G@karnu-buketov.edu.kz
+;;27;Чекмарева;Наталья;Валериевна;;;Valeryevna.N;Valeryevna.N@karnu-buketov.edu.kz
+;;24;Шалбаева;Динара;Хуттыбаевна;Шалбаева;Динара;Shalbaeva.D;Shalbaeva.D@karnu-buketov.edu.kz
+;;25;Шарипжанова;Айзада;Сергазиевна;Шарипжанова;Айзада;Sharipzhanova.A;Sharipzhanova.A@karnu-buketov.edu.kz
+;;26;Шерипова;Гулжазира;Акановна;Шерипова;Гулжазира;Sheripova.G;Sheripova.G@karnu-buketov.edu.kz
+;Практического курса иностранного языка;;;;;;;;@karnu-buketov.edu.kz
+;;1;Абдикерова;Дана;Есиркеповна;Абдикерова;Дана;Abdikerova.D;Abdikerova.D@karnu-buketov.edu.kz
+;;2;Джуманова;Ляйля;Сейтказиевна;Джуманова;Ляйля;Dzhumanova.L;Dzhumanova.L@karnu-buketov.edu.kz
+;;3;Дубинин;Никита;Владимирович;Дубинин;Никита;Dubinin.N;Dubinin.N@karnu-buketov.edu.kz
+;;4;Дуйсенбаева;Гулжайна;Куттыбаевна;Дуйсенбаева;Гулжайна;Duysenbaeva.G;Duysenbaeva.G@karnu-buketov.edu.kz
+;;5;Жанкина;Бакытжан;Жакановна;Жанкина;Бакытжан;Zhankina.B;Zhankina.B@karnu-buketov.edu.kz
+;;6;Кадауова;Жания;Ержановна;Кадауова;Жания;Kadauova.Zh;Kadauova.Zh@karnu-buketov.edu.kz
+;;7;Каскатаева;Жанар;Алданышкызы;Каскатаева;Жанар;Kaskataeva.Zh;Kaskataeva.Zh@karnu-buketov.edu.kz
+;;8;Костельцев;Андрей;Владимирович;Костельцев;Андрей;Kosteltsev.A;Kosteltsev.A@karnu-buketov.edu.kz
+;;9;Кружкова;Екатерина;Викторовна;Кружкова;Екатерина;Kruzhkova.Y;Kruzhkova.Y@karnu-buketov.edu.kz
+;;10;Кулушева;Асел;Саматовна;Кулушева;Асел;Kulusheva.A;Kulusheva.A@karnu-buketov.edu.kz
+;;11;Кумпейсова;Василя;Сакеновна;Кумпейсова;Василя;Kumpeysova.V;Kumpeysova.V@karnu-buketov.edu.kz
+;;12;Рамазанова;Зарина;Ерланқызы;Рамазанова;Зарина;Ramazanova.Z;Ramazanova.Z@karnu-buketov.edu.kz
+;;13;Смайлбекова;Анара;Ериковна;Смайлбекова;Анара;Smaylbekova.A;Smaylbekova.A@karnu-buketov.edu.kz
+;;14;Смольянинов;Вячеслав;Дмитриевич;Смольянинов;Вячеслав;Smolyaninov.V;Smolyaninov.V@karnu-buketov.edu.kz
+;;15;Сулейменова;Альфия;Халитовна;Сулейменова;Альфия;Suleymenova.A;Suleymenova.A@karnu-buketov.edu.kz
+;;16;Тауекелова;Айгерим;Арманжусуповна;Тауекелова;Айгерим;Tauekelova.A;Tauekelova.A@karnu-buketov.edu.kz
+;;17;Тлеужанова;Кенжебала;Тлеужанкызы;Тлеужанова;Кенжебала;Tleuzhanova.K;Tleuzhanova.K@karnu-buketov.edu.kz
+;;18;Томпиева;Зауре;Ерболовна;Томпиева;Зауре;Tompieva.Z;Tompieva.Z@karnu-buketov.edu.kz
+;;19;Турбаева;Сая;Мухаметжанкызы;Турбаева;Сая;Turbaeva.S;Turbaeva.S@karnu-buketov.edu.kz
+;;20;Устинова;Анастасия;Руслановна;Устинова;Анастасия;Ustinova.A;Ustinova.A@karnu-buketov.edu.kz
+;;21;Хусатова;Жазира;Болаткызы;Хусатова;Жазира;Khusatova.Zh;Khusatova.Zh@karnu-buketov.edu.kz
+;;22;Шишкина;Инна;Вадимовна;Шишкина;Инна;Shishkina.I;Shishkina.I@karnu-buketov.edu.kz
+;;23;Шукан;Алия;;Шукан;Алия;Shukan.A;Shukan.A@karnu-buketov.edu.kz
+;;24;Яковенко;Александр;Андреевич;Яковенко;Александр;Yakovenko.A;Yakovenko.A@karnu-buketov.edu.kz
+;Теории и методики иноязычной подготовки;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Акбаева;Гулден;Нурмамбековна;Акбаева;Гулден;Akbaeva.G;Akbaeva.G@karnu-buketov.edu.kz
+;;2;Алдабаева;Гульнур;Жамбулатовна;Алдабаева;Гульнур;Aldabaeva.G;Aldabaeva.G@karnu-buketov.edu.kz
+;;3;Асанов;Ерсаин;Казбекович;Асанов;Ерсаин;Asanov.Y;Asanov.Y@karnu-buketov.edu.kz
+;;4;Асанова;Дария;Нуртасовна;Асанова;Дария;Asanova.D;Asanova.D@karnu-buketov.edu.kz
+;;5;Аукен;Ақниет;Жанатқызы;Аукен;Акниет;Auken.A;Auken.A@karnu-buketov.edu.kz
+;;6;Белозерова;Дарья;Сергеевна;Белозерова;Дарья;Belozerova.D;Belozerova.D@karnu-buketov.edu.kz
+;;7;Бортебаев;Максат;Даулетулы;Бортебаев;Максат;Bortebaev.M;Bortebaev.M@karnu-buketov.edu.kz
+;;8;Ғапбасова;Айнұр;Айдарқызы;Гапбасова;Айнур;Gapbasova.A;Gapbasova.A@karnu-buketov.edu.kz
+;;9;Есенгелдиев;Азамат;Сыдык Улы;Есенгелдиев;Азамат;Yesengeldiev.A;Yesengeldiev.A@karnu-buketov.edu.kz
+;;10;Есказинова;Жанар;Амантаевна;Есказинова;Жанар;Yeskazinova.Zh;Yeskazinova.Zh@karnu-buketov.edu.kz
+;;11;Жорабекова;Динара;Мухтаровна;Жорабекова;Динара;Zhorabekova.D;Zhorabekova.D@karnu-buketov.edu.kz
+;;12;Жумаканова;Ляззат;Толегеновна;Жумаканова;Ляззат;Zhumakanova.L;Zhumakanova.L@karnu-buketov.edu.kz
+;;13;Жумасатұлы;Максат;;Жумасатулы;Максат;Zhumasatuly.M;Zhumasatuly.M@karnu-buketov.edu.kz
+;;14;Кагазбаев;Жанбырбай;;Кагазбаев;Жанбырбай;Kagazbaev.Zh;Kagazbaev.Zh@karnu-buketov.edu.kz
+;;15;Копжасарова;Умит;Ибжановна;Копжасарова;Умит;Kopzhasarova.U;Kopzhasarova.U@karnu-buketov.edu.kz
+;;16;Корнатовская;Арина;Игоревна;Корнатовская;Арина;Kornatovskaya.A;Kornatovskaya.A@karnu-buketov.edu.kz
+;;17;Момбекова;Меруерт;Маратқызы;Момбекова;Меруерт;Mombekova.M;Mombekova.M@karnu-buketov.edu.kz
+;;18;Оспан;Молдир;Галымжановна;Оспан;Молдир;Ospan.M;Ospan.M@karnu-buketov.edu.kz
+;;19;Оспанова;Венера;Амантаевна;Оспанова;Венера;Ospanova.V;Ospanova.V@karnu-buketov.edu.kz
+;;20;Польников;Алексей;Юрьевич;Польников;Алексей;Polnikov.A;Polnikov.A@karnu-buketov.edu.kz
+;;21;Сагадиева;Кымбат;Кошкинбаевна;Сагадиева;Кымбат;Sagadieva.K;Sagadieva.K@karnu-buketov.edu.kz
+;;22;Тажибаева;Эльмира;Рахымжановна;Тажибаева;Эльмира;Tazhibaeva.E;Tazhibaeva.E@karnu-buketov.edu.kz
+;;23;Тимошенко;Валерия;Игоревна;Тимошенко;Валерия;Timoshenko.V;Timoshenko.V@karnu-buketov.edu.kz
+;;24;Тілейхан;Әйгерім;Тілейханқызы;Тилейхан;Айгерим;Tileykhan.A;Tileykhan.A@karnu-buketov.edu.kz
+;;25;Тлеужанова;Гульназ;Кошкимбаевна;Тлеужанова;Гульназ;Tleuzhanova.G;Tleuzhanova.G@karnu-buketov.edu.kz
+;;26;Толуспаева;Дарига;Жумабековна;Толуспаева;Дарига;Toluspaeva.D;Toluspaeva.D@karnu-buketov.edu.kz
+;;27;Төлеужан;Ақбота;Талғатқызы;Толеужан;Акбота;Toleuzhan.A;Toleuzhan.A@karnu-buketov.edu.kz
+;;28;Туленбаева;Данагуль;Измахановна;Туленбаева;Данагуль;Tulenbaeva.D;Tulenbaeva.D@karnu-buketov.edu.kz
+;;29;Тұрысбекова;Самал;Құрметқызы;Турысбекова;Самал;Turysbekova.S;Turysbekova.S@karnu-buketov.edu.kz
+;;30;Хаджаева;Жамиля;Бектасыновна;Хаджаева;Жамиля;Khadzhaeva.Zh;Khadzhaeva.Zh@karnu-buketov.edu.kz
+;;31;Шаймерденова;Айдана;Кайроллаевна;Шаймерденова;Айдана;Shaymerdenova.A;Shaymerdenova.A@karnu-buketov.edu.kz
+;;32;Шокатаева;Роза;Сериковна;Шокатаева;Роза;Shokataeva.R;Shokataeva.R@karnu-buketov.edu.kz
+;Теории и практики перевода;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Ақболат;Медет;Талғатұлы;Акболат;Медет;Akbolat.M;Akbolat.M@karnu-buketov.edu.kz
+;;2;Алшынбаева;Молдир;Айдосовна;Алшынбаева;Молдир;Alshynbaeva.M;Alshynbaeva.M@karnu-buketov.edu.kz
+;;3;Будикова;Жансая;Акимжанкызы;Будикова;Жансая;Budikova.Zh;Budikova.Zh@karnu-buketov.edu.kz
+;;4;Джангельдинова;Салтанат;Болатовна;Джангельдинова;Салтанат;Dzhangeldinova.S;Dzhangeldinova.S@karnu-buketov.edu.kz
+;;5;Әсемхан;Назерке;Қайратқызы;Асемхан;Назерке;Asemkhan.N;Asemkhan.N@karnu-buketov.edu.kz
+;;6;Ибрахимова;Камила;Талгатовна;Ибрахимова;Камила;Ibrakhimova.K;Ibrakhimova.K@karnu-buketov.edu.kz
+;;7;Калижанова;Анна;Николаевна;Калижанова;Анна;Kalizhanova.A;Kalizhanova.A@karnu-buketov.edu.kz
+;;8;Кәрімова;Зере;Нұртайқызы;Каримова;Зере;Karimova.Z;Karimova.Z@karnu-buketov.edu.kz
+;;9;Куанова;Перизат;Ардаковна;Куанова;Перизат;Kuanova.P;Kuanova.P@karnu-buketov.edu.kz
+;;10;Махатова;Назым;Мухатаевна;Махатова;Назым;Makhatova.N;Makhatova.N@karnu-buketov.edu.kz
+;;11;Набиева;Айжан;Болатовна;Набиева;Айжан;Nabieva.A;Nabieva.A@karnu-buketov.edu.kz
+;;12;Осипович;Александра;Владимировна;Осипович;Александра;Osipovich.A;Osipovich.A@karnu-buketov.edu.kz
+;;13;Павленко;Екатерина;Григорьевна;Павленко;Екатерина;Pavlenko.Y;Pavlenko.Y@karnu-buketov.edu.kz
+;;14;Сабдалиева;Назгуль;Болысовна;Сабдалиева;Назгуль;Sabdalieva.N;Sabdalieva.N@karnu-buketov.edu.kz
+;;15;Смагулова;Гульнур;Жумартовна;Смагулова;Гульнур;Smagulova.G;Smagulova.G@karnu-buketov.edu.kz
+;;16;Султанова;Зухра;Еркиновна;Султанова;Зухра;Sultanova.Z;Sultanova.Z@karnu-buketov.edu.kz
+;;17;Шелестова;Татьяна;Юрьевна;Шелестова;Татьяна;Shelestova.T;Shelestova.T@karnu-buketov.edu.kz
+;;18;Шимпф;Артем;Витальевич;Шимпф;Артем;Shimpf.A;Shimpf.A@karnu-buketov.edu.kz
+;;19;Эм;Татьяна;Викторовна;Эм;Татьяна;Em.T;Em.T@karnu-buketov.edu.kz
+Исторический;;;;;;;;.;.@karnu-buketov.edu.kz
+;Археологии, этнологии и Отечественной истории;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдрахманова;Кымбат;Казалиевна;Абдрахманова;Кымбат;Abdrakhmanova.K;Abdrakhmanova.K@karnu-buketov.edu.kz
+;;2;Абдукаримова;Жанара;Кадировна;Абдукаримова;Жанара;Abdukarimova.Zh;Abdukarimova.Zh@karnu-buketov.edu.kz
+;;3;Адильбаев;Ардак;Маралович;Адильбаев;Ардак;Adilbaev.A;Adilbaev.A@karnu-buketov.edu.kz
+;;4;Амантаева;Назерке;Асхатқызы;Амантаева;Назерке;Amantaeva.N;Amantaeva.N@karnu-buketov.edu.kz
+;;5;Бейсенбекова;Нурсахан;;Бейсенбекова;Нурсахан;Beysenbekova.N;Beysenbekova.N@karnu-buketov.edu.kz
+;;6;Бодеев;Канат;Турумович;Бодеев;Канат;Bodeev.K;Bodeev.K@karnu-buketov.edu.kz
+;;7;Варфоломеев;Виктор;Васильевич;Варфоломеев;Виктор;Varfolomeev.V;Varfolomeev.V@karnu-buketov.edu.kz
+;;8;Егешова;Лаура;Амановна;Егешова;Лаура;Yegeshova.L;Yegeshova.L@karnu-buketov.edu.kz
+;;9;Едгина;Галина;Тлеубековна;Едгина;Галина;Yedgina.G;Yedgina.G@karnu-buketov.edu.kz
+;;10;Жакин;Маулен;Советович;Жакин;Маулен;Zhakin.M;Zhakin.M@karnu-buketov.edu.kz
+;;11;Жауымбай;Сағындық;Убай-Ұлы;Жауымбай;Сагындык;Zhauymbay.S;Zhauymbay.S@karnu-buketov.edu.kz
+;;12;Жумашев;Рымбек;Муратович;Жумашев;Рымбек;Zhumashev.R;Zhumashev.R@karnu-buketov.edu.kz
+;;13;Карсыбаева;Жулдыз;Алпысовна;Карсыбаева;Жулдыз;Karsybaeva.Zh;Karsybaeva.Zh@karnu-buketov.edu.kz
+;;14;Мейрамбеков;Аслан;Қуанышұлы;Мейрамбеков;Аслан;Meyrambekov.A;Meyrambekov.A@karnu-buketov.edu.kz
+;;15;Мырзахметова;Асель;Жанатовна;Мырзахметова;Асель;Myrzakhmetova.A;Myrzakhmetova.A@karnu-buketov.edu.kz
+;;16;Орынбекова;Риза;Жанибековна;Орынбекова;Риза;Orynbekova.R;Orynbekova.R@karnu-buketov.edu.kz
+;;17;Раисова;Айкумис;Давлюбаевна;Раисова;Айкумис;Raisova.A;Raisova.A@karnu-buketov.edu.kz
+;;18;Сактаганова;Зауреш;Галимжановна;Сактаганова;Зауреш;Saktaganova.Z;Saktaganova.Z@karnu-buketov.edu.kz
+;;19;Смагулов;Нуртас;Бирликович;Смагулов;Нуртас;Smagulov.N;Smagulov.N@karnu-buketov.edu.kz
+;;20;Тлегенова;Лора;Толеутаевна;Тлегенова;Лора;Tlegenova.L;Tlegenova.L@karnu-buketov.edu.kz
+;;21;Тулегенова;Айгуль;Жорабековна;Тулегенова;Айгуль;Tulegenova.A;Tulegenova.A@karnu-buketov.edu.kz
+;;22;Химади;Меруерт;Саятқызы;Химади;Меруерт;Khimadi.M;Khimadi.M@karnu-buketov.edu.kz
+;;23;Шапагатова;Диана;Дауровна;Шапагатова;Диана;Shapagatova.D;Shapagatova.D@karnu-buketov.edu.kz
+;;24;Шотбакова;Ляззат;Касымовна;Шотбакова;Ляззат;Shotbakova.L;Shotbakova.L@karnu-buketov.edu.kz
+;;25;Ыбырайхан;Марат;Ыбырайханұлы;Ыбырайхан;Марат;Ybyraykhan.M;Ybyraykhan.M@karnu-buketov.edu.kz
+;Всемирной истории и международных отношений;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Адамбек;Бітімбек;Көпбайұлы;Адамбек;Битимбек;Adambek.B;Adambek.B@karnu-buketov.edu.kz
+;;2;Аймахов;Ермек;Насратуллаевич;Аймахов;Ермек;Aymakhov.Y;Aymakhov.Y@karnu-buketov.edu.kz
+;;3;Досова;Бибигуль;Аралбаевна;Досова;Бибигуль;Dosova.B;Dosova.B@karnu-buketov.edu.kz
+;;4;Зипатолла;Шынгыс;Курманулы;Зипатолла;Шынгыс;Zipatolla.Sh;Zipatolla.Sh@karnu-buketov.edu.kz
+;;5;Кенжеғали;Жарас;Мақанұлы;Кенжегали;Жарас;Kenzhegali.Zh;Kenzhegali.Zh@karnu-buketov.edu.kz
+;;6;Кожабергенова;Анель;Еркеновна;Кожабергенова;Анель;Kozhabergenova.A;Kozhabergenova.A@karnu-buketov.edu.kz
+;;7;Оразбекова;Гульнур;Болатхановна;Оразбекова;Гульнур;Orazbekova.G;Orazbekova.G@karnu-buketov.edu.kz
+;;8;Сердхан;Аманбек;;Сердхан;Аманбек;Serdkhan.A;Serdkhan.A@karnu-buketov.edu.kz
+;;9;Смагулова;Гульнара;Муратбековна;Смагулова;Гульнара;Smagulovaa.G;Smagulovaa.G@karnu-buketov.edu.kz
+;;10;Стамбулов;Серик;Бердибаевич;Стамбулов;Серик;Stambulov.S;Stambulov.S@karnu-buketov.edu.kz
+;;11;Тельгарин;Алимжан;Нугманович;Тельгарин;Алимжан;Telgarin.A;Telgarin.A@karnu-buketov.edu.kz
+;;12;Тулеуова;Бахытгуль;Тлеубаевна;Тулеуова;Бахытгуль;Tuleuova.B;Tuleuova.B@karnu-buketov.edu.kz
+;;13;Ускембаева;Айгерим;Алдановна;Ускембаева;Айгерим;Uskembaeva.A;Uskembaeva.A@karnu-buketov.edu.kz
+;;14;Шлюпиков;Михаил;Владимирович;Шлюпиков;Михаил;Shlyupikov.M;Shlyupikov.M@karnu-buketov.edu.kz
+;Истории Казахстана и АНК;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абсаттарова;Жанар;Базарбаевна;Абсаттарова;Жанар;Absattarova.Zh;Absattarova.Zh@karnu-buketov.edu.kz
+;;2;Алиева;Багдат;Магдигараповна;Алиева;Багдат;Alieva.B;Alieva.B@karnu-buketov.edu.kz
+;;3;Алимбаев;Тургай;Амирханович;Алимбаев;Тургай;Alimbaev.T;Alimbaev.T@karnu-buketov.edu.kz
+;;4;Амрина;Минар;Сапаровна;Амрина;Минар;Amrina.M;Amrina.M@karnu-buketov.edu.kz
+;;5;Ахметжанова;Нургуль;Жанатовна;Ахметжанова;Нургуль;Akhmetzhanova.N;Akhmetzhanova.N@karnu-buketov.edu.kz
+;;6;Джумабеков;Джамбул;Азмуханович;Джумабеков;Джамбул;Dzhumabekov.D;Dzhumabekov.D@karnu-buketov.edu.kz
+;;7;Елеуханова;Светлана;Викторовна;Елеуханова;Светлана;Yeleukhanova.S;Yeleukhanova.S@karnu-buketov.edu.kz
+;;8;Жуманова;Айман;Зейнелгабденовна;Жуманова;Айман;Zhumanova.A;Zhumanova.A@karnu-buketov.edu.kz
+;;9;Иксанов;Султан;Бейбутович;Иксанов;Султан;Iksanov.S;Iksanov.S@karnu-buketov.edu.kz
+;;10;Кентбек;Салават;Қамшыбайұлы;Кентбек;Салават;Kentbek.S;Kentbek.S@karnu-buketov.edu.kz
+;;11;Кидралиева;Алия;Бабыровна;Кидралиева;Алия;Kidralieva.A;Kidralieva.A@karnu-buketov.edu.kz
+;;12;Козина;Валерия;Викторовна;Козина;Валерия;Kozina.V;Kozina.V@karnu-buketov.edu.kz
+;;13;Мустафин;Еркебулан;Ержанович;Мустафин;Еркебулан;Mustafin.Y;Mustafin.Y@karnu-buketov.edu.kz
+;;14;Саккулакова;Фариза;Даулеткызы;Саккулакова;Фариза;Sakkulakova.F;Sakkulakova.F@karnu-buketov.edu.kz
+;;15;Уалиева;Гулмира;Куанышевна;Уалиева;Гулмира;Ualieva.G;Ualieva.G@karnu-buketov.edu.kz
+;;16;Утебаева;Айгерим;Дауленовна;Утебаева;Айгерим;Utebaeva.A;Utebaeva.A@karnu-buketov.edu.kz
+Математики и информационных технологий;;;;;;;;.;.@karnu-buketov.edu.kz
+;Алгебры.мат.логики и геометрии им.профессора Т.Г.Мустафина;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абеуова;Лайля;Кунтугановна;Абеуова;Лайля;Abeuova.L;Abeuova.L@karnu-buketov.edu.kz
+;;2;Ахажанов;Сунгат;Беркинович;Ахажанов;Сунгат;Akhazhanov.S;Akhazhanov.S@karnu-buketov.edu.kz
+;;3;Байзуллаев;Бек;Канатович;Байзуллаев;Бек;Bayzullaev.B;Bayzullaev.B@karnu-buketov.edu.kz
+;;4;Есенбаева;Гульсим;Ахмадиевна;Есенбаева;Гульсим;Yesenbaeva.G;Yesenbaeva.G@karnu-buketov.edu.kz
+;;5;Ешкеев;Айбат;Рафхатович;Ешкеев;Айбат;Yeshkeev.A;Yeshkeev.A@karnu-buketov.edu.kz
+;;6;Кайыров;Рустем;Айбекович;Кайыров;Рустем;Kayyrov.R;Kayyrov.R@karnu-buketov.edu.kz
+;;7;Касыметова;Майра;Техниковна;Касыметова;Майра;Kasymetova.M;Kasymetova.M@karnu-buketov.edu.kz
+;;8;Кутимов;Кияс;Сабирович;Кутимов;Кияс;Kutimov.K;Kutimov.K@karnu-buketov.edu.kz
+;;9;Медеубаев;Нурболат;Куттымуратович;Медеубаев;Нурболат;Medeubaev.N;Medeubaev.N@karnu-buketov.edu.kz
+;;10;Оразбекова;Рауана;Толеукутовна;Оразбекова;Рауана;Orazbekova.R;Orazbekova.R@karnu-buketov.edu.kz
+;;11;Өкеш;Айдана;Айдосқызы;Океш;Айдана;Okesh.A;Okesh.A@karnu-buketov.edu.kz
+;;12;Тунгушбаева;Индира;Оразбековна;Тунгушбаева;Индира;Tungushbaeva.I;Tungushbaeva.I@karnu-buketov.edu.kz
+;;13;Ульбрихт;Ольга;Ивановна;Ульбрихт;Ольга;Ulbrikht.O;Ulbrikht.O@karnu-buketov.edu.kz
+;;14;Хабидолда;Омирхан;;Хабидолда;Омирхан;Khabidolda.O;Khabidolda.O@karnu-buketov.edu.kz
+;;15;Яруллина;Алина;Рашидовна;Яруллина;Алина;Yarullina.A;Yarullina.A@karnu-buketov.edu.kz
+;Математического анализа и дифференциальных уравнений;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Алдибекова;Мая;Смагуловна;Алдибекова;Мая;Aldibekova.M;Aldibekova.M@karnu-buketov.edu.kz
+;;2;Бауржанова;Гульназ;Бауржановна;Бауржанова;Гульназ;Baurzhanova.G;Baurzhanova.G@karnu-buketov.edu.kz
+;;3;Искакова;Гаухар;Шамугутовна;Искакова;Гаухар;Iskakova.G;Iskakova.G@karnu-buketov.edu.kz
+;;4;Космакова;Минзиля;Тимербаевна;Космакова;Минзиля;Kosmakova.M;Kosmakova.M@karnu-buketov.edu.kz
+;;5;Манат;Алуа;Манатқызы;Манат;Алуа;Manat.A;Manat.A@karnu-buketov.edu.kz
+;;6;Орумбаева;Нургул;Тумарбековна;Орумбаева;Нургул;Orumbaeva.N;Orumbaeva.N@karnu-buketov.edu.kz
+;;7;Рамазанов;Мурат;Ибраевич;Рамазанов;Мурат;Ramazanov.M;Ramazanov.M@karnu-buketov.edu.kz
+;;8;Танин;Алибек;Орланулы;Танин;Алибек;Tanin.A;Tanin.A@karnu-buketov.edu.kz
+;;9;Токмагамбетова;Теңгеш;Дүйсенбайқызы;Токмагамбетова;Тенгеш;Tokmagambetova.T;Tokmagambetova.T@karnu-buketov.edu.kz
+;;10;Тулеутаева;Жанар;Мухатаевна;Тулеутаева;Жанар;Tuleutaeva.Zh;Tuleutaeva.Zh@karnu-buketov.edu.kz
+;;11;Тургумбаев;Мендыбай;Жакиянович;Тургумбаев;Мендыбай;Turgumbaev.M;Turgumbaev.M@karnu-buketov.edu.kz
+;;12;Шаукенова;Келбет;Сабырхановна;Шаукенова;Келбет;Shaukenova.K;Shaukenova.K@karnu-buketov.edu.kz
+;;13;Шаяхметова;Бейбытгуль;Койшиевна;Шаяхметова;Бейбытгуль;Shayakhmetova.B;Shayakhmetova.B@karnu-buketov.edu.kz
+;Методики преподавания математики и информатики;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Ахманова;Данна;Маратовна;Ахманова;Данна;Akhmanova.D;Akhmanova.D@karnu-buketov.edu.kz
+;;2;Бакенова;Әсем;Бақытбекқызы;Бакенова;Асем;Bakenova.A;Bakenova.A@karnu-buketov.edu.kz
+;;3;Бейсенова;Данагул;Рымбаевна;Бейсенова;Данагул;Beysenova.D;Beysenova.D@karnu-buketov.edu.kz
+;;4;Датқабаева;Мөлдір;Асқарқызы;Даткабаева;Молдир;Datkabaeva.M;Datkabaeva.M@karnu-buketov.edu.kz
+;;5;Дәкәрім;Гүлдәрай;Қанатқызы;Дакарим;Гулдарай;Dakarim.G;Dakarim.G@karnu-buketov.edu.kz
+;;6;Елеусіз;Маржан;Ержанқызы;Елеусиз;Маржан;Yeleusiz.M;Yeleusiz.M@karnu-buketov.edu.kz
+;;7;Әлімбаева;Айжан;Төлеубекқызы;Алимбаева;Айжан;Alimbaeva.A;Alimbaeva.A@karnu-buketov.edu.kz
+;;8;Исаева;Айгуль;Койшибаевна;Исаева;Айгуль;Isaeva.A;Isaeva.A@karnu-buketov.edu.kz
+;;9;Искаков;Сагындык;Абдрахманович;Искаков;Сагындык;Iskakov.S;Iskakov.S@karnu-buketov.edu.kz
+;;10;Кажикенова;Айгуль;Шарапатовна;Кажикенова;Айгуль;Kazhikenova.A;Kazhikenova.A@karnu-buketov.edu.kz
+;;11;Қауымбек;Индира;Сейтбекқызы;Кауымбек;Индира;Kauymbek.I;Kauymbek.I@karnu-buketov.edu.kz
+;;12;Қосыбаева;Умiтжан;Аманкелдықызы;Косыбаева;Умiтжан;Kosybaeva.U;Kosybaeva.U@karnu-buketov.edu.kz
+;;13;Ныгметжанова;Толкынай;Кабжановна;Ныгметжанова;Толкынай;Nygmetzhanova.T;Nygmetzhanova.T@karnu-buketov.edu.kz
+;;14;Оразбекова;Раушан;Асансеитовна;Оразбекова;Раушан;Orazbekovaa.R;Orazbekovaa.R@karnu-buketov.edu.kz
+;;15;Оразгалиева;Меруерт;Аршыновна;Оразгалиева;Меруерт;Orazgalieva.M;Orazgalieva.M@karnu-buketov.edu.kz
+;;16;Орымбетов;Самгат;Аманкулович;Орымбетов;Самгат;Orymbetov.S;Orymbetov.S@karnu-buketov.edu.kz
+;;17;Орынбекова;Ақерке;Берекеқызы;Орынбекова;Акерке;Orynbekova.A;Orynbekova.A@karnu-buketov.edu.kz
+;;18;Ракишева;Нургуль;Курсаковна;Ракишева;Нургуль;Rakisheva.N;Rakisheva.N@karnu-buketov.edu.kz
+;;19;Сейтимбетова;Айгерим;Байдуллаевна;Сейтимбетова;Айгерим;Seytimbetova.A;Seytimbetova.A@karnu-buketov.edu.kz
+;;20;Смагулова;Айганым;Ибрагимовна;Смагулова;Айганым;Smagulova.A;Smagulova.A@karnu-buketov.edu.kz
+;;21;Смаилова;Айжан;Сагиндыковна;Смаилова;Айжан;Smailova.A;Smailova.A@karnu-buketov.edu.kz
+;;22;Сыздыкова;Назым;Косарбековна;Сыздыкова;Назым;Syzdykova.N;Syzdykova.N@karnu-buketov.edu.kz
+;;23;Толеуханова;Раушан;Жұмағазықызы;Толеуханова;Раушан;Toleukhanova.R;Toleukhanova.R@karnu-buketov.edu.kz
+;;24;Толыкбаева;Жадыра;Салимкадыровна;Толыкбаева;Жадыра;Tolykbaeva.Zh;Tolykbaeva.Zh@karnu-buketov.edu.kz
+;;25;Туребаева;Айнура;Ержановна;Туребаева;Айнура;Turebaeva.A;Turebaeva.A@karnu-buketov.edu.kz
+;;26;Хасанова;Айдана;Болаткызы;Хасанова;Айдана;Khasanova.A;Khasanova.A@karnu-buketov.edu.kz
+;;27;Шаматаева;Назгуль;Куанышовна;Шаматаева;Назгуль;Shamataeva.N;Shamataeva.N@karnu-buketov.edu.kz
+;;28;Шульгина-Таращук;Алевтина;Сергеевна;Шульгина-Таращук;Алевтина;Shulgina-Tarashchuk.A;Shulgina-Tarashchuk.A@karnu-buketov.edu.kz
+;;29;Ысқақ;Ақерке;Төлеуқұлқызы;Ыскак;Акерке;Yskak.A;Yskak.A@karnu-buketov.edu.kz
+;Прикладной математики и информатики;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Айдынова;Балжан;Айдыновна;Айдынова;Балжан;Aydynova.B;Aydynova.B@karnu-buketov.edu.kz
+;;2;Алибиев;Даулет;Будешович;Алибиев;Даулет;Alibiev.D;Alibiev.D@karnu-buketov.edu.kz
+;;3;Горбунова;Надежда;Александровна;Горбунова;Надежда;Gorbunova.N;Gorbunova.N@karnu-buketov.edu.kz
+;;4;Ермекова;Диана;Канагаткызы;Ермекова;Диана;Yermekova.D;Yermekova.D@karnu-buketov.edu.kz
+;;5;Есендаулетова;Жана-Гуль;Тлеукуловна;Есендаулетова;Жана-Гуль;Yesendauletova.Zh;Yesendauletova.Zh@karnu-buketov.edu.kz
+;;6;Жанибекова;Акмаржан;Избасаровна;Жанибекова;Акмаржан;Zhanibekova.A;Zhanibekova.A@karnu-buketov.edu.kz
+;;7;Жумагалиев;Султанғали;Қайсарұлы;Жумагалиев;Султангали;Zhumagaliev.S;Zhumagaliev.S@karnu-buketov.edu.kz
+;;8;Жумагулова;Сауле;Комеккызы;Жумагулова;Сауле;Zhumagulova.S;Zhumagulova.S@karnu-buketov.edu.kz
+;;9;Казимова;Динара;Ашубасаровна;Казимова;Динара;Kazimova.D;Kazimova.D@karnu-buketov.edu.kz
+;;10;Каменова;Шынар;Кайкеновна;Каменова;Шынар;Kamenova.Sh;Kamenova.Sh@karnu-buketov.edu.kz
+;;11;Кельдибекова;Алия;Болатовна;Кельдибекова;Алия;Keldibekova.A;Keldibekova.A@karnu-buketov.edu.kz
+;;12;Кәмен;Ербұлан;Ғабитұлы;Камен;Ербулан;Kamen.Y;Kamen.Y@karnu-buketov.edu.kz
+;;13;Копбалина;Салтанат;Сериковна;Копбалина;Салтанат;Kopbalina.S;Kopbalina.S@karnu-buketov.edu.kz
+;;14;Қыдырәлі;Дархан;Досымбекұлы;Кыдырали;Дархан;Kydyrali.D;Kydyrali.D@karnu-buketov.edu.kz
+;;15;Муратхан;Райхан;;Муратхан;Райхан;Muratkhan.R;Muratkhan.R@karnu-buketov.edu.kz
+;;16;Никамбаева;Нургул;Нуроллаевна;Никамбаева;Нургул;Nikambaeva.N;Nikambaeva.N@karnu-buketov.edu.kz
+;;17;Ниханбаева;Назима;Тилешовна;Ниханбаева;Назима;Nikhanbaeva.N;Nikhanbaeva.N@karnu-buketov.edu.kz
+;;18;Нурмаханов;Еркин;Аскарович;Нурмаханов;Еркин;Nurmakhanov.Y;Nurmakhanov.Y@karnu-buketov.edu.kz
+;;19;Нурмашова;Мейрамкуль;Оразалыкызы;Нурмашова;Мейрамкуль;Nurmashova.M;Nurmashova.M@karnu-buketov.edu.kz
+;;20;Орынбай;Гулмира;Талғатқызы;Орынбай;Гулмира;Orynbay.G;Orynbay.G@karnu-buketov.edu.kz
+;;21;Попова;Надежда;Викторовна;Попова;Надежда;Popova.N;Popova.N@karnu-buketov.edu.kz
+;;22;Сайлаубаев;Султан;Шакмаранович;Сайлаубаев;Султан;Saylaubaev.S;Saylaubaev.S@karnu-buketov.edu.kz
+;;23;Самойлова;Ирина;Алексеевна;Самойлова;Ирина;Samoylova.I;Samoylova.I@karnu-buketov.edu.kz
+;;24;Сейтжан;Нартай;Сарсенұлы;Сейтжан;Нартай;Seytzhan.N;Seytzhan.N@karnu-buketov.edu.kz
+;;25;Сланбекова;Асылзат;Ермановна;Сланбекова;Асылзат;Slanbekova.A;Slanbekova.A@karnu-buketov.edu.kz
+;;26;Смирнова;Марина;Александровна;Смирнова;Марина;Smirnova.M;Smirnova.M@karnu-buketov.edu.kz
+;;27;Спирина;Елена;Александровна;Спирина;Елена;Spirina.Y;Spirina.Y@karnu-buketov.edu.kz
+;;28;Турсынгалиева;Гулим;Нурлановна;Турсынгалиева;Гулим;Tursyngalieva.G;Tursyngalieva.G@karnu-buketov.edu.kz
+;;29;Фазылова;Лейля;Сабитовна;Фазылова;Лейля;Fazylova.L;Fazylova.L@karnu-buketov.edu.kz
+;;30;Хабдолда;Болат;;Хабдолда;Болат;Khabdolda.B;Khabdolda.B@karnu-buketov.edu.kz
+;;31;Хасенова;Айгерим;Асхатовна;Хасенова;Айгерим;Khasenova.A;Khasenova.A@karnu-buketov.edu.kz
+Педагогический;;;;;;;;.;.@karnu-buketov.edu.kz
+;Дошкольной и психолого-педагогической подготовки;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Айтжанова;Роза;Мукантаевна;Айтжанова;Роза;Aytzhanova.R;Aytzhanova.R@karnu-buketov.edu.kz
+;;2;Алшынбаева;Жулдыз;Елдосовна;Алшынбаева;Жулдыз;Alshynbaeva.Zh;Alshynbaeva.Zh@karnu-buketov.edu.kz
+;;3;Аналбекова;Каракоз;Тураровна;Аналбекова;Каракоз;Analbekova.K;Analbekova.K@karnu-buketov.edu.kz
+;;4;Ахыбай;Кәмшат;Думанқызы;Ахыбай;Камшат;Akhybay.K;Akhybay.K@karnu-buketov.edu.kz
+;;5;Бейсенбекова;Гульмира;Бекиновна;Бейсенбекова;Гульмира;Beysenbekova.G;Beysenbekova.G@karnu-buketov.edu.kz
+;;6;Бельгибаева;Гульбаршын;Капановна;Бельгибаева;Гульбаршын;Belgibaeva.G;Belgibaeva.G@karnu-buketov.edu.kz
+;;7;Джумадельдинова;Алуа;Ауданбаевна;Джумадельдинова;Алуа;Dzhumadeldinova.A;Dzhumadeldinova.A@karnu-buketov.edu.kz
+;;8;Жеңіс;Гулжан;Темірқызы;Женис;Гулжан;Zhenis.G;Zhenis.G@karnu-buketov.edu.kz
+;;9;Исхакбаева;Толганай;Газизкызы;Исхакбаева;Толганай;Iskhakbaeva.T;Iskhakbaeva.T@karnu-buketov.edu.kz
+;;10;Карманова;Жанат;Алпысовна;Карманова;Жанат;Karmanova.Zh;Karmanova.Zh@karnu-buketov.edu.kz
+;;11;Кенесбекова;Салтанат;Амангельдикызы;Кенесбекова;Салтанат;Kenesbekova.S;Kenesbekova.S@karnu-buketov.edu.kz
+;;12;Маженова;Рауана;Бокеновна;Маженова;Рауана;Mazhenova.R;Mazhenova.R@karnu-buketov.edu.kz
+;;13;Манашова;Гульмира;Нурлановна;Манашова;Гульмира;Manashova.G;Manashova.G@karnu-buketov.edu.kz
+;;14;Мирза;Наталья;Викторовна;Мирза;Наталья;Mirza.N;Mirza.N@karnu-buketov.edu.kz
+;;15;Мукушева;Салтанат;Булатовна;Мукушева;Салтанат;Mukusheva.S;Mukusheva.S@karnu-buketov.edu.kz
+;;16;Николаева;Виктория;Владимировна;Николаева;Виктория;Nikolaeva.V;Nikolaeva.V@karnu-buketov.edu.kz
+;;17;Санхаева;Алия;Нурмагамбеткызы;Санхаева;Алия;Sankhaeva.A;Sankhaeva.A@karnu-buketov.edu.kz
+;;18;Шкутина;Лариса;Арнольдовна;Шкутина;Лариса;Shkutina.L;Shkutina.L@karnu-buketov.edu.kz
+;Изобразительного искусства и дизайна;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Аблаев;Әлфараби;Алпысбайұлы;Аблаев;Алфараби;Ablaev.A;Ablaev.A@karnu-buketov.edu.kz
+;;2;Айтымов;Елдос;Кудайбергенович;Айтымов;Елдос;Aytymov.Y;Aytymov.Y@karnu-buketov.edu.kz
+;;3;Ахметжанова;Гульдарай;Адильхановна;Ахметжанова;Гульдарай;Akhmetzhanova.G;Akhmetzhanova.G@karnu-buketov.edu.kz
+;;4;Бақтығалиева;Әйгерім;Бақтығалиқызы;Бактыгалиева;Айгерим;Baktygalieva.A;Baktygalieva.A@karnu-buketov.edu.kz
+;;5;Балабеков;Каныш;Аманжолович;Балабеков;Каныш;Balabekov.K;Balabekov.K@karnu-buketov.edu.kz
+;;6;Бодиков;Сейфолла;Жамауович;Бодиков;Сейфолла;Bodikov.S;Bodikov.S@karnu-buketov.edu.kz
+;;7;Буртибаева;Аймангуль;Кабетовна;Буртибаева;Аймангуль;Burtibaeva.A;Burtibaeva.A@karnu-buketov.edu.kz
+;;8;Жученко;Ирина;Анатольевна;Жученко;Ирина;Zhuchenko.I;Zhuchenko.I@karnu-buketov.edu.kz
+;;9;Золотарева;Лариса;Романовна;Золотарева;Лариса;Zolotareva.L;Zolotareva.L@karnu-buketov.edu.kz
+;;10;Калмаханов;Мадихан;Сейтмаханович;Калмаханов;Мадихан;Kalmakhanov.M;Kalmakhanov.M@karnu-buketov.edu.kz
+;;11;Карипбаев;Жасулан;Болатбекович;Карипбаев;Жасулан;Karipbaev.Zh;Karipbaev.Zh@karnu-buketov.edu.kz
+;;12;Кенжебеков;Галым;Болатович;Кенжебеков;Галым;Kenzhebekov.G;Kenzhebekov.G@karnu-buketov.edu.kz
+;;13;Кипшаков;Султанмахмут;Аккаевич;Кипшаков;Султанмахмут;Kipshakov.S;Kipshakov.S@karnu-buketov.edu.kz
+;;14;Комутов;Жанат;Какенович;Комутов;Жанат;Komutov.Zh;Komutov.Zh@karnu-buketov.edu.kz
+;;15;Кошкумбаев;Канат;Тукенович;Кошкумбаев;Канат;Koshkumbaev.K;Koshkumbaev.K@karnu-buketov.edu.kz
+;;16;Манабаева;Асыл;Шангереевна;Манабаева;Асыл;Manabaeva.A;Manabaeva.A@karnu-buketov.edu.kz
+;;17;Резин;Жумабек;Шалабекович;Резин;Жумабек;Rezin.Zh;Rezin.Zh@karnu-buketov.edu.kz
+;;18;Салкимбаева;Салтанат;Амангельдиевна;Салкимбаева;Салтанат;Salkimbaeva.S;Salkimbaeva.S@karnu-buketov.edu.kz
+;;19;Суиндиков;Есенкелды;Толеукулович;Суиндиков;Есенкелды;Suindikov.Y;Suindikov.Y@karnu-buketov.edu.kz
+;;20;Тусупова;Шолпан;Сенбаевна;Тусупова;Шолпан;Tusupova.Sh;Tusupova.Sh@karnu-buketov.edu.kz
+;Педагогики и методики начального обучения;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдикалыков;Кожанасиридин;;Абдикалыков;Кожанасиридин;Abdikalykov.K;Abdikalykov.K@karnu-buketov.edu.kz
+;;2;Абильдина;Салтанат;Куатовна;Абильдина;Салтанат;Abildina.S;Abildina.S@karnu-buketov.edu.kz
+;;3;Айдарбекова;Кулжан;Асетовна;Айдарбекова;Кулжан;Aydarbekova.K;Aydarbekova.K@karnu-buketov.edu.kz
+;;4;Амирбекова;Махаббат;Рахимтаевна;Амирбекова;Махаббат;Amirbekova.M;Amirbekova.M@karnu-buketov.edu.kz
+;;5;Асетова;Жаннур;Бахытовна;Асетова;Жаннур;Asetova.Zh;Asetova.Zh@karnu-buketov.edu.kz
+;;6;Аубакирова;Кымбат;Файзуллиновна;Аубакирова;Кымбат;Aubakirova.K;Aubakirova.K@karnu-buketov.edu.kz
+;;7;Ахметкаримова;Кульбаршын;Сайрановна;Ахметкаримова;Кульбаршын;Akhmetkarimova.K;Akhmetkarimova.K@karnu-buketov.edu.kz
+;;8;Аяған;Еркiн;Сағынтайұлы;Аяган;Еркiн;Ayagan.Y;Ayagan.Y@karnu-buketov.edu.kz
+;;9;Бакирова;Индира;Дарханқызы;Бакирова;Индира;Bakirova.I;Bakirova.I@karnu-buketov.edu.kz
+;;10;Бейсенбаева;Айгуль;Мерекеевна;Бейсенбаева;Айгуль;Beysenbaeva.A;Beysenbaeva.A@karnu-buketov.edu.kz
+;;11;Дагарова;Жадра;Умиржановна;Дагарова;Жадра;Dagarova.Zh;Dagarova.Zh@karnu-buketov.edu.kz
+;;12;Әукен;Айнаш;Орынбасарқызы;Аукен;Айнаш;Aukenn.A;Aukenn.A@karnu-buketov.edu.kz
+;;13;Жекибаева;Ботакоз;Абдрахмановна;Жекибаева;Ботакоз;Zhekibaeva.B;Zhekibaeva.B@karnu-buketov.edu.kz
+;;14;Ишанов;Пирмагамбет;Зульпхарович;Ишанов;Пирмагамбет;Ishanov.P;Ishanov.P@karnu-buketov.edu.kz
+;;15;Медет;Гүлжан;Манатқызы;Медет;Гулжан;Medet.G;Medet.G@karnu-buketov.edu.kz
+;;16;Медиева;Сара;Хамитовна;Медиева;Сара;Medieva.S;Medieva.S@karnu-buketov.edu.kz
+;;17;Муканова;Саулеш;Димкешевна;Муканова;Саулеш;Mukanova.S;Mukanova.S@karnu-buketov.edu.kz
+;;18;Мухаметжанова;Айгуль;Олжабаевна;Мухаметжанова;Айгуль;Mukhametzhanova.A;Mukhametzhanova.A@karnu-buketov.edu.kz
+;;19;Одинцова;Светлана;Анатольевна;Одинцова;Светлана;Odintsova.S;Odintsova.S@karnu-buketov.edu.kz
+;;20;Отыншина;Галия;Сериковна;Отыншина;Галия;Otynshina.G;Otynshina.G@karnu-buketov.edu.kz
+;;21;Сарсекеева;Жанар;Есентаевна;Сарсекеева;Жанар;Sarsekeeva.Zh;Sarsekeeva.Zh@karnu-buketov.edu.kz
+;;22;Сафарова;Натаван;Бахрамовна;Сафарова;Натаван;Safarova.N;Safarova.N@karnu-buketov.edu.kz
+;;23;Скакова;Асия;Кудайбергеновна;Скакова;Асия;Skakova.A;Skakova.A@karnu-buketov.edu.kz
+;;24;Тлеуберлинова;Эльмира;Бериккалиевна;Тлеуберлинова;Эльмира;Tleuberlinova.E;Tleuberlinova.E@karnu-buketov.edu.kz
+;;25;Шаушекова;Баян;Кырыкбаевна;Шаушекова;Баян;Shaushekova.B;Shaushekova.B@karnu-buketov.edu.kz
+;;26;Шаяхметова;Маржан;Накипбековна;Шаяхметова;Маржан;Shayakhmetova.M;Shayakhmetova.M@karnu-buketov.edu.kz
+;Специального и инклюзивного образования;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Алшинбаева;Сауле;Жолдыбаевна;Алшинбаева;Сауле;Alshinbaeva.S;Alshinbaeva.S@karnu-buketov.edu.kz
+;;2;Аманбекова;Акнур;Балтабайкызы;Аманбекова;Акнур;Amanbekova.A;Amanbekova.A@karnu-buketov.edu.kz
+;;3;Арбабаева;Арай;Толеуовна;Арбабаева;Арай;Arbabaeva.A;Arbabaeva.A@karnu-buketov.edu.kz
+;;4;Ахметжанова;Жанар;Балтабековна;Ахметжанова;Жанар;Akhmetzhanova.Zh;Akhmetzhanova.Zh@karnu-buketov.edu.kz
+;;5;Ашимханова;Гүлбану;Сериковна;Ашимханова;Гулбану;Ashimkhanova.G;Ashimkhanova.G@karnu-buketov.edu.kz
+;;6;Боброва;Валентина;Владимировна;Боброва;Валентина;Bobrova.V;Bobrova.V@karnu-buketov.edu.kz
+;;7;Ешенгазина;Гульжан;Серикказыевна;Ешенгазина;Гульжан;Yeshengazina.G;Yeshengazina.G@karnu-buketov.edu.kz
+;;8;Жусупбекова;Замзагул;Достияровна;Жусупбекова;Замзагул;Zhusupbekova.Z;Zhusupbekova.Z@karnu-buketov.edu.kz
+;;9;Зейноллина;Гульсара;Кайратовна;Зейноллина;Гульсара;Zeynollina.G;Zeynollina.G@karnu-buketov.edu.kz
+;;10;Кударинова;Асель;Сейдыгалиевна;Кударинова;Асель;Kudarinova.A;Kudarinova.A@karnu-buketov.edu.kz
+;;11;Муликова;Салтанат;Алтаевна;Муликова;Салтанат;Mulikova.S;Mulikova.S@karnu-buketov.edu.kz
+;;12;Мусеева;Гульназ;Нурлыбековна;Мусеева;Гульназ;Museeva.G;Museeva.G@karnu-buketov.edu.kz
+;;13;Олексюк;Заряна;Ярославовна;Олексюк;Заряна;Oleksyuk.Z;Oleksyuk.Z@karnu-buketov.edu.kz
+;;14;Рымханова;Айнагуль;Рымбековна;Рымханова;Айнагуль;Rymkhanova.A;Rymkhanova.A@karnu-buketov.edu.kz
+;;15;Садвакасова;Нургуль;Аманжоловна;Садвакасова;Нургуль;Sadvakasova.N;Sadvakasova.N@karnu-buketov.edu.kz
+;;16;Сакаева;Альфина;Нигаматзяновна;Сакаева;Альфина;Sakaeva.A;Sakaeva.A@karnu-buketov.edu.kz
+;;17;Сюй-Фу-Шун;Наталья;Валентиновна;Сюй-Фу-Шун;Наталья;Syuy-Fu-Shun.N;Syuy-Fu-Shun.N@karnu-buketov.edu.kz
+;;18;Тебенова;Карлыгаш;Сакеновна;Тебенова;Карлыгаш;Tebenova.K;Tebenova.K@karnu-buketov.edu.kz
+;;19;Туганбекова;Кенжекул;Медиевна;Туганбекова;Кенжекул;Tuganbekova.K;Tuganbekova.K@karnu-buketov.edu.kz
+;;20;Шамшенова;Эльмира;Жаксилыковна;Шамшенова;Эльмира;Shamshenova.E;Shamshenova.E@karnu-buketov.edu.kz
+;;21;Яковенко;Ирина;Валерьевна;Яковенко;Ирина;Yakovenko.I;Yakovenko.I@karnu-buketov.edu.kz
+Физико-технический;;;;;;;;.;.@karnu-buketov.edu.kz
+;Инженерной теплофизики им. профессора Ж.С.Акылбаева;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдирова;Нургуль;Темиргалыевна;Абдирова;Нургуль;Abdirova.N;Abdirova.N@karnu-buketov.edu.kz
+;;2;Айтпаева;Замзагуль;Какентайкызы;Айтпаева;Замзагуль;Aytpaeva.Z;Aytpaeva.Z@karnu-buketov.edu.kz
+;;3;Ахмадиев;Бектурсын;Айтжанович;Ахмадиев;Бектурсын;Akhmadiev.B;Akhmadiev.B@karnu-buketov.edu.kz
+;;4;Булкаирова;Гульден;Айтбаевна;Булкаирова;Гульден;Bulkairova.G;Bulkairova.G@karnu-buketov.edu.kz
+;;5;Дюсембаева;Айнура;Нуртаевна;Дюсембаева;Айнура;Dyusembaeva.A;Dyusembaeva.A@karnu-buketov.edu.kz
+;;6;Карабекова;Дана;Жилкибаевна;Карабекова;Дана;Karabekova.D;Karabekova.D@karnu-buketov.edu.kz
+;;7;Кутум;Баян;Байсултанқызы;Кутум;Баян;Kutum.B;Kutum.B@karnu-buketov.edu.kz
+;;8;Оспанова;Дидар;Асылкызы;Оспанова;Дидар;Ospanova.D;Ospanova.D@karnu-buketov.edu.kz
+;;9;Рахманқызы;Ақерке;;Рахманкызы;Акерке;Rakhmankyzy.A;Rakhmankyzy.A@karnu-buketov.edu.kz
+;;10;Сакипова;Сауле;Еркешевна;Сакипова;Сауле;Sakipova.S;Sakipova.S@karnu-buketov.edu.kz
+;;11;Сатыбалдин;Амангельды;Жарлыгасынович;Сатыбалдин;Амангельды;Satybaldin.A;Satybaldin.A@karnu-buketov.edu.kz
+;;12;Танашева;Назгуль;Кадыралиевна;Танашева;Назгуль;Tanasheva.N;Tanasheva.N@karnu-buketov.edu.kz
+;;13;Тлеубергенова;Ақмарал;Жарылхасынқызы;Тлеубергенова;Акмарал;Tleubergenova.A;Tleubergenova.A@karnu-buketov.edu.kz
+;;14;Толықбаева;Айжан;Сәлімқадырқызы;Толыкбаева;Айжан;Tolykbaeva.A;Tolykbaeva.A@karnu-buketov.edu.kz
+;;15;Тусупханова;Айгерім;Рахметуллақызы;Тусупханова;Айгерим;Tusupkhanova.A;Tusupkhanova.A@karnu-buketov.edu.kz
+;;16;Хасенов;Аянберген;Каирбекович;Хасенов;Аянберген;Khasenov.A;Khasenov.A@karnu-buketov.edu.kz
+;;17;Шаймерденова;Кулжан;Мейрамовна;Шаймерденова;Кулжан;Shaymerdenova.K;Shaymerdenova.K@karnu-buketov.edu.kz
+;Радиофизики и электроники;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдрахман;Келбет;Тілекқызы;Абдрахман;Келбет;Abdrakhman.K;Abdrakhman.K@karnu-buketov.edu.kz
+;;2;Абишева;Асем;Кайратовна;Абишева;Асем;Abisheva.A;Abisheva.A@karnu-buketov.edu.kz
+;;3;Айжамбаева;Саулекул;Жакешовна;Айжамбаева;Саулекул;Ayzhambaeva.S;Ayzhambaeva.S@karnu-buketov.edu.kz
+;;4;Аймуханов;Айтбек;Калиевич;Аймуханов;Айтбек;Aymukhanov.A;Aymukhanov.A@karnu-buketov.edu.kz
+;;5;Алпысова;Гульнур;Кенжебековна;Алпысова;Гульнур;Alpysova.G;Alpysova.G@karnu-buketov.edu.kz
+;;6;Афанасьев;Дмитрий;Анатольевич;Афанасьев;Дмитрий;Afanasev.D;Afanasev.D@karnu-buketov.edu.kz
+;;7;Бектурганов;Жаналы;Султанович;Бектурганов;Жаналы;Bekturganov.Zh;Bekturganov.Zh@karnu-buketov.edu.kz
+;;8;Болатбекова;Мадина;Муратовна;Болатбекова;Мадина;Bolatbekova.M;Bolatbekova.M@karnu-buketov.edu.kz
+;;9;Әлиев;Ержан;Маратұлы;Алиев;Ержан;Aliev.Y;Aliev.Y@karnu-buketov.edu.kz
+;;10;Зейниденов;Асылбек;Калкенович;Зейниденов;Асылбек;Zeynidenov.A;Zeynidenov.A@karnu-buketov.edu.kz
+;;11;Исмаилов;Жараскан;Тулегенович;Исмаилов;Жараскан;Ismailov.Zh;Ismailov.Zh@karnu-buketov.edu.kz
+;;12;Калкенова;Арайлым;Тауекеловна;Калкенова;Арайлым;Kalkenova.A;Kalkenova.A@karnu-buketov.edu.kz
+;;13;Құрмаш;Алтынай;Нөгербекқызы;Курмаш;Алтынай;Kurmash.A;Kurmash.A@karnu-buketov.edu.kz
+;;14;Мұсабекова;Әсел;Қанатқызы;Мусабекова;Асел;Musabekova.A;Musabekova.A@karnu-buketov.edu.kz
+;;15;Омарбекова;Гульнур;Игибайкызы;Омарбекова;Гульнур;Omarbekova.G;Omarbekova.G@karnu-buketov.edu.kz
+;;16;Смагулов;Жанайдар;Кайдарович;Смагулов;Жанайдар;Smagulov.Zh;Smagulov.Zh@karnu-buketov.edu.kz
+;;17;Тусупбекова;Айнура;Кайыржановна;Тусупбекова;Айнура;Tusupbekova.A;Tusupbekova.A@karnu-buketov.edu.kz
+;;18;Утегенова;Айымжан;Сарсембаевна;Утегенова;Айымжан;Utegenova.A;Utegenova.A@karnu-buketov.edu.kz
+;;19;Чиркова;Любовь;Васильевна;Чиркова;Любовь;Chirkova.L;Chirkova.L@karnu-buketov.edu.kz
+;Транспорта и логистических систем;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Аманжолова;Мақпал;Қасымжанқызы;Аманжолова;Макпал;Amanzholova.M;Amanzholova.M@karnu-buketov.edu.kz
+;;2;Бейсенов;Нурлан;Камелович;Бейсенов;Нурлан;Beysenov.N;Beysenov.N@karnu-buketov.edu.kz
+;;3;Затынейко;Анатолий;Михайлович;Затынейко;Анатолий;Zatyneyko.A;Zatyneyko.A@karnu-buketov.edu.kz
+;;4;Исаева;Күлмараш;Раматуллақызы;Исаева;Кулмараш;Isaeva.K;Isaeva.K@karnu-buketov.edu.kz
+;;5;Курымбаев;Саят;Гайниевич;Курымбаев;Саят;Kurymbaev.S;Kurymbaev.S@karnu-buketov.edu.kz
+;;6;Қоңыртаева;Қолқанат;Байтөреқызы;Коныртаева;Колканат;Konyrtaeva.K;Konyrtaeva.K@karnu-buketov.edu.kz
+;;7;Молдабаев;Бауржан;Гылымович;Молдабаев;Бауржан;Moldabaev.B;Moldabaev.B@karnu-buketov.edu.kz
+;;8;Овчаров;Михаил;Степанович;Овчаров;Михаил;Ovcharov.M;Ovcharov.M@karnu-buketov.edu.kz
+;;9;Ошанов;Ерлан;Зетханович;Ошанов;Ерлан;Oshanov.Y;Oshanov.Y@karnu-buketov.edu.kz
+;;10;Сеитов;Руслан;Мухтарович;Сеитов;Руслан;Seitov.R;Seitov.R@karnu-buketov.edu.kz
+;;11;Тажибаев;Сержан;Кожанулы;Тажибаев;Сержан;Tazhibaev.S;Tazhibaev.S@karnu-buketov.edu.kz
+;;12;Тажигулова;Гульмира;;Тажигулова;Гульмира;Tazhigulova.G;Tazhigulova.G@karnu-buketov.edu.kz
+;;13;Тишбеков;Арнұр;Арманұлы;Тишбеков;Арнур;Tishbekov.A;Tishbekov.A@karnu-buketov.edu.kz
+;;14;Шарзадин;Адилзада;Магрупбекович;Шарзадин;Адилзада;Sharzadin.A;Sharzadin.A@karnu-buketov.edu.kz
+;Физики и нанотехнологий;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Балтабеков;Асхат;Секербаевич;Балтабеков;Асхат;Baltabekov.A;Baltabekov.A@karnu-buketov.edu.kz
+;;2;Бейсембаева;Гүлбақыт;Төлеуғалиқызы;Бейсембаева;Гулбакыт;Beysembaeva.G;Beysembaeva.G@karnu-buketov.edu.kz
+;;3;Есембекова;Жулдыз;Жуанышевна;Есембекова;Жулдыз;Yesembekova.Zh;Yesembekova.Zh@karnu-buketov.edu.kz
+;;4;Ибраев;Ниязбек;Хамзаұлы;Ибраев;Ниязбек;Ibraev.N;Ibraev.N@karnu-buketov.edu.kz
+;;5;Имангалиева;Назгуль;Назаровна;Имангалиева;Назгуль;Imangalieva.N;Imangalieva.N@karnu-buketov.edu.kz
+;;6;Камбарова;Жанар;Турсыновна;Камбарова;Жанар;Kambarova.Zh;Kambarova.Zh@karnu-buketov.edu.kz
+;;7;Карстина;Светлана;Геннадьевна;Карстина;Светлана;Karstina.S;Karstina.S@karnu-buketov.edu.kz
+;;8;Келғали;Гүлнара;Келғалиқызы;Келгали;Гулнара;Kelgali.G;Kelgali.G@karnu-buketov.edu.kz
+;;9;Кудусов;Арыстан;Сатыбалдинович;Кудусов;Арыстан;Kudusov.A;Kudusov.A@karnu-buketov.edu.kz
+;;10;Қисабекова;Перизат;Әуелқызы;Кисабекова;Перизат;Kisabekova.P;Kisabekova.P@karnu-buketov.edu.kz
+;;11;Лауринас;Витаутас;Чесловасович;Лауринас;Витаутас;Laurinas.V;Laurinas.V@karnu-buketov.edu.kz
+;;12;Мукашева;Аяулым;Жанабековна;Мукашева;Аяулым;Mukasheva.A;Mukasheva.A@karnu-buketov.edu.kz
+;;13;Мусенова;Эльмира;Куанаровна;Мусенова;Эльмира;Musenova.E;Musenova.E@karnu-buketov.edu.kz
+;;14;Омарова;Гульден;Сериковна;Омарова;Гульден;Omarova.G;Omarova.G@karnu-buketov.edu.kz
+;;15;Рысмаганбетова;Салтанат;Кумаровна;Рысмаганбетова;Салтанат;Rysmaganbetova.S;Rysmaganbetova.S@karnu-buketov.edu.kz
+;;16;Сейсембекова;Тогжан;Ерболовна;Сейсембекова;Тогжан;Seysembekova.T;Seysembekova.T@karnu-buketov.edu.kz
+;;17;Сериков;Тимур;Маратович;Сериков;Тимур;Serikov.T;Serikov.T@karnu-buketov.edu.kz
+Физической культуры и спорта;;;;;;;;.;.@karnu-buketov.edu.kz
+;Начальной военной подготовки и единоборств;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Атембеков;Нуржан;Райханович;Атембеков;Нуржан;Atembekov.N;Atembekov.N@karnu-buketov.edu.kz
+;;2;Біраяқ;Жандос;Бауыржанұлы;Бираяк;Жандос;Birayak.Zh;Birayak.Zh@karnu-buketov.edu.kz
+;;3;Иманбетов;Аманбек;Нуркасимович;Иманбетов;Аманбек;Imanbetov.A;Imanbetov.A@karnu-buketov.edu.kz
+;;4;Кайырбеков;Ерболат;Дидарович;Кайырбеков;Ерболат;Kayyrbekov.Y;Kayyrbekov.Y@karnu-buketov.edu.kz
+;;5;Кулейменов;Ардак;Жолдыбекович;Кулейменов;Ардак;Kuleymenov.A;Kuleymenov.A@karnu-buketov.edu.kz
+;;6;Мускунов;Кырыкбай;Сарсенбаевич;Мускунов;Кырыкбай;Muskunov.K;Muskunov.K@karnu-buketov.edu.kz
+;;7;Нуркеев;Руслан;Жалелович;Нуркеев;Руслан;Nurkeev.R;Nurkeev.R@karnu-buketov.edu.kz
+;;8;Омаров;Онгарсын;Салсерович;Омаров;Онгарсын;Omarov.O;Omarov.O@karnu-buketov.edu.kz
+;;9;Садыков;Канат;Ибраимович;Садыков;Канат;Sadykov.K;Sadykov.K@karnu-buketov.edu.kz
+;;10;Саликов;Жасбулан;Камелович;Саликов;Жасбулан;Salikov.Zh;Salikov.Zh@karnu-buketov.edu.kz
+;Спортивно-педагогических дисциплин;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Ануар;Сакенай;;Ануар;Сакенай;Anuar.S;Anuar.S@karnu-buketov.edu.kz
+;;2;Бодеев;Марат;Турымович;Бодеев;Марат;Bodeev.M;Bodeev.M@karnu-buketov.edu.kz
+;;3;Григоркевич;Александр;Анатольевич;Григоркевич;Александр;Grigorkevich.A;Grigorkevich.A@karnu-buketov.edu.kz
+;;4;Жанғабыл;Мәрлен;Саятұлы;Жангабыл;Марлен;Zhangabyl.M;Zhangabyl.M@karnu-buketov.edu.kz
+;;5;Каракасиди;Юрий;Константинович;Каракасиди;Юрий;Karakasidi.Y;Karakasidi.Y@karnu-buketov.edu.kz
+;;6;Кусаинов;Данияр;Ампиевич;Кусаинов;Данияр;Kusainov.D;Kusainov.D@karnu-buketov.edu.kz
+;;7;Қабдолла;Ербол;;Кабдолла;Ербол;Kabdolla.Y;Kabdolla.Y@karnu-buketov.edu.kz
+;;8;Назарова;Альфия;Минниазымовна;Назарова;Альфия;Nazarova.A;Nazarova.A@karnu-buketov.edu.kz
+;;9;Соболевский;Андрей;Юрьевич;Соболевский;Андрей;Sobolevskiy.A;Sobolevskiy.A@karnu-buketov.edu.kz
+;Теории и методики физической культуры и спортивной подготовки;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абишев;Жандос;Бахытович;Абишев;Жандос;Abishev.Zh;Abishev.Zh@karnu-buketov.edu.kz
+;;2;Дуанбекова;Гульняз;Биляловна;Дуанбекова;Гульняз;Duanbekova.G;Duanbekova.G@karnu-buketov.edu.kz
+;;3;Дуйсебаев;Болат;Турсынович;Дуйсебаев;Болат;Duysebaev.B;Duysebaev.B@karnu-buketov.edu.kz
+;;4;Дюбанова;Светлана;Ивановна;Дюбанова;Светлана;Dyubanova.S;Dyubanova.S@karnu-buketov.edu.kz
+;;5;Жунуспеков;Серик;Кабкенович;Жунуспеков;Серик;Zhunuspekov.S;Zhunuspekov.S@karnu-buketov.edu.kz
+;;6;Исин;Сагадат;Габдыгалымович;Исин;Сагадат;Isin.S;Isin.S@karnu-buketov.edu.kz
+;;7;Карим;Жансая;Кайратовна;Карим;Жансая;Karim.Zh;Karim.Zh@karnu-buketov.edu.kz
+;;8;Киспаев;Тохтар;Атамбаевич;Киспаев;Тохтар;Kispaev.T;Kispaev.T@karnu-buketov.edu.kz
+;;9;Кузнецова;Людмила;Сергеевна;Кузнецова;Людмила;Kuznetsova.L;Kuznetsova.L@karnu-buketov.edu.kz
+;;10;Сабанбаев;Нурбек;Имангазыулы;Сабанбаев;Нурбек;Sabanbaev.N;Sabanbaev.N@karnu-buketov.edu.kz
+;;11;Сулеева;Карина;Мадиевна;Сулеева;Карина;Suleeva.K;Suleeva.K@karnu-buketov.edu.kz
+;;12;Тультаева;Маржанкуль;Тогамбаевна;Тультаева;Маржанкуль;Tultaeva.M;Tultaeva.M@karnu-buketov.edu.kz
+;Физического воспитания;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Жумамуратов;Бекасыл;Айтмуратұлы;Жумамуратов;Бекасыл;Zhumamuratov.B;Zhumamuratov.B@karnu-buketov.edu.kz
+;;2;Жұмабай;Бауыржан;Болатұлы;Жумабай;Бауыржан;Zhumabay.B;Zhumabay.B@karnu-buketov.edu.kz
+;;3;Избасаров;Ермагын;Ерланович;Избасаров;Ермагын;Izbasarov.Y;Izbasarov.Y@karnu-buketov.edu.kz
+;;4;Қожамжаров;Елдос;Нұрлыбайұлы;Кожамжаров;Елдос;Kozhamzharov.Y;Kozhamzharov.Y@karnu-buketov.edu.kz
+;;5;Мазурик-Джабиева;Сабина;Сафадаровна;Мазурик-Джабиева;Сабина;Mazurik-Dzhabieva.S;Mazurik-Dzhabieva.S@karnu-buketov.edu.kz
+;;6;Мұсабаев;Дархан;Қайырұлы;Мусабаев;Дархан;Musabaev.D;Musabaev.D@karnu-buketov.edu.kz
+;;7;Мыктыбеков;Сапарбек;Дауренбекович;Мыктыбеков;Сапарбек;Myktybekov.S;Myktybekov.S@karnu-buketov.edu.kz
+;;8;Плешакова;Юлия;Михайловна;Плешакова;Юлия;Pleshakova.Y;Pleshakova.Y@karnu-buketov.edu.kz
+;;9;Рысбек;Қастер;;Рысбек;Кастер;Rysbek.K;Rysbek.K@karnu-buketov.edu.kz
+;;10;Саликов;Нурсултан;Камелович;Саликов;Нурсултан;Salikov.N;Salikov.N@karnu-buketov.edu.kz
+;;11;Сармантаев;Аян;Сапарович;Сармантаев;Аян;Sarmantaev.A;Sarmantaev.A@karnu-buketov.edu.kz
+;;12;Сериков;Толеген;Шалатаевич;Сериков;Толеген;Serikovv.T;Serikovv.T@karnu-buketov.edu.kz
+Филологический;;;;;;;;.;.@karnu-buketov.edu.kz
+;Журналистики;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абишева;Вера;Тукеновна;Абишева;Вера;Abisheva.V;Abisheva.V@karnu-buketov.edu.kz
+;;2;Асанов;Камашке;Даулетканович;Асанов;Камашке;Asanov.K;Asanov.K@karnu-buketov.edu.kz
+;;3;Балташұлы;Ермек;;Балташулы;Ермек;Baltashuly.Y;Baltashuly.Y@karnu-buketov.edu.kz
+;;4;Григоркевич;Вера;Борисовна;Григоркевич;Вера;Grigorkevich.V;Grigorkevich.V@karnu-buketov.edu.kz
+;;5;Демьянова;Юлия;Александровна;Демьянова;Юлия;Demyanova.Y;Demyanova.Y@karnu-buketov.edu.kz
+;;6;Дмитренко;Ульета;Александровна;Дмитренко;Ульета;Dmitrenko.U;Dmitrenko.U@karnu-buketov.edu.kz
+;;7;Еркин;Жазира;Жангазиевна;Еркин;Жазира;Yerkin.Zh;Yerkin.Zh@karnu-buketov.edu.kz
+;;8;Әбікеева;Назерке;Мадиярқызы;Абикеева;Назерке;Abikeeva.N;Abikeeva.N@karnu-buketov.edu.kz
+;;9;Жақан;Әлiмжан;Құтжанұлы;Жакан;Алiмжан;Zhakan.A;Zhakan.A@karnu-buketov.edu.kz
+;;10;Жумабеков;Мейрам;Кенесович;Жумабеков;Мейрам;Zhumabekov.M;Zhumabekov.M@karnu-buketov.edu.kz
+;;11;Қазыбек;Арман;Қазыбекұлы;Казыбек;Арман;Kazybek.A;Kazybek.A@karnu-buketov.edu.kz
+;;12;Пронич;Кира;Андреевна;Пронич;Кира;Pronich.K;Pronich.K@karnu-buketov.edu.kz
+;;13;Рамазанова;Жанар;Сембековна;Рамазанова;Жанар;Ramazanova.Zh;Ramazanova.Zh@karnu-buketov.edu.kz
+;;14;Сиязбаев;Нұртілеу;Кәкенұлы;Сиязбаев;Нуртилеу;Siyazbaev.N;Siyazbaev.N@karnu-buketov.edu.kz
+;Казахского языкознания;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Адилова;Алмагуль;Советовна;Адилова;Алмагуль;Adilova.A;Adilova.A@karnu-buketov.edu.kz
+;;2;Ажарбекова;Эльвира;Насипкуловна;Ажарбекова;Эльвира;Azharbekova.E;Azharbekova.E@karnu-buketov.edu.kz
+;;3;Баймурынов;Жанболат;Максатович;Баймурынов;Жанболат;Baymurynov.Zh;Baymurynov.Zh@karnu-buketov.edu.kz
+;;4;Жалмаханов;Шапагат;Шарапатович;Жалмаханов;Шапагат;Zhalmakhanov.Sh;Zhalmakhanov.Sh@karnu-buketov.edu.kz
+;;5;Жунусова;Баян;Аманжоловна;Жунусова;Баян;Zhunusova.B;Zhunusova.B@karnu-buketov.edu.kz
+;;6;Жуынтаева;Замзагул;Нагашыбаевна;Жуынтаева;Замзагул;Zhuyntaeva.Z;Zhuyntaeva.Z@karnu-buketov.edu.kz
+;;7;Казанбаева;Айнагул;Зикировна;Казанбаева;Айнагул;Kazanbaeva.A;Kazanbaeva.A@karnu-buketov.edu.kz
+;;8;Калиев;Бектурсын;Аманкулович;Калиев;Бектурсын;Kaliev.B;Kaliev.B@karnu-buketov.edu.kz
+;;9;Каппасова;Айгерим;Шугаевна;Каппасова;Айгерим;Kappasova.A;Kappasova.A@karnu-buketov.edu.kz
+;;10;Кенжегалиев;Саян;Акылжанович;Кенжегалиев;Саян;Kenzhegaliev.S;Kenzhegaliev.S@karnu-buketov.edu.kz
+;;11;Мажитаева;Шара;;Мажитаева;Шара;Mazhitaeva.Sh;Mazhitaeva.Sh@karnu-buketov.edu.kz
+;;12;Рапишева;Жанат;Дабыловна;Рапишева;Жанат;Rapisheva.Zh;Rapisheva.Zh@karnu-buketov.edu.kz
+;;13;Саменова;Света;Нуртаевна;Саменова;Света;Samenova.S;Samenova.S@karnu-buketov.edu.kz
+;;14;Турсунова;Мархаба;Ахметкалиевна;Турсунова;Мархаба;Tursunova.M;Tursunova.M@karnu-buketov.edu.kz
+;;15;Түйте;Елдос;Ерғазыұлы;Туйте;Елдос;Tuyte.Y;Tuyte.Y@karnu-buketov.edu.kz
+;Казахской литературы;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдикадирова;Айдана;Жаруллиновна;Абдикадирова;Айдана;Abdikadirova.A;Abdikadirova.A@karnu-buketov.edu.kz
+;;2;Бабашов;Азат;Максутбекович;Бабашов;Азат;Babashov.A;Babashov.A@karnu-buketov.edu.kz
+;;3;Жарылгапов;Жансая;Жангазиевич;Жарылгапов;Жансая;Zharylgapov.Zh;Zharylgapov.Zh@karnu-buketov.edu.kz
+;;4;Жумагулов;Айтбай;Ботпаевич;Жумагулов;Айтбай;Zhumagulov.A;Zhumagulov.A@karnu-buketov.edu.kz
+;;5;Рахимов;Берик;Серикбаевич;Рахимов;Берик;Rakhimov.B;Rakhimov.B@karnu-buketov.edu.kz
+;;6;Рустемова;Жанар;Айдарбеккызы;Рустемова;Жанар;Rustemova.Zh;Rustemova.Zh@karnu-buketov.edu.kz
+;;7;Смагулов;Жандос;Кожахметулы;Смагулов;Жандос;Smagulovv.Zh;Smagulovv.Zh@karnu-buketov.edu.kz
+;;8;Сыздыкова;Биби;Ергазыкызы;Сыздыкова;Биби;Syzdykova.B;Syzdykova.B@karnu-buketov.edu.kz
+;;9;Такиров;Саржан;Уахитович;Такиров;Саржан;Takirov.S;Takirov.S@karnu-buketov.edu.kz
+;;10;Толеубаева;Камшат;Аманбаевна;Толеубаева;Камшат;Toleubaeva.K;Toleubaeva.K@karnu-buketov.edu.kz
+;Практического курса казахского языка;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абугалиев;Канат;Нуртаевич;Абугалиев;Канат;Abugaliev.K;Abugaliev.K@karnu-buketov.edu.kz
+;;2;Акжунусова;Назерке;Бекеновна;Акжунусова;Назерке;Akzhunusova.N;Akzhunusova.N@karnu-buketov.edu.kz
+;;3;Аметова;Алмагул;Женисовна;Аметова;Алмагул;Ametova.A;Ametova.A@karnu-buketov.edu.kz
+;;4;Ельшибекова;Назерке;Халмахановна;Ельшибекова;Назерке;Yelshibekova.N;Yelshibekova.N@karnu-buketov.edu.kz
+;;5;Жармаганбетова;Айнаш;Табараковна;Жармаганбетова;Айнаш;Zharmaganbetova.A;Zharmaganbetova.A@karnu-buketov.edu.kz
+;;6;Жунусова;Марина;Кабдулкалымовна;Жунусова;Марина;Zhunusova.M;Zhunusova.M@karnu-buketov.edu.kz
+;;7;Кадина;Жанбы;Зекеновна;Кадина;Жанбы;Kadina.Zh;Kadina.Zh@karnu-buketov.edu.kz
+;;8;Кенжебекова;Жибек;Алшымбековна;Кенжебекова;Жибек;Kenzhebekova.Zh;Kenzhebekova.Zh@karnu-buketov.edu.kz
+;;9;Рахимбаева;Багира;Оспановна;Рахимбаева;Багира;Rakhimbaeva.B;Rakhimbaeva.B@karnu-buketov.edu.kz
+;;10;Рахымберлина;Сагила;Абдигалиевна;Рахымберлина;Сагила;Rakhymberlina.S;Rakhymberlina.S@karnu-buketov.edu.kz
+;;11;Сатеева;Ботагоз;Серикбеккызы;Сатеева;Ботагоз;Sateeva.B;Sateeva.B@karnu-buketov.edu.kz
+;;12;Смаилова;Анар;Шабазовна;Смаилова;Анар;Smailovaa.A;Smailovaa.A@karnu-buketov.edu.kz
+;;13;Смакова;Тогжан;Сагидуллаевна;Смакова;Тогжан;Smakova.T;Smakova.T@karnu-buketov.edu.kz
+;;14;Шахина;Сауле;Жумакасовна;Шахина;Сауле;Shakhina.S;Shakhina.S@karnu-buketov.edu.kz
+;;15;Медеубаева;Ктабия;Мухамбедиевна;;;Medeubaeva.K;Medeubaeva.K@karnu-buketov.edu.kz
+;Русского языка и литературы им.профессора Г.А. Мейрамова;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Антонова;Елена;Михайловна;Антонова;Елена;Antonova.Y;Antonova.Y@karnu-buketov.edu.kz
+;;2;Аязбаева;Бахыт;Кусаиновна;Аязбаева;Бахыт;Ayazbaeva.B;Ayazbaeva.B@karnu-buketov.edu.kz
+;;3;Баймамыров;Серикказы;Амангазинович;Баймамыров;Серикказы;Baymamyrov.S;Baymamyrov.S@karnu-buketov.edu.kz
+;;4;Балмагамбетова;Жаннат;Толеуовна;Балмагамбетова;Жаннат;Balmagambetova.Zh;Balmagambetova.Zh@karnu-buketov.edu.kz
+;;5;Беспаева;Куралай;Амангельдыевна;Беспаева;Куралай;Bespaeva.K;Bespaeva.K@karnu-buketov.edu.kz
+;;6;Вишницкая;Виктория;Александровна;Вишницкая;Виктория;Vishnitskaya.V;Vishnitskaya.V@karnu-buketov.edu.kz
+;;7;Григорьева;Ирина;Владимировна;Григорьева;Ирина;Grigoreva.I;Grigoreva.I@karnu-buketov.edu.kz
+;;8;Джумадильдинова;Жанара;Саятовна;Джумадильдинова;Жанара;Dzhumadildinova.Zh;Dzhumadildinova.Zh@karnu-buketov.edu.kz
+;;9;Дьяков;Дмитрий;Викторович;Дьяков;Дмитрий;Dyakov.D;Dyakov.D@karnu-buketov.edu.kz
+;;10;Жаманова;Жанар;Жексенбаевна;Жаманова;Жанар;Zhamanova.Zh;Zhamanova.Zh@karnu-buketov.edu.kz
+;;11;Жоржева;Алина;Алексеевна;Жоржева;Алина;Zhorzheva.A;Zhorzheva.A@karnu-buketov.edu.kz
+;;12;Ибраев;Габдеш;Укенович;Ибраев;Габдеш;Ibraev.G;Ibraev.G@karnu-buketov.edu.kz
+;;13;Ибраимова;Женисгуль;Жалгасбаевна;Ибраимова;Женисгуль;Ibraimova.Zh;Ibraimova.Zh@karnu-buketov.edu.kz
+;;14;Мудровская;Анастасия;Михайловна;Мудровская;Анастасия;Mudrovskaya.A;Mudrovskaya.A@karnu-buketov.edu.kz
+;;15;Мустояпова;Айнаш;Токушевна;Мустояпова;Айнаш;Mustoyapova.A;Mustoyapova.A@karnu-buketov.edu.kz
+;;16;Назарова;Меруерт;Генеятовна;Назарова;Меруерт;Nazarova.M;Nazarova.M@karnu-buketov.edu.kz
+;;17;Омашева;Жанар;Магауяевна;Омашева;Жанар;Omasheva.Zh;Omasheva.Zh@karnu-buketov.edu.kz
+;;18;Пак;Маргарита;Константиновна;Пак;Маргарита;Pak.M;Pak.M@karnu-buketov.edu.kz
+;;19;Сейдахметова;Зергуль;Кобландиевна;Сейдахметова;Зергуль;Seydakhmetova.Z;Seydakhmetova.Z@karnu-buketov.edu.kz
+;;20;Танабаева;Алия;Манаповна;Танабаева;Алия;Tanabaeva.A;Tanabaeva.A@karnu-buketov.edu.kz
+;;21;Токсанбаева;Шолпан;Амреновна;Токсанбаева;Шолпан;Toksanbaeva.Sh;Toksanbaeva.Sh@karnu-buketov.edu.kz
+;;22;Филимонова;Александра;Петровна;Филимонова;Александра;Filimonova.A;Filimonova.A@karnu-buketov.edu.kz
+;;23;Хаирова;Гуля;Малбагаровна;Хаирова;Гуля;Khairova.G;Khairova.G@karnu-buketov.edu.kz
+;;24;Хан;Надежда;Константиновна;Хан;Надежда;Khan.N;Khan.N@karnu-buketov.edu.kz
+;;25;Харитонова;Лариса;Михайловна;Харитонова;Лариса;Kharitonova.L;Kharitonova.L@karnu-buketov.edu.kz
+;;26;Шевлякова;Любовь;Реональдовна;Шевлякова;Любовь;Shevlyakova.L;Shevlyakova.L@karnu-buketov.edu.kz
+;;27;Шеризатова;Жулдыз;Жамбуртаевна;Шеризатова;Жулдыз;Sherizatova.Zh;Sherizatova.Zh@karnu-buketov.edu.kz
+Философии и психологии;;;;;;;;.;.@karnu-buketov.edu.kz
+;Политологии и социологии;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Алимова;Сауле;Бисембаевна;Алимова;Сауле;Alimova.S;Alimova.S@karnu-buketov.edu.kz
+;;2;Бейсенова;Айгуль;Аманжановна;Бейсенова;Айгуль;Beysenova.A;Beysenova.A@karnu-buketov.edu.kz
+;;3;Булумбаев;Олжас;Рахматулаевич;Булумбаев;Олжас;Bulumbaev.O;Bulumbaev.O@karnu-buketov.edu.kz
+;;4;Валитова;Зульфия;Хафизовна;Валитова;Зульфия;Valitova.Z;Valitova.Z@karnu-buketov.edu.kz
+;;5;Жумасултанова;Галия;Азирхановна;Жумасултанова;Галия;Zhumasultanova.G;Zhumasultanova.G@karnu-buketov.edu.kz
+;;6;Инджиголян;Анжела;Алвановна;Инджиголян;Анжела;Indzhigolyan.A;Indzhigolyan.A@karnu-buketov.edu.kz
+;;7;Искаков;Елмурат;Рымбаевич;Искаков;Елмурат;Iskakov.Y;Iskakov.Y@karnu-buketov.edu.kz
+;;8;Карасева;Наталья;Владимировна;Карасева;Наталья;Karaseva.N;Karaseva.N@karnu-buketov.edu.kz
+;;9;Қапият;Динара;Серікқызы;Капият;Динара;Kapiyat.D;Kapiyat.D@karnu-buketov.edu.kz
+;;10;Макатова;Анара;Даулетовна;Макатова;Анара;Makatova.A;Makatova.A@karnu-buketov.edu.kz
+;;11;Муслимова;Корлан;Саиновна;Муслимова;Корлан;Muslimova.K;Muslimova.K@karnu-buketov.edu.kz
+;;12;Резвушкина;Татьяна;Александровна;Резвушкина;Татьяна;Rezvushkina.T;Rezvushkina.T@karnu-buketov.edu.kz
+;;13;Сапарғалиқызы;Жанар;;Сапаргаликызы;Жанар;Sapargalikyzy.Zh;Sapargalikyzy.Zh@karnu-buketov.edu.kz
+;;14;Сисенгалиев;Куаныш;Маратович;Сисенгалиев;Куаныш;Sisengaliev.K;Sisengaliev.K@karnu-buketov.edu.kz
+;Психологии;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Алимбаева;Роза;Тогайовна;Алимбаева;Роза;Alimbaeva.R;Alimbaeva.R@karnu-buketov.edu.kz
+;;2;Алпамысқызы;Алина;;Алпамыскызы;Алина;Alpamyskyzy.A;Alpamyskyzy.A@karnu-buketov.edu.kz
+;;3;Альгожина;Анар;Рашидовна;Альгожина;Анар;Algozhina.A;Algozhina.A@karnu-buketov.edu.kz
+;;4;Амирова;Бибисара;Аубакировна;Амирова;Бибисара;Amirova.B;Amirova.B@karnu-buketov.edu.kz
+;;5;Бурленова;Салтанат;Ошакбайкызы;Бурленова;Салтанат;Burlenova.S;Burlenova.S@karnu-buketov.edu.kz
+;;6;Жансерикова;Дыбыс;Аманкелдиевна;Жансерикова;Дыбыс;Zhanserikova.D;Zhanserikova.D@karnu-buketov.edu.kz
+;;7;Исина;Салтанат;Сериккалиевна;Исина;Салтанат;Isina.S;Isina.S@karnu-buketov.edu.kz
+;;8;Капашева;Гаухар;Абдиканиевна;Капашева;Гаухар;Kapasheva.G;Kapasheva.G@karnu-buketov.edu.kz
+;;9;Капбасова;Гульзада;Байырбалдыевна;Капбасова;Гульзада;Kapbasova.G;Kapbasova.G@karnu-buketov.edu.kz
+;;10;Карипжанова;Шырын;Саулебековна;Карипжанова;Шырын;Karipzhanova.Sh;Karipzhanova.Sh@karnu-buketov.edu.kz
+;;11;Лазарева;Елена;Александровна;Лазарева;Елена;Lazareva.Y;Lazareva.Y@karnu-buketov.edu.kz
+;;12;Магзумова;Назира;Кайролловна;Магзумова;Назира;Magzumova.N;Magzumova.N@karnu-buketov.edu.kz
+;;13;Молдабаева;Роза;Апакбаевна;Молдабаева;Роза;Moldabaeva.R;Moldabaeva.R@karnu-buketov.edu.kz
+;;14;Нургалиева;Сауле;Мухановна;Нургалиева;Сауле;Nurgalieva.S;Nurgalieva.S@karnu-buketov.edu.kz
+;;15;Панченко;Антон;Викторович;Панченко;Антон;Panchenko.A;Panchenko.A@karnu-buketov.edu.kz
+;;16;Рахимбекова;Жансая;Шенгелбаевна;Рахимбекова;Жансая;Rakhimbekova.Zh;Rakhimbekova.Zh@karnu-buketov.edu.kz
+;;17;Сабирова;Райхан;Шайхышевна;Сабирова;Райхан;Sabirova.R;Sabirova.R@karnu-buketov.edu.kz
+;;18;Сланбекова;Гульнара;Кобылановна;Сланбекова;Гульнара;Slanbekova.G;Slanbekova.G@karnu-buketov.edu.kz
+;;19;Тусупова;Мейрамгуль;Максутовна;Тусупова;Мейрамгуль;Tusupova.M;Tusupova.M@karnu-buketov.edu.kz
+;;20;Чупеева;Анастасия;Александровна;Чупеева;Анастасия;Chupeeva.A;Chupeeva.A@karnu-buketov.edu.kz
+;;21;Шагиева;Алиса;Борисовна;Шагиева;Алиса;Shagieva.A;Shagieva.A@karnu-buketov.edu.kz
+;Социальной работы и социальной педагогики;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдрашева;Банугуль;Жолдыбековна;Абдрашева;Банугуль;Abdrasheva.B;Abdrasheva.B@karnu-buketov.edu.kz
+;;2;Альжанова;Айгерим;Жаксыбаевна;Альжанова;Айгерим;Alzhanova.A;Alzhanova.A@karnu-buketov.edu.kz
+;;3;Аманбаева;Данагуль;Сейдыгазықызы;Аманбаева;Данагуль;Amanbaeva.D;Amanbaeva.D@karnu-buketov.edu.kz
+;;4;Ахметова;Индира;Абдигазымовна;Ахметова;Индира;Akhmetova.I;Akhmetova.I@karnu-buketov.edu.kz
+;;5;Баймуканова;Маржангуль;Токтаровна;Баймуканова;Маржангуль;Baymukanova.M;Baymukanova.M@karnu-buketov.edu.kz
+;;6;Гаркуша;Кира;Георгиевна;Гаркуша;Кира;Garkusha.K;Garkusha.K@karnu-buketov.edu.kz
+;;7;Джамалиева;Газиза;Жумагалиевна;Джамалиева;Газиза;Dzhamalieva.G;Dzhamalieva.G@karnu-buketov.edu.kz
+;;8;Исмағұл;Айгерім;Қанатқызы;Исмагул;Айгерим;Ismagul.A;Ismagul.A@karnu-buketov.edu.kz
+;;9;Каргин;Сергали;Толеубекович;Каргин;Сергали;Kargin.S;Kargin.S@karnu-buketov.edu.kz
+;;10;Кендирбекова;Жанар;Хайдаровна;Кендирбекова;Жанар;Kendirbekova.Zh;Kendirbekova.Zh@karnu-buketov.edu.kz
+;;11;Мухтарова;Шакира;Мукашовна;Мухтарова;Шакира;Mukhtarova.Sh;Mukhtarova.Sh@karnu-buketov.edu.kz
+;;12;Мұқан;Нұргүл;Тілепбекқызы;Мукан;Нургул;Mukan.N;Mukan.N@karnu-buketov.edu.kz
+;;13;Ошанова;Гаухар;Ерканатовна;Ошанова;Гаухар;Oshanova.G;Oshanova.G@karnu-buketov.edu.kz
+;;14;Рахимов;Акниет;Сагынтаевич;Рахимов;Акниет;Rakhimov.A;Rakhimov.A@karnu-buketov.edu.kz
+;;15;Сагадатова;Айгерим;Темирлановна;Сагадатова;Айгерим;Sagadatova.A;Sagadatova.A@karnu-buketov.edu.kz
+;;16;Туткышева;Галия;Толегеновна;Туткышева;Галия;Tutkysheva.G;Tutkysheva.G@karnu-buketov.edu.kz
+;;17;Шыныбай;Тлеужан;Серыжанқызы;Шыныбай;Тлеужан;Shynybay.T;Shynybay.T@karnu-buketov.edu.kz
+;Философии и теории культуры;;;;;;;;@karnu-buketov.edu.kz
+;;1;Аринов;Ерлан;Кенжебаевич;Аринов;Ерлан;Arinov.Y;Arinov.Y@karnu-buketov.edu.kz
+;;2;Аринова;Ольга;Тастанбековна;Аринова;Ольга;Arinova.O;Arinova.O@karnu-buketov.edu.kz
+;;3;Байбосунов;Досым;Берикбаевич;Байбосунов;Досым;Baybosunov.D;Baybosunov.D@karnu-buketov.edu.kz
+;;4;Батурин;Владимир;Степанович;Батурин;Владимир;Baturin.V;Baturin.V@karnu-buketov.edu.kz
+;;5;Дағарова;Жанар;Өміржанқызы;Дагарова;Жанар;Dagarovaa.Zh;Dagarovaa.Zh@karnu-buketov.edu.kz
+;;6;Джумагельдинов;Марат;Нуркенович;Джумагельдинов;Марат;Dzhumageldinov.M;Dzhumageldinov.M@karnu-buketov.edu.kz
+;;7;Джусупов;Берик;Искакович;Джусупов;Берик;Dzhusupov.B;Dzhusupov.B@karnu-buketov.edu.kz
+;;8;Донецкая;Наталья;Александровна;Донецкая;Наталья;Donetskaya.N;Donetskaya.N@karnu-buketov.edu.kz
+;;9;Жакин;Самат;Манатович;Жакин;Самат;Zhakin.S;Zhakin.S@karnu-buketov.edu.kz
+;;10;Жармакина;Фарида;Мухтаровна;Жармакина;Фарида;Zharmakina.F;Zharmakina.F@karnu-buketov.edu.kz
+;;11;Жусупова;Бахыт;Жармухамедовна;Жусупова;Бахыт;Zhusupova.B;Zhusupova.B@karnu-buketov.edu.kz
+;;12;Караконисова;Салтанат;Гомаровна;Караконисова;Салтанат;Karakonisova.S;Karakonisova.S@karnu-buketov.edu.kz
+;;13;Карипбаев;Байжол;Искакович;Карипбаев;Байжол;Karipbaev.B;Karipbaev.B@karnu-buketov.edu.kz
+;;14;Ким;Родион;Олегович;Ким;Родион;Kim.R;Kim.R@karnu-buketov.edu.kz
+;;15;Колумбаев;Бисембай;Ергалеевич;Колумбаев;Бисембай;Kolumbaev.B;Kolumbaev.B@karnu-buketov.edu.kz
+;;16;Манасова;Мира;Манасқызы;Манасова;Мира;Manasova.M;Manasova.M@karnu-buketov.edu.kz
+;;17;Сагатова;Асем;Сериковна;Сагатова;Асем;Sagatova.A;Sagatova.A@karnu-buketov.edu.kz
+;;18;Салыматова;Нургул;Рыскелдиевна;Салыматова;Нургул;Salymatova.N;Salymatova.N@karnu-buketov.edu.kz
+;;19;Сейфуллина;Галия;Рустембековна;Сейфуллина;Галия;Seyfullina.G;Seyfullina.G@karnu-buketov.edu.kz
+;;20;Солощенко;Павел;Петрович;Солощенко;Павел;Soloshchenko.P;Soloshchenko.P@karnu-buketov.edu.kz
+;;21;Старовик;Павел;Павлович;Старовик;Павел;Starovik.P;Starovik.P@karnu-buketov.edu.kz
+Химический;;;;;;;;;@karnu-buketov.edu.kz
+;Неорганической и технической химии;;;;;;;;@karnu-buketov.edu.kz
+;;1;Алдабергенова;Сауле;Кидирбаевна;Алдабергенова;Сауле;Aldabergenova.S;Aldabergenova.S@karnu-buketov.edu.kz
+;;2;Искандеров;Аблайхан;Нурбаевич;Искандеров;Аблайхан;Iskanderov.A;Iskanderov.A@karnu-buketov.edu.kz
+;;3;Кайырбаева;Маржангул;Жаксыбаевна;Кайырбаева;Маржангул;Kayyrbaeva.M;Kayyrbaeva.M@karnu-buketov.edu.kz
+;;4;Кездикбаева;Асель;Таупыковна;Кездикбаева;Асель;Kezdikbaeva.A;Kezdikbaeva.A@karnu-buketov.edu.kz
+;;5;Кокибасова;Гулмира;Толепбергеновна;Кокибасова;Гулмира;Kokibasova.G;Kokibasova.G@karnu-buketov.edu.kz
+;;6;Мерхатұлы;Нұрлан;;Мерхатулы;Нурлан;Merkhatuly.N;Merkhatuly.N@karnu-buketov.edu.kz
+;;7;Мукушева;Гулим;Кенесбековна;Мукушева;Гулим;Mukusheva.G;Mukusheva.G@karnu-buketov.edu.kz
+;;8;Наушабекова;Динара;Даняровна;Наушабекова;Динара;Naushabekova.D;Naushabekova.D@karnu-buketov.edu.kz
+;;9;Нурмаганбетова;Маншук;Сеитовна;Нурмаганбетова;Маншук;Nurmaganbetova.M;Nurmaganbetova.M@karnu-buketov.edu.kz
+;;10;Оспанова;Алияш;Сагиевна;Оспанова;Алияш;Ospanova.A;Ospanova.A@karnu-buketov.edu.kz
+;;11;Рустембеков;Кенжебек;Тусупович;Рустембеков;Кенжебек;Rustembekov.K;Rustembekov.K@karnu-buketov.edu.kz
+;;12;Садыков;Тимур;Мейрамович;Садыков;Тимур;Sadykov.T;Sadykov.T@karnu-buketov.edu.kz
+;;13;Тойгамбекова;Нуризат;Нуржановна;Тойгамбекова;Нуризат;Toygambekova.N;Toygambekova.N@karnu-buketov.edu.kz
+;Органической химии и полимеров;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Айкынбаева;Гульзат;Муратовна;Айкынбаева;Гульзат;Aykynbaeva.G;Aykynbaeva.G@karnu-buketov.edu.kz
+;;2;Буркеева;Гульсым;Кабаевна;Буркеева;Гульсым;Burkeeva.G;Burkeeva.G@karnu-buketov.edu.kz
+;;3;Жакупбекова;Эльмира;Жумантаевна;Жакупбекова;Эльмира;Zhakupbekova.E;Zhakupbekova.E@karnu-buketov.edu.kz
+;;4;Жапарова;Ляззат;Жаныбековна;Жапарова;Ляззат;Zhaparova.L;Zhaparova.L@karnu-buketov.edu.kz
+;;5;Жумагалиева;Толкын;Сергазыевна;Жумагалиева;Толкын;Zhumagalieva.T;Zhumagalieva.T@karnu-buketov.edu.kz
+;;6;Ибраев;Марат;Киримбаевич;Ибраев;Марат;Ibraev.M;Ibraev.M@karnu-buketov.edu.kz
+;;7;Кадирберлина;Гульпан;Мусралиевна;Кадирберлина;Гульпан;Kadirberlina.G;Kadirberlina.G@karnu-buketov.edu.kz
+;;8;Кажмуратова;Акерке;Темиргалиевна;Кажмуратова;Акерке;Kazhmuratova.A;Kazhmuratova.A@karnu-buketov.edu.kz
+;;9;Каримова;Бахытгуль;Нурлановна;Каримова;Бахытгуль;Karimova.B;Karimova.B@karnu-buketov.edu.kz
+;;10;Касенов;Рымхан;Зейноллаевич;Касенов;Рымхан;Kasenov.R;Kasenov.R@karnu-buketov.edu.kz
+;;11;Кенжетаева;Сауле;Орынбаевна;Кенжетаева;Сауле;Kenzhetaeva.S;Kenzhetaeva.S@karnu-buketov.edu.kz
+;;12;Минаева;Елена;Викторовна;Минаева;Елена;Minaeva.Y;Minaeva.Y@karnu-buketov.edu.kz
+;;13;Нурмаганбетова;Маргарита;Таукеновна;Нурмаганбетова;Маргарита;Nurmaganbetovaa.M;Nurmaganbetovaa.M@karnu-buketov.edu.kz
+;;14;Омашева;Айман;Валекановна;Омашева;Айман;Omasheva.A;Omasheva.A@karnu-buketov.edu.kz
+;;15;Паньшина;Светлана;Юрьевна;Паньшина;Светлана;Panshina.S;Panshina.S@karnu-buketov.edu.kz
+;;16;Салькеева;Лязат;Каришовна;Салькеева;Лязат;Salkeeva.L;Salkeeva.L@karnu-buketov.edu.kz
+;;17;Сатпаева;Жанаркуль;Болсынбековна;Сатпаева;Жанаркуль;Satpaeva.Zh;Satpaeva.Zh@karnu-buketov.edu.kz
+;;18;Сейтжан;Райхан;Сарсенқызы;Сейтжан;Райхан;Seytzhan.R;Seytzhan.R@karnu-buketov.edu.kz
+;;19;Сугралина;Лариса;Маратовна;Сугралина;Лариса;Sugralina.L;Sugralina.L@karnu-buketov.edu.kz
+;;20;Тәжібай;Айжан;Маратқызы;Тажибай;Айжан;Tazhibay.A;Tazhibay.A@karnu-buketov.edu.kz
+;;21;Толепбек;Индира;Серикбековна;Толепбек;Индира;Tolepbek.I;Tolepbek.I@karnu-buketov.edu.kz
+;;22;Топаева;Сулушаш;Какеновна;Топаева;Сулушаш;Topaeva.S;Topaeva.S@karnu-buketov.edu.kz
+;;23;Уайділда;Алаужан;Өмірзаққызы;Уайдилда;Алаужан;Uaydilda.A;Uaydilda.A@karnu-buketov.edu.kz
+;Физической и аналитической химии;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абуляисова;Ляззат;Кабылашевна;Абуляисова;Ляззат;Abulyaisova.L;Abulyaisova.L@karnu-buketov.edu.kz
+;;2;Амангелді;Арайлым;Алпысбайқызы;Амангелди;Арайлым;Amangeldi.A;Amangeldi.A@karnu-buketov.edu.kz
+;;3;Болатбай;Абылайхан;Нұрланұлы;Болатбай;Абылайхан;Bolatbay.A;Bolatbay.A@karnu-buketov.edu.kz
+;;4;Жорабеков;Рысқұлбек;Нұрлыбекұлы;Жорабеков;Рыскулбек;Zhorabekov.R;Zhorabekov.R@karnu-buketov.edu.kz
+;;5;Ибраева;Жансая;Мирханкызы;Ибраева;Жансая;Ibraeva.Zh;Ibraeva.Zh@karnu-buketov.edu.kz
+;;6;Исина;Жаннур;Амиргалиевна;Исина;Жаннур;Isina.Zh;Isina.Zh@karnu-buketov.edu.kz
+;;7;Касымова;Марал;Сайрановна;Касымова;Марал;Kasymova.M;Kasymova.M@karnu-buketov.edu.kz
+;;8;Курманова;Альфия;Фаридовна;Курманова;Альфия;Kurmanova.A;Kurmanova.A@karnu-buketov.edu.kz
+;;9;Кутжанова;Камшат;Жамбыловна;Кутжанова;Камшат;Kutzhanova.K;Kutzhanova.K@karnu-buketov.edu.kz
+;;10;Қилыбай;Мүслім;Әнуарұлы;Килыбай;Муслим;Kilybay.M;Kilybay.M@karnu-buketov.edu.kz
+;;11;Масалимов;Абай;Сабиржанович;Масалимов;Абай;Masalimov.A;Masalimov.A@karnu-buketov.edu.kz
+;;12;Никольский;Сергей;Николаевич;Никольский;Сергей;Nikolskiy.S;Nikolskiy.S@karnu-buketov.edu.kz
+;;13;Пернебай;Маржан;Әлмаханқызы;Пернебай;Маржан;Pernebay.M;Pernebay.M@karnu-buketov.edu.kz
+;;14;Рахимжанова;Аида;Сабитовна;Рахимжанова;Аида;Rakhimzhanova.A;Rakhimzhanova.A@karnu-buketov.edu.kz
+;;15;Сарсенбекова;Акмарал;Жакановна;Сарсенбекова;Акмарал;Sarsenbekova.A;Sarsenbekova.A@karnu-buketov.edu.kz
+;;16;Халитова;Альфия;Ильдаровна;Халитова;Альфия;Khalitova.A;Khalitova.A@karnu-buketov.edu.kz
+;Химической технологии и нефтехимии;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Байкенов;Мурзабек;Исполович;Байкенов;Мурзабек;Baykenov.M;Baykenov.M@karnu-buketov.edu.kz
+;;2;Балпанова;Назерке;Жумагалиевна;Балпанова;Назерке;Balpanova.N;Balpanova.N@karnu-buketov.edu.kz
+;;3;Әбсәт;Зәуре;Бақиқызы;Абсат;Зауре;Absat.Z;Absat.Z@karnu-buketov.edu.kz
+;;4;Кочегина;Елена;Вячеславовна;Кочегина;Елена;Kochegina.Y;Kochegina.Y@karnu-buketov.edu.kz
+;;5;Муратбекова;Айгуль;Акижановна;Муратбекова;Айгуль;Muratbekova.A;Muratbekova.A@karnu-buketov.edu.kz
+;;6;Рахимжанова;Назым;Жанбырбаевна;Рахимжанова;Назым;Rakhimzhanova.N;Rakhimzhanova.N@karnu-buketov.edu.kz
+;;7;Татеева;Алма;Баймаганбетовна;Татеева;Алма;Tateeva.A;Tateeva.A@karnu-buketov.edu.kz
+;;8;Түсіпхан;Алмас;;Тусипхан;Алмас;Tusipkhan.A;Tusipkhan.A@karnu-buketov.edu.kz
+;;9;Тянах;Сайрагул;;Тянах;Сайрагул;Tyanakh.S;Tyanakh.S@karnu-buketov.edu.kz
+;;10;Халикова;Зухра;Салаватовна;Халикова;Зухра;Khalikova.Z;Khalikova.Z@karnu-buketov.edu.kz
+Экономический;;;;;;;;.;.@karnu-buketov.edu.kz
+;Бухгалтерского учета и аудита;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Амиркулова;Марал;Битимовна;Амиркулова;Марал;Amirkulovaa.M;Amirkulovaa.M@karnu-buketov.edu.kz
+;;2;Атабаева;Асия;Кайрошовна;Атабаева;Асия;Atabaeva.A;Atabaeva.A@karnu-buketov.edu.kz
+;;3;Бердиходжаева;Мейрамгуль;Сайлауовна;Бердиходжаева;Мейрамгуль;Berdikhodzhaeva.M;Berdikhodzhaeva.M@karnu-buketov.edu.kz
+;;4;Кабдыбай;Ассель;Кабдысулатовна;Кабдыбай;Ассель;Kabdybay.A;Kabdybay.A@karnu-buketov.edu.kz
+;;5;Касымханова;Гульдана;Саттореевна;Касымханова;Гульдана;Kasymkhanova.G;Kasymkhanova.G@karnu-buketov.edu.kz
+;;6;Ламбекова;Айгерим;Нурлановна;Ламбекова;Айгерим;Lambekova.A;Lambekova.A@karnu-buketov.edu.kz
+;;7;Мазина;Айнур;Курметовна;Мазина;Айнур;Mazina.A;Mazina.A@karnu-buketov.edu.kz
+;;8;Садуакасова;Мархабат;Берикболовна;Садуакасова;Мархабат;Saduakasova.M;Saduakasova.M@karnu-buketov.edu.kz
+;;9;Ситенко;Диана;Анатольевна;Ситенко;Диана;Sitenko.D;Sitenko.D@karnu-buketov.edu.kz
+;;10;Сыздыкова;Динара;Ибадоллаевна;Сыздыкова;Динара;Syzdykova.D;Syzdykova.D@karnu-buketov.edu.kz
+;;11;Сыздыкова;Эльмира;Жаслановна;Сыздыкова;Эльмира;Syzdykova.E;Syzdykova.E@karnu-buketov.edu.kz
+;;12;Хамитова;Дания;Амантаевна;Хамитова;Дания;Khamitova.D;Khamitova.D@karnu-buketov.edu.kz
+;;13;Хишауева;Жанат;Тулегеновна;Хишауева;Жанат;Khishaueva.Zh;Khishaueva.Zh@karnu-buketov.edu.kz
+;;14;Шакеев;Саян;Саятович;Шакеев;Саян;Shakeev.S;Shakeev.S@karnu-buketov.edu.kz
+;;15;Шакирова;Гульнара;Аймаганбетовна;Шакирова;Гульнара;Shakirova.G;Shakirova.G@karnu-buketov.edu.kz
+;;16;Шурен;Токтар;Куандыкулы;Шурен;Токтар;Shuren.T;Shuren.T@karnu-buketov.edu.kz
+;Маркетинга;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абзалбек;Гүлнара;Аманжолқызы;Абзалбек;Гулнара;Abzalbek.G;Abzalbek.G@karnu-buketov.edu.kz
+;;2;Айғожин;Бекқожа;Ешмағанбетұлы;Айгожин;Беккожа;Aygozhin.B;Aygozhin.B@karnu-buketov.edu.kz
+;;3;Алдабергенова;Айгуль;Тасболатовна;Алдабергенова;Айгуль;Aldabergenovaa.A;Aldabergenovaa.A@karnu-buketov.edu.kz
+;;4;Арынова;Жанна;Зайнишевна;Арынова;Жанна;Arynova.Zh;Arynova.Zh@karnu-buketov.edu.kz
+;;5;Аяганова;Мейрамгуль;Пазыловна;Аяганова;Мейрамгуль;Ayaganova.M;Ayaganova.M@karnu-buketov.edu.kz
+;;6;Гельмле;Анастасия;Михайловна;Гельмле;Анастасия;Gelmle.A;Gelmle.A@karnu-buketov.edu.kz
+;;7;Джумабаева;Шолпан;Бахытовна;Джумабаева;Шолпан;Dzhumabaeva.Sh;Dzhumabaeva.Sh@karnu-buketov.edu.kz
+;;8;Искакова;Айгерим;Тойболовна;Искакова;Айгерим;Iskakova.A;Iskakova.A@karnu-buketov.edu.kz
+;;9;Каусова;Жумагуль;Амантаевна;Каусова;Жумагуль;Kausova.Zh;Kausova.Zh@karnu-buketov.edu.kz
+;;10;Кузоватова;Дарья;Дмитриевна;Кузоватова;Дарья;Kuzovatova.D;Kuzovatova.D@karnu-buketov.edu.kz
+;;11;Мамраева;Динара;Габитовна;Мамраева;Динара;Mamraeva.D;Mamraeva.D@karnu-buketov.edu.kz
+;;12;Муканов;Бейбут;Отанович;Муканов;Бейбут;Mukanov.B;Mukanov.B@karnu-buketov.edu.kz
+;;13;Нурмаганбетова;Айгуль;Жумарзаевна;Нурмаганбетова;Айгуль;Nurmaganbetova.A;Nurmaganbetova.A@karnu-buketov.edu.kz
+;;14;Оспанов;Бауыржан;Рахымович;Оспанов;Бауыржан;Ospanov.B;Ospanov.B@karnu-buketov.edu.kz
+;;15;Садуов;Аскар;Жумагулович;Садуов;Аскар;Saduov.A;Saduov.A@karnu-buketov.edu.kz
+;;16;Ташенова;Лариса;Владимировна;Ташенова;Лариса;Tashenova.L;Tashenova.L@karnu-buketov.edu.kz
+;;17;Торжанова;Данагуль;Асетовна;Торжанова;Данагуль;Torzhanova.D;Torzhanova.D@karnu-buketov.edu.kz
+;;18;Төлеуұлы;Алмас;;Толеуулы;Алмас;Toleuuly.A;Toleuuly.A@karnu-buketov.edu.kz
+;;19;Хасенханов;Нуршуак;Бахтиярович;Хасенханов;Нуршуак;Khasenkhanov.N;Khasenkhanov.N@karnu-buketov.edu.kz
+;Менеджмента;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абаев;Айдос;Абаевич;Абаев;Айдос;Abaev.A;Abaev.A@karnu-buketov.edu.kz
+;;2;Баткеева;Дилара;Рахметкалиевна;Баткеева;Дилара;Batkeeva.D;Batkeeva.D@karnu-buketov.edu.kz
+;;3;Ғабит;Самал;Ғабитқызы;Габит;Самал;Gabit.S;Gabit.S@karnu-buketov.edu.kz
+;;4;Давлетбаева;Назгуль;Бакытовна;Давлетбаева;Назгуль;Davletbaeva.N;Davletbaeva.N@karnu-buketov.edu.kz
+;;5;Дарибеков;Серик;Сагатбекович;Дарибеков;Серик;Daribekov.S;Daribekov.S@karnu-buketov.edu.kz
+;;6;Ержанова;Салтанат;Кулдасбаевна;Ержанова;Салтанат;Yerzhanova.S;Yerzhanova.S@karnu-buketov.edu.kz
+;;7;Жунусов;Бауржан;Каирбекович;Жунусов;Бауржан;Zhunusov.B;Zhunusov.B@karnu-buketov.edu.kz
+;;8;Иманбекова;Айнагуль;Максутовна;Иманбекова;Айнагуль;Imanbekova.A;Imanbekova.A@karnu-buketov.edu.kz
+;;9;Казбеков;Турлыбек;Бельгибаевич;Казбеков;Турлыбек;Kazbekov.T;Kazbekov.T@karnu-buketov.edu.kz
+;;10;Мамбетова;Сагыныш;Шубайкызы;Мамбетова;Сагыныш;Mambetova.S;Mambetova.S@karnu-buketov.edu.kz
+;;11;Матаева;Ботагоз;Тулешовна;Матаева;Ботагоз;Mataeva.B;Mataeva.B@karnu-buketov.edu.kz
+;;12;Мусабекова;Айнаш;Орикбаевна;Мусабекова;Айнаш;Musabekovaa.A;Musabekovaa.A@karnu-buketov.edu.kz
+;;13;Омарова;Айнура;Тояковна;Омарова;Айнура;Omarova.A;Omarova.A@karnu-buketov.edu.kz
+;;14;Романько;Екатерина;Болеславовна;Романько;Екатерина;Romanko.Y;Romanko.Y@karnu-buketov.edu.kz
+;;15;Сариева;Айнур;Аязбаевна;Сариева;Айнур;Sarieva.A;Sarieva.A@karnu-buketov.edu.kz
+;;16;Токсамбаева;Алуа;Бурашевна;Токсамбаева;Алуа;Toksambaeva.A;Toksambaeva.A@karnu-buketov.edu.kz
+;;17;Шугаипова;Жанна;Габдуллаевна;Шугаипова;Жанна;Shugaipova.Zh;Shugaipova.Zh@karnu-buketov.edu.kz
+;Финансы;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Акбаев;Ерболсын;Турсынович;Акбаев;Ерболсын;Akbaev.Y;Akbaev.Y@karnu-buketov.edu.kz
+;;2;Артакшинова;Венера;Сейтжановна;Артакшинова;Венера;Artakshinova.V;Artakshinova.V@karnu-buketov.edu.kz
+;;3;Воробьева;Светлана;Михайловна;Воробьева;Светлана;Vorobeva.S;Vorobeva.S@karnu-buketov.edu.kz
+;;4;Искакова;Загира;Дуйсембаевна;Искакова;Загира;Iskakova.Z;Iskakova.Z@karnu-buketov.edu.kz
+;;5;Калкабаева;Гаухар;Муратовна;Калкабаева;Гаухар;Kalkabaeva.G;Kalkabaeva.G@karnu-buketov.edu.kz
+;;6;Комекбаева;Лэйлэ;Сыздыковна;Комекбаева;Лэйлэ;Komekbaeva.L;Komekbaeva.L@karnu-buketov.edu.kz
+;;7;Курманалина;Анар;Кайратовна;Курманалина;Анар;Kurmanalina.A;Kurmanalina.A@karnu-buketov.edu.kz
+;;8;Лисова;Наталья;Александровна;Лисова;Наталья;Lisova.N;Lisova.N@karnu-buketov.edu.kz
+;;9;Мурзина;Милана;Олеговна;Мурзина;Милана;Murzina.M;Murzina.M@karnu-buketov.edu.kz
+;;10;Мыржыкбаева;Айнур;Бейсенкызы;Мыржыкбаева;Айнур;Myrzhykbaeva.A;Myrzhykbaeva.A@karnu-buketov.edu.kz
+;;11;Сейдіғазым;Есбол;Оралбекұлы;Сейдигазым;Есбол;Seydigazym.Y;Seydigazym.Y@karnu-buketov.edu.kz
+;;12;Тиштыкбаева;Арнагул;Жакешовна;Тиштыкбаева;Арнагул;Tishtykbaeva.A;Tishtykbaeva.A@karnu-buketov.edu.kz
+;Экономики и международного бизнеса;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Ақмолда;Маржан;Нұралықызы;Акмолда;Маржан;Akmolda.M;Akmolda.M@karnu-buketov.edu.kz
+;;2;Андарова;Роза;Кабыкеновна;Андарова;Роза;Andarova.R;Andarova.R@karnu-buketov.edu.kz
+;;3;Асанова;Марал;Кабдрахмановна;Асанова;Марал;Asanova.M;Asanova.M@karnu-buketov.edu.kz
+;;4;Газизова;Майя;Ривелевна;Газизова;Майя;Gazizova.M;Gazizova.M@karnu-buketov.edu.kz
+;;5;Гелашвили;Николай;Николаевич;Гелашвили;Николай;Gelashvili.N;Gelashvili.N@karnu-buketov.edu.kz
+;;6;Ескендир;Несип;Нуралықызы;Ескендир;Несип;Yeskendir.N;Yeskendir.N@karnu-buketov.edu.kz
+;;7;Жакина;Гулнур;Ергазиевна;Жакина;Гулнур;Zhakina.G;Zhakina.G@karnu-buketov.edu.kz
+;;8;Жапарова;Рабига;Ергалиевна;Жапарова;Рабига;Zhaparova.R;Zhaparova.R@karnu-buketov.edu.kz
+;;9;Кожабатчина;Гульнур;Мараткызы;Кожабатчина;Гульнур;Kozhabatchina.G;Kozhabatchina.G@karnu-buketov.edu.kz
+;;10;Копжасарова;Гаухар;Амангельдиевна;Копжасарова;Гаухар;Kopzhasarova.G;Kopzhasarova.G@karnu-buketov.edu.kz
+;;11;Куттыбаева;Нургуль;Болатовна;Куттыбаева;Нургуль;Kuttybaeva.N;Kuttybaeva.N@karnu-buketov.edu.kz
+;;12;Мукашев;Темербай;Абугалиевич;Мукашев;Темербай;Mukashev.T;Mukashev.T@karnu-buketov.edu.kz
+;;13;Мусина;Светлана;Тахировна;Мусина;Светлана;Musina.S;Musina.S@karnu-buketov.edu.kz
+;;14;Нұржан;Мәдина;Әділетқызы;Нуржан;Мадина;Nurzhan.M;Nurzhan.M@karnu-buketov.edu.kz
+;;15;Перова;Нина;Сергеевна;Перова;Нина;Perova.N;Perova.N@karnu-buketov.edu.kz
+;;16;Раимбеков;Багдат;Хабибуллаевич;Раимбеков;Багдат;Raimbekov.B;Raimbekov.B@karnu-buketov.edu.kz
+;;17;Райханова;Гульнур;Аманкельдиевна;Райханова;Гульнур;Raykhanova.G;Raykhanova.G@karnu-buketov.edu.kz
+;;18;Ташкеева;Майя;Гиевна;Ташкеева;Майя;Tashkeeva.M;Tashkeeva.M@karnu-buketov.edu.kz
+;;19;Ускембаева;Динара;Алдановна;Ускембаева;Динара;Uskembaeva.D;Uskembaeva.D@karnu-buketov.edu.kz
+Юридический;;;;;;;;.;.@karnu-buketov.edu.kz
+;Гражданского и трудового права;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Алиева;Людмила;Руслановна;Алиева;Людмила;Alieva.L;Alieva.L@karnu-buketov.edu.kz
+;;2;Асетова;Гулнур;Бакытовна;Асетова;Гулнур;Asetova.G;Asetova.G@karnu-buketov.edu.kz
+;;3;Воропаев;Виталий;Васильевич;Воропаев;Виталий;Voropaev.V;Voropaev.V@karnu-buketov.edu.kz
+;;4;Әбдіжәми;Айтуған;Жұмахметқызы;Абдижами;Айтуган;Abdizhami.A;Abdizhami.A@karnu-buketov.edu.kz
+;;5;Жамбурбаева;Сабина;;Жамбурбаева;Сабина;Zhamburbaeva.S;Zhamburbaeva.S@karnu-buketov.edu.kz
+;;6;Ильясова;Гулжазира;Актуреевна;Ильясова;Гулжазира;Ilyasova.G;Ilyasova.G@karnu-buketov.edu.kz
+;;7;Карибаева;Асель;Ергалиевна;Карибаева;Асель;Karibaeva.A;Karibaeva.A@karnu-buketov.edu.kz
+;;8;Мулькубаева;Шынар;Рамазановна;Мулькубаева;Шынар;Mulkubaeva.Sh;Mulkubaeva.Sh@karnu-buketov.edu.kz
+;;9;Нукушева;Айгуль;Ашимовна;Нукушева;Айгуль;Nukusheva.A;Nukusheva.A@karnu-buketov.edu.kz
+;;10;Нуржанова;Алия;Сейтказиевна;Нуржанова;Алия;Nurzhanova.A;Nurzhanova.A@karnu-buketov.edu.kz
+;;11;Отарбаева;Асель;Танатаровна;Отарбаева;Асель;Otarbaeva.A;Otarbaeva.A@karnu-buketov.edu.kz
+;;12;Прудникова;Марина;Юрьевна;Прудникова;Марина;Prudnikova.M;Prudnikova.M@karnu-buketov.edu.kz
+;;13;Рустембекова;Динара;Кенжебековна;Рустембекова;Динара;Rustembekova.D;Rustembekova.D@karnu-buketov.edu.kz
+;;14;Токатов;Руслан;Алтаевич;Токатов;Руслан;Tokatov.R;Tokatov.R@karnu-buketov.edu.kz
+;Конституционного и международного права;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абдакимова;Марина;Юрьевна;Абдакимова;Марина;Abdakimova.M;Abdakimova.M@karnu-buketov.edu.kz
+;;2;Абдикеев;Марат;Нурыевич;Абдикеев;Марат;Abdikeev.M;Abdikeev.M@karnu-buketov.edu.kz
+;;3;Абикенова;Гулжан;Бейбитовна;Абикенова;Гулжан;Abikenova.G;Abikenova.G@karnu-buketov.edu.kz
+;;4;Амiрбек;Камшат;Сайлаубайқызы;Амiрбек;Камшат;Amirbek.K;Amirbek.K@karnu-buketov.edu.kz
+;;5;Балгимбекова;Гульнара;Укибаевна;Балгимбекова;Гульнара;Balgimbekova.G;Balgimbekova.G@karnu-buketov.edu.kz
+;;6;Билялова;Маржан;Исаковна;Билялова;Маржан;Bilyalova.M;Bilyalova.M@karnu-buketov.edu.kz
+;;7;Ерёменко;Наталия;Сергеевна;Еременко;Наталия;Yeremenko.N;Yeremenko.N@karnu-buketov.edu.kz
+;;8;Ержанова;Фарида;Анаевна;Ержанова;Фарида;Yerzhanova.F;Yerzhanova.F@karnu-buketov.edu.kz
+;;9;Жексекин;Алмаз;Калкаманович;Жексекин;Алмаз;Zheksekin.A;Zheksekin.A@karnu-buketov.edu.kz
+;;10;Исабекова;Венера;Сабитовна;Исабекова;Венера;Isabekova.V;Isabekova.V@karnu-buketov.edu.kz
+;;11;Мусилимова;Карлыгаш;Сериковна;Мусилимова;Карлыгаш;Musilimova.K;Musilimova.K@karnu-buketov.edu.kz
+;;12;Мусин;Куат;Саниязданович;Мусин;Куат;Musin.K;Musin.K@karnu-buketov.edu.kz
+;;13;Ыбырай;Алмаш;Курманкызы;Ыбырай;Алмаш;Ybyray.A;Ybyray.A@karnu-buketov.edu.kz
+;;14;Нурбекова;Гульнара;Тулегеновна;;;Nurbekova.G;Nurbekova.G@karnu-buketov.edu.kz
+;Теории и истории государства и права;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Ахметова;Каргаш;Саматовна;Ахметова;Каргаш;Akhmetova.K;Akhmetova.K@karnu-buketov.edu.kz
+;;2;Ахметова;Найля;Сейсембековна;Ахметова;Найля;Akhmetova.N;Akhmetova.N@karnu-buketov.edu.kz
+;;3;Байжанова;Кулзира;Тулепбергеновна;Байжанова;Кулзира;Bayzhanova.K;Bayzhanova.K@karnu-buketov.edu.kz
+;;4;Байназарова;Толқын;Съезханқызы;Байназарова;Толкын;Baynazarova.T;Baynazarova.T@karnu-buketov.edu.kz
+;;5;Бирманова;Аксункар;Исланбековна;Бирманова;Аксункар;Birmanova.A;Birmanova.A@karnu-buketov.edu.kz
+;;6;Волгина;Анна;Павловна;Волгина;Анна;Volgina.A;Volgina.A@karnu-buketov.edu.kz
+;;7;Какимова;Майра;Шариповна;Какимова;Майра;Kakimova.M;Kakimova.M@karnu-buketov.edu.kz
+;;8;Полева;Ирина;Анатольевна;Полева;Ирина;Poleva.I;Poleva.I@karnu-buketov.edu.kz
+;;9;Серикбаева;Сауле;Серикбаевна;Серикбаева;Сауле;Serikbaeva.S;Serikbaeva.S@karnu-buketov.edu.kz
+;;10;Сопыханова;Асел;Бауыржановна;Сопыханова;Асел;Sopykhanova.A;Sopykhanova.A@karnu-buketov.edu.kz
+;;11;Турлаев;Андрей;Викторович;Турлаев;Андрей;Turlaev.A;Turlaev.A@karnu-buketov.edu.kz
+;;12;Туякова;Назира;Бинаятовна;Туякова;Назира;Tuyakova.N;Tuyakova.N@karnu-buketov.edu.kz
+;;13;Шакирова;Алтынай;Боранкулкызы;Шакирова;Алтынай;Shakirova.A;Shakirova.A@karnu-buketov.edu.kz
+;Уголовного права, процесса и криминалистики;;;;;;;.;.@karnu-buketov.edu.kz
+;;1;Абзалбекова;Марал;Тлеугабыловна;Абзалбекова;Марал;Abzalbekova.M;Abzalbekova.M@karnu-buketov.edu.kz
+;;2;Алтайбаев;Совет;Капашевич;Алтайбаев;Совет;Altaybaev.S;Altaybaev.S@karnu-buketov.edu.kz
+;;3;Альбекова;Мадина;Гайратовна;Альбекова;Мадина;Albekova.M;Albekova.M@karnu-buketov.edu.kz
+;;4;Аманжолова;Ботагоз;Атымтаевна;Аманжолова;Ботагоз;Amanzholova.B;Amanzholova.B@karnu-buketov.edu.kz
+;;5;Бачурин;Сергей;Николаевич;Бачурин;Сергей;Bachurin.S;Bachurin.S@karnu-buketov.edu.kz
+;;6;Есентаева;Назым;Кусниденовна;Есентаева;Назым;Yesentaeva.N;Yesentaeva.N@karnu-buketov.edu.kz
+;;7;Жумабаева;Жанар;Жарылгаповна;Жумабаева;Жанар;Zhumabaeva.Zh;Zhumabaeva.Zh@karnu-buketov.edu.kz
+;;8;Збинская;Евгения;Юрьевна;Збинская;Евгения;Zbinskaya.Y;Zbinskaya.Y@karnu-buketov.edu.kz
+;;9;Калгужинова;Айгуль;Майлыбаевна;Калгужинова;Айгуль;Kalguzhinova.A;Kalguzhinova.A@karnu-buketov.edu.kz
+;;10;Кусаинова;Лариса;Канатовна;Кусаинова;Лариса;Kusainova.L;Kusainova.L@karnu-buketov.edu.kz
+;;11;Майтанов;Альмхан;Масгутович;Майтанов;Альмхан;Maytanov.A;Maytanov.A@karnu-buketov.edu.kz
+;;12;Машабаев;Аманбек;Жуканович;Машабаев;Аманбек;Mashabaev.A;Mashabaev.A@karnu-buketov.edu.kz
+;;13;Озбеков;Дархан;Озбекович;Озбеков;Дархан;Ozbekov.D;Ozbekov.D@karnu-buketov.edu.kz
+;;14;Рысмагамбетова;Гульнара;Мусиевна;Рысмагамбетова;Гульнара;Rysmagambetova.G;Rysmagambetova.G@karnu-buketov.edu.kz
+;;15;Салыкова;Алия;Кайратовна;Салыкова;Алия;Salykova.A;Salykova.A@karnu-buketov.edu.kz
+;;16;Серикбаев;Абзал;Мухаметжанович;Серикбаев;Абзал;Serikbaev.A;Serikbaev.A@karnu-buketov.edu.kz
+;;17;Сидорова;Наталья;Владимировна;Сидорова;Наталья;Sidorova.N;Sidorova.N@karnu-buketov.edu.kz
+;;18;Сиубаева;Нурсулу;Женисовна;Сиубаева;Нурсулу;Siubaeva.N;Siubaeva.N@karnu-buketov.edu.kz
+;;19;Хуат;Мейрамгул;;Хуат;Мейрамгул;Khuat.M;Khuat.M@karnu-buketov.edu.kz
+;;20;Шакенов;Ардак;Ордашевич;Шакенов;Ардак;Shakenov.A;Shakenov.A@karnu-buketov.edu.kz
+;;;;;;;;;
+;СПИСОК СОТРУДНИКОВ;;;АУП;;;;;
+;;;;;;;;;
+Департамент науки;;;;;;;;;
+;Департамент науки;;;;;;;;
+;;1;Абдрешева;Тлеужан;Габбасовна;Специалист;Tleuzhan.A;Tleuzhan.A@karnu-buketov.edu.kz;
+;;2;Аталикова;Алия;Сейсембаевна;Зам.директора;Atalykova.A;Atalykova.A@karnu-buketov.edu.kz;
+;;3;Бирюкова;Тамара;Александровна;Специалист;Biryukova.T;Biryukova.T@karnu-buketov.edu.kz;
+;;4;Даулетбаева;Ляззат;Муратовна;Главный специалист-бухгалтер;Dauletbaeva.L;Dauletbaeva.L@karnu-buketov.edu.kz;
+;;5;Касымов;Серик;Сагимбекович;Директор;Kasimov.S;Kasimov.S@karnu-buketov.edu.kz;
+;;6;Садыкова;Айнур;Ермековна;Специалист;Sadikova.A;Sadikova.A@karnu-buketov.edu.kz;
+Департамент по академической работе;;;;;;;;;
+;Департамент по академической работе;;;;;;;;
+;;1;Абишева;Гульнар;Ибраевна;Главный специалист;Abisheva.G;Abisheva.G@karnu-buketov.edu.kz;
+;;2;Абишева;Мария;Сериковна;Зам.директора;Abisheva.M;Abisheva.M@karnu-buketov.edu.kz;
+;;3;Айткалиева;Анеля;Жаканкызы;Специалист;Aitkalieva.A;Aitkalieva.A@karnu-buketov.edu.kz;
+;;4;Алиева;Алуа;Сагынбаевна;Специалист;Alieva.A;Alieva.A@karnu-buketov.edu.kz;
+;;5;Ахметова;Бибигуль;Кошкинбаевна;Главный специалист;Ahmetova.A;Ahmetova.A@karnu-buketov.edu.kz;
+;;6;Гаголина;Светлана;Викторовна;Зам.директора;Gagolina.S;Gagolina.S@karnu-buketov.edu.kz;
+;;7;Ерденова;Аяулым;Ерғалымқызы;Специалист;Erdenova.A;Erdenova.A@karnu-buketov.edu.kz;
+;;8;Ермахан;Айгерім;Жалғасқызы;Специалист;Ermahan.A;Ermahan.A@karnu-buketov.edu.kz;
+;;9;Жамалова;Жанар;Тураровна;Ведущий специалист;Jamalova.J;Jamalova.J@karnu-buketov.edu.kz;
+;;10;Ибрашова;Майра;Алтыбаевна;Специалист;Ibrashova.M;Ibrashova.M@karnu-buketov.edu.kz;
+;;11;Көпбаева;Ділназ;Талғатқызы;Специалист;Kopbaeva.D;Kopbaeva.D@karnu-buketov.edu.kz;
+;;12;Қомарзина;Назерке;Серікбайқызы;Инженер;Qomarzina.N;Qomarzina.N@karnu-buketov.edu.kz;
+;;13;Макенова;Раушан;Сакеновна;Специалист;Makenova.R;Makenova.R@karnu-buketov.edu.kz;
+;;14;Нұртай;Қарлығаш;Төлегенқызы;Специалист;Nurtai.K;Nurtai.K@karnu-buketov.edu.kz;
+;;15;Олжабаева;Актоты;Сайлауовна;Специалист;Sailauovna.A;Sailauovna.A@karnu-buketov.edu.kz;
+;;16;Рахымбекова;Данна;Александровна;Инженер;Rahymbekova.D;Rahymbekova.D@karnu-buketov.edu.kz;
+;;17;Рыспаева;Шырын;Сайрановна;Специалист;Ryspaeva.S;Ryspaeva.S@karnu-buketov.edu.kz;
+;;18;Смаилова;Салима;Аблаевна;Заместитель директора по методической работе;Smailova.S;Smailova.S@karnu-buketov.edu.kz;
+;;19;Сүлейменова;Ақниет;Сағынтайқызы;Специалист;Suleimenova.A;Suleimenova.A@karnu-buketov.edu.kz;
+;;20;Токбалина;Айгуль;Сатеновна;Ведущий специалист;Tokbalina.A;Tokbalina.A@karnu-buketov.edu.kz;
+;;21;Торгаева;Айгерим;Жумабаевна;Специалист;Torgaeva.A;Torgaeva.A@karnu-buketov.edu.kz;
+;;22;Хасенова;Тогжан;Муратовна;Директор;Hasenova.T;Hasenova.T@karnu-buketov.edu.kz;
+Департамент по социальным вопросам и молодежной политике;;;;;;;;;
+;Департамент по социальным вопросам и молодежной политике;;;;;;;;
+;;1;Алдабергенова;Әнел;Асылбекқызы;Специалист;Aldabergenova.A;Aldabergenova.A@karnu-buketov.edu.kz;
+;;2;Баймаганбетова;Жанна;Ардаковна;Специалист;Baimaganbetova.J;Baimaganbetova.J@karnu-buketov.edu.kz;
+;;3;Бейшенова;Марал;Саматқызы;Специалист;Beishenova.M;Beishenova.M@karnu-buketov.edu.kz;
+;;4;Жақсылық;Мерейлі;Жанболатқызы;Специалист;Jaksilik.M;Jaksilik.M@karnu-buketov.edu.kz;
+;;5;Жахин;Жасұлан;Серікұлы;Специалист;Jahin.J;Jahin.J@karnu-buketov.edu.kz;
+;;6;Жұмабек;Жібек;Әріпбекқызы;Специалист;Jumabek.J;Jumabek.J@karnu-buketov.edu.kz;
+;;7;Камалова;Сымбат;Наурзбековна;Специалист;Kamalova.S;Kamalova.S@karnu-buketov.edu.kz;
+;;8;Көдекова;Айдана;Дәркенқызы;Зам.директора;Kodekova.A;Kodekova.A@karnu-buketov.edu.kz;
+;;9;Мүбарак;Сағыныш;Мүбаракқызы;Директор;Mubarak.S;Mubarak.S@karnu-buketov.edu.kz;
+;;10;Нұрлыбекқызы;Ақерке;;Специалист;Nurlibekkizi.A;Nurlibekkizi.A@karnu-buketov.edu.kz;
+;;11;Рымканов;Нартай;Дулатович;Главный специалист;Rimkanov.N;Rimkanov.N@karnu-buketov.edu.kz;
+;;12;Ыбыкенова;Аяулым;Ерболқызы;Главный специалист;Ibikenova.A;Ibikenova.A@karnu-buketov.edu.kz;
+Департамент стратегического развития и управления рисками;;;;;;;;;
+;Департамент стратегического развития и управления рисками;;;;;;;;
+;;1;Асаумбаева;Баян;Ивановна;Ведущий специалист;Asaumbaeva.B;Asaumbaeva.B@karnu-buketov.edu.kz;
+;;2;Бейсеев;Айдар;Амангельдыевич;Зам.директора;Бейсеев.А;Бейсеев.А@karnu-buketov.edu.kz;
+;;3;Кожабергенова;Айгерим;Еркеновна;Главный специалист;Kojabergenova.A;Kojabergenova.A@karnu-buketov.edu.kz;
+;;4;Мейрманова;Асия;Алиаскаровна;Ведущий специалист;Meirmanova.A;Meirmanova.A@karnu-buketov.edu.kz;
+;;5;Моншакбаева;Асель;Косыбаевна;Ведущий специалист;Monshakbaeva.A;Monshakbaeva.A@karnu-buketov.edu.kz;
+;;6;Омархан;Жанерке;Мартбекқызы;Ведущий специалист;Omarhan.J;Omarhan.J@karnu-buketov.edu.kz;
+;;7;Сагынтаева;Айман;Сапаровна;Главный специалист;Sagintaeva.A;Sagintaeva.A@karnu-buketov.edu.kz;
+;;8;Темиржанова;Акбота;Жарылгасыновна;Ведущий специалист;Temirjanova.A;Temirjanova.A@karnu-buketov.edu.kz;
+;;9;Тишмаганбетова;Гульжан;Скендыровна;Директор;Tishmaganbetova.G;Tishmaganbetova.G@karnu-buketov.edu.kz;
+;;10;Тотина;Амина;Базарбаевна;Главный специалист;Totina.A;Totina.A@karnu-buketov.edu.kz;
+Отделы;;;;;;;;;
+;Антикоррупционная комплаенс-служба;;;;;;;;
+;;1;Алиев;Шынгыс;Амантаевич;Специалист;Aliev.Sh;Aliev.Sh@karnu-buketov.edu.kz;
+;;2;Олейник;Василий;Иванович;Руководитель;Oleinik.V;Oleinik.V@karnu-buketov.edu.kz;
+;Военная кафедра;;;;;;;;
+;;1;Абишев;Кайрат;Балташевич;Начальник;Abishev.K;Abishev.K@karnu-buketov.edu.kz;
+;Канцелярия;;;;;;;;
+;;1;Акимжанова;Кульзия;Мамановна;Руководитель;Akimjanova.K;Akimjanova.K@karnu-buketov.edu.kz;
+;;2;Дигаева;Лейла;Ахметдиновна;Архивариус;Digaeva.L;Digaeva.L@karnu-buketov.edu.kz;
+;;3;Исатаева;Гульбаршын;Сагындыковна;Архивист;Isataeva.G;Isataeva.G@karnu-buketov.edu.kz;
+;;4;Карисова;Айнур;Сатжановна;Переводчик;Karisova.A;Karisova.A@karnu-buketov.edu.kz;
+;;5;Кусаинова;Назерке;Ерсенкызы;Архивариус;Kusainova.N;Kusainova.N@karnu-buketov.edu.kz;
+;;6;Садыкова;Жаниель;Айбековна;Делопроизводитель;Sadikova.J;Sadikova.J@karnu-buketov.edu.kz;
+;;7;Сулейменов;Айбек;Муратович;Переводчик;Suleimenov.Aibek;Suleimenov.Aibek@karnu-buketov.edu.kz;
+;Отдел бухгалтерского учета и  отчетности;;;;;;;;
+;;1;Абенова;Жупар;Исабаевна;Заместитель руководителя-главного бухгалтера;Abenova.J;Abenova.J@karnu-buketov.edu.kz;
+;;2;Айтуганова;Гульжана;Елеусизовна;Заместитель руководителя-главного бухгалтера;aituganova.g;aituganova.g@karnu-buketov.edu.kz;
+;;3;Аранбекова;Айгуль;Шайхиевна;Старший бухгалтер;aranbekova.a;aranbekova.a@karnu-buketov.edu.kz;
+;;4;Досанов;Абай;Айтбаевич;Ведущий бухгалтер;dosanov.a;dosanov.a@karnu-buketov.edu.kz;
+;;5;Жакупова;Раушан;Омиртаевна;Руководитель-главный бухгалтер;Jakupova.R;Jakupova.R@karnu-buketov.edu.kz;
+;;6;Кульжамбекова;Асель;Дуйсеновна;Бухгалтер;Kuljambekova.a;Kuljambekova.a@karnu-buketov.edu.kz;
+;;7;Қуандықова;Мақпал;Нұрсұлтанқызы;Ведущий бухгалтер;;;
+;;8;Қыздарбекова;Роза;Каскеновна;Ведущий бухгалтер;Kizdarbekova.r;Kizdarbekova.r@karnu-buketov.edu.kz;
+;;9;Милованова;Наталья;Юрьевна;Бухгалтер;Milovanova.n;Milovanova.n@karnu-buketov.edu.kz;
+;;10;Муканова;Гулдана;Карбозовна;Ведущий бухгалтер;Mukanova.g;Mukanova.g@karnu-buketov.edu.kz;
+;;11;Рыбина;Наталья;Валерьевна;Ведущий бухгалтер;Ribina.n;Ribina.n@karnu-buketov.edu.kz;
+;;12;Сарсекеева;Айман;Каирбековна;Ведущий бухгалтер;Sarsekeeva.A;Sarsekeeva.A@karnu-buketov.edu.kz;
+;;13;Токмурзина;Саягул;Мухатаевна;Ведущий бухгалтер;Tokmurzina.s;Tokmurzina.s@karnu-buketov.edu.kz;
+;;14;Хамзина;Айнагуль;Мажитовна;Бухгалтер;Hamzina.a;Hamzina.a@karnu-buketov.edu.kz;
+;Отдел государственных закупок;;;;;;;;
+;;1;Идрисова;Арман;Кабидуловна;Ведущий специалист;Idrisova.a;Idrisova.a@karnu-buketov.edu.kz;
+;;2;Круглякова;Татьяна;Александровна;Руководитель;Kruglyakova.t;Kruglyakova.t@karnu-buketov.edu.kz;
+;;3;Қайыпова;Жанар;Сымбатқызы;Специалист;Kaiipova.zh;Kaiipova.zh@karnu-buketov.edu.kz;
+;;4;Шалгинбаева;Анар;Абікенқызы;Специалист;Shalginbaeva.a;Shalginbaeva.a@karnu-buketov.edu.kz;
+;Отдел техники безопасности и охраны труда;;;;;;;;
+;;1;Тунгишбеков;Рустем;Социалович;Руководитель;Tungishbekov.r;Tungishbekov.r@karnu-buketov.edu.kz;
+;;2;Хасенова;Арайлым;Еркинбаевна;Ведущий специалист;Hasenova.A;Hasenova.A@karnu-buketov.edu.kz;
+;Отдел экономического планирования;;;;;;;;
+;;1;Байгулина;Жана;Антаевна;Руководитель;Baigulina.J;Baigulina.J@karnu-buketov.edu.kz;
+;;2;Букенова;Бекзат;Бектореевна;Ведущий экономист;Bukenova.B;Bukenova.B@karnu-buketov.edu.kz;
+;;3;Дуйсенбекова;Жупар;Еркиновна;Ведущий экономист;Duisenbekova.J;Duisenbekova.J@karnu-buketov.edu.kz;
+;;4;Жолдасова;Асель;Жанмуратовна;Специалист;Joldasova.A;Joldasova.A@karnu-buketov.edu.kz;
+;;5;Жумажанова;Айгерим;Гапаровна;Старший экономист;Jumajanova.A;Jumajanova.A@karnu-buketov.edu.kz;
+;;6;Кемпирбаева;Асемгуль;Калеловна;Старший экономист;Kempirbaeva.A;Kempirbaeva.A@karnu-buketov.edu.kz;
+;;7;Тлеубергенова;Гульмира;Бекеткызы;Ведущий экономист;Tleubergenova.G;Tleubergenova.G@karnu-buketov.edu.kz;
+;Подразделение по защите государственных секретов;;;;;;;;
+;;1;Тастенова;Гульбану;Тастеновна;Ведущий специалист;Tastenova.G;Tastenova.G@karnu-buketov.edu.kz;
+;Правления;;;;;;;;
+;;1;Дулатбеков;Нурлан;Орынбасарович;Председатель Правления-Ректор;Dulatbekov.N;Dulatbekov.N@karnu-buketov.edu.kz;
+;;2;Жетписбаев;Нуржан;Аргынович;член Правления, проректор по социально-культурному развитию;;@karnu-buketov.edu.kz;
+;;3;Молдабаев;Асылбек;Серикович;Член Правления, проректор по административно-хозяйственной деятельности;;@karnu-buketov.edu.kz;
+;;4;Сармурзин;Ербол;Жанбырбаевич;Член Правления, проректор по стратегическому развитию;;@karnu-buketov.edu.kz;
+;;5;Тажбаев;Еркеблан;Муратович;член Правления, проректор по научной работе;;@karnu-buketov.edu.kz;
+;;6;Умуркулова;Мадина;Максимовна;Член Правления по академическим вопросам-проректор;;@karnu-buketov.edu.kz;
+;Проектный офис перемен;;;;;;;;
+;;1;Муканова;Ардак;Калиоллаевна;Главный специалист;Mukanova.A;Mukanova.A@karnu-buketov.edu.kz;
+;Ректорат АУА;;;;;;;;
+;;1;Байгожина;Гульнар;Муратовна;Руководитель аппарата ректора;Baigojina.G;Baigojina.G@karnu-buketov.edu.kz;
+;;2;Егешова;Айым;Мейрамовна;Референт;Egeshova.A;Egeshova.A@karnu-buketov.edu.kz;
+;;3;Жукенов;Адлет;Кулденович;Помощник по режиму;Jukenov.A;Jukenov.A@karnu-buketov.edu.kz;
+;;4;Кауырова;Нагима;Максутовна;И.о. финансового директора;Kauirova.N;Kauirova.N@karnu-buketov.edu.kz;
+;;5;Тутинова;Нургуль;Ерканатовна;Ученый секретарь;Tutinova.N;Tutinova.N@karnu-buketov.edu.kz;
+;Служба внутреннего аудита КарГУ им. Е.А. Букетова;;;;;;;;
+;;1;Перов;Александр;Михайлович;Руководитель;Perov.A;Perov.A@karnu-buketov.edu.kz;
+;;2;Сатеева;Галина;Геннадьевна;Специалист;Sateeva.G;Sateeva.G@karnu-buketov.edu.kz;
+;Служба корпоративного секретаря;;;;;;;;
+;;1;Асмагамбетова;Салтанат;Дархановна;Ведущий специалист;Asmagambetova.C;Asmagambetova.C@karnu-buketov.edu.kz;
+;;2;Киздарбекова;Антонина;Сериковна;Корпоративный секретарь;Kizdarbekova.A;Kizdarbekova.A@karnu-buketov.edu.kz;
+;;3;Райханова;Куралай;Капеновна;Ведущий специалист;Raihanova.K;Raihanova.K@karnu-buketov.edu.kz;
+;Управление маркетинга и рекрутинга;;;;;;;;
+;;1;Дуйсембаев;Азамат;Алдашович;Руководитель;Duisembaev.A;Duisembaev.A@karnu-buketov.edu.kz;
+;;2;Кимаш;Ескендір;Бейбітұлы;Главный специалист;Kimash.E;Kimash.E@karnu-buketov.edu.kz;
+;;3;Сержанқызы;Балжан;;Специалист;Serjankizi.E;Serjankizi.E@karnu-buketov.edu.kz;
+;;4;Турганбаева;Сауле;Маратовна;Специалист-маркетолог; Turganbaeva.S; Turganbaeva.S@karnu-buketov.edu.kz;
+;Управление международного сотрудничества;;;;;;;;
+;;1;Агилбаева;Асель;Аманкайыркызы;Ведущий специалист;Agilbaeva.A;Agilbaeva.A@karnu-buketov.edu.kz;
+;;2;Амиркулова;Маржан;Төлеужанқызы;Специалист;Amirkulova.M;Amirkulova.M@karnu-buketov.edu.kz;
+;;3;Блял;Жазира;Сейльхановна;Ведущий специалист;Blyal.J;Blyal.J@karnu-buketov.edu.kz;
+;;4;Маратова;Аружан;Канатовна;Специалист;Maratova.A;Maratova.A@karnu-buketov.edu.kz;
+;;5;Успанова;Марьяна;Валерьевна;Руководитель;Uspanova.M;Uspanova.M@karnu-buketov.edu.kz;
+;Управление персоналом;;;;;;;;
+;;1;Абыласимов;Мурагер;Настаевич;Руководитель;Abilasimov.M;Abilasimov.M@karnu-buketov.edu.kz;
+;;2;Айтбек;Асем;Госмановна;Главный специалист;Aitbek.S;Aitbek.S@karnu-buketov.edu.kz;
+;;3;Алькеева;Аяулым;Айдосовна;Ведущий специалист;Alkeeva.A;Alkeeva.A@karnu-buketov.edu.kz;
+;;4;Бегетаева;Гульдария;Сергазиевна;Старший инспектор;Begetaeva.G;Begetaeva.G@karnu-buketov.edu.kz;
+;;5;Жумажанова;Зайнеп;Гапаровна;Ведущий специалист;Jumajanova.Z;Jumajanova.Z@karnu-buketov.edu.kz;
+;;6;Касимова;Жанар;Кылышбековна;Старший инспектор;Kasimova.J;Kasimova.J@karnu-buketov.edu.kz;
+;;7;Манкаева;Мира;Маруаровна;Старший инспектор;Mankaeva.M;Mankaeva.M@karnu-buketov.edu.kz;
+;;8;Тергеубекова;Алия;Суниятовна;Старший инспектор;Tergeubekova.A;Tergeubekova.A@karnu-buketov.edu.kz;
+;Юридическое управление;;;;;;;;
+;;1;Байкенжина;Ширын;Такеновна;Главный специалист-юрист;Baikenjina.Sh;Baikenjina.Sh@karnu-buketov.edu.kz;
+;;2;Жунусова;Назыгуль;Жетписбаевна;И.о. руководителя;Junusova.N;Junusova.N@karnu-buketov.edu.kz;

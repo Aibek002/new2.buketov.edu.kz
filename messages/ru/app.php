@@ -307,4 +307,14 @@ return [
     'Regulatory documents' => 'Нормативные документы',
     'Working hours:' => 'График работы:',
     'Monday – Friday 09:00 - 17:00' => 'Понедельник – Пятница 09:00 - 17:00',
+    'History of the Faculty' => 'История факультета',
+    'To view the history of the department, follow the link' => 'Для просмотра истории кафедры перейдите по ссылке',
+
+    'Teachers' => 'Преподаватели',
+    'Full Name' => 'Полное имя',
+    'Job Title' => 'Должность',
+    'Work Experience' => 'Стаж работы',
+    'Academic Degree' => 'Учёная степень',
+    'Academic Rank' => 'Учёное звание',
+    'year' => 'год',
 ];

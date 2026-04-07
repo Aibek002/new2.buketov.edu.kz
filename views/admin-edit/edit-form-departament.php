@@ -46,13 +46,13 @@ use yii\widgets\ActiveForm;
             <!-- Приветствие -->
             <div class="row mt-3">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Приветствие (KZ)') ?>
+                    <?= $form->field($model, 'welcome_kz')->textarea(['rows' => 6, 'class' => 'form-control'])->label('Приветствие (KZ)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Приветствие (RU)') ?>
+                    <?= $form->field($model, 'welcome_ru')->textarea(['rows' => 6, 'class' => 'form-control'])->label('Приветствие (RU)') ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 6, 'class' => 'form-control tinymce-editor'])->label('Приветствие (EN)') ?>
+                    <?= $form->field($model, 'welcome_en')->textarea(['rows' => 6, 'class' => 'form-control'])->label('Приветствие (EN)') ?>
                 </div>
             </div>
 
@@ -76,16 +76,29 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 </div>
+<script src="/tinymce/tinymce.min.js"></script>
 
-<?php
-$this->registerJs("
-    tinymce.init({
-        selector: '.tinymce-editor',
-        plugins: 'lists link image table code',
-        toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
-        menubar: false,
-        height: 250,
-        language: 'ru'
-    });
-");
-?>
+<script>
+tinymce.init({
+    selector: '.tinymce-editor',
+    base_url: '/tinymce',
+    suffix: '.min',
+
+    license_key: 'gpl',
+    language: 'ru',
+    height: 600,
+
+    toolbar: 'bold italic underline | alignleft aligncenter alignright | bullist numlist',
+    plugins: 'lists',
+
+    formats: {
+        hilitecolor: { inline: 'span', styles: {} }
+    },
+
+    setup: function (editor) {
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/background-color:[^;"]+;?/gi, '');
+        });
+    }
+});
+</script>

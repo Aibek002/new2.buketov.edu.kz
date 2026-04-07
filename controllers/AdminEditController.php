@@ -295,6 +295,8 @@ class AdminEditController extends Controller
             $staff->load($_POST) &&
             $type_ref_staff->load($_POST)
         ) {
+            // print_r($type_ref_staff->attributes);
+            // die;
             if ($staff->validate() && $type_ref_staff->validate()) {
 
 
@@ -304,7 +306,6 @@ class AdminEditController extends Controller
 
                 if ($staff->save(false)) {
                     $type_ref_staff->staff_id = $staff->id;
-                    $type_ref_staff->ref_staff_id = $staff->ref_staff_id;
                     $type_ref_staff->faculty_id = $type_ref_staff->faculty_id;
                     $type_ref_staff->departament_id = $type_ref_staff->departament_id;
                     $type_ref_staff->information_en = $type_ref_staff->information_en;
@@ -315,6 +316,10 @@ class AdminEditController extends Controller
                     $type_ref_staff->job_title_kz = $type_ref_staff->job_title_kz;
                     $type_ref_staff->email = $type_ref_staff->email;
                     $type_ref_staff->phone = $type_ref_staff->phone;
+                    $type_ref_staff->ref_staff_id = $type_ref_staff->ref_staff_id;
+                    // print_r($type_ref_staff->attributes);
+                    // die;
+
 
                     if ($type_ref_staff->save(false)) {
 
@@ -323,8 +328,8 @@ class AdminEditController extends Controller
                         if ($file) {
                             $path = Yii::getAlias('@app/../files/image_avatar_staff/teacher/') . $staff->id . "/";
                             $file_name = uniqid() . "." . $file->extension;
-                            // print_r($file_name);
-                            // die;
+                            // print_r($path . $file_name);
+                            // die; 
 
                             if (!is_dir($path) && !mkdir($path, 0777, true)) {
                                 Yii::$app->session->setFlash("error", "Ошибка при создании директории: " . $path);

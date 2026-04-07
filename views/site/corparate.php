@@ -31,27 +31,29 @@ $this->title = Yii::t("app", "Corporate governance");
         <?php foreach ($year as $year):
             if ($year->ref_corporate_governance === 1): ?>
                 <?php if ($year->language_file == $lang): ?>
-                    <div class="title-content">
-                        <h5 class="mb-0">
-                            <?= Yii::t("app", "Decisions of the Sole Shareholder") ?> — <?= Html::encode($year->sort_id) ?>
-                        </h5>
+                    <div class="title-content-corporate-governance">
+                        <?= Yii::t("app", "Decisions of the Sole Shareholder") ?> — <?= Html::encode($year->sort_id) ?>
                     </div>
 
-                    <div class="button-section">
-                        <?php foreach ($pdf as $pdf_item):
-                            if ($pdf_item->ref_corporate_governance === 1):
-                                ?>
+                    <?php $counter = 1; ?>
 
-                                <?php if ($pdf_item->sort_id == $year->sort_id && $lang == $pdf_item->language_file): ?>
-
-                                    <button onclick='loadPDF("<?= $pdf_item->path_file . $pdf_item->fileName ?>")'>
+                    <ul class="pdf-list">
+                        <?php foreach ($pdf as $pdf_item): ?>
+                            <?php if (
+                                $pdf_item->ref_corporate_governance === 1 &&
+                                $pdf_item->sort_id == $year->sort_id &&
+                                $lang == $pdf_item->language_file
+                            ): ?>
+                                <li>
+                                    <span class="pdf-number"><?= $counter ?>.</span>
+                                    <button class="pdf-button" onclick='loadPDF("<?= $pdf_item->path_file . $pdf_item->fileName ?>")'>
                                         <?= Html::encode($pdf_item->name_url) ?>
                                     </button>
-
-                                <?php endif ?>
-                            <?php endif ?>
+                                </li>
+                                <?php $counter++; ?>
+                            <?php endif; ?>
                         <?php endforeach; ?>
-                    </div>
+                    </ul>
                 <?php endif ?>
             <?php endif ?>
 
@@ -64,33 +66,33 @@ $this->title = Yii::t("app", "Corporate governance");
 
 </div>
 <div class="board-of-directors">
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Board of Directors") ?>
     </h3>
     <div id="board-members" class="board-of-directors-section">
         <div class="container-board-of-directors"></div>
     </div>
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Corporate Secretary") ?>
     </h3>
     <div id="secretary" class="board-of-directors-section">
 
         <div class="container-board-of-directors"></div>
     </div>
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Internal Audit Service") ?>
     </h3>
     <div id="audit-members" class="board-of-directors-section">
         <div class="container-board-of-directors"></div>
     </div>
-    <h3  class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Anti-corruption Compliance Service") ?>
     </h3>
     <div id="anti-corruption" class="board-of-directors-section">
 
         <div class="container-board-of-directors"></div>
     </div>
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Meeting of the board of directors") ?>
     </h3>
     <?php
@@ -105,24 +107,27 @@ $this->title = Yii::t("app", "Corporate governance");
     }
     ?>
 
-    <div class="button-section">
+    <ul class="pdf-list">
         <?php foreach ($grouped as $sort_id => $items): ?>
             <?php
             $safe_id = str_replace([' ', '/'], '-', $sort_id);
             $parts = explode('/', $sort_id);
             $year = end($parts);
             ?>
-
-            <button onclick="openBoardMeeting('<?= $safe_id ?>')"><?= htmlspecialchars($year) ?></button>
+            <li>
+                <a href="javascript:void(0);" onclick="openBoardMeeting('<?= $safe_id ?>')">
+                    <?= Html::encode($year) ?>
+                </a>
+            </li>
         <?php endforeach; ?>
+    </ul>
 
-    </div>
 
     <?php foreach ($grouped as $sort_id => $items): ?>
         <?php $safe_id = str_replace([' ', '/'], '-', $sort_id); ?>
 
         <div class="board-meeting <?= htmlspecialchars($safe_id) ?>">
-            <h3 class="title-content"><?= htmlspecialchars($safe_id) ?>
+            <h3 class="title-content-corporate-governance"><?= htmlspecialchars($safe_id) ?>
                 <div class="button-section">
                     <?php foreach ($items as $item): ?>
                         <?php $path = str_replace(['/var/www/html/yii2/', '..'], '', $item->path_file); ?>
@@ -137,7 +142,7 @@ $this->title = Yii::t("app", "Corporate governance");
     <?php endforeach; ?>
 
 
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Committees of the Board of Directors") ?>
     </h3>
     <div class="button-section">
@@ -165,7 +170,7 @@ $this->title = Yii::t("app", "Corporate governance");
     <?php endforeach; ?>
 
     <?php foreach ($documents_committee as $parts => $items): ?>
-        <h2 class="title-content position-committee <?= $parts ?>">
+        <h2 class="title-content-corporate-governance position-committee <?= $parts ?>">
             <?= str_replace(['-'], ' ', $parts) ?>
             <div class="button-section">
                 <?php foreach ($items as $item): ?>
@@ -179,7 +184,7 @@ $this->title = Yii::t("app", "Corporate governance");
     <?php endforeach; ?>
 
 
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Corporate events") ?>
     </h3>
     <?php
@@ -203,7 +208,8 @@ $this->title = Yii::t("app", "Corporate governance");
     </div>
 
     <?php foreach ($years as $year => $items): ?>
-        <h2 class="title-content events year-<?= $year ?>-events"><?= Yii::t('app', 'Corporate events') ?> - <?= $year ?>
+        <h2 class="title-content-corporate-governance events year-<?= $year ?>-events">
+            <?= Yii::t('app', 'Corporate events') ?> - <?= $year ?>
             <div class="button-section ">
                 <?php foreach ($items as $item): ?>
                     <button onclick='openEvents(<?= json_encode($item->date) ?>, <?= json_encode($item->text) ?>)'>
@@ -225,7 +231,7 @@ $this->title = Yii::t("app", "Corporate governance");
 
 
 
-    <!-- <div class="title-content">
+    <!-- <div class="title-content-corporate-governance">
         <?= Yii::t("app", "Committees of the Board of Directors") ?>
     </div>
     <div id="committee-of-board" class="board-of-directors-section">
@@ -237,11 +243,11 @@ $this->title = Yii::t("app", "Corporate governance");
     </div>
 </div>
 <div class="governance">
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Composition of the Governance") ?>
     </h3>
     <div class="container-governance"></div>
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Board meeting") ?>
     </h3>
     <?php
@@ -266,7 +272,7 @@ $this->title = Yii::t("app", "Corporate governance");
     // Вывод файлов по годам
     foreach ($meeting as $year => $items) {
 
-        echo "<div class='title-content gov_met year-" . $year . "'>" . Yii::t('app', 'Composition of the Governance ') . ' - ' . $year;
+        echo "<div class='title-content-corporate-governance gov_met year-" . $year . "'>" . Yii::t('app', 'Composition of the Governance ') . ' - ' . $year;
         echo '<div class="button-section">';
         foreach ($items as $item) {
             $path = $item->path_file . '/' . $item->fileName;
@@ -285,7 +291,7 @@ $this->title = Yii::t("app", "Corporate governance");
 </div>
 
 <div class="sustainable_development">
-    <h3 class="title-content">
+    <h3 class="title-content-corporate-governance">
         <?= Yii::t("app", "Sustainable Development") ?>
     </h3>
 
@@ -1131,7 +1137,7 @@ $this->title = Yii::t("app", "Corporate governance");
     ?>
     <?php
     foreach ($corp_docs as $section => $items) {
-        echo '   <h3 class="title-content">' . $section . "</h3>";
+        echo '   <h3 class="title-content-corporate-governance">' . $section . "</h3>";
         echo '<div class="button-section">';
         foreach ($items as $item) {
             $path = htmlspecialchars($item->path_file . $item->fileName, ENT_QUOTES);

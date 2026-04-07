@@ -1,7 +1,6 @@
 <?php
 use app\components\LanguageHelper;
 use yii\helpers\Html;
-
 ?>
 
 <div class="faculty-hero">
@@ -49,20 +48,20 @@ use yii\helpers\Html;
             </b><br>
 
             <span style="font-size: 16px; color:#666;">
-                <?= Yii::t('app', 'Dean'); ?> -
+                <?= Yii::t('app', 'Dean'); ?>
                 <?= !empty($dean->{LanguageHelper::job_title()})
-                    ? nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()}))
-                    : '( Здесь ничего не задано )' ?>
-            </span>
-
+                    ? ' - ' . nl2br(htmlspecialchars($dean->{LanguageHelper::job_title()}))
+                    : '' ?>
+            </span><br>
+            
             <p style="margin-top:12px;">
                 Email:
                 <a href="mailto:<?= !empty($dean->email) ? $dean->email : '#' ?>"
                     style="color:var(--indigoblue-font)var(--indigoblue-font); text-decoration:none; font-weight:600;">
                     <?= !empty($dean->email)
-                        ? nl2br(htmlspecialchars($dean->email))
+                        ? nl2br(htmlspecialchars(strtolower($dean->email)))
                         : '( Здесь ничего не задано )' ?>
-                </a>
+                </a> 
             </p>
 
             <a href="<?= Yii::$app->urlManager->createUrl(['site/history-faculty', 'faculty_id' => $faculty_id]) ?>"
@@ -72,7 +71,7 @@ use yii\helpers\Html;
                       text-decoration:none; font-size:15px; 
                       box-shadow:0 6px 15px rgba(0,123,255,0.3); 
                       transition: all 0.3s;">
-                <?= Yii::t('app', 'История факультета →') ?>
+                <?= Yii::t('app', 'History of the Faculty') ?> →
             </a>
         </div>
 
@@ -81,8 +80,7 @@ use yii\helpers\Html;
             <div style="position: relative; display: inline-block; transition: all 0.3s;">
                 <img src="<?= !empty($dean->image)
                     ? nl2br(htmlspecialchars($dean->image->image))
-                    : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>" alt="Декан факультета"
-                    style="width: 260px; height: 260px; border-radius: 50%; 
+                    : 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>" alt="Декан факультета" style="width: 260px; height: 260px; border-radius: 50%; 
                             object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.25); 
                             border: 6px solid #fff; background: #f0f0f0; 
                             transition: transform 0.4s, box-shadow 0.4s;">

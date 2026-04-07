@@ -1,5 +1,5 @@
 .departament-hero {
-    background:  url(https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/qP_c6k5INf1Tx8iYCzVEI.jpg) no-repeat center 40% / cover;
+    background: url(https://storage.vigbo.tech/p/s2500/gallery-photo/27833ae7-1146-486e-bcd4-e5cec2edb815/f1377e4e-0060-48db-a843-ef23efa8db63/original/qP_c6k5INf1Tx8iYCzVEI.jpg) no-repeat center 40% / cover;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -30,7 +30,7 @@
 
 
 .teachers-box {
-    min-width: 310px;
+    min-width: 23%;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background: white;
@@ -49,15 +49,9 @@
 
 .content-teacher {
     width: 80%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding-inline: 5px;
 }
 
 .teachers-box {
-    background: url(/files/images/image_background/bg_teacher.png);
     background-size: cover;
     background-position: center center;
 }
@@ -66,14 +60,6 @@
     transform: scale(1.03);
 }
 
-/* .teachers-box  {
-    object-fit: cover;
-    position: absolute;
-    top: -70px;
-    left: 20%;
-    width: 60%;
-    filter: drop-shadow(var(--indigoblue-font), -7px -10px 21px)
-} */
 .border {
     padding: 20px;
     border-radius: 50%;
@@ -82,8 +68,8 @@
 }
 
 .teacher-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 10px;
     border-radius: 50%;
     overflow: hidden;
@@ -93,20 +79,20 @@
     background-size: cover;
     background-position: center 50%;
     background-repeat: no-repeat;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border: 5px solid var(--white);
 }
 
 
 
 .fio {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 5px;
     color: var(--indigoblue-font);
 }
 
 .job_title {
-    font-size: 10px;
+    font-size: 15px;
     font-style: italic;
     color: #575757;
     margin-bottom: 10px;
@@ -148,8 +134,7 @@
     width: 60vw;
     height: 650px;
     transform: translate(-40%, -40%);
-    /* центрирование */
-    background-color: var(--whiteblue);
+
     /* затемнение, можно изменить */
     z-index: 10000;
     /* выше других */
@@ -187,14 +172,12 @@
 .dean {
     text-align: center;
     position: relative;
-    background: url(/files/images/image_background/bg_head_of_departament.png);
     background-size: cover;
     background-position: center center;
     border-radius: 20px;
     flex-direction: column;
     padding: 40px 0;
     gap: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .image-dean {
@@ -253,9 +236,7 @@
     height: 100%;
 }
 
-.dean.d-flex.justify-content-center.align-items-center.col-md-4 a {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+
 
 .information-dean .history-departament {
     font-size: 14px;

@@ -204,21 +204,20 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     </div>
 
                                     <div class="dropdown-submenu faculties">
-                                        <?= Html::a(Yii::t('app', 'Faculty of Biology and Geography') . ' <span>></span>', ['site/faculty', 'name' => 'биолого-географический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of History') . ' <span>></span>', ['site/faculty', 'name' => 'исторический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Foreign Languages') . ' <span>></span>', ['site/faculty', 'name' => 'иностранных языков'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Mathematics and IT') . ' <span>></span>', ['site/faculty', 'name' => 'математики и информационных технологий'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Education') . ' <span>></span>', ['site/faculty', 'name' => 'педагогический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Physics and Technology') . ' <span>></span>', ['site/faculty', 'name' => 'физико-технический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Physical Education and Sport') . ' <span>></span>', ['site/faculty', 'name' => 'физической культуры и спорта'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Philology') . ' <span>></span>', ['site/faculty', 'name' => 'филологический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Philosophy and Psychology') . ' <span>></span>', ['site/faculty', 'name' => 'философии и психологии'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Chemistry') . ' <span>></span>', ['site/faculty', 'name' => 'химический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Economics') . ' <span>></span>', ['site/faculty', 'name' => 'экономический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Law') . ' <span>></span>', ['site/faculty', 'name' => 'юридический'], ['class' => 'menu-item']) ?>
-                                        <?= Html::a(Yii::t('app', 'Faculty of Continuing Education') . ' <span>></span>', ['site/faculty', 'name' => 'факультет дополнительного образования'], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Biology and Geography') . ' <span>></span>', ['site/faculty', 'id' => 1], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of History') . ' <span>></span>', ['site/faculty', 'id' => 2], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Foreign Languages') . ' <span>></span>', ['site/faculty', 'id' => 3], ['class' => 'menu-item']) ?>
 
-
+                                        <?= Html::a(Yii::t('app', 'Faculty of Mathematics and IT') . ' <span>></span>', ['site/faculty', 'id' => 5], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Education') . ' <span>></span>', ['site/faculty', 'id' => 6], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Physics and Technology') . ' <span>></span>', ['site/faculty', 'id' => 7], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Physical Education and Sport') . ' <span>></span>', ['site/faculty', 'id' => 8], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Philology') . ' <span>></span>', ['site/faculty', 'id' => 9], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Philosophy and Psychology') . ' <span>></span>', ['site/faculty', 'id' => 10], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Chemistry') . ' <span>></span>', ['site/faculty', 'id' => 11], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Economics') . ' <span>></span>', ['site/faculty', 'id' => 12], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Law') . ' <span>></span>', ['site/faculty', 'id' => 13], ['class' => 'menu-item']) ?>
+                                        <?= Html::a(Yii::t('app', 'Faculty of Continuing Education') . ' <span>></span>', ['site/faculty', 'id' => 14], ['class' => 'menu-item']) ?>
                                     </div>
                                     <div class="dropdown-submenu graduate">
                                         <a href="#" class="menu-item">Известные выпускники <span>></span></a>

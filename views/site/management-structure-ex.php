@@ -1,6 +1,6 @@
 <?php
 use app\components\LanguageHelper;
-use yii\helpers\HtmlPurifier;
+use yii\helpers\Html;
 use app\assets\ManagmentStructureAsset;
 ManagmentStructureAsset::register($this);
 $this->title = Yii::t("app", "Management Structure");
@@ -15,7 +15,10 @@ $this->title = Yii::t("app", "Management Structure");
             <button class="button_collapse btn btn-primary d-flex justify-content-between" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapse_<?= $model_item->id ?>" aria-expanded="false"
                 aria-controls="collapse_<?= $model_item->id ?>">
-                <span><?= htmlspecialchars($model_item->{LanguageHelper::job_title()}) ?: 'Нет данных о должности' ?></span>
+               <span>
+                    <?= Html::encode($model_item->{LanguageHelper::job_title()} ?? 'Нет данных о должности') ?>
+                </span>
+
                 <span>+</span>
             </button>
 
@@ -26,11 +29,16 @@ $this->title = Yii::t("app", "Management Structure");
                         <div class="row g-4 align-items-center">
                             <!-- Левая колонка с фото -->
                             <div class="col-md-3 text-center">
-                                <img src="<?= $model_item->image->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+                               <img src="<?= $model_item->image?->image ?? 'https://cdn-icons-png.flaticon.com/512/4519/4519678.png' ?>"
+
                                     alt="Фото" class="img-fluid rounded-circle shadow-sm mb-3"
                                     style="width: 200px; height: 200px; object-fit: contain;">
                                 <h5 class="fw-bold mb-1">
-                                    <?= $model_item->{LanguageHelper::surname()} . ' ' . $model_item->{LanguageHelper::name()} . ' ' . $model_item->{LanguageHelper::patronymic()} ?>
+                                       <?= Html::encode(trim(
+        ($model_item->{LanguageHelper::surname()} ?? '') . ' ' .
+        ($model_item->{LanguageHelper::name()} ?? '') . ' ' .
+        ($model_item->{LanguageHelper::patronymic()} ?? '')
+    )) ?>
                                 </h5>
                                 <p class="text-muted small mb-2">
                                     <?= $model_item->{LanguageHelper::job_title()} ?: 'Нет данных о должности' ?>

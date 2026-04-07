@@ -388,7 +388,7 @@ $this->title = 'Buketov University';
         <div class="col-md-10 d-flex justify-content-between align-items-center block-rector">
             <div class="col-md-4  d-flex flex-column justify-content-start align-items-start box-img-rector">
                 <div class="skewX"></div>
-                <img src="/bg-images/rector.png">
+                <img src="/bg-images/Dulatbekov_Nurlan.jpg">
             </div>
             <?php
             $surname = LanguageHelper::surname();
@@ -589,43 +589,7 @@ $this->title = 'Buketov University';
 
         </div>
     </div>
-    <!-- <div class="fourth-block row col-md-12 w-100 d-flex flex-column align-items-center py-3">
 
-        <div class="col-md-10 d-flex justify-content-center align-items-center block-header">
-            <p><?= Yii::t('app', 'Media About Us') ?></p>
-        </div>
-        <div class="col-md-10 d-flex justify-content-center align-items-center block-smi my-5">
-            <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 col-md-12 d-flex justify-content-between align-items-stretch smi-about-us">
-                <?php foreach ($smi as $smi_item): ?>
-                    <div class="col">
-                        <div class="card shadow-sm h-100 w-100 position-relative py-3">
-                            <img src="/bg-images/logo-buketov-ex.png" class="smi-logo-buketov">
-                            <div class="card-body d-flex flex-column justify-content-between position-relative">
-                                <p class="card-text text-black short-text">
-                                    <?= $smi_item['title'] ?>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <?= Html::button(Yii::t('app', 'View'), [
-                                            'onclick' => "openBoxEvents(this, 'open')",
-                                            'data' => [
-                                                'time_events' => date('Y-m-d'),
-                                                'title' => $smi_item['title'],
-                                                'content' => $smi_item['content'],
-                                            ],
-                                            'class' => 'btn btn-sm btn-outline-secondary text-gray border-gray'
-                                        ]) ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-    </div> -->
 </div>
 
 <div class="chat-widget" id="chat-widget" style="

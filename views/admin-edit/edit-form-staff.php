@@ -69,14 +69,14 @@ use yii\widgets\ActiveForm;
 
             <!-- Информация -->
             <div class="row mt-3">
-                <div class="col-md-4">
-                    <?= $form->field($type_ref_staff, 'information_kz')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (KZ)') ?>
+                <div class="col-md-12">
+                    <?= $form->field($type_ref_staff, 'information_kz')->textarea(['rows' => 12, 'class' => 'tinymce-editor'])->label('Информация (KZ)') ?>
                 </div>
-                <div class="col-md-4">
-                    <?= $form->field($type_ref_staff, 'information_ru')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (RU)') ?>
+                <div class="col-md-12">
+                    <?= $form->field($type_ref_staff, 'information_ru')->textarea(['rows' => 12, 'class' => 'tinymce-editor'])->label('Информация (RU)') ?>
                 </div>
-                <div class="col-md-4">
-                    <?= $form->field($type_ref_staff, 'information_en')->textarea(['rows' => 5, 'class' => 'tinymce-editor'])->label('Информация (EN)') ?>
+                <div class="col-md-12">
+                    <?= $form->field($type_ref_staff, 'information_en')->textarea(['rows' => 12, 'class' => 'tinymce-editor'])->label('Информация (EN)') ?>
                 </div>
             </div>
 
@@ -154,31 +154,58 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 </div>
+<script src="/tinymce/tinymce.min.js"></script>
+
+<script>
+tinymce.init({
+    selector: '.tinymce-editor',
+    base_url: '/tinymce',
+    suffix: '.min',
+
+    license_key: 'gpl',
+    language: 'ru',
+    height: 600,
+
+    toolbar: 'bold italic underline | alignleft aligncenter alignright | bullist numlist',
+    plugins: 'lists',
+
+    formats: {
+        hilitecolor: { inline: 'span', styles: {} }
+    },
+
+    setup: function (editor) {
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/background-color:[^;"]+;?/gi, '');
+        });
+    }
+});
+</script>
+
 
 <?php
 
-$this->registerJsFile('https://cdn.tiny.cloud/1/dh851zzc2lhniwdysf0p1ckjsj3ex5zf5ssp8jvaru77qzk6/tinymce/7/tinymce.min.js', [
-    'referrerpolicy' => 'origin'
-]);
+// $this->registerJsFile('https://cdn.tiny.cloud/1/wmtfk0v9m750xo316xpx88hktns85a0m5lgbaiz4kbnun0cj/tinymce/7/tinymce.min.js', [
+//     'referrerpolicy' => 'origin'
+// ]);
 
 
-$this->registerJs("
-    tinymce.init({
-        selector: '.tinymce-editor',
-        plugins: 'lists link image table code',
-        toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
-        menubar: false,
-        height: 250,
-        language: 'ru',
-        apiKey: 'dh851zzc2lhniwdysf0p1ckjsj3ex5zf5ssp8jvaru77qzk6',
-        setup: function (editor) {
-            editor.on('change', function () {
-                tinymce.triggerSave();
-            });
-        }
-    });
+// $this->registerJs("
+//     tinymce.init({
+//         selector: '.tinymce-editor',
+//         plugins: 'lists link image table code',
+//         toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
+//         menubar: false,
+//         height: 250,
+//         language: 'ru',
+//         apiKey: 'wmtfk0v9m750xo316xpx88hktns85a0m5lgbaiz4kbnun0cj',
+//         setup: function (editor) {
+//             editor.on('change', function () {
+//                 tinymce.triggerSave();
+//             });
+//         }
+//     });
 
-    $('form').on('submit', function() {
-        tinymce.triggerSave();
-    });
-");
+//     $('form').on('submit', function() {
+//         tinymce.triggerSave();
+//     });
+// ");

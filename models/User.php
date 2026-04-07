@@ -88,4 +88,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return $this->auth_key === $authKey;
     }
+    public function validatePassword($password_hash)
+{
+    return Yii::$app->security->validatePassword($password_hash, $this->password_hash);
+}
 }

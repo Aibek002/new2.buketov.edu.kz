@@ -271,7 +271,7 @@ return [
     'Applicants can contact the Admission Committee for consultation on the admission rules, deadlines, and document submission procedures, as well as to attend preparatory courses for the UNT subjects.'
     => 'Абитуриенттер университетке түсу ережелері, құжаттарды тапсыру мерзімдері мен тәртібі туралы кеңес алу, сондай-ақ ҰБТ пәндері бойынша дайындық курстарына қатысу үшін Қабылдау комиссиясына жүгіне алады.',
     'Barykova Alena Rudolfovna'
-    => 'Барикова Алена Рудольфовна',
+    => 'Барыкова Алена Рудольфовна',
     "Reception schedule for citizens" => "Азаматтарды қабылдау кестесі",
     "Day" => "Күн",
     "Time (Уақыты / Время)" => "Уақыты",
@@ -518,7 +518,7 @@ return [
     'Scientific Library' => 'Ғылыми кітапхана',
     'The library holds 1.8 million books and 60,000 electronic documents.' =>
         'Кітапхана қоры 1,8 миллион кітап пен 60 000 электрондық құжатты қамтиды.',
-    // Main resolution text
+            // Main resolution text
     'By the Resolution of the Government of the Republic of Kazakhstan dated April 5, 2024 No. 258, in accordance with subparagraph 8) of Article 3 of the Law of the Republic of Kazakhstan "On Science" and subparagraph 21-6) of Article 1 of the Law of the Republic of Kazakhstan "On Education", the Government of the Republic of Kazakhstan RESOLVES: 1. To grant the status of a research university to the Non-Profit Joint-Stock Company "Karaganda University named after Academician E. A. Buketov". 2. To approve the Development Program of the Non-Profit Joint-Stock Company "Karaganda University named after Academician E. A. Buketov" for 2024–2028. 3. This Resolution shall enter into force from the date of its signing.' =>
         'Қазақстан Республикасы Үкіметінің 2024 жылғы 5 сәуірдегі № 258 қаулысына сәйкес, «Ғылым туралы» Қазақстан Республикасы Заңының 3-бабының 8) тармақшасына және «Білім туралы» Қазақстан Республикасы Заңының 1-бабының 21-6) тармақшасына сәйкес Қазақстан Республикасының Үкіметі ҚАУЛЫ ЕТЕДІ: 1. «Академик Е. А. Бөкетов атындағы Қарағанды университеті» коммерциялық емес акционерлік қоғамына зерттеу университеті мәртебесі берілсін. 2. Қоса беріліп отырған «Академик Е. А. Бөкетов атындағы Қарағанды университеті» коммерциялық емес акционерлік қоғамының 2024–2028 жылдарға арналған даму бағдарламасы бекітілсін. 3. Осы қаулы қол қойылған күнінен бастап қолданысқа енгізіледі.',
 
@@ -552,224 +552,224 @@ return [
     // Buttons
     'Read more' => 'Толығырақ оқу',
     'On approval of the Development Program of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' =>
-        'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің 2024–2028 жылдарға арналған даму бағдарламасын бекіту туралы',
+'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің 2024–2028 жылдарға арналған даму бағдарламасын бекіту туралы',
 
-    'DEVELOPMENT PROGRAM of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' =>
-        'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің 2024–2028 жылдарға арналған даму бағдарламасы',
+'DEVELOPMENT PROGRAM of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' =>
+'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің 2024–2028 жылдарға арналған даму бағдарламасы',
 
-    'Basis for the development of the Program' =>
-        'Бағдарламаны әзірлеу үшін негіз',
+'Basis for the development of the Program' =>
+'Бағдарламаны әзірлеу үшін негіз',
 
-    'Developer of the Program' =>
-        'Бағдарламаны әзірлеуші',
+'Developer of the Program' =>
+'Бағдарламаны әзірлеуші',
 
-    'Purpose of the Program' =>
-        'Бағдарламаның мақсаты',
+'Purpose of the Program' =>
+'Бағдарламаның мақсаты',
 
-    'Objectives of the Program' =>
-        'Бағдарламаның міндеттері',
+'Objectives of the Program' =>
+'Бағдарламаның міндеттері',
 
-    'Implementation period of the Program' =>
-        'Бағдарламаны іске асыру мерзімдері',
+'Implementation period of the Program' =>
+'Бағдарламаны іске асыру мерзімдері',
 
-    'Sources of financing' =>
-        'Қаржыландыру көздері',
-    'On approval of the Development Program of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' =>
+'Sources of financing' =>
+'Қаржыландыру көздері',
+ 'On approval of the Development Program of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' => 
         'Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің 2024–2028 жылдарға арналған Даму бағдарламасын бекіту туралы',
 
-    'By Resolution of the Government of the Republic of Kazakhstan dated April 5, 2024 No. 258, in accordance with subparagraph 8) of Article 3 of the Law of the Republic of Kazakhstan "On Science" and subparagraph 21-6) of Article 1 of the Law of the Republic of Kazakhstan "On Education", the Government of the Republic of Kazakhstan RESOLVES:' =>
+    'By Resolution of the Government of the Republic of Kazakhstan dated April 5, 2024 No. 258, in accordance with subparagraph 8) of Article 3 of the Law of the Republic of Kazakhstan "On Science" and subparagraph 21-6) of Article 1 of the Law of the Republic of Kazakhstan "On Education", the Government of the Republic of Kazakhstan RESOLVES:' => 
         'Қазақстан Республикасының Үкіметінің 2024 жылғы 5 сәуірдегі №258 Қаулына сәйкес, Қазақстан Республикасының «Ғылым туралы» Заңының 3-бабының 8) тармағы және Қазақстан Республикасының «Білім туралы» Заңының 1-бабының 21-6) тармағына сәйкес, Қазақстан Республикасының Үкіметі ШЕШІМ ҚАБЫЛДАЙДЫ:',
 
-    'To grant the status of a research university to the Non-Profit Joint-Stock Company "Karaganda National Research University named after Academician E. A. Buketov".' =>
+    'To grant the status of a research university to the Non-Profit Joint-Stock Company "Karaganda National Research University named after Academician E. A. Buketov".' => 
         'Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университеті Жауапкершілігі шектеулі коммерциялық емес акционерлік қоғамына зерттеу университеті мәртебесін беру.',
 
-    'To approve the attached Development Program of the Non-Profit Joint-Stock Company "Karaganda National Research University named after Academician E. A. Buketov" for 2024–2028.' =>
+    'To approve the attached Development Program of the Non-Profit Joint-Stock Company "Karaganda National Research University named after Academician E. A. Buketov" for 2024–2028.' => 
         '2024–2028 жылдарға арналған Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің қосымша Даму бағдарламасын бекіту.',
 
-    'This Resolution shall enter into force from the date of its signing.' =>
+    'This Resolution shall enter into force from the date of its signing.' => 
         'Бұл Қаулы қол қойылған күнінен бастап күшіне енеді.',
 
-    'DEVELOPMENT PROGRAM of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' =>
+    'DEVELOPMENT PROGRAM of Karaganda National Research University named after Academician E. A. Buketov for 2024–2028' => 
         'Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетінің 2024–2028 жылдарға арналған Даму бағдарламасы',
 
-    'Basis for the development of the Program' =>
+    'Basis for the development of the Program' => 
         'Бағдарламаны әзірлеу негіздері',
 
-    'The Program was developed on the basis of the following regulatory and strategic documents:' =>
+    'The Program was developed on the basis of the following regulatory and strategic documents:' => 
         'Бағдарлама мынадай нормативтік және стратегиялық құжаттар негізінде әзірленді:',
 
-    'Law of the Republic of Kazakhstan "On Science";' =>
+    'Law of the Republic of Kazakhstan "On Science";' => 
         'Қазақстан Республикасының «Ғылым туралы» Заңы;',
 
-    'Law of the Republic of Kazakhstan "On Education";' =>
+    'Law of the Republic of Kazakhstan "On Education";' => 
         'Қазақстан Республикасының «Білім туралы» Заңы;',
 
-    'Address of the President of the Republic of Kazakhstan K. K. Tokayev to the People of Kazakhstan dated September 1, 2023 "The Economic Course of a Fair Kazakhstan";' =>
+    'Address of the President of the Republic of Kazakhstan K. K. Tokayev to the People of Kazakhstan dated September 1, 2023 "The Economic Course of a Fair Kazakhstan";' => 
         'Қазақстан Республикасының Президенті Қ. Қ. Тоқаевтың 2023 жылғы 1 қыркүйектегі Қазақстан халқына жолдауы «Әділетті Қазақстанның экономикалық бағыты»;',
 
-    'Order of the Minister of Education and Science of the Republic of Kazakhstan No. 590 dated October 25, 2018.' =>
+    'Order of the Minister of Education and Science of the Republic of Kazakhstan No. 590 dated October 25, 2018.' => 
         'Қазақстан Республикасының Білім және ғылым министрінің 2018 жылғы 25 қазандағы №590 Бұйрығы.',
 
-    'Developer of the Program' =>
+    'Developer of the Program' => 
         'Бағдарламаны әзірлеуші',
 
-    'The Program was developed by the Ministry of Science and Higher Education of the Republic of Kazakhstan.' =>
+    'The Program was developed by the Ministry of Science and Higher Education of the Republic of Kazakhstan.' => 
         'Бағдарлама Қазақстан Республикасының Ғылым және жоғары білім министрлігімен әзірленді.',
 
-    'Purpose of the Program' =>
+    'Purpose of the Program' => 
         'Бағдарламаның мақсаты',
 
-    'To transform Karaganda National Research University named after Academician E. A. Buketov into a modern research university that meets international standards.' =>
+    'To transform Karaganda National Research University named after Academician E. A. Buketov into a modern research university that meets international standards.' => 
         'Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университетін халықаралық стандарттарға сай заманауи зерттеу университетіне айналдыру.',
 
-    'Objectives of the Program' =>
+    'Objectives of the Program' => 
         'Бағдарламаның міндеттері',
 
-    'Effective integration of scientific activity and the educational process;' =>
+    'Effective integration of scientific activity and the educational process;' => 
         'Ғылыми қызмет пен оқу процесін тиімді интеграциялау;',
 
-    'Development of scientific research and implementation of its results at all levels of higher and postgraduate education;' =>
+    'Development of scientific research and implementation of its results at all levels of higher and postgraduate education;' => 
         'Жоғары және кейінгі білімнің барлық деңгейлерінде ғылыми зерттеулерді дамыту және оның нәтижелерін енгізу;',
 
-    'Ensuring equal access to quality education and attracting talented youth;' =>
+    'Ensuring equal access to quality education and attracting talented youth;' => 
         'Сапалы білімге тең қолжетімділікті қамтамасыз ету және талантты жастарды тарту;',
 
-    'Strengthening the intellectual potential of the country through fundamental and applied research;' =>
+    'Strengthening the intellectual potential of the country through fundamental and applied research;' => 
         'Негізгі және қолданбалы зерттеулер арқылы елдің интеллектуалды әлеуетін нығайту;',
 
-    'Commercialization of research results and their integration into the regional economy;' =>
+    'Commercialization of research results and their integration into the regional economy;' => 
         'Зерттеу нәтижелерін коммерцияландыру және оларды өңірлік экономикаға интеграциялау;',
 
-    'Enhancing the university’s contribution to social development and public engagement.' =>
+    'Enhancing the university’s contribution to social development and public engagement.' => 
         'Университеттің әлеуметтік даму мен қоғамға қатысуға қосқан үлесін арттыру.',
 
-    'Implementation period of the Program' =>
+    'Implementation period of the Program' => 
         'Бағдарламаны жүзеге асыру мерзімі',
 
-    '2024–2028' =>
+    '2024–2028' => 
         '2024–2028 жылдар',
 
-    'Sources of financing' =>
+    'Sources of financing' => 
         'Қаржыландыру көздері',
 
-    'The Program shall be implemented using the university’s own funds and attracted budgetary investments.' =>
+    'The Program shall be implemented using the university’s own funds and attracted budgetary investments.' => 
         'Бағдарлама университеттің өз қаражаты мен тартылған бюджеттік инвестициялар есебінен жүзеге асырылатын болады.',
 
+        
+'Karaganda National Research University named after Academician E.A. Buketov (hereinafter – KarNRU) is one of the largest and most multidisciplinary universities in the Republic of Kazakhstan.'
+=> 'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университеті (бұдан әрі – ҚарҰЗУ) Қазақстан Республикасындағы ең ірі және көпсалалы жоғары оқу орындарының бірі болып табылады.',
 
-    'Karaganda National Research University named after Academician E.A. Buketov (hereinafter – KarNRU) is one of the largest and most multidisciplinary universities in the Republic of Kazakhstan.'
-    => 'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университеті (бұдан әрі – ҚарҰЗУ) Қазақстан Республикасындағы ең ірі және көпсалалы жоғары оқу орындарының бірі болып табылады.',
+'The University trains bachelors in 28 fields, masters in 24 fields, and PhD doctors in 10 fields of study.'
+=> 'Университет 28 бағыт бойынша бакалаврларды, 24 бағыт бойынша магистрлерді және 10 бағыт бойынша PhD докторларын даярлайды.',
 
-    'The University trains bachelors in 28 fields, masters in 24 fields, and PhD doctors in 10 fields of study.'
-    => 'Университет 28 бағыт бойынша бакалаврларды, 24 бағыт бойынша магистрлерді және 10 бағыт бойынша PhD докторларын даярлайды.',
+'Currently, about 14,000 students, master’s students, and PhD doctoral students study at 12 faculties of KarNRU.'
+=> 'Қазіргі уақытта ҚарҰЗУ-дың 12 факультетінде шамамен 14 мың студент, магистрант және PhD докторант білім алуда.',
 
-    'Currently, about 14,000 students, master’s students, and PhD doctoral students study at 12 faculties of KarNRU.'
-    => 'Қазіргі уақытта ҚарҰЗУ-дың 12 факультетінде шамамен 14 мың студент, магистрант және PhD докторант білім алуда.',
+'KarNRU implements more than 140 educational programs at the bachelor’s, master’s, and PhD levels, all of which have passed institutional and specialized accreditation.'
+=> 'ҚарҰЗУ бакалавриат, магистратура және PhD докторантура деңгейлерінде 140-тан астам білім беру бағдарламасын жүзеге асырады, олардың барлығы институционалдық және мамандандырылған аккредитациядан өткен.',
 
-    'KarNRU implements more than 140 educational programs at the bachelor’s, master’s, and PhD levels, all of which have passed institutional and specialized accreditation.'
-    => 'ҚарҰЗУ бакалавриат, магистратура және PhD докторантура деңгейлерінде 140-тан астам білім беру бағдарламасын жүзеге асырады, олардың барлығы институционалдық және мамандандырылған аккредитациядан өткен.',
+'The University develops in accordance with the key principles of the Bologna Declaration and modern trends of the global educational space.'
+=> 'Университет Болон декларациясының негізгі қағидаттарына және жаһандық білім беру кеңістігінің заманауи үрдістеріне сәйкес дамуда.',
 
-    'The University develops in accordance with the key principles of the Bologna Declaration and modern trends of the global educational space.'
-    => 'Университет Болон декларациясының негізгі қағидаттарына және жаһандық білім беру кеңістігінің заманауи үрдістеріне сәйкес дамуда.',
+'At the same time, systematic work is carried out in the areas of humanization of education, prioritization of universal human values, internationalization, and globalization of the educational process.'
+=> 'Сонымен қатар білім беруді ізгілендіру, жалпыадамзаттық құндылықтардың басымдығы, білім беру үдерісін интернационализациялау және жаһандандыру бағыттарында жүйелі жұмыс жүргізілуде.',
 
-    'At the same time, systematic work is carried out in the areas of humanization of education, prioritization of universal human values, internationalization, and globalization of the educational process.'
-    => 'Сонымен қатар білім беруді ізгілендіру, жалпыадамзаттық құндылықтардың басымдығы, білім беру үдерісін интернационализациялау және жаһандандыру бағыттарында жүйелі жұмыс жүргізілуде.',
+'Curricula and educational program content widely apply multidisciplinary and interdisciplinary approaches.'
+=> 'Оқу жоспарлары мен білім беру бағдарламаларының мазмұнында мультидисциплинарлық және пәнаралық тәсілдер кеңінен қолданылады.',
 
-    'Curricula and educational program content widely apply multidisciplinary and interdisciplinary approaches.'
-    => 'Оқу жоспарлары мен білім беру бағдарламаларының мазмұнында мультидисциплинарлық және пәнаралық тәсілдер кеңінен қолданылады.',
+'Certain course modules are taught in English.'
+=> 'Жекелеген пәндік модульдер ағылшын тілінде оқытылады.',
 
-    'Certain course modules are taught in English.'
-    => 'Жекелеген пәндік модульдер ағылшын тілінде оқытылады.',
+'In particular, PhD doctoral programs in Chemistry, as well as master’s programs such as "Foreign Language: Two Foreign Languages", "Foreign Philology", and "World Economy", are fully delivered in English.'
+=> 'Атап айтқанда, «Химия» бағыты бойынша PhD докторантура бағдарламалары, сондай-ақ «Шетел тілі: екі шетел тілі», «Шетел филологиясы», «Әлемдік экономика» магистрлік бағдарламалары толықтай ағылшын тілінде жүзеге асырылады.',
 
-    'In particular, PhD doctoral programs in Chemistry, as well as master’s programs such as "Foreign Language: Two Foreign Languages", "Foreign Philology", and "World Economy", are fully delivered in English.'
-    => 'Атап айтқанда, «Химия» бағыты бойынша PhD докторантура бағдарламалары, сондай-ақ «Шетел тілі: екі шетел тілі», «Шетел филологиясы», «Әлемдік экономика» магистрлік бағдарламалары толықтай ағылшын тілінде жүзеге асырылады.',
+'KarNRU pays special attention to the development and implementation of new and innovative educational programs, including projects in cooperation with leading domestic and foreign universities.'
+=> 'ҚарҰЗУ жетекші отандық және шетелдік университеттермен бірлескен жобаларды қоса алғанда, жаңа және инновациялық білім беру бағдарламаларын әзірлеу мен енгізуге ерекше көңіл бөледі.',
 
-    'KarNRU pays special attention to the development and implementation of new and innovative educational programs, including projects in cooperation with leading domestic and foreign universities.'
-    => 'ҚарҰЗУ жетекші отандық және шетелдік университеттермен бірлескен жобаларды қоса алғанда, жаңа және инновациялық білім беру бағдарламаларын әзірлеу мен енгізуге ерекше көңіл бөледі.',
+'The University successfully implements trilingual programs, dual degree programs, as well as formal, non-formal, and informal educational mechanisms.'
+=> 'Университет үштілді бағдарламаларды, қос дипломды бағдарламаларды, сондай-ақ формалды, формалды емес және информалды білім беру тетіктерін табысты жүзеге асырады.',
 
-    'The University successfully implements trilingual programs, dual degree programs, as well as formal, non-formal, and informal educational mechanisms.'
-    => 'Университет үштілді бағдарламаларды, қос дипломды бағдарламаларды, сондай-ақ формалды, формалды емес және информалды білім беру тетіктерін табысты жүзеге асырады.',
+'Forty-nine percent of educational programs are implemented using distance learning technologies.'
+=> 'Білім беру бағдарламаларының 49 пайызы қашықтан оқыту технологияларын қолдану арқылы іске асырылады.',
 
-    'Forty-nine percent of educational programs are implemented using distance learning technologies.'
-    => 'Білім беру бағдарламаларының 49 пайызы қашықтан оқыту технологияларын қолдану арқылы іске асырылады.',
+'The international activities of KarNRU are actively developing.'
+=> 'ҚарҰЗУ-дың халықаралық қызметі белсенді түрде дамып келеді.',
 
-    'The international activities of KarNRU are actively developing.'
-    => 'ҚарҰЗУ-дың халықаралық қызметі белсенді түрде дамып келеді.',
+'The University has established cooperation with more than 150 foreign universities and research centers through agreements, contracts, and memoranda.'
+=> 'Университет келісімшарттар, келісімдер және меморандумдар аясында 150-ден астам шетелдік университеттер мен ғылыми орталықтармен ынтымақтастық орнатқан.',
 
-    'The University has established cooperation with more than 150 foreign universities and research centers through agreements, contracts, and memoranda.'
-    => 'Университет келісімшарттар, келісімдер және меморандумдар аясында 150-ден астам шетелдік университеттер мен ғылыми орталықтармен ынтымақтастық орнатқан.',
+'Academic mobility of students and faculty members is actively implemented within the framework of internationalization of the educational process.'
+=> 'Білім беру үдерісін интернационализациялау аясында студенттер мен профессор-оқытушылар құрамының академиялық ұтқырлығы белсенді жүзеге асырылуда.',
 
-    'Academic mobility of students and faculty members is actively implemented within the framework of internationalization of the educational process.'
-    => 'Білім беру үдерісін интернационализациялау аясында студенттер мен профессор-оқытушылар құрамының академиялық ұтқырлығы белсенді жүзеге асырылуда.',
+'The attractiveness of KarNRU for foreign citizens is growing annually.'
+=> 'ҚарҰЗУ-дың шетелдік азаматтар үшін тартымдылығы жыл сайын артып келеді.',
 
-    'The attractiveness of KarNRU for foreign citizens is growing annually.'
-    => 'ҚарҰЗУ-дың шетелдік азаматтар үшін тартымдылығы жыл сайын артып келеді.',
+'Approximately 60 foreign students from Azerbaijan, Armenia, Germany, China, Mongolia, Russia, Ukraine, Uzbekistan, and other countries are admitted annually.'
+=> 'Әзірбайжан, Армения, Германия, Қытай, Моңғолия, Ресей, Украина, Өзбекстан және басқа елдерден жыл сайын шамамен 60 шетелдік студент қабылданады.',
 
-    'Approximately 60 foreign students from Azerbaijan, Armenia, Germany, China, Mongolia, Russia, Ukraine, Uzbekistan, and other countries are admitted annually.'
-    => 'Әзірбайжан, Армения, Германия, Қытай, Моңғолия, Ресей, Украина, Өзбекстан және басқа елдерден жыл сайын шамамен 60 шетелдік студент қабылданады.',
+'Within academic mobility programs, about 100 foreign students study at KarNRU each year for one to two semesters.'
+=> 'Академиялық ұтқырлық бағдарламалары аясында жыл сайын шамамен 100 шетелдік студент ҚарҰЗУ-да 1–2 семестр білім алады.',
 
-    'Within academic mobility programs, about 100 foreign students study at KarNRU each year for one to two semesters.'
-    => 'Академиялық ұтқырлық бағдарламалары аясында жыл сайын шамамен 100 шетелдік студент ҚарҰЗУ-да 1–2 семестр білім алады.',
+'Within the program "Attracting Foreign Scientists Funded by the Republican Budget", 16 foreign scientists from Bulgaria, Finland, Russia, Italy, Estonia, and other countries were invited in 2020–2023.'
+=> '«Республикалық бюджет қаражаты есебінен шетелдік ғалымдарды тарту» бағдарламасы аясында 2020–2023 жылдары Болгария, Финляндия, Ресей, Италия, Эстония және басқа елдерден 16 шетелдік ғалым тартылды.',
 
-    'Within the program "Attracting Foreign Scientists Funded by the Republican Budget", 16 foreign scientists from Bulgaria, Finland, Russia, Italy, Estonia, and other countries were invited in 2020–2023.'
-    => '«Республикалық бюджет қаражаты есебінен шетелдік ғалымдарды тарту» бағдарламасы аясында 2020–2023 жылдары Болгария, Финляндия, Ресей, Италия, Эстония және басқа елдерден 16 шетелдік ғалым тартылды.',
+'Under free cooperation agreements, 33 scientists and lecturers from the USA, Finland, Poland, Hungary, Greece, Turkey, Kyrgyzstan, and other countries were invited to deliver lectures and exchange experience.'
+=> 'Тегін ынтымақтастық туралы келісімдер аясында АҚШ, Финляндия, Польша, Венгрия, Грекия, Түркия, Қырғызстан және басқа елдерден 33 ғалым мен оқытушы дәріс оқуға және тәжірибе алмасуға шақырылды.',
 
-    'Under free cooperation agreements, 33 scientists and lecturers from the USA, Finland, Poland, Hungary, Greece, Turkey, Kyrgyzstan, and other countries were invited to deliver lectures and exchange experience.'
-    => 'Тегін ынтымақтастық туралы келісімдер аясында АҚШ, Финляндия, Польша, Венгрия, Грекия, Түркия, Қырғызстан және басқа елдерден 33 ғалым мен оқытушы дәріс оқуға және тәжірибе алмасуға шақырылды.',
+'In addition, 98 foreign scientists were invited at the expense of KarNRU funds during 2020–2023.'
+=> 'Сонымен қатар, 2020–2023 жылдары ҚарҰЗУ қаражаты есебінен 98 шетелдік ғалым тартылды.',
 
-    'In addition, 98 foreign scientists were invited at the expense of KarNRU funds during 2020–2023.'
-    => 'Сонымен қатар, 2020–2023 жылдары ҚарҰЗУ қаражаты есебінен 98 шетелдік ғалым тартылды.',
+'KarNRU consistently holds leading positions in national and international rankings.'
+=> 'ҚарҰЗУ ұлттық және халықаралық рейтингтерде тұрақты түрде жетекші орындарға ие.',
 
-    'KarNRU consistently holds leading positions in national and international rankings.'
-    => 'ҚарҰЗУ ұлттық және халықаралық рейтингтерде тұрақты түрде жетекші орындарға ие.',
+'The University is among the leaders according to the rankings of the Independent Agency for Quality Assurance in Education and accreditation and independent rating agencies.'
+=> 'Университет Білім сапасын қамтамасыз ету жөніндегі тәуелсіз агенттік пен аккредитациялық және тәуелсіз рейтингтік агенттіктердің рейтингтері бойынша көшбасшылар қатарында.',
 
-    'The University is among the leaders according to the rankings of the Independent Agency for Quality Assurance in Education and accreditation and independent rating agencies.'
-    => 'Университет Білім сапасын қамтамасыз ету жөніндегі тәуелсіз агенттік пен аккредитациялық және тәуелсіз рейтингтік агенттіктердің рейтингтері бойынша көшбасшылар қатарында.',
+'In the QS World University Rankings, the University is ranked 851+, and in the QS Asia Rankings it holds the 206th position.'
+=> 'QS World University Rankings рейтингінде университет 851+ орынды, ал QS Asia рейтингінде 206-орынды иеленеді.',
 
-    'In the QS World University Rankings, the University is ranked 851+, and in the QS Asia Rankings it holds the 206th position.'
-    => 'QS World University Rankings рейтингінде университет 851+ орынды, ал QS Asia рейтингінде 206-орынды иеленеді.',
+'The academic staff of KarNRU possesses strong scientific potential.'
+=> 'ҚарҰЗУ-дың профессор-оқытушылар құрамы жоғары ғылыми әлеуетке ие.',
 
-    'The academic staff of KarNRU possesses strong scientific potential.'
-    => 'ҚарҰЗУ-дың профессор-оқытушылар құрамы жоғары ғылыми әлеуетке ие.',
+'The University employs 921 faculty members, including 62 Doctors of Science, 277 Candidates of Science, 117 PhD holders, and 447 Masters of Science.'
+=> 'Университетте 921 оқытушы жұмыс істейді, оның ішінде 62 ғылым докторы, 277 ғылым кандидаты, 117 PhD және 447 ғылым магистрі бар.',
 
-    'The University employs 921 faculty members, including 62 Doctors of Science, 277 Candidates of Science, 117 PhD holders, and 447 Masters of Science.'
-    => 'Университетте 921 оқытушы жұмыс істейді, оның ішінде 62 ғылым докторы, 277 ғылым кандидаты, 117 PhD және 447 ғылым магистрі бар.',
+'The faculty includes 47 graduates of the Bolashak international scholarship program.'
+=> 'Профессор-оқытушылар құрамында «Болашақ» халықаралық бағдарламасының 47 түлегі бар.',
 
-    'The faculty includes 47 graduates of the Bolashak international scholarship program.'
-    => 'Профессор-оқытушылар құрамында «Болашақ» халықаралық бағдарламасының 47 түлегі бар.',
+'KarNRU lecturers have received the title "Best University Teacher" 196 times and "Best Researcher" 7 times.'
+=> 'ҚарҰЗУ оқытушылары «Үздік ЖОО оқытушысы» атағын 196 рет, ал «Үздік ғылыми қызметкер» атағын 7 рет иеленген.',
 
-    'KarNRU lecturers have received the title "Best University Teacher" 196 times and "Best Researcher" 7 times.'
-    => 'ҚарҰЗУ оқытушылары «Үздік ЖОО оқытушысы» атағын 196 рет, ал «Үздік ғылыми қызметкер» атағын 7 рет иеленген.',
+'The scientific infrastructure of KarNRU includes 20 research institutes, centers, and laboratories.'
+=> 'ҚарҰЗУ-дың ғылыми инфрақұрылымына 20 ғылыми-зерттеу институты, орталық және зертхана кіреді.',
 
-    'The scientific infrastructure of KarNRU includes 20 research institutes, centers, and laboratories.'
-    => 'ҚарҰЗУ-дың ғылыми инфрақұрылымына 20 ғылыми-зерттеу институты, орталық және зертхана кіреді.',
+'The University conducts fundamental and applied research in nanotechnology, synthesis of new materials, biotechnology, social sciences, law, archaeology, green energy, and digital economy.'
+=> 'Университет нанотехнологиялар, жаңа материалдар синтезі, биотехнологиялар, әлеуметтік ғылымдар, құқық, археология, жасыл энергетика және цифрлық экономика бағыттарында іргелі және қолданбалы зерттеулер жүргізеді.',
 
-    'The University conducts fundamental and applied research in nanotechnology, synthesis of new materials, biotechnology, social sciences, law, archaeology, green energy, and digital economy.'
-    => 'Университет нанотехнологиялар, жаңа материалдар синтезі, биотехнологиялар, әлеуметтік ғылымдар, құқық, археология, жасыл энергетика және цифрлық экономика бағыттарында іргелі және қолданбалы зерттеулер жүргізеді.',
+'KarNRU is implementing 112 scientific projects with a total value of 1.6 billion tenge, including grant-funded and program-targeted projects.'
+=> 'ҚарҰЗУ гранттық және бағдарламалық-нысаналы қаржыландыруды қоса алғанда, жалпы құны 1,6 млрд теңгені құрайтын 112 ғылыми жобаны іске асыруда.',
 
-    'KarNRU is implementing 112 scientific projects with a total value of 1.6 billion tenge, including grant-funded and program-targeted projects.'
-    => 'ҚарҰЗУ гранттық және бағдарламалық-нысаналы қаржыландыруды қоса алғанда, жалпы құны 1,6 млрд теңгені құрайтын 112 ғылыми жобаны іске асыруда.',
+'Three major megagrants for 2023–2025 further demonstrate the high level of the University’s scientific potential.'
+=> '2023–2025 жылдарға арналған үш ірі мегагрант университеттің ғылыми әлеуетінің жоғары деңгейін көрсетеді.',
 
-    'Three major megagrants for 2023–2025 further demonstrate the high level of the University’s scientific potential.'
-    => '2023–2025 жылдарға арналған үш ірі мегагрант университеттің ғылыми әлеуетінің жоғары деңгейін көрсетеді.',
+'To support young scientists, KarNRU annually holds internal grant competitions.'
+=> 'Жас ғалымдарды қолдау мақсатында ҚарҰЗУ жыл сайын ішкі гранттық конкурстар өткізеді.',
 
-    'To support young scientists, KarNRU annually holds internal grant competitions.'
-    => 'Жас ғалымдарды қолдау мақсатында ҚарҰЗУ жыл сайын ішкі гранттық конкурстар өткізеді.',
+'In 2023, more than 57 million tenge were allocated for these purposes.'
+=> '2023 жылы осы мақсаттарға 57 млн теңгеден астам қаражат бөлінді.',
 
-    'In 2023, more than 57 million tenge were allocated for these purposes.'
-    => '2023 жылы осы мақсаттарға 57 млн теңгеден астам қаражат бөлінді.',
+'The University operates a Council of Young Scientists uniting 359 young researchers, as well as 38 student scientific clubs.'
+=> 'Университетте 359 жас зерттеушіні біріктіретін Жас ғалымдар кеңесі және 38 студенттік ғылыми үйірме жұмыс істейді.',
 
-    'The University operates a Council of Young Scientists uniting 359 young researchers, as well as 38 student scientific clubs.'
-    => 'Университетте 359 жас зерттеушіні біріктіретін Жас ғалымдар кеңесі және 38 студенттік ғылыми үйірме жұмыс істейді.',
+'KarNRU hosts 11 dissertation councils authorized to award PhD and профиль doctoral degrees, further strengthening its scientific and educational potential.'
+=> 'ҚарҰЗУ-да PhD және бейіндік докторлық дәрежелерді беру құқығы бар 11 диссертациялық кеңес жұмыс істейді, бұл оның ғылыми-білім беру әлеуетін одан әрі нығайтады.',
 
-    'KarNRU hosts 11 dissertation councils authorized to award PhD and профиль doctoral degrees, further strengthening its scientific and educational potential.'
-    => 'ҚарҰЗУ-да PhD және бейіндік докторлық дәрежелерді беру құқығы бар 11 диссертациялық кеңес жұмыс істейді, бұл оның ғылыми-білім беру әлеуетін одан әрі нығайтады.',
+'The University publishes 10 scientific journals, some of which are indexed in international databases such as Web of Science and Scopus, ensuring international recognition of KarNRU’s scientific publications.'
+=> 'Университет 10 ғылыми журнал шығарады, олардың кейбіреуі Web of Science және Scopus халықаралық дерекқорларына енгізілген, бұл ҚарҰЗУ ғылыми жарияланымдарының халықаралық танылуын қамтамасыз етеді.',
 
-    'The University publishes 10 scientific journals, some of which are indexed in international databases such as Web of Science and Scopus, ensuring international recognition of KarNRU’s scientific publications.'
-    => 'Университет 10 ғылыми журнал шығарады, олардың кейбіреуі Web of Science және Scopus халықаралық дерекқорларына енгізілген, бұл ҚарҰЗУ ғылыми жарияланымдарының халықаралық танылуын қамтамасыз етеді.',
-
-    'In the context of accelerating globalization processes, the formation of a green economy, and the promotion of sustainable development principles, innovation policy is defined as a decisive factor in the diversification of the national economy and the formation of a competitive innovation model. In the era of the Fourth Industrial Revolution, the priorities of scientific knowledge are shifting toward the close integration of natural and engineering sciences with life sciences. According to the founder of the World Economic Forum, K. Schwab, the key megatrends of the 21st century are characterized by scientific and technological breakthroughs at the intersection of biology, physics, and information technologies. The implementation of transdisciplinary and interdisciplinary technologies requires significant material and intellectual resources; however, such investments are fully justified economically and socially in the long term. This, in turn, creates the need to train highly qualified specialists capable of working with high-tech equipment, comprehensively analyzing acquired data, and understanding the advantages of transdisciplinary interaction alongside narrow professional specialization. The most favorable institutional environment for training such specialists is provided by multidisciplinary classical universities with diversified research centers. An analysis of the experience of leading foreign research universities (Stanford University, the University of Texas at Austin, Manchester Metropolitan University, and others) makes it possible to identify the following key characteristics: attracting faculty with strong scientific reputations; developing modern research infrastructure; offering a wide range of research programs that reflect the interests of the university community; stimulating interdisciplinary research and collaboration among professional teams; establishing effective mechanisms for transferring scientific discoveries and innovations to the real sector of the economy; maintaining a stable position in the international scientific and educational space; and actively participating in addressing the economic, social, and cultural challenges of society.'
-    => 'Жаһандану үдерістерінің жеделдеуіне, «жасыл экономика» қалыптастыруға және тұрақты даму принциптерін ілгерілетуге байланысты инновациялық саясат ұлттық экономиканы әртараптандыру және бәсекеге қабілетті инновациялық модель қалыптастырудағы шешуші фактор ретінде анықталады. Төртінші өнеркәсіптік революция жағдайында ғылыми білімнің басымдықтары табиғи және инженерлік ғылымдардың өмір туралы ғылымдармен тығыз интеграциясына ауысады. Дүниежүзілік экономикалық форумның негізін қалаушы К. Швабтың пікірінше, XXI ғасырдың негізгі мегатрендтері биология, физика және ақпараттық технологиялар қиылысында ғылыми-техникалық серпілістермен сипатталады. Трансдисциплинарлық және көпдисциплинарлық технологияларды енгізу елеулі материалдық және интеллектуалды ресурстарды қажет етеді, бірақ мұндай инвестициялар ұзақ мерзімде экономикалық және әлеуметтік тұрғыдан толық ақталады. Бұл, өз кезегінде, жоғары технологиялық жабдықтармен жұмыс істей алатын, алынған деректерді кешенді түрде талдай алатын және тар кәсіби мамандылықпен қатар пәнаралық өзара әрекеттестік артықшылықтарын түсінетін жоғары білікті мамандарды даярлау қажеттілігін тудырады. Мұндай мамандарды даярлауға ең қолайлы институционалдық орта — мультидисциплинарлық зерттеу орталықтары бар көпсалалы классикалық университеттер. Алдыңғы қатарлы шетелдік зерттеу университеттерінің тәжірибесін (Stanford University, University of Texas at Austin, Manchester Metropolitan University және басқалары) талдау келесі негізгі ерекшеліктерді анықтауға мүмкіндік береді: жоғары ғылыми беделі бар оқытушыларды тарту; заманауи зерттеу инфрақұрылымын дамыту; университет қауымдастығының мүдделерін қамтитын кең ауқымды зерттеу бағдарламалары; пәнаралық зерттеулер мен кәсіби командалардың ынтымақтастығын ынталандыру; ғылыми ашылымдар мен инновацияларды нақты экономикалық секторға трансферлеудің тиімді механизмдерін құру; халықаралық ғылыми-білім беру кеңістігінде тұрақты позицияны сақтау; университеттің экономикалық, әлеуметтік және мәдени мәселелерді шешуге белсенді қатысуы.',
-    'Vacancies' => 'Бос орындар',
+'In the context of accelerating globalization processes, the formation of a green economy, and the promotion of sustainable development principles, innovation policy is defined as a decisive factor in the diversification of the national economy and the formation of a competitive innovation model. In the era of the Fourth Industrial Revolution, the priorities of scientific knowledge are shifting toward the close integration of natural and engineering sciences with life sciences. According to the founder of the World Economic Forum, K. Schwab, the key megatrends of the 21st century are characterized by scientific and technological breakthroughs at the intersection of biology, physics, and information technologies. The implementation of transdisciplinary and interdisciplinary technologies requires significant material and intellectual resources; however, such investments are fully justified economically and socially in the long term. This, in turn, creates the need to train highly qualified specialists capable of working with high-tech equipment, comprehensively analyzing acquired data, and understanding the advantages of transdisciplinary interaction alongside narrow professional specialization. The most favorable institutional environment for training such specialists is provided by multidisciplinary classical universities with diversified research centers. An analysis of the experience of leading foreign research universities (Stanford University, the University of Texas at Austin, Manchester Metropolitan University, and others) makes it possible to identify the following key characteristics: attracting faculty with strong scientific reputations; developing modern research infrastructure; offering a wide range of research programs that reflect the interests of the university community; stimulating interdisciplinary research and collaboration among professional teams; establishing effective mechanisms for transferring scientific discoveries and innovations to the real sector of the economy; maintaining a stable position in the international scientific and educational space; and actively participating in addressing the economic, social, and cultural challenges of society.'
+=> 'Жаһандану үдерістерінің жеделдеуіне, «жасыл экономика» қалыптастыруға және тұрақты даму принциптерін ілгерілетуге байланысты инновациялық саясат ұлттық экономиканы әртараптандыру және бәсекеге қабілетті инновациялық модель қалыптастырудағы шешуші фактор ретінде анықталады. Төртінші өнеркәсіптік революция жағдайында ғылыми білімнің басымдықтары табиғи және инженерлік ғылымдардың өмір туралы ғылымдармен тығыз интеграциясына ауысады. Дүниежүзілік экономикалық форумның негізін қалаушы К. Швабтың пікірінше, XXI ғасырдың негізгі мегатрендтері биология, физика және ақпараттық технологиялар қиылысында ғылыми-техникалық серпілістермен сипатталады. Трансдисциплинарлық және көпдисциплинарлық технологияларды енгізу елеулі материалдық және интеллектуалды ресурстарды қажет етеді, бірақ мұндай инвестициялар ұзақ мерзімде экономикалық және әлеуметтік тұрғыдан толық ақталады. Бұл, өз кезегінде, жоғары технологиялық жабдықтармен жұмыс істей алатын, алынған деректерді кешенді түрде талдай алатын және тар кәсіби мамандылықпен қатар пәнаралық өзара әрекеттестік артықшылықтарын түсінетін жоғары білікті мамандарды даярлау қажеттілігін тудырады. Мұндай мамандарды даярлауға ең қолайлы институционалдық орта — мультидисциплинарлық зерттеу орталықтары бар көпсалалы классикалық университеттер. Алдыңғы қатарлы шетелдік зерттеу университеттерінің тәжірибесін (Stanford University, University of Texas at Austin, Manchester Metropolitan University және басқалары) талдау келесі негізгі ерекшеліктерді анықтауға мүмкіндік береді: жоғары ғылыми беделі бар оқытушыларды тарту; заманауи зерттеу инфрақұрылымын дамыту; университет қауымдастығының мүдделерін қамтитын кең ауқымды зерттеу бағдарламалары; пәнаралық зерттеулер мен кәсіби командалардың ынтымақтастығын ынталандыру; ғылыми ашылымдар мен инновацияларды нақты экономикалық секторға трансферлеудің тиімді механизмдерін құру; халықаралық ғылыми-білім беру кеңістігінде тұрақты позицияны сақтау; университеттің экономикалық, әлеуметтік және мәдени мәселелерді шешуге белсенді қатысуы.',
+ 'Vacancies' => 'Бос орындар',
     'We invite talented specialists to join our team!' => 'Біз талантты мамандарды командамызға қосылуға шақырамыз!',
     'Contacts for applications' => 'Өтініштер үшін байланыс',
     'If you want to apply for a vacancy, use a convenient way to contact us' => 'Егер сіз бос орынға өтініш бергіңіз келсе, бізбен байланысудың ыңғайлы жолын пайдаланыңыз',
@@ -795,9 +795,9 @@ return [
     'Knowledge of network technologies' => 'Желілік технологияларды білу',
     'Server administration' => 'Серверді басқару',
     '28 University Street, Main Building, Room 228' => 'Университет көшесі 28, Негізгі ғимарат, 228 кабинет',
-    'International students' => 'Халықаралық студенттер',
+     'International students' => 'Халықаралық студенттер',
 
-    'The university currently offers several study formats for foreign citizens' =>
+    'The university currently offers several study formats for foreign citizens' => 
         'Қазіргі уақытта университет шетел азаматтары үшін бірнеше оқу форматтарын ұсынады',
 
     'Foundation.<br> Kazakh language training program' => 'Құрметті курс.<br> Қазақ тілі бағдарламасы',
@@ -812,20 +812,10 @@ return [
 
     'Send a request or a question about the possibility of studying at the university' =>
         'Университетте оқу мүмкіндігі туралы өтініш немесе сұрақ жіберіңіз',
-    'Karaganda University named after academician E. A. Buketov was awarded the status of a research university' =>
+         'Karaganda University named after academician E. A. Buketov was awarded the status of a research university' =>
         'Академик Е. А. Бөкетов атындағы Қарағанды университетіне зерттеу университеті мәртебесі берілді',
 
     'Karaganda research university named after academician E. A. Buketov awarded national status.' =>
         'Академик Е. А. Бөкетов атындағы Қарағанды зерттеу университетіне ұлттық мәртебе берілді',
-    'Karaganda National Research University' => 'Қарағанды ұлттық зерттеу университеті',
-    'History of the Faculty' => 'Факультет тарихы',
-    'To view the history of the department, follow the link' => 'Кафедра тарихын көру үшін сілтемеге өтіңіз',
-    'Teachers' => 'Оқытушылар',
-    'Full Name' => 'Толық аты-жөні',
-    'Job Title' => 'Лауазымы',
-    'Work Experience' => 'Жұмыс өтілі',
-    'Academic Degree' => 'Ғылыми дәреже',
-    'Academic Rank' => 'Ғылыми атағы',
-    'year' => 'жыл',
-
+        'Karaganda National Research University'=>'Қарағанды ұлттық зерттеу университеті'
 ];

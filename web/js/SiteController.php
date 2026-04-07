@@ -3,6 +3,7 @@
 namespace app\controllers;
 use app\models\AdmissionPdf;
 use app\models\CorporateGovernanceFile;
+use app\models\CorpSoleShareholder;
 use app\models\Departament;
 use app\models\DissertationAdvice;
 use app\models\FeedbackForm;
@@ -10,12 +11,15 @@ use app\models\FeedbackFormMessage;
 use app\models\Files;
 use app\models\Profession;
 use app\models\Events;
-
 use app\models\TypeRefStaff;
+use Codeception\Lib\InnerBrowser;
+use Symfony\Component\BrowserKit\History;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\Response;
 use yii\filters\VerbFilter;
+use app\models\LoginForm;
 use app\models\Faculty;
 use app\models\Staff;
 use app\models\Article;
@@ -25,7 +29,9 @@ use app\models\News;
 
 use app\models\HistoryFaculty;
 use app\models\HistoryDepartament;
+use yii\helpers\Html;
 use \app\components\LanguageHelper;
+use function PHPUnit\Framework\isEmpty;
 
 class SiteController extends Controller
 {
@@ -159,73 +165,28 @@ class SiteController extends Controller
 
         // print_r($ranking);die;
 
-        return $this->render('index', ['news' => $news_for_home, 'events' => $events, "model" => $form, 'rector' => $rector, 'faculty' => $faculty, 'ranking' => $ranking]);
+        return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'faculty' => $faculty, 'ranking' => $ranking]);
         // return $this->render('index', ['news' => $news_for_home, 'events' => $events, 'model' => $form, 'rector' => $rector, 'smi' => $smi, 'faculty' => $faculty, 'ranking' => $ranking]);
 
     }
-    public function actionTransfer()
-    {
-
-
-        $data1 = fopen(Yii::getAlias("@webroot") . "/учители.csv", "r");
-        $data2 = fopen(Yii::getAlias("@webroot") . "/mail-data.csv", "r");
-
-        // 🔥 1. Загружаем второй файл в массив
-        $mailData = [];
-
-        while (($line = fgetcsv($data2, 10000, ';')) !== false) {
-
-            if ($line[3] == '') {
-                continue;
-            }
-            $staff = Staff::find()->where([
-                'surname_ru' => trim($line[3]),
-                'name_ru' => trim($line[4])
-            ])->one();
-
-
-            if ($staff) {
-
-                $typeRefStaff = TypeRefStaff::find()->where(['staff_id' => $staff->id])->one();
-                if (!$typeRefStaff) {
-                    echo "Сотрудник найден, но у него нет записи в type_ref_staff. ID сотрудника: " . $staff->id . "<br>";
-                }
-            } else {
-                echo "Сотрудник не найден. Фамилия: " . trim($line[3]) . ", Имя: " . trim($line[4]) . "<br>";
-            }
-            // print_r($staff->); // 🔥 отладочный вывод
-
-
-        }
-    }
-    function normalize($str)
-    {
-        return mb_strtolower(trim(preg_replace('/\s+/', ' ', $str)));
-    }
-    public function actionFaculty($id)
+    public function actionFaculty($name)
     {
         $lang = Yii::$app->language;
+        // 'select name_ . $lang , '
 
-        $faculty = Faculty::findOne(['id' => $id]);
+        $faculty = Faculty::findOne(['name_ru' => $name]);
         $faculty_id = $faculty->id;
         $dean = Staff::find()
-            ->select([
-                'image.image',
-                'staff.name_' . $lang,
-                'staff.surname_' . $lang,
-                'staff.patronymic_' . $lang,
-                'type_ref_staff.job_title_' . $lang,
-                'type_ref_staff.email'
-
-            ])
-            ->joinWith(['typeRefStaff', 'image'])
+            ->select(['image.image', 'staff.*'])
+            ->joinWith(['refStaff', 'image']) // связи из модели Staff
             ->where([
-                'type_ref_staff.faculty_id' => $faculty_id,
-                'type_ref_staff.ref_staff_id' => 3,
+                'staff.faculty_id' => $faculty_id,
+                'ref_staff.type' => 'dean',
             ])
             ->one();
+
         $departament = Departament::findAll(['faculty_id' => $faculty_id]);
-        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id, 'name' => $faculty->{LanguageHelper::name()}]);
+        return $this->render('faculty', ['faculty' => $faculty, 'dean' => $dean, 'departament' => $departament, 'faculty_id' => $faculty_id, 'name' => $name]);
     }
 
     public function actionHistoryFaculty($faculty_id)
@@ -239,7 +200,13 @@ class SiteController extends Controller
                 LanguageHelper::content(),
             ])
             ->where(['faculty_id' => $faculty_id])
+            // ->asArray()
             ->one();
+
+        // print_r($article);
+        // die;
+
+
         return $this->render('history-faculty', ['model' => $article]);
 
     }
@@ -260,12 +227,14 @@ class SiteController extends Controller
                 'image' => 'image.image',
             ])
             ->from('staff')
-            ->leftJoin('image', ['image.column_id' => new \yii\db\Expression('staff.id')])
+            ->innerJoin('image', ['image.column_id' => new \yii\db\Expression('staff.id')])
             ->innerJoin('type_ref_staff', ['type_ref_staff.staff_id' => new \yii\db\Expression('staff.id')])
 
             ->where(['type_ref_staff.departament_id' => $departament_id])
             ->andWhere(['type_ref_staff.ref_staff_id' => 5])
             ->one();
+
+        // print_r($dean);die;
         $imageSubQuery = (new \yii\db\Query())
             ->select([
                 'column_id',
@@ -287,7 +256,6 @@ class SiteController extends Controller
                 'trs.academic_degree',
                 'trs.academic_rank',
                 'img.image',
-                'trs.work_experience'
             ])
             ->from('staff')
             ->leftJoin('type_ref_staff trs', 'trs.staff_id = staff.id')
@@ -620,7 +588,7 @@ class SiteController extends Controller
 
     public function actionTransferData()
     {
-        $data = fopen(Yii::getAlias('@webroot') . '/деканы и зав кафедрами.csv', 'r');
+        $data = fopen(Yii::getAlias('@webroot') . '/учители (2).csv', 'r');
         echo "<table border='1'>";
         while (($line = fgetcsv($data, 1000, ';')) !== false) {
             if ($line[1] == 'СПИСОК СОТРУДНИКОВ' || $line[1] == 'Ф') {
@@ -652,86 +620,19 @@ class SiteController extends Controller
 
             echo "<td>" . $line[9] . "</td>";
             echo "<td>" . $line[10] . "</td>";
-            echo "<td>" . (!empty($line[11]) ? (int) $line[11] : 0) . "</td>";
-            echo "<td>" . ($line[12] ?? null) . "</td>";
-            echo "<td>" . ($line[13] ?? null) . "</td>";
+            echo "<td>" . $line[11] . "</td>";
 
             echo "</tr>";
-            $staff = Staff::find()->where([
-                'surname_ru' => trim($line[1]),
-                'name_ru' => trim($line[2]),
-                'patronymic_ru' => trim($line[3])
-            ])->one();
-
-            $typeRefStaff = TypeRefStaff::find()->where([
-                'staff_id' => $staff ? $staff->id : null,
-                'ref_staff_id' => [3, 4, 5],
-            ])->one();
-            if ($typeRefStaff) {
-                $typeRefStaff->job_title_ru = trim($line[4]);
-                $typeRefStaff->job_title_kz = trim($line[4]);
-                $typeRefStaff->save();
+            $staff = Staff::find(['surname_ru' => trim($line[1]), 'name_ru' => trim($line[2]), 'patronymic_ru' => $line[3]])->one();
+            if (!$staff) {
+                print ('Сотрудник ' . $line[1] . ' ' . $line[2] . ' ' . $line[3] . ' не найден' . "\n");
+                echo "</br>";
+                continue;
             }
-            // if (!$staff) {
-            //     $staff = new Staff();
-            //     $staff->surname_ru = trim($line[1]);
-            //     $staff->name_ru = trim($line[2]);
-            //     $staff->patronymic_ru = trim($line[3]);
-            //     $staff->surname_kz = trim($line[1]);
-            //     $staff->name_kz = trim($line[2]);
-            //     $staff->patronymic_kz = trim($line[3]);
-            //     if ($staff->save()) {
-            //         $typeRefStaff = new TypeRefStaff();
-            //         $typeRefStaff->staff_id = $staff->id;
-            //         $typeRefStaff->job_title_ru = trim($line[7]);
-            //         $typeRefStaff->job_title_kz = trim($line[7]);
-            //         if (trim($line[7]) == 'Декан' || trim($line[7]) == 'И.о.декана') {
-            //             $typeRefStaff->ref_staff_id = 3;
-            //         } elseif (trim($line[7]) == 'Зав.каф.' || trim($line[7]) == 'И.о.зав.каф.') {
-            //             $typeRefStaff->ref_staff_id = 5;
-            //         } else if (mb_stripos(trim($line[7]), 'Зам.декана') !== false) {
-            //             $typeRefStaff->ref_staff_id = 4;
-            //         } else {
-            //             $typeRefStaff->ref_staff_id = 0; // или другое значение по умолчанию
-            //         }
-            //         $typeRefStaff->departament_id = $kafedra->id;
-            //         $typeRefStaff->faculty_id = $faculty->id;
-            //         if (!$typeRefStaff->save()) {
-            //             print_r($typeRefStaff->errors);
-            //             print ('Ошибка при сохранении сотрудника ' . trim($line[1]) . ' ' . trim($line[2]) . ' ' . trim($line[3]) . "\n");
-            //             echo "</br>";
-            //         }
-            //     } else {
-            //         print_r($staff->errors);
-            //         print ('Ошибка при сохранении сотрудника ' . trim($line[1]) . ' ' . trim($line[2]) . ' ' . trim($line[3]) . "\n");
-            //         echo "</br>";
-            //     }
-
-
-            // } else {
-            //     $typeRefStaff = new TypeRefStaff();
-            //     $typeRefStaff->staff_id = $staff->id;
-            //     $typeRefStaff->job_title_ru = trim($line[7]);
-            //     $typeRefStaff->job_title_kz = trim($line[7]);
-            //     if (trim($line[7]) == 'Декан' || trim($line[7]) == 'И.о.декана') {
-            //         $typeRefStaff->ref_staff_id = 3;
-            //     } elseif (trim($line[7]) == 'Зав.каф.' || trim($line[7]) == 'И.о.зав.каф.') {
-            //         $typeRefStaff->ref_staff_id = 5;
-            //     } else if (mb_stripos(trim($line[7]), 'Зам.декана') !== false) {
-            //         $typeRefStaff->ref_staff_id = 4;
-            //     } else {
-            //         $typeRefStaff->ref_staff_id = 0; // или другое значение по умолчанию
-            //     }
-            //     $typeRefStaff->departament_id = $kafedra->id;
-            //     $typeRefStaff->faculty_id = $faculty->id;
-            //     if (!$typeRefStaff->save()) {
-            //         print_r($typeRefStaff->errors);
-            //         print ('Ошибка при сохранении сотрудника ' . trim($line[1]) . ' ' . trim($line[2]) . ' ' . trim($line[3]) . "\n");
-            //         echo "</br>";
-            //     }
-            // }
-
-
+            $typeRefStaff = TypeRefStaff::findOne(['staff_id' => $staff->id]);
+                $typeRefStaff->work_experience = !empty($line[11]) ? (int) $line[11] : 0;
+                $typeRefStaff->academic_degree = $line[12] ?? null;
+                $typeRefStaff->academic_rank = $line[13] ?? null;
             // $staff = new Staff();
             // $staff->name_ru = $line[1];
             // $staff->surname_ru = $line[2];

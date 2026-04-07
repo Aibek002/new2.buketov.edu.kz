@@ -444,6 +444,44 @@ class AdminController extends Controller
 
         return $this->render('sign-up', ['user' => $user]);
     }
+    public function actionScanDir()
+    {
+        Yii::$app->response->format = Response::FORMAT_HTML;
+
+        $basePath = Yii::getAlias('@app/../files/image_avatar_staff/Administrative-Services');
+
+        if (!is_dir($basePath)) {
+            return "❌ Каталог не найден: $basePath";
+        }
+
+        $output = '';
+
+        foreach (scandir($basePath) as $dir) {
+
+            if ($dir === '.' || $dir === '..') {
+                continue;
+            }
+
+            $fullPath = $basePath . DIRECTORY_SEPARATOR . $dir;
+
+            if (!is_dir($fullPath)) {
+                continue;
+            }
+
+            // Akshalov_Kair → ["Akshalov", "Kair"]
+            [$lastName, $firstName] = array_pad(explode('_', $dir, 2), 2, null);
+
+            if (!$lastName || !$firstName) {
+                continue;
+            }
+
+            $output .= "Фамилия: <b>$lastName</b>, Имя: <b>$firstName</b><br>";
+
+            // 👉 здесь дальше запись в БД
+        }
+
+        return $output ?: '❗ Папки не найдены';
+    }
     public function actionSignIn()
     {
         $form = new User();
@@ -451,12 +489,12 @@ class AdminController extends Controller
         if ($form->load(Yii::$app->request->post())) {
             $user = User::findOne(['username' => $form->username]);
 
-            if ($user && $user->password_hash === $form->password_hash) {
-                Yii::$app->user->login($user); // login принимает объект пользователя
-                return $this->redirect(['admin/index']); // перенаправление на главную
-            } else {
-                Yii::$app->session->setFlash('error', 'Неверный логин или пароль.');
+            if ($user && $form->password_hash === $user->password_hash) {
+                Yii::$app->user->login($user);
+                return $this->redirect(['admin/index']);
             }
+            Yii::$app->session->setFlash('error', 'Неверный логин или пароль.');
+
         }
 
         return $this->render('sign-in', [
@@ -478,7 +516,7 @@ class AdminController extends Controller
             if ($model->subsection_corporate_governance === 'Решения Единственного Акционера') {
 
                 $path = Yii::getAlias("@app/../files/pdf/corporate_governance/sole-shareholder/$model->year/$model->language_file/");
-                $fileName = uniqid() . "_" . $model->name_url . "." . $file->extension;
+                $fileName = uniqid() . "." . $file->extension;
                 $model->ref_corporate_governance = 1;
                 $model->path_file = "/files/pdf/corporate_governance/sole-shareholder/" . $model->year . "/" . $model->language_file . "/";
                 $model->sort_id = $model->year;

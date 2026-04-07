@@ -53,12 +53,9 @@ class Staff extends \yii\db\ActiveRecord
         return [
             [['date', 'images'], 'safe'],
             [['images'], 'file', 'extensions' => 'png, jpg, jpeg', 'checkExtensionByMimeType' => true],
-            [['faculty_show', 'dissertation_show'], 'boolean'],
             [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en', 'information_kz', 'information_ru', 'information_en', 'email', 'phone', 'faculty_id', 'departament_id', 'welcome_kz', 'welcome_ru', 'welcome_en', 'job_title_kz', 'job_title_ru', 'job_title_en'], 'default', 'value' => null],
-            [['ref_staff_id'], 'required'],
             [['ref_staff_id', 'faculty_id', 'departament_id'], 'integer'],
             [['surname_kz', 'surname_ru', 'surname_en', 'name_kz', 'name_ru', 'name_en', 'patronymic_kz', 'patronymic_ru', 'patronymic_en'], 'string', 'max' => 255],
-            [['dissertation_advice_id'], 'exist', 'skipOnError' => true, 'targetClass' => DissertationAdvice::class, 'targetAttribute' => ['dissertation_advice_id' => 'id']],
 
             [['departament_id'], 'exist', 'skipOnError' => true, 'targetClass' => Departament::class, 'targetAttribute' => ['departament_id' => 'id']],
             [['faculty_id'], 'exist', 'skipOnError' => true, 'targetClass' => Faculty::class, 'targetAttribute' => ['faculty_id' => 'id']],
@@ -83,12 +80,12 @@ class Staff extends \yii\db\ActiveRecord
             'patronymic_kz' => 'Patronymic Kz',
             'patronymic_ru' => 'Patronymic Ru',
             'patronymic_en' => 'Patronymic En',
-           
+
             'email' => 'Email',
             'phone' => 'Phone',
             'faculty_id' => 'Faculty ID',
             'departament_id' => 'Departament ID',
-            
+
         ];
     }
 
@@ -129,6 +126,10 @@ class Staff extends \yii\db\ActiveRecord
     public function getRefStaff()
     {
         return $this->hasOne(RefStaff::class, ['id' => 'ref_staff_id']);
+    }
+    public function getTypeRefStaff()
+    {
+        return $this->hasMany(TypeRefStaff::class, ['staff_id' => 'id']);
     }
     public function getImage()
     {
